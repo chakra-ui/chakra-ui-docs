@@ -6,6 +6,8 @@
     "dev": "next",
     "build": "next build",
     "gen:theme-typings": "chakra-cli tokens theme.ts",
+    "avatars:gen": "ts-node scripts/avatars.ts",
+    "members:gen": "ts-node scripts/all-members.ts",
     "start": "next start",
     "test": "jest",
     "clean": "rimraf .next .mdx-data",
@@ -28,6 +30,7 @@
     "@octokit/rest": "^18.0.12",
     "date-fns": "^2.16.1",
     "docsearch.js": "^2.6.3",
+    "dotenv-cli": "^4.0.0",
     "execa": "^5.1.1",
     "focus-visible": "5.2.0",
     "formik": "^2.2.9",
@@ -72,6 +75,9 @@
     "@types/react-dom": "^17.0.0",
     "@types/sharp": "^0.26.1",
     "babel-plugin-superjson-next": "^0.3.0",
-    "next-compose-plugins": "^2.2.1"
+    "next-compose-plugins": "^2.2.1",
+    "ts-node": "9.1.1",
+    "imagemin": "7.0.1",
+    "imagemin-jpegtran": "7.0.0"
   }
 }
