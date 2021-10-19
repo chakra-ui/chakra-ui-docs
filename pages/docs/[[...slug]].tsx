@@ -32,7 +32,7 @@ export async function getStaticPaths() {
           .replace('.mdx', '')
           .slice(1) // remove the first `/`
           .split('/') // split to get an array
-          .filter((item) => item !== 'pages' && item !== 'docs'), // remove the CONTENT_PATH since this isnt needed in static paths
+          .filter((item) => item !== 'pages' && item !== CONTENT_PATH), // remove the CONTENT_PATH since this isnt needed in static paths
       },
     };
   });
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const slug = ['/docs', ...params.slug].join('/');
+  const slug = ['/', CONTENT_PATH, ...params.slug].join('/');
 
   const page = await loadMdxFile(slug);
 
