@@ -1,11 +1,11 @@
-import * as React from "react"
-import PageContainer from "components/page-container"
-import dynamic from "next/dynamic"
+import * as React from 'react';
+import PageContainer from 'components/page-container';
+import dynamic from 'next/dynamic';
 
-const MDXLayout = dynamic(() => import("layouts/mdx"))
+const MDXLayout = dynamic(() => import('layouts/mdx'));
 
 export default function DefaultLayout({ children, frontMatter }) {
-  const { slug } = frontMatter
+  const { slug } = frontMatter;
 
   const layoutMap = {
     guides: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
@@ -14,13 +14,13 @@ export default function DefaultLayout({ children, frontMatter }) {
     default: (
       <PageContainer frontmatter={frontMatter}>{children}</PageContainer>
     ),
-  }
+  };
 
   const layout = Object.entries(layoutMap).find(([path]) =>
-    String(slug).startsWith(`/${path}`),
-  )
+    String(slug).startsWith(`/${path}`)
+  );
 
-  if (!layout) return layoutMap.default
+  if (!layout) return layoutMap.default;
 
-  return layout[1]
+  return layout[1];
 }
