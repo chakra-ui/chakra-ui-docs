@@ -18,7 +18,6 @@ import Header from 'components/header';
 import PageTransition from 'components/page-transition';
 import SEO from 'components/seo';
 import fs from 'fs';
-import path from 'path';
 import * as React from 'react';
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io';
 import { Contributor, Member as IMember } from 'src/types/github';
