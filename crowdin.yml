@@ -1,4 +1,4 @@
 preserve_hierarchy: true
 files:
   - source: /pages/**/*.mdx
-    translation: /pages/**/%file_name%.%two_letters_code%.%file_extension%
+    translation: /i18n/__generated__/**/%file_name%.%two_letters_code%.%file_extension%
