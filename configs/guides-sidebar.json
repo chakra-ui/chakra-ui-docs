@@ -25,8 +25,8 @@
           "path": "/guides/using-fonts"
         },
         {
-          "title": "Integrations",
-          "path": "/guides/integrations",
+          "title": "Getting Started",
+          "path": "/guides/getting-started",
           "open": true,
           "routes": [
             {
@@ -48,6 +48,17 @@
             {
               "title": "Redwood JS",
               "path": "/guides/getting-started/redwoodjs-guide"
+            }
+          ]
+        },
+        {
+          "title": "Integrations",
+          "path": "/guides/integrations",
+          "open": true,
+          "routes": [
+            {
+              "title": "Create React App",
+              "path": "/guides/integrations/with-cra"
             },
             {
               "title": "Framer Motion",
