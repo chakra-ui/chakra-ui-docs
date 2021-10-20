@@ -29,6 +29,16 @@ module.exports = {
 };
 ```
 
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+
+
 > Boom! You're good to go 🚀🚀🚀 However, if you'd love to
 > take it a step further, check out step 2.
 
