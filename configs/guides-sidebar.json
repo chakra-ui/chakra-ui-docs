@@ -31,7 +31,23 @@
           "routes": [
             {
               "title": "Create React App",
-              "path": "/guides/integrations/with-cra"
+              "path": "/guides/getting-started/cra-guide"
+            },
+            {
+              "title": "Next JS",
+              "path": "/guides/getting-started/nextjs-guide"
+            },
+            {
+              "title": "Gatsby",
+              "path": "/guides/getting-started/gatsby-guide"
+            },
+            {
+              "title": "Blitz JS",
+              "path": "/guides/getting-started/blitzjs-guide"
+            },
+            {
+              "title": "Redwood JS",
+              "path": "/guides/getting-started/redwoodjs-guide"
             },
             {
               "title": "Framer Motion",
