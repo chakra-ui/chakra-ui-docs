@@ -1,19 +1,25 @@
-const withPlugins = require("next-compose-plugins")
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-})
+const locales = require('./i18n/locales');
+const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const defaultConfig = {
-  target: "serverless",
+  target: 'serverless',
   webpack: (config) => ({
     ...config,
-    externals: [...config.externals, "sharp"],
+    externals: [...config.externals, 'sharp'],
   }),
   experimental: {
     optimizeFonts: true,
     modern: true,
   },
-  redirects: require("./next-redirect"),
-}
+  i18n: {
+    locales: locales.locales,
+    defaultLocale: locales.defaultLocale,
+    localeDetection: false,
+  },
+  redirects: require('./next-redirect'),
+};
 
-module.exports = withPlugins([withBundleAnalyzer], defaultConfig)
+module.exports = withPlugins([withBundleAnalyzer], defaultConfig);
