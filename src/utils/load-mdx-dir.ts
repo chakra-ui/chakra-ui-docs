@@ -13,12 +13,4 @@ async function loadMdxDir(mdxDir: string) {
   return pages;
 }
 
-export async function loadMdxFile(filepath: string) {
-  const dir = path.join(process.cwd(), `pages/${filepath}.mdx`);
-
-  const page = await loadMdx(dir);
-
-  return page;
-}
-
 export default loadMdxDir;
