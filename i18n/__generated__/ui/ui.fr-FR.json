@@ -1,1 +1,6 @@
-{}
+{
+  "homepage": {
+    "title": "Créez rapidement des applications React accessibles",
+    "message": "Chakra UI est une bibliothèque de composants simple, modulaire et accessible qui vous donne les blocs de construction dont vous avez besoin pour créer vos applications React."
+  }
+}

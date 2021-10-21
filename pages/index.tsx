@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   Box,
   BoxProps,
@@ -21,6 +22,7 @@ import {
 } from '@chakra-ui/react';
 import { chunk } from '@chakra-ui/utils';
 import users from 'chakra-users';
+import i18n from 'i18next';
 import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
 import { AdBanner } from 'components/chakra-pro/ad-banner';
 import Container from 'components/container';
@@ -111,6 +113,7 @@ interface HomePageProps {
 }
 
 const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
@@ -133,14 +136,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 mb='16px'
                 lineHeight='1.2'
               >
-                Create accessible React apps
-                <Box
-                  as='span'
-                  color={useColorModeValue('teal.500', 'teal.300')}
-                >
-                  {' '}
-                  with speed
-                </Box>
+                {t('homepage.title')}
               </chakra.h1>
 
               <Text
@@ -150,9 +146,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 fontSize={{ base: 'lg', lg: 'xl' }}
                 mt='6'
               >
-                Chakra UI is a simple, modular and accessible component library
-                that gives you the building blocks you need to build your React
-                applications.
+                {t('homepage.message')}
               </Text>
 
               <Stack
@@ -172,19 +166,6 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                     rightIcon={<FaArrowRight fontSize='0.8em' />}
                   >
                     Get Started
-                  </Button>
-                </NextLink>
-                <NextLink href='/docs/getting-started' locale='fr-FR' passHref>
-                  <Button
-                    h='4rem'
-                    px='40px'
-                    fontSize='1.2rem'
-                    as='a'
-                    size='lg'
-                    colorScheme='teal'
-                    rightIcon={<FaArrowRight fontSize='0.8em' />}
-                  >
-                    Go to France
                   </Button>
                 </NextLink>
                 <Button
