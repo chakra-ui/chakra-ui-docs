@@ -40,7 +40,7 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
     });
   };
 
-  if (process.env.ENABLE_LANGUAGE_SWITCHER) {
+  if (!process.env.ENABLE_LANGUAGE_SWITCHER) {
     return <></>;
   }
 
