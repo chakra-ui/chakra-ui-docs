@@ -117,8 +117,8 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
   return (
     <>
       <SEO
-        title='Chakra UI - A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.'
-        description='Simple, Modular and Accessible UI Components for your React Applications. Built with Styled System'
+        title={t('homepage.seo.title')}
+        description={t('homepage.seo.description')}
       />
       <AdBanner />
       <Header />
