@@ -1,25 +1,7 @@
 module.exports = {
-  locales: [
-    'en-US',
-    'zh-CN',
-    'ar-SA',
-    'fr-FR',
-    'de-DE',
-    'hi-IN',
-    'ja-JP',
-    'pt-BR',
-    'es-ES',
-  ],
+  locales: ['en-US'],
   localeNames: {
     'en-US': 'English',
-    'zh-CN': '简体中文',
-    'ar-SA': 'عربي',
-    'fr-FR': 'Français',
-    'de-DE': 'Deutsch',
-    'hi-IN': 'हिंदी',
-    'ja-JP': '日本',
-    'pt-BR': 'Português',
-    'es-ES': 'Española',
   },
   defaultLocale: 'en-US',
 };
