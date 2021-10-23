@@ -39,6 +39,10 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
     });
   };
 
+  if (!process.env.ENABLE_LANGUAGE_SWITCHER) {
+    return <></>;
+  }
+
   return (
     <Menu>
       <MenuButton as={Button} variant='ghost' rightIcon={<ChevronDownIcon />}>
