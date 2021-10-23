@@ -9,6 +9,7 @@ import { InlineCode } from "components/mdx-components/inline-code"
 import { LinkedHeading } from "components/mdx-components/linked-heading"
 import { Pre } from "components/mdx-components/pre"
 import { Table, TData, THead } from "components/mdx-components/table"
+import { FrameworkLinks } from "components/framework-link"
 import { VideoPlayer } from "components/mdx-components/video-player"
 import * as React from "react"
 import PropsTable from "../props-table"
@@ -63,6 +64,7 @@ export const MDXComponents = {
   ComponentLinks,
   IconsList,
   PropsTable,
+  FrameworkLinks,
   VideoPlayer,
   AspectRatio,
   ColorPalette,
