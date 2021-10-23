@@ -1,28 +1,28 @@
-import { ColorModeScript } from "@chakra-ui/react"
+import { ColorModeScript } from '@chakra-ui/react';
 import NextDocument, {
   DocumentContext,
   Head,
   Html,
   Main,
   NextScript,
-} from "next/document"
-import React from "react"
+} from 'next/document';
+import React from 'react';
 
 class Document extends NextDocument {
   static getInitialProps(ctx: DocumentContext) {
-    return NextDocument.getInitialProps(ctx)
+    return NextDocument.getInitialProps(ctx);
   }
 
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <link
-            rel="preload"
-            href="/fonts/Inter.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
+            rel='preload'
+            href='/fonts/Inter.woff2'
+            as='font'
+            type='font/woff2'
+            crossOrigin='anonymous'
           />
         </Head>
         <body>
@@ -31,8 +31,8 @@ class Document extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default Document
+export default Document;

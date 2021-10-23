@@ -27,6 +27,7 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
   const changeLanguage = (locale: string) => {
     i18n.changeLanguage(locale, (error) => {
       if (!error) {
+        localStorage.setItem('i18nextLng', locale);
         replace('', '', { locale });
       } else {
         toast({
@@ -39,18 +40,24 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
     });
   };
 
-  if (!process.env.ENABLE_LANGUAGE_SWITCHER) {
+  if (process.env.ENABLE_LANGUAGE_SWITCHER) {
     return <></>;
   }
+
+  const selectedLanguage = i18n.language
+    ? locales.locales.find((loc) => loc.startsWith(i18n.language))
+    : locales.defaultLocale;
 
   return (
     <Menu>
       <MenuButton as={Button} variant='ghost' rightIcon={<ChevronDownIcon />}>
-        {i18n.language
-          ? getUnicodeFlagIcon(i18n.language.split('-')[1])
+        {selectedLanguage
+          ? getUnicodeFlagIcon(selectedLanguage.split('-')[1])
           : getUnicodeFlagIcon('US')}
         {withLabel && (
-          <chakra.span ml={2}>{locales.localeNames[i18n.language]}</chakra.span>
+          <chakra.span ml={2}>
+            {locales.localeNames[selectedLanguage]}
+          </chakra.span>
         )}
       </MenuButton>
       <MenuList color={mode('gray.800', 'white')}>

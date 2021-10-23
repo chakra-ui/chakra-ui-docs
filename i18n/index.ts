@@ -8,7 +8,8 @@ i18next
   .use(initReactI18next)
   .use(
     new LanguageDetector(null, {
-      order: ['htmlTag', 'path'],
+      order: ['localStorage', 'path'],
+      lookupLocalStorage: 'i18nextLng',
     })
   )
   .use(
@@ -27,6 +28,7 @@ i18next
   )
   .init({
     fallbackLng: locales.defaultLocale,
+    load: 'currentOnly',
     interpolation: {
       escapeValue: false,
     },

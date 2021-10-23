@@ -17,7 +17,6 @@ const defaultConfig = {
   i18n: {
     locales: locales.locales,
     defaultLocale: locales.defaultLocale,
-    localeDetection: false,
   },
   redirects: require('./next-redirect'),
 };

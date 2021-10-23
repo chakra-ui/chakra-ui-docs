@@ -3,14 +3,27 @@ import FontFace from 'components/font-face';
 import { I18nextProvider } from 'react-i18next';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
 import theme from 'theme';
 import { getSeo } from 'utils/seo';
 
 import i18n from '../i18n';
+import { useRouter } from 'next/router';
 
 const App = ({ Component, pageProps }) => {
   const seo = getSeo();
+  const { locale: pathLanguage, replace } = useRouter();
+
+  useEffect(() => {
+    let localStorageLanguage = localStorage.getItem('i18nextLng');
+    if (!localStorageLanguage) {
+      localStorageLanguage = 'en-US';
+      localStorage.setItem('i18nextLng', localStorageLanguage);
+    }
+    if (pathLanguage !== localStorageLanguage) {
+      replace('', '', { locale: localStorageLanguage });
+    }
+  }, []);
 
   return (
     <>
