@@ -6,7 +6,7 @@ import { checkI18nSlug } from 'utils/normalize-i18n-slug';
 const MDXLayout = dynamic(() => import('layouts/mdx'));
 
 export default function DefaultLayout({ children, frontMatter }) {
-  const { slug } = frontMatter;
+  const slug = frontMatter?.slug;
 
   const layoutMap = {
     guides: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
