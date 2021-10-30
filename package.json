@@ -37,6 +37,7 @@
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "github-slugger": "^1.3.0",
+    "gray-matter": "^4.0.3",
     "highlight-words-core": "^1.2.2",
     "i18next": "^21.3.2",
     "i18next-browser-languagedetector": "^6.1.2",

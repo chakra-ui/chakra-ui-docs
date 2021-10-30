@@ -1,7 +1,4 @@
 import path from 'path';
-// import execa from 'execa';
-// import format from 'date-fns/format';
-// import fromUnixTime from 'date-fns/fromUnixTime';
 import { addLeadingSlash, getEditUrl } from '@docusaurus/utils';
 import { Dict } from '@chakra-ui/utils';
 import { serialize } from 'next-mdx-remote/serialize';

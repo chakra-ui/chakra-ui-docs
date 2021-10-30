@@ -8,7 +8,7 @@ const defaultConfig = {
   target: 'serverless',
   webpack: (config) => ({
     ...config,
-    externals: [...config.externals, 'sharp'],
+    externals: [...config.externals, 'sharp', 'esbuild'],
   }),
   experimental: {
     optimizeFonts: true,
