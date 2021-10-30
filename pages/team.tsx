@@ -149,6 +149,7 @@ function Team({ members, contributors }: TeamProps) {
                       href={`https://opencollective.com/chakra-ui/organization/${idx}/website`}
                     >
                       <img
+                        alt='OpenCollective Organization Avatar'
                         src={`https://opencollective.com/chakra-ui/organization/${idx}/avatar.svg?avatarHeight=130`}
                       />
                     </WrapItem>
@@ -165,7 +166,10 @@ function Team({ members, contributors }: TeamProps) {
                   {t('team.individuals')}
                 </Text>
                 <a href='https://opencollective.com/chakra-ui'>
-                  <img src='https://opencollective.com/chakra-ui/individuals.svg?width=890' />
+                  <img
+                    alt='OpenCollective Individual Avatar'
+                    src='https://opencollective.com/chakra-ui/individuals.svg?width=890'
+                  />
                 </a>
               </Box>
             </Stack>

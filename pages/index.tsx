@@ -22,7 +22,6 @@ import {
 } from '@chakra-ui/react';
 import { chunk } from '@chakra-ui/utils';
 import users from 'chakra-users';
-import i18n from 'i18next';
 import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
 import { AdBanner } from 'components/chakra-pro/ad-banner';
 import Container from 'components/container';
@@ -31,7 +30,7 @@ import { Footer } from 'components/footer';
 import Header from 'components/header';
 import SEO from 'components/seo';
 import TweetCard from 'components/tweet-card';
-import { tweets } from 'configs/tweets.json';
+import tweets from 'configs/tweets.json';
 import NextLink from 'next/link';
 import * as React from 'react';
 import { AiFillThunderbolt } from 'react-icons/ai';
@@ -295,7 +294,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
           <Container py='120px' maxW='1280px'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                An experience you'd expect from a design system
+                An experience you&apos;d expect from a design system
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
                 Opinionated and designed for daily use.
@@ -326,8 +325,8 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 website.
               </Feature>
               <Feature icon={FaDiscord} title='Active Community'>
-                We're a team of active maintainers ready to help you whenever
-                you need.
+                We&apos;re a team of active maintainers ready to help you
+                whenever you need.
               </Feature>
             </Grid>
           </Container>
@@ -340,8 +339,8 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 Chakra is growing quickly
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                We're dedicated to improving the experience and performance of
-                Chakra UI.
+                We&apos;re dedicated to improving the experience and performance
+                of Chakra UI.
               </chakra.p>
             </Box>
             <SimpleGrid
@@ -401,7 +400,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               Loved by product people like you
             </chakra.h2>
             <SimpleGrid spacing='32px' columns={{ base: 1, md: 3 }}>
-              {chunk(tweets, 3).map((tweetList, idx) => (
+              {chunk(tweets.tweets, 3).map((tweetList, idx) => (
                 <Stack spacing='6' key={idx}>
                   {tweetList.map((tweet: any, idx) => (
                     <TweetCard key={idx} {...tweet} />

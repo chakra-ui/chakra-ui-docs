@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }) => {
     if (pathLanguage !== localStorageLanguage) {
       replace('', '', { locale: localStorageLanguage });
     }
-  }, []);
+  }, [pathLanguage, replace]);
 
   return (
     <>

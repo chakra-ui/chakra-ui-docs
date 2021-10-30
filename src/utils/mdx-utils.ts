@@ -4,6 +4,12 @@ import { Dict } from '@chakra-ui/utils';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import slugger from 'github-slugger';
+import remarkAutolinkHeadings from 'remark-autolink-headings';
+import remarkEmoji from 'remark-emoji';
+import remarkImages from 'remark-images';
+import remarkSlug from 'remark-slug';
+import remarkToc from 'remark-toc';
+import remarkUnwrapImages from 'remark-unwrap-images';
 
 export async function serializeMdx(source: string) {
   const { content, data } = matter(source);
@@ -12,12 +18,12 @@ export async function serializeMdx(source: string) {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [
-        require('remark-autolink-headings'),
-        require('remark-emoji'),
-        require('remark-images'),
-        require('remark-slug'),
-        require('remark-toc'),
-        require('remark-unwrap-images'),
+        remarkAutolinkHeadings,
+        remarkEmoji,
+        remarkImages,
+        remarkSlug,
+        remarkToc,
+        remarkUnwrapImages,
       ],
     },
     scope: data,

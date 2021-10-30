@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import {
   Icon,
   Text,
@@ -8,57 +8,58 @@ import {
   useColorModeValue,
   LinkProps,
   WrapItem,
-} from "@chakra-ui/react"
-import { FaNpm, FaGithub } from "react-icons/fa"
-import StorybookIcon from "../storybook-icon"
+} from '@chakra-ui/react';
+import { FaNpm, FaGithub } from 'react-icons/fa';
+import StorybookIcon from '../storybook-icon';
 
 type ComponentLinkProps = LinkProps & {
-  icon: React.ElementType
-  url: string
-  iconSize?: string
-  iconColor?: string
-}
+  icon: React.ElementType;
+  url: string;
+  iconSize?: string;
+  iconColor?: string;
+};
 
 function ComponentLink(props: ComponentLinkProps) {
-  const { icon, url, children, iconSize, iconColor, ...rest } = props
+  const { icon, url, children, iconSize, iconColor, ...rest } = props;
   return (
     <Link
       href={url}
       isExternal
-      px="12px"
-      display="flex"
-      alignItems="center"
-      minH="32px"
-      borderWidth="1px"
-      borderRadius="md"
-      color={useColorModeValue("gray.600", "whiteAlpha.700")}
+      px='12px'
+      display='flex'
+      alignItems='center'
+      minH='32px'
+      borderWidth='1px'
+      borderRadius='md'
+      color={useColorModeValue('gray.600', 'whiteAlpha.700')}
       _hover={{
-        color: useColorModeValue("gray.700", "whiteAlpha.900"),
-        boxShadow: "sm",
-        transform: "translateY(-1px)",
+        color: useColorModeValue('gray.700', 'whiteAlpha.900'),
+        boxShadow: 'sm',
+        transform: 'translateY(-1px)',
       }}
       {...rest}
     >
       <HStack>
         <Icon fontSize={iconSize} as={icon} color={iconColor} />
-        <Text fontSize="sm" lineHeight="short">
+        <Text fontSize='sm' lineHeight='short'>
           {children}
         </Text>
       </HStack>
     </Link>
-  )
+  );
 }
 
 export type ComponentLinksProps = {
-  theme?: { componentName: string }
-  github?: { url?: string; package?: string }
-  npm?: { package: string }
-  storybook?: { url: string }
-}
+  theme?: { componentName: string };
+  github?: { url?: string; package?: string };
+  npm?: { package: string };
+  storybook?: { url: string };
+};
 function ComponentLinks(props: ComponentLinksProps) {
-  const { theme, github, npm, storybook, ...rest } = props
+  const { theme, github, npm, storybook, ...rest } = props;
+  const iconColor = useColorModeValue('gray.600', 'inherit');
 
-  const githubRepoUrl = "https://github.com/chakra-ui/chakra-ui"
+  const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui';
 
   const githubLink = (github?.url || github?.package) && (
     <WrapItem>
@@ -67,61 +68,61 @@ function ComponentLinks(props: ComponentLinksProps) {
           github.url || `${githubRepoUrl}/tree/main/packages/${github.package}`
         }
         icon={FaGithub}
-        iconColor={useColorModeValue("gray.600", "inherit")}
-        iconSize="1rem"
+        iconColor={iconColor}
+        iconSize='1rem'
       >
         View source
       </ComponentLink>
     </WrapItem>
-  )
+  );
 
   const npmLink = npm?.package && (
     <WrapItem>
       <ComponentLink
         url={`https://www.npmjs.com/package/${npm.package}`}
         icon={FaNpm}
-        iconSize="2rem"
-        iconColor="red.500"
+        iconSize='2rem'
+        iconColor='red.500'
       >
         {npm.package}
       </ComponentLink>
     </WrapItem>
-  )
+  );
 
   const storybookLink = storybook?.url && (
     <WrapItem>
       <ComponentLink
         url={storybook.url}
         icon={StorybookIcon}
-        iconSize="1.25rem"
-        iconColor="pink.500"
+        iconSize='1.25rem'
+        iconColor='pink.500'
       >
         View storybook
       </ComponentLink>
     </WrapItem>
-  )
+  );
 
   const themeComponentLink = theme && (
     <WrapItem>
       <ComponentLink
         url={`${githubRepoUrl}/tree/main/packages/theme/src/components/${theme.componentName}.ts`}
         icon={FaGithub}
-        iconColor={useColorModeValue("gray.600", "inherit")}
-        iconSize="1rem"
+        iconColor={iconColor}
+        iconSize='1rem'
       >
         View theme source
       </ComponentLink>
     </WrapItem>
-  )
+  );
 
   return (
-    <Wrap className="component-links" mt="2rem" spacing="4" {...rest}>
+    <Wrap className='component-links' mt='2rem' spacing='4' {...rest}>
       {githubLink}
       {themeComponentLink}
       {npmLink}
       {storybookLink}
     </Wrap>
-  )
+  );
 }
 
-export default ComponentLinks
+export default ComponentLinks;

@@ -1,17 +1,17 @@
+import { useState } from 'react';
 import { Select, SelectProps, useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import React from 'react';
-import pkgJSON from '@chakra-ui/react/package.json';
-
-const versions = [
-  { label: `v${pkgJSON.version}`, url: 'https://chakra-ui.com' },
-  { label: 'v0.8.x', url: 'https://v0.chakra-ui.com' },
-];
-
-const v1Url = versions[0].url;
 
 function VersionSwitcher(props: SelectProps) {
   const router = useRouter();
+  const [chakraVersion] = useState<string>('1.x.x');
+
+  const versions = [
+    { label: `v${chakraVersion}`, url: 'https://chakra-ui.com' },
+    { label: 'v0.8.x', url: 'https://v0.chakra-ui.com' },
+  ];
+
+  const v1Url = versions[0].url;
 
   return (
     <Select

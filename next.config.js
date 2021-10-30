@@ -5,11 +5,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const defaultConfig = {
-  target: 'serverless',
-  webpack: (config) => ({
-    ...config,
-    externals: [...config.externals, 'sharp', 'esbuild'],
-  }),
   experimental: {
     optimizeFonts: true,
     modern: true,
@@ -18,6 +13,7 @@ const defaultConfig = {
     locales: locales.locales,
     defaultLocale: locales.defaultLocale,
   },
+  swcMinify: true,
   redirects: require('./next-redirect'),
 };
 

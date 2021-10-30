@@ -49,6 +49,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
+  console.log(
+    '=============== GETTING STATIC PROPS FOR ',
+    params.slug.join('/')
+  );
   const slug = ['', CONTENT_PATH, ...params.slug].join('/');
 
   const isDefaultLocale = locale === locales.defaultLocale;
@@ -65,6 +69,7 @@ export async function getStaticProps({ params, locale }) {
     filePath = path.join(process.cwd(), `pages/${slug}.mdx`);
   }
 
+  console.log('LOADING MDX FOR ', params.slug.join('/'));
   const page = await loadMdx(filePath);
 
   if (!page) {
@@ -73,6 +78,7 @@ export async function getStaticProps({ params, locale }) {
 
   const { mdxSource, ...frontMatter } = page;
 
+  console.log('=============== STATIC PROPS DONE FOR ', params.slug.join('/'));
   return {
     props: {
       mdxSource,
