@@ -61,7 +61,7 @@ export async function processFrontmatter<Options extends Dict>(
     lastEdited: '',
     headings,
     editUrl,
-    author,
+    author: author ?? '',
     tags,
   };
 

@@ -15,6 +15,9 @@ const defaultConfig = {
   },
   swcMinify: true,
   redirects: require('./next-redirect'),
+  experimental: {
+    esmExternals: false,
+  },
 };
 
 module.exports = withPlugins([withBundleAnalyzer], defaultConfig);
