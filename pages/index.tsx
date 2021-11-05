@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   Box,
   BoxProps,
@@ -111,11 +112,12 @@ interface HomePageProps {
 }
 
 const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
-        title='Chakra UI - A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.'
-        description='Simple, Modular and Accessible UI Components for your React Applications. Built with Styled System'
+        title={t('homepage.seo.title')}
+        description={t('homepage.seo.description')}
       />
       <AdBanner />
       <Header />
@@ -133,14 +135,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 mb='16px'
                 lineHeight='1.2'
               >
-                Create accessible React apps
-                <Box
-                  as='span'
-                  color={useColorModeValue('teal.500', 'teal.300')}
-                >
-                  {' '}
-                  with speed
-                </Box>
+                {t('homepage.title')}
               </chakra.h1>
 
               <Text
@@ -150,9 +145,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 fontSize={{ base: 'lg', lg: 'xl' }}
                 mt='6'
               >
-                Chakra UI is a simple, modular and accessible component library
-                that gives you the building blocks you need to build your React
-                applications.
+                {t('homepage.message')}
               </Text>
 
               <Stack
@@ -301,7 +294,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
           <Container py='120px' maxW='1280px'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                An experience you'd expect from a design system
+                An experience you&apos;d expect from a design system
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
                 Opinionated and designed for daily use.
@@ -332,8 +325,8 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 website.
               </Feature>
               <Feature icon={FaDiscord} title='Active Community'>
-                We're a team of active maintainers ready to help you whenever
-                you need.
+                We&apos;re a team of active maintainers ready to help you
+                whenever you need.
               </Feature>
             </Grid>
           </Container>
@@ -346,8 +339,8 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 Chakra is growing quickly
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                We're dedicated to improving the experience and performance of
-                Chakra UI.
+                We&apos;re dedicated to improving the experience and performance
+                of Chakra UI.
               </chakra.p>
             </Box>
             <SimpleGrid

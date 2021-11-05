@@ -1,6 +1,6 @@
-import React from "react"
-import { Grid, Button, Text, useClipboard, useToast } from "@chakra-ui/react"
-import * as icons from "@chakra-ui/icons"
+import React from 'react';
+import { Grid, Button, Text, useClipboard, useToast } from '@chakra-ui/react';
+import * as icons from '@chakra-ui/icons';
 
 const iconList = {
   AddIcon: icons.AddIcon,
@@ -61,31 +61,32 @@ const iconList = {
   ViewOffIcon: icons.ViewOffIcon,
   WarningIcon: icons.WarningIcon,
   WarningTwoIcon: icons.WarningTwoIcon,
-}
+};
 
 const IconsList = () => {
-  const toast = useToast()
+  const toast = useToast();
 
   return (
     <Grid
       mt={7}
       gap={5}
-      templateColumns="repeat( auto-fit, minmax(150px, 1fr) )"
+      templateColumns='repeat( auto-fit, minmax(150px, 1fr) )'
     >
       {Object.keys(iconList).map((key, i) => {
-        const Icon = iconList[key]
-        const { onCopy } = useClipboard(key)
+        const Icon = iconList[key];
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const { onCopy } = useClipboard(key);
 
         const onCopyIcon = () => {
-          onCopy()
+          onCopy();
 
           toast({
             title: `'${key}' copied to clipboard`,
-            status: "success",
+            status: 'success',
             duration: 2000,
             isClosable: false,
-          })
-        }
+          });
+        };
 
         return (
           <Button
@@ -93,26 +94,26 @@ const IconsList = () => {
             pb={9}
             onClick={() => onCopyIcon()}
             key={i}
-            align="center"
-            variant="outline"
-            flexDir="column"
-            justify="center"
+            align='center'
+            variant='outline'
+            flexDir='column'
+            justify='center'
           >
             <Icon />
             <Text
-              as="span"
+              as='span'
               mt={3}
-              fontSize="sm"
-              fontWeight="normal"
-              textAlign="center"
+              fontSize='sm'
+              fontWeight='normal'
+              textAlign='center'
             >
               {key}
             </Text>
           </Button>
-        )
+        );
       })}
     </Grid>
-  )
-}
+  );
+};
 
-export default IconsList
+export default IconsList;
