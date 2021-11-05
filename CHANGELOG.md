@@ -1,2150 +1,805 @@
----
-title: Changelog
-description: The changelog for Chakra UI React
-slug: "/changelog"
----
+# Change Log
 
-The Changelog gives an overview of the meaningful changes we've made to Chakra
-UI as we keep driving for better performance and best-in-class developer
-experience.
+## 2.1.4
 
-To better understand the changelog, here are some legends we use:
+### Patch Changes
 
-- 💥 Breaking
-- 🚀 Feature
-- 🐛 Bug fix
-- 🛠 Refactor
+- [`a22b9d5c7`](https://github.com/chakra-ui/chakra-ui/commit/a22b9d5c7455784aca632adc619633b52e53f589)
+  [#4973](https://github.com/chakra-ui/chakra-ui/pull/4973) Thanks
+  [@takethefake](https://github.com/takethefake)! - Add a more detailed
+  explanation on how to style multipart-components
 
-<!-- CHANGELOG:INSERT -->
+* [`7fef508af`](https://github.com/chakra-ui/chakra-ui/commit/7fef508afe005daff23d03c3bc4872181e431562)
+  [#4961](https://github.com/chakra-ui/chakra-ui/pull/4961) Thanks
+  [@LekoArts](https://github.com/LekoArts)! - Add new article about multipart
+  components
 
-## 03-11-2021
+* Updated dependencies
+  [[`04774e219`](https://github.com/chakra-ui/chakra-ui/commit/04774e2196b9f3e8edd77f779e8c15981e8d8135)]:
+  - @chakra-ui/react@1.6.12
+  - @chakra-ui/props-docs@1.0.37
 
-`@chakra-ui/react@1.6.12`
+## 2.1.3
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+### Patch Changes
 
-**Radio** `v1.3.13`
+- [`4841d36e1`](https://github.com/chakra-ui/chakra-ui/commit/4841d36e16e855f34a47e9624853055741c479f7)
+  [#4862](https://github.com/chakra-ui/chakra-ui/pull/4862) Thanks
+  [@mbrookson](https://github.com/mbrookson)! - Fix Switch colourScheme docs
+
+- Updated dependencies
+  [[`cd0893c56`](https://github.com/chakra-ui/chakra-ui/commit/cd0893c561d8c72b69db7c03d10adae752468a4f)]:
+  - @chakra-ui/react@1.6.11
+  - @chakra-ui/theme-tools@1.2.3
+  - @chakra-ui/utils@1.8.4
+  - @chakra-ui/props-docs@1.0.36
+
+## 2.1.2
+
+### Patch Changes
+
+- Updated dependencies
+  [[`c06d242c6`](https://github.com/chakra-ui/chakra-ui/commit/c06d242c672a10f93fab4dc2321143beae2db669),
+  [`5b4d8ef24`](https://github.com/chakra-ui/chakra-ui/commit/5b4d8ef24017dab1d69aeb5016b53366bdb3bcfd),
+  [`1cfa2be4b`](https://github.com/chakra-ui/chakra-ui/commit/1cfa2be4b443ae4af8e5ec208cfe2c0fde23dde3),
+  [`e0a004b45`](https://github.com/chakra-ui/chakra-ui/commit/e0a004b450a76915477ab3da687cf311e96c7494)]:
+  - @chakra-ui/utils@1.8.3
+  - @chakra-ui/react@1.6.10
+  - @chakra-ui/cli@1.5.3
+  - @chakra-ui/theme-tools@1.2.2
+  - @chakra-ui/props-docs@1.0.35
+
+## 2.1.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`236efcbf5`](https://github.com/chakra-ui/chakra-ui/commit/236efcbf562a966d5a3fcd0a778ee404b379d41d)]:
+  - @chakra-ui/cli@1.5.2
+  - @chakra-ui/react@1.6.9
+  - @chakra-ui/props-docs@1.0.34
+
+## 2.1.0
+
+### Minor Changes
+
+- [`3612559a7`](https://github.com/chakra-ui/chakra-ui/commit/3612559a7b373e6dc60fc2b025c314842f0ff1e5)
+  [#4687](https://github.com/chakra-ui/chakra-ui/pull/4687) Thanks
+  [@lazarnikolov94](https://github.com/lazarnikolov94)! - Added egghead course
+  banner in Getting Started page
+
+### Patch Changes
+
+- Updated dependencies
+  [[`09577b088`](https://github.com/chakra-ui/chakra-ui/commit/09577b088272075f6f183bbb34d5639ac5e68cc0),
+  [`c96f44e16`](https://github.com/chakra-ui/chakra-ui/commit/c96f44e1660fd0430eac0e003f1e807873776b15)]:
+  - @chakra-ui/theme-tools@1.2.1
+  - @chakra-ui/cli@1.5.1
+  - @chakra-ui/react@1.6.8
+  - @chakra-ui/props-docs@1.0.33
+
+## 2.0.0
+
+### Major Changes
+
+- [`2418de87b`](https://github.com/chakra-ui/chakra-ui/commit/2418de87ba12cfffda24ebbf32476fb09d3d82bd)
+  Thanks [@MasterGordon](https://github.com/MasterGordon)! - Removed blog since
+  nobody has written any articles.
 
-- Improve types defined for `getRadioprops`
+### Minor Changes
+
+- [`e3bad39bc`](https://github.com/chakra-ui/chakra-ui/commit/e3bad39bc5cee0332fe15113a619b2c1f498bb94)
+  [#4615](https://github.com/chakra-ui/chakra-ui/pull/4615) Thanks
+  [@shubhsk88](https://github.com/shubhsk88)! - - Included the example in
+  Tooltip for forwardref
+  - Automate the changelog generation process
 
-**Checkbox** `v1.5.10`
+### Patch Changes
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+- [`ed0ce623f`](https://github.com/chakra-ui/chakra-ui/commit/ed0ce623ffe2a0f9b88480bdea97468896b3a802)
+  [#4568](https://github.com/chakra-ui/chakra-ui/pull/4568) Thanks
+  [@lazarnikolov94](https://github.com/lazarnikolov94)! - Fixed the sidebar
+  links' active state
+
+- Updated dependencies
+  [[`01c913309`](https://github.com/chakra-ui/chakra-ui/commit/01c913309819c342806307291d2d60aea0122ecf),
+  [`52640a1fd`](https://github.com/chakra-ui/chakra-ui/commit/52640a1fd9089e3c0ffc5dc8e42fcfa7a5752904),
+  [`e7a732755`](https://github.com/chakra-ui/chakra-ui/commit/e7a732755e8b2447d3193225ba8265f78a9d1d81)]:
+  - @chakra-ui/theme-tools@1.2.0
+  - @chakra-ui/react@1.6.7
+  - @chakra-ui/props-docs@1.0.32
+
+## 1.3.2
+
+### Patch Changes
+
+- [`f5d7a458b`](https://github.com/chakra-ui/chakra-ui/commit/f5d7a458b69feb725c7a4ba333a960aba8e6ef4b)
+  [#4493](https://github.com/chakra-ui/chakra-ui/pull/4493) Thanks
+  [@takethefake](https://github.com/takethefake)! - - Migrated from
+  `next-mdx-enhanced` to `next-mdx-remote`
+  - Generate Headings from `mdx` before rendering instead of rendered
+    `React.Element`
+  - removed `getUserData` generation if there is an `author` mentioned in
+    frontmatter because we partially ran into rate limits from `octokit/rest`
+    but didn't used the data at all
+- Updated dependencies
+  [[`4c1071969`](https://github.com/chakra-ui/chakra-ui/commit/4c1071969a9b41a952b374f9990ac0bb89d24fa0),
+  [`43f66097b`](https://github.com/chakra-ui/chakra-ui/commit/43f66097b39f1c37a4627dd6ca8a85555f35b95c)]:
+  - @chakra-ui/utils@1.8.2
+  - @chakra-ui/react@1.6.6
+  - @chakra-ui/theme-tools@1.1.9
+  - @chakra-ui/props-docs@1.0.31
+
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`7d9cb190c`](https://github.com/chakra-ui/chakra-ui/commit/7d9cb190cda3b9b58fbd159662402f37fcf7f087),
+  [`211d94de3`](https://github.com/chakra-ui/chakra-ui/commit/211d94de397e4e7c91cfe70a3bafa905c7506cbf),
+  [`4a1e4d93b`](https://github.com/chakra-ui/chakra-ui/commit/4a1e4d93b0a07df7266d40bb66039385b158d3d1)]:
+  - @chakra-ui/cli@1.5.0
+  - @chakra-ui/utils@1.8.1
+  - @chakra-ui/react@1.6.5
+  - @chakra-ui/theme-tools@1.1.8
+  - @chakra-ui/props-docs@1.0.30
+
+## 1.3.0
+
+### Minor Changes
+
+- [`3dd5a653c`](https://github.com/chakra-ui/chakra-ui/commit/3dd5a653c254afec4919b107e7e6079c258d074a)
+  [#3910](https://github.com/chakra-ui/chakra-ui/pull/3910) Thanks
+  [@joaorodrs](https://github.com/joaorodrs)! - Clicking an icon in the icons
+  list now copies the icon name to clipboard.
+
+### Patch Changes
+
+- [`4c157e320`](https://github.com/chakra-ui/chakra-ui/commit/4c157e320a73b08eb89a44831a7cf434fb403bad)
+  [#4057](https://github.com/chakra-ui/chakra-ui/pull/4057) Thanks
+  [@mcha-dev](https://github.com/mcha-dev)! - updated @see doc links to point to
+  shorthand see PR #4046 comment
+
+* [`afb9b3cfa`](https://github.com/chakra-ui/chakra-ui/commit/afb9b3cfa87076ed8897b7edd4a9d9f1e1701721)
+  [#4103](https://github.com/chakra-ui/chakra-ui/pull/4103) Thanks
+  [@with-heart](https://github.com/with-heart)! - Update transitions to use
+  theme tokens and remove outline transitions
+
+* Updated dependencies
+  [[`aa374ffcb`](https://github.com/chakra-ui/chakra-ui/commit/aa374ffcb4003efd88eb6a62e10723ea9fbfa3d0),
+  [`fe2557584`](https://github.com/chakra-ui/chakra-ui/commit/fe255758437b04740e1a0d8c8549afefe7dc71ce)]:
+  - @chakra-ui/react@1.6.4
+  - @chakra-ui/cli@1.4.0
+  - @chakra-ui/props-docs@1.0.29
+
+## 1.2.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @chakra-ui/react@1.6.3
+  - @chakra-ui/props-docs@1.0.28
+
+## 1.2.6
+
+### Patch Changes
+
+- Updated dependencies
+  [[`ddd5ef4a1`](https://github.com/chakra-ui/chakra-ui/commit/ddd5ef4a1e9cc988c99b80c26579205ea4c57b2f)]:
+  - @chakra-ui/react@1.6.2
+  - @chakra-ui/props-docs@1.0.27
+
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`d0f50a46e`](https://github.com/chakra-ui/chakra-ui/commit/d0f50a46ea6c2bcf06d8cad8b9b3994fd934be01),
+  [`b479ff22e`](https://github.com/chakra-ui/chakra-ui/commit/b479ff22ea10c1a1393224c37c36aa6ceabc4aab),
+  [`07d15eab4`](https://github.com/chakra-ui/chakra-ui/commit/07d15eab480724f8fee1a09b7cecdf1e968d9ddd),
+  [`e8f64a4a6`](https://github.com/chakra-ui/chakra-ui/commit/e8f64a4a6ab5eac862ec8127dcf6c5852a0f84dd)]:
+  - @chakra-ui/utils@1.8.0
+  - @chakra-ui/cli@1.3.1
+  - @chakra-ui/react@1.6.1
+  - @chakra-ui/theme-tools@1.1.7
+  - @chakra-ui/props-docs@1.0.26
+
+## 1.2.4
+
+### Patch Changes
+
+- [`e7261d536`](https://github.com/chakra-ui/chakra-ui/commit/e7261d536caf95ced36bf20931cdcd3bc7b31a4e)
+  [#3841](https://github.com/chakra-ui/chakra-ui/pull/3841) Thanks
+  [@LekoArts](https://github.com/LekoArts)! - Updates to Gatsby-related
+  documentation to account for the breaking changes made in
+  [PR #3841](https://github.com/chakra-ui/chakra-ui/pull/3841). The "Providers"
+  section from the Gatsby guide was removed as the plugin itself handles
+  everything already.
+
+- Updated dependencies
+  [[`1d5e55272`](https://github.com/chakra-ui/chakra-ui/commit/1d5e55272fe1475ce6fa0ed5bdccef4218885f77),
+  [`e9ac4cc76`](https://github.com/chakra-ui/chakra-ui/commit/e9ac4cc7629cd79efc753b4e3353bacdad46cd7d)]:
+  - @chakra-ui/react@1.6.0
+  - @chakra-ui/utils@1.7.0
+  - @chakra-ui/props-docs@1.0.25
+  - @chakra-ui/theme-tools@1.1.6
+
+## 1.2.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`0974e547c`](https://github.com/chakra-ui/chakra-ui/commit/0974e547c29e4efc1ba4d1eb1507d0dad7d7a77a),
+  [`59ea894a7`](https://github.com/chakra-ui/chakra-ui/commit/59ea894a7e03d16cd7a1b89d00816eafa9fab65d)]:
+  - @chakra-ui/utils@1.6.0
+  - @chakra-ui/react@1.5.2
+  - @chakra-ui/theme-tools@1.1.5
+  - @chakra-ui/props-docs@1.0.24
+
+## 1.2.2
+
+### Patch Changes
+
+- [`059ea7f26`](https://github.com/chakra-ui/chakra-ui/commit/059ea7f262b6f79bf303886f90ca82c02b8fcc78)
+  [#3791](https://github.com/chakra-ui/chakra-ui/pull/3791) Thanks
+  [@navarroaxel](https://github.com/navarroaxel)! - Improve wording for the
+  `use-outside-click` page
+
+- Updated dependencies
+  [[`09aa19b23`](https://github.com/chakra-ui/chakra-ui/commit/09aa19b23544f612ac54c22ad0b344d66b871674),
+  [`8b5eb9654`](https://github.com/chakra-ui/chakra-ui/commit/8b5eb9654affe562795d38a19f732f84732a949d),
+  [`81a40231f`](https://github.com/chakra-ui/chakra-ui/commit/81a40231f12461dcca0fa0cd3c4e9e2c0497a04d)]:
+  - @chakra-ui/react@1.5.1
+  - @chakra-ui/utils@1.5.2
+  - @chakra-ui/props-docs@1.0.23
+  - @chakra-ui/theme-tools@1.1.4
+
+## 1.2.1
+
+### Patch Changes
+
+- [`d79f5bce9`](https://github.com/chakra-ui/chakra-ui/commit/d79f5bce905cd9157d86c69fd6255c3196e4c0cb)
+  [#3729](https://github.com/chakra-ui/chakra-ui/pull/3729) Thanks
+  [@navarroaxel](https://github.com/navarroaxel)! - Add docs for `useMergeRefs`
+  hook
+
+* [`5f19da9db`](https://github.com/chakra-ui/chakra-ui/commit/5f19da9db806d452cbb827696078e9b63c75884c)
+  [#3730](https://github.com/chakra-ui/chakra-ui/pull/3730) Thanks
+  [@navarroaxel](https://github.com/navarroaxel)! - Add docs for `useBoolean`
+  hook
+
+- [`372b8f485`](https://github.com/chakra-ui/chakra-ui/commit/372b8f485b1411ad3be694b0d5c4d466caca23b7)
+  [#3661](https://github.com/chakra-ui/chakra-ui/pull/3661) Thanks
+  [@navarroaxel](https://github.com/navarroaxel)! - Add docs for
+  `useOutsideClick` hook
+
+- Updated dependencies
+  [[`ac21d798a`](https://github.com/chakra-ui/chakra-ui/commit/ac21d798a0759b45de02c6821804f40f492fd80e),
+  [`1a04a41bd`](https://github.com/chakra-ui/chakra-ui/commit/1a04a41bd2285069011a738fff422ba1a6fcce94),
+  [`c69d2b983`](https://github.com/chakra-ui/chakra-ui/commit/c69d2b98350b57f133d6a8ea47b631cd25693aee),
+  [`2287d82e3`](https://github.com/chakra-ui/chakra-ui/commit/2287d82e31744cd289aaf524bb9961e46003c404),
+  [`e481ba491`](https://github.com/chakra-ui/chakra-ui/commit/e481ba4914a7f163d93d4c22e2e457f1afb08721)]:
+  - @chakra-ui/react@1.5.0
+  - @chakra-ui/utils@1.5.1
+  - @chakra-ui/theme-tools@1.1.3
+  - @chakra-ui/props-docs@1.0.22
+
+## 1.2.0
+
+### Minor Changes
+
+- [`b724a9dd9`](https://github.com/chakra-ui/chakra-ui/commit/b724a9dd9429d02c0b2c7f7deac66d3553100bdc)
+  [#3674](https://github.com/chakra-ui/chakra-ui/pull/3674) Thanks
+  [@codebender828](https://github.com/codebender828)! - Extract all React based
+  utilities and types into `@chakra-ui/react-utils`
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a58b724e9`](https://github.com/chakra-ui/chakra-ui/commit/a58b724e9c8656044f866b658f378662f2a44b46),
+  [`b724a9dd9`](https://github.com/chakra-ui/chakra-ui/commit/b724a9dd9429d02c0b2c7f7deac66d3553100bdc)]:
+  - @chakra-ui/utils@1.5.0
+  - @chakra-ui/react@1.4.2
+  - @chakra-ui/theme-tools@1.1.2
+  - @chakra-ui/props-docs@1.0.21
+
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a576f4de8`](https://github.com/chakra-ui/chakra-ui/commit/a576f4de850706ea7088c8a6ea687269cad05e69)]:
+  - @chakra-ui/react@1.4.1
+  - @chakra-ui/props-docs@1.0.20
+
+## 1.1.7
+
+### Patch Changes
+
+- Updated dependencies
+  [[`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92),
+  [`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`035d5726e`](https://github.com/chakra-ui/chakra-ui/commit/035d5726e28396ef487b9801d7e2fa57677c703c),
+  [`4955fe4fa`](https://github.com/chakra-ui/chakra-ui/commit/4955fe4fafa7468f3788583ab4cdac5dad611591),
+  [`102d6da86`](https://github.com/chakra-ui/chakra-ui/commit/102d6da86d2186b186468b9b6801cb89a217a522),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b),
+  [`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92)]:
+  - @chakra-ui/react@1.4.0
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/cli@1.3.0
+  - @chakra-ui/props-docs@1.0.19
+  - @chakra-ui/theme-tools@1.1.1
+
+## 1.1.6
+
+### Patch Changes
+
+- [`79ff8e84e`](https://github.com/chakra-ui/chakra-ui/commit/79ff8e84e4a8f70d3abe969d68d8bfbb63c18471)
+  [#3427](https://github.com/chakra-ui/chakra-ui/pull/3427) Thanks
+  [@TheAsda](https://github.com/TheAsda)! - - Add drawer example to modal readme
+  - Fix github references in drawer and alert-dialog docs
+- Updated dependencies
+  [[`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d),
+  [`d77f63415`](https://github.com/chakra-ui/chakra-ui/commit/d77f63415822ad26e4f6ed133e4869c07fa72306),
+  [`92adc0dc1`](https://github.com/chakra-ui/chakra-ui/commit/92adc0dc10e609d14439b95ed304a2731247d084)]:
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/theme-tools@1.1.0
+  - @chakra-ui/react@1.3.4
+  - @chakra-ui/props-docs@1.0.18
+
+## 1.1.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`b78345c36`](https://github.com/chakra-ui/chakra-ui/commit/b78345c366ff79e1a2b5fb77d969f9ee8ced1ac8),
+  [`5a8d8c054`](https://github.com/chakra-ui/chakra-ui/commit/5a8d8c054aa3ecdfac51e355b61ac1ae6214f2d5),
+  [`8597f58b7`](https://github.com/chakra-ui/chakra-ui/commit/8597f58b7d5c1fe401086d28a379bc1727756c5b)]:
+  - @chakra-ui/cli@1.2.1
+  - @chakra-ui/react@1.3.3
+  - @chakra-ui/props-docs@1.0.17
+
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`f3ba8dd53`](https://github.com/chakra-ui/chakra-ui/commit/f3ba8dd53abc697c096165185764235012ada90f)]:
+  - @chakra-ui/react@1.3.2
+  - @chakra-ui/props-docs@1.0.16
+
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @chakra-ui/react@1.3.1
+  - @chakra-ui/props-docs@1.0.15
+
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a97e42568`](https://github.com/chakra-ui/chakra-ui/commit/a97e42568c4470d6cd1e16b48429af93c52def49),
+  [`0100edbf0`](https://github.com/chakra-ui/chakra-ui/commit/0100edbf05c108c7d4725616dbbe9788a39da809),
+  [`ff4a36bca`](https://github.com/chakra-ui/chakra-ui/commit/ff4a36bca11cc177830f6f1da13700acd1e3a087),
+  [`408aaaace`](https://github.com/chakra-ui/chakra-ui/commit/408aaaace0dd413b61354958a4c30b9f2f8aa376),
+  [`483687237`](https://github.com/chakra-ui/chakra-ui/commit/483687237f2c4fed05dc6a79693f307c601c1285),
+  [`61962345c`](https://github.com/chakra-ui/chakra-ui/commit/61962345c5b1c862445c16c586e304b28c376c9a)]:
+  - @chakra-ui/cli@1.2.0
+  - @chakra-ui/react@1.3.0
+  - @chakra-ui/utils@1.2.0
+  - @chakra-ui/props-docs@1.0.14
+  - @chakra-ui/theme-tools@1.0.4
+
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`693528a1b`](https://github.com/chakra-ui/chakra-ui/commit/693528a1b73af2eeb462371a61ff2957c6f65810)]:
+  - @chakra-ui/cli@1.1.0
+  - @chakra-ui/react@1.2.1
+  - @chakra-ui/props-docs@1.0.13
+
+## 1.1.0
+
+### Minor Changes
+
+- [`90c7a4fbf`](https://github.com/chakra-ui/chakra-ui/commit/90c7a4fbfde69c01395ffe2876d7348dd72ea65a)
+  [#3092](https://github.com/chakra-ui/chakra-ui/pull/3092) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - - Improved theme typing in
+  order to provide a better autocomplete experience
+  - Fixed a type issue where pseudo style props like `_hover` and `_active`
+    didn't allow regular css properties
+
+### Patch Changes
+
+- [`c61ed9f52`](https://github.com/chakra-ui/chakra-ui/commit/c61ed9f523e855bc1343d6b15f6b9fb770c026ea)
+  [#3155](https://github.com/chakra-ui/chakra-ui/pull/3155) Thanks
+  [@jungaretti](https://github.com/jungaretti)! - - Correct capitalization of
+  `rightIcon` prop
+  - Add `LinkOverlay` docs
+  - Restructure component groupings and add permanent redirects
+  - Add docs for `Portal` component
+- Updated dependencies
+  [[`408096ca3`](https://github.com/chakra-ui/chakra-ui/commit/408096ca377197e46e2c9eb13e0ea33c46355b38),
+  [`90c7a4fbf`](https://github.com/chakra-ui/chakra-ui/commit/90c7a4fbfde69c01395ffe2876d7348dd72ea65a),
+  [`fa2083807`](https://github.com/chakra-ui/chakra-ui/commit/fa2083807f8372dc054261a214d66545ab7cac14)]:
+  - @chakra-ui/react@1.2.0
+  - @chakra-ui/props-docs@1.0.12
+
+## 1.0.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @chakra-ui/react@1.1.6
+  - @chakra-ui/props-docs@1.0.11
+
+## 1.0.10
+
+### Patch Changes
+
+- [`5ab9d8fd`](https://github.com/chakra-ui/chakra-ui/commit/5ab9d8fd7e94448be5014acaa35678fc69187b45)
+  [#3066](https://github.com/chakra-ui/chakra-ui/pull/3066) Thanks
+  [@dodas](https://github.com/dodas)! - Added Props Table for the `ButtonGroup`
+  component.
+
+* [`c771f339`](https://github.com/chakra-ui/chakra-ui/commit/c771f33915c3b40cf68ad8cd02f96bcf2a011b19)
+  [#3036](https://github.com/chakra-ui/chakra-ui/pull/3036) Thanks
+  [@dodas](https://github.com/dodas)! - Components that don't implement `size`
+  or `variant` in the default theme will show note regarding that in their props
+  table.
+
+- [`b6054290`](https://github.com/chakra-ui/chakra-ui/commit/b605429010705441eabda3c4c3fe2bd483112096)
+  [#3060](https://github.com/chakra-ui/chakra-ui/pull/3060) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - Add links to the default
+  theme implementation on all themable component pages.
+
+* [`cfc71870`](https://github.com/chakra-ui/chakra-ui/commit/cfc718700941094dc0b3b176aed74088b569f106)
+  [#3038](https://github.com/chakra-ui/chakra-ui/pull/3038) Thanks
+  [@dodas](https://github.com/dodas)! - Removed redudant `borderRadius` related
+  props from `InputGroup` example.
+
+- [`5954f94e`](https://github.com/chakra-ui/chakra-ui/commit/5954f94e7bb6d7c1a0bd3187e447678d792f3c78)
+  [#3069](https://github.com/chakra-ui/chakra-ui/pull/3069) Thanks
+  [@dodas](https://github.com/dodas)! - Updated stats on the homepage.
+
+* [`fad207b6`](https://github.com/chakra-ui/chakra-ui/commit/fad207b6cfe6587c8aadd80413e7897a8330b627)
+  [#3034](https://github.com/chakra-ui/chakra-ui/pull/3034) Thanks
+  [@dodas](https://github.com/dodas)! - Props table for each component now
+  displays default `size` and `variant` values where possible.
+
+- [`f4a51e56`](https://github.com/chakra-ui/chakra-ui/commit/f4a51e56453d1e48bbfbdc5e8ced16b6ee20f08d)
+  [#3005](https://github.com/chakra-ui/chakra-ui/pull/3005) Thanks
+  [@dodas](https://github.com/dodas)! - Format `size` and `variant` prop values
+  as TS types.
+
+* [`dbfb8eea`](https://github.com/chakra-ui/chakra-ui/commit/dbfb8eea89ce92bbb70ab81c751d99c2b23bc73c)
+  [#3067](https://github.com/chakra-ui/chakra-ui/pull/3067) Thanks
+  [@dodas](https://github.com/dodas)! - The `og:title` and `og:description` meta
+  tags now describe specific URLs.
+
+* Updated dependencies []:
+  - @chakra-ui/react@1.1.5
+  - @chakra-ui/props-docs@1.0.10
+
+## 1.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  [[`8b87406c`](https://github.com/chakra-ui/chakra-ui/commit/8b87406c3132586be3393117eef80d47ec82fc54)]:
+  - @chakra-ui/utils@1.1.0
+  - @chakra-ui/react@1.1.4
+  - @chakra-ui/theme-tools@1.0.3
+  - @chakra-ui/props-docs@1.0.9
+
+## 1.0.8
+
+### Patch Changes
+
+- [`878f5fa9`](https://github.com/chakra-ui/chakra-ui/commit/878f5fa95ba16da0bcc94129b3dcb64dea1739f6)
+  [#2968](https://github.com/chakra-ui/chakra-ui/pull/2968) Thanks
+  [@dodas](https://github.com/dodas)! - The `Changing the icon in the Select`
+  example is now editable.
+
+- Updated dependencies []:
+  - @chakra-ui/props-docs@1.0.8
+  - @chakra-ui/react@1.1.3
+
+## 1.0.7
+
+### Patch Changes
+
+- [`5d83d2d6`](https://github.com/chakra-ui/chakra-ui/commit/5d83d2d67baee4b3a7fd4c50aca07e133691155a)
+  [#2911](https://github.com/chakra-ui/chakra-ui/pull/2911) Thanks
+  [@dodas](https://github.com/dodas)! - Replace example showing how to use
+  `useToken` to make a gradient with one that shows how to make a `boxShadow`.
+- Updated dependencies []:
+  - @chakra-ui/react@1.1.2
+  - @chakra-ui/props-docs@1.0.7
+
+## 1.0.6
+
+### Patch Changes
+
+- [`ea93a6a5`](https://github.com/chakra-ui/chakra-ui/commit/ea93a6a5b11741d37be313126207a5d57e870e47)
+  [#2900](https://github.com/chakra-ui/chakra-ui/pull/2900) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - Add integration guide with
+  react-table
+
+* [`ffa2b92c`](https://github.com/chakra-ui/chakra-ui/commit/ffa2b92cb6b150e08e368f40fc2da967cef208f6)
+  [#2913](https://github.com/chakra-ui/chakra-ui/pull/2913) Thanks
+  [@dodas](https://github.com/dodas)! - Make the `Import` section consistent
+  across component docs.
+
+- [`5c9ef8bd`](https://github.com/chakra-ui/chakra-ui/commit/5c9ef8bd9ca8a2bffae34bc96f9d50b17c9eb3c6)
+  [#2908](https://github.com/chakra-ui/chakra-ui/pull/2908) Thanks
+  [@singhArmani](https://github.com/singhArmani)! - Added the missing
+  `aria-labelledby` attribute and updated the tabs docs.
+
+* [`4c80980b`](https://github.com/chakra-ui/chakra-ui/commit/4c80980b626c94a3566d48df82721fbfd30bec01)
+  [#2927](https://github.com/chakra-ui/chakra-ui/pull/2927) Thanks
+  [@walf443](https://github.com/walf443)! - replace exmples of Input tag
+  type="phone" to type="tel".
+
+- [`60fbea0f`](https://github.com/chakra-ui/chakra-ui/commit/60fbea0fe7094e3a795d5513f24fedd04f17a653)
+  [#2915](https://github.com/chakra-ui/chakra-ui/pull/2915) Thanks
+  [@dodas](https://github.com/dodas)! - Align social buttons in the header
+  vertically
+
+* [`1c068d61`](https://github.com/chakra-ui/chakra-ui/commit/1c068d6173e6544df568d22b9910b27476501b42)
+  [#2914](https://github.com/chakra-ui/chakra-ui/pull/2914) Thanks
+  [@dodas](https://github.com/dodas)! - Fix typos and inconsistent word
+  capitalization in the `Icon` docs.
+
+* Updated dependencies []:
+  - @chakra-ui/react@1.1.1
+  - @chakra-ui/props-docs@1.0.6
+
+## 1.0.5
+
+### Patch Changes
+
+- [`9fc0a623`](https://github.com/chakra-ui/chakra-ui/commit/9fc0a62309a0c55b8696ee78e875535e9d6d1f6a)
+  [#2868](https://github.com/chakra-ui/chakra-ui/pull/2868) Thanks
+  [@MananDesai54](https://github.com/MananDesai54)! - Update form-control docs
 
-**Menu** `v1.7.8`
+- Updated dependencies
+  [[`6a410f77`](https://github.com/chakra-ui/chakra-ui/commit/6a410f778f534e00e01fdf0d3ce1ffdd1d7b138e),
+  [`a0e0bd9a`](https://github.com/chakra-ui/chakra-ui/commit/a0e0bd9a5d45fe08887f8df8d3eccc84951578df),
+  [`916588a5`](https://github.com/chakra-ui/chakra-ui/commit/916588a5bbb771ff3f07b0ceb160bef57cdd6a8a)]:
+  - @chakra-ui/react@1.1.0
+  - @chakra-ui/props-docs@1.0.5
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+## 1.0.4
 
-**Modal** `v1.9.4`
+### Patch Changes
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+- Updated dependencies
+  [[`5bff79a1`](https://github.com/chakra-ui/chakra-ui/commit/5bff79a1ba6989d279fc432d5040c72cd75b392e),
+  [`e73878ee`](https://github.com/chakra-ui/chakra-ui/commit/e73878ee686c11d3f94ad6ac61b19ae9508d75a5)]:
+  - @chakra-ui/react@1.0.4
+  - @chakra-ui/utils@1.0.2
+  - @chakra-ui/theme-tools@1.0.2
+  - @chakra-ui/props-docs@1.0.4
 
-**Popover** `v1.9.1`
+## 1.0.3
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+### Patch Changes
 
-**Theme** `v1.11.1`
+- [`294cf486`](https://github.com/chakra-ui/chakra-ui/commit/294cf486bf820a1b2f658b6a5ef5fbb897120f98)
+  [#2697](https://github.com/chakra-ui/chakra-ui/pull/2697) Thanks
+  [@yicru](https://github.com/yicru)! - add import section to Spinner page
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+- Updated dependencies
+  [[`0d0ed051`](https://github.com/chakra-ui/chakra-ui/commit/0d0ed0513ac1094833f1e0294f655af122682ff4)]:
+  - @chakra-ui/react@1.0.3
+  - @chakra-ui/props-docs@1.0.3
 
-**Toast** `v1.3.4`
+## 1.0.2
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+### Patch Changes
 
-**Tooltip** `v1.3.14`
+- [`e1b095cd`](https://github.com/chakra-ui/chakra-ui/commit/e1b095cdb799bb3630d3cbb7891d8c7e929db0f4)
+  [#2217](https://github.com/chakra-ui/chakra-ui/pull/2217) Thanks
+  [@silltho](https://github.com/silltho)! - feat(number-input): uses props of
+  wrapping form-control
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+  This change enables `NumberInput` to automatically derive various values from
+  a surrounding `FormControl` if found, similar to `Input` and `Select`.
 
-**Transition** `v1.3.8`
+- Updated dependencies
+  [[`3b4b5e32`](https://github.com/chakra-ui/chakra-ui/commit/3b4b5e32d2baa81133daa4eb3f1be53c3c99656c),
+  [`cfd3b325`](https://github.com/chakra-ui/chakra-ui/commit/cfd3b32564066076529811c5350aff6be565b7a3)]:
+  - @chakra-ui/props-docs@1.0.2
+  - @chakra-ui/react@1.0.2
 
-- Allow usage of `framer-motion` 5.x in `peerDependency`
+## 1.0.1
 
-**Media Query** `v1.1.5`
+### Patch Changes
 
-- Corrected eslint errors.
-- Fix an issue where the `useMediaQuery` was not updating the array of booleans
-  correctly when resizing the viewport.
+- Updated dependencies
+  [[`5c482483`](https://github.com/chakra-ui/chakra-ui/commit/5c482483ce24fc798540c9792a15e06772eae213)]:
+  - @chakra-ui/utils@1.0.1
+  - @chakra-ui/props-docs@1.0.1
+  - @chakra-ui/react@1.0.1
+  - @chakra-ui/theme-tools@1.0.1
 
-It also removes deprecated calls `addListener` and `removeListener` in favor of
-the recommended `addEventListener` and `removeEventListener` calls.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Color Mode** `v1.2.0`
+# 1.0.0 (2020-11-13)
 
-Added possibility to use the system preferred color scheme as value for
-`initialColorMode`, while still respecting a user's previous choice.
+**Note:** Version bump only for package @chakra-ui/docs
 
-As long as the user does not manually select a color mode through a website
-interaction, the theme will change when the system preference changes.
+# Change Log
 
-This would easily allow for an implementation where the user can choose between
-`light`, `dark` and `system` by simply setting the `initialColorMode` setting to
-`system` and presenting the user with the three options.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Popper** `v2.3.1`
+# 1.0.0-rc.8 (2020-10-29)
 
-- Remove default `[]` value for modifiers and moved it into `createPopper`
-  definition. This allows memoized modifiers to work correctly in user-land when
-  used with `useCallback`.
+### Bug Fixes
 
+- **toast:** allow custom render in update
+  ([eb8bff9](https://github.com/chakra-ui/chakra-ui/commit/eb8bff911e6ec9de0165ab1e8f5ca10d5e022459)),
+  closes [#2362](https://github.com/chakra-ui/chakra-ui/issues/2362)
 
-## 31-10-2021
+# Change Log
 
-`@chakra-ui/react@1.6.11`
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Anatomy** `v1.1.0`
+# 1.0.0-rc.7 (2020-10-25)
 
-- Add `closeButton` to popover component parts
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Styled System** `v.1.13.0`
+# 1.0.0-rc.6 (2020-10-25)
 
-- Add `_groupFocusVisible` pseudo style props
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Breadcrumb** `v1.2.10`
+# 1.0.0-rc.5 (2020-09-27)
 
-- `href` attribute will no longer be set on the inner element of the
-  `BreadcrumbLink` if the parent `BreadcrumbItem` has `isCurrentPage` prop set
-  to `true`. Such a `BreadcrumbLink` is not an actual link and it ends up being
-  a span (by default).
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Color Mode** `v1.1.14`
+# 1.0.0-rc.4 (2020-09-25)
 
-- Use the correct owner document when appending styles to `document.body`
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Hooks** `v.1.6.2`
+# 1.0.0-rc.3 (2020-08-30)
 
-- Fix potential infinite loop in `useDisclosure`'s `onOpen` and `onClose`
-  callbacks. The fix is to wrap the callbacks in `useCallbackRef`
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Menu** `v1.7.7`
+# Change Log
 
-- Fixed an error where the `onOpen` was called multiple/infinite times
-- Fix issue where `computePositionOnMount` didn't work without explict value
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Radio** `v1.3.12`
+# 1.0.0-rc.2 (2020-08-09)
 
-- Fix issue where props are duplicated on child label and span elements
-- Removed `aria-readonly` from checkbox in favor of WCAG `4.1.2`
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Utils** `v1.8.4`
+# Change Log
 
-- Use `fromEntries` polyfill from `@chakra-ui/utils`
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Switch** `v1.2.12`
+# [1.0.0-rc.1](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@1.0.0-rc.0...@chakra-ui/docs@1.0.0-rc.1) (2020-08-06)
 
-- Fix issue where focusing the `Switch` could lead to unexpected page scrolls.
+### Bug Fixes
 
-**System** `v1.7.5`
+- fix overlapping navbar
+  ([fd4b2f4](https://github.com/chakra-ui/chakra-ui/commit/fd4b2f4cd60698c8abd2aefc8333f77e3b12ddab))
+- issue with radio and radio group name
+  ([4e09ebb](https://github.com/chakra-ui/chakra-ui/commit/4e09ebbf73d8f940a56703761914c2461e7a451f))
+- **docs:** adapt to changes
+  ([d3cfe90](https://github.com/chakra-ui/chakra-ui/commit/d3cfe904676ae280205425a6cd846cdb149a4c1c))
+- **docs:** add note to PinInputField
+  ([34106f4](https://github.com/chakra-ui/chakra-ui/commit/34106f4f3f40c6741e196023c1a8e8608ce4801c))
 
-- Fixed a bug in `useToken` where it wasn't possible to resolve some tokens
-  which contain dots like `useToken('space','1.5')`
+### Features
 
-**Gatsby Plugin** `2.0.2`
+- add discord strip to homepage
+  ([f3eb541](https://github.com/chakra-ui/chakra-ui/commit/f3eb541b01684a229c3b1a4e5907ae96df5b03ba))
+- **docs:** add testimonials to homepage
+  ([795927e](https://github.com/chakra-ui/chakra-ui/commit/795927e753ad003f4379a4ab62e6e982d9b6c5aa))
+- add edit link and pagination
+  ([7e0a23f](https://github.com/chakra-ui/chakra-ui/commit/7e0a23fe189a9bb25e02868f16846d7bd4f4571d))
+- added docs for cookieStorageManager
+  ([51de9cf](https://github.com/chakra-ui/chakra-ui/commit/51de9cf9ced7e54b8e98e69be083544418f3fac9))
+- get author details and add tags as well
+  ([77c82c7](https://github.com/chakra-ui/chakra-ui/commit/77c82c704b80a0a4e1a64dfbb134aceaa1f10b72))
+- improve home page ui
+  ([8cc9dde](https://github.com/chakra-ui/chakra-ui/commit/8cc9ddebba3f2bd6e31314be117fd0c00bf7a06c))
 
-- Update `peerDependencies` to support new version
+# Change Log
 
-## 14-10-2021
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-`@chakra-ui/react@1.6.10`
+# [1.0.0-rc.0](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@1.0.0-next.7...@chakra-ui/docs@1.0.0-rc.0) (2020-07-26)
 
-**Radio** `v1.3.11`
+**Note:** Version bump only for package @chakra-ui/docs
 
-- Add support for styling the container element based on the radio state
+# Change Log
 
-**Popover** `v1.8.5`
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-- Fix issue where `computePositionOnMount` didn't work without explict value
+# [1.0.0-next.7](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@1.0.0-next.6...@chakra-ui/docs@1.0.0-next.7) (2020-07-26)
 
-**Utils** `v1.8.3`
+### Bug Fixes
 
-- Fixed iframe bug on firefox when using `getRelatedTarget` function
-- Fix issue where pan-event utils don't work within iframe
+- **docs:** rename /docs to /website for relative page paths
+  ([3c723b5](https://github.com/chakra-ui/chakra-ui/commit/3c723b53427c2a7c5fdfd679bf1918e71fb6a241))
+- **toast:** status types
+  ([4b6e76d](https://github.com/chakra-ui/chakra-ui/commit/4b6e76d03e5024544855d52623d13d3d9579eaff))
+- typo in responsive-styles
+  ([8d3f4e1](https://github.com/chakra-ui/chakra-ui/commit/8d3f4e133bb382d8a2fc0ee7ab9dda457b8fc93d))
 
-**Hooks** `v1.6.1`
+# Change Log
 
-- Forward `threshold` options from `usePanSession` to `PanSession` class
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Slider** `v1.4.1`
+# [1.0.0-next.6](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@1.0.0-next.5...@chakra-ui/docs@1.0.0-next.6) (2020-07-15)
 
-- Fix issue where value can't be changed when range-slider thumbs are stacked
+**Note:** Version bump only for package @chakra-ui/docs
 
-**Modal** `v1.9.2`
+# Change Log
 
-- Fix issue where modal doesn't close when the escape key is pressed and
-  `closeOnOverlayClick` is `false`
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Cli** `v1.5.3`
+# [1.0.0-next.5](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@0.6.0...@chakra-ui/docs@1.0.0-next.5) (2020-07-15)
 
-- Fixed an issue where the CLI tokens command exited unexpectedly with:
-  `SyntaxError: Cannot use import statement outside a module`
+### Bug Fixes
 
-**Checkbox** `v1.5.8`
+- **tooltip:** rename show and hide to open and close
+  ([b612144](https://github.com/chakra-ui/chakra-ui/commit/b612144c179f3076113dac495f8b4af982b16cd4))
+- change react icons url
+  ([722ecbd](https://github.com/chakra-ui/chakra-ui/commit/722ecbd648edf427dc42ef631ab7e4317cca6da7))
+- remove trailing slashes from links
+  ([d0ebdf3](https://github.com/chakra-ui/chakra-ui/commit/d0ebdf3183cc4c78c95ac0931133892b5bc499ef))
+- revert back to full url on links
+  ([13cf19b](https://github.com/chakra-ui/chakra-ui/commit/13cf19b40464a1d03b0b20a4973780c94fd617c3))
+- updated Stack to allow 'row-reverse' and 'column-reverse' for direction prop
+  ([1180b6b](https://github.com/chakra-ui/chakra-ui/commit/1180b6b7b97ba33c5b9506f65cec59ac4e37048f))
 
-- Fix issue where `tabIndex` property isn't passed to the underlying input
-  element
+### Features
 
-## 05-10-2021
+- **tooltip-disable:** add is-disabled prop to tooltip doc
+  ([baad3e4](https://github.com/chakra-ui/chakra-ui/commit/baad3e4cbbc129651089b1c368c7bb054e8c862f))
 
-**Button** `v1.4.4`
+# Change Log
 
-- Added missing `@chakra-ui/react-utils` import
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-**Slider** `v1.4.0`
+# [0.6.0](https://github.com/chakra-ui/chakra-ui/compare/@chakra-ui/docs@0.5.0...@chakra-ui/docs@0.6.0) (2020-07-01)
 
-- Move hard-coded styles to slider's theme
-- Add support for multithumb slider. We now have `useRangeSlider`, `RangeSlider`
-  and `RangeSlider*` components
+### Bug Fixes
 
-```jsx live=false
-<RangeSlider>
-  <RangeSliderTrack>
-    <RangeSliderFilledTrack />
-  </RangeSliderTrack>
-  <RangeSliderThumb index={0} />
-  <RangeSliderThumb index={1} />
-</RangeSlider>
-```
+- bottom nav works with dark mode
+  ([991714a](https://github.com/chakra-ui/chakra-ui/commit/991714a816a8707ee34fee7f2b2ac687c97e8ef3))
+- updated the transition components in modal docs and migration guide
+  ([7d5f019](https://github.com/chakra-ui/chakra-ui/commit/7d5f019f61a80577c04b410ba933d523b67b16ff))
+- **site:** prefix guides with /guides
+  ([161637e](https://github.com/chakra-ui/chakra-ui/commit/161637e6427f6fb16d1c662b4f597d2d862dbb70))
+- **site:** update pagination node order
+  ([14e0cf3](https://github.com/chakra-ui/chakra-ui/commit/14e0cf3744fca3ec8959e5b96b00e17333214cce))
+- minor rephrasing
+  ([70dbe4f](https://github.com/chakra-ui/chakra-ui/commit/70dbe4fce608719c3d11f2de3f812344131e90c2))
+- use pseudo element instead of pseudo class
+  ([756cdae](https://github.com/chakra-ui/chakra-ui/commit/756cdaeb1f72f7dcbda45124b78696c7638c80de))
 
-**Transition** `v1.3.5`
+### Features
 
-- Updated transition variants for drawer animations to prevent it from
-  disappearing when placement conditionally changes
-
-**Cli** `v1.5.2`
-
-- Fixed an issue where the CLI failed with
-  `SyntaxError: JSON5: invalid character`.
-
-**Theme** `v1.10.3`
-
-- Refactor slider theme from slider.tsx to slider's theme
-
-**Toast** `v1.3.1`
-
-- Allow alerts rendered by useToast and createStandaloneToast to be discovered
-  by role and accessible name (e.g. using Testing Library
-  [ByRole](https://testing-library.com/docs/queries/byrole/)).
-
-## 20-09-2021
-
-**Theme Tools** `v1.2.1`
-
-- Replace `tinycolor2` with `@ctrl/tinycolor` to get better tree-shaking
-  benefits
-
-**Theme** `v1.10.2`
-
-- Replace `tinycolor2` with `@ctrl/tinycolor` to get better tree-shaking
-  benefits
-
-**Checkbox** `v1.5.7`
-
-- Add state `data-*` attributes to the checkbox `container` to allow user style
-  the `_checked`, `_invalid` and `_disabled` states
-
-**Slider** `v1.3.0`
-
-- Add `RTL` support by using the theme's direction ("ltr" or "rtl") to set the
-  default `isReversed` property when the `orientation` is `horizontal`
-
-**Modal** `v1.9.0`
-
-- **Drawer:** Add support for RTL-aware placement values. You can now pass
-  `start` and `end` values. The drawer will use `left/right` placement depending
-  on the specified `theme.direction` value.
-- **Drawer**: omit the `motionPreset` prop type since `Drawer` only implements
-  the `Slide` transition, unlike `Modal` that allows you switch its motion
-  preset.
-
-**Image** `v1.0.20`
-
-- Fix issue where onload doesn't get called when using srcset
-- If the user doesn't provide a `fallbackSrc` or a `fallback` `ignoreFallback`
-  is applied by default
-
-**Anatomy** `v1.0.1`
-
-- Add missing breadcrumb part
-- Add container part to checkbox
-
-**Popper** `v2.3.0`
-
-- `usePopper` now accepts a `direction` prop so it can handle placement for RTL
-  languages. Values such as `top-start`, `top-end`, `bottom-start` and
-  `bottom-end` will be flipped depending on the theme's direction value.
-
-In addition to the default `popper.js` placement, you can pass `start-start`,
-`start-end`, `end-start` and `end-end`. This will resolve to the equivalent
-`popper.js` placement as well.
-
-**Cli** `v1.5.1`
-
-- Fixed an issue where the CLI did not resolve custom tsconfig paths.
-
-🚨 Please note that only the first alias target from the string array will be
-resolved.
-
-```json live=false
-// tsconfig.json
-{
-  //...
-  "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "@alias/*": ["target/*"]
-      //           ^-- only the first target will be resolved
-    }
-  }
-}
-```
-
-**Avatar** `v1.2.10`
-
-- Fix issue where avatar blinks during API call due to its fallback logic. You
-  can disable the fallback logic by setting `ignoreFallback`, just like you can
-  with the `Image` component
-
-**Toast** `v1.3.0`
-
-- Add support for RTL-aware `position` values. You can now use `top-start`,
-  `top-end`, `bottom-start` and `bottom-end` values. The toast will flip
-  depending on the `direction` provided in the theme.
-
-**Provider** `v1.6.8`
-
-- Resolve dependency issues caused by previous release
-- Add `ChakraProviderProps` type what was removed in previous release
-
-**Menu** `v1.7.4`
-
-- Fix issue where keyboard navigation doesn't work when `MenuButton` isn't
-  rendered. This is useful in scenarios where you want the menu to be triggered
-  by a command or right-click.
-
-**Button** `v1.4.3`
-
-- Fix issue where composing `Button` with framer-motion's `motion` factory
-  breaks animation/transition
-
-**Select** `v1.1.15`
-
-- The disabled state of the `SelectIcon` can be reflected by a disabled
-  `FormControl` or by the `isDisabled`-flag of the `select` field
-
-## 29-08-2021
-
-`@chakra-ui/react@1.6.7`
-
-- Move ChakraProvider to a separate package `@chakra-ui/provider`
-- Loosen types of `extendTheme` to allow recent TS compiler to work and avoid
-  `Type instantiation is excessively deep and possibly infinite` errors.
-
-This might lead to a slightly degraded autocomplete experience when extended the
-theme but we promise to revisit the typings and API very soon.
-
-> In the meantime, please use `ThemeOverrides` type to provide
-
-**Slider** `v1.2.9`
-
-- Fix issue where slider thumb gets focus when `onChangeEnd` changes.
-- Call `onChangeStart`/ `onChangeEnd` when clicking somewhere in the
-  `SliderTrack` without dragging the `DragHandle`
-
-**Skeleton** `v1.1.18`
-
-- Don't animate when skeleton was previously loaded
-
-**System** `v1.7.3`
-
-- Update `useStyleConfig` to read parts array from the new anatomy class
-
-**Theme Tools** `v1.2.0`
-
-- Add new helpers to the `theme-tools` package to make the process of creating
-  component themes less cumbersome.
-
-- `cssVar` - function to create css vars
-- `calc` - function that makes it easy to create the css calc string
-- `anatomy`- function to define and extend component parts
-
-Creating a CSS variable in the theme
-
-```jsx live=false
-import { cssVar, calc } from "@chakra-ui/theme-tools"
-
-const $width = cssVar("slider-width")
-const $height = cssVar("slider-height")
-
-const $diff = calc($width).subtract($height).toString()
-
-$width.variable // => '--slider-width'
-$width.reference // => 'var(--slider-width)'
-```
-
-Create a component anatomy
-
-```jsx live=false
-import { anatomy }  from "@chakra-ui/theme-tools"
-import type { PartsStyle } from "@chakra-ui/theme-tools"
-
-const btn = anatomy("button").parts("label", "container")
-
-const newBtn = btn.extend("icon") //  extend button to include icon part
-
-// Using the anatomy in component theme
-const baseStyle: PartsStyle<typeof newBtn> = {
-  // auto-complete for the component parts
-  icon: {...},
-  label: {...}
-}
-```
-
-Added `PartsStyleObject` and `PartStyleFunction` types for easy creation of
-type-safe, multipart component styles.
-
-**Radio** `v1.3.10`
-
-- Add `isDisabled` to `RadioGroup` to make it possible to disable all `Radio`
-  inside `RadioGroup`
-- Add `isFocusable` to `RadioGroup` to make it possible to define the
-  `focusable`-state for all `Radio` inside a `RadioGroup`
-
-**Provider** `v1.6.7`
-
-- Move ChakraProvider to a separate package `@chakra-ui/provider`
-
-**Hooks** `v1.6.0`
-
-- Added an enabled prop to the `useOutsideClick` hook to conditionally attach
-  event handlers.
-
-- Updated the `useMenu` hook to only enable the `useOutsideClick` hook when the
-  menu is open.
-
-**Toast** `v1.2.11`
-
-- Add correct variant type to `UseToastOptions`
-
-**Layout** `v1.4.9`
-
-- Fix url for `LinkBox` component
-
-**Theme** `v1.10.1`
-
-- Added `overview:"visible"` to `baseStyle` of `TagLabel` to avoid clipped text
-
-## 09-08-2021
-
-`@chakra-ui/react@1.6.6`
-
-**Form Control** `v1.4.0`
-
-- 🚀 Added a `container` part to the `FormControl` component theme, allowing the
-  root FormControl element to be themed.
-
-```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
-
-export const theme = extendTheme({
-  components: {
-    Form: {
-      variants: {
-        // create a variant named "custom"
-        custom: {
-          // style the root `FormControl` element
-          container: {
-            color: "white",
-            bg: "blue.900",
-          },
-        },
-      },
-    },
-  },
-})
-```
-
-- 🛠 Remove code that was added as a workaround for pre-releases of React
-  concurrent mode.
-
-- 🐛 If an `aria-describedby` property is passed it will be joined with the id's
-  from helper text and error message instead of being overwritten.
-
-**Theme** `v1.10.0`
-
-- 🚀 Added a container part to the FormControl component theme, allowing the
-  root FormControl element to be themed.
-
-- 🐛 Fixed issue where modals with `size=full` have vertical margins.
-
-**Button** `v1.4.2`
-
-🐛 Resolved an issue where a `Button` in loading state didn't consider the width
-of `leftIcon` and `rightIcon`, resulting in layout shifts when the button leaves
-the loading state. Buttons now render with the same width regardless of state.
-
-**Checkbox** `v1.5.5`
-
-🛠 Remove code that was added as a workaround for pre-releases of React
-concurrent mode.
-
-**Layout** `v1.4.8`
-
-**Stack**: 🐛 Ensure that when cloning children, their provided keys are
-preferred over index. This prevents them from being destroyed and recreated when
-a child's position in the list changes.
-
-**Menu** `v1.7.2`
-
-🐛 MenuList scroll to next MenuItem on keyboard navigation when there is a
-defined maxHeight on MenuList.
-
-Fix issues when rendering chakra components in different window
-
-**NumberInput** `v1.2.9`
-
-🛠 Remove code that was added as a workaround for pre-releases of React
-concurrent mode.
-
-**Radio** `v1.3.9`
-
-🛠 Remove code that was added as a workaround for pre-releases of React
-concurrent mode.
-
-**Slider** `v1.2.8`
-
-🐛 Fix issue where slider thumb doesn't show active state in firefox
-
-**Stat** `v1.1.12`
-
-🚀 Add container part to Stat styleConfig
-
-**Styled System** `v1.12.2`
-
-- 🐛 Corrected `parseGradient` function so that it checks for CSS functions.
-  Previously, using the CSS calc function would result in invalid CSS being
-  generated. The expectation is that:
-
-```jsx live=false
-<Heading bgGradient="linear(to-r, green.200, pink.500 calc(20px + 20px))">
-  Chakra-UI: Create accessible React apps with speed
-</Heading>
-functions similar to linear-gradient which handles using a CSS function
-
-<Heading
-  bgImage="linear-gradient(
-    to right,
-    var(--chakra-colors-green-200)),
-    var(--chakra-colors-pink-500 calc(20px + 20px))"
->
-  Chakra-UI: Create accessible React apps with speed
-</Heading>
-```
-
-- 🐛 Grid props type definitions now correctly reflect the implemented behavior
-  in regard to tokens.
-
-**System** `v1.7.2`
-
-🐛 Fix type definitions for `apply` prop. The `apply` prop supports responsive
-styles:
-
-```jsx live=false
-// Before: type error, expects `string` for `apply`
-<Text apply={{ sm: 'styles.h3', lg: 'styles.h4' }}>
-
-// After: no type error, expects `ResponsiveValue<string>` for `apply`
-<Text apply={{ sm: 'styles.h3', lg: 'styles.h4' }}>
-```
-
-**Tooltip** `v1.3.9`
-
-🐛 Fix tooltips not closing when `openDelay` is set
-
-**Utils** `v1.8.2`
-
-- Remove code that was added as a workaround for pre-releases of React
-  concurrent mode.
-- 🐛 Fix issues when rendering chakra components in different window
-
-## 08-07-2021
-
-`@chakra-ui/react@1.6.5`
-
-**CLI** `@1.5.0`
-
-- 🚀 Enable esModuleInterop for `chakra-cli tokens`
-- 🐛 Token generation supports non valid JS keys for components
-
-**Utils** `v@1.8.1`
-
-- 🐛 Fixed a circular dependency which was causing warnings when bundling Chakra
-  with `rollup`.
-
-**System** `v@1.7.1`
-
-- 🐛 Fix issue where undefined style props (such as `borderRadius`) would not
-  fallback to the default styles
-
-## 16-06-2021
-
-`@chakra-ui/react@1.6.4`
-
-**Button** `v1.4.0`
-
-- 🚀 Add `className` prop to button load spinner.
-- 🐛 Update transitions to use theme tokens and remove outline transitions.
-
-**Media Query** `v1.1.0`
-
-- 🚀 `useBreakpointValue()` now supports receiving a `defaultBreakpoint` as the
-  second argument to support SSR/SSG.
-
-**Styled System** `v1.12.0`
-
-- 🚀 Added the `_activeStep` pseudoselector which is applied when
-  `aria-current="step"`.
-  [See the `wai-aria` documentation](https://www.w3.org/TR/wai-aria-1.2/#aria-current)
-
-**System** `v1.7.0`
-
-- 🚀 The `styled` function allows a functional `baseStyle` property.
-
-```jsx live=false
-import { styled } from '@chakra-ui/react'
-
-const MyComponent = styled('div', {
-  baseStyle: (props) => ({
-    bg: props.highlightColor
-  })
-})
-
-// ...
-
-<MyComponent highlightColor="red.500" />
-
-```
-
-**Cli** `v1.4.0`
-
-- 🚀 The `tokens` command now supports generating theme token type definitions
-  from a Chakra UI theme published as a package:
-
-`npx @chakra-ui/cli tokens <@your-org/chakra-theme-package>`
-
-A published theme package should export a theme object as either the `default`
-export or an export named `theme`.
-
-```jsx live=false
-// chakra-theme-package/src/index.js
-import { extendTheme } from "@chakra-ui/react"
-
-const theme = extendTheme({})
-
-// as default export
-export default theme
-// as named export
-export { theme }
-```
-
-**Accordion** `v1.3.3` & **Checkbox** `v1.5.3` & **Control Box** `v1.0.13` &
-**Modal** `v1.8.8` & **Number Input** `v1.2.7` & **Progress** `v1.1.10` &
-**Tag** `v1.1.10`
-
-- 🐛 Update transitions to use theme tokens and remove outline transitions.
-
-**Hooks** `v1.5.3`
-
-- 🐛 Fix inconsisent id generation between client and server.
-
-**Menu** `v1.6.4`
-
-- 🐛 Fix issue where `closeOnSelect` won't work sometimes.
-- 🐛 Update transitions to use theme tokens and remove outline transitions.
-
-**Popover** `v1.7.2`
-
-- 🐛 Fix issue where arrowshadowcolor didn't work.
-
-**React** `v1.6.4`
-
-- 🐛 Fix inconsisent id generation between client and server.
-
-**Stat** `v1.1.10`
-
-- 🐛 Export TypeScript interface `StatGroupProps`.
-
-**Tabs** `v1.5.2`
-
-- 🐛 Render tab indicator at the correct position.
-- 🐛 Update transitions to use theme tokens and remove outline transitions.
-
-**Theme** `v1.9.1`
-
-- 🐛 Fix an issue where the distance to the next element below a textarea was
-  too large in some browsers.
-- 🐛 Update transitions to use theme tokens and remove outline transitions.
-
-**Toast** `v1.2.8`
-
-- 🐛 Resolved an issue where `overflowX` couldn't be used within a toast's
-  `title` or `description` by adding `maxWidth="100%"` to the containing div.
-
-**Transition** `v1.3.2`
-
-- 🐛 Fixed an issue in the Collapse transition's enter animation in case of
-  `unmountOnExit`.
-
-## 26-05-2021
-
-`@chakra-ui/react@1.6.3`
-
-**Popper** `v2.2.0`
-
-The `popper.js` instance will not be created until the `enabled` option is
-`true`. This improves the render and scroll performance when you use many
-popper-related items.
-
-Affected components: Menu, Popover and Tooltip components
-
-**Media Query** `v1.0.14` Fix issue where `useMediaQuery` does not work as
-expected when use within an `iframe`. The hook now references the correct
-`ownerDocument`
-
-**Styled System** `v1.6.7`
-
-- Fix boolean condition affecting `bgImage` url
-- Fix import type issues caused by the `WithCSSVar` type
-
-## 17-05-2021
-
-`@chakra-ui/react@1.6.2`
-
-**Styled System** `v1.11.0`
-
-Ring
-
-- 🚀 Added ring style props to make it easier to style an element's focus ring
-  shadows. Props are `ring`, `ringColor`, `ringOffset`, and `ringOffsetColor`.
-
-[CodeSandbox Link](https://codesandbox.io/s/ring-colors-4wz1w)
-
-```jsx live=false
-// adds a 2px box-shadow with `gray.400` color
-<Box ring="2px" ringColor="gray.400">
-  Sample
-</Box>
-
-// adds main box-shadow + offset box-shadow
-<Box ring="2px" ringColor="gray.400" ringOffset="3px" ringOffsetColor="white">
- Sample
-</Box>
-```
-
-Filter Styles
-
-- 🚀 Added css variable based API to apply css filter properties (blur,
-  backdrop-blur) to an element. Props are `filter`, `blur`, `sepia`,
-  `brightness`, `invert`, `saturation`, `backdropFilter`, `backdropBlur`,
-  `sepia`, `saturation`, etc.
-
-To use this API, you'll need to set `filter` to `auto`, same for
-`backdropFilter`.
-
-```jsx live=false
-// adds a 3px blur filter to this element
-<Image src="boruto.png" filter="auto" blur="3px" />
-
-// adds a 3px blur and 40% saturation filter to this element
-<Image src="boruto.png" filter="auto" blur="3px" saturation={0.4} />
-```
-
-Transform Styles
-
-- 🚀 Added css variable based API to apply css transform properties (translateX,
-  translateY, scale, etc.). Props are `translateX`, `translateY`, `rotate`,
-  `scaleX`, `scaleY`, and `scale`.
-
-To use this API, you'll need to set `transform` to `auto` or `auto-gpu` (for the
-GPU accelerated version).
-
-```jsx live=false
-<Circle transform="auto" translateX="4" _hover={{ translateX: "8" }}>
-  <CheckIcon />
-</Circle>
-```
-
-- Add `mixBlendMode`, `backgroundBlendMode`, and `bgBlendMode` props to apply
-  blend modes to elements.
-
-- Automatic wrapping of `backgroundImage` or `bgImage` props with url() so you
-  can just pass the image URL directly.
-
-```jsx live=false
-// You can now do this!
-<Box bgImage="naruto.png" />
-
-// This still works
-<Box bgImage="url(naruto.png)" />
-```
-
-- Text decoration styles: Added `textDecorationColor`, `textDecorationLine`,
-  `textDecorationStyles` style props.
-
-- Add `isolation` style prop to create a new stacking context.
-
-High Contrast Mode
-
-- Fixed issue where setting `outline:0` or `outline:none` and using `box-shadow`
-  for focus outlines don't work in high-contrast mode.
-
-- To fix this, we've added `outline: 2px solid transparent` whenever you set
-  `outline:0` to make your components work in high-constrast mode by default.
-
-[Learn more](https://sarahmhigley.com/writing/whcm-quick-tips/)
-
-- Fix the `_dark` pseudo props to map to
-  `.chakra-ui-dark &, [data-theme=dark] &, &[data-theme=dark]`.
-
-- Added `_light` pseudo props to map to
-  `.chakra-ui-light &, [data-theme=light] &, &[data-theme=light]` for users that
-  prefer to start with dark mode.
-
-- Added `overscroll`, `overscrollX`, and `overscrollY` style prop to manage
-  overscroll behavior of an container.
-
-**Theme** `v1.9.0`
-
-- 🚀 Add blur token values for `filter` and `backdropFilter`.
-
-```jsx live=false
-{
-  "none": 0,
-  "sm": "4px",
-  "base": "8px",
-  "md": "12px",
-  "lg": "16px",
-  "xl": "24px",
-  "2xl": "40px",
-  "3xl": "64px"
-}
-```
-
-**Form Control** `v1.3.6`
-
-- 🐛 Fix issue where FormLabel could not be used without form-control.
-
-**Menu** `v1.6.2`
-
-- 🐛 Fix issue where typeahead overrides input keydown.
-
-**React** `v1.6.2`
-
-- 🐛 `ChakraProvider` now accepts the prop `cssVarsRoot` which defaults to
-  `:host, :root`.
-
-**System** `v1.6.6`
-
-- 🐛 Attach CSS vars to `:host, :root` to fix usage in shadow dom.
-
-**Transition** `v1.3.1`
-
-- 🐛 Fix issue where `onAnimationComplete` is not forwarded to motion element.
-
-## 04-05-2021
-
-`@chakra-ui/react@1.6.1`
-
-**Popover** `v1.7.0`
-
-- 🚀 Add an export for `usePopoverContext` hook.
-
-**Transition** `v1.3.0`
-
-- 🚀 Add support for tweaking the enter-exit transitions. Affected components:
-  `Fade`, `Slide`, `SlideFade`, `SlideScale`, `Collapse`.
-
-```jsx live=false
-<Fade
-  transition={{
-    enter: { duration: 0.3 },
-    exit: { duration: 0.1 },
-  }}
-/>
-```
-
-- 🚀 Fix issue where `Collapse` animation hide overflow when it expands.
-  Collapse transition how shows overflow when it's expanded and hides overflow
-  when it's collapsed.
-
-- 🚀 Add support for `delay` prop for all transition components.
-
-```jsx live=false
-// as a number
-<Fade delay={0.3} />
-
-// or based on state (enter/exit only)
-<Fade delay={{ enter: 0.2 }} />
-
-// or both
-<Fade delay={{ enter: 0.2, exit: 0.1 }} />
-```
-
-Note: this only works when you're using our built-in transition definition. If
-you're passing your own transition definition, pass the delay there.
-
-```jsx live=false
-// adding delay to your custom transition definition
-<Fade
-  transition={{
-    enter: { duration: 0.2, delay: 0.1 },
-  }}
-/>
-```
-
-**Utils** `v1.8.0`
-
-- 🚀 Add types for the return value of `pipe` function.
-- 🚀 Update user agent assertions.
-- 🚀 Add walkObject helper to iterate over all keys including nested.
-
-**React Env** `v1.0.4`
-
-- 🐛 Update mock window.
-
-**Menu** `v1.6.1`
-
-- 🐛 Fix issue where `closeOnSelect` didn't work for menuitem options.
-
-**Modal** `v1.8.5`
-
-- 🐛 Fix types for modal overlay fade config.
-
-**Slider** `v1.2.5`
-
-- 🐛 Fix issue where `onChangeStart` doesnt get called.
-- 🐛 Fix issue where slider thumb remains tabbable when `isDisabled={true}`.
-- 🐛 Fix issue where `onChangeEnd` doesn't get called when you click anywhere on
-  the track.
-
-**Styled System** `v1.10.5`
-
-- 🐛 Refactored the creation of the theme css vars.
-
-## 23-04-2021
-
-`@chakra-ui/react@1.6.0`
-
-**Gatsby Plugin** `v2.0.0`
-
-- 💥 Upgrading to this new major version is recommended for everyone as it fixes
-  hot reloading in Gatsby (Fast Refresh). In the previous version changes to the
-  shadowed theme.js file didn't trigger automatic reloading, and a manual reload
-  was necessary.
-
-- 💥 The `isUsingColorMode` option was removed. The `ChakraProvider` will always
-  use the `ColorModeProvider`.
-- 💥 The `isResettingCSS` option was renamed to `resetCSS`. Those changes were
-  made to use the current ChakraProvider and align the prop names.
-
-Improvements
-
-- Use `ChakraProvider` instead of the outdated `ThemeProvider` pattern.
-- Add `initialColorMode` to the `ColorModeScript`.
-- Allow Fast Refresh reloading of all theme files.
-- Set stricter `peerDependency` on `gatsby` (to ^2.29.3 || ^3.0.0).
-
-**Accordion** `v1.3.0`
-
-- 🚀 Update tabs and accordion to use updated descendants logic.
-
-**Menu** `v1.6.0`
-
-- 🚀 Update menu to use new descendants logic.
-- 🐛 Fix issue where menu doesn't select menu item when the first item is
-  disabled.
-- 🐛 Fix issue where menu doesn't work when an input is used within it.
-- 🐛 Fix issue where menu button doesn't work with truncated text.
-
-**Pin Input** `v1.6.0`
-
-- 🚀 Update pin-input to use the new descendants logic.
-
-**React** `v1.6.0` & **Theme** `v1.8.4`
-
-- 🚀 The `extendTheme` function allows you to pass multiple overrides or
-  extensions:
-
-```jsx live=false
-import {
-  extendTheme,
-  withDefaultColorScheme,
-  withDefaultSize,
-  withDefaultVariant,
-  withDefaultProps,
-} from "@chakra-ui/react"
-
-const customTheme = extendTheme(
-  {
-    colors: {
-      brand: {
-        // ...
-        500: "#b4d455",
-        // ...
-      },
-    },
-  },
-  withDefaultColorScheme({ colorScheme: "brand" }),
-  withDefaultSize({
-    size: "lg",
-    components: ["Input", "NumberInput", "PinInput"],
-  }),
-  withDefaultVariant({
-    variant: "outline",
-    components: ["Input", "NumberInput", "PinInput"],
-  }),
-  // or all in one:
-  withDefaultProps({
-    defaultProps: {
-      colorScheme: "brand",
-      variant: "outline",
-      size: "lg",
-    },
-    components: ["Input", "NumberInput", "PinInput"],
-  }),
-  // optional:
-  yourCustomBaseTheme, // defaults to our chakra default theme
-)
-```
-
-**Tabs** `v1.5.0`
-
-- 🚀 Update tabs and accordion to use updated descendants logic.
-- 🚀 Add support for RTL keyboard navigation.
-
-**Utils** `v1.7.0`
-
-- 🚀 Add `pipe` function.
-- 🚀 Add generic to `isFunction` guard.
-
-**Button** `v1.3.1`
-
-- 🐛 Resolved an issue where the `type` prop of the `Button` component was set
-  to `undefined`.
-
-**Progress** `v1.1.8`
-
-- 🐛 Fix hyperlink to docs.
-
-**React Utils** `v1.1.2`
-
-- 🐛 Update types for `mergeRefs` to include null.
-
-**Gatsby Starter Default** `v0.3.0`
-
-- 🚀 Updates to Gatsby-related documentation to account for the breaking changes
-  made in PR #3841. The "Providers" section from the Gatsby guide was removed as
-  the plugin itself handles everything already.
-
-## 19-04-2021
-
-`@chakra-ui/react@1.5.2`
-
-**Button** `v1.3.0`
-
-- 🚀 Added `spinnerPlacement` prop to allow changing the spinner placement for
-  the button when `isLoading` is `true`. Spinner placement can be either `start`
-  or `end`.
-
-```jsx live=false
-<Button isLoading spinnerPlacement="end">
-  Click me
-</Button>
-```
-
-**Checkbox** `v1.5.0`
-
-- 🚀 Add `isDisabled` prop to `CheckboxGroup`.
-
-**Hooks** `v1.5.0`
-
-- 🚀 Add pan session hook `usePanGesture` for detecting pan gestures.
-- 🚀 Update `useLatestRef` to inline value updates. Not concurrent mode safe but
-  works for now.
-- 🚀 Add `useEventListenerMap` to provide an elegant way of attaching several
-  pointer event to the `document` or an element.
-
-**Menu** `v1.5.0` & **Popover** `v1.6.0` & **Tabs** `v1.4.0`
-
-- 🚀 This change restores the behavior of the `isLazy` prop (which was broken by
-  the previous release) and adds a new `lazyBehavior` prop which configures the
-  behavior of `isLazy`.
-
-If you'd like the content of tab panel, popover and menu components to be
-unmounted when not selected or opened, please continue to use `isLazy`. This is
-the default behavior.
-
-If you'd like the content of tab panel, popover and menu components to remain
-mounted (but hidden) after it was previously selected or opened, use
-`lazyBehavior="keepMounted"` in combination with `isLazy`.
-
-**Utils** `v1.6.0`
-
-- 🚀 Add lazy content utility for disclosure components like popover, menu, tab,
-  etc.
-- 🚀 Add pan session class to handle pan gestures. This is used in the slider
-  logic and sharable with vue library.
-- 🚀 Perfomance: Throttle pan move events to once per frame which improves the
-  slider's `onChange` call performance.
-- 🚀 Update types for internal pointer event.
-
-**React Env** `v1.0.2`
-
-- 🐛 Fix bug where `EnvProvider` breaks SSR.
-
-**Modal** `v1.8.3` & **Theme** `v1.8.3`
-
-- 🐛 Fixed an issue where the modal exceeded the viewport height on iOS.
-
-**Slider** `v1.2.3`
-
-- 🐛 Fix issue where slider doesnt work after first slide.
-- 🐛 Avoid exccess `onChange` calls.
-
-**Stat** `v1.1.7`
-
-- 🐛 Fixed a11y issue related to `StatHelpText`. It was using an invalid `dl`
-  child tag.
-
-**Styled System** `v1.10.3`
-
-- 🐛 Fixed an issue where thtransition props are not resolved correctly.
-
-## 13-04-2021
-
-`@chakra-ui/react@1.5.1`
-
-**Hooks** `v1.4.0`
-
-- 🚀 Add support for passing function that returns element to `useEventListener`
-  and `usePointerEvent`.
-
-**Menu** `v1.4.0`
-
-- 🚀 Add `closeOnSelect` to `MenuItem` and `MenuItemOption`.
-- 🐛 Do not unmount menu list after first render.
-- 🐛 Use prop getter from use-popper to prevent ssr content jump.
-
-**Transition** `v1.2.0`
-
-- 🚀 Allow custom transition variants.
-
-**Button** `v1.2.2`
-
-- 🐛 Fix alignment of icon inside button.
-- 🐛 Update button group styles to use rtl-friendly equivalent.
-
-**Clickable** `v1.1.2`
-
-- 🐛 Add missing dependency issue of `@chakra-ui/react-util`.
-
-**Editable** `v1.1.2`
-
-- 🐛 Update focus-on-mousedown util to avoid memory leak.
-
-**React Env** `v1.0.1`
-
-- 🐛 Fix issue where window could be null Skip logic when `environment` prop is
-  passed.
-
-**Input** `v1.2.2`
-
-- 🐛 Remove unused padding-x from input element.
-
-- 🐛 Update input addon and element style handling.
-
-**Layout** `v1.4.2`
-
-- 🐛 Fix RTL styles for OrderedList and UnorderedList.
-
-**Popover** `v1.5.1`
-
-- 🐛 Fix RTL styles for close button.
-
-- 🐛 Do not unmount lazy popovers after first render.
-
-- 🐛 Update focus-onmousedown to avoid memory leak.
-
-- 🐛 Use prop-getters from use-popper to prevent ssr content shift.
-
-**Popper** `v2.1.1`
-
-- 🐛 Update README for the `popper.js` wrapper.
-
-**Progress** `v1.1.6`
-
-- 🐛 Fix an issue where `CircularProgress` with `isIndeterminate` doesn't show
-  the indicator
-
-**React** `v1.5.1`
-
-- 🐛 Fixed typing issues for `extendTheme` where variant overrides lead to an TS
-  error.
-
-- 🐛 Add `EnvironmentProvider` to `ChakraProvider` for better window and
-  document detection across hooks and components.
-
-**Spinner** `v1.1.6`
-
-- 🐛 Fix issue where spinner base-style cant be overriden.
-
-**System** `v1.6.2`
-
-- 🐛 Allow passing custom props to `useStyleConfig`.
-- 🐛 Add missing dependency issue of `@chakra-ui/react-utils`.
-
-**Tabs** `v1.3.2`
-
-- 🐛 Do not unmount lazy tabs when unselected.
-
-**Theme** `v1.8.2`
-
-- 🐛 Changes incorrect `panel` part name in `Progress` theme file to `label`.
-
-- 🐛 Update input, alert and tabs RTL styles.
-
-**Toast** `v1.2.3`
-
-- 🐛 Fix RTL styles for toast component.
-
-**Tool tip** `v1.2.3`
-
-- 🐛 Use prop-getters from use-popper to prevent ssr content shift.
-- 🐛 Add missing dependency issue of `@chakra-ui/react-utils`.
-
-**Utils** `v1.5.2`
-
-- 🐛 update type signature for `px` function.
-
-## 07-04-2021
-
-`@chakra-ui/react@1.5.0`
-
-**React** `v1.5.0`
-
-- 🚀 Bump package as minor.
-- 🐛 Resolved a peer dependency resolution issue reported by yarn2, npm7, and
-  other more modern package managers.
-
-**Popover** `v1.5.0`
-
-- 🚀 Return prop getters for popover header and body and use ref callback to
-  determine element's presense instead of useEffect.
-  [#3733](https://github.com/chakra-ui/chakra-ui/pull/3733)
-
-- 🚀 Add support for `rootProps` to `PopoverContent` to allow passing props to
-  popover's positioner.
-- 🚀 Make it possible to add custom motion `variants` so users can orchestrate
-  custom transitions.
-- 🚀 Move popover arrow shadow color computation to popover's theme.
-- 🐛 Update import of shared utils from `react-utils` to `utils`.
-
-**Popper** `v2.1.0`
-
-- 🚀 Add prop getters for popper and arrow for better ssr support.
-- 🚀 Replace `utils` dependency with `react-utils`.
-
-**Table** `v1.2.0`
-
-- 🚀 Add `TableContainer` component to help tables scroll horizontally when
-  overflowing.
-
-```jsx live=false
-<TableContainer>
-  <Table>
-    {...}
-  </Table>
-</TableContainer>
-```
-
-**Checkbox** `v1.4.1`, **Radio** `v1.3.1`
-
-- 🐛 Update import of shared utils from `react-utils` to `utils`.
-- 🐛 Replace `withFlushSync` with `scheduleMicrotask` callback to prevent
-  ReactDOM warning.
-
-**Form Control** `v1.3.1`
-
-- 🐛 Refactor form label to use prop getter instead of hook for better
-  consistency.
-- 🐛 Replace `withFlushSync` with `scheduleMicrotask` callback to prevent
-  ReactDOM warning when an element us focused by calling `.focus()`. This works
-  as well in concurrent mode.
-
-**Modal** `v1.8.1`
-
-- 🐛 Resolved a peer dependency resolution issue reported by yarn2, npm7, and
-  other more modern package managers.
-- 🐛 Omit scroll-behavior from drawer props.
-
-**Number Input** `v1.2.1`
-
-- 🐛 Replace `withFlushSync` with `scheduleMicrotask` callback to prevent
-  ReactDOM warning.
-
-**Progress** `v1.1.5`
-
-- 🐛 Fix issue in safari where circular progress indicator shows a tiny bit when
-  value is `0`.
-
-**React Utils** `v1.1.1`
-
-- 🐛 Update prop getter v2 type to take second parameter.
-- 🐛 Update import of shared utils from `react-utils` to `utils`.
-- 🐛 Replace `withFlushSync` with `scheduleMicrotask` callback to prevent
-  ReactDOM warning.
-
-**Select** `v1.1.5`
-
-- 🐛 Fix RTL styles for select field to use `paddingEnd` instead of `pr`.
-
-**Theme** `v1.8.1`
-
-Popover
-
-- 🐛 Moved `maxW` from popover's `popper` to `content` to allow for better
-  control of the popover's width.
-- 🐛 Use `width` instead of `maxW` to allow users more control of popover's
-  width.
-- 🐛 Use `--popover-bg` css property to control popover and arrow background.
-
-```jsx live=false
-<PopoverContent style={{ "--popover-bg": "purple" }}>
-  <PopoverArrow />
-</PopoverContent>
-```
-
-- 🐛 Add popover arrow shadow color.
-
-Select
-
-- 🐛 Update select icon to use insetEnd instead of right for RTL.
-
-Skip Link
-
-- 🐛 Update styles to use insetStart instead of left for RTL.
-
-Table
-
-🐛 Update text align attribute to use end instead of right for RTL.
-
-**Theme Tools** `v1.1.3` & **Transition** `v1.1.2`
-
-- 🐛 Fix issue where `warn` doesn't get called.
-
-**Toast** `v1.2.2`
-
-- 🐛 Take into account safe area insets for Toasts.
-
-**Tooltip** `v1.3.1`
-
-- 🐛 Resolved a peer dependency resolution issue reported by yarn2, npm7, and
-  other more modern package managers.
-
-**Utils** `v1.5.1`
-
-- 🐛 Update import of shared utils from `react-utils` to `utils`.
-- 🐛 Replace `withFlushSync` with `scheduleMicrotask` callback to prevent
-  ReactDOM warning.
-- 🐛 Import types for `warn` function.
-
-## 30-03-2021
-
-`@chakra-ui/react@1.4.2`
-
-**Accordion** `v1.2.0`
-
-- 🚀 Extract all react based utilities and types to `@chakra-ui/react-utils`.
-
-**Avatar** `v1.2.0`
-
-- 🐛 Fix RTL styles.
-
-**Checkbox** `v1.4.0`
-
-- 🚀 Add `getRootProps` to `useCheckbox` hook to manage props passed to checkbox
-  container.
-
-- 🚀 Forward `onFocus`, `onBlur` and `aria-\*` props to the input element for
-  better integration with form libraries.
-
-- 🚀 Ensure the checkbox works when the root element is not label. This helps to
-  fix the current accessibility issues with the Switch component when wrapped
-  within `FormControl`.
-
-**Counter** `v1.1.0`
-
-- 🚀 Expose `setValue` function to allow update state without calling
-  `onChange`.
-- 🐛 Fix issue where `onChange` is called when value did not change.
-
-**Form Control** `v1.3.0`
-
-- 🚀 Refactor `useFormControlProvider` to return prop getters
-  `getHelpTextProps`, `getErrorMessageProps`, and `getRootProps`.
-
-- 🚀 Detect helper text and error message using ref callback instead of
-  `useLayoutEffect`.
-
-- 🚀 Update `aria-describedby` id to include feedbackId only when `isInvalid` is
-  true.
-
-- 🚀 Create `useFormControlProps` to provide a way to get the resolved form
-  control props `isInvalid`, `isDisabled`, instead of HTML attributes. This will
-  make it easier to integrate with number-input, checkbox, and switch.
-- 🐛 Fix concurrent mode issue with setting state in focus event handler. We use
-  withFlushSync helper to achieve this.
-
-**Hooks** `v1.3.0`
-
-- 🐛 useControllableState: The onChange callback will be called only if the new
-  value isn't equal to the current one.
-
-**Layout** `v1.4.0`
-
-- 🐛 Remove redundant role attribute from divider.
-- 🐛 Fixed the bug where a margin- bottom would get applied to
-  `direction=row `of stack when using responsive props.
-
-- 🐛 Fix issue where AbsoluteCenter doesn't have `position: absolute`.
-
-**Number Input** `v1.2.0`
-
-- 🐛 Forward `aria-\*` props to the input element.
-
-- 🐛 Fix issue where `onChange` was called on mount.
-- 🐛 Fix issue where `onBlur` was called twice.
-- 🐛 Memoize all callback props `onFocus`, `onBlur`, `getAriaValueText`.
-- 🐛 Refactor implicit `useFormControl` logic to be called from NumberInput
-  instead.
-
-- 🐛 Call `setFocused.on` with `ReactDOM.flushSync` to prevent concurrent mode
-  issue where setting state in onFocus affects onChange event handler.
-
-**Styled System** `v1.1.0`
-
-- 🚀 Add support for css variable tokens. This means you can create a css
-  variable and reference value in the tokens.
-
-```jsx live=false
-<Box
-  sx={{
-    "--banner-color": "colors.red.200",
-    "& .banner": {
-      bg: "var(--banner-color)",
-    },
-  }}
-/>
-```
-
-**System** `v1.6.0`
-
-- 🐛 Fixed an issue where the `StylesProvider` export was not working in every
-  environment.
-
-- 🚀 Add style config for upcoming `rotateX`, `rotateY`, `scaleX`, `scaleY`
-  style props.
-
-**Theme** `v1.8.0`
-
-- 🚀 Remove 0 token value from spacing tokens. 0 maps to 0 and there's no need
-  to create a css custom property for that.
-
-**Switch**
-
-- Add container part
-- Use css vars to handle styles
-- Fix RTL styles
-
-**Stat, Table**
-
-- Fix RTL styles
-
-**Utils** `v1.5.0`
-
-- 🚀 Add `withFlushSync` function wrapper to help resolve concurrent mode and
-  onFocus state issues.
-
-**Toast** `v1.2.1`
-
-- 🐛 Bump `@reach/alert` to fix yarn pnp issue.
-
-## 21-03-2021
-
-`@chakra-ui/react@1.4.1`
-
-**Styled System** `v1.9.1`
-
-- 🐛 Fix issue where `textStyle` doesn't get applied.
-
-## 20-03-2021
-
-`@chakra-ui/react@1.4.0`
-
-**React** `v1.4.0`
-
-- 🚀 Added support for `framer-motion` v4.
-
-**Popper** `v2.0.0`
-
-- 🚀 Refactor the positioning logic to improve stability and leverage CSS custom
-  properties.
-
-**Styled System** `v1.9.0`
-
-- 🐛 Fix issue where responsive styles defined in text styles not overridden by
-  style props.
-- 🐛 Fix issue where `toCSSVars` omitted the transition tokens.
-- 🐛 Fix issue where RTL property keys are incorrect due to `config.property`
-  mutation.
-- 🐛 Added typings for the theme prop in `ThemingPropsThunk` and export a
-  standalone type ThemeComponentProps. ThemingPropsThunk
-- 🐛 Update `mx` and `px` to use logical properties. Instead of mapping to
-  `marginLeft` and `marginRight`, it maps to `marginInlineStart` and
-  `marginInlineEnd`. Same for `px`.
-
-**CLI** `v1.3.0`
-
-- 🚀 Add support for text style and layer style theme type generation to
-  `@chakra-ui/cli`.
-
-**Color Mode** `v1.1.2`
-
-- 🐛 Memoize the context value for `ColorModeProvider`.
-
-**Editable** `v1.1.3`
-
-- 🐛 Fix issue where blur/submit fires unexpectedly if `submitOnBlur` is true
-  and you try to click the cancel button.
-
-**Radio** `v1.2.5`
-
-- 🐛 Fix issue where controlled radio group can't be cleared.
-- 🐛 Fix `onChange` type for use-radio-group props.
-
-**Tag** `v1.1.3`
-
-- 🐛 Add `aria-label` to tag close button.
-
-**Gatsby Plugin** `v1.0.2`
-
-- 🐛 Update peer-dependency range for gatsby to support the latest.
-
-**Popover** `v1.3.0`
-
-- 🐛 Fix issue (for Safari and Firefox) where popover doesn't close when you
-  click the trigger and popover is open.
-
-## 05-03-2021
-
-`@chakra-ui/react@1.3.4`
-
-**System** `v1.4.0`
-
-- 🚀 Add support for CSS Variables to the core of Chakra.
-- 🚀 Improve style computation performance by 2.5x.
-- 🚀 Adds support for main in chakra factory
-
-**Styled System** `v1.8.0`
-
-- 🚀 Add support for CSS Variables to the core of Chakra.
-- 🚀 Improve style computation performance by 2.5x.
-
-**Theme** `v1.7.0`
-
-- 🚀 Add new config property cssVarPrefix to add a custom prefix for CSS
-  variables. It defaults to `chakra`.
-- 🚀 TabPanels component can now be styled from Tabs component theme, specifying
-  the tabpanels part.
-- 🐛 Fix full size modal with y-overflowing content behaviour
-- 🐛 Fix border styles for alert and number input
-- 🐛 Provide proper typings for `ThemeOverride.components`.
-- 🐛 Resolved an issue where optgroup in dark mode was unreadable on browsers
-  that allow select contents styling.
-
-**Theme Tools** `v1.1.0`
-
-- 🚀 Update implementation of create-breakpoints to reduce code logic. Add
-  deprecation message
-
-**Hooks** `v1.1.5`
-
-- 🐛 Add support to format - Optional string. Set the MIME type of what you want
-  to copy as. Use text/html to copy as HTML, text/plain to avoid inherited
-  styles showing when pasted into rich text editor.
-
-**Layout** `v1.3.2`
-
-- 🐛 SimpleGrid: Avoid grid blow by adding `minmax(0, 1fr)`.
-- 🐛 Simplify wrap style management to use CSS custom properties.
-
-**Popper** `v1.1.5`
-
-- 🐛 Make the react-popper state in sync with the internal popper instance state
-
-**React** `v1.3.4`
-
-- 🐛 Fixed an issue where extending the theme with custom breakpoints with
-  `strictNullChecks: false` in tsconfig.json lead to an error.
-
-**Select** `v1.1.2`
-
-- 🐛 Resolved an issue where optgroup in dark mode was unreadable on browsers
-  that allow select contents styling.
-
-**Slider** `v1.1.2`
-
-- 🐛 onChangeEnd won't be called if value doesn't change.
-
-## 13-02-2021
-
-`@chakra-ui/react@1.3.3`
-
-**Color Mode** `v1.1.0`
-
-- 🚀 You can now customize the `nonce` of the `<script>` that `ColorModeScript`
-  creates by passing `nonce` prop.
-
-**Focus Lock** `v1.1.0`
-
-- 🚀 Upgrade to react-remove-scroll@2.4.1 and react-focus-lock@2.5.0 to fix
-  React 17 peer dependencies compatibility.
-
-**Checkbox** `v1.2.3` & **Radio** `v1.2.3`
-
-- 🐛 Improve the semantic HTML structure of checkbox.
-
-**Popper** `v1.1.4`
-
-- 🐛 The popper.js instance is now created only once it is actually needed for
-  positioning.
-
-**React** `v1.3.3`
-
-- 🐛 The extendTheme function uses the type Theme again.
-
-**Theme** `v1.6.2`
-
-- 🐛 Export Recursive\* types from theme, styled-system.
-- 🐛 Bring back the TS type Theme export and deprecated DefaultChakraTheme.
-- 🐛 Allow halved values in design token in spacing as mentioned in the
-  documents.
-
-**CLI** `v1.2.1`
-
-- 🐛 CLI tokens command now ignores TS errors in your theme file.
-
-## 06-02-2021
-
-`@chakra-ui/react@1.3.2`
-
-**Pin Input** `v1.4.0`
-
-- 🚀 Resolved an issue where completing character entry in PinInput failed to
-  call `onComplete`.
-
-**React** `v1.3.0`
-
-- 🚀 Introducing a generic TypeScript type `ChakraTheme` to improve the
-  `extendTheme` function even further.
-
-```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
-
-export const customTheme = extendTheme({
-  // here you get autocomplete for
-  //   - existing definitions from the default theme
-  //   - new components (Single and MultiStyle)
-  //   - CSS definitions
-  //   - color hues
-  //   - etc.
-})
-
-export type MyCustomTheme = typeof customTheme
-```
-
-You can get typesafe access to your custom theme like this:
-
-```jsx live=false
- import { useTheme } from "@chakra-ui/react"
-  import { MyCustomTheme } from "./my-custom-theme"
-
-  const MyComponent = () => {
-    const customTheme = useTheme<MyCustomTheme>()
-    //...
-  }
-```
-
-- 🐛 Fixed issue in `extendTheme` where overrides defined as function replaced
-  all base styles defined as a plain object.
-- 🐛 Fixed an issue where the TypeScript types were too narrow for component
-  defaultProps and ComponentMultiStyleConfig.
-
-**Styled System** `v1.7.0`
-
-- 🚀 Theme Typings: Add autocomplete for negative space values.
-- 🚀 Add support for `textStyle` and `layerStyle` in styled-system package. This
-  makes it possible to use them in the component theme, `css` function and `sx`
-  prop as well.
-
-```jsx live=false
-const theme = {
-  textStyles: {
-    caps: {
-      fontWeight: "bold",
-      fontSize: "24px",
-    },
-  },
-}
-
-const styles = css({ textStyle: "caps" })(theme)
-```
-
-This also works for the component theme as well.
-
-`layerStyle`, `textStyle` and `apply` can now take responsive values as well.
-
-- 🚀 Refactored `apply` prop handling to use the style config pattern instead of
-  add it imperatively.
-- 🐛 Allow numbers for `borderTop` and provide autocomplete for `fontWeight`
-  prop.
-- 🐛 Support negative scale values for css variables.
-
-**System** `v1.3.0`
-
-- 🚀 Add support for responsive values when using `apply`, `textStyle` and
-  `layerStyle`.
-
-**Theme** `v1.6.0`
-
-- 🐛 Fixed an issue where a `Tooltip` with negative `gutter` causes flickering
-  on hover.
-- 🐛 Fixed an issue in Firefox where `Input` overflows it's flex container.
-
-**CLI** `v1.2.0`
-
-- 🚀 Theme Typings: Add autocomplete for negative space values
-
-**Accordion** `v1.1.2` & **Avatar** `v1.1.2` & **Button** `v1.1.2` &
-**Checkbox** `v1.2.2` & **Radio** `v1.2.2`
-
-- 🐛 Provide better typings for `size` and `variant` for `AvatarGroup`,
-  `CheckboxGroup`, `ButtonGroup`, and `RadioGroup`
-
-**Color Mode** `v1.0.7`
-
-- 🐛 Fix issue where reading from localStorage maybe fail due to several reasons
-  (SecurityError, Uncaught DOMException, TypeError, etc.)
-
-**Input** `v1.1.1`
-
-- 🐛 Fixed the typo in `InputProps` interface due to which theming types were
-  not correct.
-
-**Tool tip** `v1.1.1`
-
-- 🐛 Fixed an issue where a `Tooltip` with negative `gutter` causes flickering
-  on hover.
-
-## 31-01-2021
-
-`@chakra-ui/react@1.2.1`
-
-**System** `v1.2.1`
-
-- 🐛 Allow string values for ThemingProps['colorScheme']
-
-**CLI** `v1.1.0`
-
-- 🚀 Add minor bump for adding subcommand tokens to generate Theme Typings &
-  Republished with version 1.1.0.
-
-## 31-01-2021
-
-`@chakra-ui/react@1.2.0`
-
-**Color Mode** `v1.0.6`
-
-- 🐛 `useColorModeValue` defaults to light mode on first render if system color
-  mode is used.
-
-**Hooks** `v1.1.3`
-
-- 🐛 Update reference to document.addEventListener to detect owner document
-  based on ref passed. This would help detect outside click currently from
-  within an iframe.
-
-**Layout** `v1.3.0`
-
-- 🚀 Update transform style for AbsoluteCenter when axis is both
-- 🚀 Add `shouldWrapChildren` to Wrap component to make it possible use Wrap
-  directly without thinking about WrapItem.
-- 🚀 Update `LinkBox` and `LinkOverlay` components and make them public in docs.
-
-**Menu** `v1.1.0`
-
-- 🚀 The `MenuItem` now accepts a `commandSpacing` prop that can be used to
-  adjust the space between the command and label.
-- 🚀 Add support `rootProps` to `MenuList` so it's possible override the styles
-  for root container for menu list. Common use case is to change the applied
-  zIndex of the menulist.
-- 🚀 Make it possible to override `zIndex` by passing props to `MenuList`.
-
-**Modal** `v1.5.0` & **Tool tip** `v1.1.0`
-
-- 🚀 Add support for forwarding props to the underlying Portal component. Pass
-  the portalProps prop to achieve this.
-- 🚀 `containerRef`: ref for the element where to mount the portal.
-- 🚀 `appendToParentPortal`: If false, it'll opt out of portal nesting.
-
-**Portal** `v1.1.0`
-
-- 🚀 Add support for `appendToParentPortal={false}` to opt out of nested
-  portals.
-- 🐛 Fix issue with portal zIndex container where it renders elements outside of
-  view.
-- 🚀 Renamed `getContainer `prop to `containerRef` to make it possible to pass
-  the ref directly. This affects the `Modal` component primarily.
-
-**Styled System** `v1.6.0`
-
-- 🐛 Fix issue where CSS color names are not passed correctly.
-- 🚀 Improved theme typing in order to provide a better autocomplete experience.
-
-**Tabs** `v1.1.0`
-
-- 🚀 The `useTabsContext` hook is now exported and can be used in user land.
-
-**Theme** `v1.5.0`
-
-- 🚀 Add `8xl` to size tokens.
-
-## 24-01-2021
-
-`@chakra-ui/react@1.1.6`
-
-**Layout** `v1.2.0`
-
-- 🚀 Add AbsoluteCenter component to help manage centering of an element
-  relative to its parent dimensions
-
-**Pin Input** `v1.2.0`
-
-- 🚀 Added an `otp` flag to `PinInput` that sets the autoComplete value of
-  PinInputField to "one-time-code"
-
-**Hooks** `v1.1.2`
-
-- 🐛 Fixed issue where using an uncontrolled RadioGroup without a defaultValue
-  causes multiple radio options can be selected
-
-**Portal** `v1.0.6`
-
-- 🐛 Fixed portal z-index wrapper squashing portaled elements
-
-**Popover** `v1.1.0`
-
-- 🚀 Add `flip` prop to Popover to change the placement when it is scheduled to
-  overflow a given boundary
-
-## 17-01-2021
-
-`@chakra-ui/react@1.1.5`
-
-**Popper** `v1.1.0`
-
-- 🚀 Added enabled property to `usePopper`. Popper won't be updated while it is
-  set to false. Menu now uses this option to not update its position while it's
-  closed.
-
-**Stlyed System** `v1.5.0`
-
-- 🚀 Move `srOnly` prop to styled system props. This will deprecate the need for
-  the visually hidden package. Less is more!
-
-```jsx live=false
-  // If `true`, hide an element visually without hiding it from screen readers.
-  <Box srOnly>Visually hidden</Box>
-
-  // If `focusable`, the sr-only styles will be undone, making the element visible to sighted users as well as screen readers.
-  <Box srOnly _active={{ srOnly: "focusable" }}>Visually hidden but shown on focus
-  </Box>
-```
-
-- 🚀 Add `polyfill` for inset style prop as the CSS inset doesn't work in Safari
-  Add missing style props for grid and flex layouts: gridTemplate, gridRowStart,
-  gridRowEnd, flexFlow, clipPath
-
-**Checkbox** `v1.1.2`
-
-- 🐛 Update styles to use css logical style props
-
-**Hooks** `v1.1.1`
-
-- 🐛 Resolved an issue where event handlers for certain components were removed
-  after the first event occurred.
-- 🐛 Fixed SSR issue with useId hook.
-
-**Menu** `v1.0.5`
-
-- 🐛 Update styles to use css logical style props
-- 🚀 Added enabled property to usePopper. Popper won't be updated while it is
-  set to false. Menu now uses this option to not update its position while it's
-  closed.
-
-**Popover** `v1.0.7`
-
-- 🐛 Popover now won't update its popper position while it's closed.
-
-**Portal** `v1.0.5`
-
-- 🐛 Fixed issue where adding `portalZIndex` to `ChakraProvider` makes app
-  unusable
-
-**Progress** `v1.0.5`
-
-- 🐛 You can now override linear progress component's border radius in the
-  theme.
-
-**Radio** `v1.1.2`
-
-- 🐛 Update styles to use css logical style props.
-
-## 11-01-2021
-
-`@chakra-ui/react@1.1.4`
-
-**Hooks** `v1.1.0`
-
-- 🚀 Added `useCallbackRef` hook for persisting a value between renders and
-  updating it if it changes.
-- 🐛 Deprecated `useLatestRef`, `useEventCallback`, and `useMouseDownRef`. These
-  functions will be removed in a future major version.
-
-## 10-01-2021
-
-`@chakra-ui/react@1.1.3`
-
-**Styled System** `v1.4.0`
-
-- 🐛 Fixed a bug where `rgb` values in `bgGradient` did not work correctly
-- 🐛 Due to Safari not support css logical properties for `right`, and `left`,
-  we added polyfill for these css logical properties.
-- 🚀 Add support for css media query and dark class selectors.
-
-**Theme** `v1.4.0`
-
-- 🚀 Add the `2xl` breakpoint to the theme which maps to `96em` or `1536px`.
-
-**Media Query** `v1.0.3`
-
-- 🐛 Fixed `useBreakpoinValue` infinite loop due to bug in `createMediaQueries`.
-
-**Portal** `v1.0.3`
-
-- 🐛 Fixed issue where elements within portal used in an iframe got rendered
-  outside of the iframe. Portal now smartly detects its document owner and
-  attaches its node to the correct document.body
-- 🐛 Removed extra DOM node `PortalManager` creates. Less is more!
-
-**Skeleton** `v1.0.7`
-
-- 🐛 Fixed a bug where SkeletonText kept its fixed dimensions when isLoaded is
-  true.
-
-**Tabs** `v1.0.4`
-
-- 🐛 Fixed issue where Tab button no longer has `aria-selected="false"` when it
-  is inactive.
-
-## 03-01-2021
-
-`@chakra-ui/react@1.1.1`
-
-**Button** `v1.0.3`
-
-- 🐛 Update the style props applied for `leftIcon` and `rightIcon` to support
-  RTL. Changed `ml` and `mr` to marginStart and marginEnd respectively.
-- 🐛 Update the style props applied when isLoading is `true`. Changed
-  `marginRight` to `marginEnd`.
-
-**Stack**
-
-- 🐛 Update `directionStyles` to use logical CSS properties for RTL support.
-- 🐛 Changed `marginLeft` and `marginRight` to `marginStart` and `marginEnd`
-  respectively.
-
-**Styled System** `v1.3.1`
-
-- 🐛 Add missing `borderStart`, and `borderEnd` types for for style and color.
-- 🐛 Sort `Object.assign` keys in `configs/border.ts` for better readability.
-
-Other RTL fixes:
-
-- 🐛 Alignment for the close icon for `Tag`, `Modal`, and `Drawer` components to
-  support RTL.
-- 🐛 Add RTL storybook toolbar to make it easy to test RTL layouts.
-
-## 28-12-2020
-
-`@chakra-ui/react@1.1.0`
-
-**React** `v1.1.0`
-
-- 🚀 Add gradient support to chakra style props :sparkles: see
-  https://chakra-ui.com/docs/features/gradient for more information
-- 🚀 Add rtl support :sparkles: see
-  https://chakra-ui.com/docs/features/rtl-support for more information
-- 🚀 Improve `extendTheme` typings & accept optional second argument
-  `baseTheme`.
-
-**Checkbox** `v1.1.0`
-
-- 🚀 Deprecated the `defaultIsChecked` prop in favor of `defaultChecked`.
-
-**Radio** `v1.1.0`
-
-- 🚀 Deprecated the `defaultIsChecked` prop in favor of `defaultChecked`.
-- 🚀 Resolved an issue where uncontrolled Radio components used outside of
-  RadioGroup were not working.
-
-**Styled System** `v1.3.0`
-
-- 🚀 Improved performance
-
-**Pin Input** `v1.1.2`
-
-- 🐛 Resolved an issue where PinInputField rendered an input with
-  `autocomplete="not-allowed"` instead of `autocomplete="off"`.
-
-**Skeleton** `v1.0.4`
-
-- 🐛 `SkeletonText` now accepts the props `fadeDuration` and `speed` and
-  animates its children, like the `Skeleton` component.
-
-## 18-12-2020
-
-`@chakra-ui/react@1.0.4`
-
-⚠️ Peer dep version bump! framer-motion is now at 3.0.0
-
-**Form Control** `v1.1.0`
-
-- 🚀 Add support for controlling focus lock across frames.
-- 🐛 Removed isLoading prop from FormControl out of a lack of need.
-- 🐛 Fixed an issue where FormHelperText was not rendering when parent
-  FormControl.isInvalid was set.
-
-**Modal** `v1.3.0`
-
-- 🚀 Add support for controlling focus lock across frames.
-
-**Styled System** `v1.2.0`
-
-- 🚀 Add suppotr for css logical properties and direction in the theme for
-  future RTL optimizations.
-
-**Pin Input** `v1.1.1`
-
-- 🐛 Fixed an issue where copy pasting didnt work.
-
-**Number Input** `v1.0.3`
-
-- 🐛 Fixed an issue where input didnt work with form libraries that rely on ref
-  (e.g. react-hook-form).
-- 🚀 Added support to override `type` and `pattern` props.
-
-**Input** `v1.0.3`
-
-- 🐛 Fixed an issue where removing an element didnt reset the padding.
-
-**Skeleton** `v1.0.3`
-
-- 🐛 Fixed an issue where Skeleton.isLoading would fade the skeleton even if
-  isLoading is true.
-
-**Theme** `v1.2.2`
-
-- 🐛 Focus outline > isInvalid outline (affects all components extending from
-  Input, e.g. Select, PinInput, ...)
-
-**Utils** `v1.0.2`
-
-- 🐛 Custom breakpoints beginning with a number are now working
-
-## 08-12-2020
-
-`@chakra-ui/react@1.0.3`
-
-**Pin Input** `v1.1.0`
-
-- 🚀 Internals reworked.
-- 🚀 Added support for type prop (`alphanumeric` | `number`).
-- 🚀 Added `mask` prop to provide similar utility like input type password.
-
-**Alert** `v1.0.2`
-
-- 🐛 `Alert` now colorScheme aware (overrideable via status).
-
-**Close Button** `v1.0.2`
-
-- 🐛 Resolved an issue where `DrawerCloseButton` was not receiving its base
-  styles when it was passed other styles through the `__css` property, breaking
-  the button's positioning.
-
-**React** `v1.0.3`
-
-- 🐛 Fix too narrow TypeScript type for theme override.
-
-## 03-12-2020
-
-`@chakra-ui/react@1.0.2`
-
-**Docs**
-
-- 🚀 The search functionality has returned! https://chakra-ui.com/
-
-**Layout** `v1.1.0`
-
-- 🚀 `Divider`, `Container`, `List`, `ListItem` and `ListIcon` are now themable.
-
-**Modal** `v1.2.0`
-
-- 🚀 `ModalCloseButton` is now themable.
-
-**Theme** `v1.2.0`
-
-- 🚀 `AlertIcon` no longer shrinks if alert contains long text.
-- 🚀 Added theme support for above mentioned layout components.
-
-**Toast** `v1.1.0`
-
-- 🚀 Allow React.ReactNode as type for title.
-
-**Form Control** `v1.0.2`
-
-- 🐛 Remove dead props on type.
-
-**Number Input** `v1.0.2`
-
-- 🐛 `NumberInput` is now form-control props agnostic, like Input and Select do.
-
-**Radio** `v1.0.2`
-
-- 🐛 `Radio`is now form-control props agnostic, like Input and Select do.
-
-**React** `v1.0.2`
-
-- 🐛 Improved types for extendTheme.
-
-**Transition** `v1.0.2`
-
-- 🐛 Children now consistently render if "in" was true on initial render.
+- **theme:** reduce default z-index values
+  ([c925ca2](https://github.com/chakra-ui/chakra-ui/commit/c925ca2c6b598477146ceea5857eac48a2bd71f4))
+- add support for line-clamp
+  ([1173ca6](https://github.com/chakra-ui/chakra-ui/commit/1173ca6974e8b9fcf27aa301bd1accece07ca5fc))
