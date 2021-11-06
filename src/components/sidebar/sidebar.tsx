@@ -142,11 +142,16 @@ const mainNavLinks = [
     label: "Resources",
   },
   {
+    icon: null,
+    href: "/faq",
+    label: "FAQ",
+  },
+  {
     icon: <TeamIcon />,
     href: "/team",
     label: "Team",
   },
-]
+];
 
 const MainNavLinkGroup = (props: ListProps) => {
   return (
