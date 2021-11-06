@@ -27,8 +27,11 @@ cd chakra-ui
 ### Commands
 
 **`yarn`**: installs the dependency packages.
+
 **`yarn dev`**: starts the local development server.
+
 **`yarn build`**: builds the docsite for production.
+
 **`yarn lint`**: runs the nextjs linter which checks for code issues.
 
 ## Proposing new or changed API?
