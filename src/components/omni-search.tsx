@@ -128,7 +128,8 @@ function OmniSearch() {
     return () => {
       router.events.off('routeChangeComplete', modal.onClose);
     };
-  }, [modal.onClose, router.events]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEventListener('keydown', (event) => {
     const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator?.platform);
@@ -143,7 +144,8 @@ function OmniSearch() {
     if (modal.isOpen && query.length > 0) {
       setQuery('');
     }
-  }, [modal.isOpen, query.length]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [modal.isOpen]);
 
   const results = React.useMemo(
     function getResults() {
