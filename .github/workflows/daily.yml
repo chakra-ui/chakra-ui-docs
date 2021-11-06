@@ -3,11 +3,11 @@ name: Run daily cron script
 on:
   workflow_dispatch: # Manual testing
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 
 jobs:
   daily:
-    if: ${{ 'chakra-ui/chakra-ui' == github.repository }}
+    if: ${{ 'chakra-ui/chakra-ui-docs' == github.repository }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Yarn cache path
