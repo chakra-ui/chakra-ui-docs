@@ -19,5 +19,9 @@
       "title": "Chakra UI Team and Contributors",
       "description": "List of team members and contributors that make the Chakra UI project possible"
     }
+  },
+  "faq": {
+    "title": "FAQ",
+    "description": "A collection with the most asked questions and their answers."
   }
 }
