@@ -1,5 +1,5 @@
 {
-  "projectName": "chakra-ui",
+  "projectName": "chakra-ui-docs",
   "projectOwner": "chakra-ui",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -887,6 +887,17 @@
         "code",
         "doc",
         "ideas"
+      ]
+    },
+    {
+      "login": "lazarnikolov94",
+      "name": "Lazar Nikolov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
+      "profile": "https://nikolovlazar.com",
+      "contributions": [
+        "doc",
+        "example",
+        "maintenance"
       ]
     }
   ],
