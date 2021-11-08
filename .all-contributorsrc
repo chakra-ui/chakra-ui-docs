@@ -908,6 +908,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "HDisc",
+      "name": "hamasu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43948163?v=4",
+      "profile": "https://github.com/HDisc",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
