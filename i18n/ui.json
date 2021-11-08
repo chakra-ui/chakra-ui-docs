@@ -21,7 +21,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
-    "description": "A collection with the most asked questions and their answers."
+    "title": "Frequently Asked Questions",
+    "description": "Some of the most asked questions with their answers to help you get started with Chakra UI."
   }
 }

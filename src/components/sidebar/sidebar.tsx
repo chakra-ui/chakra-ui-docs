@@ -1,7 +1,7 @@
-import NextLink from "next/link"
-import { useRouter } from "next/router"
-import * as React from "react"
-import sortBy from "lodash/sortBy"
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import * as React from "react";
+import sortBy from "lodash/sortBy";
 import {
   Badge,
   Box,
@@ -13,21 +13,22 @@ import {
   ListProps,
   Stack,
   useColorModeValue,
-} from "@chakra-ui/react"
-import { Routes } from "utils/get-route-context"
-import { convertBackticksToInlineCode } from "utils/convert-backticks-to-inline-code"
-import SidebarCategory from "./sidebar-category"
-import SidebarLink from "./sidebar-link"
-import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from "./sidebar-icons"
+} from "@chakra-ui/react";
+import { Routes } from "utils/get-route-context";
+import { convertBackticksToInlineCode } from "utils/convert-backticks-to-inline-code";
+import SidebarCategory from "./sidebar-category";
+import SidebarLink from "./sidebar-link";
+import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from "./sidebar-icons";
+import { FaQuestionCircle } from "react-icons/fa";
 
 export type SidebarContentProps = Routes & {
-  pathname?: string
-  contentRef?: any
-}
+  pathname?: string;
+  contentRef?: any;
+};
 
 export function SidebarContent(props: SidebarContentProps) {
-  const { routes, pathname, contentRef } = props
-  const color = useColorModeValue("gray.700", "inherit")
+  const { routes, pathname, contentRef } = props;
+  const color = useColorModeValue("gray.700", "inherit");
   return (
     <>
       {routes.map((lvl1, idx) => {
@@ -52,15 +53,15 @@ export function SidebarContent(props: SidebarContentProps) {
                   <SidebarLink ml="-3" mt="2" key={lvl2.path} href={lvl2.path}>
                     {lvl2.title}
                   </SidebarLink>
-                )
+                );
               }
 
-              const selected = pathname.startsWith(lvl2.path)
-              const opened = selected || lvl2.open
+              const selected = pathname.startsWith(lvl2.path);
+              const opened = selected || lvl2.open;
 
               const sortedRoutes = lvl2.sort
                 ? sortBy(lvl2.routes, (i) => i.title)
-                : lvl2.routes
+                : lvl2.routes;
 
               return (
                 <SidebarCategory
@@ -89,20 +90,20 @@ export function SidebarContent(props: SidebarContentProps) {
                     ))}
                   </Stack>
                 </SidebarCategory>
-              )
+              );
             })}
           </React.Fragment>
-        )
+        );
       })}
     </>
-  )
+  );
 }
 
 const MainNavLink = ({ href, icon, children }) => {
-  const { pathname } = useRouter()
-  const [, group] = href.split("/")
-  const active = pathname.includes(group)
-  const linkColor = useColorModeValue("gray.900", "whiteAlpha.900")
+  const { pathname } = useRouter();
+  const [, group] = href.split("/");
+  const active = pathname.includes(group);
+  const linkColor = useColorModeValue("gray.900", "whiteAlpha.900");
 
   return (
     <NextLink href={href} passHref>
@@ -122,8 +123,8 @@ const MainNavLink = ({ href, icon, children }) => {
         {children}
       </Flex>
     </NextLink>
-  )
-}
+  );
+};
 
 const mainNavLinks = [
   {
@@ -142,7 +143,7 @@ const mainNavLinks = [
     label: "Resources",
   },
   {
-    icon: null,
+    icon: <FaQuestionCircle color="white" />,
     href: "/faq",
     label: "FAQ",
   },
@@ -164,12 +165,12 @@ const MainNavLinkGroup = (props: ListProps) => {
         </ListItem>
       ))}
     </List>
-  )
-}
+  );
+};
 
 const Sidebar = ({ routes }) => {
-  const { pathname } = useRouter()
-  const ref = React.useRef<HTMLDivElement>(null)
+  const { pathname } = useRouter();
+  const ref = React.useRef<HTMLDivElement>(null);
 
   return (
     <Box
@@ -195,7 +196,7 @@ const Sidebar = ({ routes }) => {
       <MainNavLinkGroup mb="10" />
       <SidebarContent routes={routes} pathname={pathname} contentRef={ref} />
     </Box>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
