@@ -40,10 +40,13 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
     });
   };
 
-  if (!process.env.ENABLE_LANGUAGE_SWITCHER) {
-    return <></>;
-  }
+  // if (!process.env.ENABLE_LANGUAGE_SWITCHER) {
+  //   return <></>;
+  // }
 
+  return <></>;
+
+  /* TODO: uncomment the following block when another language gets added
   const selectedLanguage = i18n.language
     ? locales.locales.find((loc) => loc.startsWith(i18n.language))
     : locales.defaultLocale;
@@ -70,6 +73,7 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
       </MenuList>
     </Menu>
   );
+  */
 };
 
 export default LanguageSwitcher;
