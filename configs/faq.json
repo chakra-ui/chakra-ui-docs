@@ -1,3 +1,8 @@
 {
-  "questions": []
+  "qa": [
+    {
+      "question": "Is there a Datepicker in Chakra UI?",
+      "answer": "No, currently we don't provide a datepicker component. You can check out [#580](https://github.com/chakra-ui/chakra-ui/issues/580) to see how you can build your custom datepicker with Chakra UI."
+    }
+  ]
 }
