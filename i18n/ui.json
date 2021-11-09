@@ -19,5 +19,19 @@
       "title": "Chakra UI Team and Contributors",
       "description": "List of team members and contributors that make the Chakra UI project possible"
     }
+  },
+  "resources": {
+    "title": "Community Resources",
+    "description": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+    "message": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+    "talks": {
+      "title": "Talks"
+    },
+    "videos": {
+      "title": "Videos"
+    },
+    "blogs": {
+      "title": "Blogs"
+    }
   }
 }
