@@ -121,6 +121,9 @@
       "you-can": "You can",
       "extend-the-theme": "extend the theme",
       "to-implement-them": "to implement them."
+    },
+    "sponsor-button": {
+      "sponsor": "Sponsor"
     }
   }
 }
