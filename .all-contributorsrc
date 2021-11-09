@@ -899,6 +899,24 @@
         "example",
         "maintenance"
       ]
+    },
+    {
+      "login": "TuckerMassad",
+      "name": "Tucker Massad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22939424?v=4",
+      "profile": "https://tuckermassad.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "HDisc",
+      "name": "hamasu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43948163?v=4",
+      "profile": "https://github.com/HDisc",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

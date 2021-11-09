@@ -41,18 +41,18 @@ The theme config for color mode has 2 options:
 // theme.js
 
 // 1. import `extendTheme` function
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react";
 
 // 2. Add your color mode config
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
-}
+};
 
 // 3. extend the theme
-const theme = extendTheme({ config })
+const theme = extendTheme({ config });
 
-export default theme
+export default theme;
 ```
 
 For typescript, you need to explicitly describe the theme config type as `ThemeConfig` object.
@@ -61,22 +61,49 @@ For typescript, you need to explicitly describe the theme config type as `ThemeC
 // theme.ts
 
 // 1. import `extendTheme` function
-import { extendTheme, ThemeConfig } from "@chakra-ui/react"
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 // 2. Add your color mode config
-const config : ThemeConfig = {
+const config: ThemeConfig = {
   initialColorMode: "light",
   useSystemColorMode: false,
-}
+};
 
 // 3. extend the theme
-const theme = extendTheme({ config })
+const theme = extendTheme({ config });
 
-export default theme
+export default theme;
 ```
 
 > Remember to pass your custom `theme` to the `ChakraProvider`, otherwise your
 > color mode config won't be taken into consideration.
+
+#### Behavior of ColorMode
+
+The current hierarchy how the color mode is defined is as follows:
+
+- if `useSystemColorMode` is true `system`-color will be used as default - `initialColorMode` is the fallback if system color mode can't be resolved
+
+- if `--chakra-ui-color-mode` is defined through e.g. `ColorModeScript` / after modification/initial load of the colorMode this
+  value will be used
+
+- if `colorModeManager` = `localStorage` and a value is defined for
+  `chakra-ui-color-mode` this will be used
+
+- if `initialColorMode` = `system` system-color will be used as default -
+  `initialColorMode` is the fallback if system color mode isn't resolved
+
+- if `initialColorMode` = `'light'|'dark'` the corresponding value will be used
+
+We currently accept 3 different values for `initialColorMode`: `light`,`dark`,`system`
+
+#### Difference between `initialColorMode='system'` and `useSystemColorMode`
+
+if `useSystemColorMode=true` we will always try to match the users `system`-color and fallback to `initialColorMode`
+With this behavior the colorMode toggle won't have any effect.
+
+if `initialColorMode='system'` we will as well always try to match the users `system`-color and fallback to `light`.
+after the user has toggled the value, this value will be used.
 
 ### Adding the `ColorModeScript`
 
@@ -96,9 +123,9 @@ For Next.js, you need to add the `ColorModeScript` to the `_document.js` file.
 ```jsx live=false ln={14}
 // pages/_document.js
 
-import { ColorModeScript } from "@chakra-ui/react"
-import NextDocument, { Html, Head, Main, NextScript } from "next/document"
-import theme from "./theme"
+import { ColorModeScript } from "@chakra-ui/react";
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import theme from "./theme";
 
 export default class Document extends NextDocument {
   render() {
@@ -112,7 +139,7 @@ export default class Document extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 ```
@@ -125,10 +152,10 @@ file.
 ```jsx live=false ln={11}
 // index.js
 
-import { ColorModeScript } from "@chakra-ui/react"
-import ReactDOM from "react-dom"
-import App from "./App"
-import theme from "./theme"
+import { ColorModeScript } from "@chakra-ui/react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import theme from "./theme";
 
 ReactDOM.render(
   <>
@@ -136,8 +163,8 @@ ReactDOM.render(
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </>,
-  document.getElementById("root"),
-)
+  document.getElementById("root")
+);
 ```
 
 #### For Gatsby
@@ -156,14 +183,14 @@ and a function to toggle the color mode.
 
 ```jsx
 function Example() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <header>
       <Button onClick={toggleColorMode}>
         Toggle {colorMode === "light" ? "Dark" : "Light"}
       </Button>
     </header>
-  )
+  );
 }
 ```
 
@@ -178,7 +205,7 @@ dark mode.
 
 ```jsx live=false
 // Here's the signature
-const value = useColorModeValue(lightModeValue, darkModeValue)
+const value = useColorModeValue(lightModeValue, darkModeValue);
 ```
 
 Here's an example that changes the `background-color` and `color` using the
@@ -188,10 +215,10 @@ Here's an example that changes the `background-color` and `color` using the
 
 ```jsx
 function StyleColorMode() {
-  const { toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode();
 
-  const bg = useColorModeValue("red.500", "red.200")
-  const color = useColorModeValue("white", "gray.800")
+  const bg = useColorModeValue("red.500", "red.200");
+  const color = useColorModeValue("white", "gray.800");
 
   return (
     <>
@@ -202,7 +229,7 @@ function StyleColorMode() {
         Toggle Mode
       </Button>
     </>
-  )
+  );
 }
 ```
 
@@ -216,7 +243,7 @@ light and dark modes. To achieve this, wrap the component in a `LightMode` or
 
 ```jsx
 function Example() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <HStack>
@@ -236,7 +263,7 @@ function Example() {
         Toggle Mode
       </Button>
     </HStack>
-  )
+  );
 }
 ```
 
@@ -260,20 +287,20 @@ import {
   ChakraProvider,
   cookieStorageManager,
   localStorageManager,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 export function Chakra({ cookies, children }) {
   // b) Pass `colorModeManager` prop
   const colorModeManager =
     typeof cookies === "string"
       ? cookieStorageManager(cookies)
-      : localStorageManager
+      : localStorageManager;
 
   return (
     <ChakraProvider colorModeManager={colorModeManager}>
       {children}
     </ChakraProvider>
-  )
+  );
 }
 
 // also export a reusable function getServerSideProps
@@ -284,7 +311,7 @@ export function getServerSideProps({ req }) {
       // undefined here, hence ?? is necessary
       cookies: req.headers.cookie ?? "",
     },
-  }
+  };
 }
 ```
 
@@ -292,23 +319,23 @@ export function getServerSideProps({ req }) {
 
 ```jsx live=false
 // setup your wrapper in the _app file (e.g: pages/_app.js)
-import { Chakra } from "../src/Chakra"
+import { Chakra } from "../src/Chakra";
 
 export default function App({ Component, pageProps }) {
-    return (
-    	<Chakra cookies={pageProps.cookies}>
-    		<Component {...pageProps} />
-    	</Chakra>
-    );
+  return (
+    <Chakra cookies={pageProps.cookies}>
+      <Component {...pageProps} />
+    </Chakra>
+  );
 }
 
 // e.g pages/index.js
 export default function Index() {
-  return <h1>Example</h1>
+  return <h1>Example</h1>;
 }
 
 // re-export the reusable `getServerSideProps` function
-export { getServerSideProps } from "./Chakra"
+export { getServerSideProps } from "./Chakra";
 ```
 
 > If you need to know the name of the Chakra cookie for specific reasons,
@@ -325,7 +352,7 @@ import {
   ChakraProvider,
   cookieStorageManager,
   localStorageManager,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 export default function App({ cookies }) {
   // 2. Pass `colorModeManager` prop - it finds the relevant cookie on its own
@@ -339,7 +366,7 @@ export default function App({ cookies }) {
     >
       <h1>Example</h1>
     </ChakraProvider>
-  )
+  );
 }
 
 App.getInitialProps = ({ req }) => {
@@ -347,8 +374,8 @@ App.getInitialProps = ({ req }) => {
     // first time users will not have any cookies and you may not return
     // undefined here, hence ?? is necessary
     cookies: req.headers.cookie ?? "",
-  }
-}
+  };
+};
 ```
 
 ## Color Mode Flash Issue

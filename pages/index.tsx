@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { t } from 'utils/i18n';
 import {
   Box,
   BoxProps,
@@ -112,7 +112,6 @@ interface HomePageProps {
 }
 
 const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
-  const { t } = useTranslation();
   return (
     <>
       <SEO
