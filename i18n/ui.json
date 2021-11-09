@@ -95,6 +95,9 @@
       "heading": "Connect with the community",
       "description": "Feel free to ask questions, report issues, and meet new people.",
       "join-the-chakra-discord": "Join the #Chakra Discord!"
+    },
+    "edit-page-button": {
+      "edit-this-page": "Edit this page"
     }
   }
 }
