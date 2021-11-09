@@ -19,9 +19,9 @@ import PageTransition from 'components/page-transition';
 import SEO from 'components/seo';
 import fs from 'fs';
 import * as React from 'react';
-import { useTranslation } from 'react-i18next';
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io';
 import { Contributor, Member as IMember } from 'src/types/github';
+import { t } from 'utils/i18n';
 
 function SocialLink({ icon, href }) {
   return (
@@ -86,7 +86,6 @@ interface TeamProps {
 }
 
 function Team({ members, contributors }: TeamProps) {
-  const { t } = useTranslation();
   const memberLogins = members.map(({ login }) => login);
   const contributorsWithoutTeam = contributors.filter(
     ({ login }) => !memberLogins.includes(login)
