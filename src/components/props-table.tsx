@@ -5,6 +5,7 @@ import * as React from "react"
 import { convertBackticksToInlineCode } from "utils/convert-backticks-to-inline-code"
 import { InlineCode } from "components/mdx-components/inline-code"
 import { Anchor } from "components/mdx-components/anchor"
+import { t } from "utils/i18n"
 
 /**
  * A map of components that use foreign theme key.
@@ -43,11 +44,10 @@ const PropsTable = ({
   ],
   only,
 }: PropsTableProps) => {
-  const propList = React.useMemo(() => makePropsTable({ of, omit, only }), [
-    of,
-    omit,
-    only,
-  ])
+  const propList = React.useMemo(
+    () => makePropsTable({ of, omit, only }),
+    [of, omit, only],
+  )
 
   if (!propList.length) {
     // this error breaks the build to notify you when there would be an empty table
@@ -93,21 +93,27 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
             >
               <HStack>
                 <Code colorScheme="purple">{prop.name}</Code>
-                {prop.required && <Code colorScheme="red">required</Code>}
+                {prop.required && (
+                  <Code colorScheme="red">
+                    {t("component.props-table.required")}
+                  </Code>
+                )}
               </HStack>
             </chakra.h3>
           </chakra.div>
           <div>
             {prop.description && (
               <Flex>
-                <div className="row">Description</div>
+                <div className="row">
+                  {t("component.props-table.description")}
+                </div>
                 <div className="cell">
                   <p>{convertBackticksToInlineCode(prop.description)}</p>
                 </div>
               </Flex>
             )}
             <Flex>
-              <div className="row">Type</div>
+              <div className="row">{t("component.props-table.type")}</div>
               <div className="cell">
                 <InlineCode whiteSpace="wrap" fontSize="0.8em">
                   {prop.type}
@@ -116,7 +122,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
             </Flex>
             {prop.defaultValue && (
               <Flex>
-                <div className="row">Default</div>
+                <div className="row">{t("component.props-table.default")}</div>
                 <div className="cell">
                   <InlineCode whiteSpace="wrap" fontSize="0.8em">
                     {prop.defaultValue}
@@ -145,15 +151,16 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
 
   const featNotImplemented = (feat: string) => (
     <>
-      {feat} for <InlineCode>{of}</InlineCode> are not implemented in the
-      default theme. You can{" "}
+      {feat} {t("component.props-table.for")} <InlineCode>{of}</InlineCode>{" "}
+      {t("component.props-table.are-not-implemented-in-the-default-theme")}{" "}
+      {t("component.props-table.you-can")}{" "}
       <Link
         href="/docs/theming/customize-theme#customizing-component-styles"
         passHref
       >
-        <Anchor>extend the theme</Anchor>
+        <Anchor>{t("component.props-table.extend-the-theme")}</Anchor>
       </Link>{" "}
-      to implement them.
+      {t("component.props-table.to-implement-them")}
     </>
   )
 
