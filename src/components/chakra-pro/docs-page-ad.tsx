@@ -2,6 +2,7 @@ import { Box, Flex, useColorModeValue } from "@chakra-ui/react"
 import NextImage from "next/image"
 import * as React from "react"
 import { getUrl } from "./get-url"
+import { t } from "utils/i18n"
 
 const DocsPageChakraProAd = () => (
   <Flex
@@ -26,11 +27,11 @@ const DocsPageChakraProAd = () => (
     </Box>
     <Flex direction="column">
       <Box flex="1" fontSize="sm">
-        <b>Chakra UI Pro:</b> Start your application or marketing site with a
-        growing collection of beautiful and responsive UI components.
+        <b>{t("component.chakra-pro.docs-page-ad.message-bold")}</b>{" "}
+        {t("component.chakra-pro.docs-page-ad.message")}
       </Box>
       <Box fontWeight="medium" fontSize="xs" opacity={0.7}>
-        Ads via Chakra UI
+        {t("component.chakra-pro.docs-page-ad.ads-via-chakra-ui")}
       </Box>
     </Flex>
   </Flex>

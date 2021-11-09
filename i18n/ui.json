@@ -40,5 +40,26 @@
       "title": "Chakra UI Team and Contributors",
       "description": "List of team members and contributors that make the Chakra UI project possible"
     }
+  },
+  "component": {
+    "chakra-pro": {
+      "ad-banner": {
+        "message": "Build faster with Premium Chakra UI Components 💎",
+        "learn-more": "Learn more"
+      },
+      "docs-page-ad": {
+        "message-bold": "Chakra UI Pro:",
+        "message": "Start your application or marketing site with a growing collection of beautiful and responsive UI components.",
+        "ads-via-chakra-ui": "Ads via Chakra UI"
+      },
+      "home-page-ad": {
+        "premium-components": "Premium components",
+        "new": "New",
+        "build-fasler": "Build faster",
+        "with-chakra-ui-pro": "with Chakra UI Pro 💎",
+        "description": "Beautiful and responsive React components to build your application or marketing pages quicker.",
+        "learn-more": "Learn more"
+      }
+    }
   }
 }
