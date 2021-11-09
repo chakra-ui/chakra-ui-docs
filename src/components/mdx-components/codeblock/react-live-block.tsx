@@ -5,6 +5,7 @@ import CodeContainer from "./code-container"
 import CopyButton from "./copy-button"
 import scope from "./react-live-scope"
 import { liveEditorStyle, liveErrorStyle } from "./styles"
+import { t } from "utils/i18n"
 
 const LiveCodePreview = chakra(LivePreview, {
   baseStyle: {
@@ -35,7 +36,7 @@ const EditableNotice = (props: BoxProps) => {
       pointerEvents="none"
       {...props}
     >
-      Editable Example
+      {t("component.mdx-components.react-live-block.editable-example")}
     </Box>
   )
 }

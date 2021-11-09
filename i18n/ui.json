@@ -60,6 +60,30 @@
         "description": "Beautiful and responsive React components to build your application or marketing pages quicker.",
         "learn-more": "Learn more"
       }
+    },
+    "mdx-components": {
+      "copy-button": {
+        "copy": "copy",
+        "copied": "copied"
+      },
+      "react-live-block": {
+        "editable-example": "Editable Example"
+      },
+      "egghead-course-banner": {
+        "heading": "Build a Modern User Interface with Chakra UI",
+        "description": "In this free course, you will learn the basics of Chakra UI and how to build well-designed, accessible user interfaces with speed!",
+        "start-learning": "Start learning"
+      },
+      "carbon-ad": {
+        "message-bold": "Chakra UI Pro:",
+        "message": "Start your application or marketing site with a growing collection of beautiful and responsive UI components.",
+        "ads-via-chakra-ui": "Ads via Chakra UI"
+      },
+      "component-links": {
+        "view-source": "View source",
+        "view-storybook": "View storybook",
+        "view-theme-source": "View theme source"
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react"
 import { FaPlayCircle } from "react-icons/fa"
+import { t } from "utils/i18n"
 
 const EggheadCourseBanner = ({ href }) => {
   return (
@@ -27,7 +28,7 @@ const EggheadCourseBanner = ({ href }) => {
           <LinkOverlay href={href} target="_blank" color="white">
             <Flex align="center" mb="4">
               <Heading size="md">
-                Build a Modern User Interface with Chakra UI
+                {t("component.mdx-components.egghead-course-banner.heading")}
               </Heading>
               <Image
                 display={{ lg: "none" }}
@@ -40,8 +41,7 @@ const EggheadCourseBanner = ({ href }) => {
             </Flex>
           </LinkOverlay>
           <Text mb="5" color="gray.400">
-            In this free course, you will learn the basics of Chakra UI and how
-            to build well-designed, accessible user interfaces with speed!
+            {t("component.mdx-components.egghead-course-banner.description")}
           </Text>
           <DarkMode>
             <Button
@@ -51,7 +51,9 @@ const EggheadCourseBanner = ({ href }) => {
               leftIcon={<FaPlayCircle />}
               color="white"
             >
-              Start learning
+              {t(
+                "component.mdx-components.egghead-course-banner.start-learning",
+              )}
             </Button>
           </DarkMode>
         </Box>
