@@ -107,6 +107,9 @@
       "docs": "Docs",
       "guides": "Guides",
       "team": "Team"
+    },
+    "page-container": {
+      "skip-to-content": "Skip to Content"
     }
   }
 }
