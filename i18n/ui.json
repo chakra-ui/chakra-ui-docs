@@ -84,6 +84,12 @@
         "view-storybook": "View storybook",
         "view-theme-source": "View theme source"
       }
+    },
+    "algolia-search": {
+      "search-the-docs": "Search the docs",
+      "press": "Press",
+      "and": "and",
+      "to-search": "to-search"
     }
   }
 }
