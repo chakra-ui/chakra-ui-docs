@@ -7,18 +7,12 @@
       "description": "Simple, Modular and Accessible UI Components for your React Applications. Built with Styled System"
     }
   },
-  "team": {
-    "title": "Chakra UI Team",
-    "message": "Amazing engineers who have contributed time, effort, and thought to Chakra UI. Without them, this project would not be possible.",
-    "core-team": "Core Team 🤝",
-    "our-sponsors": "Our Sponsors 💰",
-    "organizations": "Organizations",
-    "individuals": "Individuals",
-    "project-contributors": "Project Contributors 💖",
-    "seo": {
-      "title": "Chakra UI Team and Contributors",
-      "description": "List of team members and contributors that make the Chakra UI project possible"
-    }
+  "notfound": {
+    "title": "404: Not found",
+    "description": "Page not found",
+    "heading": "404 | Page Not Found",
+    "message": "You just hit a route that doesn't exist... the sadness.😢",
+    "back-to-home": "Back to Home"
   },
   "resources": {
     "title": "Community Resources",
@@ -32,6 +26,19 @@
     },
     "blogs": {
       "title": "Blogs"
+    }
+  },
+  "team": {
+    "title": "Chakra UI Team",
+    "message": "Amazing engineers who have contributed time, effort, and thought to Chakra UI. Without them, this project would not be possible.",
+    "core-team": "Core Team 🤝",
+    "our-sponsors": "Our Sponsors 💰",
+    "organizations": "Organizations",
+    "individuals": "Individuals",
+    "project-contributors": "Project Contributors 💖",
+    "seo": {
+      "title": "Chakra UI Team and Contributors",
+      "description": "List of team members and contributors that make the Chakra UI project possible"
     }
   }
 }
