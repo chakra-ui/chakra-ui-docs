@@ -10,6 +10,7 @@ import {
   BoxProps,
 } from '@chakra-ui/react';
 import { Heading } from 'components/page-container';
+import { t } from 'utils/i18n';
 
 interface TableOfContentProps extends BoxProps {
   headings: Heading[];
@@ -21,7 +22,7 @@ function TableOfContent(props: TableOfContentProps) {
     headings.map(({ id }) => `[id="${id}"]`),
     {
       rootMargin: '0% 0% -24% 0%',
-    }
+    },
   );
   const linkColor = useColorModeValue('gray.600', 'gray.400');
   const linkHoverColor = useColorModeValue('gray.900', 'gray.600');
@@ -53,7 +54,7 @@ function TableOfContent(props: TableOfContentProps) {
         color={useColorModeValue('gray.700', 'gray.400')}
         letterSpacing='wide'
       >
-        On this page
+        {t('component.table-of-content.on-this-page')}
       </Text>
       <OrderedList spacing={1} ml='0' mt='4' styleType='none'>
         {headings.map(({ id, text, level }) => (

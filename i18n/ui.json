@@ -124,6 +124,9 @@
     },
     "sponsor-button": {
       "sponsor": "Sponsor"
+    },
+    "table-of-content": {
+      "on-this-page": "On this page"
     }
   }
 }
