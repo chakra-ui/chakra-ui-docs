@@ -127,6 +127,9 @@
     },
     "table-of-content": {
       "on-this-page": "On this page"
+    },
+    "vercel-callout": {
+      "deployed-by": "Deployed by"
     }
   }
 }
