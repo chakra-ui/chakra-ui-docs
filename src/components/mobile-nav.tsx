@@ -22,6 +22,7 @@ import { RemoveScroll } from 'react-remove-scroll';
 import Logo from './logo';
 import { SidebarContent } from './sidebar/sidebar';
 import SponsorButton from './sponsor-button';
+import { t } from 'utils/i18n';
 
 function NavLink({ href, children }) {
   const { pathname } = useRouter();
@@ -119,11 +120,15 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 </Flex>
                 <Box px='6' pb='6' pt='2' shadow={shadow}>
                   <HStack>
-                    <NavLink href='/docs/getting-started'>Docs</NavLink>
-                    <NavLink href='/guides/integrations/with-cra'>
-                      Guides
+                    <NavLink href='/docs/getting-started'>
+                      {t('component.mobile-nav.docs')}
                     </NavLink>
-                    <NavLink href='/team'>Team</NavLink>
+                    <NavLink href='/guides/integrations/with-cra'>
+                      {t('component.mobile-nav.guides')}
+                    </NavLink>
+                    <NavLink href='/team'>
+                      {t('component.mobile-nav.team')}
+                    </NavLink>
                   </HStack>
                 </Box>
               </Box>
@@ -186,5 +191,5 @@ export const MobileNavButton = React.forwardRef(
         {...props}
       />
     );
-  }
+  },
 );
