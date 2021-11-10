@@ -1,8 +1,8 @@
-import getUnicodeFlagIcon from 'country-flag-icons/unicode';
 import { useTranslation } from 'react-i18next';
 import locales from '../../i18n/locales';
 import {
   chakra,
+  Box,
   Menu,
   MenuItem,
   MenuButton,
@@ -13,6 +13,7 @@ import {
   useColorModeValue as mode,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { MdLanguage } from 'react-icons/md';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
 type Props = {
@@ -54,9 +55,7 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
   return (
     <Menu>
       <MenuButton as={Button} variant='ghost' rightIcon={<ChevronDownIcon />}>
-        {selectedLanguage
-          ? getUnicodeFlagIcon(selectedLanguage.split('-')[1])
-          : getUnicodeFlagIcon('US')}
+        <Box as={MdLanguage} display='inline' fontSize='1.25rem' />
         {withLabel && (
           <chakra.span ml={2}>
             {locales.localeNames[selectedLanguage]}
@@ -66,7 +65,6 @@ const LanguageSwitcher = ({ withLabel }: Props) => {
       <MenuList color={mode('gray.800', 'white')}>
         {locales.locales.map((locale) => (
           <MenuItem key={locale} onClick={() => changeLanguage(locale)}>
-            {getUnicodeFlagIcon(locale.split('-')[1])}
             <Text ml={2}>{locales.localeNames[locale]}</Text>
           </MenuItem>
         ))}
