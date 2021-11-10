@@ -935,6 +935,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "noobinthisgame",
+      "name": "Johann Ehlers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21695702?v=4",
+      "profile": "http://johann-ehlers.eu",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
