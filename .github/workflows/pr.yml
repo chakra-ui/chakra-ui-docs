@@ -35,9 +35,6 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Build CRA templates
-        run: yarn build:templates ../cra-templates
-
       - name: Lint types and code
         run: yarn lint
 
