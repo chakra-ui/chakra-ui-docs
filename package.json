@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "build:templates": "ts-node -T scripts/build-templates.ts",
     "lint": "next lint",
     "gen:theme-typings": "chakra-cli tokens theme.ts",
     "avatars:gen": "ts-node scripts/avatars.ts",
