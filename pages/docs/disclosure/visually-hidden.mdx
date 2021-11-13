@@ -18,12 +18,19 @@ from the visual client, but keep it readable for screen readers.
 
 ## Import
 
+Chakra UI exports 2 components for the VisuallyHidden.
+
+`VisuallyHidden`: Visually hidden span component used to hide elements on screen.
+`VisuallyHiddenInput`: Visually hidden input component used for designing custom input components using the html `input` as a proxy
+
 ```js
-import { VisuallyHidden } from "@chakra-ui/react"
+import { VisuallyHidden, VisuallyHiddenInput } from "@chakra-ui/react"
 ```
 
 ## Usage
 
+### `VisuallyHidden` Example  
+It is used to visually hide an element but to make it accessible for screen-readers. It renders html `<span>` as a proxy.
 ```jsx
 function Example() {
   return (
@@ -35,7 +42,7 @@ function Example() {
 }
 ```
 
-Another Example
+### Another Example with `VisuallyHidden`
 
 ```jsx
 function Example() {
@@ -48,18 +55,34 @@ function Example() {
 }
 ```
 
+### `VisuallyHiddenInput` Example
+It renders html `<input>` as a proxy. 
+
+```jsx
+function Example() {
+  return (
+    <VisuallyHiddenInput
+    defaultChecked
+    onChange={(event) => {
+      console.log(event.target.checked)
+    }}
+  />
+  )
+}
+```
+
 ---
 
 ## Accessibility
 
-VisuallyHidden has all the styles necessary to hide it from visual clients, but
+`VisuallyHidden` has all the styles necessary to hide it from visual clients, but
 keep it for screen readers.
 
 ---
 
 ## Props
 
-This component doesn't have any custom props.
+`VisuallyHidden` components doesn't have any custom props.
 
 | Name       | Type              | Description                       |
 | ---------- | ----------------- | --------------------------------- |
