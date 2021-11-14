@@ -44,6 +44,7 @@ import { getAllContributors } from 'utils/get-all-contributors';
 import { getAllMembers } from 'utils/get-all-members';
 import { getAllSponsors } from 'utils/get-all-sponsors';
 import { getGithubStars } from 'utils/get-github-stars';
+import { Trans } from 'react-i18next';
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -134,7 +135,16 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 mb='16px'
                 lineHeight='1.2'
               >
-                {t('homepage.title')}
+                <Trans t={t} i18nKey='homepage.title'>
+                  Create accessible React apps
+                  <Box
+                    as='span'
+                    color={useColorModeValue('teal.500', 'teal.300')}
+                  >
+                    {' '}
+                    with speed
+                  </Box>
+                </Trans>
               </chakra.h1>
 
               <Text
