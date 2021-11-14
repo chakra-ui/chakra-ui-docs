@@ -221,6 +221,12 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://nikolovlazar.com"><img src="https://avatars.githubusercontent.com/u/5396211?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Lazar Nikolov</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=lazarnikolov94" title="Documentation">📖</a> <a href="#example-lazarnikolov94" title="Examples">💡</a> <a href="#maintenance-lazarnikolov94" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://tuckermassad.com"><img src="https://avatars.githubusercontent.com/u/22939424?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Tucker Massad</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=TuckerMassad" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/HDisc"><img src="https://avatars.githubusercontent.com/u/43948163?v=4?s=64" width="64px;" alt=""/><br /><sub><b>hamasu</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=HDisc" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://creativedesignsguru.com/"><img src="https://avatars.githubusercontent.com/u/5209935?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Remi W.</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=ixartz" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://estheragbaje.dev/"><img src="https://avatars.githubusercontent.com/u/53586167?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Folasade Agbaje</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=estheragbaje" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://johann-ehlers.eu"><img src="https://avatars.githubusercontent.com/u/21695702?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Johann Ehlers</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=noobinthisgame" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/YenTingWu"><img src="https://avatars.githubusercontent.com/u/57777349?v=4?s=64" width="64px;" alt=""/><br /><sub><b>YenTing Wu</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=YenTingWu" title="Documentation">📖</a></td>
   </tr>
 </table>
 

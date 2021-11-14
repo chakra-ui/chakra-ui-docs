@@ -167,6 +167,14 @@
       "author": "Kitze",
       "description": "Kitze talks to Segun from Chakra - The road to Chakra 1.0 and all about Chakra UI.",
       "url": "https://www.youtube.com/watch?v=eeODp2pdRdo"
+    },
+    {
+      "heading": "How to Set Up Chakra UI with Next JS by creating a Hero component",
+      "type": "blog",
+      "tags": ["Next.js", "Landing page", "Basics", "v1.0"],
+      "author": "creativedesignsguru.com",
+      "description": "Learn how to create a simple, beautiful, and reusable hero component built using NextJs and Chakra UI.",
+      "url": "https://creativedesignsguru.com/chakra-ui-next-js/"
     }
   ]
 }

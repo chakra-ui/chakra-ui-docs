@@ -917,6 +917,42 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "ixartz",
+      "name": "Remi W.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5209935?v=4",
+      "profile": "https://creativedesignsguru.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "estheragbaje",
+      "name": "Folasade Agbaje",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53586167?v=4",
+      "profile": "https://estheragbaje.dev/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "noobinthisgame",
+      "name": "Johann Ehlers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21695702?v=4",
+      "profile": "http://johann-ehlers.eu",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "YenTingWu",
+      "name": "YenTing Wu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57777349?v=4",
+      "profile": "https://github.com/YenTingWu",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
