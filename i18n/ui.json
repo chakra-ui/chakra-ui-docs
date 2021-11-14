@@ -1,6 +1,7 @@
 {
   "homepage": {
-    "title": "Create accessible React apps with speed",
+    "title1": "Create accessible React apps",
+    "title2": "with speed",
     "message": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
     "seo": {
       "title": "Chakra UI - A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",

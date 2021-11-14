@@ -134,13 +134,13 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 mb='16px'
                 lineHeight='1.2'
               > 
-                {t('homepage.title').split(" ").slice(0,-2).join(" ")}
+                {t('homepage.title1')}
                 <Box
                   as="span"
                   color={useColorModeValue("teal.500", "teal.300")}
                 >
                   {" "}
-                {t('homepage.title').split(" ").slice(-2).join(" ")}
+                {t('homepage.title2')}
                 </Box>
               </chakra.h1>
 
