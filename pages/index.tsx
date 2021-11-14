@@ -133,8 +133,15 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 fontWeight='extrabold'
                 mb='16px'
                 lineHeight='1.2'
-              >
-                {t('homepage.title')}
+              > 
+                {t('homepage.title1')}
+                <Box
+                  as="span"
+                  color={useColorModeValue("teal.500", "teal.300")}
+                >
+                  {" "}
+                {t('homepage.title2')}
+                </Box>
               </chakra.h1>
 
               <Text
