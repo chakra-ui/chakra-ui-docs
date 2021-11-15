@@ -17,10 +17,7 @@ export default function DefaultLayout({ children, frontMatter }) {
   };
 
   const layout = Object.entries(layoutMap).find(([path]) => {
-    return (
-      slug?.startsWith(`/${path}`) ||
-      slug?.startsWith(`/../i18n/__generated__/${path}`)
-    );
+    return slug?.startsWith(`/${path}`);
   });
 
   if (!layout) return layoutMap.default;
