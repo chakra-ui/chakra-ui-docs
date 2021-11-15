@@ -10,8 +10,6 @@ export const rehypeMdxCodeMeta: Plugin = () => {
         const [key, value] = t.split('=');
         node.properties[key] = value;
       });
-
-      console.log(node.properties);
     });
   };
 };

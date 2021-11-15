@@ -1,30 +1,30 @@
-import { allGuides } from '.contentlayer/data';
-import type { Guide } from '.contentlayer/types';
+import { allBlogs } from '.contentlayer/data';
+import type { Blog } from '.contentlayer/types';
 import { MDXComponents } from 'components/mdx-components';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Layout from 'layouts';
 
-export default function Page({ guide }: { guide: Guide }) {
-  const Component = useMDXComponent(guide.body.code);
+export default function Page({ blog }: { blog: Blog }) {
+  const Component = useMDXComponent(blog.body.code);
   return (
-    <Layout frontMatter={guide.frontMatter}>
+    <Layout frontMatter={blog.frontMatter}>
       <Component components={MDXComponents} />
     </Layout>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const guides = allGuides
-    .map((t) => t._id.replace('guides/', '').replace('.mdx', ''))
+  const blogs = allBlogs
+    .map((t) => t._id.replace('blogs/', '').replace('.mdx', ''))
     .map((id) => ({ params: { slug: id.split('/') } }));
-  return { paths: guides, fallback: false };
+  return { paths: blogs, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug];
-  const guide = allGuides.find((guide) => guide._id.includes(params.join('/')));
-  return { props: { guide } };
+  const blog = allBlogs.find((blog) => blog._id.includes(params.join('/')));
+  return { props: { blog } };
 };
