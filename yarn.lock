@@ -817,12 +817,12 @@
     "@chakra-ui/system" "1.8.1"
     "@chakra-ui/utils" "1.9.1"
 
-"@chakra-ui/skip-nav@^1.1.13":
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/skip-nav/-/skip-nav-1.1.13.tgz#47061f8df60576d6ff0443fd347337e3406e39c2"
-  integrity sha512-qJNctxFZm+71hh7oi+FzALtveLxyQ5HF2QPA9f9BlaXf0xtooBd0qUz+fFpLf4HXjXW1UmMjOISnBF8WVSldww==
+"@chakra-ui/skip-nav@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/skip-nav/-/skip-nav-1.2.1.tgz#c0831eced1c073a603f57ef0040b70326a609a2b"
+  integrity sha512-iC6/ePntI4i0YxnzApD//QRZqXvr8tT61pVWrHl7OGt0oaGFw4YIozsScKCCIqmPnpd4zUTFASkdGQChv0P/4w==
   dependencies:
-    "@chakra-ui/utils" "1.8.4"
+    "@chakra-ui/utils" "1.9.1"
 
 "@chakra-ui/slider@1.5.1":
   version "1.5.1"
@@ -959,16 +959,6 @@
   integrity sha512-s/VFucc6grNdP1bxw0oQLzy167gjAgyl/GiGH9nt54nioDEiSsvn70qKg7sjajNTvpoot+urQUdr4Qh+fIUFZQ==
   dependencies:
     "@chakra-ui/utils" "1.9.1"
-
-"@chakra-ui/utils@1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-1.8.4.tgz#0e0c93ce39435d678c49af945ccd7972f8624aa9"
-  integrity sha512-lMk+FD70zgI8Fn6Ee5h6T2FJdJLnYIYaRQI+Au5izjl8e3V2OZ/Tdi72LW9FnHlQyFZ5N24HGefZlNxOEDUjmw==
-  dependencies:
-    "@types/lodash.mergewith" "4.6.6"
-    css-box-model "1.2.1"
-    framesync "5.3.0"
-    lodash.mergewith "4.6.2"
 
 "@chakra-ui/utils@1.9.1", "@chakra-ui/utils@^1.9.0", "@chakra-ui/utils@^1.9.1":
   version "1.9.1"
@@ -3598,11 +3588,6 @@ cosmiconfig@^6.0.0:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.7.2"
-
-country-flag-icons@^1.4.11:
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/country-flag-icons/-/country-flag-icons-1.4.11.tgz#79fc3ab2ef5cd328973152f036ff53e23d5d7026"
-  integrity sha512-OCaZ9gUjY4HvnXit8DPjBEnM2f4rk/eO7gwm6ZVbbxFTO46jnqnFh+2yT1N8juSzriMjdG0OqFFMSsiztkpl+w==
 
 create-ecdh@^4.0.0:
   version "4.0.4"
