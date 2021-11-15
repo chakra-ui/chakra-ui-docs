@@ -1,23 +1,13 @@
-const locales = require("./i18n/locales")
-const withPlugins = require("next-compose-plugins")
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-})
+const { withContentlayer } = require('next-contentlayer');
 
-const defaultConfig = {
-  experimental: {
-    optimizeFonts: true,
-    modern: true,
-  },
+module.exports = withContentlayer()({
   i18n: {
-    locales: locales.locales,
-    defaultLocale: locales.defaultLocale,
+    locales: ['en-US'],
+    defaultLocale: 'en-US',
   },
   swcMinify: true,
-  redirects: require("./next-redirect"),
+  redirects: require('./next-redirect'),
   experimental: {
     esmExternals: false,
   },
-}
-
-module.exports = withPlugins([withBundleAnalyzer], defaultConfig)
+});

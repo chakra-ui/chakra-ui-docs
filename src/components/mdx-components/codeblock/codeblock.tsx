@@ -15,7 +15,7 @@ function CodeBlock(props) {
      * Lazily-load <ReactLiveBlock /> to save bundle size.
      */
     on,
-    [on]
+    [on],
   );
   const {
     className,
@@ -26,21 +26,22 @@ function CodeBlock(props) {
     viewlines,
     ln,
     mountStylesheet = false,
-    ...rest
-  } = props;
+  } = props.children.props;
+
+  const _live = live === 'true' || live === true;
 
   const language = className?.replace(/language-/, '');
   const rawCode = children.trim();
+
   const reactLiveBlockProps = {
     rawCode,
     language,
     theme,
     noInline: manual,
     mountStylesheet,
-    ...rest,
   };
 
-  if (isMounted && language === 'jsx' && live === true) {
+  if (isMounted && language === 'jsx' && _live === true) {
     return <ReactLiveBlock editable {...reactLiveBlockProps} />;
   }
 
