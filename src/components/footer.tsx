@@ -13,7 +13,6 @@ import { FaYoutube } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { DiGithubBadge } from 'react-icons/di';
 import { VercelCallout } from './vercel-callout';
-import LanguageSwitcher from './language-switcher';
 
 type FooterLinkProps = {
   icon?: React.ElementType;
