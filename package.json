@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@chakra-ui/cli": "1.6.0",
-    "@chakra-ui/props-docs": "1.0.39",
+    "@chakra-ui/props-docs": "1.0.37",
     "@chakra-ui/react": "1.7.1",
     "@chakra-ui/theme-tools": "1.3.1",
     "@chakra-ui/utils": "1.9.1",
