@@ -93,9 +93,6 @@ export const Footer = () => (
         <FooterLink key={link.href} {...link} />
       ))}
     </Stack>
-    <chakra.span srOnly={useBreakpointValue({ base: undefined, md: true })}>
-      <LanguageSwitcher withLabel />
-    </chakra.span>
     <VercelCallout />
   </VStack>
 );
