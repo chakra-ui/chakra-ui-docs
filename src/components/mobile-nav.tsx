@@ -123,6 +123,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                     <NavLink href='/guides/integrations/with-cra'>
                       Guides
                     </NavLink>
+                    <NavLink href='/faq'>FAQ</NavLink>
                     <NavLink href='/team'>Team</NavLink>
                   </HStack>
                 </Box>
@@ -186,5 +187,5 @@ export const MobileNavButton = React.forwardRef(
         {...props}
       />
     );
-  }
+  },
 );
