@@ -45,6 +45,7 @@ function HeaderContent() {
   const mobileNav = useDisclosure();
 
   const { toggleColorMode: toggleMode } = useColorMode();
+
   const text = useColorModeValue('dark', 'light');
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
   const mobileNavBtnRef = React.useRef<HTMLButtonElement>();
