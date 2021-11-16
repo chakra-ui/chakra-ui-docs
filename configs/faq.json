@@ -1,8 +1,0 @@
-{
-  "qa": [
-    {
-      "question": "Is there a Datepicker in Chakra UI?",
-      "answer": "No, currently we don't provide a datepicker component. You can easily build your own custom Datepicker with Chakra UI and 'react-datepicker' or 'dayzed'."
-    }
-  ]
-}

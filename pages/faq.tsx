@@ -1,47 +1,34 @@
-import PageContainer from "components/page-container";
-import Sidebar from "components/sidebar/sidebar";
-import { getRoutes } from "layouts/mdx";
-import faq from "configs/faq.json";
-import { useTranslation } from "react-i18next";
-import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
+import React from 'react';
+import { MDXRemote } from 'next-mdx-remote';
+import { MDXComponents } from 'components/mdx-components';
+import { InferGetStaticPropsType } from 'next';
+import Layout from 'layouts';
+import { loadMdx } from 'utils/load-mdx';
+import path from 'path';
 
-interface QuestionAnswer {
-  question: string;
-  answer: string;
+function Faq({
+  mdxSource,
+  frontMatter,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  return (
+    <Layout frontMatter={frontMatter}>
+      <MDXRemote {...mdxSource} components={MDXComponents} />
+    </Layout>
+  );
 }
 
-const Faq = () => {
-  const { t } = useTranslation();
+export async function getStaticProps() {
+  const faqPath = path.join(process.cwd(), `pages/faq.mdx`);
+  const page = await loadMdx(faqPath);
 
-  /**
-   * Re-use the docs sidebar so it's easier for a visitors
-   * to reference components mentioned in the resource blog/video.
-   */
-  const routes = getRoutes("/docs/");
-  const data = faq.qa as QuestionAnswer[];
+  const { mdxSource: processedMdxSource, ...processedFrontmatter } = page;
 
-  return (
-    <PageContainer
-      sidebar={<Sidebar routes={routes} />}
-      frontmatter={{
-        title: t("faq.title"),
-        description: t("faq.description"),
-      }}
-    >
-      <Text mt="2">{t("faq.description")}</Text>
-
-      <Stack as="section" spacing="12" mt="12">
-        {data.map((item, index) => (
-          <Box key={index}>
-            <Heading as="h2" size="md">
-              {item.question}
-            </Heading>
-            <Text>{item.answer}</Text>
-          </Box>
-        ))}
-      </Stack>
-    </PageContainer>
-  );
-};
+  return {
+    props: {
+      mdxSource: processedMdxSource,
+      frontMatter: processedFrontmatter,
+    },
+  };
+}
 
 export default Faq;
