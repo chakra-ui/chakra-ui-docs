@@ -126,6 +126,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                     <NavLink href='/guides/integrations/with-cra'>
                       {t('component.mobile-nav.guides')}
                     </NavLink>
+                    <NavLink href='/faq'>FAQ</NavLink>
                     <NavLink href='/team'>
                       {t('component.mobile-nav.team')}
                     </NavLink>
