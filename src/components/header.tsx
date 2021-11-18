@@ -21,6 +21,7 @@ import Logo, { LogoIcon } from './logo';
 import { MobileNavButton, MobileNavContent } from './mobile-nav';
 import Search from './omni-search';
 import SponsorButton from './sponsor-button';
+import VersionSwitcher from './version-switcher';
 
 const DiscordIcon = (props: React.ComponentProps<'svg'>) => (
   <svg viewBox='0 0 146 146' {...props}>
@@ -76,6 +77,11 @@ function HeaderContent() {
           maxW='1100px'
         >
           <Search />
+          <VersionSwitcher
+            width='auto'
+            flexShrink={0}
+            display={{ base: 'none', md: 'flex' }}
+          />
           <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
             <Link
               isExternal
