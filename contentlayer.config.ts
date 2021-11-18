@@ -93,9 +93,30 @@ const Doc = defineDocumentType(() => ({
   },
 }));
 
+const FAQ = defineDocumentType(() => ({
+  name: 'FAQ',
+  filePathPattern: 'faqs/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+  },
+  computedFields: {
+    ...computedFields,
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        title: doc.title,
+        description: doc.description,
+        slug: `/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}));
+
 const contentLayerConfig = makeSource({
   contentDirPath: 'pages',
-  documentTypes: [Blog, Doc, Guides],
+  documentTypes: [Blog, Doc, Guides, FAQ],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
