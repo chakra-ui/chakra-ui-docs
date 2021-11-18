@@ -11,6 +11,7 @@ export default function DefaultLayout({ children, frontMatter }) {
     guides: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     docs: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     changelog: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
+    faq: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     default: (
       <PageContainer frontmatter={frontMatter}>{children}</PageContainer>
     ),

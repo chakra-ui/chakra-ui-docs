@@ -16,6 +16,7 @@ export function getRoutes(slug: string) {
     '/changelog': docsSidebar,
     '/guides': guidesSidebar,
     '/docs': docsSidebar,
+    '/faq': docsSidebar,
   };
 
   const [, sidebar] =
