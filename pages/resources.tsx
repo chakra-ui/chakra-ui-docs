@@ -79,7 +79,7 @@ interface ResourceSectionProps {
 function ResourceSection(props: ResourceSectionProps) {
   const { icon, title, resources } = props
   return (
-    <Box as="section" mt="12">
+    <Box as="section">
       <Heading as="h2" size="md">
         <Box
           as={icon}
