@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react"
+import { Box, Heading, SimpleGrid, Text, Tab, Tabs, TabList, TabPanel, TabPanels } from "@chakra-ui/react"
 import PageContainer from "components/page-container"
 import ResourceCard, { Resource } from "components/resource-card"
 import Sidebar from "components/sidebar/sidebar"
@@ -17,6 +17,10 @@ function Resources() {
   const data = resources.data as Resource[]
   const groups = groupBy(data, "type")
 
+  const BLOGS = "Blogs"
+  const TALKS = "Talks"
+  const VIDEOS = "Videos"
+
   return (
     <PageContainer
       sidebar={<Sidebar routes={routes} />}
@@ -30,24 +34,36 @@ function Resources() {
         A rich compilation of technical descriptions and detailed information of
         how Chakra UI works.
       </Text>
-
-      <Stack spacing="12">
-        <ResourceSection
-          title="Talks"
-          resources={groups.talk}
-          icon={FaMicrophone}
-        />
-        <ResourceSection
-          title="Videos"
-          resources={groups.video}
-          icon={FaVideo}
-        />
-        <ResourceSection
-          title="Blogs"
-          resources={groups.blog}
-          icon={FaPenSquare}
-        />
-      </Stack>
+      <Tabs>
+        <TabList>
+          <Tab>{TALKS}</Tab>
+          <Tab>{VIDEOS}</Tab>
+          <Tab>{BLOGS}</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <ResourceSection
+              title={TALKS}
+              resources={groups.talk}
+              icon={FaMicrophone}
+            />
+          </TabPanel>
+          <TabPanel>
+            <ResourceSection
+              title={VIDEOS}
+              resources={groups.video}
+              icon={FaVideo}
+            />
+          </TabPanel>
+          <TabPanel>
+            <ResourceSection
+              title={BLOGS}
+              resources={groups.blog}
+              icon={FaPenSquare}
+            />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </PageContainer>
   )
 }
