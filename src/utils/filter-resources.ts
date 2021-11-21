@@ -32,7 +32,6 @@ function getResourceText(resource: Resource) {
     description,
     author
   } = resource
-  const text = `${heading} ${description} ${author} ${"tags" in resource ? resource.tags.join(" ") : ""}`
 
-  return text.toLowerCase()
+  return `${heading} ${description} ${author} ${"tags" in resource ? resource.tags.join(" ") : ""}`.toLowerCase()
 }
