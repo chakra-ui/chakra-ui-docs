@@ -1,7 +1,6 @@
 import {
   Box,
   Heading,
-  SimpleGrid,
   Text,
   Tab,
   Tabs,
@@ -22,6 +21,7 @@ import * as React from "react"
 import { FaMicrophone, FaPenSquare, FaVideo } from "react-icons/fa"
 import { useFormik } from "formik"
 import filterResources from "utils/filter-resources"
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 function Resources() {
   /**
@@ -111,7 +111,7 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
-      <FormControl id={RESOURCES_FILTER} mt={8}>
+      <FormControl id={RESOURCES_FILTER} mt={8} mb={8}>
         <FormLabel>Search</FormLabel>
         <Input
           onChange={formik.handleChange}
@@ -119,11 +119,15 @@ function ResourceSection(props: ResourceSectionProps) {
           value={formik.values[RESOURCES_FILTER]}
         />
       </FormControl>
-      <SimpleGrid mt={8} columns={[1, 2]} spacing={8}>
-        {filterResources(formik.values[RESOURCES_FILTER], resources).map((item, index) => (
-          <ResourceCard key={index} data={item} />
-        ))}
-      </SimpleGrid>
+      <ResponsiveMasonry
+        columnsCountBreakPoints={{350: 1, 580: 2}}
+      >
+        <Masonry gutter="15px">
+          {filterResources(formik.values[RESOURCES_FILTER], resources).map((item, index) => (
+            <ResourceCard key={index} data={item} />
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
     </Box>
   )
 }
