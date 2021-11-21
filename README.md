@@ -228,6 +228,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="http://johann-ehlers.eu"><img src="https://avatars.githubusercontent.com/u/21695702?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Johann Ehlers</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=noobinthisgame" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/YenTingWu"><img src="https://avatars.githubusercontent.com/u/57777349?v=4?s=64" width="64px;" alt=""/><br /><sub><b>YenTing Wu</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=YenTingWu" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/sohamsshah"><img src="https://avatars.githubusercontent.com/u/47717492?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Soham Shah</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=sohamsshah" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/wattanx"><img src="https://avatars.githubusercontent.com/u/43837308?v=4?s=64" width="64px;" alt=""/><br /><sub><b>wattanx</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=wattanx" title="Documentation">📖</a></td>
   </tr>
 </table>
 
