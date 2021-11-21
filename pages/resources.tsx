@@ -1,4 +1,17 @@
-import { Box, Heading, SimpleGrid, Text, Tab, Tabs, TabList, TabPanel, TabPanels } from "@chakra-ui/react"
+import {
+  Box,
+  Heading,
+  SimpleGrid,
+  Text,
+  Tab,
+  Tabs,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Input,
+  FormControl,
+  FormLabel
+} from "@chakra-ui/react"
 import PageContainer from "components/page-container"
 import ResourceCard, { Resource } from "components/resource-card"
 import Sidebar from "components/sidebar/sidebar"
@@ -90,6 +103,10 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
+      <FormControl id="resource-filter" mt={8}>
+        <FormLabel>Search</FormLabel>
+        <Input placeholder="Example: React, Chakra"/>
+      </FormControl>
       <SimpleGrid mt={8} columns={[1, 2]} spacing={8}>
         {resources.map((item, index) => (
           <ResourceCard key={index} data={item} />
