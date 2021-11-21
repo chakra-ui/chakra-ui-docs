@@ -20,6 +20,7 @@ import { getRoutes } from "layouts/mdx"
 import groupBy from "lodash/groupBy"
 import * as React from "react"
 import { FaMicrophone, FaPenSquare, FaVideo } from "react-icons/fa"
+import { useFormik } from "formik"
 
 function Resources() {
   /**
@@ -91,6 +92,12 @@ interface ResourceSectionProps {
 
 function ResourceSection(props: ResourceSectionProps) {
   const { icon, title, resources } = props
+  const RESOURCES_FILTER = "resources-filter"
+  const formik = useFormik({
+    initialValues: { [RESOURCES_FILTER]: "" },
+    onSubmit: undefined
+  })
+
   return (
     <Box as="section">
       <Heading as="h2" size="md">
@@ -103,9 +110,13 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
-      <FormControl id="resource-filter" mt={8}>
+      <FormControl id={RESOURCES_FILTER} mt={8}>
         <FormLabel>Search</FormLabel>
-        <Input placeholder="Example: React, Chakra"/>
+        <Input
+          onChange={formik.handleChange}
+          placeholder="Example: React, Chakra"
+          value={formik.values[RESOURCES_FILTER]}
+        />
       </FormControl>
       <SimpleGrid mt={8} columns={[1, 2]} spacing={8}>
         {resources.map((item, index) => (
