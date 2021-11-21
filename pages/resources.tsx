@@ -98,7 +98,6 @@ function ResourceSection(props: ResourceSectionProps) {
     initialValues: { [RESOURCES_FILTER]: "" },
     onSubmit: undefined
   })
-  const [visibleResources, setVisibleResources] = React.useState(resources)
 
   return (
     <Box as="section">
@@ -115,18 +114,13 @@ function ResourceSection(props: ResourceSectionProps) {
       <FormControl id={RESOURCES_FILTER} mt={8}>
         <FormLabel>Search</FormLabel>
         <Input
-          onChange={e => {
-            // Call built in
-            formik.handleChange(e)
-            // Filter
-            setVisibleResources(() => e.target.value.trim() !== "" ? filterResources(e.target.value, resources) : resources)
-          }}
+          onChange={formik.handleChange}
           placeholder="Example: React, Chakra"
           value={formik.values[RESOURCES_FILTER]}
         />
       </FormControl>
       <SimpleGrid mt={8} columns={[1, 2]} spacing={8}>
-        {visibleResources.map((item, index) => (
+        {filterResources(formik.values[RESOURCES_FILTER], resources).map((item, index) => (
           <ResourceCard key={index} data={item} />
         ))}
       </SimpleGrid>
