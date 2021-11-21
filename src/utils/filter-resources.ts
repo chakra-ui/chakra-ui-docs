@@ -8,7 +8,7 @@ export function doesResourceContainQuery(query: string, resource: Resource) {
   const parsedQuery = query.split(" ").filter(text => text.trim() !== "")
   const resourceText = getResourceText(resource)
 
-  return parsedQuery.find(text => resourceText.includes(text))
+  return parsedQuery.find(text => resourceText.includes(text)) !== undefined
 }
 
 /**
