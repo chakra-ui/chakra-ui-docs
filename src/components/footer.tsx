@@ -13,6 +13,7 @@ import { FaYoutube } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { DiGithubBadge } from 'react-icons/di';
 import { VercelCallout } from './vercel-callout';
+import { t } from 'utils/i18n';
 
 type FooterLinkProps = {
   icon?: React.ElementType;
@@ -64,7 +65,7 @@ const NigeriaFlag = (props) => (
     verticalAlign='middle'
     {...props}
   >
-    <title>Nigeria</title>
+    <title>{t('component.footer.title')}</title>
     <g>
       <rect x='16' y='6' fill='#E6E6E6' width='16' height='36'></rect>{' '}
       <path
@@ -83,7 +84,7 @@ export const Footer = () => (
   <VStack as='footer' spacing={4} mt={12} textAlign='center'>
     <Text fontSize='sm'>
       <span>
-        Proudly made in
+        {t('component.footer.proudly-made-in')}
         <NigeriaFlag />
       </span>
       <span>by Segun Adebayo</span>

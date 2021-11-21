@@ -15,6 +15,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import * as React from "react"
 import SearchStyle from "./search.styles"
+import { t } from "utils/i18n"
 
 const ACTION_KEY_DEFAULT = ["Ctrl", "Control"]
 const ACTION_KEY_APPLE = ["⌘", "Command"]
@@ -67,10 +68,12 @@ export const SearchButton = React.forwardRef(function SearchButton(
       <SearchIcon />
       <HStack w="full" ml="3" spacing="4px">
         <Text textAlign="left" flex="1">
-          Search the docs
+          {t("component.algolia-search.search-the-docs")}
         </Text>
         <HStack spacing="4px">
-          <VisuallyHidden>Press </VisuallyHidden>
+          <VisuallyHidden>
+            {t("component.algolia-search.press")}{" "}
+          </VisuallyHidden>
           <Kbd color="gray.500" rounded="2px">
             <chakra.div
               as="abbr"
@@ -80,11 +83,14 @@ export const SearchButton = React.forwardRef(function SearchButton(
               {actionKey[0]}
             </chakra.div>
           </Kbd>
-          <VisuallyHidden> and </VisuallyHidden>
+          <VisuallyHidden> {t("component.algolia-search.and")} </VisuallyHidden>
           <Kbd color="gray.500" rounded="2px">
             K
           </Kbd>
-          <VisuallyHidden> to search</VisuallyHidden>
+          <VisuallyHidden>
+            {" "}
+            {t("component.algolia-search.to-search")}
+          </VisuallyHidden>
         </HStack>
       </HStack>
     </chakra.button>

@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react"
+import { t } from "utils/i18n"
 
 export function VercelCallout() {
   return (
@@ -13,7 +14,7 @@ export function VercelCallout() {
       py="2"
       rounded="lg"
     >
-      Deployed by{" "}
+      {t("component.vercel-callout.deployed-by")}{" "}
       <span role="img" aria-label="Vercel logo">
         ▲
       </span>{" "}

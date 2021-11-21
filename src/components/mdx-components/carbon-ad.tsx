@@ -9,6 +9,7 @@ import {
 import NextImage from "next/image"
 import * as React from "react"
 import loadScript from "utils/load-script"
+import { t } from "utils/i18n"
 
 export function CarbonAd() {
   const ref = React.useRef(null)
@@ -101,11 +102,11 @@ const DocsPageChakraProAd = () => (
     </Box>
     <Flex direction="column">
       <Box flex="1" fontSize="sm">
-        <b>Chakra UI Pro:</b> Start your application or marketing site with a
-        growing collection of beautiful and responsive UI components.
+        <b>{t("component.mdx-components.carbon-ad.message-bold")}</b>{" "}
+        {t("component.mdx-components.carbon-ad.message")}
       </Box>
       <Box fontWeight="medium" fontSize="xs" opacity={0.7}>
-        Ads via Chakra UI
+        {t("component.mdx-components.carbon-ad.ads-via-chakra-ui")}
       </Box>
     </Flex>
   </Flex>

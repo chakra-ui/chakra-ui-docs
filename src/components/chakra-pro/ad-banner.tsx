@@ -1,5 +1,6 @@
 import { Box, Center, chakra, Flex, Text } from "@chakra-ui/react"
 import { getUrl } from "./get-url"
+import { t } from "utils/i18n"
 
 export const AdBanner = () => {
   return (
@@ -12,7 +13,7 @@ export const AdBanner = () => {
     >
       <Flex align="center" fontSize="sm">
         <Text fontWeight="medium" maxW={{ base: "32ch", md: "unset" }}>
-          Build faster with Premium Chakra UI Components 💎
+          {t("component.chakra-pro.ad-banner.message")}
         </Text>
         <chakra.a
           flexShrink={0}
@@ -25,7 +26,7 @@ export const AdBanner = () => {
           py="1"
           rounded="base"
         >
-          Learn more{" "}
+          {t("component.chakra-pro.ad-banner.learn-more")}{" "}
         </chakra.a>
       </Flex>
     </Center>

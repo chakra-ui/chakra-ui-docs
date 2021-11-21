@@ -2,6 +2,7 @@ import { Box, BoxProps, chakra, Flex, Heading, Text } from "@chakra-ui/react"
 import * as React from "react"
 import DiscordIcon from "./docs/discord-logo"
 import Container from "./container"
+import { t } from "utils/i18n"
 
 function DiscordStrip(props: BoxProps) {
   return (
@@ -23,10 +24,10 @@ function DiscordStrip(props: BoxProps) {
             </Flex>
             <Box>
               <Heading size="md" lineHeight="1.2" mb="1">
-                Connect with the community
+                {t("component.discord-strip.heading")}
               </Heading>
               <Text opacity={0.7}>
-                Feel free to ask questions, report issues, and meet new people.
+                {t("component.discord-strip.description")}
               </Text>
             </Box>
           </Flex>
@@ -49,7 +50,7 @@ function DiscordStrip(props: BoxProps) {
             rounded="lg"
             fontSize="md"
           >
-            Join the #Chakra Discord!
+            {t("component.discord-strip.join-the-chakra-discord")}
           </chakra.button>
         </Flex>
       </Container>

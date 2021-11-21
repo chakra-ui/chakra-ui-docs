@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { FaNpm, FaGithub } from 'react-icons/fa';
 import StorybookIcon from '../storybook-icon';
+import { t } from 'utils/i18n';
 
 type ComponentLinkProps = LinkProps & {
   icon: React.ElementType;
@@ -71,7 +72,7 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconColor={iconColor}
         iconSize='1rem'
       >
-        View source
+        {t('component.mdx-components.component-links.view-source')}
       </ComponentLink>
     </WrapItem>
   );
@@ -97,7 +98,7 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconSize='1.25rem'
         iconColor='pink.500'
       >
-        View storybook
+        {t('component.mdx-components.component-links.view-storybook')}
       </ComponentLink>
     </WrapItem>
   );
@@ -110,7 +111,7 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconColor={iconColor}
         iconSize='1rem'
       >
-        View theme source
+        {t('component.mdx-components.component-links.view-theme-source')}
       </ComponentLink>
     </WrapItem>
   );
