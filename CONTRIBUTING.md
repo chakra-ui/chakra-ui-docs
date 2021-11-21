@@ -15,7 +15,7 @@ Setting up the docsite project is easy. It's a Next JS site. The following steps
 
 ```sh
 git clone https://github.com/<your_github_username>/chakra-ui-docs.git
-cd chakra-ui
+cd chakra-ui-docs
 ```
 
 1. Setup all the dependencies and packages by running `yarn`.
@@ -114,5 +114,5 @@ export GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>
 
 ## License
 
-By contributing your code to the chakra-ui GitHub repository, you agree to
+By contributing your code to the chakra-ui-docs GitHub repository, you agree to
 license your contribution under the MIT license.
