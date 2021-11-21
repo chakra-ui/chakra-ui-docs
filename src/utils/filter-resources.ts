@@ -1,7 +1,7 @@
 import { Resource } from '../components/resource-card'
 
 export default function filterResources(query: string, resources: Resource[]): Resource[] {
-  return resources.filter((resource: Resource) => doesResourceContainQuery(query, resource))
+  return query.trim() !== "" ? resources.filter((resource: Resource) => doesResourceContainQuery(query, resource)) : resources
 }
 
 export function doesResourceContainQuery(query: string, resource: Resource) {
