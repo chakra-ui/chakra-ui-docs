@@ -93,6 +93,7 @@
     "imagemin-jpegtran": "7.0.0",
     "next-compose-plugins": "^2.2.1",
     "prettier": "^2.4.1",
+    "sharp": "^0.29.3",
     "ts-node": "9.1.1"
   }
 }
