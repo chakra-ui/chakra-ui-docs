@@ -10,6 +10,7 @@ import TableOfContent from 'components/table-of-content';
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code';
 import PageTransition from './page-transition';
 import { AdBanner } from './chakra-pro/ad-banner';
+import { t } from 'utils/i18n';
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter();
@@ -57,7 +58,9 @@ function PageContainer(props: PageContainerProps) {
   return (
     <>
       <SEO title={title} description={description} />
-      <SkipNavLink zIndex={20}>Skip to Content</SkipNavLink>
+      <SkipNavLink zIndex={20}>
+        {t('component.page-container.skip-to-content')}
+      </SkipNavLink>
       <AdBanner />
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>

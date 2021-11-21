@@ -2,6 +2,7 @@ import React from "react"
 import { Box, BoxProps, Icon } from "@chakra-ui/react"
 import { FaHeart } from "react-icons/fa"
 import siteConfig from "configs/site-config"
+import { t } from "utils/i18n"
 
 const SponsorButton = (props: BoxProps) => (
   <Box
@@ -36,7 +37,7 @@ const SponsorButton = (props: BoxProps) => (
   >
     <Icon as={FaHeart} w="4" h="4" color="red.500" mr="2" />
     <Box as="strong" lineHeight="inherit" fontWeight="semibold">
-      Sponsor
+      {t("component.sponsor-button.sponsor")}
     </Box>
   </Box>
 )

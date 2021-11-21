@@ -4,13 +4,14 @@ import NextImage from "next/image"
 import * as React from "react"
 import { FiArrowRight } from "react-icons/fi"
 import { getUrl } from "./get-url"
+import { t } from "utils/i18n"
 
 export const ChakraProAd = () => (
   <Box as="section" bg="gray.900" color="white" overflow="hidden">
     <Container pt="24" pb="0">
       <Flex align="center" direction="column" textAlign="center" mb="10">
         <Text casing="uppercase" letterSpacing="wide" fontWeight="bold">
-          Premium components{" "}
+          {t("component.chakra-pro.home-page-ad.premium-components")}{" "}
           <Badge
             colorScheme="yellow"
             variant="solid"
@@ -18,7 +19,7 @@ export const ChakraProAd = () => (
             mt="-1"
             ml="2"
           >
-            New
+            {t("component.chakra-pro.home-page-ad.new")}
           </Badge>
         </Text>
         <Heading
@@ -34,13 +35,12 @@ export const ChakraProAd = () => (
             bgGradient="linear(to-r, blue.400, teal.400)"
             bgClip="text"
           >
-            Build faster
+            {t("component.chakra-pro.home-page-ad.build-fasler")}
           </Box>{" "}
-          with Chakra UI Pro 💎
+          {t("component.chakra-pro.home-page-ad.with-chakra-ui-pro")}
         </Heading>
         <Text maxW="48ch" mx="auto" fontSize="lg" mt="6" opacity={0.8}>
-          Beautiful and responsive React components to build your application or
-          marketing pages quicker.
+          {t("component.chakra-pro.home-page-ad.description")}
         </Text>
         <HStack
           mt="6"
@@ -56,7 +56,7 @@ export const ChakraProAd = () => (
           transition="all 0.2s"
           _hover={{ bg: "whiteAlpha.400" }}
         >
-          <Text>Learn more</Text>
+          <Text>{t("component.chakra-pro.home-page-ad.learn-more")}</Text>
           <Box as={FiArrowRight} display="inline-block" ml="2" />
         </HStack>
       </Flex>

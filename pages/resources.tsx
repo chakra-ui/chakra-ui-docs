@@ -6,6 +6,7 @@ import resources from "configs/resources.json"
 import { getRoutes } from "layouts/mdx"
 import groupBy from "lodash/groupBy"
 import * as React from "react"
+import { t } from "utils/i18n"
 import { FaMicrophone, FaPenSquare, FaVideo } from "react-icons/fa"
 
 function Resources() {
@@ -21,29 +22,25 @@ function Resources() {
     <PageContainer
       sidebar={<Sidebar routes={routes} />}
       frontmatter={{
-        title: "Community Resources",
-        description:
-          "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+        title: t("resources.title"),
+        description: t("resources.description"),
       }}
     >
-      <Text mt="2">
-        A rich compilation of technical descriptions and detailed information of
-        how Chakra UI works.
-      </Text>
+      <Text mt="2">{t("resources.message")}</Text>
 
       <Stack spacing="12">
         <ResourceSection
-          title="Talks"
+          title={t("resources.talks.title")}
           resources={groups.talk}
           icon={FaMicrophone}
         />
         <ResourceSection
-          title="Videos"
+          title={t("resources.videos.title")}
           resources={groups.video}
           icon={FaVideo}
         />
         <ResourceSection
-          title="Blogs"
+          title={t("resources.blogs.title")}
           resources={groups.blog}
           icon={FaPenSquare}
         />
