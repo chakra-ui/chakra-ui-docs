@@ -15,6 +15,11 @@ describe("doesResourceContainQuery", () => {
     const mockQuery = "name mock"
     expect(doesResourceContainQuery(mockQuery, mockResource)).toBeTruthy()
   })
+
+  it("should return true if resource contains query with different casing", () => {
+    const mockQuery = "MOcK"
+    expect(doesResourceContainQuery(mockQuery, mockResource)).toBeTruthy()
+  })
   
   it("should return false if resource does not contain query", () => {
     const mockQuery = "no match"
