@@ -3,11 +3,12 @@ import {
   defineDocumentType,
   makeSource,
 } from 'contentlayer/source-files';
-import remarkSlug from 'remark-slug';
-import remarkGfm from 'remark-gfm';
 import remarkEmoji from 'remark-emoji';
-import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta';
+import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
 import siteConfig from './configs/site-config';
+import { getTableOfContents } from './src/utils/mdx-utils';
+import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta';
 
 const computedFields: ComputedFields = {
   slug: {
@@ -36,6 +37,7 @@ const Blog = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },
@@ -61,6 +63,7 @@ const Guides = defineDocumentType(() => ({
         tags: doc.tags,
         author: doc.author,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },
@@ -88,6 +91,7 @@ const Doc = defineDocumentType(() => ({
         image: doc.image,
         version: doc.version,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },
@@ -109,6 +113,7 @@ const FAQ = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },
