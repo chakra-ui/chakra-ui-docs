@@ -24,18 +24,15 @@ export function doesResourceContainQuery(query: string, resource: Resource) {
 
 /**
  * Function used to convert a resource into a single string, which makes it simpler
- * to search above
+ * to search above.  Notice, it only searches specific parts of a resource.
  */
 function getResourceText(resource: Resource) {
-  let text = ""
-
-  for (const key in resource) {
-    let resourceKeyValue = resource[key]
-    if (typeof resourceKeyValue !== "string") {
-      resourceKeyValue = resourceKeyValue.join(' ')
-    }
-    text += resourceKeyValue
-  }
+  const {
+    heading,
+    description,
+    author
+  } = resource
+  const text = `${heading} ${description} ${author} ${"tags" in resource ? resource.tags.join(" ") : ""}`
 
   return text.toLowerCase()
 }
