@@ -1,30 +1,30 @@
-import { allDocs } from '.contentlayer/data';
-import type { Doc } from '.contentlayer/types';
+import { allBlogs } from '.contentlayer/data';
+import type { Blog } from '.contentlayer/types';
 import { MDXComponents } from 'components/mdx-components';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Layout from 'layouts';
 
-export default function Page({ doc }: { doc: Doc }) {
-  const Component = useMDXComponent(doc.body.code);
+export default function Page({ blog }: { blog: Blog }) {
+  const Component = useMDXComponent(blog.body.code);
   return (
-    <Layout frontMatter={doc.frontMatter}>
+    <Layout frontMatter={blog.frontMatter}>
       <Component components={MDXComponents} />
     </Layout>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const docs = allDocs
-    .map((t) => t._raw.flattenedPath.replace('docs/', ''))
+  const blogs = allBlogs
+    .map((t) => t._id.replace('blogs/', '').replace('.mdx', ''))
     .map((id) => ({ params: { slug: id.split('/') } }));
-  return { paths: docs, fallback: false };
+  return { paths: blogs, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug];
-  const doc = allDocs.find((doc) => doc._id.includes(params.join('/')));
-  return { props: { doc } };
+  const blog = allBlogs.find((blog) => blog._id.includes(params.join('/')));
+  return { props: { blog } };
 };

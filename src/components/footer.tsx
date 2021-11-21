@@ -13,7 +13,6 @@ import { FaYoutube } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { DiGithubBadge } from 'react-icons/di';
 import { VercelCallout } from './vercel-callout';
-import LanguageSwitcher from './language-switcher';
 import { t } from 'utils/i18n';
 
 type FooterLinkProps = {
@@ -95,9 +94,6 @@ export const Footer = () => (
         <FooterLink key={link.href} {...link} />
       ))}
     </Stack>
-    <chakra.span srOnly={useBreakpointValue({ base: undefined, md: true })}>
-      <LanguageSwitcher withLabel />
-    </chakra.span>
     <VercelCallout />
   </VStack>
 );

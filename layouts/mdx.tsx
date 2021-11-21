@@ -1,6 +1,3 @@
-import * as chakraComponents from '@chakra-ui/react';
-import { MDXProvider } from '@mdx-js/react';
-import { MDXComponents } from 'components/mdx-components';
 import PageContainer from 'components/page-container';
 import Pagination from 'components/pagination';
 import Sidebar from 'components/sidebar/sidebar';
@@ -28,14 +25,6 @@ export function getRoutes(slug: string) {
   return sidebar?.routes ?? [];
 }
 
-export function MDXLayoutProvider({ children }) {
-  return (
-    <MDXProvider components={{ ...chakraComponents, ...MDXComponents }}>
-      {children}
-    </MDXProvider>
-  );
-}
-
 interface MDXLayoutProps {
   frontmatter: any;
   children: React.ReactNode;
@@ -49,19 +38,17 @@ export default function MDXLayout(props: MDXLayoutProps) {
   const routeContext = getRouteContext(route, routes);
 
   return (
-    <MDXLayoutProvider>
-      <PageContainer
-        frontmatter={frontmatter}
-        sidebar={<Sidebar routes={routes} />}
-        pagination={
-          <Pagination
-            next={routeContext.nextRoute}
-            previous={routeContext.prevRoute}
-          />
-        }
-      >
-        {children}
-      </PageContainer>
-    </MDXLayoutProvider>
+    <PageContainer
+      frontmatter={frontmatter}
+      sidebar={<Sidebar routes={routes} />}
+      pagination={
+        <Pagination
+          next={routeContext.nextRoute}
+          previous={routeContext.prevRoute}
+        />
+      }
+    >
+      {children}
+    </PageContainer>
   );
 }

@@ -1,8 +1,9 @@
 import {
+  Box,
   chakra,
   Flex,
-  Box,
   HStack,
+  HTMLChakraProps,
   Icon,
   IconButton,
   Link,
@@ -10,14 +11,12 @@ import {
   useColorModeValue,
   useDisclosure,
   useUpdateEffect,
-  HTMLChakraProps,
 } from '@chakra-ui/react';
 import siteConfig from 'configs/site-config';
 import { useViewportScroll } from 'framer-motion';
 import NextLink from 'next/link';
 import React from 'react';
 import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa';
-import LanguageSwitcher from './language-switcher';
 import Logo, { LogoIcon } from './logo';
 import { MobileNavButton, MobileNavContent } from './mobile-nav';
 import Search from './omni-search';
@@ -47,6 +46,7 @@ function HeaderContent() {
   const mobileNav = useDisclosure();
 
   const { toggleColorMode: toggleMode } = useColorMode();
+
   const text = useColorModeValue('dark', 'light');
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
   const mobileNavBtnRef = React.useRef<HTMLButtonElement>();
@@ -77,10 +77,11 @@ function HeaderContent() {
           maxW='1100px'
         >
           <Search />
-          <HStack spacing={0} mr={2} display={{ base: 'none', md: 'flex' }}>
-            <VersionSwitcher width='auto' flexShrink={0} />
-            <LanguageSwitcher />
-          </HStack>
+          <VersionSwitcher
+            width='auto'
+            flexShrink={0}
+            display={{ base: 'none', md: 'flex' }}
+          />
           <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
             <Link
               isExternal

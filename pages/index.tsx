@@ -1,4 +1,3 @@
-import { t } from 'utils/i18n';
 import {
   Box,
   BoxProps,
@@ -22,8 +21,8 @@ import {
 } from '@chakra-ui/react';
 import { chunk } from '@chakra-ui/utils';
 import users from 'chakra-users';
-import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
 import { AdBanner } from 'components/chakra-pro/ad-banner';
+import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
 import Container from 'components/container';
 import DiscordStrip from 'components/discord-strip';
 import { Footer } from 'components/footer';
@@ -44,7 +43,7 @@ import { getAllContributors } from 'utils/get-all-contributors';
 import { getAllMembers } from 'utils/get-all-members';
 import { getAllSponsors } from 'utils/get-all-sponsors';
 import { getGithubStars } from 'utils/get-github-stars';
-import { Trans } from 'react-i18next';
+import { t } from 'utils/i18n';
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -135,16 +134,14 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 mb='16px'
                 lineHeight='1.2'
               >
-                <Trans t={t} i18nKey='homepage.title'>
-                  Create accessible React apps
-                  <Box
-                    as='span'
-                    color={useColorModeValue('teal.500', 'teal.300')}
-                  >
-                    {' '}
-                    with speed
-                  </Box>
-                </Trans>
+                {t('homepage.title.main')}
+                <Box
+                  as='span'
+                  color={useColorModeValue('teal.500', 'teal.300')}
+                >
+                  {' '}
+                  {t('homepage.title.highlighted')}
+                </Box>
               </chakra.h1>
 
               <Text
