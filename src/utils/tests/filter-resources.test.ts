@@ -27,7 +27,7 @@ describe("doesResourceContainQuery", () => {
   })
   
   it("should return false if resource does not contain query", () => {
-    const mockQuery = "mo"
+    const mockQuery = "no match"
     expect(doesResourceContainQuery(mockQuery, mockResource)).toBeFalsy()
   })
 })
