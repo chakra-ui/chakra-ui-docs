@@ -49,7 +49,7 @@ function Resources() {
         A rich compilation of technical descriptions and detailed information of
         how Chakra UI works.
       </Text>
-      <Tabs>
+      <Tabs variant="enclosed">
         <TabList>
           <Tab>{TALKS}</Tab>
           <Tab>{VIDEOS}</Tab>
