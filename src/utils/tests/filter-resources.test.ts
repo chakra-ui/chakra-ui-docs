@@ -21,6 +21,11 @@ describe("doesResourceContainQuery", () => {
     expect(doesResourceContainQuery(mockQuery, mockResource)).toBeTruthy()
   })
   
+  it("should return true if resource contains multiple words in query and at least one is in resource", () => {
+    const mockQuery = "name other"
+    expect(doesResourceContainQuery(mockQuery, mockResource)).toBeTruthy()
+  })
+  
   it("should return false if resource does not contain query", () => {
     const mockQuery = "no match"
     expect(doesResourceContainQuery(mockQuery, mockResource)).toBeFalsy()
