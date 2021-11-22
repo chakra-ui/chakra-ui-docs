@@ -3,7 +3,8 @@ import {
   Box,
   BoxProps,
   Heading,
-  Link,
+  LinkBox,
+  LinkOverlay,
   Text,
   useColorModeValue,
   Wrap,
@@ -30,36 +31,38 @@ function ResourceCard(props: ResourceCardProps) {
   const color = useColorModeValue('teal.600', 'teal.400');
 
   return (
-    <Box {...rest} maxW='360px'>
-      <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
-        {tags?.map((tag, index) => (
-          <WrapItem key={index}>
-            <Badge
-              as='a'
-              rel='tag'
-              color={color}
-              textTransform='uppercase'
-              fontSize='xs'
-              fontWeight='bold'
-            >
-              {tag}
-            </Badge>
-          </WrapItem>
-        ))}
-      </Wrap>
+    <LinkBox {...rest} maxW='360px'>
+      <Box>
+        <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
+          {tags?.map((tag, index) => (
+            <WrapItem key={index}>
+              <Badge
+                as='a'
+                rel='tag'
+                color={color}
+                textTransform='uppercase'
+                fontSize='xs'
+                fontWeight='bold'
+              >
+                {tag}
+              </Badge>
+            </WrapItem>
+          ))}
+        </Wrap>
 
-      <Heading as='h3' size='sm'>
-        <Link isExternal href={url}>
-          <span className='content'>{heading}</span>
-        </Link>
-      </Heading>
-      <Text fontSize='sm' color='gray.500' mt='2'>
-        by {author}
-      </Text>
-      <Text lineHeight='tall' py={2} opacity={0.8}>
-        {description}
-      </Text>
-    </Box>
+        <Heading as='h3' size='sm'>
+          <LinkOverlay isExternal href={url}>
+            <span className='content'>{heading}</span>
+          </LinkOverlay>
+        </Heading>
+        <Text fontSize='sm' color='gray.500' mt='2'>
+          by {author}
+        </Text>
+        <Text lineHeight='tall' py={2} opacity={0.8}>
+          {description}
+        </Text>
+      </Box>
+    </LinkBox>
   );
 }
 
