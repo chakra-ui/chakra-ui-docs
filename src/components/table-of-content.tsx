@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useScrollSpy } from 'hooks/use-scrollspy';
+import * as React from 'react'
+import { useScrollSpy } from 'hooks/use-scrollspy'
 import {
   Box,
   ListItem,
@@ -8,24 +8,24 @@ import {
   Text,
   useColorModeValue,
   BoxProps,
-} from '@chakra-ui/react';
-import { Heading } from 'components/page-container';
-import { t } from 'utils/i18n';
+} from '@chakra-ui/react'
+import { Heading } from 'components/page-container'
+import { t } from 'utils/i18n'
 
 interface TableOfContentProps extends BoxProps {
-  headings: Heading[];
+  headings: Heading[]
 }
 
 function TableOfContent(props: TableOfContentProps) {
-  const { headings, ...rest } = props;
+  const { headings, ...rest } = props
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),
     {
       rootMargin: '0% 0% -24% 0%',
     },
-  );
-  const linkColor = useColorModeValue('gray.600', 'gray.400');
-  const linkHoverColor = useColorModeValue('gray.900', 'gray.600');
+  )
+  const linkColor = useColorModeValue('gray.600', 'gray.400')
+  const linkHoverColor = useColorModeValue('gray.900', 'gray.600')
   return (
     <Box
       as='nav'
@@ -76,7 +76,7 @@ function TableOfContent(props: TableOfContentProps) {
         ))}
       </OrderedList>
     </Box>
-  );
+  )
 }
 
-export default TableOfContent;
+export default TableOfContent

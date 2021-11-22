@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   VStack,
   Icon,
@@ -7,25 +7,25 @@ import {
   Link,
   useBreakpointValue,
   chakra,
-} from '@chakra-ui/react';
-import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
-import { FaYoutube } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { DiGithubBadge } from 'react-icons/di';
-import { VercelCallout } from './vercel-callout';
-import { t } from 'utils/i18n';
+} from '@chakra-ui/react'
+import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io'
+import { FaYoutube } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import { DiGithubBadge } from 'react-icons/di'
+import { VercelCallout } from './vercel-callout'
+import { t } from 'utils/i18n'
 
 type FooterLinkProps = {
-  icon?: React.ElementType;
-  href?: string;
-  label?: string;
-};
+  icon?: React.ElementType
+  href?: string
+  label?: string
+}
 
 const FooterLink: React.FC<FooterLinkProps> = ({ icon, href, label }) => (
   <Link display='inline-block' href={href} aria-label={label} isExternal>
     <Icon as={icon} fontSize='xl' color='gray.400' />
   </Link>
-);
+)
 
 const links = [
   {
@@ -53,7 +53,7 @@ const links = [
     label: 'YouTube',
     href: 'https://www.youtube.com/channel/UC4TmDovH46TB4S0SM0Y4CIg',
   },
-];
+]
 
 const NigeriaFlag = (props) => (
   <chakra.svg
@@ -78,7 +78,7 @@ const NigeriaFlag = (props) => (
       />
     </g>
   </chakra.svg>
-);
+)
 
 export const Footer = () => (
   <VStack as='footer' spacing={4} mt={12} textAlign='center'>
@@ -96,6 +96,6 @@ export const Footer = () => (
     </Stack>
     <VercelCallout />
   </VStack>
-);
+)
 
-export default Footer;
+export default Footer

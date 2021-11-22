@@ -1,11 +1,12 @@
 ---
 title: Blitz JS
 description: A guide for installing Chakra UI with blitzjs projects
-tags: ["blitzjs"]
+tags: ['blitzjs']
 author: estheragbaje
 ---
 
-### 1. Installation 
+### 1. Installation
+
 To set up Chakra UI within your `blitzjs` project, simply run:
 
 ```bash
@@ -23,7 +24,6 @@ This installs Chakra UI and sets up the `ChakraProvider`.
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-
 > Boom! You're good to go 🚀🚀🚀 However, if you'd love to take it a step
 > further, check out the optional step below.
 
@@ -39,14 +39,14 @@ with your customizations.
 
 ```jsx live=false
 // 1. Import the extendTheme function
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
   },
 }
 

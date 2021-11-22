@@ -1,7 +1,7 @@
 ---
 title: Using Fonts
 description: A guide for adding fonts to your Chakra project
-tags: ["fonts"]
+tags: ['fonts']
 author: DecliningLotus
 ---
 
@@ -37,12 +37,12 @@ Assign these fonts to `theme.fonts` to use them with Chakra. More details on
 theming [here](/docs/theming/customize-theme).
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: "Open Sans",
-    body: "Raleway",
+    heading: 'Open Sans',
+    body: 'Raleway',
   },
 })
 
@@ -53,8 +53,8 @@ Then import the relevant font weights and styles into the same root file you
 import `ChakraProvider` into.
 
 ```jsx live=false
-import "@fontsource/raleway/400.css"
-import "@fontsource/open-sans/700.css"
+import '@fontsource/raleway/400.css'
+import '@fontsource/open-sans/700.css'
 
 import {
   ChakraProvider,
@@ -62,8 +62,8 @@ import {
   Stack,
   Heading,
   Text,
-} from "@chakra-ui/react"
-import theme from "./theme"
+} from '@chakra-ui/react'
+import theme from './theme'
 
 const App = () => (
   <ChakraProvider theme={theme}>
@@ -88,7 +88,8 @@ const App = () => (
 
 > - For Create React App, you need to set this up in `index.js`
 > - In Next.js, this can be found in `_app.js`
-> - In Gatsby, usually `ChakraProvider` is set up in `gatsby-browser.js` using `wrapRootElement`
+> - In Gatsby, usually `ChakraProvider` is set up in `gatsby-browser.js` using
+>   `wrapRootElement`
 
 ## Option 2: Using `@font-face`
 
@@ -107,7 +108,7 @@ Next, we'll define a `Fonts` component that sets up the `@font-face` rules in
 the `styles` prop of `Global`:
 
 ```jsx live=false
-import { Global } from "@emotion/react"
+import { Global } from '@emotion/react'
 
 const Fonts = () => (
   <Global
@@ -141,12 +142,12 @@ Assign these fonts to `theme.fonts` to use them with Chakra. More details on
 theming [here](/docs/theming/customize-theme).
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: "Heading Font Name",
-    body: "Body Font Name",
+    heading: 'Heading Font Name',
+    body: 'Body Font Name',
   },
 })
 
@@ -163,9 +164,9 @@ import {
   Stack,
   Heading,
   Text,
-} from "@chakra-ui/react"
-import Fonts from "./fonts"
-import theme from "./theme"
+} from '@chakra-ui/react'
+import Fonts from './fonts'
+import theme from './theme'
 
 const App = () => (
   <ChakraProvider theme={theme}>

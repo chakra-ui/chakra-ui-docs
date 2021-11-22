@@ -1,4 +1,4 @@
-import { SearchIcon } from "@chakra-ui/icons"
+import { SearchIcon } from '@chakra-ui/icons'
 import {
   chakra,
   HStack,
@@ -8,17 +8,17 @@ import {
   Text,
   useColorModeValue,
   VisuallyHidden,
-} from "@chakra-ui/react"
-import { DocSearchModal, useDocSearchKeyboardEvents } from "@docsearch/react"
-import Head from "next/head"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import * as React from "react"
-import SearchStyle from "./search.styles"
-import { t } from "utils/i18n"
+} from '@chakra-ui/react'
+import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import SearchStyle from './search.styles'
+import { t } from 'utils/i18n'
 
-const ACTION_KEY_DEFAULT = ["Ctrl", "Control"]
-const ACTION_KEY_APPLE = ["⌘", "Command"]
+const ACTION_KEY_DEFAULT = ['Ctrl', 'Control']
+const ACTION_KEY_APPLE = ['⌘', 'Command']
 
 function Hit(props: any) {
   const { hit, children } = props
@@ -30,12 +30,12 @@ function Hit(props: any) {
 }
 
 export const SearchButton = React.forwardRef(function SearchButton(
-  props: HTMLChakraProps<"button">,
+  props: HTMLChakraProps<'button'>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const [actionKey, setActionKey] = React.useState<string[]>(ACTION_KEY_APPLE)
   React.useEffect(() => {
-    if (typeof navigator === "undefined") return
+    if (typeof navigator === 'undefined') return
     const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
     if (!isMac) {
       setActionKey(ACTION_KEY_DEFAULT)
@@ -44,52 +44,52 @@ export const SearchButton = React.forwardRef(function SearchButton(
 
   return (
     <chakra.button
-      flex="1"
-      type="button"
-      role="search"
-      mx="6"
+      flex='1'
+      type='button'
+      role='search'
+      mx='6'
       ref={ref}
-      lineHeight="1.2"
-      w="100%"
-      bg={useColorModeValue("white", "gray.700")}
-      whiteSpace="nowrap"
-      display={{ base: "none", sm: "flex" }}
-      alignItems="center"
-      color="gray.400"
-      py="3"
-      px="4"
-      outline="0"
-      _focus={{ shadow: "outline" }}
-      shadow="base"
-      rounded="md"
-      aria-label="Search the docs"
+      lineHeight='1.2'
+      w='100%'
+      bg={useColorModeValue('white', 'gray.700')}
+      whiteSpace='nowrap'
+      display={{ base: 'none', sm: 'flex' }}
+      alignItems='center'
+      color='gray.400'
+      py='3'
+      px='4'
+      outline='0'
+      _focus={{ shadow: 'outline' }}
+      shadow='base'
+      rounded='md'
+      aria-label='Search the docs'
       {...props}
     >
       <SearchIcon />
-      <HStack w="full" ml="3" spacing="4px">
-        <Text textAlign="left" flex="1">
-          {t("component.algolia-search.search-the-docs")}
+      <HStack w='full' ml='3' spacing='4px'>
+        <Text textAlign='left' flex='1'>
+          {t('component.algolia-search.search-the-docs')}
         </Text>
-        <HStack spacing="4px">
+        <HStack spacing='4px'>
           <VisuallyHidden>
-            {t("component.algolia-search.press")}{" "}
+            {t('component.algolia-search.press')}{' '}
           </VisuallyHidden>
-          <Kbd color="gray.500" rounded="2px">
+          <Kbd color='gray.500' rounded='2px'>
             <chakra.div
-              as="abbr"
+              as='abbr'
               title={actionKey[1]}
-              textDecoration="none !important"
+              textDecoration='none !important'
             >
               {actionKey[0]}
             </chakra.div>
           </Kbd>
-          <VisuallyHidden> {t("component.algolia-search.and")} </VisuallyHidden>
-          <Kbd color="gray.500" rounded="2px">
+          <VisuallyHidden> {t('component.algolia-search.and')} </VisuallyHidden>
+          <Kbd color='gray.500' rounded='2px'>
             K
           </Kbd>
           <VisuallyHidden>
-            {" "}
-            {t("component.algolia-search.to-search")}
+            {' '}
+            {t('component.algolia-search.to-search')}
           </VisuallyHidden>
         </HStack>
       </HStack>
@@ -131,9 +131,9 @@ function AlgoliaSearch() {
     <>
       <Head>
         <link
-          rel="preconnect"
-          href="https://BH4D9OD16A-dsn.algolia.net"
-          crossOrigin="true"
+          rel='preconnect'
+          href='https://BH4D9OD16A-dsn.algolia.net'
+          crossOrigin='true'
         />
       </Head>
       <SearchStyle />
@@ -141,13 +141,13 @@ function AlgoliaSearch() {
       {isOpen && (
         <Portal>
           <DocSearchModal
-            placeholder="Search the docs"
+            placeholder='Search the docs'
             initialQuery={initialQuery}
             initialScrollY={window.scrollY}
             onClose={onClose}
-            indexName="chakra-ui"
-            apiKey="df1dcc41f7b8e5d68e73dd56d1e19701"
-            appId="BH4D9OD16A"
+            indexName='chakra-ui'
+            apiKey='df1dcc41f7b8e5d68e73dd56d1e19701'
+            appId='BH4D9OD16A'
             //@ts-expect-error
             navigator={{
               navigate({ suggestionUrl }) {
@@ -158,9 +158,9 @@ function AlgoliaSearch() {
             hitComponent={Hit}
             transformItems={(items) => {
               return items.map((item) => {
-                const a = document.createElement("a")
+                const a = document.createElement('a')
                 a.href = item.url
-                const hash = a.hash === "#content-wrapper" ? "" : a.hash
+                const hash = a.hash === '#content-wrapper' ? '' : a.hash
                 item.url = `${a.pathname}${hash}`
                 return item
               })

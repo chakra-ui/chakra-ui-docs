@@ -1,13 +1,13 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import FontFace from 'components/font-face';
-import { DefaultSeo } from 'next-seo';
-import Head from 'next/head';
-import React from 'react';
-import theme from 'theme';
-import { getSeo } from 'utils/seo';
+import { ChakraProvider } from '@chakra-ui/react'
+import FontFace from 'components/font-face'
+import { DefaultSeo } from 'next-seo'
+import Head from 'next/head'
+import React from 'react'
+import theme from 'theme'
+import { getSeo } from 'utils/seo'
 
 const App = ({ Component, pageProps }) => {
-  const seo = getSeo();
+  const seo = getSeo()
 
   return (
     <>
@@ -33,7 +33,7 @@ const App = ({ Component, pageProps }) => {
       </ChakraProvider>
       <FontFace />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,11 +1,11 @@
-import * as ComponentProps from "@chakra-ui/props-docs"
-import { chakra, Code, Flex, HStack, Stack, theme } from "@chakra-ui/react"
-import Link from "next/link"
-import * as React from "react"
-import { convertBackticksToInlineCode } from "utils/convert-backticks-to-inline-code"
-import { InlineCode } from "components/mdx-components/inline-code"
-import { Anchor } from "components/mdx-components/anchor"
-import { t } from "utils/i18n"
+import * as ComponentProps from '@chakra-ui/props-docs'
+import { chakra, Code, Flex, HStack, Stack, theme } from '@chakra-ui/react'
+import Link from 'next/link'
+import * as React from 'react'
+import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
+import { InlineCode } from 'components/mdx-components/inline-code'
+import { Anchor } from 'components/mdx-components/anchor'
+import { t } from 'utils/i18n'
 
 /**
  * A map of components that use foreign theme key.
@@ -14,23 +14,23 @@ import { t } from "utils/i18n"
 const themeComponentKeyAliases = {
   AlertDialog: 'Modal',
   IconButton: 'Button',
-};
+}
 
 export type PropsTableProps = {
   /**
    * displayName of the target component
    */
-  of: keyof typeof ComponentProps;
+  of: keyof typeof ComponentProps
   /**
    * prop names to omit
    */
-  omit?: string[] | null;
+  omit?: string[] | null
   /**
    * Render only given prop names
    * Has precedence over `omit`
    */
-  only?: string[] | null;
-};
+  only?: string[] | null
+}
 
 const PropsTable = ({
   of,
@@ -54,7 +54,7 @@ const PropsTable = ({
     throw new Error(
       `No props left to render for component ${of}.
 Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
-    );
+    )
   }
 
   return (
@@ -92,10 +92,10 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
               }}
             >
               <HStack>
-                <Code colorScheme="purple">{prop.name}</Code>
+                <Code colorScheme='purple'>{prop.name}</Code>
                 {prop.required && (
-                  <Code colorScheme="red">
-                    {t("component.props-table.required")}
+                  <Code colorScheme='red'>
+                    {t('component.props-table.required')}
                   </Code>
                 )}
               </HStack>
@@ -104,27 +104,27 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
           <div>
             {prop.description && (
               <Flex>
-                <div className="row">
-                  {t("component.props-table.description")}
+                <div className='row'>
+                  {t('component.props-table.description')}
                 </div>
-                <div className="cell">
+                <div className='cell'>
                   <p>{convertBackticksToInlineCode(prop.description)}</p>
                 </div>
               </Flex>
             )}
             <Flex>
-              <div className="row">{t("component.props-table.type")}</div>
-              <div className="cell">
-                <InlineCode whiteSpace="wrap" fontSize="0.8em">
+              <div className='row'>{t('component.props-table.type')}</div>
+              <div className='cell'>
+                <InlineCode whiteSpace='wrap' fontSize='0.8em'>
                   {prop.type}
                 </InlineCode>
               </div>
             </Flex>
             {prop.defaultValue && (
               <Flex>
-                <div className="row">{t("component.props-table.default")}</div>
-                <div className="cell">
-                  <InlineCode whiteSpace="wrap" fontSize="0.8em">
+                <div className='row'>{t('component.props-table.default')}</div>
+                <div className='cell'>
+                  <InlineCode whiteSpace='wrap' fontSize='0.8em'>
                     {prop.defaultValue}
                   </InlineCode>
                 </div>
@@ -134,49 +134,49 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
         </chakra.div>
       ))}
     </Stack>
-  );
-};
+  )
+}
 
-export default PropsTable;
+export default PropsTable
 
 interface MakePropsTableOptions extends PropsTableProps {}
 
-const TYPE_GENERIC_THEMABLE = '(string & {})';
+const TYPE_GENERIC_THEMABLE = '(string & {})'
 
 function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
-  const props = ComponentProps[of]?.props;
+  const props = ComponentProps[of]?.props
 
-  const themeKey = themeComponentKeyAliases[of] ?? of;
-  const componentTheme = theme.components[themeKey];
+  const themeKey = themeComponentKeyAliases[of] ?? of
+  const componentTheme = theme.components[themeKey]
 
   const featNotImplemented = (feat: string) => (
     <>
-      {feat} {t("component.props-table.for")} <InlineCode>{of}</InlineCode>{" "}
-      {t("component.props-table.are-not-implemented-in-the-default-theme")}{" "}
-      {t("component.props-table.you-can")}{" "}
+      {feat} {t('component.props-table.for')} <InlineCode>{of}</InlineCode>{' '}
+      {t('component.props-table.are-not-implemented-in-the-default-theme')}{' '}
+      {t('component.props-table.you-can')}{' '}
       <Link
         href='/docs/theming/customize-theme#customizing-component-styles'
         passHref
       >
-        <Anchor>{t("component.props-table.extend-the-theme")}</Anchor>
-      </Link>{" "}
-      {t("component.props-table.to-implement-them")}
+        <Anchor>{t('component.props-table.extend-the-theme')}</Anchor>
+      </Link>{' '}
+      {t('component.props-table.to-implement-them')}
     </>
-  );
+  )
 
-  if (!props) return [];
+  if (!props) return []
 
   return Object.entries(props)
     .filter(([name]) => {
       if (Array.isArray(only) && !only.includes(name)) {
-        return false;
+        return false
       }
 
       if (Array.isArray(omit) && omit.includes(name)) {
-        return false;
+        return false
       }
 
-      return true;
+      return true
     })
     .map(([name, { defaultValue, description, required, type }]) => {
       const prop = {
@@ -185,62 +185,62 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
         description,
         required,
         type: type.name,
-      };
+      }
 
       if (name === 'size') {
-        const defaultSize = componentTheme?.defaultProps?.size;
+        const defaultSize = componentTheme?.defaultProps?.size
 
         if (defaultSize != null) {
-          prop.defaultValue = `"${defaultSize}"`;
+          prop.defaultValue = `"${defaultSize}"`
         }
 
         if (prop.type === TYPE_GENERIC_THEMABLE) {
-          prop.type = 'string';
-          prop.description = featNotImplemented('Sizes');
+          prop.type = 'string'
+          prop.description = featNotImplemented('Sizes')
         } else {
-          prop.type = omitGenericThemableType(prop.type);
+          prop.type = omitGenericThemableType(prop.type)
         }
       }
 
       if (name === 'variant') {
-        const defaultVariant = componentTheme?.defaultProps?.variant;
+        const defaultVariant = componentTheme?.defaultProps?.variant
 
         if (defaultVariant != null) {
-          prop.defaultValue = `"${defaultVariant}"`;
+          prop.defaultValue = `"${defaultVariant}"`
         }
 
         if (prop.type === TYPE_GENERIC_THEMABLE) {
-          prop.type = 'string';
-          prop.description = featNotImplemented('Variants');
+          prop.type = 'string'
+          prop.description = featNotImplemented('Variants')
         } else {
-          prop.type = omitGenericThemableType(prop.type);
+          prop.type = omitGenericThemableType(prop.type)
         }
       }
 
       if (name === 'colorScheme') {
-        prop.type = omitGenericThemableType(prop.type);
+        prop.type = omitGenericThemableType(prop.type)
 
-        const defaultColorScheme = componentTheme?.defaultProps?.colorScheme;
+        const defaultColorScheme = componentTheme?.defaultProps?.colorScheme
 
         if (defaultColorScheme != null) {
-          prop.defaultValue = `"${defaultColorScheme}"`;
+          prop.defaultValue = `"${defaultColorScheme}"`
         } else {
-          prop.description = featNotImplemented('Color Schemes');
+          prop.description = featNotImplemented('Color Schemes')
         }
       }
 
-      return prop;
+      return prop
     })
     .sort((propA, propB) => {
-      const aRequired = propA.required ? 1000 : 0;
-      const bRequired = propB.required ? 1000 : 0;
-      const requiredOffset = aRequired - bRequired;
-      return String(propA.name).localeCompare(propB.name) - requiredOffset;
-    });
+      const aRequired = propA.required ? 1000 : 0
+      const bRequired = propB.required ? 1000 : 0
+      const requiredOffset = aRequired - bRequired
+      return String(propA.name).localeCompare(propB.name) - requiredOffset
+    })
 }
 
 const omitGenericThemableType = (type: string) =>
   type
     .split(' | ')
     .filter((type) => type !== TYPE_GENERIC_THEMABLE)
-    .join(' | ');
+    .join(' | ')

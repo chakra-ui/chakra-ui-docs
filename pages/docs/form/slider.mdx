@@ -1,16 +1,17 @@
 ---
 title: Slider
-package: "@chakra-ui/slider"
-image: "components/slider.svg"
-description: "The Slider is used to allow users to make selections from a range of values"
+package: '@chakra-ui/slider'
+image: 'components/slider.svg'
+description:
+  'The Slider is used to allow users to make selections from a range of values'
 ---
 
 The `Slider` is used to allow users to make selections from a range of values.
 
 <ComponentLinks
-  theme={{ componentName: "slider" }}
-  github={{ package: "slider" }}
-  npm={{ package: "@chakra-ui/slider" }}
+  theme={{ componentName: 'slider' }}
+  github={{ package: 'slider' }}
+  npm={{ package: '@chakra-ui/slider' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -35,7 +36,7 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -44,7 +45,7 @@ import {
 > provide an accessible label for the Slider.
 
 ```jsx
-<Slider aria-label="slider-ex-1" defaultValue={30}>
+<Slider aria-label='slider-ex-1' defaultValue={30}>
   <SliderTrack>
     <SliderFilledTrack />
   </SliderTrack>
@@ -55,7 +56,7 @@ import {
 ### Changing the slider color scheme
 
 ```jsx
-<Slider aria-label="slider-ex-2" colorScheme="pink" defaultValue={30}>
+<Slider aria-label='slider-ex-2' colorScheme='pink' defaultValue={30}>
   <SliderTrack>
     <SliderFilledTrack />
   </SliderTrack>
@@ -67,10 +68,10 @@ import {
 
 ```jsx
 <Slider
-  aria-label="slider-ex-3"
+  aria-label='slider-ex-3'
   defaultValue={30}
-  orientation="vertical"
-  minH="32"
+  orientation='vertical'
+  minH='32'
 >
   <SliderTrack>
     <SliderFilledTrack />
@@ -85,12 +86,12 @@ import {
 customize its styles.
 
 ```jsx
-<Slider aria-label="slider-ex-4" defaultValue={30}>
-  <SliderTrack bg="red.100">
-    <SliderFilledTrack bg="tomato" />
+<Slider aria-label='slider-ex-4' defaultValue={30}>
+  <SliderTrack bg='red.100'>
+    <SliderFilledTrack bg='tomato' />
   </SliderTrack>
   <SliderThumb boxSize={6}>
-    <Box color="tomato" as={MdGraphicEq} />
+    <Box color='tomato' as={MdGraphicEq} />
   </SliderThumb>
 </Slider>
 ```
@@ -102,9 +103,9 @@ accomplished using the `step` prop.
 
 ```jsx
 <Slider defaultValue={60} min={0} max={300} step={30}>
-  <SliderTrack bg="red.100">
-    <Box position="relative" right={10} />
-    <SliderFilledTrack bg="tomato" />
+  <SliderTrack bg='red.100'>
+    <Box position='relative' right={10} />
+    <SliderFilledTrack bg='tomato' />
   </SliderTrack>
   <SliderThumb boxSize={6} />
 </Slider>
@@ -117,7 +118,7 @@ interested in the final result after sliding is complete. You can use
 `onChangeEnd` for this.
 
 ```jsx live=false
-<Slider aria-label="slider-ex-5" onChangeEnd={(val) => console.log(val)}>
+<Slider aria-label='slider-ex-5' onChangeEnd={(val) => console.log(val)}>
   <SliderTrack>
     <SliderFilledTrack />
   </SliderTrack>
@@ -132,7 +133,7 @@ opt-out of this behavior by setting the value of `focusThumbOnChange` to
 `false`. This is normally used with a "controlled" slider value.
 
 ```jsx live=false
-<Slider aria-label="slider-ex-5" value={value} focusThumbOnChange={false}>
+<Slider aria-label='slider-ex-5' value={value} focusThumbOnChange={false}>
   <SliderTrack>
     <SliderFilledTrack />
   </SliderTrack>
@@ -152,7 +153,7 @@ UIs.
 The `Slider` component wraps all its children in the [Box](/docs/layout/box)
 component, so you can pass all `Box` props to change its style.
 
-<PropsTable of="Slider" />
+<PropsTable of='Slider' />
 
 ### SliderThumb Props
 

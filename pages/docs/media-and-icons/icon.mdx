@@ -16,9 +16,9 @@ Chakra provides multiple ways to use icons in your project:
 > clickable icon, use the [IconButton](/docs/form/icon-button) instead.
 
 <ComponentLinks
-  theme={{ componentName: "icon" }}
-  github={{ package: "icon" }}
-  npm={{ package: "@chakra-ui/icon" }}
+  theme={{ componentName: 'icon' }}
+  github={{ package: 'icon' }}
+  npm={{ package: '@chakra-ui/icon' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -71,8 +71,8 @@ To use third-party icon libraries like
 
 ```jsx live=false
 // 1. Import
-import { Icon } from "@chakra-ui/react"
-import { MdSettings } from "react-icons/md"
+import { Icon } from '@chakra-ui/react'
+import { MdSettings } from 'react-icons/md'
 
 // 2. Use the `as` prop
 function Example() {
@@ -91,7 +91,7 @@ function Example() {
   <Icon as={MdReceipt} w={6} h={6} />
 
   {/* Use the `color` prop to change the icon color */}
-  <Icon as={MdGroupWork} w={8} h={8} color="red.500" />
+  <Icon as={MdGroupWork} w={8} h={8} color='red.500' />
 </HStack>
 ```
 
@@ -105,7 +105,7 @@ Chakra provides two methods for creating your custom icons:
 They can be imported from `@chakra-ui/react`:
 
 ```jsx live=false
-import { Icon, createIcon } from "@chakra-ui/react"
+import { Icon, createIcon } from '@chakra-ui/react'
 ```
 
 Both `Icon` and `createIcon` enable you to style the icon using
@@ -116,10 +116,10 @@ Both `Icon` and `createIcon` enable you to style the icon using
 The `Icon` component renders as an `svg` element.
 
 ```jsx
-<Icon viewBox="0 0 200 200" color="red.500">
+<Icon viewBox='0 0 200 200' color='red.500'>
   <path
-    fill="currentColor"
-    d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+    fill='currentColor'
+    d='M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0'
   />
 </Icon>
 ```
@@ -128,10 +128,10 @@ This enables you to define your own custom icon components:
 
 ```jsx live=false
 const CircleIcon = (props) => (
-  <Icon viewBox="0 0 200 200" {...props}>
+  <Icon viewBox='0 0 200 200' {...props}>
     <path
-      fill="currentColor"
-      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+      fill='currentColor'
+      d='M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0'
     />
   </Icon>
 )
@@ -148,7 +148,7 @@ And style them with style props:
   <CircleIcon boxSize={6} />
 
   {/* Use the `color` prop to change the icon color */}
-  <CircleIcon boxSize={8} color="red.500" />
+  <CircleIcon boxSize={8} color='red.500' />
 </HStack>
 ```
 
@@ -159,26 +159,26 @@ generating icons with `Icon`, allowing you to achieve the same functionality
 with less effort.
 
 ```jsx live=false
-import { createIcon } from "@chakra-ui/icons"
+import { createIcon } from '@chakra-ui/icons'
 
 // using `path`
 export const UpDownIcon = createIcon({
-  displayName: "UpDownIcon",
-  viewBox: "0 0 200 200",
+  displayName: 'UpDownIcon',
+  viewBox: '0 0 200 200',
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: (
     <path
-      fill="currentColor"
-      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+      fill='currentColor'
+      d='M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0'
     />
   ),
 })
 
 // OR using the `d` value of a path (the path definition) directly
 export const UpDownIcon = createIcon({
-  displayName: "UpDownIcon",
-  viewBox: "0 0 200 200",
-  d: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0",
+  displayName: 'UpDownIcon',
+  viewBox: '0 0 200 200',
+  d: 'M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0',
 })
 ```
 
@@ -212,4 +212,4 @@ When `children` is not provided, the `Icon` component renders a fallback icon.
 
 ## `createIcon` options
 
-<PropsTable of="createIcon" />
+<PropsTable of='createIcon' />

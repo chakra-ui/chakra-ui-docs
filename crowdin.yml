@@ -1,6 +1,0 @@
-preserve_hierarchy: true
-files:
-  - source: /pages/**/*.mdx
-    translation: /i18n/__generated__/**/%file_name%.%locale_with_underscore%.%file_extension%
-  - source: /i18n/ui.json
-    translation: /i18n/__generated__/**/ui/%file_name%.%locale_with_underscore%.%file_extension%

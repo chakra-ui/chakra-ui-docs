@@ -276,7 +276,7 @@ import { Box } from "@chakra-ui/react"
 ### Borders
 
 ```jsx live=false
-<Box border="1px" borderColor="gray.200">
+<Box border='1px' borderColor='gray.200'>
   Card
 </Box>
 ```
@@ -378,57 +378,57 @@ import { Box } from "@chakra-ui/react"
 
 ```jsx
 <SimpleGrid
-  bg="gray.50"
+  bg='gray.50'
   columns={{ sm: 2, md: 4 }}
-  spacing="8"
-  p="10"
-  textAlign="center"
-  rounded="lg"
-  color="gray.400"
+  spacing='8'
+  p='10'
+  textAlign='center'
+  rounded='lg'
+  color='gray.400'
 >
-  <Box boxShadow="xs" p="6" rounded="md" bg="white">
+  <Box boxShadow='xs' p='6' rounded='md' bg='white'>
     xs
   </Box>
-  <Box boxShadow="sm" p="6" rounded="md" bg="white">
+  <Box boxShadow='sm' p='6' rounded='md' bg='white'>
     sm
   </Box>
-  <Box boxShadow="base" p="6" rounded="md" bg="white">
+  <Box boxShadow='base' p='6' rounded='md' bg='white'>
     Base
   </Box>
-  <Box boxShadow="md" p="6" rounded="md" bg="white">
+  <Box boxShadow='md' p='6' rounded='md' bg='white'>
     md
   </Box>
-  <Box boxShadow="lg" p="6" rounded="md" bg="white">
+  <Box boxShadow='lg' p='6' rounded='md' bg='white'>
     lg
   </Box>
-  <Box boxShadow="xl" p="6" rounded="md" bg="white">
+  <Box boxShadow='xl' p='6' rounded='md' bg='white'>
     xl
   </Box>
-  <Box boxShadow="2xl" p="6" rounded="md" bg="white">
+  <Box boxShadow='2xl' p='6' rounded='md' bg='white'>
     2xl
   </Box>
-  <Box boxShadow="dark-lg" p="6" rounded="md" bg="white">
+  <Box boxShadow='dark-lg' p='6' rounded='md' bg='white'>
     Dark lg
   </Box>
-  <Box boxShadow="outline" p="6" rounded="md" bg="white">
+  <Box boxShadow='outline' p='6' rounded='md' bg='white'>
     Outline
   </Box>
-  <Box boxShadow="inner" p="6" rounded="md" bg="white">
+  <Box boxShadow='inner' p='6' rounded='md' bg='white'>
     Inner
   </Box>
 </SimpleGrid>
 ```
 
 ```jsx
-<Text textShadow="1px 1px #ff0000" m="6">
+<Text textShadow='1px 1px #ff0000' m='6'>
   Text with shadows
 </Text>
 ```
 
-| Prop                   | CSS Property  | Theme Field |
-| ---------------------- | ------------- | ----------- |
-| `textShadow`           | `text-shadow` | `shadows`   |
-| `shadow`, `boxShadow`  | `box-shadow`  | `shadows`   |
+| Prop                  | CSS Property  | Theme Field |
+| --------------------- | ------------- | ----------- |
+| `textShadow`          | `text-shadow` | `shadows`   |
+| `shadow`, `boxShadow` | `box-shadow`  | `shadows`   |
 
 ### Pseudo
 
@@ -540,7 +540,7 @@ For example, say you are using a `Button` component, and you need to make it a
 link instead. You can compose `a` and `Button` like this:
 
 ```jsx
-<Button as="a" target="_blank" variant="outline" href="https://chakra-ui.com">
+<Button as='a' target='_blank' variant='outline' href='https://chakra-ui.com'>
   Hello
 </Button>
 ```

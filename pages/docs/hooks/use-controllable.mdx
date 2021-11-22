@@ -1,6 +1,6 @@
 ---
 title: useControllableState
-package: "@chakra-ui/hooks"
+package: '@chakra-ui/hooks'
 description: React hook to handle controlled vs uncontrolled component scenarios
 ---
 
@@ -15,7 +15,7 @@ both controlled or uncontrolled state scenarios.
 ## Import
 
 ```js
-import { useControllableProp, useControllableState } from "@chakra-ui/react"
+import { useControllableProp, useControllableState } from '@chakra-ui/react'
 ```
 
 ## useControllableProp
@@ -56,7 +56,7 @@ function Example() {
   return (
     <div>
       <Button onClick={() => setValue(value + 1)}>+</Button>
-      <Box as="span" w="200px" mx="24px">
+      <Box as='span' w='200px' mx='24px'>
         {value}
       </Box>
       <Button onClick={() => setValue(value - 1)}>-</Button>
@@ -80,7 +80,7 @@ function Example() {
   return (
     <div>
       <Button onClick={() => setInternalValue(value + 1)}>+</Button>
-      <Box as="span" w="200px" mx="24px">
+      <Box as='span' w='200px' mx='24px'>
         {internalValue}
       </Box>
       <Button onClick={() => setInternalValue(value - 1)}>-</Button>
@@ -97,4 +97,4 @@ controlled or uncontrolled modes** or **when you attempt to update the
 
 ## Props
 
-<PropsTable of="useControllableState" />
+<PropsTable of='useControllableState' />

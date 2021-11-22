@@ -1,9 +1,9 @@
 ---
-title: "useBreakpointValue"
-package: "@chakra-ui/media-query"
+title: 'useBreakpointValue'
+package: '@chakra-ui/media-query'
 description:
-  "React hook for getting the value for the current breakpoint from the provided
-  responsive values object."
+  'React hook for getting the value for the current breakpoint from the provided
+  responsive values object.'
 ---
 
 `useBreakpointValue` is a custom hook which returns the value for the current
@@ -18,7 +18,7 @@ achieve the same behavior.
 ## Import
 
 ```js
-import { useBreakpointValue } from "@chakra-ui/react"
+import { useBreakpointValue } from '@chakra-ui/react'
 ```
 
 ## Return value
@@ -29,12 +29,12 @@ The `useBreakpointValue` hook returns the value for the current breakpoint.
 
 ```jsx
 function Example() {
-  const variant = useBreakpointValue({ base: "outline", md: "solid" })
+  const variant = useBreakpointValue({ base: 'outline', md: 'solid' })
 
   return (
-    <VStack align="flex-start">
+    <VStack align='flex-start'>
       <Text>Resize your window to see the button variant change</Text>
-      <Button colorScheme="teal" variant={variant}>
+      <Button colorScheme='teal' variant={variant}>
         Button
       </Button>
     </VStack>

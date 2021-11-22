@@ -1,5 +1,5 @@
-import { isObject } from '@chakra-ui/utils';
-import { MDXComponents } from 'components/mdx-components';
+import { isObject } from '@chakra-ui/utils'
+import { MDXComponents } from 'components/mdx-components'
 
 /**
  * Replace the code blocks wrapped in backticks
@@ -17,10 +17,10 @@ function toInlineCode(input: string) {
       ) : (
         chunk
       ),
-    );
+    )
 }
 
 export function convertBackticksToInlineCode(input?: string | JSX.Element) {
-  if (!input) return '';
-  return isObject(input) ? input : toInlineCode(input);
+  if (!input) return ''
+  return isObject(input) ? input : toInlineCode(input)
 }

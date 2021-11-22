@@ -8,26 +8,26 @@ import {
   useColorModeValue,
   Wrap,
   WrapItem,
-} from '@chakra-ui/react';
-import * as React from 'react';
+} from '@chakra-ui/react'
+import * as React from 'react'
 
 export interface Resource {
-  heading: string;
-  type: 'blog' | 'talk' | 'video';
-  description: string;
-  url: string;
-  author: string;
-  tags?: string[];
+  heading: string
+  type: 'blog' | 'talk' | 'video'
+  description: string
+  url: string
+  author: string
+  tags?: string[]
 }
 
 interface ResourceCardProps extends BoxProps {
-  data: Resource;
+  data: Resource
 }
 
 function ResourceCard(props: ResourceCardProps) {
-  const { data, ...rest } = props;
-  const { heading, author, description, url, tags } = data;
-  const color = useColorModeValue('teal.600', 'teal.400');
+  const { data, ...rest } = props
+  const { heading, author, description, url, tags } = data
+  const color = useColorModeValue('teal.600', 'teal.400')
 
   return (
     <Box {...rest} maxW='360px'>
@@ -60,7 +60,7 @@ function ResourceCard(props: ResourceCardProps) {
         {description}
       </Text>
     </Box>
-  );
+  )
 }
 
-export default ResourceCard;
+export default ResourceCard

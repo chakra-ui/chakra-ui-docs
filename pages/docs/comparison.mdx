@@ -1,6 +1,6 @@
 ---
-title: "Comparison"
-description: "What makes Chakra UI different from other UI libraries"
+title: 'Comparison'
+description: 'What makes Chakra UI different from other UI libraries'
 ---
 
 When building a product, website, or application, it is a common question to
@@ -91,42 +91,44 @@ author your own light and dark mode experience across your application.
 
 ## How is Chakra different from Material UI?
 
-The Material UI React library provides users with a handful of UI layout tools 
-but is most famous for its large breadth of pre-styled UI components to which 
-developers can apply custom styles to override out-of-the-box base styles. Chakra 
-UI is a more robust, layout-focused library that also provides developers with UI 
-components similar to those that Material UI provides, but has a greater focus on 
-the creation of flexible, composable, and scalable code. 
+The Material UI React library provides users with a handful of UI layout tools
+but is most famous for its large breadth of pre-styled UI components to which
+developers can apply custom styles to override out-of-the-box base styles.
+Chakra UI is a more robust, layout-focused library that also provides developers
+with UI components similar to those that Material UI provides, but has a greater
+focus on the creation of flexible, composable, and scalable code.
 
-A core concept to be considered when comparing the two frameworks is 
-'Ease of Modification'. Comparatively, Material UI adds far more classes to 
-individual HTML tags related to exported components and layouts, forcing developers 
-to fight against base styles when customizing their interface. Chakra gives developers 
-far more freedom to manipulate CSS classes of exported components and layouts and 
-often requires less code to do so. For example, Material UI requires separate code to 
-control responsive styling based on viewport changes, while Chakra provides built-in 
-support for responsive styling without the need to create CSS classes or media queries. 
-If custom styling is not a major concern for your project, Material UI is beneficial as 
-you can avoid the creation of custom components that the library provides. If scalable, 
-custom designs are important for your project (which oftentimes they are), Chakra's 
-developer convenience shines brighter than Material UI's especially as a project scales 
+A core concept to be considered when comparing the two frameworks is 'Ease of
+Modification'. Comparatively, Material UI adds far more classes to individual
+HTML tags related to exported components and layouts, forcing developers to
+fight against base styles when customizing their interface. Chakra gives
+developers far more freedom to manipulate CSS classes of exported components and
+layouts and often requires less code to do so. For example, Material UI requires
+separate code to control responsive styling based on viewport changes, while
+Chakra provides built-in support for responsive styling without the need to
+create CSS classes or media queries. If custom styling is not a major concern
+for your project, Material UI is beneficial as you can avoid the creation of
+custom components that the library provides. If scalable, custom designs are
+important for your project (which oftentimes they are), Chakra's developer
+convenience shines brighter than Material UI's especially as a project scales
 over time.
 
 ## How is Chakra different from Ant Design?
 
-The Ant Design React library is an implementation of the [ant.design](https://ant.design/)
-design language. This means the components follow existing design rules and
-values, only allowing customizability to certain variables to a limited extent.
-Chakra is not tied down by any design systems and offers more freedom with
-customizing the components to implement your own design.
+The Ant Design React library is an implementation of the
+[ant.design](https://ant.design/) design language. This means the components
+follow existing design rules and values, only allowing customizability to
+certain variables to a limited extent. Chakra is not tied down by any design
+systems and offers more freedom with customizing the components to implement
+your own design.
 
 ### Styling Components
 
-Ant Design components are built to be used out-of-the-box so they have limited 
+Ant Design components are built to be used out-of-the-box so they have limited
 style-specific props and customizations (more on this in the next section). On
 the other hand, Chakra components features styles as props as the main way of
 styling. So while working with one or the other, you as a designer or developer
- will find yourself taking different decisions as you go along.
+will find yourself taking different decisions as you go along.
 
 Take the Button component as an example. A Chakra Button's `colorScheme` prop
 has many different values by default and can be customized and/or extended for
@@ -141,13 +143,13 @@ Typography.
 Ant Design has a long list of default variables that can be modified rangining
 from colors, paddings, margins, animations, shadows, borders, screen sizes,
 dimensions some being generic and some specific to UI components. Customization
-beyond modifying these existing variables is not recommended in order to
-respect the underlying design specification.
+beyond modifying these existing variables is not recommended in order to respect
+the underlying design specification.
 
-Chakra features easy customizability/extensibility of all global and component 
-style defaults. New sizes or variants can be defined for each components. On
-top of that, you can compose new components out of existing ones or even
-non-Chakra components with Chakra Factory.
+Chakra features easy customizability/extensibility of all global and component
+style defaults. New sizes or variants can be defined for each components. On top
+of that, you can compose new components out of existing ones or even non-Chakra
+components with Chakra Factory.
 
 ## The Runtime Trade-off ⚠️
 

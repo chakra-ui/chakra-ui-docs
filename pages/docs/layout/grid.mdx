@@ -1,6 +1,6 @@
 ---
 title: Grid
-package: "@chakra-ui/layout"
+package: '@chakra-ui/layout'
 description:
   Grid is Box with display set to grid and comes with helpful style shorthand.
   It renders a `div` element.
@@ -10,8 +10,8 @@ A primitive useful for grid layouts. Grid is `Box` with `display: grid` and it
 comes with helpful style shorthand. It renders a `div` element.
 
 <ComponentLinks
-  github={{ package: "layout" }}
-  npm={{ package: "@chakra-ui/layout" }}
+  github={{ package: 'layout' }}
+  npm={{ package: '@chakra-ui/layout' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -19,7 +19,7 @@ comes with helpful style shorthand. It renders a `div` element.
 ## Import
 
 ```js
-import { Grid, GridItem } from "@chakra-ui/react"
+import { Grid, GridItem } from '@chakra-ui/react'
 ```
 
 - **Grid:** The main wrapper with `display: grid`.
@@ -32,12 +32,12 @@ Here's an example of using grid template columns with the `grid` component, and
 applying a `gap` or space between the grid items.
 
 ```jsx
-<Grid templateColumns="repeat(5, 1fr)" gap={6}>
-  <Box w="100%" h="10" bg="blue.500" />
-  <Box w="100%" h="10" bg="blue.500" />
-  <Box w="100%" h="10" bg="blue.500" />
-  <Box w="100%" h="10" bg="blue.500" />
-  <Box w="100%" h="10" bg="blue.500" />
+<Grid templateColumns='repeat(5, 1fr)' gap={6}>
+  <Box w='100%' h='10' bg='blue.500' />
+  <Box w='100%' h='10' bg='blue.500' />
+  <Box w='100%' h='10' bg='blue.500' />
+  <Box w='100%' h='10' bg='blue.500' />
+  <Box w='100%' h='10' bg='blue.500' />
 </Grid>
 ```
 
@@ -51,15 +51,15 @@ the `templateColumns` and `templateRows`.
 
 ```jsx
 <Grid
-  h="200px"
-  templateRows="repeat(2, 1fr)"
-  templateColumns="repeat(5, 1fr)"
+  h='200px'
+  templateRows='repeat(2, 1fr)'
+  templateColumns='repeat(5, 1fr)'
   gap={4}
 >
-  <GridItem rowSpan={2} colSpan={1} bg="tomato" />
-  <GridItem colSpan={2} bg="papayawhip" />
-  <GridItem colSpan={2} bg="papayawhip" />
-  <GridItem colSpan={4} bg="tomato" />
+  <GridItem rowSpan={2} colSpan={1} bg='tomato' />
+  <GridItem colSpan={2} bg='papayawhip' />
+  <GridItem colSpan={2} bg='papayawhip' />
+  <GridItem colSpan={4} bg='tomato' />
 </Grid>
 ```
 
@@ -69,9 +69,9 @@ Pass the `colStart` and `colEnd` prop to `GridItem` component to make an element
 start or end at the `nth` grid position.
 
 ```jsx
-<Grid templateColumns="repeat(5, 1fr)" gap={4}>
-  <GridItem colSpan={2} h="10" bg="tomato" />
-  <GridItem colStart={4} colEnd={6} h="10" bg="papayawhip" />
+<Grid templateColumns='repeat(5, 1fr)' gap={4}>
+  <GridItem colSpan={2} h='10' bg='tomato' />
+  <GridItem colStart={4} colEnd={6} h='10' bg='papayawhip' />
 </Grid>
 ```
 
@@ -82,8 +82,8 @@ start or end at the `nth` grid position.
 Grid composes `Box` so you can pass all the `Box` prop, and these shorthand prop
 to save you some time:
 
-<PropsTable of="Grid" />
+<PropsTable of='Grid' />
 
 ### GridItem Props
 
-<PropsTable of="GridItem" />
+<PropsTable of='GridItem' />

@@ -1,7 +1,7 @@
 ---
 title: Pin Input
-package: "@chakra-ui/pin-input"
-image: "components/pin-input.svg"
+package: '@chakra-ui/pin-input'
+image: 'components/pin-input.svg'
 description:
   The PinInput component is similar to the Input component, but is optimized for
   entering sequences of digits quickly.
@@ -13,9 +13,9 @@ but it is optimized for entering sequences of digits.
 The most common application is for entering OTP or security codes.
 
 <ComponentLinks
-  theme={{ componentName: "pin-input" }}
-  github={{ package: "pin-input" }}
-  npm={{ package: "@chakra-ui/pin-input" }}
+  theme={{ componentName: 'pin-input' }}
+  github={{ package: 'pin-input' }}
+  npm={{ package: '@chakra-ui/pin-input' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -23,7 +23,7 @@ The most common application is for entering OTP or security codes.
 ## Import
 
 ```js
-import { PinInput, PinInputField } from "@chakra-ui/react"
+import { PinInput, PinInputField } from '@chakra-ui/react'
 ```
 
 - **PinInput:** The component that provides context to all the pin-input fields.
@@ -55,7 +55,7 @@ alphanumeric values, pass the `type` prop and set its value to either
 
 ```jsx
 <HStack>
-  <PinInput type="alphanumeric">
+  <PinInput type='alphanumeric'>
     <PinInputField />
     <PinInputField />
     <PinInputField />
@@ -87,7 +87,7 @@ Pass the `mask` prop to `PinInput` to achieve this.
 
 ```jsx
 <HStack>
-  <PinInput type="alphanumeric" mask>
+  <PinInput type='alphanumeric' mask>
     <PinInputField />
     <PinInputField />
     <PinInputField />
@@ -108,7 +108,7 @@ The `PinInput` component comes in four sizes. The default is `md`.
 ```jsx
 <Stack>
   <HStack>
-    <PinInput size="xs">
+    <PinInput size='xs'>
       <PinInputField />
       <PinInputField />
       <PinInputField />
@@ -116,7 +116,7 @@ The `PinInput` component comes in four sizes. The default is `md`.
   </HStack>
 
   <HStack>
-    <PinInput size="sm">
+    <PinInput size='sm'>
       <PinInputField />
       <PinInputField />
       <PinInputField />
@@ -124,7 +124,7 @@ The `PinInput` component comes in four sizes. The default is `md`.
   </HStack>
 
   <HStack>
-    <PinInput size="md">
+    <PinInput size='md'>
       <PinInputField />
       <PinInputField />
       <PinInputField />
@@ -132,7 +132,7 @@ The `PinInput` component comes in four sizes. The default is `md`.
   </HStack>
 
   <HStack>
-    <PinInput size="lg">
+    <PinInput size='lg'>
       <PinInputField />
       <PinInputField />
       <PinInputField />
@@ -147,7 +147,7 @@ You can set the `defaultValue` of the PinInput if you wish:
 
 ```jsx
 <HStack>
-  <PinInput defaultValue="234">
+  <PinInput defaultValue='234'>
     <PinInputField />
     <PinInputField />
     <PinInputField />
@@ -159,7 +159,7 @@ Or even a partial defaultValue:
 
 ```jsx
 <HStack>
-  <PinInput defaultValue="23">
+  <PinInput defaultValue='23'>
     <PinInputField />
     <PinInputField />
     <PinInputField />
@@ -174,7 +174,7 @@ and set it to your desired placeholder.
 
 ```jsx
 <HStack>
-  <PinInput placeholder="🥳">
+  <PinInput placeholder='🥳'>
     <PinInputField />
     <PinInputField />
     <PinInputField />
@@ -220,10 +220,10 @@ validate the string and fill the other inputs.
 
 ## Props
 
-<PropsTable of="PinInput" />
+<PropsTable of='PinInput' />
 
 ### PinInputField
 
 PinInputField composes `Input` so you can pass all `Input` props.
 
-<PropsTable of="Input" />
+<PropsTable of='Input' />

@@ -19,7 +19,7 @@ type StyleInterpolation = StyleObject | ((options: StyleOptions) => StyleObject)
 
 interface StyleOptions {
   theme: Theme
-  colorMode: "light" | "dark"
+  colorMode: 'light' | 'dark'
   colorScheme: string
 }
 
@@ -38,20 +38,20 @@ For example, to create a simple badge that changes its background based on color
 mode. Here's how to go about it.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 // 1. define component configuration
 const components = {
   CustomBadge: {
     baseStyle: ({ colorMode }) => ({
-      bg: colorMode === "dark" ? "green.300" : "green.500",
-      color: colorMode === "dark" ? "gray.800" : "white",
-      textTransform: "uppercase",
-      fontWeight: "semibold",
-      letterSpacing: "0.02em",
-      padding: "4px",
-      borderRadius: "2px",
-      fontSize: "12px",
+      bg: colorMode === 'dark' ? 'green.300' : 'green.500',
+      color: colorMode === 'dark' ? 'gray.800' : 'white',
+      textTransform: 'uppercase',
+      fontWeight: 'semibold',
+      letterSpacing: '0.02em',
+      padding: '4px',
+      borderRadius: '2px',
+      fontSize: '12px',
     }),
   },
 }
@@ -62,8 +62,8 @@ const theme = extendTheme({ components })
 // 3. Use it in your components
 function CustomBadge(props) {
   const { size, variant, ...rest } = props
-  const styles = useStyleConfig("CustomBadge", { size, variant })
-  return <Box as="span" sx={styles} {...rest} />
+  const styles = useStyleConfig('CustomBadge', { size, variant })
+  return <Box as='span' sx={styles} {...rest} />
 }
 
 // 4. Use the component
@@ -83,7 +83,7 @@ type StyleInterpolation =
 
 interface StyleOptions {
   theme: Theme
-  colorMode: "light" | "dark"
+  colorMode: 'light' | 'dark'
   colorScheme: string
 }
 
@@ -108,7 +108,7 @@ export or an export named `theme`. For example, in
 `chakra-theme-package/src/index.js`:
 
 ```js
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 const theme = extendTheme({})
 
 // as default export
@@ -121,14 +121,14 @@ export { theme }
 See [this guide](/docs/theming/customize-theme#scaling-out-your-project) for
 more recommendations on how to structure your theme package.
 
-> Note ⚠️: If you're using TypeScript, you'll want to include some documentation guiding
-> consumers of your theme package to add a `postinstall` script to generate
-> typings for your theme. See the
+> Note ⚠️: If you're using TypeScript, you'll want to include some documentation
+> guiding consumers of your theme package to add a `postinstall` script to
+> generate typings for your theme. See the
 > [theme typings](/docs/theming/advanced#theme-typings) section for details.
 
 ## Theme Typings
 
-<Badge fontSize="sm" colorScheme="teal" letterSpacing="wider">
+<Badge fontSize='sm' colorScheme='teal' letterSpacing='wider'>
   v1.2.0
 </Badge>
 

@@ -1,9 +1,9 @@
-import { Select, SelectProps, useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import packageJSON from 'package.json';
+import { Select, SelectProps, useColorModeValue } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import packageJSON from 'package.json'
 
 function VersionSwitcher(props: SelectProps) {
-  const router = useRouter();
+  const router = useRouter()
 
   const versions = [
     {
@@ -11,9 +11,9 @@ function VersionSwitcher(props: SelectProps) {
       url: 'https://chakra-ui.com',
     },
     { label: 'v0.8.x', url: 'https://v0.chakra-ui.com' },
-  ];
+  ]
 
-  const v1Url = versions[0].url;
+  const v1Url = versions[0].url
 
   return (
     <Select
@@ -24,7 +24,7 @@ function VersionSwitcher(props: SelectProps) {
       value={v1Url}
       aria-label="Select the Chakra UI Docs version. You're currently viewing the version 1.0 docs"
       onChange={(e) => {
-        router.push(e.target.value);
+        router.push(e.target.value)
       }}
       {...props}
     >
@@ -34,7 +34,7 @@ function VersionSwitcher(props: SelectProps) {
         </option>
       ))}
     </Select>
-  );
+  )
 }
 
-export default VersionSwitcher;
+export default VersionSwitcher

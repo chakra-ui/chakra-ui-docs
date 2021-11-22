@@ -10,18 +10,18 @@ import {
   Text,
   Wrap,
   WrapItem,
-} from '@chakra-ui/react';
-import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav';
-import { AdBanner } from 'components/chakra-pro/ad-banner';
-import Container from 'components/container';
-import Header from 'components/header';
-import PageTransition from 'components/page-transition';
-import SEO from 'components/seo';
-import fs from 'fs';
-import * as React from 'react';
-import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io';
-import { Contributor, Member as IMember } from 'src/types/github';
-import { t } from 'utils/i18n';
+} from '@chakra-ui/react'
+import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
+import Container from 'components/container'
+import Header from 'components/header'
+import PageTransition from 'components/page-transition'
+import SEO from 'components/seo'
+import fs from 'fs'
+import * as React from 'react'
+import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
+import { Contributor, Member as IMember } from 'src/types/github'
+import { t } from 'utils/i18n'
 
 function SocialLink({ icon, href }) {
   return (
@@ -41,7 +41,7 @@ function SocialLink({ icon, href }) {
         color='teal.500'
       />
     </Link>
-  );
+  )
 }
 
 function Member({ member }: { member: IMember }) {
@@ -52,7 +52,7 @@ function Member({ member }: { member: IMember }) {
     twitter_username: twitterUsername,
     blog: websiteUrl,
     url,
-  } = member;
+  } = member
 
   return (
     <Box>
@@ -77,19 +77,19 @@ function Member({ member }: { member: IMember }) {
         </Stack>
       </Stack>
     </Box>
-  );
+  )
 }
 
 interface TeamProps {
-  members: IMember[];
-  contributors: Contributor[];
+  members: IMember[]
+  contributors: Contributor[]
 }
 
 function Team({ members, contributors }: TeamProps) {
-  const memberLogins = members.map(({ login }) => login);
+  const memberLogins = members.map(({ login }) => login)
   const contributorsWithoutTeam = contributors.filter(
-    ({ login }) => !memberLogins.includes(login)
-  );
+    ({ login }) => !memberLogins.includes(login),
+  )
 
   return (
     <>
@@ -189,7 +189,7 @@ function Team({ members, contributors }: TeamProps) {
         </PageTransition>
       </Box>
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
@@ -197,22 +197,22 @@ export async function getStaticProps() {
    * Read the profile/bio of each member from `.all-membersrc` file
    * to avoid overfetching from Github
    */
-  const { members } = JSON.parse(fs.readFileSync('.all-membersrc', 'utf-8'));
+  const { members } = JSON.parse(fs.readFileSync('.all-membersrc', 'utf-8'))
 
   /**
    * Read contributors from `.all-contributorsrc` file
    * to avoid overfetching from Github
    */
   const { contributors } = JSON.parse(
-    fs.readFileSync('.all-contributorsrc', 'utf-8')
-  );
+    fs.readFileSync('.all-contributorsrc', 'utf-8'),
+  )
 
   return {
     props: {
       members,
       contributors,
     },
-  };
+  }
 }
 
-export default Team;
+export default Team

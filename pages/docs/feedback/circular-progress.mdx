@@ -1,7 +1,7 @@
 ---
 title: Circular Progress
-package: "@chakra-ui/progress"
-image: "components/progress.svg"
+package: '@chakra-ui/progress'
+image: 'components/progress.svg'
 description:
   Circular Progress is used to indicates the progress for determinate and
   indeterminate processes.
@@ -11,9 +11,9 @@ The CircularProgress component is used to indicate the progress for determinate
 and indeterminate processes.
 
 <ComponentLinks
-  theme={{ componentName: "progress" }}
-  github={{ package: "progress" }}
-  npm={{ package: "@chakra-ui/progress" }}
+  theme={{ componentName: 'progress' }}
+  github={{ package: 'progress' }}
+  npm={{ package: '@chakra-ui/progress' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -26,7 +26,7 @@ and indeterminate processes.
 ## Import
 
 ```js
-import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react"
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ You can add `size` prop to the progress bar to add a custom size.
 
 ```jsx
 // Change the size to 120px
-<CircularProgress value={30} size="120px" />
+<CircularProgress value={30} size='120px' />
 ```
 
 ### Changing the thickness
@@ -51,7 +51,7 @@ You can add the `thickness` prop to update the thickness of the progress ring.
 > This defines the stroke width of the svg circle.
 
 ```jsx
-<CircularProgress value={59} size="100px" thickness="4px" />
+<CircularProgress value={59} size='100px' thickness='4px' />
 ```
 
 ### Changing the color
@@ -60,7 +60,7 @@ You can add `color` prop to any progress bar to apply any color that exists in
 the theme.
 
 ```jsx
-<CircularProgress value={30} color="orange.400" thickness="12px" />
+<CircularProgress value={30} color='orange.400' thickness='12px' />
 ```
 
 ### Adding label
@@ -69,7 +69,7 @@ Chakra exports a `CircularProgressLabel` to help you add a label. Pass this
 component as `children` prop and you'll be able to render the value.
 
 ```jsx
-<CircularProgress value={40} color="green.400">
+<CircularProgress value={40} color='green.400'>
   <CircularProgressLabel>40%</CircularProgressLabel>
 </CircularProgress>
 ```
@@ -80,7 +80,7 @@ Setting the progress to indeterminate means you're not able to determine the
 `value` upfront. Pass the `isIndeterminate` prop to activate this state.
 
 ```jsx
-<CircularProgress isIndeterminate color="green.300" />
+<CircularProgress isIndeterminate color='green.300' />
 ```
 
 ### Accessibility
@@ -91,4 +91,4 @@ Setting the progress to indeterminate means you're not able to determine the
 
 ## Props
 
-<PropsTable of="CircularProgress" />
+<PropsTable of='CircularProgress' />

@@ -1,9 +1,9 @@
-import { Octokit } from "@octokit/rest"
+import { Octokit } from '@octokit/rest'
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
 
-const formatter = Intl.NumberFormat("en", {
-  notation: "compact",
+const formatter = Intl.NumberFormat('en', {
+  notation: 'compact',
   maximumFractionDigits: 1,
 })
 
@@ -13,8 +13,8 @@ export async function getGithubStars() {
 
   try {
     const repo = await octokit.repos.get({
-      owner: "chakra-ui",
-      repo: "chakra-ui",
+      owner: 'chakra-ui',
+      repo: 'chakra-ui',
     })
     count = repo.data.stargazers_count
   } catch (error) {

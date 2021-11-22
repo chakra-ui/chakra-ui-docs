@@ -1,18 +1,18 @@
-import { useRouter } from "next/router"
-import { useEffect } from "react"
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const useRouteChanged = (fn: () => void) => {
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       fn()
-      console.log("App is changing to: ", url)
+      console.log('App is changing to: ', url)
     }
 
-    router.events.on("routeChangeComplete", handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChange)
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange)
+      router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events, fn])
 }

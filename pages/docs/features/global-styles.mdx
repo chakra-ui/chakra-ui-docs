@@ -1,6 +1,6 @@
 ---
-title: "Global Styles"
-description: "How to manage and inject global styles in Chakra UI"
+title: 'Global Styles'
+description: 'How to manage and inject global styles in Chakra UI'
 ---
 
 `GlobalStyle` is a new component in v1 that injects styles defined in
@@ -23,12 +23,12 @@ render a `GlobalStyle` component. Here's what `GlobalStyle` does under the hood:
 const theme = {
   styles: {
     global: {
-      "html, body": {
-        color: "gray.600",
-        lineHeight: "tall",
+      'html, body': {
+        color: 'gray.600',
+        lineHeight: 'tall',
       },
       a: {
-        color: "teal.500",
+        color: 'teal.500',
       },
     },
   },
@@ -39,13 +39,13 @@ const theme = {
 const theme = {
   styles: {
     global: (props) => ({
-      "html, body": {
-        fontSize: "sm",
-        color: props.colorMode === "dark" ? "white" : "gray.600",
-        lineHeight: "tall",
+      'html, body': {
+        fontSize: 'sm',
+        color: props.colorMode === 'dark' ? 'white' : 'gray.600',
+        lineHeight: 'tall',
       },
       a: {
-        color: props.colorMode === "dark" ? "teal.300" : "teal.500",
+        color: props.colorMode === 'dark' ? 'teal.300' : 'teal.500',
       },
     }),
   },
@@ -58,24 +58,24 @@ The default Chakra theme provides sensible global styles. Here's what it looks
 like:
 
 ```js
-import { mode } from "@chakra-ui/theme-tools"
+import { mode } from '@chakra-ui/theme-tools'
 
 const styles = {
   global: (props) => ({
-    "body": {
-      fontFamily: "body",
-      color: mode("gray.800", "whiteAlpha.900")(props),
-      bg: mode("white", "gray.800")(props),
-      lineHeight: "base"
+    body: {
+      fontFamily: 'body',
+      color: mode('gray.800', 'whiteAlpha.900')(props),
+      bg: mode('white', 'gray.800')(props),
+      lineHeight: 'base',
     },
-    "*::placeholder": {
-      color: mode("gray.400", "whiteAlpha.400")(props),
+    '*::placeholder': {
+      color: mode('gray.400', 'whiteAlpha.400')(props),
     },
-    "*, *::before, &::after": {
-      borderColor: mode("gray.200", "whiteAlpha.300")(props),
-      wordWrap: "break-word",
-    }
-  })
+    '*, *::before, &::after': {
+      borderColor: mode('gray.200', 'whiteAlpha.300')(props),
+      wordWrap: 'break-word',
+    },
+  }),
 }
 ```
 
@@ -92,21 +92,21 @@ elements globally. Here's what you'll do.
 
 ```js
 // 1. Wrap the rendered mdx in a container
-const MDXWrapper = (props) => <div className="mdx-prose" {...props} />
+const MDXWrapper = (props) => <div className='mdx-prose' {...props} />
 
 // 2. Define global styles
 // PRO TIP: Again, you can also use the function version here
 const theme = {
   styles: {
     global: {
-      ".mdx-prose": {
+      '.mdx-prose': {
         h1: {
-          fontSize: "xl",
-          mb: "4",
+          fontSize: 'xl',
+          mb: '4',
         },
         p: {
-          fontSize: "sm",
-          lineHeight: "1.4",
+          fontSize: 'sm',
+          lineHeight: '1.4',
         },
       },
     },

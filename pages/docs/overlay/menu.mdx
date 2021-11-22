@@ -1,7 +1,7 @@
 ---
 title: Menu
-package: "@chakra-ui/menu"
-image: "components/menu.svg"
+package: '@chakra-ui/menu'
+image: 'components/menu.svg'
 description:
   An accessible dropdown menu for the common dropdown menu button design
   pattern. Menu uses roving tabIndex for focus management.
@@ -11,9 +11,9 @@ An accessible dropdown menu for the common dropdown menu button design pattern.
 `Menu` uses roving `tabIndex` for focus management.
 
 <ComponentLinks
-  theme={{ componentName: "menu" }}
-  github={{ package: "menu" }}
-  npm={{ package: "@chakra-ui/menu" }}
+  theme={{ componentName: 'menu' }}
+  github={{ package: 'menu' }}
+  npm={{ package: '@chakra-ui/menu' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -44,7 +44,7 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -75,11 +75,11 @@ To access the internal state of the `Menu`, use a function as `children`
   {({ isOpen }) => (
     <>
       <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />}>
-        {isOpen ? "Close" : "Open"}
+        {isOpen ? 'Close' : 'Open'}
       </MenuButton>
       <MenuList>
         <MenuItem>Download</MenuItem>
-        <MenuItem onClick={() => alert("Kagebunshin")}>Create a Copy</MenuItem>
+        <MenuItem onClick={() => alert('Kagebunshin')}>Create a Copy</MenuItem>
       </MenuList>
     </>
   )}
@@ -113,12 +113,12 @@ the letter you typed.
   <MenuButton
     px={4}
     py={2}
-    transition="all 0.2s"
-    borderRadius="md"
-    borderWidth="1px"
-    _hover={{ bg: "gray.400" }}
-    _expanded={{ bg: "blue.400" }}
-    _focus={{ boxShadow: "outline" }}
+    transition='all 0.2s'
+    borderRadius='md'
+    borderWidth='1px'
+    _hover={{ bg: 'gray.400' }}
+    _expanded={{ bg: 'blue.400' }}
+    _focus={{ boxShadow: 'outline' }}
   >
     File <ChevronDownIcon />
   </MenuButton>
@@ -140,23 +140,23 @@ the letter you typed.
     Your Cats
   </MenuButton>
   <MenuList>
-    <MenuItem minH="48px">
+    <MenuItem minH='48px'>
       <Image
-        boxSize="2rem"
-        borderRadius="full"
-        src="https://placekitten.com/100/100"
-        alt="Fluffybuns the destroyer"
-        mr="12px"
+        boxSize='2rem'
+        borderRadius='full'
+        src='https://placekitten.com/100/100'
+        alt='Fluffybuns the destroyer'
+        mr='12px'
       />
       <span>Fluffybuns the Destroyer</span>
     </MenuItem>
-    <MenuItem minH="40px">
+    <MenuItem minH='40px'>
       <Image
-        boxSize="2rem"
-        borderRadius="full"
-        src="https://placekitten.com/120/120"
-        alt="Simon the pensive"
-        mr="12px"
+        boxSize='2rem'
+        borderRadius='full'
+        src='https://placekitten.com/120/120'
+        alt='Simon the pensive'
+        mr='12px'
       />
       <span>Simon the pensive</span>
     </MenuItem>
@@ -173,21 +173,21 @@ commands (or hotkeys) to menu items, you can use the `command` prop.
 <Menu>
   <MenuButton
     as={IconButton}
-    aria-label="Options"
+    aria-label='Options'
     icon={<HamburgerIcon />}
-    variant="outline"
+    variant='outline'
   />
   <MenuList>
-    <MenuItem icon={<AddIcon />} command="⌘T">
+    <MenuItem icon={<AddIcon />} command='⌘T'>
       New Tab
     </MenuItem>
-    <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
+    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
       New Window
     </MenuItem>
-    <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
+    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
       Open Closed Tab
     </MenuItem>
-    <MenuItem icon={<EditIcon />} command="⌘O">
+    <MenuItem icon={<EditIcon />} command='⌘O'>
       Open File...
     </MenuItem>
   </MenuList>
@@ -242,16 +242,16 @@ To group related `MenuItem`s, use the `MenuGroup` component and pass it a
 
 ```jsx
 <Menu>
-  <MenuButton as={Button} colorScheme="pink">
+  <MenuButton as={Button} colorScheme='pink'>
     Profile
   </MenuButton>
   <MenuList>
-    <MenuGroup title="Profile">
+    <MenuGroup title='Profile'>
       <MenuItem>My Account</MenuItem>
       <MenuItem>Payments </MenuItem>
     </MenuGroup>
     <MenuDivider />
-    <MenuGroup title="Help">
+    <MenuGroup title='Help'>
       <MenuItem>Docs</MenuItem>
       <MenuItem>FAQ</MenuItem>
     </MenuGroup>
@@ -266,19 +266,19 @@ options. Use the `MenuOptionGroup` and `MenuItemOption` components.
 
 ```jsx
 <Menu closeOnSelect={false}>
-  <MenuButton as={Button} colorScheme="blue">
+  <MenuButton as={Button} colorScheme='blue'>
     MenuItem
   </MenuButton>
-  <MenuList minWidth="240px">
-    <MenuOptionGroup defaultValue="asc" title="Order" type="radio">
-      <MenuItemOption value="asc">Ascending</MenuItemOption>
-      <MenuItemOption value="desc">Descending</MenuItemOption>
+  <MenuList minWidth='240px'>
+    <MenuOptionGroup defaultValue='asc' title='Order' type='radio'>
+      <MenuItemOption value='asc'>Ascending</MenuItemOption>
+      <MenuItemOption value='desc'>Descending</MenuItemOption>
     </MenuOptionGroup>
     <MenuDivider />
-    <MenuOptionGroup title="Country" type="checkbox">
-      <MenuItemOption value="email">Email</MenuItemOption>
-      <MenuItemOption value="phone">Phone</MenuItemOption>
-      <MenuItemOption value="country">Country</MenuItemOption>
+    <MenuOptionGroup title='Country' type='checkbox'>
+      <MenuItemOption value='email'>Email</MenuItemOption>
+      <MenuItemOption value='phone'>Phone</MenuItemOption>
+      <MenuItemOption value='country'>Country</MenuItemOption>
     </MenuOptionGroup>
   </MenuList>
 </Menu>
@@ -322,7 +322,7 @@ options. Use the `MenuOptionGroup` and `MenuItemOption` components.
 
 ### Menu Props
 
-<PropsTable of="Menu" />
+<PropsTable of='Menu' />
 
 ### MenuButton Props
 
@@ -336,7 +336,7 @@ change its style.
 
 ### MenuItem Props
 
-<PropsTable of="MenuItem" />
+<PropsTable of='MenuItem' />
 
 ### MenuGroup Props
 
@@ -345,11 +345,11 @@ change its style.
 
 ### MenuOptionGroup Props
 
-<PropsTable of="MenuOptionGroup" />
+<PropsTable of='MenuOptionGroup' />
 
 ### MenuItemOption Props
 
 `MenuItemOption` composes [Box](/docs/layout/box) so you can pass all box props
 in addition to these:
 
-<PropsTable of="MenuItemOption" />
+<PropsTable of='MenuItemOption' />

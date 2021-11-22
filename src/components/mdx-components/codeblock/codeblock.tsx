@@ -1,22 +1,22 @@
-import { Box, useBoolean } from '@chakra-ui/react';
-import dynamic from 'next/dynamic';
-import theme from 'prism-react-renderer/themes/nightOwl';
-import React, { useEffect } from 'react';
-import CodeContainer from './code-container';
-import CopyButton from './copy-button';
-import Highlight from './highlight';
+import { Box, useBoolean } from '@chakra-ui/react'
+import dynamic from 'next/dynamic'
+import theme from 'prism-react-renderer/themes/nightOwl'
+import React, { useEffect } from 'react'
+import CodeContainer from './code-container'
+import CopyButton from './copy-button'
+import Highlight from './highlight'
 
-const ReactLiveBlock = dynamic(() => import('./react-live-block'));
+const ReactLiveBlock = dynamic(() => import('./react-live-block'))
 
 function CodeBlock(props) {
-  const [isMounted, { on }] = useBoolean();
+  const [isMounted, { on }] = useBoolean()
   useEffect(
     /**
      * Lazily-load <ReactLiveBlock /> to save bundle size.
      */
     on,
     [on],
-  );
+  )
   const {
     className,
     live = true,
@@ -26,12 +26,12 @@ function CodeBlock(props) {
     viewlines,
     ln,
     mountStylesheet = false,
-  } = props.children.props;
+  } = props.children.props
 
-  const _live = live === 'true' || live === true;
+  const _live = live === 'true' || live === true
 
-  const language = className?.replace(/language-/, '');
-  const rawCode = children.trim();
+  const language = className?.replace(/language-/, '')
+  const rawCode = children.trim()
 
   const reactLiveBlockProps = {
     rawCode,
@@ -39,10 +39,10 @@ function CodeBlock(props) {
     theme,
     noInline: manual,
     mountStylesheet,
-  };
+  }
 
   if (isMounted && language === 'jsx' && _live === true) {
-    return <ReactLiveBlock editable {...reactLiveBlockProps} />;
+    return <ReactLiveBlock editable {...reactLiveBlockProps} />
   }
 
   if (isMounted && render) {
@@ -53,7 +53,7 @@ function CodeBlock(props) {
       <div style={{ marginTop: 32 }}>
         <ReactLiveBlock editable={false} {...reactLiveBlockProps} />
       </div>
-    );
+    )
   }
 
   return (
@@ -69,7 +69,7 @@ function CodeBlock(props) {
       </CodeContainer>
       <CopyButton top='4' code={rawCode} />
     </Box>
-  );
+  )
 }
 
-export default CodeBlock;
+export default CodeBlock

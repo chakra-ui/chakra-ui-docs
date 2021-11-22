@@ -1,5 +1,5 @@
-import { Avatar, Box, useColorModeValue } from "@chakra-ui/react"
-import * as React from "react"
+import { Avatar, Box, useColorModeValue } from '@chakra-ui/react'
+import * as React from 'react'
 
 interface TweetCardProps {
   name: string
@@ -15,30 +15,30 @@ function TweetCard(props: TweetCardProps) {
   const image = `/avatars/${handle}.jpg`
   return (
     <Box
-      as="a"
+      as='a'
       href={url}
-      target="_blank"
-      rel="noopener"
-      display="flex"
-      rounded="lg"
-      p="5"
-      mb="4"
-      bg={useColorModeValue("white", "gray.700")}
-      shadow="base"
+      target='_blank'
+      rel='noopener'
+      display='flex'
+      rounded='lg'
+      p='5'
+      mb='4'
+      bg={useColorModeValue('white', 'gray.700')}
+      shadow='base'
     >
-      <Avatar mr="16px" size="sm" src={image} name={name} loading="lazy" />
-      <Box fontSize="sm">
+      <Avatar mr='16px' size='sm' src={image} name={name} loading='lazy' />
+      <Box fontSize='sm'>
         <p>
-          {name}{" "}
-          <Box as="span" opacity={0.7}>
+          {name}{' '}
+          <Box as='span' opacity={0.7}>
             {handle} · {date}
           </Box>
         </p>
         <Box
-          as="p"
-          mt="2"
+          as='p'
+          mt='2'
           dangerouslySetInnerHTML={{
-            __html: content.replace(/--/g, "<br /><br />"),
+            __html: content.replace(/--/g, '<br /><br />'),
           }}
         />
       </Box>

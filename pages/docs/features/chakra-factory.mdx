@@ -1,6 +1,6 @@
 ---
-title: "Chakra Factory"
-package: "@chakra-ui/system"
+title: 'Chakra Factory'
+package: '@chakra-ui/system'
 description: Using the chakra factory and elements
 ---
 
@@ -20,11 +20,11 @@ chakra styles, you can write `<chakra.button />`.
 
 ```jsx
 <chakra.button
-  px="3"
-  py="2"
-  bg="green.200"
-  rounded="md"
-  _hover={{ bg: "green.300" }}
+  px='3'
+  py='2'
+  bg='green.200'
+  rounded='md'
+  _hover={{ bg: 'green.300' }}
 >
   Click me
 </chakra.button>
@@ -36,7 +36,7 @@ syntax is available for common html elements. See the reference for the full
 supported.
 
 ```jsx live=false
-<chakra.h1 fontSize="lg"> Heading </chakra.h1>
+<chakra.h1 fontSize='lg'> Heading </chakra.h1>
 ```
 
 ## Chakra factory function
@@ -51,13 +51,13 @@ The function will infer the prop types from the wrapped component and also add
 chakra style props.
 
 ```jsx live=false
-import { chakra } from "@chakra-ui/react"
-import Textarea from "react-input-autoresize"
+import { chakra } from '@chakra-ui/react'
+import Textarea from 'react-input-autoresize'
 
 const AutoResizeInput = chakra(Textarea)
 
 function Example() {
-  return <AutoResizeInput bg="red.200" fontSize="12px" />
+  return <AutoResizeInput bg='red.200' fontSize='12px' />
 }
 ```
 
@@ -72,8 +72,8 @@ wrapped in the chakra factory
 ```jsx live=false
 const AutoResizeInput = chakra(AutoResizeInput, {
   baseStyle: {
-    bg: "papayawhip",
-    color: "red.500",
+    bg: 'papayawhip',
+    color: 'red.500',
   },
 })
 ```
@@ -81,11 +81,11 @@ const AutoResizeInput = chakra(AutoResizeInput, {
 You can also use the chakra factory on jsx elements as well.
 
 ```jsx live=false
-const Card = chakra("div", {
+const Card = chakra('div', {
   baseStyle: {
-    shadow: "lg",
-    rounded: "lg",
-    bg: "white",
+    shadow: 'lg',
+    rounded: 'lg',
+    bg: 'white',
   },
 })
 ```
@@ -100,8 +100,8 @@ Here's a simple example that allows all props (including chakra's style props)
 to pass through except the `sample` prop.
 
 ```jsx live=false
-const Div = chakra("div", {
-  shouldForwardProp: (prop) => !["sample"].includes(prop),
+const Div = chakra('div', {
+  shouldForwardProp: (prop) => !['sample'].includes(prop),
 })
 ```
 
@@ -109,16 +109,16 @@ Another example that combines the default `shouldForwardProp` from Chakra UI
 with custom logic.
 
 ```jsx live=false
-import { shouldForwardProp } from "@chakra-ui/react"
+import { shouldForwardProp } from '@chakra-ui/react'
 
-const Div = chakra("div", {
+const Div = chakra('div', {
   shouldForwardProp: (prop) => {
     // don't forward Chakra's props
     const isChakraProp = !shouldForwardProp(prop)
     if (isChakraProp) return false
 
     // else, only forward `sample` prop
-    return ["sample"].includes(prop)
+    return ['sample'].includes(prop)
   },
 })
 ```
@@ -128,10 +128,10 @@ To filter non-HTML attributes, you can leverage
 package.
 
 ```jsx live=false
-import isValidHTMLProp from "@emotion/is-prop-valid"
-import { shouldForwardProp } from "@chakra-ui/react"
+import isValidHTMLProp from '@emotion/is-prop-valid'
+import { shouldForwardProp } from '@chakra-ui/react'
 
-const Div = chakra("div", {
+const Div = chakra('div', {
   shouldForwardProp: (prop) => {
     // don't forward Chakra's props
     const isChakraProp = !shouldForwardProp(prop)
@@ -142,7 +142,7 @@ const Div = chakra("div", {
     if (isValidProp) return true
 
     // else, only forward `sample` prop
-    return ["sample"].includes(prop)
+    return ['sample'].includes(prop)
   },
 })
 ```

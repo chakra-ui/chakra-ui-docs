@@ -28,32 +28,32 @@ Properties defined in a layer style
 
 ```jsx live=false
 // 1. Import `extendTheme`
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 // 2. Extend the theme with new layer styles
 const theme = extendTheme({
   layerStyles: {
     base: {
-      bg: "gray.50",
-      border: "2px solid",
-      borderColor: "gray.500",
+      bg: 'gray.50',
+      border: '2px solid',
+      borderColor: 'gray.500',
     },
     selected: {
-      bg: "teal.500",
-      color: "teal.700",
-      borderColor: "orange.500",
+      bg: 'teal.500',
+      color: 'teal.700',
+      borderColor: 'orange.500',
     },
   },
 })
 
 // 3. Consume the text styles in your components
 function Example() {
-  return <Box layerStyle="selected">This is a box</Box>
+  return <Box layerStyle='selected'>This is a box</Box>
 }
 
 // 4. You can also switch layer styles
 function Example({ isSelected }) {
-  const layerStyle = isSelected ? "selected" : "base"
+  const layerStyle = isSelected ? 'selected' : 'base'
   return <Box layerStyle={layerStyle}>This is a box</Box>
 }
 ```
@@ -80,30 +80,30 @@ Properties defined in a text style
 
 ```jsx live=false
 // 1. Import `extendTheme`
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 // 2. Define the new text styles
 const theme = extendTheme({
   textStyles: {
     h1: {
       // you can also use responsive styles
-      fontSize: ["48px", "72px"],
-      fontWeight: "bold",
-      lineHeight: "110%",
-      letterSpacing: "-2%",
+      fontSize: ['48px', '72px'],
+      fontWeight: 'bold',
+      lineHeight: '110%',
+      letterSpacing: '-2%',
     },
     h2: {
-      fontSize: ["36px", "48px"],
-      fontWeight: "semibold",
-      lineHeight: "110%",
-      letterSpacing: "-1%",
+      fontSize: ['36px', '48px'],
+      fontWeight: 'semibold',
+      lineHeight: '110%',
+      letterSpacing: '-1%',
     },
   },
 })
 
 // 3. Consume the text styles in your component
 function Example() {
-  return <Box textStyle="h1">This is a box</Box>
+  return <Box textStyle='h1'>This is a box</Box>
 }
 ```
 

@@ -18,32 +18,32 @@ import {
   useColorModeValue,
   Wrap,
   WrapItem,
-} from '@chakra-ui/react';
-import { chunk } from '@chakra-ui/utils';
-import users from 'chakra-users';
-import { AdBanner } from 'components/chakra-pro/ad-banner';
-import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
-import Container from 'components/container';
-import DiscordStrip from 'components/discord-strip';
-import { Footer } from 'components/footer';
-import Header from 'components/header';
-import SEO from 'components/seo';
-import TweetCard from 'components/tweet-card';
-import tweets from 'configs/tweets.json';
-import NextLink from 'next/link';
-import * as React from 'react';
-import { AiFillThunderbolt } from 'react-icons/ai';
-import { DiGithubBadge } from 'react-icons/di';
-import { FaArrowRight, FaDiscord, FaMicrophone } from 'react-icons/fa';
-import { FiDownload, FiGithub, FiUsers } from 'react-icons/fi';
-import { IoMdMoon } from 'react-icons/io';
-import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md';
-import type { Member, Sponsor } from 'src/types/github';
-import { getAllContributors } from 'utils/get-all-contributors';
-import { getAllMembers } from 'utils/get-all-members';
-import { getAllSponsors } from 'utils/get-all-sponsors';
-import { getGithubStars } from 'utils/get-github-stars';
-import { t } from 'utils/i18n';
+} from '@chakra-ui/react'
+import { chunk } from '@chakra-ui/utils'
+import users from 'chakra-users'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
+import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
+import Container from 'components/container'
+import DiscordStrip from 'components/discord-strip'
+import { Footer } from 'components/footer'
+import Header from 'components/header'
+import SEO from 'components/seo'
+import TweetCard from 'components/tweet-card'
+import tweets from 'configs/tweets.json'
+import NextLink from 'next/link'
+import * as React from 'react'
+import { AiFillThunderbolt } from 'react-icons/ai'
+import { DiGithubBadge } from 'react-icons/di'
+import { FaArrowRight, FaDiscord, FaMicrophone } from 'react-icons/fa'
+import { FiDownload, FiGithub, FiUsers } from 'react-icons/fi'
+import { IoMdMoon } from 'react-icons/io'
+import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md'
+import type { Member, Sponsor } from 'src/types/github'
+import { getAllContributors } from 'utils/get-all-contributors'
+import { getAllMembers } from 'utils/get-all-members'
+import { getAllSponsors } from 'utils/get-all-sponsors'
+import { getGithubStars } from 'utils/get-github-stars'
+import { t } from 'utils/i18n'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -71,17 +71,17 @@ const Feature = ({ title, icon, children, ...props }) => {
         {children}
       </Text>
     </Box>
-  );
-};
+  )
+}
 
 interface StatBoxProps extends BoxProps {
-  icon?: React.ElementType;
-  title: string;
-  description: string;
+  icon?: React.ElementType
+  title: string
+  description: string
 }
 
 const StatBox = (props: StatBoxProps) => {
-  const { icon: StatIcon, title, description, ...rest } = props;
+  const { icon: StatIcon, title, description, ...rest } = props
   return (
     <Flex
       direction='column'
@@ -99,16 +99,16 @@ const StatBox = (props: StatBoxProps) => {
         <Text>{description}</Text>
       </Stack>
     </Flex>
-  );
-};
+  )
+}
 
 interface HomePageProps {
-  members: Member[];
-  githubStars: string;
+  members: Member[]
+  githubStars: string
   sponsors: {
-    companies: Sponsor[];
-    individuals: Sponsor[];
-  };
+    companies: Sponsor[]
+    individuals: Sponsor[]
+  }
 }
 
 const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
@@ -648,14 +648,14 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
         <Footer />
       </Box>
     </>
-  );
-};
+  )
+}
 
 export async function getStaticProps() {
-  const { prettyCount } = await getGithubStars();
-  const contributors = getAllContributors();
-  const members = getAllMembers();
-  const sponsors = getAllSponsors();
+  const { prettyCount } = await getGithubStars()
+  const contributors = getAllContributors()
+  const members = getAllMembers()
+  const sponsors = getAllSponsors()
 
   return {
     props: {
@@ -664,7 +664,7 @@ export async function getStaticProps() {
       contributors,
       sponsors,
     },
-  };
+  }
 }
 
-export default HomePage;
+export default HomePage

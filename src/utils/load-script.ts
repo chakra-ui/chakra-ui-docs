@@ -1,6 +1,6 @@
 function loadScript(src: string, container: HTMLElement) {
-  const script = document.createElement("script")
-  script.setAttribute("async", "")
+  const script = document.createElement('script')
+  script.setAttribute('async', '')
   script.src = src
   container.appendChild(script)
   return script

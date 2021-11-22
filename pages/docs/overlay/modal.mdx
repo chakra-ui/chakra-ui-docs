@@ -1,7 +1,7 @@
 ---
 title: Modal Dialog
-package: "@chakra-ui/modal"
-image: "components/modal.svg"
+package: '@chakra-ui/modal'
+image: 'components/modal.svg'
 description:
   A dialog is a window overlaid on either the primary window or another dialog
   window
@@ -12,9 +12,9 @@ window. Content behind a modal dialog is **inert**, meaning that users cannot
 interact with it.
 
 <ComponentLinks
-  theme={{ componentName: "modal" }}
-  github={{ package: "modal" }}
-  npm={{ package: "@chakra-ui/modal" }}
+  theme={{ componentName: 'modal' }}
+  github={{ package: 'modal' }}
+  npm={{ package: '@chakra-ui/modal' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -43,7 +43,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -68,10 +68,10 @@ function BasicUsage() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button variant='ghost'>Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -93,7 +93,7 @@ function ReturnFocus() {
 
   return (
     <>
-      <Box ref={finalRef} tabIndex={-1} aria-label="Focus moved to this box">
+      <Box ref={finalRef} tabIndex={-1} aria-label='Focus moved to this box'>
         Some other content that'll receive focus on close.
       </Box>
 
@@ -110,10 +110,10 @@ function ReturnFocus() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button variant='ghost'>Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -142,17 +142,17 @@ function BasicUsage() {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text fontWeight="bold" mb="1rem">
+            <Text fontWeight='bold' mb='1rem'>
               You can scroll the content behind the modal
             </Text>
             <Lorem count={2} />
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button variant='ghost'>Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -204,17 +204,17 @@ function InitialFocus() {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder="First name" />
+              <Input ref={initialRef} placeholder='First name' />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Last name</FormLabel>
-              <Input placeholder="Last name" />
+              <Input placeholder='Last name' />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button colorScheme='blue' mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -249,7 +249,7 @@ function ManualClose() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button colorScheme='blue' mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -312,7 +312,7 @@ function TransitionExample() {
         isCentered
         onClose={onClose}
         isOpen={isOpen}
-        motionPreset="slideInBottom"
+        motionPreset='slideInBottom'
       >
         <ModalOverlay />
         <ModalContent>
@@ -322,10 +322,10 @@ function TransitionExample() {
             <Lorem count={2} />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button variant='ghost'>Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -346,15 +346,15 @@ If the content within the modal overflows beyond the viewport, you can use the
 ```jsx
 function ScrollingExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [scrollBehavior, setScrollBehavior] = React.useState("inside")
+  const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
   const btnRef = React.useRef()
   return (
     <>
       <RadioGroup value={scrollBehavior} onChange={setScrollBehavior}>
-        <Stack direction="row">
-          <Radio value="inside">inside</Radio>
-          <Radio value="outside">outside</Radio>
+        <Stack direction='row'>
+          <Radio value='inside'>inside</Radio>
+          <Radio value='outside'>outside</Radio>
         </Stack>
       </RadioGroup>
 
@@ -393,14 +393,14 @@ Pass the `size` prop if you need to adjust the size of the modal. Values can be
 ```jsx
 function SizeExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [size, setSize] = React.useState("md")
+  const [size, setSize] = React.useState('md')
 
   const handleSizeClick = (newSize) => {
     setSize(newSize)
     onOpen()
   }
 
-  const sizes = ["xs", "sm", "md", "lg", "xl", "full"]
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
 
   return (
     <>
@@ -472,7 +472,7 @@ To prevent focus trapping, pass `trapFocus` and set its value to `false`.
 
 ### Modal Props
 
-<PropsTable of="Modal" />
+<PropsTable of='Modal' />
 
 ### Other components
 

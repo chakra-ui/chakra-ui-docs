@@ -1,4 +1,4 @@
-import { SearchIcon } from '@chakra-ui/icons';
+import { SearchIcon } from '@chakra-ui/icons'
 import {
   Box,
   Center,
@@ -11,41 +11,41 @@ import {
   useDisclosure,
   useEventListener,
   useUpdateEffect,
-} from '@chakra-ui/react';
-import searchData from 'configs/search-meta.json';
-import { matchSorter } from 'match-sorter';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import * as React from 'react';
-import MultiRef from 'react-multi-ref';
-import scrollIntoView from 'scroll-into-view-if-needed';
-import { findAll } from 'highlight-words-core';
-import { SearchButton } from './algolia-search';
+} from '@chakra-ui/react'
+import searchData from 'configs/search-meta.json'
+import { matchSorter } from 'match-sorter'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import MultiRef from 'react-multi-ref'
+import scrollIntoView from 'scroll-into-view-if-needed'
+import { findAll } from 'highlight-words-core'
+import { SearchButton } from './algolia-search'
 
 function OptionText(props: any) {
-  const { searchWords, textToHighlight } = props;
+  const { searchWords, textToHighlight } = props
 
   const chunks = findAll({
     searchWords,
     textToHighlight,
     autoEscape: true,
-  });
+  })
 
   const highlightedText = chunks.map((chunk) => {
-    const { end, highlight, start } = chunk;
-    const text = textToHighlight.substr(start, end - start);
+    const { end, highlight, start } = chunk
+    const text = textToHighlight.substr(start, end - start)
     if (highlight) {
       return (
         <Box as='mark' bg='transparent' color='teal.500'>
           {text}
         </Box>
-      );
+      )
     } else {
-      return text;
+      return text
     }
-  });
+  })
 
-  return highlightedText;
+  return highlightedText
 }
 
 function DocIcon(props) {
@@ -65,7 +65,7 @@ function DocIcon(props) {
         strokeLinejoin='round'
       />
     </chakra.svg>
-  );
+  )
 }
 
 function EnterIcon(props) {
@@ -88,7 +88,7 @@ function EnterIcon(props) {
         <path d='M8 17l-6-6 6-6' />
       </g>
     </chakra.svg>
-  );
+  )
 }
 
 function HashIcon(props) {
@@ -109,118 +109,118 @@ function HashIcon(props) {
         strokeLinejoin='round'
       />
     </chakra.svg>
-  );
+  )
 }
 
 function OmniSearch() {
-  const router = useRouter();
-  const [query, setQuery] = React.useState('');
-  const [active, setActive] = React.useState(0);
-  const [shouldCloseModal, setShouldCloseModal] = React.useState(true);
-  const menu = useDisclosure();
-  const modal = useDisclosure();
-  const [menuNodes] = React.useState(() => new MultiRef<number, HTMLElement>());
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const eventRef = React.useRef<'mouse' | 'keyboard'>(null);
+  const router = useRouter()
+  const [query, setQuery] = React.useState('')
+  const [active, setActive] = React.useState(0)
+  const [shouldCloseModal, setShouldCloseModal] = React.useState(true)
+  const menu = useDisclosure()
+  const modal = useDisclosure()
+  const [menuNodes] = React.useState(() => new MultiRef<number, HTMLElement>())
+  const menuRef = React.useRef<HTMLDivElement>(null)
+  const eventRef = React.useRef<'mouse' | 'keyboard'>(null)
 
   React.useEffect(() => {
-    router.events.on('routeChangeComplete', modal.onClose);
+    router.events.on('routeChangeComplete', modal.onClose)
     return () => {
-      router.events.off('routeChangeComplete', modal.onClose);
-    };
+      router.events.off('routeChangeComplete', modal.onClose)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   useEventListener('keydown', (event) => {
-    const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator?.platform);
-    const hotkey = isMac ? 'metaKey' : 'ctrlKey';
+    const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator?.platform)
+    const hotkey = isMac ? 'metaKey' : 'ctrlKey'
     if (event?.key?.toLowerCase() === 'k' && event[hotkey]) {
-      event.preventDefault();
-      modal.isOpen ? modal.onClose() : modal.onOpen();
+      event.preventDefault()
+      modal.isOpen ? modal.onClose() : modal.onOpen()
     }
-  });
+  })
 
   React.useEffect(() => {
     if (modal.isOpen && query.length > 0) {
-      setQuery('');
+      setQuery('')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [modal.isOpen]);
+  }, [modal.isOpen])
 
   const results = React.useMemo(
     function getResults() {
-      if (query.length < 2) return [];
+      if (query.length < 2) return []
       return matchSorter(searchData, query, {
         keys: ['hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3', 'content'],
-      }).slice(0, 20);
+      }).slice(0, 20)
     },
-    [query]
-  );
+    [query],
+  )
 
   const onKeyDown = React.useCallback(
     (e: React.KeyboardEvent) => {
-      eventRef.current = 'keyboard';
+      eventRef.current = 'keyboard'
       switch (e.key) {
         case 'ArrowDown': {
-          e.preventDefault();
+          e.preventDefault()
           if (active + 1 < results.length) {
-            setActive(active + 1);
+            setActive(active + 1)
           }
-          break;
+          break
         }
         case 'ArrowUp': {
-          e.preventDefault();
+          e.preventDefault()
           if (active - 1 >= 0) {
-            setActive(active - 1);
+            setActive(active - 1)
           }
-          break;
+          break
         }
         case 'Control':
         case 'Alt':
         case 'Shift': {
-          e.preventDefault();
-          setShouldCloseModal(true);
-          break;
+          e.preventDefault()
+          setShouldCloseModal(true)
+          break
         }
         case 'Enter': {
-          modal.onClose();
-          router.push(results[active].url);
-          break;
+          modal.onClose()
+          router.push(results[active].url)
+          break
         }
       }
     },
-    [active, modal, results, router]
-  );
+    [active, modal, results, router],
+  )
 
   const onKeyUp = React.useCallback((e: React.KeyboardEvent) => {
-    eventRef.current = 'keyboard';
+    eventRef.current = 'keyboard'
     switch (e.key) {
       case 'Control':
       case 'Alt':
       case 'Shift': {
-        e.preventDefault();
-        setShouldCloseModal(false);
+        e.preventDefault()
+        setShouldCloseModal(false)
       }
     }
-  }, []);
+  }, [])
 
   useUpdateEffect(() => {
-    setActive(0);
-  }, [query]);
+    setActive(0)
+  }, [query])
 
   useUpdateEffect(() => {
-    if (!menuRef.current || eventRef.current === 'mouse') return;
-    const node = menuNodes.map.get(active);
-    if (!node) return;
+    if (!menuRef.current || eventRef.current === 'mouse') return
+    const node = menuNodes.map.get(active)
+    if (!node) return
     scrollIntoView(node, {
       scrollMode: 'if-needed',
       block: 'nearest',
       inline: 'nearest',
       boundary: menuRef.current,
-    });
-  }, [active]);
+    })
+  }, [active])
 
-  const open = menu.isOpen && results.length > 0;
+  const open = menu.isOpen && results.length > 0
 
   return (
     <>
@@ -261,8 +261,8 @@ function OmniSearch() {
               placeholder='Search the docs'
               value={query}
               onChange={(e) => {
-                setQuery(e.target.value);
-                menu.onOpen();
+                setQuery(e.target.value)
+                menu.onOpen()
               }}
               onKeyDown={onKeyDown}
               onKeyUp={onKeyUp}
@@ -282,8 +282,8 @@ function OmniSearch() {
               >
                 <Box as='ul' role='listbox' borderTopWidth='1px' pt={2} pb={4}>
                   {results.map((item, index) => {
-                    const selected = index === active;
-                    const isLvl1 = item.type === 'lvl1';
+                    const selected = index === active
+                    const isLvl1 = item.type === 'lvl1'
 
                     return (
                       <Link key={item.id} href={item.url} passHref>
@@ -293,12 +293,12 @@ function OmniSearch() {
                             as='li'
                             aria-selected={selected ? true : undefined}
                             onMouseEnter={() => {
-                              setActive(index);
-                              eventRef.current = 'mouse';
+                              setActive(index)
+                              eventRef.current = 'mouse'
                             }}
                             onClick={() => {
                               if (shouldCloseModal) {
-                                modal.onClose();
+                                modal.onClose()
                               }
                             }}
                             ref={menuNodes.ref(index)}
@@ -352,7 +352,7 @@ function OmniSearch() {
                           </Box>
                         </a>
                       </Link>
-                    );
+                    )
                   })}
                 </Box>
               </Box>
@@ -361,7 +361,7 @@ function OmniSearch() {
         </ModalContent>
       </Modal>
     </>
-  );
+  )
 }
 
-export default OmniSearch;
+export default OmniSearch

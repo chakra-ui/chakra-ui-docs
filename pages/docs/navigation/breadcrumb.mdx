@@ -1,7 +1,7 @@
 ---
 title: Breadcrumb
-package: "@chakra-ui/breadcrumb"
-image: "components/breadcrumb.svg"
+package: '@chakra-ui/breadcrumb'
+image: 'components/breadcrumb.svg'
 description:
   Breadcrumbs, or a breadcrumb navigation, can help to enhance how users
   navigate to previous page levels of a website, especially if that website has
@@ -13,9 +13,9 @@ previous page levels of a website, especially if that website has many pages or
 products.
 
 <ComponentLinks
-  theme={{ componentName: "breadcrumb" }}
-  github={{ package: "breadcrumb" }}
-  npm={{ package: "@chakra-ui/breadcrumb" }}
+  theme={{ componentName: 'breadcrumb' }}
+  github={{ package: 'breadcrumb' }}
+  npm={{ package: '@chakra-ui/breadcrumb' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -36,7 +36,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -48,15 +48,15 @@ When this prop is present, the `BreadcrumbLink` renders a `span` with
 ```jsx
 <Breadcrumb>
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">Docs</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Docs</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href="#">Breadcrumb</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Breadcrumb</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 ```
@@ -67,17 +67,17 @@ Change the separator used in the breadcrumb by passing a string, like `-` or an
 icon.
 
 ```jsx
-<Breadcrumb separator="-">
+<Breadcrumb separator='-'>
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">About</BreadcrumbLink>
+    <BreadcrumbLink href='#'>About</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 ```
@@ -85,17 +85,17 @@ icon.
 ### Using an icon as the separator
 
 ```jsx
-<Breadcrumb spacing="8px" separator={<ChevronRightIcon color="gray.500" />}>
+<Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">About</BreadcrumbLink>
+    <BreadcrumbLink href='#'>About</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 ```
@@ -107,17 +107,17 @@ change the style of the breadcrumbs. Let's say we need to reduce the `fontSize`
 of the breadcrumbs.
 
 ```jsx
-<Breadcrumb fontWeight="medium" fontSize="sm">
+<Breadcrumb fontWeight='medium' fontSize='sm'>
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href="#">About</BreadcrumbLink>
+    <BreadcrumbLink href='#'>About</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href="#">Current</BreadcrumbLink>
+    <BreadcrumbLink href='#'>Current</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 ```
@@ -134,12 +134,12 @@ It'll replace the rendered `a` tag with Reach's Link.
 
 <Breadcrumb>
   <BreadcrumbItem>
-    <BreadcrumbLink as={Link} to="#">
+    <BreadcrumbLink as={Link} to='#'>
       Home
     </BreadcrumbLink>
   </BreadcrumbItem>
   <BreadcrumbItem>
-    <BreadcrumbLink as={Link} to="#">
+    <BreadcrumbLink as={Link} to='#'>
       About
     </BreadcrumbLink>
   </BreadcrumbItem>
@@ -165,18 +165,18 @@ It'll replace the rendered `a` tag with Reach's Link.
 
 ### Breadcrumb Props
 
-<PropsTable of="Breadcrumb" />
+<PropsTable of='Breadcrumb' />
 
 ### BreadcrumbItem Props
 
-<PropsTable of="BreadcrumbItem" />
+<PropsTable of='BreadcrumbItem' />
 
 ### BreadcrumbLink Props
 
-The BreadcrumbLink composes the [Link](/link) component so you
-can use all Link props.
+The BreadcrumbLink composes the [Link](/link) component so you can use all Link
+props.
 
-<PropsTable of="BreadcrumbLink" />
+<PropsTable of='BreadcrumbLink' />
 
 ### BreadcrumbSeparator Props
 

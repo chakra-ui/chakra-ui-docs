@@ -4,19 +4,19 @@ import {
   Link as ChakraLink,
   SimpleGrid,
   Text,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import React from 'react';
+} from '@chakra-ui/react'
+import Link from 'next/link'
+import React from 'react'
 import {
   BlitzSvg,
   CreateReactAppSvg,
   GatsbySvg,
   NextjsSvg,
   RedwoodSvg,
-} from './framework-svg';
+} from './framework-svg'
 
 const FrameworkLink = (props) => {
-  const { accentColor, href, children, name } = props;
+  const { accentColor, href, children, name } = props
   return (
     <Link passHref href={href}>
       <ChakraLink textDecoration='none' _hover={{ textDecoration: 'none' }}>
@@ -37,8 +37,8 @@ const FrameworkLink = (props) => {
         </Box>
       </ChakraLink>
     </Link>
-  );
-};
+  )
+}
 
 export const FrameworkLinks = () => {
   return (
@@ -83,5 +83,5 @@ export const FrameworkLinks = () => {
         <RedwoodSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
     </SimpleGrid>
-  );
-};
+  )
+}

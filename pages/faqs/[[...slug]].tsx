@@ -1,17 +1,17 @@
-import { allFAQs } from '.contentlayer/data';
-import type { FAQ } from '.contentlayer/types';
-import { MDXComponents } from 'components/mdx-components';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import Layout from 'layouts';
+import { allFAQs } from '.contentlayer/data'
+import type { FAQ } from '.contentlayer/types'
+import { MDXComponents } from 'components/mdx-components'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import Layout from 'layouts'
 
 export default function Page({ faq }: { faq: FAQ }) {
-  const Component = useMDXComponent(faq.body.code);
+  const Component = useMDXComponent(faq.body.code)
   return (
     <Layout frontMatter={faq.frontMatter}>
       <Component components={MDXComponents} />
     </Layout>
-  );
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,15 +19,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .map((t) =>
       t._id.replace('faqs/', '').replace('.mdx', '').replace('index', ''),
     )
-    .map((id) => ({ params: { slug: id.split('/') } }));
-  return { paths: faqs, fallback: false };
-};
+    .map((id) => ({ params: { slug: id.split('/') } }))
+  return { paths: faqs, fallback: false }
+}
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
-    : [ctx.params.slug];
+    : [ctx.params.slug]
 
-  const faq = allFAQs.find((faq) => faq._id.includes(params.join('/')));
-  return { props: { faq } };
-};
+  const faq = allFAQs.find((faq) => faq._id.includes(params.join('/')))
+  return { props: { faq } }
+}
