@@ -32,36 +32,34 @@ function ResourceCard(props: ResourceCardProps) {
 
   return (
     <LinkBox {...rest} maxW='360px'>
-      <Box>
-        <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
-          {tags?.map((tag, index) => (
-            <WrapItem key={index}>
-              <Badge
-                as='a'
-                rel='tag'
-                color={color}
-                textTransform='uppercase'
-                fontSize='xs'
-                fontWeight='bold'
-              >
-                {tag}
-              </Badge>
-            </WrapItem>
-          ))}
-        </Wrap>
+      <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
+        {tags?.map((tag, index) => (
+          <WrapItem key={index}>
+            <Badge
+              as='a'
+              rel='tag'
+              color={color}
+              textTransform='uppercase'
+              fontSize='xs'
+              fontWeight='bold'
+            >
+              {tag}
+            </Badge>
+          </WrapItem>
+        ))}
+      </Wrap>
 
-        <Heading as='h3' size='sm'>
-          <LinkOverlay isExternal href={url}>
-            <span className='content'>{heading}</span>
-          </LinkOverlay>
-        </Heading>
-        <Text fontSize='sm' color='gray.500' mt='2'>
-          by {author}
-        </Text>
-        <Text lineHeight='tall' py={2} opacity={0.8}>
-          {description}
-        </Text>
-      </Box>
+      <Heading as='h3' size='sm'>
+        <LinkOverlay isExternal href={url}>
+          <span className='content'>{heading}</span>
+        </LinkOverlay>
+      </Heading>
+      <Text fontSize='sm' color='gray.500' mt='2'>
+        by {author}
+      </Text>
+      <Text lineHeight='tall' py={2} opacity={0.8}>
+        {description}
+      </Text>
     </LinkBox>
   );
 }
