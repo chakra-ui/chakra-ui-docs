@@ -100,7 +100,7 @@ function ResourceSection(props: ResourceSectionProps) {
   })
 
   return (
-    <Box as="section">
+    <Box as="section" mt="6">
       <Heading as="h2" size="md">
         <Box
           as={icon}
