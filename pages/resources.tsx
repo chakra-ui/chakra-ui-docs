@@ -49,7 +49,7 @@ function Resources() {
         A rich compilation of technical descriptions and detailed information of
         how Chakra UI works.
       </Text>
-      <Tabs variant="enclosed">
+      <Tabs variant="enclosed" mt="2">
         <TabList>
           <Tab>{TALKS}</Tab>
           <Tab>{VIDEOS}</Tab>
@@ -100,7 +100,7 @@ function ResourceSection(props: ResourceSectionProps) {
   })
 
   return (
-    <Box as="section" mt="6">
+    <Box as="section" mt="8">
       <Heading as="h2" size="md">
         <Box
           as={icon}
