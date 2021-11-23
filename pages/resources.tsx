@@ -93,9 +93,9 @@ interface ResourceSectionProps {
 
 function ResourceSection(props: ResourceSectionProps) {
   const { icon, title, resources } = props
-  const RESOURCES_FILTER = "resources-filter"
+  const filterInputId = `resources-filter-${title.toLowerCase()}`
   const formik = useFormik({
-    initialValues: { [RESOURCES_FILTER]: "" },
+    initialValues: { [filterInputId]: "" },
     onSubmit: undefined
   })
 
@@ -111,19 +111,19 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
-      <FormControl id={RESOURCES_FILTER} mt={8} mb={8}>
+      <FormControl id={filterInputId} mt={8} mb={8}>
         <FormLabel>Search</FormLabel>
         <Input
           onChange={formik.handleChange}
           placeholder="Example: React, Chakra"
-          value={formik.values[RESOURCES_FILTER]}
+          value={formik.values[filterInputId]}
         />
       </FormControl>
       <ResponsiveMasonry
         columnsCountBreakPoints={{350: 1, 580: 2}}
       >
         <Masonry gutter="15px">
-          {filterResources(formik.values[RESOURCES_FILTER], resources).map((item, index) => (
+          {filterResources(formik.values[filterInputId], resources).map((item, index) => (
             <ResourceCard key={index} data={item} />
           ))}
         </Masonry>
