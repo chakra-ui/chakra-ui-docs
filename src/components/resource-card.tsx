@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Wrap,
   WrapItem,
+  VStack
 } from '@chakra-ui/react';
 import * as React from 'react';
 
@@ -30,35 +31,37 @@ function ResourceCard(props: ResourceCardProps) {
   const color = useColorModeValue('teal.600', 'teal.400');
 
   return (
-    <LinkBox {...rest} maxW='360px'>
-      <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
-        {tags?.map((tag, index) => (
-          <WrapItem key={index}>
-            <Badge
-              as='a'
-              rel='tag'
-              color={color}
-              textTransform='uppercase'
-              fontSize='xs'
-              fontWeight='bold'
-            >
-              {tag}
-            </Badge>
-          </WrapItem>
-        ))}
-      </Wrap>
+    <LinkBox {...rest} maxW='360px' p={4} bg={useColorModeValue('gray.50', 'gray.700')}>
+      <VStack spacing={2} align='stretch'>
+        <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
+          {tags?.map((tag, index) => (
+            <WrapItem key={index}>
+              <Badge
+                as='a'
+                rel='tag'
+                color={color}
+                textTransform='uppercase'
+                fontSize='xs'
+                fontWeight='bold'
+              >
+                {tag}
+              </Badge>
+            </WrapItem>
+          ))}
+        </Wrap>
 
-      <Heading as='h3' size='sm'>
-        <LinkOverlay isExternal href={url}>
-          <span className='content'>{heading}</span>
-        </LinkOverlay>
-      </Heading>
-      <Text fontSize='sm' color='gray.500' mt='2'>
-        by {author}
-      </Text>
-      <Text lineHeight='tall' py={2} opacity={0.8}>
-        {description}
-      </Text>
+        <Heading as='h3' size='sm'>
+          <LinkOverlay isExternal href={url}>
+            <span className='content'>{heading}</span>
+          </LinkOverlay>
+        </Heading>
+        <Text fontSize='sm' color='gray.500' mt='2'>
+          by {author}
+        </Text>
+        <Text lineHeight='tall' py={2} opacity={0.8}>
+          {description}
+        </Text>
+      </VStack>
     </LinkBox>
   );
 }
