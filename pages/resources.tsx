@@ -115,7 +115,7 @@ function ResourceSection(props: ResourceSectionProps) {
         <FormLabel>Search</FormLabel>
         <Input
           onChange={formik.handleChange}
-          placeholder="Example: React, Chakra"
+          placeholder="Example: React Chakra next.js"
           value={formik.values[filterInputId]}
         />
       </FormControl>
