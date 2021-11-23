@@ -55,7 +55,7 @@ function ResourceCard(props: ResourceCardProps) {
             <span className='content'>{heading}</span>
           </LinkOverlay>
         </Heading>
-        <Text fontSize='sm' color='gray.500' mt='2'>
+        <Text fontSize='sm' color='gray.500'>
           by {author}
         </Text>
         <Text lineHeight='tall' py={2} opacity={0.8}>
