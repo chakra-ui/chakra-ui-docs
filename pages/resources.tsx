@@ -111,7 +111,7 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
-      <FormControl id={filterInputId} mt={8} mb={8}>
+      <FormControl id={filterInputId} mt="8" mb="8">
         <FormLabel>Search</FormLabel>
         <Input
           onChange={formik.handleChange}
