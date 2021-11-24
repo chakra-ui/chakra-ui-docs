@@ -16,7 +16,7 @@ export default function filterResources(query: string, resources: Resource[]): R
  * It is exported to test this function specifically, which is simpler.
  */
 export function doesResourceContainQuery(query: string, resource: Resource) {
-  const parsedQuery = query.split(" ").filter(text => text.trim() !== "")
+  const parsedQuery = query.split(" ").filter(text => text.trim() !== "") // get rid of whitespace/empty strings for more results
   const resourceText = getResourceText(resource)
 
   return parsedQuery.find(text => resourceText.includes(text.toLowerCase())) !== undefined
