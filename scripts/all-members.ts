@@ -1,21 +1,21 @@
-import { Octokit } from "@octokit/rest"
-import fs from "fs"
-import { config } from "dotenv"
+import { Octokit } from '@octokit/rest'
+import fs from 'fs'
+import { config } from 'dotenv'
 
 config()
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
 
 function sortMembers(a: any, b: any) {
   // segun comes first!
-  if (a.login === "segunadebayo") return -1
-  if (b.login === "segunadebayo") return 1
+  if (a.login === 'segunadebayo') return -1
+  if (b.login === 'segunadebayo') return 1
 
   // everything else is alphabetical by login
-  return a.login.localeCompare(b.login, "en")
+  return a.login.localeCompare(b.login, 'en')
 }
 
 async function getMembers() {
-  const { data: members } = await octokit.orgs.listMembers({ org: "chakra-ui" })
+  const { data: members } = await octokit.orgs.listMembers({ org: 'chakra-ui' })
 
   const membersData = await Promise.all(
     members.map(async (member) => {
@@ -41,7 +41,7 @@ async function getMembers() {
   )
 
   const result = { members: membersData.filter(Boolean).sort(sortMembers) }
-  fs.writeFileSync(".all-membersrc", JSON.stringify(result, null, 2))
+  fs.writeFileSync('.all-membersrc', JSON.stringify(result, null, 2))
 }
 
 try {

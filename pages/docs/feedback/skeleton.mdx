@@ -1,15 +1,15 @@
 ---
 title: Skeleton
 description: Skeleton is used to display the loading state of some component
-package: "@chakra-ui/skeleton"
+package: '@chakra-ui/skeleton'
 ---
 
 `Skeleton` is used to display the loading state of some components.
 
 <ComponentLinks
-  theme={{ componentName: "skeleton" }}
-  github={{ package: "skeleton" }}
-  npm={{ package: "@chakra-ui/skeleton" }}
+  theme={{ componentName: 'skeleton' }}
+  github={{ package: 'skeleton' }}
+  npm={{ package: '@chakra-ui/skeleton' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -17,7 +17,7 @@ package: "@chakra-ui/skeleton"
 ## Import
 
 ```js
-import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react"
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -26,9 +26,9 @@ You can use it as a standalone component.
 
 ```jsx
 <Stack>
-  <Skeleton height="20px" />
-  <Skeleton height="20px" />
-  <Skeleton height="20px" />
+  <Skeleton height='20px' />
+  <Skeleton height='20px' />
+  <Skeleton height='20px' />
 </Stack>
 ```
 
@@ -44,11 +44,11 @@ Or to wrap another component to take the same height and width.
 Useful when fetching remote data.
 
 ```js live=false
-import { Box } from "@chakra-ui/react"
+import { Box } from '@chakra-ui/react'
 
 function Card() {
   const { data, loading, error } = useRemoteData()
-  if (error) return <Box children="error" />
+  if (error) return <Box children='error' />
   return (
     <Box>
       <Skeleton isLoaded={!loading}>
@@ -62,9 +62,9 @@ function Card() {
 ### Circle and Text Skeleton
 
 ```jsx
-<Box padding="6" boxShadow="lg" bg="white">
-  <SkeletonCircle size="10" />
-  <SkeletonText mt="4" noOfLines={4} spacing="4" />
+<Box padding='6' boxShadow='lg' bg='white'>
+  <SkeletonCircle size='10' />
+  <SkeletonText mt='4' noOfLines={4} spacing='4' />
 </Box>
 ```
 
@@ -73,7 +73,7 @@ function Card() {
 You can change the animation color with `startColor` and `endColor`.
 
 ```jsx
-<Skeleton startColor="pink.500" endColor="orange.500" height="20px" />
+<Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
 ```
 
 ### Skipping the skeleton when content is loaded
@@ -88,4 +88,4 @@ You can prevent the skeleton from rendering using the `isLoaded` prop.
 
 ## Props
 
-<PropsTable of="Skeleton" />
+<PropsTable of='Skeleton' />

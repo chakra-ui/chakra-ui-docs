@@ -1,7 +1,7 @@
 ---
 title: Chakra UI + React Table
 description: Building a Data Table with Chakra UI and React Table
-tags: ["table", "data table", "react-table"]
+tags: ['table', 'data table', 'react-table']
 author: TimKolberger
 ---
 
@@ -13,9 +13,9 @@ components, and the [React Table library](https://react-table.tanstack.com/).
 ## Imports
 
 ```js live=false
-import { Table, Thead, Tbody, Tr, Th, Td, chakra } from "@chakra-ui/react"
-import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons"
-import { useTable, useSortBy } from "react-table"
+import { Table, Thead, Tbody, Tr, Th, Td, chakra } from '@chakra-ui/react'
+import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
+import { useTable, useSortBy } from 'react-table'
 ```
 
 ## Usage
@@ -25,18 +25,18 @@ function DataTable() {
   const data = React.useMemo(
     () => [
       {
-        fromUnit: "inches",
-        toUnit: "millimetres (mm)",
+        fromUnit: 'inches',
+        toUnit: 'millimetres (mm)',
         factor: 25.4,
       },
       {
-        fromUnit: "feet",
-        toUnit: "centimetres (cm)",
+        fromUnit: 'feet',
+        toUnit: 'centimetres (cm)',
         factor: 30.48,
       },
       {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
+        fromUnit: 'yards',
+        toUnit: 'metres (m)',
         factor: 0.91444,
       },
     ],
@@ -46,29 +46,24 @@ function DataTable() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "To convert",
-        accessor: "fromUnit",
+        Header: 'To convert',
+        accessor: 'fromUnit',
       },
       {
-        Header: "Into",
-        accessor: "toUnit",
+        Header: 'Into',
+        accessor: 'toUnit',
       },
       {
-        Header: "Multiply by",
-        accessor: "factor",
+        Header: 'Multiply by',
+        accessor: 'factor',
         isNumeric: true,
       },
     ],
     [],
   )
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data }, useSortBy)
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data }, useSortBy)
 
   return (
     <Table {...getTableProps()}>
@@ -80,13 +75,13 @@ function DataTable() {
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 isNumeric={column.isNumeric}
               >
-                {column.render("Header")}
-                <chakra.span pl="4">
+                {column.render('Header')}
+                <chakra.span pl='4'>
                   {column.isSorted ? (
                     column.isSortedDesc ? (
-                      <TriangleDownIcon aria-label="sorted descending" />
+                      <TriangleDownIcon aria-label='sorted descending' />
                     ) : (
-                      <TriangleUpIcon aria-label="sorted ascending" />
+                      <TriangleUpIcon aria-label='sorted ascending' />
                     )
                   ) : null}
                 </chakra.span>
@@ -102,7 +97,7 @@ function DataTable() {
             <Tr {...row.getRowProps()}>
               {row.cells.map((cell) => (
                 <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
-                  {cell.render("Cell")}
+                  {cell.render('Cell')}
                 </Td>
               ))}
             </Tr>

@@ -1,7 +1,7 @@
 ---
 title: Chakra UI + React Hook Form
 description: Building Forms with Chakra UI and React Hook Form
-tags: ["form", "react-hook-form"]
+tags: ['form', 'react-hook-form']
 author: abheist
 ---
 
@@ -9,63 +9,63 @@ This example shows how to build a simple form with Chakra UI's form components
 and the [React Hook Form](https://react-hook-form.com) form library:
 
 ```jsx live=false
-import { useForm } from "react-hook-form";
-import React from "react";
+import { useForm } from 'react-hook-form'
+import React from 'react'
 import {
   FormErrorMessage,
   FormLabel,
   FormControl,
   Input,
-  Button
-} from "@chakra-ui/react";
+  Button,
+} from '@chakra-ui/react'
 
 export default function HookForm() {
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting }
-  } = useForm();
+    formState: { errors, isSubmitting },
+  } = useForm()
 
   function onSubmit(values) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        resolve();
-      }, 3000);
-    });
+        alert(JSON.stringify(values, null, 2))
+        resolve()
+      }, 3000)
+    })
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormControl isInvalid={errors.name}>
-        <FormLabel htmlFor="name">First name</FormLabel>
+        <FormLabel htmlFor='name'>First name</FormLabel>
         <Input
-          id="name"
-          placeholder="name"
-          {...register("name", {
-            required: "This is required",
-            minLength: { value: 4, message: "Minimum length should be 4" }
+          id='name'
+          placeholder='name'
+          {...register('name', {
+            required: 'This is required',
+            minLength: { value: 4, message: 'Minimum length should be 4' },
           })}
         />
         <FormErrorMessage>
           {errors.name && errors.name.message}
         </FormErrorMessage>
       </FormControl>
-      <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
+      <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
         Submit
       </Button>
     </form>
-  );
+  )
 }
 ```
 
 Wiring up to the rest of your app:
 
 ```jsx live=false
-import React from "react";
-import ReactDOM from "react-dom";
-import HookForm from "./HookForm";
-import { ChakraProvider, CSSReset, Box } from "@chakra-ui/react";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import HookForm from './HookForm'
+import { ChakraProvider, CSSReset, Box } from '@chakra-ui/react'
 
 function App() {
   return (
@@ -75,11 +75,11 @@ function App() {
         <HookForm />
       </Box>
     </ChakraProvider>
-  );
+  )
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
 ```
 
 credit: Abhishek Kumar Singh - https://abheist.com/

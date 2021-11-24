@@ -1,8 +1,11 @@
 ---
 title: Range Slider
-package: "@chakra-ui/slider"
+package: '@chakra-ui/slider'
 version: 1.6.9
-image: "components/range-slider.svg"
+image: 'components/range-slider.svg'
+description:
+  'The RangeSlider is a multi thumb slider used to select a range of related
+  values.'
 ---
 
 The `RangeSlider` is a multi thumb slider used to select a range of related
@@ -10,9 +13,9 @@ values. A common use-case of this component is a price range picker that allows
 a user to set the minimum and maximum price.
 
 <ComponentLinks
-  theme={{ componentName: "slider" }}
-  github={{ package: "slider" }}
-  npm={{ package: "@chakra-ui/slider" }}
+  theme={{ componentName: 'slider' }}
+  github={{ package: 'slider' }}
+  npm={{ package: '@chakra-ui/slider' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -33,7 +36,7 @@ import {
   RangeSliderTrack,
   RangeSliderFilledTrack,
   RangeSliderThumb,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -42,7 +45,7 @@ import {
 > provide an accessible label for the Slider.
 
 ```jsx
-<RangeSlider aria-label={["min", "max"]} defaultValue={[10, 30]}>
+<RangeSlider aria-label={['min', 'max']} defaultValue={[10, 30]}>
   <RangeSliderTrack>
     <RangeSliderFilledTrack />
   </RangeSliderTrack>
@@ -58,8 +61,8 @@ You can override the color scheme of the slider to any color key specified in
 
 ```jsx
 <RangeSlider
-  aria-label={["min", "max"]}
-  colorScheme="pink"
+  aria-label={['min', 'max']}
+  colorScheme='pink'
   defaultValue={[10, 30]}
 >
   <RangeSliderTrack>
@@ -77,11 +80,11 @@ it vertical, pass the `orientation` prop and set its value to `vertical`.
 
 ```jsx
 <RangeSlider
-  aria-label={["min", "max"]}
-  colorScheme="pink"
+  aria-label={['min', 'max']}
+  colorScheme='pink'
   defaultValue={[10, 30]}
-  orientation="vertical"
-  minH="32"
+  orientation='vertical'
+  minH='32'
 >
   <RangeSliderTrack>
     <RangeSliderFilledTrack />
@@ -97,15 +100,15 @@ it vertical, pass the `orientation` prop and set its value to `vertical`.
 customize its styles.
 
 ```jsx
-<RangeSlider aria-label={["min", "max"]} defaultValue={[30, 80]}>
-  <RangeSliderTrack bg="red.100">
-    <RangeSliderFilledTrack bg="tomato" />
+<RangeSlider aria-label={['min', 'max']} defaultValue={[30, 80]}>
+  <RangeSliderTrack bg='red.100'>
+    <RangeSliderFilledTrack bg='tomato' />
   </RangeSliderTrack>
   <RangeSliderThumb boxSize={6} index={0}>
-    <Box color="tomato" as={MdGraphicEq} />
+    <Box color='tomato' as={MdGraphicEq} />
   </RangeSliderThumb>
   <RangeSliderThumb boxSize={6} index={1}>
-    <Box color="tomato" as={MdGraphicEq} />
+    <Box color='tomato' as={MdGraphicEq} />
   </RangeSliderThumb>
 </RangeSlider>
 ```
@@ -117,8 +120,8 @@ accomplished using the `step` prop.
 
 ```jsx
 <RangeSlider defaultValue={[120, 240]} min={0} max={300} step={30}>
-  <RangeSliderTrack bg="red.100">
-    <RangeSliderFilledTrack bg="tomato" />
+  <RangeSliderTrack bg='red.100'>
+    <RangeSliderFilledTrack bg='tomato' />
   </RangeSliderTrack>
   <RangeSliderThumb boxSize={6} index={0} />
   <RangeSliderThumb boxSize={6} index={1} />
@@ -133,7 +136,7 @@ interested in the final result after sliding is complete. You can use
 
 ```jsx live=false
 <RangeSlider
-  aria-label={["min", "max"]}
+  aria-label={['min', 'max']}
   onChangeEnd={(val) => console.log(val)}
 >
   <RangeSliderTrack>
@@ -157,7 +160,7 @@ The `RangeSlider` component wraps all its children in the
 [Box](/docs/layout/box) component, so you can pass all `Box` props to change its
 style.
 
-<PropsTable of="RangeSlider" />
+<PropsTable of='RangeSlider' />
 
 ### RangeSliderThumb Props
 

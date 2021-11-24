@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Icon,
   Text,
@@ -8,19 +8,20 @@ import {
   useColorModeValue,
   LinkProps,
   WrapItem,
-} from '@chakra-ui/react';
-import { FaNpm, FaGithub } from 'react-icons/fa';
-import StorybookIcon from '../storybook-icon';
+} from '@chakra-ui/react'
+import { FaNpm, FaGithub } from 'react-icons/fa'
+import StorybookIcon from '../storybook-icon'
+import { t } from 'utils/i18n'
 
 type ComponentLinkProps = LinkProps & {
-  icon: React.ElementType;
-  url: string;
-  iconSize?: string;
-  iconColor?: string;
-};
+  icon: React.ElementType
+  url: string
+  iconSize?: string
+  iconColor?: string
+}
 
 function ComponentLink(props: ComponentLinkProps) {
-  const { icon, url, children, iconSize, iconColor, ...rest } = props;
+  const { icon, url, children, iconSize, iconColor, ...rest } = props
   return (
     <Link
       href={url}
@@ -46,20 +47,20 @@ function ComponentLink(props: ComponentLinkProps) {
         </Text>
       </HStack>
     </Link>
-  );
+  )
 }
 
 export type ComponentLinksProps = {
-  theme?: { componentName: string };
-  github?: { url?: string; package?: string };
-  npm?: { package: string };
-  storybook?: { url: string };
-};
+  theme?: { componentName: string }
+  github?: { url?: string; package?: string }
+  npm?: { package: string }
+  storybook?: { url: string }
+}
 function ComponentLinks(props: ComponentLinksProps) {
-  const { theme, github, npm, storybook, ...rest } = props;
-  const iconColor = useColorModeValue('gray.600', 'inherit');
+  const { theme, github, npm, storybook, ...rest } = props
+  const iconColor = useColorModeValue('gray.600', 'inherit')
 
-  const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui';
+  const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui'
 
   const githubLink = (github?.url || github?.package) && (
     <WrapItem>
@@ -71,10 +72,10 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconColor={iconColor}
         iconSize='1rem'
       >
-        View source
+        {t('component.mdx-components.component-links.view-source')}
       </ComponentLink>
     </WrapItem>
-  );
+  )
 
   const npmLink = npm?.package && (
     <WrapItem>
@@ -87,7 +88,7 @@ function ComponentLinks(props: ComponentLinksProps) {
         {npm.package}
       </ComponentLink>
     </WrapItem>
-  );
+  )
 
   const storybookLink = storybook?.url && (
     <WrapItem>
@@ -97,10 +98,10 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconSize='1.25rem'
         iconColor='pink.500'
       >
-        View storybook
+        {t('component.mdx-components.component-links.view-storybook')}
       </ComponentLink>
     </WrapItem>
-  );
+  )
 
   const themeComponentLink = theme && (
     <WrapItem>
@@ -110,10 +111,10 @@ function ComponentLinks(props: ComponentLinksProps) {
         iconColor={iconColor}
         iconSize='1rem'
       >
-        View theme source
+        {t('component.mdx-components.component-links.view-theme-source')}
       </ComponentLink>
     </WrapItem>
-  );
+  )
 
   return (
     <Wrap className='component-links' mt='2rem' spacing='4' {...rest}>
@@ -122,7 +123,7 @@ function ComponentLinks(props: ComponentLinksProps) {
       {npmLink}
       {storybookLink}
     </Wrap>
-  );
+  )
 }
 
-export default ComponentLinks;
+export default ComponentLinks

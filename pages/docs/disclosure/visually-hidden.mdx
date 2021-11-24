@@ -1,17 +1,17 @@
 ---
 title: VisuallyHidden
-package: "@chakra-ui/visually-hidden"
+package: '@chakra-ui/visually-hidden'
 description:
-  VisuallyHidden is a common technique used in web accessibility to hide
-  content from the visual client
+  VisuallyHidden is a common technique used in web accessibility to hide content
+  from the visual client
 ---
 
 VisuallyHidden is a common technique used in web accessibility to hide content
 from the visual client, but keep it readable for screen readers.
 
 <ComponentLinks
-  github={{ package: "visually-hidden" }}
-  npm={{ package: "@chakra-ui/visually-hidden" }}
+  github={{ package: 'visually-hidden' }}
+  npm={{ package: '@chakra-ui/visually-hidden' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -20,17 +20,21 @@ from the visual client, but keep it readable for screen readers.
 
 Chakra UI exports 2 components for the VisuallyHidden.
 
-`VisuallyHidden`: Visually hidden span component used to hide elements on screen.
-`VisuallyHiddenInput`: Visually hidden input component used for designing custom input components using the html `input` as a proxy
+`VisuallyHidden`: Visually hidden span component used to hide elements on
+screen. `VisuallyHiddenInput`: Visually hidden input component used for
+designing custom input components using the html `input` as a proxy
 
 ```js
-import { VisuallyHidden, VisuallyHiddenInput } from "@chakra-ui/react"
+import { VisuallyHidden, VisuallyHiddenInput } from '@chakra-ui/react'
 ```
 
 ## Usage
 
-### `VisuallyHidden` Example  
-It is used to visually hide an element but to make it accessible for screen-readers. It renders html `<span>` as a proxy.
+### `VisuallyHidden` Example
+
+It is used to visually hide an element but to make it accessible for
+screen-readers. It renders html `<span>` as a proxy.
+
 ```jsx
 function Example() {
   return (
@@ -56,17 +60,18 @@ function Example() {
 ```
 
 ### `VisuallyHiddenInput` Example
-It renders html `<input>` as a proxy. 
+
+It renders html `<input>` as a proxy.
 
 ```jsx
 function Example() {
   return (
     <VisuallyHiddenInput
-    defaultChecked
-    onChange={(event) => {
-      console.log(event.target.checked)
-    }}
-  />
+      defaultChecked
+      onChange={(event) => {
+        console.log(event.target.checked)
+      }}
+    />
   )
 }
 ```
@@ -75,8 +80,8 @@ function Example() {
 
 ## Accessibility
 
-`VisuallyHidden` has all the styles necessary to hide it from visual clients, but
-keep it for screen readers.
+`VisuallyHidden` has all the styles necessary to hide it from visual clients,
+but keep it for screen readers.
 
 ---
 

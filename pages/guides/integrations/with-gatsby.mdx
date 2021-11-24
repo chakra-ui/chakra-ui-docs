@@ -1,13 +1,13 @@
 ---
 title: Chakra UI + Gatsby
 description: Adding Chakra UI Components to Gatsby sites
-tags: ["gatsby", "websites", "ssr"]
+tags: ['gatsby', 'websites', 'ssr']
 author: KenzoBenzo
 ---
 
-Chakra UI is a great UI library to get your [Gatsby](https://www.gatsbyjs.com/) website up and running fast.
-The setup is slightly different than other projects, however the
-API usage seen in the rest of the docs is the same!
+Chakra UI is a great UI library to get your [Gatsby](https://www.gatsbyjs.com/)
+website up and running fast. The setup is slightly different than other
+projects, however the API usage seen in the rest of the docs is the same!
 
 ## Installation
 
@@ -33,7 +33,7 @@ After installation, you'll need to add `@chakra-ui/gatsby-plugin` to the
 module.exports = {
   plugins: [
     {
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: '@chakra-ui/gatsby-plugin',
       options: {
         /**
          * @property {boolean} [resetCSS=true]
@@ -51,28 +51,31 @@ module.exports = {
 }
 ```
 
-To use a custom theme, you can [shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/) this plugin’s `theme.js` file
-with your own theme:
+To use a custom theme, you can
+[shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
+this plugin’s `theme.js` file with your own theme:
 
 ```jsx live=false
 // src/@chakra-ui/gatsby-plugin/theme.js
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 const theme = {
   colors: {
-    primary: "rebeccapurple"
-  }
+    primary: 'rebeccapurple',
+  },
 }
 
 export default extendTheme(theme)
 ```
 
-If you want to use the [default theme](/docs/theming/theme) there's no need to shadow the file.
+If you want to use the [default theme](/docs/theming/theme) there's no need to
+shadow the file.
 
 ## Migration Notes
 
 ### From v1.x to v2.x
 
-- The `isUsingColorMode` option was removed. The `ChakraProvider` will always use the `ColorModeProvider`
+- The `isUsingColorMode` option was removed. The `ChakraProvider` will always
+  use the `ColorModeProvider`
 - The `isResettingCSS` option was renamed to `resetCSS`
 
 ### From v0.8.x to v1.x

@@ -1,7 +1,7 @@
 ---
 title: Chakra UI + Next.js
 description: Adding Chakra UI Components to Next.js sites
-tags: ["next.js", "next", "websites", "ssr", "ssg"]
+tags: ['next.js', 'next', 'websites', 'ssr', 'ssg']
 author: Mzaien
 ---
 
@@ -10,7 +10,8 @@ and accessibly.
 
 **The way to setup Chakra with Next.js shown in this Guide:**
 
-This guide assumes you already have a pretty standard NextJS setup. You can create a blank nextjs project by doing
+This guide assumes you already have a pretty standard NextJS setup. You can
+create a blank nextjs project by doing
 
 ```zsh
 npx create-next-app my-project
@@ -39,7 +40,7 @@ styles, and more.
 Use it in `pages/_app.js`:
 
 ```js live=false
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider } from '@chakra-ui/react'
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
@@ -49,4 +50,3 @@ function MyApp({ Component, pageProps }) {
 }
 export default MyApp
 ```
-

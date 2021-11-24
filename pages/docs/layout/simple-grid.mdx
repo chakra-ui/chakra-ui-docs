@@ -1,6 +1,6 @@
 ---
 title: SimpleGrid
-package: "@chakra-ui/layout"
+package: '@chakra-ui/layout'
 description:
   Grid is Box with display set to grid and comes with helpful style shorthand.
   It renders a `div` element.
@@ -11,8 +11,8 @@ If you're like me, you probably tend to check the
 anything CSS grid.
 
 <ComponentLinks
-  github={{ package: "layout" }}
-  npm={{ package: "@chakra-ui/layout" }}
+  github={{ package: 'layout' }}
+  npm={{ package: '@chakra-ui/layout' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -23,7 +23,7 @@ ease. It renders a `div` element with `display: grid`.
 ## Import
 
 ```js
-import { SimpleGrid } from "@chakra-ui/react"
+import { SimpleGrid } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -32,11 +32,11 @@ Specifying the number of columns for the grid layout.
 
 ```jsx
 <SimpleGrid columns={2} spacing={10}>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
 </SimpleGrid>
 ```
 
@@ -47,12 +47,12 @@ You can also make it responsive by passing array or object values into the
 // Passing `columns={[2, null, 3]}` and `columns={{sm: 2, md: 3}}`
 // will have the same effect.
 
-<SimpleGrid columns={[2, null, 3]} spacing="40px">
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
+<SimpleGrid columns={[2, null, 3]} spacing='40px'>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
 </SimpleGrid>
 ```
 
@@ -65,13 +65,13 @@ have before adjusting the layout.
 This uses css grid `auto-fit` and `minmax()` internally.
 
 ```jsx
-<SimpleGrid minChildWidth="120px" spacing="40px">
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
+<SimpleGrid minChildWidth='120px' spacing='40px'>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
 </SimpleGrid>
 ```
 
@@ -82,12 +82,12 @@ grid items. `SimpleGrid` also allows you pass `spacingX` and `spacingY` to
 define the space between columns and rows respectively.
 
 ```jsx
-<SimpleGrid columns={2} spacingX="40px" spacingY="20px">
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
-  <Box bg="tomato" height="80px"></Box>
+<SimpleGrid columns={2} spacingX='40px' spacingY='20px'>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
+  <Box bg='tomato' height='80px'></Box>
 </SimpleGrid>
 ```
 
@@ -96,4 +96,4 @@ define the space between columns and rows respectively.
 SimpleGrid composes `Box` so you can pass all the `Box` props and css grid props
 with addition of these:
 
-<PropsTable of="SimpleGrid" />
+<PropsTable of='SimpleGrid' />

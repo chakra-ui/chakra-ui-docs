@@ -1,7 +1,7 @@
 ---
 title: Button
-package: "@chakra-ui/button"
-image: "components/button.svg"
+package: '@chakra-ui/button'
+image: 'components/button.svg'
 description:
   Button component is used to trigger an action or event, such as submitting a
   form, opening a Dialog, canceling an action, or performing a delete operation.
@@ -11,9 +11,9 @@ The Button component is used to trigger an action or event, such as submitting a
 form, opening a dialog, canceling an action, or performing a delete operation.
 
 <ComponentLinks
-  theme={{ componentName: "button" }}
-  github={{ package: "button" }}
-  npm={{ package: "@chakra-ui/button" }}
+  theme={{ componentName: 'button' }}
+  github={{ package: 'button' }}
+  npm={{ package: '@chakra-ui/button' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -21,7 +21,7 @@ form, opening a dialog, canceling an action, or performing a delete operation.
 ## Import
 
 ```js
-import { Button, ButtonGroup } from "@chakra-ui/react"
+import { Button, ButtonGroup } from '@chakra-ui/react'
 ```
 
 - **Button:** The button component with support for custom icons, spinners, etc.
@@ -31,7 +31,7 @@ import { Button, ButtonGroup } from "@chakra-ui/react"
 ## Usage
 
 ```jsx
-<Button colorScheme="blue">Button</Button>
+<Button colorScheme='blue'>Button</Button>
 ```
 
 ### Button Sizes
@@ -40,17 +40,17 @@ Use the `size` prop to change the size of the button. You can set the value to
 `xs`, `sm`, `md`, or `lg`.
 
 ```jsx
-<Stack spacing={4} direction="row" align="center">
-  <Button colorScheme="teal" size="xs">
+<Stack spacing={4} direction='row' align='center'>
+  <Button colorScheme='teal' size='xs'>
     Button
   </Button>
-  <Button colorScheme="teal" size="sm">
+  <Button colorScheme='teal' size='sm'>
     Button
   </Button>
-  <Button colorScheme="teal" size="md">
+  <Button colorScheme='teal' size='md'>
     Button
   </Button>
-  <Button colorScheme="teal" size="lg">
+  <Button colorScheme='teal' size='lg'>
     Button
   </Button>
 </Stack>
@@ -62,17 +62,17 @@ Use the `variant` prop to change the visual style of the Button. You can set the
 value to `solid`, `ghost`, `outline`, or `link`.
 
 ```jsx
-<Stack direction="row" spacing={4} align="center">
-  <Button colorScheme="teal" variant="solid">
+<Stack direction='row' spacing={4} align='center'>
+  <Button colorScheme='teal' variant='solid'>
     Button
   </Button>
-  <Button colorScheme="teal" variant="outline">
+  <Button colorScheme='teal' variant='outline'>
     Button
   </Button>
-  <Button colorScheme="teal" variant="ghost">
+  <Button colorScheme='teal' variant='ghost'>
     Button
   </Button>
-  <Button colorScheme="teal" variant="link">
+  <Button colorScheme='teal' variant='link'>
     Button
   </Button>
 </Stack>
@@ -87,11 +87,11 @@ and `rightIcon` props respectively.
 > strings.
 
 ```jsx
-<Stack direction="row" spacing={4}>
-  <Button leftIcon={<EmailIcon />} colorScheme="teal" variant="solid">
+<Stack direction='row' spacing={4}>
+  <Button leftIcon={<EmailIcon />} colorScheme='teal' variant='solid'>
     Email
   </Button>
-  <Button rightIcon={<ArrowForwardIcon />} colorScheme="teal" variant="outline">
+  <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
     Call us
   </Button>
 </Stack>
@@ -104,11 +104,11 @@ button.
 ```jsx
 // import { MdBuild , MdCall } from "react-icons/md"
 
-<Stack direction="row" spacing={4}>
-  <Button leftIcon={<MdBuild />} colorScheme="pink" variant="solid">
+<Stack direction='row' spacing={4}>
+  <Button leftIcon={<MdBuild />} colorScheme='pink' variant='solid'>
     Settings
   </Button>
-  <Button rightIcon={<MdCall />} colorScheme="blue" variant="outline">
+  <Button rightIcon={<MdCall />} colorScheme='blue' variant='outline'>
     Call us
   </Button>
 </Stack>
@@ -122,15 +122,15 @@ show a spinner and leave the button's width unchanged.
 You can also pass the `loadingText` prop to show a spinner and the loading text.
 
 ```jsx
-<Stack direction="row" spacing={4}>
-  <Button isLoading colorScheme="teal" variant="solid">
+<Stack direction='row' spacing={4}>
+  <Button isLoading colorScheme='teal' variant='solid'>
     Email
   </Button>
   <Button
     isLoading
-    loadingText="Submitting"
-    colorScheme="teal"
-    variant="outline"
+    loadingText='Submitting'
+    colorScheme='teal'
+    variant='outline'
   >
     Submit
   </Button>
@@ -143,8 +143,8 @@ requirements. Pass the `spinner` prop and set it to a custom react element.
 ```jsx
 <Button
   isLoading
-  colorScheme="blue"
-  spinner={<BeatLoader size={8} color="white" />}
+  colorScheme='blue'
+  spinner={<BeatLoader size={8} color='white' />}
 >
   Click me
 </Button>
@@ -154,22 +154,22 @@ When a `loadingText` is present, you can change the placement of the spinner
 element to either `start` or `end`. It is `start` by default.
 
 ```jsx
-<Stack direction="row" spacing={4} align="center">
+<Stack direction='row' spacing={4} align='center'>
   <Button
     isLoading
-    loadingText="Loading"
-    colorScheme="teal"
-    variant="outline"
-    spinnerPlacement="start"
+    loadingText='Loading'
+    colorScheme='teal'
+    variant='outline'
+    spinnerPlacement='start'
   >
     Submit
   </Button>
   <Button
     isLoading
-    loadingText="Loading"
-    colorScheme="teal"
-    variant="outline"
-    spinnerPlacement="end"
+    loadingText='Loading'
+    colorScheme='teal'
+    variant='outline'
+    spinnerPlacement='end'
   >
     Continue
   </Button>
@@ -183,10 +183,10 @@ use their buttons via the `colorScheme` prop.
 
 ```jsx
 <HStack>
-  <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
+  <Button colorScheme='facebook' leftIcon={<FaFacebook />}>
     Facebook
   </Button>
-  <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
+  <Button colorScheme='twitter' leftIcon={<FaTwitter />}>
     Twitter
   </Button>
 </HStack>
@@ -207,8 +207,8 @@ use the `ButtonGroup` component, it allows you to:
   as needed.
 
 ```jsx
-<ButtonGroup variant="outline" spacing="6">
-  <Button colorScheme="blue">Save</Button>
+<ButtonGroup variant='outline' spacing='6'>
+  <Button colorScheme='blue'>Save</Button>
   <Button>Cancel</Button>
 </ButtonGroup>
 ```
@@ -216,9 +216,9 @@ use the `ButtonGroup` component, it allows you to:
 To flush the buttons, pass the `isAttached` prop.
 
 ```jsx
-<ButtonGroup size="sm" isAttached variant="outline">
-  <Button mr="-px">Save</Button>
-  <IconButton aria-label="Add to friends" icon={<AddIcon />} />
+<ButtonGroup size='sm' isAttached variant='outline'>
+  <Button mr='-px'>Save</Button>
+  <IconButton aria-label='Add to friends' icon={<AddIcon />} />
 </ButtonGroup>
 ```
 
@@ -236,11 +236,11 @@ props. This means you can override any style of the Button via props.
 // The size prop affects the height of the button
 // It can still be overridden by passing a custom height
 <Button
-  size="md"
-  height="48px"
-  width="200px"
-  border="2px"
-  borderColor="green.500"
+  size='md'
+  height='48px'
+  width='200px'
+  border='2px'
+  borderColor='green.500'
 >
   Button
 </Button>
@@ -257,27 +257,27 @@ props to style the button.
 ```jsx
 // Button from facebook.com
 <Box
-  as="button"
-  height="24px"
-  lineHeight="1.2"
-  transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-  border="1px"
-  px="8px"
-  borderRadius="2px"
-  fontSize="14px"
-  fontWeight="semibold"
-  bg="#f5f6f7"
-  borderColor="#ccd0d5"
-  color="#4b4f56"
-  _hover={{ bg: "#ebedf0" }}
+  as='button'
+  height='24px'
+  lineHeight='1.2'
+  transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
+  border='1px'
+  px='8px'
+  borderRadius='2px'
+  fontSize='14px'
+  fontWeight='semibold'
+  bg='#f5f6f7'
+  borderColor='#ccd0d5'
+  color='#4b4f56'
+  _hover={{ bg: '#ebedf0' }}
   _active={{
-    bg: "#dddfe2",
-    transform: "scale(0.98)",
-    borderColor: "#bec3c9",
+    bg: '#dddfe2',
+    transform: 'scale(0.98)',
+    borderColor: '#bec3c9',
   }}
   _focus={{
     boxShadow:
-      "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+      '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
   }}
 >
   Join Group
@@ -291,11 +291,11 @@ props to style the button.
 `Button` composes the `Box` component, so you can pass all its props. These are
 props specific to the `Button` component:
 
-<PropsTable of="Button" />
+<PropsTable of='Button' />
 
 ### Button Group Props
 
 `ButtonGroup` composes the `Box` component, so you can pass all its props. These
 are props specific to the `ButtonGroup` component:
 
-<PropsTable of="ButtonGroup" />
+<PropsTable of='ButtonGroup' />

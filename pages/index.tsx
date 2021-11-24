@@ -1,4 +1,3 @@
-import { t } from 'utils/i18n';
 import {
   Box,
   BoxProps,
@@ -19,31 +18,32 @@ import {
   useColorModeValue,
   Wrap,
   WrapItem,
-} from '@chakra-ui/react';
-import { chunk } from '@chakra-ui/utils';
-import users from 'chakra-users';
-import { ChakraProAd } from 'components/chakra-pro/home-page-ad';
-import { AdBanner } from 'components/chakra-pro/ad-banner';
-import Container from 'components/container';
-import DiscordStrip from 'components/discord-strip';
-import { Footer } from 'components/footer';
-import Header from 'components/header';
-import SEO from 'components/seo';
-import TweetCard from 'components/tweet-card';
-import tweets from 'configs/tweets.json';
-import NextLink from 'next/link';
-import * as React from 'react';
-import { AiFillThunderbolt } from 'react-icons/ai';
-import { DiGithubBadge } from 'react-icons/di';
-import { FaArrowRight, FaDiscord, FaMicrophone } from 'react-icons/fa';
-import { FiDownload, FiGithub, FiUsers } from 'react-icons/fi';
-import { IoMdMoon } from 'react-icons/io';
-import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md';
-import type { Member, Sponsor } from 'src/types/github';
-import { getAllContributors } from 'utils/get-all-contributors';
-import { getAllMembers } from 'utils/get-all-members';
-import { getAllSponsors } from 'utils/get-all-sponsors';
-import { getGithubStars } from 'utils/get-github-stars';
+} from '@chakra-ui/react'
+import { chunk } from '@chakra-ui/utils'
+import users from 'chakra-users'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
+import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
+import Container from 'components/container'
+import DiscordStrip from 'components/discord-strip'
+import { Footer } from 'components/footer'
+import Header from 'components/header'
+import SEO from 'components/seo'
+import TweetCard from 'components/tweet-card'
+import tweets from 'configs/tweets.json'
+import NextLink from 'next/link'
+import * as React from 'react'
+import { AiFillThunderbolt } from 'react-icons/ai'
+import { DiGithubBadge } from 'react-icons/di'
+import { FaArrowRight, FaDiscord, FaMicrophone } from 'react-icons/fa'
+import { FiDownload, FiGithub, FiUsers } from 'react-icons/fi'
+import { IoMdMoon } from 'react-icons/io'
+import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md'
+import type { Member, Sponsor } from 'src/types/github'
+import { getAllContributors } from 'utils/get-all-contributors'
+import { getAllMembers } from 'utils/get-all-members'
+import { getAllSponsors } from 'utils/get-all-sponsors'
+import { getGithubStars } from 'utils/get-github-stars'
+import { t } from 'utils/i18n'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -71,17 +71,17 @@ const Feature = ({ title, icon, children, ...props }) => {
         {children}
       </Text>
     </Box>
-  );
-};
+  )
+}
 
 interface StatBoxProps extends BoxProps {
-  icon?: React.ElementType;
-  title: string;
-  description: string;
+  icon?: React.ElementType
+  title: string
+  description: string
 }
 
 const StatBox = (props: StatBoxProps) => {
-  const { icon: StatIcon, title, description, ...rest } = props;
+  const { icon: StatIcon, title, description, ...rest } = props
   return (
     <Flex
       direction='column'
@@ -99,16 +99,16 @@ const StatBox = (props: StatBoxProps) => {
         <Text>{description}</Text>
       </Stack>
     </Flex>
-  );
-};
+  )
+}
 
 interface HomePageProps {
-  members: Member[];
-  githubStars: string;
+  members: Member[]
+  githubStars: string
   sponsors: {
-    companies: Sponsor[];
-    individuals: Sponsor[];
-  };
+    companies: Sponsor[]
+    individuals: Sponsor[]
+  }
 }
 
 const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
@@ -133,14 +133,14 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 fontWeight='extrabold'
                 mb='16px'
                 lineHeight='1.2'
-              > 
-                {t('homepage.title1')}
+              >
+                {t('homepage.title.main')}
                 <Box
-                  as="span"
-                  color={useColorModeValue("teal.500", "teal.300")}
+                  as='span'
+                  color={useColorModeValue('teal.500', 'teal.300')}
                 >
-                  {" "}
-                {t('homepage.title2')}
+                  {' '}
+                  {t('homepage.title.highlighted')}
                 </Box>
               </chakra.h1>
 
@@ -170,7 +170,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                     colorScheme='teal'
                     rightIcon={<FaArrowRight fontSize='0.8em' />}
                   >
-                    Get Started
+                    {t('homepage.get-started')}
                   </Button>
                 </NextLink>
                 <Button
@@ -214,7 +214,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               color={useColorModeValue('teal.600', 'teal.300')}
               mb='48px'
             >
-              Supported and Backed by
+              {t('homepage.supported-and-backed-by')}
             </chakra.p>
             <Wrap
               maxW='800px'
@@ -247,7 +247,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 <Box as='span' mr='1' role='img'>
                   💖
                 </Box>{' '}
-                Your company
+                {t('homepage.your-company')}
               </Box>
             </Wrap>
           </Container>
@@ -256,10 +256,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
         <Box as='section'>
           <Container py='80px'>
             <Box mb='3em' textAlign='center'>
-              <chakra.h2 textStyle='heading'>Less code. More speed</chakra.h2>
+              <chakra.h2 textStyle='heading'>
+                {t('homepage.less-code-more-speed')}
+              </chakra.h2>
               <Text opacity={0.7} fontSize='lg' mt='3' mx='auto' maxW='600px'>
-                Spend less time writing UI code and more time building a great
-                experience for your customers.
+                {t('homepage.less-code-description')}
               </Text>
             </Box>
             <Box
@@ -300,10 +301,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
           <Container py='120px' maxW='1280px'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                An experience you&apos;d expect from a design system
+                {t('homepage.feature-section.title')}
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                Opinionated and designed for daily use.
+                {t('homepage.feature-section.description')}
               </chakra.p>
             </Box>
             <Grid
@@ -311,28 +312,41 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               gap={10}
               px={{ md: 12 }}
             >
-              <Feature icon={MdAccessibility} title='Accessible'>
-                Chakra UI strictly follows WAI-ARIA standards for all
-                components.
+              <Feature
+                icon={MdAccessibility}
+                title={t('homepage.feature-section.accessible.title')}
+              >
+                {t('homepage.feature-section.accessible.description')}
               </Feature>
-              <Feature icon={MdPalette} title='Themeable'>
-                Customize any part of our components to match your design needs.
+              <Feature
+                icon={MdPalette}
+                title={t('homepage.feature-section.themeable.title')}
+              >
+                {t('homepage.feature-section.themeable.description')}
               </Feature>
-              <Feature icon={MdGrain} title='Composable'>
-                Designed with composition in mind. Compose new components with
-                ease.
+              <Feature
+                icon={MdGrain}
+                title={t('homepage.feature-section.composable.title')}
+              >
+                {t('homepage.feature-section.composable.description')}
               </Feature>
-              <Feature icon={IoMdMoon} title='Light and Dark UI'>
-                Optimized for multiple color modes. Use light or dark, your
-                choice.
+              <Feature
+                icon={IoMdMoon}
+                title={t('homepage.feature-section.light-and-dark-ui.title')}
+              >
+                {t('homepage.feature-section.light-and-dark-ui.description')}
               </Feature>
-              <Feature icon={AiFillThunderbolt} title='Developer Experience'>
-                Guaranteed to boost your productivity when building your app or
-                website.
+              <Feature
+                icon={AiFillThunderbolt}
+                title={t('homepage.feature-section.developer-experience.title')}
+              >
+                {t('homepage.feature-section.developer-experience.description')}
               </Feature>
-              <Feature icon={FaDiscord} title='Active Community'>
-                We&apos;re a team of active maintainers ready to help you
-                whenever you need.
+              <Feature
+                icon={FaDiscord}
+                title={t('homepage.feature-section.active-community.title')}
+              >
+                {t('homepage.feature-section.active-community.description')}
               </Feature>
             </Grid>
           </Container>
@@ -342,11 +356,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
           <Container py='7.5rem' maxW='1280px' color='white'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                Chakra is growing quickly
+                {t('homepage.growing-section.title')}
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                We&apos;re dedicated to improving the experience and performance
-                of Chakra UI.
+                {t('homepage.growing-section.description')}
               </chakra.p>
             </Box>
             <SimpleGrid
@@ -359,28 +372,28 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               <StatBox
                 icon={FiDownload}
                 title='488K'
-                description='Downloads per month'
+                description={t('homepage.growing-section.downloads-per-month')}
               />
               <StatBox
                 icon={FiGithub}
                 title={githubStars}
-                description='Github stars'
+                description={t('homepage.growing-section.github-stars')}
               />
               <StatBox
                 icon={FiUsers}
                 title={members.length.toString()}
-                description='Core contributors'
+                description={t('homepage.growing-section.core-contributors')}
               />
               <StatBox
                 icon={FaDiscord}
                 title='2.9K'
-                description='Discord members'
+                description={t('homepage.growing-section.discord-members')}
               />
             </SimpleGrid>
 
             <Box mt='5rem' textAlign='center'>
               <chakra.p mb='48px' textStyle='caps'>
-                Chakra Heroes 🥇
+                {t('homepage.growing-section.chakra-heroes')}
               </chakra.p>
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
@@ -403,7 +416,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
         <Box>
           <Container py='120px' maxW='1200px' px='32px'>
             <chakra.h2 textStyle='heading-2' mb='48px'>
-              Loved by product people like you
+              {t('homepage.loved-by-product-people-section.title')}
             </chakra.h2>
             <SimpleGrid spacing='32px' columns={{ base: 1, md: 3 }}>
               {chunk(tweets.tweets, 3).map((tweetList, idx) => (
@@ -421,12 +434,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
           <Container py='120px' maxW='1200px' px='32px' color='white'>
             <Box maxW='560px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading-2' mb='4'>
-                Support Chakra UI 💖
+                {t('homepage.support-chakra-ui-section.title')}
               </chakra.h2>
               <Text fontSize='lg' opacity={0.7}>
-                Our maintainers devote their time, effort, and heart to ensure
-                Chakra UI keeps getting better. Support us by donating to our
-                collective 🙏
+                {t('homepage.support-chakra-ui-section.description')}
               </Text>
             </Box>
 
@@ -460,7 +471,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                   <Text fontSize='lg' fontWeight='bold' mt='-1'>
                     Open Collective
                   </Text>
-                  <Text opacity={0.7}>Sponsor the Chakra UI maintainers</Text>
+                  <Text opacity={0.7}>
+                    {t(
+                      'homepage.support-chakra-ui-section.sponsor-the-chakra-ui-maintainers',
+                    )}
+                  </Text>
                 </Box>
               </Stack>
               <LightMode>
@@ -512,7 +527,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                   <Text fontSize='lg' fontWeight='bold' mt='-1'>
                     Patreon
                   </Text>
-                  <Text opacity={0.7}>Sponsor the creator, Segun Adebayo</Text>
+                  <Text opacity={0.7}>
+                    {t(
+                      'homepage.support-chakra-ui-section.sponsor-the-creator',
+                    )}
+                  </Text>
                 </Box>
               </Stack>
               <LightMode>
@@ -533,7 +552,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
 
             <Box maxW='600px' mx='auto' textAlign='center'>
               <chakra.p textStyle='caps' mb='8' mt='4rem'>
-                Organization Sponsors 🏦
+                {t('homepage.support-chakra-ui-section.organization-sponsors')}
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.companies.map((i) => (
@@ -562,7 +581,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               </Wrap>
 
               <chakra.p mb='8' mt='4rem' textStyle='caps'>
-                Individual Sponsors 🥇
+                {t('homepage.support-chakra-ui-section.individual-sponsors')}
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
@@ -603,12 +622,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 <FaMicrophone size='40px' />
               </Circle>
               <chakra.h2 textStyle='heading' mt='6' mb='6'>
-                Invite us to speak at your next event
+                {t('homepage.event-section.title')}
               </chakra.h2>
               <Text mb='40px' fontSize='lg' opacity={0.7}>
-                Want a Chakra UI core team member to speak at your next event?
-                Invite us to create a memorable and engaging experience for your
-                attendees.
+                {t('homepage.event-section.description')}
               </Text>
             </Flex>
             <Button
@@ -621,7 +638,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               colorScheme='teal'
               rightIcon={<FaArrowRight fontSize='0.8em' />}
             >
-              Invite us to speak
+              {t('homepage.event-section.invite-us-to-speak')}
             </Button>
           </Container>
         </Box>
@@ -631,14 +648,14 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
         <Footer />
       </Box>
     </>
-  );
-};
+  )
+}
 
 export async function getStaticProps() {
-  const { prettyCount } = await getGithubStars();
-  const contributors = getAllContributors();
-  const members = getAllMembers();
-  const sponsors = getAllSponsors();
+  const { prettyCount } = await getGithubStars()
+  const contributors = getAllContributors()
+  const members = getAllMembers()
+  const sponsors = getAllSponsors()
 
   return {
     props: {
@@ -647,7 +664,7 @@ export async function getStaticProps() {
       contributors,
       sponsors,
     },
-  };
+  }
 }
 
-export default HomePage;
+export default HomePage

@@ -1,7 +1,7 @@
 ---
 title: Tabs
-package: "@chakra-ui/tabs"
-image: "components/tabs.svg"
+package: '@chakra-ui/tabs'
+image: 'components/tabs.svg'
 description:
   A React component that helps you build accessible tabs, by providing keyboard
   interactions and ARIA attributes described in the WAI-ARIA Tab Panel Design
@@ -13,9 +13,9 @@ attributes described in the
 [WAI-ARIA Tabs Design Pattern](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel).
 
 <ComponentLinks
-  theme={{ componentName: "tabs" }}
-  github={{ package: "tabs" }}
-  npm={{ package: "@chakra-ui/tabs" }}
+  theme={{ componentName: 'tabs' }}
+  github={{ package: 'tabs' }}
+  npm={{ package: '@chakra-ui/tabs' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -23,7 +23,7 @@ attributes described in the
 ## Import
 
 ```js
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 ```
 
 - **Tabs**: Provides context and state for all components
@@ -69,7 +69,7 @@ Tabs come in 6 different variants to style the tabs: `line`,`enclosed`,
 `enclosed-colored`, `soft-rounded`, `solid-rounded`
 
 ```jsx
-<Tabs variant="enclosed">
+<Tabs variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
     <Tab>Two</Tab>
@@ -92,7 +92,7 @@ You can also change the color scheme for any specific variant by passing the
 > in `theme.colors` that has the `50` - `900` color values.
 
 ```jsx
-<Tabs variant="soft-rounded" colorScheme="green">
+<Tabs variant='soft-rounded' colorScheme='green'>
   <TabList>
     <Tab>Tab 1</Tab>
     <Tab>Tab 2</Tab>
@@ -114,7 +114,7 @@ You can change the size of the tab by passing `size` prop. We support 3 sizes
 `sm`, `md`, `lg`
 
 ```jsx
-<Tabs size="md" variant="enclosed">
+<Tabs size='md' variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
     <Tab>Two</Tab>
@@ -136,7 +136,7 @@ You can change the alignment of the `TabList` by passing `align` prop. We
 support 3 sizes `start`, `center`, `end`.
 
 ```jsx
-<Tabs align="end" variant="enclosed">
+<Tabs align='end' variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
     <Tab>Two</Tab>
@@ -157,8 +157,8 @@ support 3 sizes `start`, `center`, `end`.
 Stretch the tab list to fit the container by passing `isFitted` prop.
 
 ```jsx
-<Tabs isFitted variant="enclosed">
-  <TabList mb="1em">
+<Tabs isFitted variant='enclosed'>
+  <TabList mb='1em'>
     <Tab>One</Tab>
     <Tab>Two</Tab>
   </TabList>
@@ -179,10 +179,10 @@ In event you need to create custom styles for the tabs. Simply set the variant
 to `unstyled`, and use the `_selected`, `_hover`, `_active` style props.
 
 ```jsx
-<Tabs variant="unstyled">
+<Tabs variant='unstyled'>
   <TabList>
-    <Tab _selected={{ color: "white", bg: "blue.500" }}>Tab 1</Tab>
-    <Tab _selected={{ color: "white", bg: "green.400" }}>Tab 2</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.400' }}>Tab 2</Tab>
   </TabList>
   <TabPanels>
     <TabPanel>
@@ -204,8 +204,8 @@ tabs. If you intend to control the tabs programmatically, use this with the
 ```jsx
 function Example() {
   const colors = useColorModeValue(
-    ["red.50", "teal.50", "blue.50"],
-    ["red.900", "teal.900", "blue.900"],
+    ['red.50', 'teal.50', 'blue.50'],
+    ['red.900', 'teal.900', 'blue.900'],
   )
   const [tabIndex, setTabIndex] = React.useState(0)
   const bg = colors[tabIndex]
@@ -216,7 +216,7 @@ function Example() {
         <Tab>Teal</Tab>
         <Tab>Blue</Tab>
       </TabList>
-      <TabPanels p="2rem">
+      <TabPanels p='2rem'>
         <TabPanel>The Primary Colors</TabPanel>
         <TabPanel>Are 1, 2, 3</TabPanel>
         <TabPanel>Red, yellow and blue.</TabPanel>
@@ -236,16 +236,16 @@ and set it to the index of that tab.
   <TabPanels>
     <TabPanel>
       <Image
-        boxSize="200px"
-        fit="cover"
-        src="https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA"
+        boxSize='200px'
+        fit='cover'
+        src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
       />
     </TabPanel>
     <TabPanel>
       <Image
-        boxSize="200px"
-        fit="cover"
-        src="https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103"
+        boxSize='200px'
+        fit='cover'
+        src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
       />
     </TabPanel>
   </TabPanels>
@@ -295,7 +295,7 @@ without activating the tabs. With focus on a specific tab, users can activate a
 tab by pressing <kbd>Space</kbd> or <kbd>Enter</kbd>.
 
 ```jsx
-<Tabs isManual variant="enclosed">
+<Tabs isManual variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
     <Tab>Two</Tab>
@@ -360,9 +360,9 @@ function ControlledExample() {
   return (
     <Box>
       <input
-        type="range"
-        min="0"
-        max="2"
+        type='range'
+        min='0'
+        max='2'
         value={tabIndex}
         onChange={handleSliderChange}
       />
@@ -399,20 +399,20 @@ to pass state internally. Your custom `Tab` component must use
 ```jsx
 function CustomTabs() {
   // 1. Reuse the styles for the Tab
-  const StyledTab = chakra("button", { themeKey: "Tabs.Tab" })
+  const StyledTab = chakra('button', { themeKey: 'Tabs.Tab' })
 
   const CustomTab = React.forwardRef((props, ref) => {
     // 2. Reuse the `useTab` hook
-    const tabProps = useTab({...props, ref})
-    const isSelected = !!tabProps["aria-selected"]
+    const tabProps = useTab({ ...props, ref })
+    const isSelected = !!tabProps['aria-selected']
 
     // 3. Hook into the Tabs `size`, `variant`, props
     const styles = useStyles()
 
     return (
       <StyledTab __css={styles.tab} {...tabProps}>
-        <Box as="span" mr="2">
-          {isSelected ? "😎" : "😐"}
+        <Box as='span' mr='2'>
+          {isSelected ? '😎' : '😐'}
         </Box>
         {tabProps.children}
       </StyledTab>
@@ -464,13 +464,13 @@ function Example() {
   // 2. Create an array of data
   const tabData = [
     {
-      label: "Nigerian Jollof",
-      content: "Perhaps the greatest dish ever invented.",
+      label: 'Nigerian Jollof',
+      content: 'Perhaps the greatest dish ever invented.',
     },
     {
-      label: "Pounded Yam & Egusi",
+      label: 'Pounded Yam & Egusi',
       content:
-        "Perhaps the surest dish ever invented but fills the stomach more than rice.",
+        'Perhaps the surest dish ever invented but fills the stomach more than rice.',
     },
   ]
 
@@ -512,10 +512,10 @@ function Example() {
 Tabs composes `Box` so you call pass all `Box` related props.
 
 <PropsTable
-  of="Tabs"
-  omit={["isTruncated", "layerStyle", "noOfLines", "textStyle", "styleConfig"]}
+  of='Tabs'
+  omit={['isTruncated', 'layerStyle', 'noOfLines', 'textStyle', 'styleConfig']}
 />
 
 ### Tab Props
 
-<PropsTable of="Tab" />
+<PropsTable of='Tab' />

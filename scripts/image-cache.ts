@@ -1,8 +1,8 @@
-import { promises as fs } from "fs"
-import fetch from "node-fetch"
-import sharp from "sharp"
-import imagemin from "imagemin"
-import imageminJpegtran from "imagemin-jpegtran"
+import { promises as fs } from 'fs'
+import fetch from 'node-fetch'
+import sharp from 'sharp'
+import imagemin from 'imagemin'
+import imageminJpegtran from 'imagemin-jpegtran'
 
 /**
  * This module was inspired by Zach Leatherman's `avatar-local-cache` library.
@@ -67,7 +67,7 @@ export class AvatarCache {
     metadata: sharp.Metadata,
     slug: string,
   ) {
-    const jpeg = metadata.format !== "jpeg" ? img.jpeg() : img
+    const jpeg = metadata.format !== 'jpeg' ? img.jpeg() : img
     await jpeg.toFile(slug)
 
     if (this.compress) {

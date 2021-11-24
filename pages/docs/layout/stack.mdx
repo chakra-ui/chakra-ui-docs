@@ -1,7 +1,7 @@
 ---
 title: Stack
-package: "@chakra-ui/layout"
-image: "components/stack.svg"
+package: '@chakra-ui/layout'
+image: 'components/stack.svg'
 description:
   Stack is a layout utility component that makes it easy to stack elements
   together and apply a space between them.
@@ -13,8 +13,8 @@ apply a space between them. It uses a modified version of the
 to add spacing between its children.
 
 <ComponentLinks
-  github={{ package: "layout" }}
-  npm={{ package: "@chakra-ui/layout" }}
+  github={{ package: 'layout' }}
+  npm={{ package: '@chakra-ui/layout' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -22,7 +22,7 @@ to add spacing between its children.
 ## Import
 
 ```js
-import { Stack, HStack, VStack } from "@chakra-ui/react"
+import { Stack, HStack, VStack } from '@chakra-ui/react'
 ```
 
 - **Stack:** Used to add spacing between elements in the horizontal or vertical
@@ -39,14 +39,14 @@ To stack elements in horizontal or vertical direction only, use the `HStack` or
 `direction` prop.
 
 ```jsx
-<HStack spacing="24px">
-  <Box w="40px" h="40px" bg="yellow.200">
+<HStack spacing='24px'>
+  <Box w='40px' h='40px' bg='yellow.200'>
     1
   </Box>
-  <Box w="40px" h="40px" bg="tomato">
+  <Box w='40px' h='40px' bg='tomato'>
     2
   </Box>
-  <Box w="40px" h="40px" bg="pink.100">
+  <Box w='40px' h='40px' bg='pink.100'>
     3
   </Box>
 </HStack>
@@ -58,14 +58,14 @@ You can pass responsive values to the `Stack` component to change stack
 direction and/or spacing between elements.
 
 ```jsx
-<Stack direction={["column", "row"]} spacing="24px">
-  <Box w="40px" h="40px" bg="yellow.200">
+<Stack direction={['column', 'row']} spacing='24px'>
+  <Box w='40px' h='40px' bg='yellow.200'>
     1
   </Box>
-  <Box w="40px" h="40px" bg="tomato">
+  <Box w='40px' h='40px' bg='tomato'>
     2
   </Box>
-  <Box w="40px" h="40px" bg="pink.100">
+  <Box w='40px' h='40px' bg='pink.100'>
     3
   </Box>
 </Stack>
@@ -79,17 +79,17 @@ element.
 
 ```jsx
 <VStack
-  divider={<StackDivider borderColor="gray.200" />}
+  divider={<StackDivider borderColor='gray.200' />}
   spacing={4}
-  align="stretch"
+  align='stretch'
 >
-  <Box h="40px" bg="yellow.200">
+  <Box h='40px' bg='yellow.200'>
     1
   </Box>
-  <Box h="40px" bg="tomato">
+  <Box h='40px' bg='tomato'>
     2
   </Box>
-  <Box h="40px" bg="pink.100">
+  <Box h='40px' bg='pink.100'>
     3
   </Box>
 </VStack>
@@ -100,8 +100,8 @@ element.
 ```jsx manual=true
 function Feature({ title, desc, ...rest }) {
   return (
-    <Box p={5} shadow="md" borderWidth="1px" {...rest}>
-      <Heading fontSize="xl">{title}</Heading>
+    <Box p={5} shadow='md' borderWidth='1px' {...rest}>
+      <Heading fontSize='xl'>{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
   )
@@ -111,12 +111,12 @@ function StackEx() {
   return (
     <Stack spacing={8}>
       <Feature
-        title="Plan Money"
-        desc="The future can be even brighter but a goal without a plan is just a wish"
+        title='Plan Money'
+        desc='The future can be even brighter but a goal without a plan is just a wish'
       />
       <Feature
-        title="Save Money"
-        desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+        title='Save Money'
+        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
       />
     </Stack>
   )
@@ -135,13 +135,13 @@ function Feature({ title, desc, ...rest }) {
   return (
     <Box
       p={5}
-      shadow="md"
-      borderWidth="1px"
-      flex="1"
-      borderRadius="md"
+      shadow='md'
+      borderWidth='1px'
+      flex='1'
+      borderRadius='md'
       {...rest}
     >
-      <Heading fontSize="xl">{title}</Heading>
+      <Heading fontSize='xl'>{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
   )
@@ -151,12 +151,12 @@ function StackEx() {
   return (
     <HStack spacing={8}>
       <Feature
-        title="Plan Money"
-        desc="The future can be even brighter but a goal without a plan is just a wish"
+        title='Plan Money'
+        desc='The future can be even brighter but a goal without a plan is just a wish'
       />
       <Feature
-        title="Save Money"
-        desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings."
+        title='Save Money'
+        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings.'
       />
     </HStack>
   )
@@ -174,4 +174,4 @@ on the last child, you can combine `Stack` and `Flex` and use
 
 ## Props
 
-<PropsTable of="Stack" />
+<PropsTable of='Stack' />

@@ -22,9 +22,9 @@ The `LinkOverlay` component aims to solve this by overlaying one link on top of
 the component or card, and then elevating the remaining links on top of it.
 
 <ComponentLinks
-  theme={{ componentName: "link-overlay" }}
-  github={{ package: "layout" }}
-  npm={{ package: "@chakra-ui/layout" }}
+  theme={{ componentName: 'link-overlay' }}
+  github={{ package: 'layout' }}
+  npm={{ package: '@chakra-ui/layout' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -32,7 +32,7 @@ the component or card, and then elevating the remaining links on top of it.
 ## Import
 
 ```js
-import { LinkBox, LinkOverlay } from "@chakra-ui/react"
+import { LinkBox, LinkOverlay } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -41,12 +41,12 @@ Wrap the container within a `LinkBox` and use the `LinkOverlay` as a child of it
 or around the title's content.
 
 ```jsx
-<LinkBox as="article" maxW="sm" p="5" borderWidth="1px" rounded="md">
-  <Box as="time" dateTime="2021-01-15 15:30:00 +0000 UTC">
+<LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+  <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
     13 days ago
   </Box>
-  <Heading size="md" my="2">
-    <LinkOverlay href="#">
+  <Heading size='md' my='2'>
+    <LinkOverlay href='#'>
       New Year, New Beginnings: Smashing Workshops & Audits
     </LinkOverlay>
   </Heading>
@@ -65,20 +65,20 @@ keyboard navigation between links.
 > Use the keyboard to test how focus ring moves within the article
 
 ```jsx
-<LinkBox as="article" maxW="sm" p="5" borderWidth="1px" rounded="md">
-  <Box as="time" dateTime="2021-01-15 15:30:00 +0000 UTC">
+<LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+  <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
     13 days ago
   </Box>
-  <Heading size="md" my="2">
-    <LinkOverlay href="#">
+  <Heading size='md' my='2'>
+    <LinkOverlay href='#'>
       New Year, New Beginnings: Smashing Workshops & Audits
     </LinkOverlay>
   </Heading>
-  <Text mb="3">
+  <Text mb='3'>
     Catch up on what’s been cookin’ at Smashing and explore some of the most
     popular community resources.
   </Text>
-  <Box as="a" color="teal.400" href="#" fontWeight="bold">
+  <Box as='a' color='teal.400' href='#' fontWeight='bold'>
     Some inner link
   </Box>
 </LinkBox>
@@ -91,13 +91,13 @@ wrap them around the `LinkOverlay` or use the `as` prop (for reach and react
 router)
 
 ```jsx live=false
-import NextLink from "next/link"
+import NextLink from 'next/link'
 
 function Example() {
   return (
-    <LinkBox as="article">
+    <LinkBox as='article'>
       <h2>
-        <NextLink href="#" passHref>
+        <NextLink href='#' passHref>
           <LinkOverlay>Some blog post</LinkOverlay>
         </NextLink>
       </h2>
@@ -105,7 +105,7 @@ function Example() {
         As a side note, using quotation marks around an attribute value is
         required only if this value is not a valid identifier.
       </p>
-      <a href="#">Some inner link</a>
+      <a href='#'>Some inner link</a>
     </LinkBox>
   )
 }
@@ -123,4 +123,4 @@ The `LinkBox` component composes the `Box` component.
 
 The `LinkOverlay` component composes the `chakra.a` in addition to these props:
 
-<PropsTable of="LinkOverlay" />
+<PropsTable of='LinkOverlay' />

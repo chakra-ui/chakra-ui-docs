@@ -79,7 +79,7 @@ export default {
 Let's say we want to create a custom button component following the design spec
 below.
 
-<Img mt="10" mb="12" src="/button-spec.png" />
+<Img mt='10' mb='12' src='/button-spec.png' />
 
 Here's a contrived implementation of the design:
 
@@ -87,19 +87,19 @@ Here's a contrived implementation of the design:
 const Button = {
   // The styles all button have in common
   baseStyle: {
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    borderRadius: "base", // <-- border radius is same for all variants and sizes
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    borderRadius: 'base', // <-- border radius is same for all variants and sizes
   },
   // Two sizes: sm and md
   sizes: {
     sm: {
-      fontSize: "sm",
+      fontSize: 'sm',
       px: 4, // <-- px is short for paddingLeft and paddingRight
       py: 3, // <-- py is short for paddingTop and paddingBottom
     },
     md: {
-      fontSize: "md",
+      fontSize: 'md',
       px: 6, // <-- these values are tokens from the design system
       py: 4, // <-- these values are tokens from the design system
     },
@@ -107,19 +107,19 @@ const Button = {
   // Two variants: outline and solid
   variants: {
     outline: {
-      border: "2px solid",
-      borderColor: "purple.500",
-      color: "purple.500",
+      border: '2px solid',
+      borderColor: 'purple.500',
+      color: 'purple.500',
     },
     solid: {
-      bg: "purple.500",
-      color: "white",
+      bg: 'purple.500',
+      color: 'white',
     },
   },
   // The default size and variant values
   defaultProps: {
-    size: "md",
-    variant: "outline",
+    size: 'md',
+    variant: 'outline',
   },
 }
 ```
@@ -128,7 +128,7 @@ Makes sense right? Now, let's update the theme to include this new component
 style.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   components: {
@@ -141,7 +141,7 @@ const theme = extendTheme({
 throughout your app. But what if we want to create a custom component that's not
 part of Chakra UI? Let's use the following design spec for a Card component:
 
-<Img mt="10" mb="12" src="/card-spec.png" />
+<Img mt='10' mb='12' src='/card-spec.png' />
 
 Here's a contrived implementation of the design:
 
@@ -149,28 +149,28 @@ Here's a contrived implementation of the design:
 const Card = {
   // The styles all Cards have in common
   baseStyle: {
-    display: "flex",
-    flexDirection: "column",
-    background: "white",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    background: 'white',
+    alignItems: 'center',
     gap: 6,
   },
   // Two variants: rounded and smooth
   variants: {
     rounded: {
       padding: 8,
-      borderRadius: "xl",
-      boxShadow: "xl",
+      borderRadius: 'xl',
+      boxShadow: 'xl',
     },
     smooth: {
       padding: 6,
-      borderRadius: "base",
-      boxShadow: "md",
+      borderRadius: 'base',
+      boxShadow: 'md',
     },
   },
   // The default variant value
   defaultProps: {
-    variant: "smooth",
+    variant: 'smooth',
   },
 }
 ```
@@ -179,7 +179,7 @@ As with the Button component, we'll update the theme to include the new Card
 component style.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   components: {
@@ -216,12 +216,12 @@ The computed styles for the component based on `props` passed. If no `props` is
 passed, the `defaultProps` defined in the style config will be used.
 
 ```jsx live=false
-import { Box, useStyleConfig } from "@chakra-ui/react"
+import { Box, useStyleConfig } from '@chakra-ui/react'
 
 function Card(props) {
   const { variant, children, ...rest } = props
 
-  const styles = useStyleConfig("Card", { variant })
+  const styles = useStyleConfig('Card', { variant })
 
   // Pass the computed styles into the `__css` prop
   return <Box __css={styles} {...rest} />
@@ -242,19 +242,19 @@ function Usage() {
   return (
     <Card>
       <Image
-        src="https://chakra-ui.com/eric.jpg"
-        rounded="full"
+        src='https://chakra-ui.com/eric.jpg'
+        rounded='full'
         w={32}
         h={32}
-        boxShadow="md"
+        boxShadow='md'
       />
-      <Heading mt={6} maxW={60} size="lg" textAlign="center" color="gray.700">
+      <Heading mt={6} maxW={60} size='lg' textAlign='center' color='gray.700'>
         Welcome back, Eric
       </Heading>
-      <Text mt={6} mb={6} size="sm" color="blackAlpha.500">
+      <Text mt={6} mb={6} size='sm' color='blackAlpha.500'>
         Use your fingerprint to continue.
       </Text>
-      <Image src="/fingerprint.png" w={32} h={32} />
+      <Image src='/fingerprint.png' w={32} h={32} />
     </Card>
   )
 }
@@ -262,21 +262,21 @@ function Usage() {
 // 2. Overriding the default
 function Usage() {
   return (
-    <Card variant="smooth">
+    <Card variant='smooth'>
       <Image
-        src="https://chakra-ui.com/eric.jpg"
-        rounded="full"
+        src='https://chakra-ui.com/eric.jpg'
+        rounded='full'
         w={32}
         h={32}
-        boxShadow="md"
+        boxShadow='md'
       />
-      <Heading mt={6} maxW={60} size="lg" textAlign="center" color="gray.700">
+      <Heading mt={6} maxW={60} size='lg' textAlign='center' color='gray.700'>
         Welcome back, Eric
       </Heading>
-      <Text mt={6} mb={6} size="sm" color="blackAlpha.500">
+      <Text mt={6} mb={6} size='sm' color='blackAlpha.500'>
         Use your fingerprint to continue.
       </Text>
-      <Image src="/fingerprint.png" w={32} h={32} />
+      <Image src='/fingerprint.png' w={32} h={32} />
     </Card>
   )
 }
@@ -292,8 +292,7 @@ you need to be aware of.
 - You'll need to provide styles for each `part`, `baseStyle`, `sizes`, and
   `variants`.
 
-> **Pro tip 💡**:
-> If you're looking for a list of parts of a multipart component
+> **Pro tip 💡**: If you're looking for a list of parts of a multipart component
 > you can check it by clicking on the **"View theme source"** button at the top
 > of the documentation page for that certain component. Check out
 > [this](https://chakra-ui.com/docs/overlay/modal) example.
@@ -320,31 +319,31 @@ looks like:
 
 ```jsx live=false
 const Menu = {
-  parts: ["menu", "item"],
+  parts: ['menu', 'item'],
   baseStyle: {
     menu: {
-      boxShadow: "lg",
-      rounded: "lg",
-      flexDirection: "column",
-      py: "2",
+      boxShadow: 'lg',
+      rounded: 'lg',
+      flexDirection: 'column',
+      py: '2',
     },
     item: {
-      fontWeight: "medium",
-      lineHeight: "normal",
-      color: "gray.600",
+      fontWeight: 'medium',
+      lineHeight: 'normal',
+      color: 'gray.600',
     },
   },
   sizes: {
     sm: {
       item: {
-        fontSize: "0.75rem",
+        fontSize: '0.75rem',
         px: 2,
         py: 1,
       },
     },
     md: {
       item: {
-        fontSize: "0.875rem",
+        fontSize: '0.875rem',
         px: 3,
         py: 2,
       },
@@ -353,23 +352,23 @@ const Menu = {
   variants: {
     bold: {
       item: {
-        fontWeight: "bold",
+        fontWeight: 'bold',
       },
       menu: {
-        boxShadow: "xl",
+        boxShadow: 'xl',
       },
     },
     colorful: {
       item: {
-        color: "orange.600",
+        color: 'orange.600',
       },
       menu: {
-        bg: "orange.100",
+        bg: 'orange.100',
       },
     },
   },
   defaultProps: {
-    size: "md",
+    size: 'md',
   },
 }
 ```
@@ -377,7 +376,7 @@ const Menu = {
 Next, we'll update the theme object to included this new component style.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   components: {
@@ -420,13 +419,13 @@ import {
   StylesProvider,
   useMultiStyleConfig,
   useStyles,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 function Menu(props) {
   const { size, variant, children, ...rest } = props
 
   // 2. Consume the `useMultiStyleConfig` hook
-  const styles = useMultiStyleConfig("Menu", { size, variant })
+  const styles = useMultiStyleConfig('Menu', { size, variant })
 
   return (
     <Flex __css={styles.menu} {...rest}>
@@ -439,7 +438,7 @@ function Menu(props) {
 function MenuItem(props) {
   // 4. Read computed `item` styles from styles provider
   const styles = useStyles()
-  return <Box as="button" __css={styles.item} {...props} />
+  return <Box as='button' __css={styles.item} {...props} />
 }
 ```
 
@@ -459,7 +458,7 @@ function Usage() {
 // 2. Overriding the default
 function Usage() {
   return (
-    <Menu size="sm">
+    <Menu size='sm'>
       <MenuItem>Awesome</MenuItem>
       <MenuItem>Sauce</MenuItem>
     </Menu>

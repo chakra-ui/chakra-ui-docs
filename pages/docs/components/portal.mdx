@@ -1,7 +1,7 @@
 ---
 title: Portal
-package: "@chakra-ui/portal"
-image: "components/portal.svg"
+package: '@chakra-ui/portal'
+image: 'components/portal.svg'
 description: Renders a React subtree in a different part of the DOM.
 ---
 
@@ -13,8 +13,8 @@ hierarchy to prevent parent styles from clipping or hiding content (for
 popovers, dropdowns, and modals). It supports nested portals
 
 <ComponentLinks
-  github={{ package: "portal" }}
-  npm={{ package: "@chakra-ui/portal" }}
+  github={{ package: 'portal' }}
+  npm={{ package: '@chakra-ui/portal' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -22,7 +22,7 @@ popovers, dropdowns, and modals). It supports nested portals
 ## Import
 
 ```js
-import { Portal } from "@chakra-ui/react"
+import { Portal } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ import { Portal } from "@chakra-ui/react"
 ```jsx
 function Example() {
   return (
-    <Box bg="red.400" color="white">
+    <Box bg='red.400' color='white'>
       I'm here,
       <Portal>This text is portaled at the end of document.body!</Portal>
     </Box>
@@ -48,12 +48,12 @@ the `ref` of the container you'd like to use.
 function Example() {
   const ref = React.useRef()
   return (
-    <Box bg="red.400" color="white">
+    <Box bg='red.400' color='white'>
       I'm here,
       <Portal containerRef={ref}>
         Portal: This text is portaled to the yellow box!
       </Portal>
-      <Box ref={ref} bg="yellow.500">
+      <Box ref={ref} bg='yellow.500'>
         <div>Container: Hey,</div>
       </Box>
     </Box>
@@ -72,12 +72,12 @@ function Example() {
   return (
     <div>
       <Portal containerRef={ref}>
-        <Box bg="teal.500" color="white">
+        <Box bg='teal.500' color='white'>
           Parent: Hey welcome,
           <Portal>Child: I'm attached to my parent portal</Portal>
         </Box>
       </Portal>
-      <Box bg="red.400" color="white" ref={ref} />
+      <Box bg='red.400' color='white' ref={ref} />
     </div>
   )
 }
@@ -94,14 +94,14 @@ function Example() {
   return (
     <div>
       <Portal containerRef={ref}>
-        <Box bg="teal.500" color="white">
+        <Box bg='teal.500' color='white'>
           Parent: Hey welcome,
           <Portal appendToParentPortal={false}>
             Child: I'm going to document.body
           </Portal>
         </Box>
       </Portal>
-      <div style={{ background: "red" }} ref={ref} />
+      <div style={{ background: 'red' }} ref={ref} />
     </div>
   )
 }
@@ -109,4 +109,4 @@ function Example() {
 
 ## Props
 
-<PropsTable of="Portal" />
+<PropsTable of='Portal' />

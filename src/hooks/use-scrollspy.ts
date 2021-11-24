@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 export function useScrollSpy(
   selectors: string[],
@@ -14,7 +14,7 @@ export function useScrollSpy(
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry?.isIntersecting) {
-          setActiveId(entry.target.getAttribute("id"))
+          setActiveId(entry.target.getAttribute('id'))
         }
       })
     }, options)

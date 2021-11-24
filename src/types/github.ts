@@ -10,12 +10,12 @@ export interface Member {
 }
 
 export type Contribution =
-  | "code"
-  | "maintenance"
-  | "doc"
-  | "example"
-  | "design"
-  | "ideas"
+  | 'code'
+  | 'maintenance'
+  | 'doc'
+  | 'example'
+  | 'design'
+  | 'ideas'
 
 export interface Contributor {
   avatar_url: string

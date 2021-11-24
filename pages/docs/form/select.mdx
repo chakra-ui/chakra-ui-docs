@@ -1,7 +1,7 @@
 ---
 title: Select
-package: "@chakra-ui/select"
-image: "components/select.svg"
+package: '@chakra-ui/select'
+image: 'components/select.svg'
 description:
   Select component is a component that allows users pick a value from predefined
   options.
@@ -12,9 +12,9 @@ options. Ideally, it should be used when there are more than 5 options,
 otherwise you might consider using a radio group instead.
 
 <ComponentLinks
-  theme={{ componentName: "select" }}
-  github={{ package: "select" }}
-  npm={{ package: "@chakra-ui/select" }}
+  theme={{ componentName: 'select' }}
+  github={{ package: 'select' }}
+  npm={{ package: '@chakra-ui/select' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -22,7 +22,7 @@ otherwise you might consider using a radio group instead.
 ## Import
 
 ```js
-import { Select } from "@chakra-ui/react"
+import { Select } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -30,10 +30,10 @@ import { Select } from "@chakra-ui/react"
 Here's a basic usage of the `Select` component.
 
 ```jsx
-<Select placeholder="Select option">
-  <option value="option1">Option 1</option>
-  <option value="option2">Option 2</option>
-  <option value="option3">Option 3</option>
+<Select placeholder='Select option'>
+  <option value='option1'>Option 1</option>
+  <option value='option2'>Option 2</option>
+  <option value='option3'>Option 3</option>
 </Select>
 ```
 
@@ -48,10 +48,10 @@ The `Select` component comes in four sizes. The default is `md`.
 
 ```jsx
 <Stack spacing={3}>
-  <Select placeholder="extra small size" size="xs" />
-  <Select placeholder="small size" size="sm" />
-  <Select placeholder="medium size" size="md" />
-  <Select placeholder="large size" size="lg" />
+  <Select placeholder='extra small size' size='xs' />
+  <Select placeholder='small size' size='sm' />
+  <Select placeholder='medium size' size='md' />
+  <Select placeholder='large size' size='lg' />
 </Stack>
 ```
 
@@ -63,10 +63,10 @@ either of these values.
 
 ```jsx
 <Stack spacing={3}>
-  <Select variant="outline" placeholder="Outline" />
-  <Select variant="filled" placeholder="Filled" />
-  <Select variant="flushed" placeholder="Flushed" />
-  <Select variant="unstyled" placeholder="Unstyled" />
+  <Select variant='outline' placeholder='Outline' />
+  <Select variant='filled' placeholder='Filled' />
+  <Select variant='flushed' placeholder='Flushed' />
+  <Select variant='unstyled' placeholder='Unstyled' />
 </Stack>
 ```
 
@@ -79,7 +79,7 @@ In case the custom icon size doesn't look right, you can pass the `iconSize`
 prop to change it.
 
 ```jsx
-<Select icon={<MdArrowDropDown />} placeholder="Woohoo! A new icon" />
+<Select icon={<MdArrowDropDown />} placeholder='Woohoo! A new icon' />
 ```
 
 ### Overriding the styles of the Select
@@ -89,10 +89,10 @@ much any property. Here we'll override the background color.
 
 ```jsx
 <Select
-  bg="tomato"
-  borderColor="tomato"
-  color="white"
-  placeholder="Woohoo! A new background color!"
+  bg='tomato'
+  borderColor='tomato'
+  color='white'
+  placeholder='Woohoo! A new background color!'
 />
 ```
 
@@ -101,4 +101,4 @@ much any property. Here we'll override the background color.
 The Select component composes [Box](/docs/layout/box) so you can pass all `Box`
 props, and native `Select` props in addition to these:
 
-<PropsTable of="Select" />
+<PropsTable of='Select' />

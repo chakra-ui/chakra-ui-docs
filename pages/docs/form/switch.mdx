@@ -1,7 +1,9 @@
 ---
 title: Switch
-package: "@chakra-ui/switch"
-image: "components/switch.svg"
+package: '@chakra-ui/switch'
+image: 'components/switch.svg'
+description:
+  'The Switch component is used as an alternative for the checkbox component.'
 ---
 
 The `Switch` component is used as an alternative for the
@@ -9,9 +11,9 @@ The `Switch` component is used as an alternative for the
 disabled states.
 
 <ComponentLinks
-  theme={{ componentName: "switch" }}
-  github={{ package: "switch" }}
-  npm={{ package: "@chakra-ui/switch" }}
+  theme={{ componentName: 'switch' }}
+  github={{ package: 'switch' }}
+  npm={{ package: '@chakra-ui/switch' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -22,17 +24,17 @@ workflow as a `Checkbox`.
 ## Import
 
 ```js
-import { Switch } from "@chakra-ui/react"
+import { Switch } from '@chakra-ui/react'
 ```
 
 ## Usage
 
 ```jsx
-<FormControl display="flex" alignItems="center">
-  <FormLabel htmlFor="email-alerts" mb="0">
+<FormControl display='flex' alignItems='center'>
+  <FormLabel htmlFor='email-alerts' mb='0'>
     Enable email alerts?
   </FormLabel>
-  <Switch id="email-alerts" />
+  <Switch id='email-alerts' />
 </FormControl>
 ```
 
@@ -41,10 +43,10 @@ import { Switch } from "@chakra-ui/react"
 Pass the `size` prop to change the size of the `Switch`.
 
 ```jsx
-<Stack align="center" direction="row">
-  <Switch size="sm" />
-  <Switch size="md" />
-  <Switch size="lg" />
+<Stack align='center' direction='row'>
+  <Switch size='sm' />
+  <Switch size='md' />
+  <Switch size='lg' />
 </Stack>
 ```
 
@@ -54,12 +56,12 @@ You can change the checked background color of the `Switch` by passing the
 `colorScheme` prop.
 
 ```jsx
-<Stack direction="row">
-  <Switch colorScheme="red" />
-  <Switch colorScheme="teal" size="lg" />
+<Stack direction='row'>
+  <Switch colorScheme='red' />
+  <Switch colorScheme='teal' size='lg' />
 </Stack>
 ```
 
 ## Props
 
-<PropsTable of="Switch" />
+<PropsTable of='Switch' />

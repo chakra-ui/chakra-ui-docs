@@ -1,7 +1,7 @@
 ---
 title: Tag
-package: "@chakra-ui/tag"
-image: "components/tags.svg"
+package: '@chakra-ui/tag'
+image: 'components/tags.svg'
 description: Tag component is used for items that need to be labeled
 ---
 
@@ -9,9 +9,9 @@ description: Tag component is used for items that need to be labeled
 organized using keywords that describe them.
 
 <ComponentLinks
-  theme={{ componentName: "tag" }}
-  github={{ package: "tag" }}
-  npm={{ package: "@chakra-ui/tag" }}
+  theme={{ componentName: 'tag' }}
+  github={{ package: 'tag' }}
+  npm={{ package: '@chakra-ui/tag' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -33,7 +33,7 @@ import {
   TagLeftIcon,
   TagRightIcon,
   TagCloseButton,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -44,8 +44,8 @@ import {
 
 ```jsx
 <HStack spacing={4}>
-  {["sm", "md", "lg"].map((size) => (
-    <Tag size={size} key={size} variant="solid" colorScheme="teal">
+  {['sm', 'md', 'lg'].map((size) => (
+    <Tag size={size} key={size} variant='solid' colorScheme='teal'>
       Teal
     </Tag>
   ))}
@@ -56,9 +56,9 @@ import {
 
 ```jsx
 <HStack spacing={4}>
-  {["sm", "md", "lg"].map((size) => (
-    <Tag size={size} key={size} variant="subtle" colorScheme="cyan">
-      <TagLeftIcon boxSize="12px" as={AddIcon} />
+  {['sm', 'md', 'lg'].map((size) => (
+    <Tag size={size} key={size} variant='subtle' colorScheme='cyan'>
+      <TagLeftIcon boxSize='12px' as={AddIcon} />
       <TagLabel>Cyan</TagLabel>
     </Tag>
   ))}
@@ -69,8 +69,8 @@ import {
 
 ```jsx
 <HStack spacing={4}>
-  {["sm", "md", "lg"].map((size) => (
-    <Tag size={size} key={size} variant="outline" colorScheme="blue">
+  {['sm', 'md', 'lg'].map((size) => (
+    <Tag size={size} key={size} variant='outline' colorScheme='blue'>
       <TagLabel>Blue</TagLabel>
       <TagRightIcon as={MdSettings} />
     </Tag>
@@ -82,13 +82,13 @@ import {
 
 ```jsx
 <HStack spacing={4}>
-  {["sm", "md", "lg"].map((size) => (
+  {['sm', 'md', 'lg'].map((size) => (
     <Tag
       size={size}
       key={size}
-      borderRadius="full"
-      variant="solid"
-      colorScheme="green"
+      borderRadius='full'
+      variant='solid'
+      colorScheme='green'
     >
       <TagLabel>Green</TagLabel>
       <TagCloseButton />
@@ -100,11 +100,11 @@ import {
 ## With custom element
 
 ```jsx
-<Tag size="lg" colorScheme="red" borderRadius="full">
+<Tag size='lg' colorScheme='red' borderRadius='full'>
   <Avatar
-    src="https://bit.ly/sage-adebayo"
-    size="xs"
-    name="Segun Adebayo"
+    src='https://bit.ly/sage-adebayo'
+    size='xs'
+    name='Segun Adebayo'
     ml={-1}
     mr={2}
   />
@@ -114,4 +114,4 @@ import {
 
 ## Props
 
-<PropsTable of="Tag" />
+<PropsTable of='Tag' />

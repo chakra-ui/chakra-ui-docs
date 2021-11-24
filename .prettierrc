@@ -3,7 +3,7 @@
   "jsxSingleQuote": true,
   "printWidth": 80,
   "proseWrap": "always",
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all"

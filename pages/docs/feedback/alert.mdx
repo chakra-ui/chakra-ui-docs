@@ -1,7 +1,7 @@
 ---
 title: Alert
-package: "@chakra-ui/alert"
-image: "components/alert.svg"
+package: '@chakra-ui/alert'
+image: 'components/alert.svg'
 description:
   Alerts are used to communicate a state that affects a system, feature or page.
 ---
@@ -9,9 +9,9 @@ description:
 Alerts are used to communicate a state that affects a system, feature or page.
 
 <ComponentLinks
-  theme={{ componentName: "alert" }}
-  github={{ package: "alert" }}
-  npm={{ package: "@chakra-ui/alert" }}
+  theme={{ componentName: 'alert' }}
+  github={{ package: 'alert' }}
+  npm={{ package: '@chakra-ui/alert' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -33,17 +33,17 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
 
 ```jsx
-<Alert status="error">
+<Alert status='error'>
   <AlertIcon />
   <AlertTitle mr={2}>Your browser is outdated!</AlertTitle>
   <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
-  <CloseButton position="absolute" right="8px" top="8px" />
+  <CloseButton position='absolute' right='8px' top='8px' />
 </Alert>
 ```
 
@@ -55,22 +55,22 @@ color scheme and icon used. Alert supports `error`, `success`, `warning`, and
 
 ```jsx
 <Stack spacing={3}>
-  <Alert status="error">
+  <Alert status='error'>
     <AlertIcon />
     There was an error processing your request
   </Alert>
 
-  <Alert status="success">
+  <Alert status='success'>
     <AlertIcon />
     Data uploaded to the server. Fire on!
   </Alert>
 
-  <Alert status="warning">
+  <Alert status='warning'>
     <AlertIcon />
     Seems your account is about expire, upgrade now
   </Alert>
 
-  <Alert status="info">
+  <Alert status='info'>
     <AlertIcon />
     Chakra is going live on August 30th. Get ready!
   </Alert>
@@ -84,22 +84,22 @@ color scheme and icon used. Alert supports `error`, `success`, `warning`, and
 
 ```jsx
 <Stack spacing={3}>
-  <Alert status="success" variant="subtle">
+  <Alert status='success' variant='subtle'>
     <AlertIcon />
     Data uploaded to the server. Fire on!
   </Alert>
 
-  <Alert status="success" variant="solid">
+  <Alert status='success' variant='solid'>
     <AlertIcon />
     Data uploaded to the server. Fire on!
   </Alert>
 
-  <Alert status="success" variant="left-accent">
+  <Alert status='success' variant='left-accent'>
     <AlertIcon />
     Data uploaded to the server. Fire on!
   </Alert>
 
-  <Alert status="success" variant="top-accent">
+  <Alert status='success' variant='top-accent'>
     <AlertIcon />
     Data uploaded to the server. Fire on!
   </Alert>
@@ -113,19 +113,19 @@ kinds of layouts. Here's an example of a custom alert style and layout:
 
 ```jsx
 <Alert
-  status="success"
-  variant="subtle"
-  flexDirection="column"
-  alignItems="center"
-  justifyContent="center"
-  textAlign="center"
-  height="200px"
+  status='success'
+  variant='subtle'
+  flexDirection='column'
+  alignItems='center'
+  justifyContent='center'
+  textAlign='center'
+  height='200px'
 >
-  <AlertIcon boxSize="40px" mr={0} />
-  <AlertTitle mt={4} mb={1} fontSize="lg">
+  <AlertIcon boxSize='40px' mr={0} />
+  <AlertTitle mt={4} mb={1} fontSize='lg'>
     Application submitted!
   </AlertTitle>
-  <AlertDescription maxWidth="sm">
+  <AlertDescription maxWidth='sm'>
     Thanks for submitting your application. Our team will get back to you soon.
   </AlertDescription>
 </Alert>
@@ -135,16 +135,16 @@ kinds of layouts. Here's an example of a custom alert style and layout:
 alert with wrapping description text:
 
 ```jsx
-<Alert status="success">
+<Alert status='success'>
   <AlertIcon />
-  <Box flex="1">
+  <Box flex='1'>
     <AlertTitle>Success!</AlertTitle>
-    <AlertDescription display="block">
+    <AlertDescription display='block'>
       Your application has been received. We will review your application and
       respond within the next 48 hours.
     </AlertDescription>
   </Box>
-  <CloseButton position="absolute" right="8px" top="8px" />
+  <CloseButton position='absolute' right='8px' top='8px' />
 </Alert>
 ```
 
@@ -154,7 +154,7 @@ alert with wrapping description text:
 
 `Alert` is the wrapper for `Alert` component. It composes the `Flex` component.
 
-<PropsTable of="Alert" />
+<PropsTable of='Alert' />
 
 ### AlertIcon Props
 

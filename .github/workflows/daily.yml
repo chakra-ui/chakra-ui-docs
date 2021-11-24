@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && yarn bootstrap
+        run: yarn install --frozen-lockfile
 
       - name: Setup Git
         run: |
@@ -45,7 +45,7 @@ jobs:
 
       - name: Commit avatars and all-sponsorsrc
         run: |
-          git add website/public/avatars
+          git add public/avatars
           git diff --staged --quiet || git commit -m "chore(avatars): $GITHUB_SHA"
 
           git add .all-sponsorsrc

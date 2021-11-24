@@ -1,63 +1,66 @@
-import { useRouter } from 'next/router';
-import * as React from 'react';
-import { Badge, Box, chakra, Flex } from '@chakra-ui/react';
-import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav';
-import EditPageLink from 'components/edit-page-button';
-import Footer from 'components/footer';
-import Header from 'components/header';
-import SEO from 'components/seo';
-import TableOfContent from 'components/table-of-content';
-import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code';
-import PageTransition from './page-transition';
-import { AdBanner } from './chakra-pro/ad-banner';
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import { Badge, Box, chakra, Flex } from '@chakra-ui/react'
+import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
+import EditPageLink from 'components/edit-page-button'
+import Footer from 'components/footer'
+import Header from 'components/header'
+import SEO from 'components/seo'
+import TableOfContent from 'components/table-of-content'
+import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
+import PageTransition from './page-transition'
+import { AdBanner } from './chakra-pro/ad-banner'
+import { t } from 'utils/i18n'
 
 function useHeadingFocusOnRouteChange() {
-  const router = useRouter();
+  const router = useRouter()
 
   React.useEffect(() => {
     const onRouteChange = () => {
-      const [heading] = Array.from(document.getElementsByTagName('h1'));
-      heading?.focus();
-    };
-    router.events.on('routeChangeComplete', onRouteChange);
+      const [heading] = Array.from(document.getElementsByTagName('h1'))
+      heading?.focus()
+    }
+    router.events.on('routeChangeComplete', onRouteChange)
     return () => {
-      router.events.off('routeChangeComplete', onRouteChange);
-    };
-  }, [router.events]);
+      router.events.off('routeChangeComplete', onRouteChange)
+    }
+  }, [router.events])
 }
 
 export interface Heading {
-  level: 'h2' | 'h3';
-  text: string;
-  id: string;
+  level: 'h2' | 'h3'
+  text: string
+  id: string
 }
 
 interface PageContainerProps {
   frontmatter: {
-    slug?: string;
-    title: string;
-    description?: string;
-    editUrl?: string;
-    version?: string;
-    headings?: Heading[];
-  };
-  children: React.ReactNode;
-  sidebar?: any;
-  pagination?: any;
+    slug?: string
+    title: string
+    description?: string
+    editUrl?: string
+    version?: string
+    headings?: Heading[]
+  }
+  children: React.ReactNode
+  sidebar?: any
+  pagination?: any
 }
 
 function PageContainer(props: PageContainerProps) {
-  const { frontmatter, children, sidebar, pagination } = props;
-  useHeadingFocusOnRouteChange();
+  const { frontmatter, children, sidebar, pagination } = props
+  useHeadingFocusOnRouteChange()
 
-  if (!frontmatter) return <></>;
+  if (!frontmatter) return <></>
 
-  const { title, description, editUrl, version, headings = [] } = frontmatter;
+  const { title, description, editUrl, version, headings = [] } = frontmatter
 
   return (
     <>
       <SEO title={title} description={description} />
-      <SkipNavLink zIndex={20}>Skip to Content</SkipNavLink>
+      <SkipNavLink zIndex={20}>
+        {t('component.page-container.skip-to-content')}
+      </SkipNavLink>
       <AdBanner />
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
@@ -102,7 +105,7 @@ function PageContainer(props: PageContainerProps) {
         </Box>
       </Box>
     </>
-  );
+  )
 }
 
-export default PageContainer;
+export default PageContainer

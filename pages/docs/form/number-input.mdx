@@ -1,7 +1,7 @@
 ---
 title: Number Input
-package: "@chakra-ui/number-input"
-image: "components/number-input.svg"
+package: '@chakra-ui/number-input'
+image: 'components/number-input.svg'
 description:
   The NumberInput component is similar to the Input component, but it has
   controls for incrementing or decrementing numeric values.
@@ -11,9 +11,9 @@ The `NumberInput` component is similar to the [Input](/docs/form/input)
 component, but it has controls for incrementing or decrementing numeric values.
 
 <ComponentLinks
-  theme={{ componentName: "number-input" }}
-  github={{ package: "number-input" }}
-  npm={{ package: "@chakra-ui/number-input" }}
+  theme={{ componentName: 'number-input' }}
+  github={{ package: 'number-input' }}
+  npm={{ package: '@chakra-ui/number-input' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -39,7 +39,7 @@ import {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -156,9 +156,9 @@ support this use case.
 ```jsx
 function Example() {
   const format = (val) => `$` + val
-  const parse = (val) => val.replace(/^\$/, "")
+  const parse = (val) => val.replace(/^\$/, '')
 
-  const [value, setValue] = React.useState("1.53")
+  const [value, setValue] = React.useState('1.53')
 
   return (
     <NumberInput
@@ -182,8 +182,8 @@ Like the `Input` component, you can pass the `size` prop to change the size of
 the input.
 
 ```jsx
-<Stack shouldWrapChildren direction="row">
-  <NumberInput size="xs" maxW={16} defaultValue={15} min={10}>
+<Stack shouldWrapChildren direction='row'>
+  <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
     <NumberInputField />
     <NumberInputStepper>
       <NumberIncrementStepper />
@@ -191,7 +191,7 @@ the input.
     </NumberInputStepper>
   </NumberInput>
 
-  <NumberInput size="sm" maxW={20} defaultValue={15} min={10}>
+  <NumberInput size='sm' maxW={20} defaultValue={15} min={10}>
     <NumberInputField />
     <NumberInputStepper>
       <NumberIncrementStepper />
@@ -199,7 +199,7 @@ the input.
     </NumberInputStepper>
   </NumberInput>
 
-  <NumberInput size="md" maxW={24} defaultValue={15} min={10}>
+  <NumberInput size='md' maxW={24} defaultValue={15} min={10}>
     <NumberInputField />
     <NumberInputStepper>
       <NumberIncrementStepper />
@@ -207,7 +207,7 @@ the input.
     </NumberInputStepper>
   </NumberInput>
 
-  <NumberInput size="lg" maxW={32} defaultValue={15} min={10}>
+  <NumberInput size='lg' maxW={32} defaultValue={15} min={10}>
     <NumberInputField />
     <NumberInputStepper>
       <NumberIncrementStepper />
@@ -223,18 +223,18 @@ You can change the style of any part of the components using style props. You
 can also change the icons used in the steppers.
 
 ```jsx
-<NumberInput size="sm" defaultValue={15} min={10}>
-  <NumberInputField focusBorderColor="red.200" />
+<NumberInput size='sm' defaultValue={15} min={10}>
+  <NumberInputField focusBorderColor='red.200' />
   <NumberInputStepper>
     <NumberIncrementStepper
-      bg="green.200"
-      _active={{ bg: "green.300" }}
-      children="+"
+      bg='green.200'
+      _active={{ bg: 'green.300' }}
+      children='+'
     />
     <NumberDecrementStepper
-      bg="pink.200"
-      _active={{ bg: "pink.300" }}
-      children="-"
+      bg='pink.200'
+      _active={{ bg: 'pink.300' }}
+      children='-'
     />
   </NumberInputStepper>
 </NumberInput>
@@ -244,8 +244,8 @@ can also change the icons used in the steppers.
 
 A common use case is to combine the `NumberInput` with a `Slider`.
 
-We recommend disabling `focusThumbOnChange` on the `Slider`, so the `NumberInput`
-won't lose focus after input.
+We recommend disabling `focusThumbOnChange` on the `Slider`, so the
+`NumberInput` won't lose focus after input.
 
 Here's an example of how to do that:
 
@@ -256,18 +256,23 @@ function SliderInput() {
 
   return (
     <Flex>
-      <NumberInput maxW="100px" mr="2rem" value={value} onChange={handleChange}>
+      <NumberInput maxW='100px' mr='2rem' value={value} onChange={handleChange}>
         <NumberInputField />
         <NumberInputStepper>
           <NumberIncrementStepper />
           <NumberDecrementStepper />
         </NumberInputStepper>
       </NumberInput>
-      <Slider flex="1" focusThumbOnChange={false} value={value} onChange={handleChange}>
+      <Slider
+        flex='1'
+        focusThumbOnChange={false}
+        value={value}
+        onChange={handleChange}
+      >
         <SliderTrack>
           <SliderFilledTrack />
         </SliderTrack>
-        <SliderThumb fontSize="sm" boxSize="32px" children={value} />
+        <SliderThumb fontSize='sm' boxSize='32px' children={value} />
       </Slider>
     </Flex>
   )
@@ -281,24 +286,21 @@ how you can leverage the `useNumberInput` hook to build one.
 
 ```jsx
 function HookUsage() {
-  const {
-    getInputProps,
-    getIncrementButtonProps,
-    getDecrementButtonProps,
-  } = useNumberInput({
-    step: 0.01,
-    defaultValue: 1.53,
-    min: 1,
-    max: 6,
-    precision: 2,
-  })
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 0.01,
+      defaultValue: 1.53,
+      min: 1,
+      max: 6,
+      precision: 2,
+    })
 
   const inc = getIncrementButtonProps()
   const dec = getDecrementButtonProps()
   const input = getInputProps({ isReadOnly: true })
 
   return (
-    <HStack maxW="320px">
+    <HStack maxW='320px'>
       <Button {...inc}>+</Button>
       <Input {...input} />
       <Button {...dec}>-</Button>
@@ -358,7 +360,7 @@ function MouseWheelExample() {
 
 NumberInput composes `Flex` with some additional props listed below.
 
-<PropsTable of="NumberInput" />
+<PropsTable of='NumberInput' />
 
 ### NumberInputField Props
 

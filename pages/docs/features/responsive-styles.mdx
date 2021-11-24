@@ -14,14 +14,14 @@ Responsive syntax relies on the breakpoints defined in the theme object. Chakra
 UI provides default breakpoints, here's what it looks like:
 
 ```js
-import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 const breakpoints = createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
-  xl: "80em",
-  "2xl": "96em",
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
 })
 ```
 
@@ -35,7 +35,7 @@ is the recommended method.
 Let's say you have a `Box` with the following properties:
 
 ```jsx live=false
-<Box bg="red.200" w="400px">
+<Box bg='red.200' w='400px'>
   This is a box
 </Box>
 ```
@@ -44,7 +44,7 @@ To make the `width` or `w` responsive using the array syntax, here's what you
 need to do:
 
 ```jsx live=false
-<Box bg="red.200" w={[300, 400, 500]}>
+<Box bg='red.200' w={[300, 400, 500]}>
   This is a box
 </Box>
 ```
@@ -54,19 +54,19 @@ To interpret array responsive values, Chakra UI converts the values defined in
 values defined in the array to the breakpoints
 
 ```js
-import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 // This is the default breakpoint
 const breakpoints = createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
-  xl: "80em",
-  "2xl": "96em",
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
 })
 
 // Internally, we transform to this
-const breakpoints = ["0em", "30em", "48em", "62em", "80em", "96em"]
+const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em']
 ```
 
 Here's how to interpret this syntax:
@@ -86,14 +86,14 @@ undefined alias key will define the base, non-responsive value.
 Let's say you have a `Text` that looks like this:
 
 ```jsx live=false
-<Text fontSize="40px">This is a text</Text>
+<Text fontSize='40px'>This is a text</Text>
 ```
 
 To make the `fontSize` responsive using the object syntax, here's what you need
 to do:
 
 ```jsx live=false
-<Text fontSize={{ base: "24px", md: "40px", lg: "56px" }}>
+<Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
   This is responsive text
 </Text>
 ```
@@ -116,24 +116,24 @@ change the style of most properties at a given breakpoint.
 <>
   <Box
     height={{
-      base: "100%", // 0-48em
-      md: "50%", // 48em-80em,
-      xl: "25%", // 80em+
+      base: '100%', // 0-48em
+      md: '50%', // 48em-80em,
+      xl: '25%', // 80em+
     }}
-    bg="teal.400"
+    bg='teal.400'
     width={[
-      "100%", // 0-30em
-      "50%", // 30em-48em
-      "25%", // 48em-62em
-      "15%", // 62em+
+      '100%', // 0-30em
+      '50%', // 30em-48em
+      '25%', // 48em-62em
+      '15%', // 62em+
     ]}
   />
   {/* responsive font size */}
-  <Box fontSize={["sm", "md", "lg", "xl"]}>Font Size</Box>
+  <Box fontSize={['sm', 'md', 'lg', 'xl']}>Font Size</Box>
   {/* responsive margin */}
-  <Box mt={[2, 4, 6, 8]} width="full" height="24px" bg="tomato" />
+  <Box mt={[2, 4, 6, 8]} width='full' height='24px' bg='tomato' />
   {/* responsive padding */}
-  <Box bg="papayawhip" p={[2, 4, 6, 8]}>
+  <Box bg='papayawhip' p={[2, 4, 6, 8]}>
     Padding
   </Box>
 </>
@@ -184,16 +184,16 @@ To define custom breakpoints, install `@chakra-ui/theme-tools`, and use the
 
 ```jsx live=false
 // 1. Import the utilities
-import { extendTheme } from "@chakra-ui/react"
-import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { extendTheme } from '@chakra-ui/react'
+import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 // 2. Update the breakpoints as key-value pairs
 const breakpoints = createBreakpoints({
-  sm: "320px",
-  md: "768px",
-  lg: "960px",
-  xl: "1200px",
-  "2xl": "1536px",
+  sm: '320px',
+  md: '768px',
+  lg: '960px',
+  xl: '1200px',
+  '2xl': '1536px',
 })
 
 // 3. Extend the theme
@@ -201,7 +201,7 @@ const theme = extendTheme({ breakpoints })
 
 // 4. Now you can use the custom breakpoints
 function Example() {
-  return <Box width={{ base: "100%", sm: "50%", md: "25%" }} />
+  return <Box width={{ base: '100%', sm: '50%', md: '25%' }} />
 }
 ```
 
@@ -216,36 +216,36 @@ on small screens, and a side-by-side layout on larger screens **(resize your
 browser to see it in action)**:
 
 ```jsx
-<Box p={4} display={{ md: "flex" }}>
+<Box p={4} display={{ md: 'flex' }}>
   <Box flexShrink={0}>
     <Image
-      borderRadius="lg"
+      borderRadius='lg'
       width={{ md: 40 }}
-      src="https://bit.ly/2jYM25F"
-      alt="Woman paying for a purchase"
+      src='https://bit.ly/2jYM25F'
+      alt='Woman paying for a purchase'
     />
   </Box>
   <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
     <Text
-      fontWeight="bold"
-      textTransform="uppercase"
-      fontSize="sm"
-      letterSpacing="wide"
-      color="teal.600"
+      fontWeight='bold'
+      textTransform='uppercase'
+      fontSize='sm'
+      letterSpacing='wide'
+      color='teal.600'
     >
       Marketing
     </Text>
     <Link
       mt={1}
-      display="block"
-      fontSize="lg"
-      lineHeight="normal"
-      fontWeight="semibold"
-      href="#"
+      display='block'
+      fontSize='lg'
+      lineHeight='normal'
+      fontWeight='semibold'
+      href='#'
     >
       Finding customers for your new business
     </Link>
-    <Text mt={2} color="gray.500">
+    <Text mt={2} color='gray.500'>
       Getting a new business off the ground is a lot of hard work. Here are five
       ideas you can use to find your first customers.
     </Text>

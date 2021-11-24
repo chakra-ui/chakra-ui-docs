@@ -1,7 +1,7 @@
 ---
 title: Transitions
-package: "@chakra-ui/transition"
-image: "components/transition.svg"
+package: '@chakra-ui/transition'
+image: 'components/transition.svg'
 description:
   Chakra exports four components `Fade`, `ScaleFade`, `Slide`, and `SlideFade`
   to provide simple transitions.
@@ -11,9 +11,9 @@ Chakra exports four components `Fade`, `ScaleFade`, `Slide`, and `SlideFade` to
 provide simple transitions.
 
 <ComponentLinks
-  theme={{ componentName: "transition" }}
-  github={{ package: "transition" }}
-  npm={{ package: "@chakra-ui/transition" }}
+  theme={{ componentName: 'transition' }}
+  github={{ package: 'transition' }}
+  npm={{ package: '@chakra-ui/transition' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -28,7 +28,7 @@ following props:
 - `unmountOnExit` prop used to unmount the component when it is not visible.
 
 ```js
-import { Fade, ScaleFade, Slide, SlideFade } from "@chakra-ui/react"
+import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -44,12 +44,12 @@ function FadeEx() {
       <Button onClick={onToggle}>Click Me</Button>
       <Fade in={isOpen}>
         <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
         >
           Fade
         </Box>
@@ -70,12 +70,12 @@ function ScaleFadeEx() {
       <Button onClick={onToggle}>Click Me</Button>
       <ScaleFade initialScale={0.9} in={isOpen}>
         <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
         >
           Fade
         </Box>
@@ -94,14 +94,14 @@ function SlideEx() {
   return (
     <>
       <Button onClick={onToggle}>Click Me</Button>
-      <Slide direction="bottom" in={isOpen} style={{ zIndex: 10 }}>
+      <Slide direction='bottom' in={isOpen} style={{ zIndex: 10 }}>
         <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
         >
           <Lorem count={2} />
         </Box>
@@ -120,14 +120,14 @@ function SlideFadeEx() {
   return (
     <>
       <Button onClick={onToggle}>Click Me</Button>
-      <SlideFade in={isOpen} offsetY="20px">
+      <SlideFade in={isOpen} offsetY='20px'>
         <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
         >
           <Lorem count={1} />
         </Box>
@@ -152,12 +152,12 @@ function CollapseEx() {
       <Button onClick={onToggle}>Click Me</Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
         >
           <Lorem count={1} />
         </Box>
@@ -182,8 +182,8 @@ function Example() {
         terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
         labore wes anderson cred nesciunt sapiente ea proident.
       </Collapse>
-      <Button size="sm" onClick={handleToggle} mt="1rem">
-        Show {show ? "Less" : "More"}
+      <Button size='sm' onClick={handleToggle} mt='1rem'>
+        Show {show ? 'Less' : 'More'}
       </Button>
     </>
   )
@@ -197,35 +197,35 @@ The transition components extends the
 
 ### Fade Props
 
-<PropsTable of="Fade" only={["in", "unmountOnExit"]} />
+<PropsTable of='Fade' only={['in', 'unmountOnExit']} />
 
 ### ScaleFade Props
 
 <PropsTable
-  of="ScaleFade"
-  only={["initialScale", "reverse", "unmountOnExit", "in"]}
+  of='ScaleFade'
+  only={['initialScale', 'reverse', 'unmountOnExit', 'in']}
 />
 
 ### Slide Props
 
-<PropsTable of="Slide" only={["unmountOnExit", "direction", "in"]} />
+<PropsTable of='Slide' only={['unmountOnExit', 'direction', 'in']} />
 
 ### SlideFade Props
 
 <PropsTable
-  of="SlideFade"
-  only={["offsetX", "offsetY", "reverse", "unmountOnExit", "in"]}
+  of='SlideFade'
+  only={['offsetX', 'offsetY', 'reverse', 'unmountOnExit', 'in']}
 />
 
 ### Collapse Props
 
 <PropsTable
-  of="Collapse"
+  of='Collapse'
   only={[
-    "animateOpacity",
-    "unmountOnExit",
-    "in",
-    "startingHeight",
-    "endingHeight",
+    'animateOpacity',
+    'unmountOnExit',
+    'in',
+    'startingHeight',
+    'endingHeight',
   ]}
 />

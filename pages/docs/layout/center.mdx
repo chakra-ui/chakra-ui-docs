@@ -1,7 +1,7 @@
 ---
 title: Center
-package: "@chakra-ui/layout"
-image: "components/center.svg"
+package: '@chakra-ui/layout'
+image: 'components/center.svg'
 description:
   Box is the most abstract component on top of which all other Chakra UI
   components are built. By default, it renders a `div` element
@@ -10,8 +10,8 @@ description:
 Center is a layout component that centers its child within itself.
 
 <ComponentLinks
-  github={{ package: "layout" }}
-  npm={{ package: "@chakra-ui/layout" }}
+  github={{ package: 'layout' }}
+  npm={{ package: '@chakra-ui/layout' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -19,7 +19,7 @@ Center is a layout component that centers its child within itself.
 ## Import
 
 ```js
-import { Center, Square, Circle } from "@chakra-ui/react"
+import { Center, Square, Circle } from '@chakra-ui/react'
 ```
 
 - **Center:** centers its child given `width` and `height`
@@ -32,7 +32,7 @@ Put any child element inside it, give it any `width` or/and `height`, it'll
 ensure the child is centered.
 
 ```jsx
-<Center bg="tomato" h="100px" color="white">
+<Center bg='tomato' h='100px' color='white'>
   This is the Center
 </Center>
 ```
@@ -43,11 +43,11 @@ Center can be used to create frames around icons or numbers.
 
 ```jsx
 <HStack>
-  <Center w="40px" h="40px" bg="tomato" color="white">
+  <Center w='40px' h='40px' bg='tomato' color='white'>
     <PhoneIcon />
   </Center>
-  <Center w="40px" h="40px" bg="tomato" color="white">
-    <Box as="span" fontWeight="bold" fontSize="lg">
+  <Center w='40px' h='40px' bg='tomato' color='white'>
+    <Box as='span' fontWeight='bold' fontSize='lg'>
       1
     </Box>
   </Center>
@@ -61,10 +61,10 @@ automatically centers its children given the `size`.
 
 ```jsx
 <HStack>
-  <Circle size="40px" bg="tomato" color="white">
+  <Circle size='40px' bg='tomato' color='white'>
     <PhoneIcon />
   </Circle>
-  <Square size="40px" bg="purple.700" color="white">
+  <Square size='40px' bg='purple.700' color='white'>
     <PhoneIcon />
   </Square>
 </HStack>

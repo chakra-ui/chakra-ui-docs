@@ -5,8 +5,8 @@ import {
   Grid,
   GridProps,
   useTheme,
-} from "@chakra-ui/react"
-import React from "react"
+} from '@chakra-ui/react'
+import React from 'react'
 
 type ColorPaletteProps = FlexProps & { color?: string; name?: string }
 
@@ -15,30 +15,30 @@ export const ColorPalette = (props: ColorPaletteProps) => {
 
   const theme = useTheme()
   let colorCode = color
-  const [shade, hue] = color.split(".")
+  const [shade, hue] = color.split('.')
 
   if (shade && hue) {
     colorCode = theme.colors[shade][hue]
   }
 
-  if (color in theme.colors && typeof theme.colors[color] === "string") {
+  if (color in theme.colors && typeof theme.colors[color] === 'string') {
     colorCode = theme.colors[color]
   }
 
   return (
-    <Flex align="center" {...rest}>
+    <Flex align='center' {...rest}>
       <Box
-        borderRadius="md"
-        boxSize="3rem"
-        boxShadow="inner"
+        borderRadius='md'
+        boxSize='3rem'
+        boxShadow='inner'
         mr={3}
         bg={color}
       />
-      <Box fontSize="sm">
-        <Box fontWeight="semibold" textTransform="capitalize">
+      <Box fontSize='sm'>
+        <Box fontWeight='semibold' textTransform='capitalize'>
           {name}
         </Box>
-        <Box textTransform="uppercase">{colorCode}</Box>
+        <Box textTransform='uppercase'>{colorCode}</Box>
       </Box>
     </Flex>
   )
@@ -62,7 +62,7 @@ export const ColorWrapper: React.FC<GridProps> = (props) => (
   <Grid
     mt={7}
     gap={6}
-    templateColumns="repeat( auto-fit, minmax(200px, 1fr) )"
+    templateColumns='repeat( auto-fit, minmax(200px, 1fr) )'
     {...props}
   />
 )

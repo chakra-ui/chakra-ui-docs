@@ -1,7 +1,7 @@
 ---
 title: Popover
-package: "@chakra-ui/popover"
-image: "components/popover.svg"
+package: '@chakra-ui/popover'
+image: 'components/popover.svg'
 description: Popover is a non-modal dialog that floats around a trigger
 ---
 
@@ -10,9 +10,9 @@ display contextual information to the user, and should be paired with a
 clickable trigger element.
 
 <ComponentLinks
-  theme={{ componentName: "popover" }}
-  github={{ package: "popover" }}
-  npm={{ package: "@chakra-ui/popover" }}
+  theme={{ componentName: 'popover' }}
+  github={{ package: 'popover' }}
+  npm={{ package: '@chakra-ui/popover' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -40,7 +40,7 @@ import {
   PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Basic Usage
@@ -85,7 +85,7 @@ portal, wrap the `PopoverContent` in a `Portal`
       <PopoverHeader>Header</PopoverHeader>
       <PopoverCloseButton />
       <PopoverBody>
-        <Button colorScheme="blue">Button</Button>
+        <Button colorScheme='blue'>Button</Button>
       </PopoverBody>
       <PopoverFooter>This is the footer</PopoverFooter>
     </PopoverContent>
@@ -104,14 +104,14 @@ function WalkthroughPopover() {
   return (
     <Popover
       initialFocusRef={initialFocusRef}
-      placement="bottom"
+      placement='bottom'
       closeOnBlur={false}
     >
       <PopoverTrigger>
         <Button>Trigger</Button>
       </PopoverTrigger>
-      <PopoverContent color="white" bg="blue.800" borderColor="blue.800">
-        <PopoverHeader pt={4} fontWeight="bold" border="0">
+      <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+        <PopoverHeader pt={4} fontWeight='bold' border='0'>
           Manage Your Channels
         </PopoverHeader>
         <PopoverArrow />
@@ -121,16 +121,16 @@ function WalkthroughPopover() {
           eiusmod tempor incididunt ut labore et dolore.
         </PopoverBody>
         <PopoverFooter
-          border="0"
-          d="flex"
-          alignItems="center"
-          justifyContent="space-between"
+          border='0'
+          d='flex'
+          alignItems='center'
+          justifyContent='space-between'
           pb={4}
         >
-          <Box fontSize="sm">Step 2 of 4</Box>
-          <ButtonGroup size="sm">
-            <Button colorScheme="green">Setup Email</Button>
-            <Button colorScheme="blue" ref={initialFocusRef}>
+          <Box fontSize='sm'>Step 2 of 4</Box>
+          <ButtonGroup size='sm'>
+            <Button colorScheme='green'>Setup Email</Button>
+            <Button colorScheme='blue' ref={initialFocusRef}>
               Next
             </Button>
           </ButtonGroup>
@@ -168,17 +168,17 @@ const Form = ({ firstFieldRef, onCancel }) => {
   return (
     <Stack spacing={4}>
       <TextInput
-        label="First name"
-        id="first-name"
+        label='First name'
+        id='first-name'
         ref={firstFieldRef}
-        defaultValue="John"
+        defaultValue='John'
       />
-      <TextInput label="Last name" id="last-name" defaultValue="Smith" />
-      <ButtonGroup d="flex" justifyContent="flex-end">
-        <Button variant="outline" onClick={onCancel}>
+      <TextInput label='Last name' id='last-name' defaultValue='Smith' />
+      <ButtonGroup d='flex' justifyContent='flex-end'>
+        <Button variant='outline' onClick={onCancel}>
           Cancel
         </Button>
-        <Button isDisabled colorScheme="teal">
+        <Button isDisabled colorScheme='teal'>
           Save
         </Button>
       </ButtonGroup>
@@ -194,7 +194,7 @@ const PopoverForm = () => {
 
   return (
     <>
-      <Box d="inline-block" mr={3}>
+      <Box d='inline-block' mr={3}>
         John Smith
       </Box>
       <Popover
@@ -202,11 +202,11 @@ const PopoverForm = () => {
         initialFocusRef={firstFieldRef}
         onOpen={onOpen}
         onClose={onClose}
-        placement="right"
+        placement='right'
         closeOnBlur={false}
       >
         <PopoverTrigger>
-          <IconButton size="sm" icon={<EditIcon />} />
+          <IconButton size='sm' icon={<EditIcon />} />
         </PopoverTrigger>
         <PopoverContent p={5}>
           <FocusLock returnFocus persistentFocus={false}>
@@ -245,23 +245,23 @@ function ControlledUsage() {
         returnFocusOnClose={false}
         isOpen={isOpen}
         onClose={close}
-        placement="right"
+        placement='right'
         closeOnBlur={false}
       >
         <PopoverTrigger>
-          <Button colorScheme="pink">Popover Target</Button>
+          <Button colorScheme='pink'>Popover Target</Button>
         </PopoverTrigger>
         <PopoverContent>
-          <PopoverHeader fontWeight="semibold">Confirmation</PopoverHeader>
+          <PopoverHeader fontWeight='semibold'>Confirmation</PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
           <PopoverBody>
             Are you sure you want to continue with your action?
           </PopoverBody>
-          <PopoverFooter d="flex" justifyContent="flex-end">
-            <ButtonGroup size="sm">
-              <Button variant="outline">Cancel</Button>
-              <Button colorScheme="red">Apply</Button>
+          <PopoverFooter d='flex' justifyContent='flex-end'>
+            <ButtonGroup size='sm'>
+              <Button variant='outline'>Cancel</Button>
+              <Button colorScheme='red'>Apply</Button>
             </ButtonGroup>
           </PopoverFooter>
         </PopoverContent>
@@ -280,11 +280,11 @@ render prop pattern to gain access to them.
 function InternalStateEx() {
   const initRef = React.useRef()
   return (
-    <Popover closeOnBlur={false} placement="left" initialFocusRef={initRef}>
+    <Popover closeOnBlur={false} placement='left' initialFocusRef={initRef}>
       {({ isOpen, onClose }) => (
         <>
           <PopoverTrigger>
-            <Button>Click to {isOpen ? "close" : "open"}</Button>
+            <Button>Click to {isOpen ? 'close' : 'open'}</Button>
           </PopoverTrigger>
           <Portal>
             <PopoverContent>
@@ -296,7 +296,7 @@ function InternalStateEx() {
                 </Box>
                 <Button
                   mt={4}
-                  colorScheme="blue"
+                  colorScheme='blue'
                   onClick={onClose}
                   ref={initRef}
                 >
@@ -322,19 +322,19 @@ popover. You can change the background, arrow size, box shadow and so on.
 <Popover>
   <PopoverTrigger>
     <Box
-      tabIndex="0"
-      role="button"
-      aria-label="Some box"
+      tabIndex='0'
+      role='button'
+      aria-label='Some box'
       p={5}
-      w="120px"
-      bg="gray.300"
-      children="Click"
+      w='120px'
+      bg='gray.300'
+      children='Click'
     />
   </PopoverTrigger>
-  <PopoverContent bg="tomato" color="white">
-    <PopoverHeader fontWeight="semibold">Customization</PopoverHeader>
-    <PopoverArrow bg="pink.500" />
-    <PopoverCloseButton bg="purple.500" />
+  <PopoverContent bg='tomato' color='white'>
+    <PopoverHeader fontWeight='semibold'>Customization</PopoverHeader>
+    <PopoverArrow bg='pink.500' />
+    <PopoverCloseButton bg='purple.500' />
     <PopoverBody>
       Tadaa!! The arrow color and background color is customized. Check the
       props for each component.
@@ -353,12 +353,12 @@ possible placement values.
 > in the event that available space at the specified placement isn't enough.
 
 ```jsx
-<Popover placement="top-start">
+<Popover placement='top-start'>
   <PopoverTrigger>
     <Button>Click me</Button>
   </PopoverTrigger>
   <PopoverContent>
-    <PopoverHeader fontWeight="semibold">Popover placement</PopoverHeader>
+    <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
     <PopoverArrow />
     <PopoverCloseButton />
     <PopoverBody>
@@ -386,7 +386,7 @@ happen when the component is displayed.
     <Button>Click me</Button>
   </PopoverTrigger>
   <PopoverContent>
-    <PopoverHeader fontWeight="semibold">Popover placement</PopoverHeader>
+    <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
     <PopoverArrow />
     <PopoverCloseButton />
     <PopoverBody>
@@ -444,7 +444,7 @@ happen when the component is displayed.
 
 ### Popover Props
 
-<PropsTable of="Popover" />
+<PropsTable of='Popover' />
 
 ### Other Props
 

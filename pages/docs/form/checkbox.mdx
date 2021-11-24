@@ -1,7 +1,7 @@
 ---
 title: Checkbox
-package: "@chakra-ui/checkbox"
-image: "components/checkbox.svg"
+package: '@chakra-ui/checkbox'
+image: 'components/checkbox.svg'
 description:
   Checkbox component is used in forms when a user needs to select multiple
   values from several options.
@@ -11,9 +11,9 @@ The `Checkbox` component is used in forms when a user needs to select multiple
 values from several options.
 
 <ComponentLinks
-  theme={{ componentName: "checkbox" }}
-  github={{ package: "checkbox" }}
-  npm={{ package: "@chakra-ui/checkbox" }}
+  theme={{ componentName: 'checkbox' }}
+  github={{ package: 'checkbox' }}
+  npm={{ package: '@chakra-ui/checkbox' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -25,7 +25,7 @@ to style the checkboxes.
 ## Import
 
 ```js
-import { Checkbox, CheckboxGroup } from "@chakra-ui/react"
+import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ Basic usage of `Checkbox`.
 ### Disabled Checkbox
 
 ```jsx
-<Stack spacing={10} direction="row">
+<Stack spacing={10} direction='row'>
   <Checkbox isDisabled>Checkbox</Checkbox>
   <Checkbox isDisabled defaultIsChecked>
     Checkbox
@@ -53,11 +53,11 @@ You can override the color scheme of the `Checkbox` to any color key specified
 in `theme.colors`.
 
 ```jsx
-<Stack spacing={10} direction="row">
-  <Checkbox colorScheme="red" defaultIsChecked>
+<Stack spacing={10} direction='row'>
+  <Checkbox colorScheme='red' defaultIsChecked>
     Checkbox
   </Checkbox>
-  <Checkbox colorScheme="green" defaultIsChecked>
+  <Checkbox colorScheme='green' defaultIsChecked>
     Checkbox
   </Checkbox>
 </Stack>
@@ -69,14 +69,14 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 `sm`, `md` or `lg`.
 
 ```jsx
-<HStack spacing={10} direction="row">
-  <Checkbox size="sm" colorScheme="red">
+<HStack spacing={10} direction='row'>
+  <Checkbox size='sm' colorScheme='red'>
     Checkbox
   </Checkbox>
-  <Checkbox size="md" colorScheme="green" defaultIsChecked>
+  <Checkbox size='md' colorScheme='green' defaultIsChecked>
     Checkbox
   </Checkbox>
-  <Checkbox size="lg" colorScheme="orange" defaultIsChecked>
+  <Checkbox size='lg' colorScheme='orange' defaultIsChecked>
     Checkbox
   </Checkbox>
 </HStack>
@@ -94,7 +94,7 @@ We added the `spacing` prop to customize the spacing between the `Checkbox` and
 label text.
 
 ```jsx live=false
-<Checkbox spacing="1rem">Option</Checkbox>
+<Checkbox spacing='1rem'>Option</Checkbox>
 ```
 
 ### Changing the icon color and size
@@ -103,7 +103,7 @@ You can customize the color and size of the check icon by passing the
 `iconColor` and `iconSize` prop.
 
 ```jsx live=false
-<Checkbox iconColor="blue.400" iconSize="1rem">
+<Checkbox iconColor='blue.400' iconSize='1rem'>
   Option
 </Checkbox>
 ```
@@ -155,19 +155,19 @@ function CustomIcon(props) {
   const { isIndeterminate, isChecked, ...rest } = props
 
   const d = isIndeterminate
-    ? "M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,19a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,12,19Zm1.6-6.08a1,1,0,0,0-.6.917,1,1,0,1,1-2,0,3,3,0,0,1,1.8-2.75A2,2,0,1,0,10,9.255a1,1,0,1,1-2,0,4,4,0,1,1,5.6,3.666Z"
-    : "M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"
+    ? 'M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,19a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,12,19Zm1.6-6.08a1,1,0,0,0-.6.917,1,1,0,1,1-2,0,3,3,0,0,1,1.8-2.75A2,2,0,1,0,10,9.255a1,1,0,1,1-2,0,4,4,0,1,1,5.6,3.666Z'
+    : 'M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z'
 
   return (
-    <Icon viewBox="0 0 24 24" {...rest}>
-      <path fill="currentColor" d={d} />
+    <Icon viewBox='0 0 24 24' {...rest}>
+      <path fill='currentColor' d={d} />
     </Icon>
   )
 }
 
 function CustomCheckbox() {
   return (
-    <Checkbox icon={<CustomIcon />} colorScheme="cyan">
+    <Checkbox icon={<CustomIcon />} colorScheme='cyan'>
       Hello world
     </Checkbox>
   )
@@ -184,11 +184,11 @@ props to each. See the props table at the bottom of this page for a list of the
 shared styling props.
 
 ```jsx
-<CheckboxGroup colorScheme="green" defaultValue={["naruto", "kakashi"]}>
+<CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
   <HStack>
-    <Checkbox value="naruto">Naruto</Checkbox>
-    <Checkbox value="sasuke">Sasuke</Checkbox>
-    <Checkbox value="kakashi">kakashi</Checkbox>
+    <Checkbox value='naruto'>Naruto</Checkbox>
+    <Checkbox value='sasuke'>Sasuke</Checkbox>
+    <Checkbox value='kakashi'>kakashi</Checkbox>
   </HStack>
 </CheckboxGroup>
 ```
@@ -205,11 +205,11 @@ creating tailor-made checkbox group component for your application.
 
 ### Checkbox Props
 
-<PropsTable of="Checkbox" />
+<PropsTable of='Checkbox' />
 
 ### CheckboxGroup Props
 
-<PropsTable of="CheckboxGroup" />
+<PropsTable of='CheckboxGroup' />
 
 #### Shared Style Props
 

@@ -43,17 +43,17 @@ Go to `pages/_app.js` or `pages/_app.tsx` (create if it doesn't exist) and add
 this:
 
 ```jsx live=false
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <Component {...pageProps} />
     </ChakraProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
 ```
 
 ### ChakraProvider Props
@@ -64,7 +64,6 @@ export default MyApp;
 | theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
-
 
 > Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
 > take it a step further, check out step 3.
@@ -81,7 +80,7 @@ with your customizations.
 
 ```jsx live=false
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react'
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
@@ -90,9 +89,9 @@ const colors = {
     800: '#153e75',
     700: '#2a69ac',
   },
-};
+}
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({ colors })
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 function App() {
@@ -100,7 +99,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
-  );
+  )
 }
 ```
 

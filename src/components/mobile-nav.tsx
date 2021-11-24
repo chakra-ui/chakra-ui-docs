@@ -10,25 +10,26 @@ import {
   useBreakpointValue,
   useColorModeValue,
   useUpdateEffect,
-} from '@chakra-ui/react';
-import { AnimatePresence, motion, useElementScroll } from 'framer-motion';
-import useRouteChanged from 'hooks/use-route-changed';
-import { getRoutes } from 'layouts/mdx';
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-import * as React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { RemoveScroll } from 'react-remove-scroll';
-import Logo from './logo';
-import { SidebarContent } from './sidebar/sidebar';
-import SponsorButton from './sponsor-button';
+} from '@chakra-ui/react'
+import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
+import useRouteChanged from 'hooks/use-route-changed'
+import { getRoutes } from 'layouts/mdx'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { RemoveScroll } from 'react-remove-scroll'
+import Logo from './logo'
+import { SidebarContent } from './sidebar/sidebar'
+import SponsorButton from './sponsor-button'
+import { t } from 'utils/i18n'
 
 function NavLink({ href, children }) {
-  const { pathname } = useRouter();
-  const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100');
+  const { pathname } = useRouter()
+  const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
-  const [, group] = href.split('/');
-  const isActive = pathname.includes(group);
+  const [, group] = href.split('/')
+  const isActive = pathname.includes(group)
 
   return (
     <NextLink href={href}>
@@ -49,43 +50,43 @@ function NavLink({ href, children }) {
         {children}
       </Center>
     </NextLink>
-  );
+  )
 }
 
 interface MobileNavContentProps {
-  isOpen?: boolean;
-  onClose?: () => void;
+  isOpen?: boolean
+  onClose?: () => void
 }
 
 export function MobileNavContent(props: MobileNavContentProps) {
-  const { isOpen, onClose } = props;
-  const closeBtnRef = React.useRef<HTMLButtonElement>();
-  const { pathname } = useRouter();
-  const bgColor = useColorModeValue('white', 'gray.800');
+  const { isOpen, onClose } = props
+  const closeBtnRef = React.useRef<HTMLButtonElement>()
+  const { pathname } = useRouter()
+  const bgColor = useColorModeValue('white', 'gray.800')
 
-  useRouteChanged(onClose);
+  useRouteChanged(onClose)
 
   /**
    * Scenario: Menu is open on mobile, and user resizes to desktop/tablet viewport.
    * Result: We'll close the menu
    */
-  const showOnBreakpoint = useBreakpointValue({ base: true, lg: false });
+  const showOnBreakpoint = useBreakpointValue({ base: true, lg: false })
 
   React.useEffect(() => {
     if (showOnBreakpoint == false) {
-      onClose();
+      onClose()
     }
-  }, [showOnBreakpoint, onClose]);
+  }, [showOnBreakpoint, onClose])
 
   useUpdateEffect(() => {
     if (isOpen) {
       requestAnimationFrame(() => {
-        closeBtnRef.current?.focus();
-      });
+        closeBtnRef.current?.focus()
+      })
     }
-  }, [isOpen]);
+  }, [isOpen])
 
-  const [shadow, setShadow] = React.useState<string>();
+  const [shadow, setShadow] = React.useState<string>()
 
   return (
     <AnimatePresence>
@@ -119,19 +120,25 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 </Flex>
                 <Box px='6' pb='6' pt='2' shadow={shadow}>
                   <HStack>
-                    <NavLink href='/docs/getting-started'>Docs</NavLink>
-                    <NavLink href='/guides/integrations/with-cra'>
-                      Guides
+                    <NavLink href='/docs/getting-started'>
+                      {t('component.mobile-nav.docs')}
                     </NavLink>
-                    <NavLink href='/faq'>FAQ</NavLink>
-                    <NavLink href='/team'>Team</NavLink>
+                    <NavLink href='/guides/integrations/with-cra'>
+                      {t('component.mobile-nav.guides')}
+                    </NavLink>
+                    <NavLink href='/faq'>
+                      {t('component.mobile-nav.faq')}
+                    </NavLink>
+                    <NavLink href='/team'>
+                      {t('component.mobile-nav.team')}
+                    </NavLink>
                   </HStack>
                 </Box>
               </Box>
 
               <ScrollView
                 onScroll={(scrolled) => {
-                  setShadow(scrolled ? 'md' : undefined);
+                  setShadow(scrolled ? 'md' : undefined)
                 }}
               >
                 <SidebarContent
@@ -144,21 +151,21 @@ export function MobileNavContent(props: MobileNavContentProps) {
         </RemoveScroll>
       )}
     </AnimatePresence>
-  );
+  )
 }
 
 const ScrollView = (props: BoxProps & { onScroll?: any }) => {
-  const { onScroll, ...rest } = props;
-  const [y, setY] = React.useState(0);
-  const elRef = React.useRef<any>();
-  const { scrollY } = useElementScroll(elRef);
+  const { onScroll, ...rest } = props
+  const [y, setY] = React.useState(0)
+  const elRef = React.useRef<any>()
+  const { scrollY } = useElementScroll(elRef)
   React.useEffect(() => {
-    return scrollY.onChange(() => setY(scrollY.get()));
-  }, [scrollY]);
+    return scrollY.onChange(() => setY(scrollY.get()))
+  }, [scrollY])
 
   useUpdateEffect(() => {
-    onScroll?.(y > 5 ? true : false);
-  }, [y]);
+    onScroll?.(y > 5 ? true : false)
+  }, [y])
 
   return (
     <Box
@@ -170,8 +177,8 @@ const ScrollView = (props: BoxProps & { onScroll?: any }) => {
       pb='6'
       {...rest}
     />
-  );
-};
+  )
+}
 
 export const MobileNavButton = React.forwardRef(
   (props: IconButtonProps, ref: React.Ref<any>) => {
@@ -186,6 +193,6 @@ export const MobileNavButton = React.forwardRef(
         icon={<AiOutlineMenu />}
         {...props}
       />
-    );
+    )
   },
-);
+)

@@ -1,7 +1,7 @@
 ---
 title: Toast
-package: "@chakra-ui/toast"
-image: "components/toast.svg"
+package: '@chakra-ui/toast'
+image: 'components/toast.svg'
 description: The toast is used to show alerts on top of an overlay
 ---
 
@@ -11,8 +11,8 @@ seconds. The toast component is used to give feedback to users after an action
 has taken place.
 
 <ComponentLinks
-  github={{ package: "toast" }}
-  npm={{ package: "@chakra-ui/toast" }}
+  github={{ package: 'toast' }}
+  npm={{ package: '@chakra-ui/toast' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -24,7 +24,7 @@ time.
 ## Import
 
 ```js
-import { useToast } from "@chakra-ui/react"
+import { useToast } from '@chakra-ui/react'
 ```
 
 ## Usage
@@ -36,9 +36,9 @@ function ToastExample() {
     <Button
       onClick={() =>
         toast({
-          title: "Account created.",
+          title: 'Account created.',
           description: "We've created your account for you.",
-          status: "success",
+          status: 'success',
           duration: 9000,
           isClosable: true,
         })
@@ -64,9 +64,9 @@ function CustomToastExample() {
     <Button
       onClick={() =>
         toast({
-          position: "bottom-left",
+          position: 'bottom-left',
           render: () => (
-            <Box color="white" p={3} bg="blue.500">
+            <Box color='white' p={3} bg='blue.500'>
               Hello World
             </Box>
           ),
@@ -103,20 +103,20 @@ function ClosingToastExample() {
   }
 
   function addToast() {
-    toastIdRef.current = toast({ description: "some text" })
+    toastIdRef.current = toast({ description: 'some text' })
   }
 
   return (
     <Stack isInline spacing={2}>
-      <Button onClick={addToast} type="button">
+      <Button onClick={addToast} type='button'>
         Toast
       </Button>
 
-      <Button onClick={close} type="button" variant="outline">
+      <Button onClick={close} type='button' variant='outline'>
         Close last toast
       </Button>
 
-      <Button onClick={closeAll} type="button" variant="outline">
+      <Button onClick={closeAll} type='button' variant='outline'>
         Close all toasts
       </Button>
     </Stack>
@@ -136,21 +136,21 @@ function UpdatingToastExample() {
 
   function update() {
     if (toastIdRef.current) {
-      toast.update(toastIdRef.current, { description: "new text" })
+      toast.update(toastIdRef.current, { description: 'new text' })
     }
   }
 
   function addToast() {
-    toastIdRef.current = toast({ description: "some text" })
+    toastIdRef.current = toast({ description: 'some text' })
   }
 
   return (
     <Stack isInline spacing={2}>
-      <Button onClick={addToast} type="button">
+      <Button onClick={addToast} type='button'>
         Toast
       </Button>
 
-      <Button onClick={update} type="button" variant="outline">
+      <Button onClick={update} type='button' variant='outline'>
         Update last toast
       </Button>
     </Stack>
@@ -165,7 +165,7 @@ You can use `status` to change the color of your toasts.
 ```jsx
 function ToastStatusExample() {
   const toast = useToast()
-  const statuses = ["success", "error", "warning", "info"]
+  const statuses = ['success', 'error', 'warning', 'info']
 
   return (
     <Wrap>
@@ -197,7 +197,7 @@ function ToastStatusExample() {
 ```jsx
 function ToastVariantsExample() {
   const toast = useToast()
-  const variants = ["solid", "subtle", "left-accent", "top-accent"]
+  const variants = ['solid', 'subtle', 'left-accent', 'top-accent']
 
   return (
     <Wrap>
@@ -229,12 +229,12 @@ Using the `position` prop you can adjust where your toast will be popup from.
 function PositionExample() {
   const toast = useToast()
   const positions = [
-    "top",
-    "top-right",
-    "top-left",
-    "bottom",
-    "bottom-right",
-    "bottom-left",
+    'top',
+    'top-right',
+    'top-left',
+    'bottom',
+    'bottom-right',
+    'bottom-left',
   ]
 
   return (
@@ -268,14 +268,14 @@ to call `toast(...)`.
 ```jsx live=false
 function PreventDuplicateExample() {
   const toast = useToast()
-  const id = "test-toast"
+  const id = 'test-toast'
   return (
     <Button
       onClick={() => {
         if (!toast.isActive(id)) {
           toast({
             id,
-            title: "Hey! You can create a duplicate toast",
+            title: 'Hey! You can create a duplicate toast',
           })
         }
       }}
@@ -296,15 +296,15 @@ Components.
 > causing the font size of your page to shift when the toast is open.
 
 ```js
-import { createStandaloneToast } from "@chakra-ui/react"
+import { createStandaloneToast } from '@chakra-ui/react'
 
 const toast = createStandaloneToast()
 // const customToast = createStandaloneToast({ theme: yourCustomTheme })
 
 toast({
-  title: "An error occurred.",
-  description: "Unable to create user account.",
-  status: "error",
+  title: 'An error occurred.',
+  description: 'Unable to create user account.',
+  status: 'error',
   duration: 9000,
   isClosable: true,
 })
@@ -312,4 +312,4 @@ toast({
 
 ## Props
 
-<PropsTable of="useToast" />
+<PropsTable of='useToast' />

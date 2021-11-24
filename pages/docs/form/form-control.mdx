@@ -1,6 +1,6 @@
 ---
 title: Form Control
-package: "@chakra-ui/form-control"
+package: '@chakra-ui/form-control'
 description:
   Form Control provides context such as isInvalid, isDisabled, and isRequired to
   form elements
@@ -13,9 +13,9 @@ It follows the [WAI specifications](https://www.w3.org/WAI/tutorials/forms/) for
 forms.
 
 <ComponentLinks
-  theme={{ componentName: "form" }}
-  github={{ package: "form-control" }}
-  npm={{ package: "@chakra-ui/form-control" }}
+  theme={{ componentName: 'form' }}
+  github={{ package: 'form-control' }}
+  npm={{ package: '@chakra-ui/form-control' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -28,15 +28,15 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 ```
 
 ## Usage
 
 ```jsx
-<FormControl id="email">
+<FormControl id='email'>
   <FormLabel>Email address</FormLabel>
-  <Input type="email" />
+  <Input type='email' />
   <FormHelperText>We'll never share your email.</FormHelperText>
 </FormControl>
 ```
@@ -44,14 +44,14 @@ import {
 ### Sample usage for a radio or checkbox group
 
 ```jsx
-<FormControl as="fieldset">
-  <FormLabel as="legend">Favorite Naruto Character</FormLabel>
-  <RadioGroup defaultValue="Itachi">
-    <HStack spacing="24px">
-      <Radio value="Sasuke">Sasuke</Radio>
-      <Radio value="Nagato">Nagato</Radio>
-      <Radio value="Itachi">Itachi</Radio>
-      <Radio value="Sage of the six Paths">Sage of the six Paths</Radio>
+<FormControl as='fieldset'>
+  <FormLabel as='legend'>Favorite Naruto Character</FormLabel>
+  <RadioGroup defaultValue='Itachi'>
+    <HStack spacing='24px'>
+      <Radio value='Sasuke'>Sasuke</Radio>
+      <Radio value='Nagato'>Nagato</Radio>
+      <Radio value='Itachi'>Itachi</Radio>
+      <Radio value='Sage of the six Paths'>Sage of the six Paths</Radio>
     </HStack>
   </RadioGroup>
   <FormHelperText>Select only if you're a fan.</FormHelperText>
@@ -64,18 +64,18 @@ By passing the `isRequired` props, the `Input` field has `aria-required` set to
 `true`, and the `FormLabel` will show a red asterisk.
 
 ```jsx
-<FormControl id="first-name" isRequired>
+<FormControl id='first-name' isRequired>
   <FormLabel>First name</FormLabel>
-  <Input placeholder="First name" />
+  <Input placeholder='First name' />
 </FormControl>
 ```
 
 ### Select Example
 
 ```jsx
-<FormControl id="country">
+<FormControl id='country'>
   <FormLabel>Country</FormLabel>
-  <Select placeholder="Select country">
+  <Select placeholder='Select country'>
     <option>United Arab Emirates</option>
     <option>Nigeria</option>
   </Select>
@@ -85,7 +85,7 @@ By passing the `isRequired` props, the `Input` field has `aria-required` set to
 ### Number Input Example
 
 ```jsx
-<FormControl id="amount">
+<FormControl id='amount'>
   <FormLabel>Amount</FormLabel>
   <NumberInput max={50} min={10}>
     <NumberInputField />
@@ -107,8 +107,8 @@ function FormikExample() {
   function validateName(value) {
     let error
     if (!value) {
-      error = "Name is required"
-    } else if (value.toLowerCase() !== "naruto") {
+      error = 'Name is required'
+    } else if (value.toLowerCase() !== 'naruto') {
       error = "Jeez! You're not a fan 😱"
     }
     return error
@@ -116,7 +116,7 @@ function FormikExample() {
 
   return (
     <Formik
-      initialValues={{ name: "Sasuke" }}
+      initialValues={{ name: 'Sasuke' }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2))
@@ -126,20 +126,20 @@ function FormikExample() {
     >
       {(props) => (
         <Form>
-          <Field name="name" validate={validateName}>
+          <Field name='name' validate={validateName}>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
-                <FormLabel htmlFor="name">First name</FormLabel>
-                <Input {...field} id="name" placeholder="name" />
+                <FormLabel htmlFor='name'>First name</FormLabel>
+                <Input {...field} id='name' placeholder='name' />
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
           <Button
             mt={4}
-            colorScheme="teal"
+            colorScheme='teal'
             isLoading={props.isSubmitting}
-            type="submit"
+            type='submit'
           >
             Submit
           </Button>
@@ -173,4 +173,4 @@ function FormikExample() {
 
 ## Props
 
-<PropsTable of="FormControl" />
+<PropsTable of='FormControl' />

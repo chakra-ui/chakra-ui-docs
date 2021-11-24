@@ -1,4 +1,4 @@
-import { Global, css } from "@emotion/react"
+import { Global, css } from '@emotion/react'
 
 const SearchStyle = () => (
   <Global
@@ -60,13 +60,13 @@ const SearchStyle = () => (
         background: white;
 
         .chakra-ui-dark & {
-          background: ${theme.colors.gray["700"]};
+          background: ${theme.colors.gray['700']};
         }
       }
 
       .DocSearch-SearchBar {
         flex: none;
-        border-bottom: 1px solid ${theme.colors.gray["200"]};
+        border-bottom: 1px solid ${theme.colors.gray['200']};
         position: relative;
         z-index: 1;
         display: flex;
@@ -74,7 +74,7 @@ const SearchStyle = () => (
         margin: 0 1.5rem;
 
         .chakra-ui-dark & {
-          border-bottom-color: ${theme.colors.gray["600"]};
+          border-bottom-color: ${theme.colors.gray['600']};
         }
       }
 
@@ -141,26 +141,26 @@ const SearchStyle = () => (
       }
 
       .DocSearch-Reset::before {
-        content: "esc";
+        content: 'esc';
       }
 
       .DocSearch-Cancel {
         flex: none;
         font-size: 0;
         border-radius: 0.375rem;
-        background-color: ${theme.colors.gray["50"]};
-        border: 1px solid ${theme.colors.gray["300"]};
+        background-color: ${theme.colors.gray['50']};
+        border: 1px solid ${theme.colors.gray['300']};
         padding: 0.125rem 0.375rem;
 
         .chakra-ui-dark & {
-          background-color: ${theme.colors.gray["700"]};
-          border-color: ${theme.colors.gray["600"]};
+          background-color: ${theme.colors.gray['700']};
+          border-color: ${theme.colors.gray['600']};
         }
       }
 
       .DocSearch-Cancel::before {
-        content: "esc";
-        color: ${theme.colors.gray["400"]};
+        content: 'esc';
+        color: ${theme.colors.gray['400']};
         font-size: 0.875rem;
         line-height: 1.25rem;
       }
@@ -172,11 +172,11 @@ const SearchStyle = () => (
       .DocSearch-Hit-source {
         line-height: 1.5rem;
         font-weight: 600;
-        color: ${theme.colors.gray["600"]};
+        color: ${theme.colors.gray['600']};
         margin-top: 1.5rem;
         margin-bottom: 1rem;
         .chakra-ui-dark & {
-          color: ${theme.colors.gray["400"]};
+          color: ${theme.colors.gray['400']};
         }
       }
 
@@ -200,7 +200,7 @@ const SearchStyle = () => (
         stroke: #71717a;
       }
 
-      .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-icon path {
+      .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon path {
         stroke: white;
       }
 
@@ -215,11 +215,11 @@ const SearchStyle = () => (
         font-size: 0.75rem;
         line-height: 1rem;
         font-weight: 500;
-        color: ${theme.colors.gray["500"]};
+        color: ${theme.colors.gray['500']};
       }
 
-      .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-path {
-        color: ${theme.colors.teal["200"]};
+      .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path {
+        color: ${theme.colors.teal['200']};
       }
 
       .DocSearch-Dropdown ul {
@@ -235,7 +235,7 @@ const SearchStyle = () => (
         white-space: nowrap;
       }
 
-      .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-title {
+      .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title {
         color: white;
       }
 
@@ -261,27 +261,27 @@ const SearchStyle = () => (
         stroke: #71717a;
       }
 
-      .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action path {
+      .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action path {
         stroke: white;
       }
 
       .DocSearch-Hit > a {
         display: block;
-        background: ${theme.colors.gray["50"]};
+        background: ${theme.colors.gray['50']};
         border-radius: 0.5rem;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         padding: 0 1.25rem 0 1rem;
 
         .chakra-ui-dark & {
-          background: ${theme.colors.gray["600"]};
+          background: ${theme.colors.gray['600']};
           * {
             color: white !important;
           }
         }
       }
 
-      .DocSearch-Hit[aria-selected="true"] > a {
-        background: ${theme.colors.teal["500"]};
+      .DocSearch-Hit[aria-selected='true'] > a {
+        background: ${theme.colors.teal['500']};
       }
 
       .DocSearch-Hit + .DocSearch-Hit {
@@ -299,7 +299,7 @@ const SearchStyle = () => (
       .DocSearch-Hit--Child::before,
       .DocSearch-Hit--Child
         + .DocSearch-Hit:not(.DocSearch-Hit--Child)::before {
-        content: "";
+        content: '';
         position: absolute;
         top: -0.25rem;
         bottom: -0.25rem;
@@ -317,7 +317,7 @@ const SearchStyle = () => (
       }
 
       .DocSearch-Hit:not(.DocSearch-Hit--Child) + .DocSearch-Hit--Child::after {
-        content: "";
+        content: '';
         position: absolute;
         top: -0.25rem;
         left: 0;
@@ -333,16 +333,16 @@ const SearchStyle = () => (
         height: calc(100% + 0.25rem);
         background-color: #fff;
         .chakra-ui-dark & {
-          background-color: ${theme.colors.gray["700"]};
+          background-color: ${theme.colors.gray['700']};
         }
       }
 
       .DocSearch-Hits mark {
         background: none;
-        color: ${theme.colors.teal["500"]};
+        color: ${theme.colors.teal['500']};
       }
 
-      .DocSearch-Hit[aria-selected="true"] mark {
+      .DocSearch-Hit[aria-selected='true'] mark {
         color: inherit;
         text-decoration: underline;
       }
@@ -352,11 +352,11 @@ const SearchStyle = () => (
         display: flex;
         justify-content: flex-end;
         margin: 0 1.5rem;
-        border-top: 1px solid ${theme.colors.gray["200"]};
+        border-top: 1px solid ${theme.colors.gray['200']};
         padding: 1.25rem 0;
 
         .chakra-ui-dark & {
-          border-top-color: ${theme.colors.gray["600"]};
+          border-top-color: ${theme.colors.gray['600']};
         }
       }
 
@@ -373,7 +373,7 @@ const SearchStyle = () => (
       }
 
       .DocSearch-Logo svg {
-        color: ${theme.colors.teal["500"]};
+        color: ${theme.colors.teal['500']};
         margin-left: 0.5rem;
       }
 
@@ -425,26 +425,26 @@ const SearchStyle = () => (
         text-transform: uppercase;
         font-weight: 600;
         padding-bottom: 0.5rem;
-        border-bottom: 1px solid ${theme.colors.gray["200"]};
+        border-bottom: 1px solid ${theme.colors.gray['200']};
 
         .chakra-ui-dark & {
-          border-bottom: 1px solid ${theme.colors.gray["600"]};
+          border-bottom: 1px solid ${theme.colors.gray['600']};
         }
       }
 
       .DocSearch-NoResults-Prefill-List li {
         padding: 0.5rem 0;
-        border-bottom: 1px solid ${theme.colors.gray["200"]};
+        border-bottom: 1px solid ${theme.colors.gray['200']};
         .chakra-ui-dark & {
-          border-bottom: 1px solid ${theme.colors.gray["600"]};
+          border-bottom: 1px solid ${theme.colors.gray['600']};
         }
       }
 
       .DocSearch-NoResults-Prefill-List button {
         font-weight: 500;
-        color: ${theme.colors.teal["600"]};
+        color: ${theme.colors.teal['600']};
         .chakra-ui-dark & {
-          color: ${theme.colors.teal["400"]};
+          color: ${theme.colors.teal['400']};
         }
       }
 
@@ -455,11 +455,11 @@ const SearchStyle = () => (
       }
 
       .DocSearch-NoResults-Prefill-List + .DocSearch-Help a {
-        color: ${theme.colors.teal["600"]};
+        color: ${theme.colors.teal['600']};
         font-weight: 500;
 
         .chakra-ui-dark & {
-          color: ${theme.colors.teal["300"]};
+          color: ${theme.colors.teal['300']};
         }
       }
     `}

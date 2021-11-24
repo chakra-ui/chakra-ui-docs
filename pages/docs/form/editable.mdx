@@ -1,7 +1,7 @@
 ---
 title: Editable
-package: "@chakra-ui/editable"
-image: "components/editable-text.svg"
+package: '@chakra-ui/editable'
+image: 'components/editable-text.svg'
 description:
   EditableText is used for inline renaming of some text. It appears as normal UI
   text but transforms into a text input field when the user clicks or focuses on
@@ -13,9 +13,9 @@ text but transforms into a text input field when the user clicks on or focuses
 it.
 
 <ComponentLinks
-  theme={{ componentName: "editable" }}
-  github={{ package: "editable" }}
-  npm={{ package: "@chakra-ui/editable" }}
+  theme={{ componentName: 'editable' }}
+  github={{ package: 'editable' }}
+  npm={{ package: '@chakra-ui/editable' }}
 />
 
 <carbon-ad></carbon-ad>
@@ -33,14 +33,14 @@ Chakra UI exports 3 components to handle this functionality.
 - `EditablePreview`: The read-only view of the component.
 
 ```js
-import { Editable, EditableInput, EditablePreview } from "@chakra-ui/react"
+import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
 ```
 
 ## Usage
 
 ```jsx
 // Click the text to edit
-<Editable defaultValue="Take some chakra">
+<Editable defaultValue='Take some chakra'>
   <EditablePreview />
   <EditableInput />
 </Editable>
@@ -64,22 +64,22 @@ function CustomControlsExample() {
     } = useEditableControls()
 
     return isEditing ? (
-      <ButtonGroup justifyContent="center" size="sm">
+      <ButtonGroup justifyContent='center' size='sm'>
         <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} />
         <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} />
       </ButtonGroup>
     ) : (
-      <Flex justifyContent="center">
-        <IconButton size="sm" icon={<EditIcon />} {...getEditButtonProps()} />
+      <Flex justifyContent='center'>
+        <IconButton size='sm' icon={<EditIcon />} {...getEditButtonProps()} />
       </Flex>
     )
   }
 
   return (
     <Editable
-      textAlign="center"
-      defaultValue="Rasengan ⚡️"
-      fontSize="2xl"
+      textAlign='center'
+      defaultValue='Rasengan ⚡️'
+      fontSize='2xl'
       isPreviewFocusable={false}
     >
       <EditablePreview />
@@ -94,4 +94,4 @@ function CustomControlsExample() {
 
 ### Editable Props
 
-<PropsTable of="Editable" />
+<PropsTable of='Editable' />

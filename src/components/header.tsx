@@ -1,8 +1,9 @@
 import {
+  Box,
   chakra,
   Flex,
-  Box,
   HStack,
+  HTMLChakraProps,
   Icon,
   IconButton,
   Link,
@@ -10,19 +11,17 @@ import {
   useColorModeValue,
   useDisclosure,
   useUpdateEffect,
-  HTMLChakraProps,
-} from '@chakra-ui/react';
-import siteConfig from 'configs/site-config';
-import { useViewportScroll } from 'framer-motion';
-import NextLink from 'next/link';
-import React from 'react';
-import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa';
-import LanguageSwitcher from './language-switcher';
-import Logo, { LogoIcon } from './logo';
-import { MobileNavButton, MobileNavContent } from './mobile-nav';
-import Search from './omni-search';
-import SponsorButton from './sponsor-button';
-import VersionSwitcher from './version-switcher';
+} from '@chakra-ui/react'
+import siteConfig from 'configs/site-config'
+import { useViewportScroll } from 'framer-motion'
+import NextLink from 'next/link'
+import React from 'react'
+import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa'
+import Logo, { LogoIcon } from './logo'
+import { MobileNavButton, MobileNavContent } from './mobile-nav'
+import Search from './omni-search'
+import SponsorButton from './sponsor-button'
+import VersionSwitcher from './version-switcher'
 
 const DiscordIcon = (props: React.ComponentProps<'svg'>) => (
   <svg viewBox='0 0 146 146' {...props}>
@@ -32,7 +31,7 @@ const DiscordIcon = (props: React.ComponentProps<'svg'>) => (
       fillRule='nonzero'
     />
   </svg>
-);
+)
 
 const GithubIcon = (props: React.ComponentProps<'svg'>) => (
   <svg viewBox='0 0 20 20' {...props}>
@@ -41,19 +40,20 @@ const GithubIcon = (props: React.ComponentProps<'svg'>) => (
       d='M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0'
     />
   </svg>
-);
+)
 
 function HeaderContent() {
-  const mobileNav = useDisclosure();
+  const mobileNav = useDisclosure()
 
-  const { toggleColorMode: toggleMode } = useColorMode();
-  const text = useColorModeValue('dark', 'light');
-  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
-  const mobileNavBtnRef = React.useRef<HTMLButtonElement>();
+  const { toggleColorMode: toggleMode } = useColorMode()
+
+  const text = useColorModeValue('dark', 'light')
+  const SwitchIcon = useColorModeValue(FaMoon, FaSun)
+  const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
 
   useUpdateEffect(() => {
-    mobileNavBtnRef.current?.focus();
-  }, [mobileNav.isOpen]);
+    mobileNavBtnRef.current?.focus()
+  }, [mobileNav.isOpen])
 
   return (
     <>
@@ -77,10 +77,11 @@ function HeaderContent() {
           maxW='1100px'
         >
           <Search />
-          <HStack spacing={0} mr={2} display={{ base: 'none', md: 'flex' }}>
-            <VersionSwitcher width='auto' flexShrink={0} />
-            <LanguageSwitcher />
-          </HStack>
+          <VersionSwitcher
+            width='auto'
+            flexShrink={0}
+            display={{ base: 'none', md: 'flex' }}
+          />
           <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
             <Link
               isExternal
@@ -141,19 +142,19 @@ function HeaderContent() {
       </Flex>
       <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
     </>
-  );
+  )
 }
 
 function Header(props: HTMLChakraProps<'header'>) {
-  const bg = useColorModeValue('white', 'gray.800');
-  const ref = React.useRef<HTMLHeadingElement>();
-  const [y, setY] = React.useState(0);
-  const { height = 0 } = ref.current?.getBoundingClientRect() ?? {};
+  const bg = useColorModeValue('white', 'gray.800')
+  const ref = React.useRef<HTMLHeadingElement>()
+  const [y, setY] = React.useState(0)
+  const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
 
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useViewportScroll()
   React.useEffect(() => {
-    return scrollY.onChange(() => setY(scrollY.get()));
-  }, [scrollY]);
+    return scrollY.onChange(() => setY(scrollY.get()))
+  }, [scrollY])
 
   return (
     <chakra.header
@@ -173,7 +174,7 @@ function Header(props: HTMLChakraProps<'header'>) {
         <HeaderContent />
       </chakra.div>
     </chakra.header>
-  );
+  )
 }
 
-export default Header;
+export default Header

@@ -31,9 +31,9 @@ One such example is the `filter` property:
 
 ```jsx
 <Image
-  src="http://placekitten.com/200/300"
-  alt="a kitten"
-  sx={{ filter: "blur(8px)" }}
+  src='http://placekitten.com/200/300'
+  alt='a kitten'
+  sx={{ filter: 'blur(8px)' }}
 />
 ```
 
@@ -42,8 +42,8 @@ One such example is the `filter` property:
 Custom CSS properties can be defined via the `sx` prop as well:
 
 ```jsx
-<Box sx={{ "--my-color": "#53c8c4" }}>
-  <Heading color="var(--my-color)" size="lg">
+<Box sx={{ '--my-color': '#53c8c4' }}>
+  <Heading color='var(--my-color)' size='lg'>
     This uses CSS Custom Properties!
   </Heading>
 </Box>
@@ -59,15 +59,15 @@ component you put `sx` on.
 > [`_groupHover` shorthand prop](/docs/features/style-props#pseudo).
 
 ```jsx
-<Box borderWidth={2} borderColor="purple.500" p={5} className="my-box">
-  <Heading size="lg">
+<Box borderWidth={2} borderColor='purple.500' p={5} className='my-box'>
+  <Heading size='lg'>
     Hover the box...
     <Box
-      as="span"
-      color="red.500"
+      as='span'
+      color='red.500'
       sx={{
-        ".my-box:hover &": {
-          color: "green.500",
+        '.my-box:hover &': {
+          color: 'green.500',
         },
       }}
     >
@@ -82,8 +82,8 @@ component you put `sx` on.
 ```jsx
 <Box
   sx={{
-    "@media print": {
-      display: "none",
+    '@media print': {
+      display: 'none',
     },
   }}
 >

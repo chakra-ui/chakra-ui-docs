@@ -28,9 +28,9 @@ function Resources() {
    * Re-use the docs sidebar so it's easier for a visitors
    * to reference components mentioned in the resource blog/video.
    */
-  const routes = getRoutes("/docs/")
+  const routes = getRoutes('/docs/')
   const data = resources.data as Resource[]
-  const groups = groupBy(data, "type")
+  const groups = groupBy(data, 'type')
 
   const BLOGS = "Blogs"
   const TALKS = "Talks"
@@ -40,9 +40,8 @@ function Resources() {
     <PageContainer
       sidebar={<Sidebar routes={routes} />}
       frontmatter={{
-        title: "Community Resources",
-        description:
-          "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+        title: t('resources.title'),
+        description: t('resources.description'),
       }}
     >
       <Text mt="2">
@@ -104,10 +103,10 @@ function ResourceSection(props: ResourceSectionProps) {
       <Heading as="h2" size="md">
         <Box
           as={icon}
-          display="inline-block"
-          verticalAlign="middle"
-          color="teal.500"
-          mr="3"
+          display='inline-block'
+          verticalAlign='middle'
+          color='teal.500'
+          mr='3'
         />
         <span>{title}</span>
       </Heading>
