@@ -36,7 +36,7 @@ function ResourceCard(props: ResourceCardProps) {
       maxW='360px'
       p={4}
       rounded='lg'
-      _hover={{ transform: 'scale(1.025)' }}
+      _hover={{ transform: 'scale(1.025)', boxShadow: 'var(--chakra-shadows-md)' }}
       bg={useColorModeValue('gray.50', 'gray.700')}
     >
       <VStack spacing={2} align='stretch'>
