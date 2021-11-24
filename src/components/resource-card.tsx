@@ -31,7 +31,14 @@ function ResourceCard(props: ResourceCardProps) {
   const color = useColorModeValue('teal.600', 'teal.400');
 
   return (
-    <LinkBox {...rest} maxW='360px' p={4} borderRadius='lg' _hover={{ transform: 'scale(1.025)' }} bg={useColorModeValue('gray.50', 'gray.700')}>
+    <LinkBox
+      {...rest}
+      maxW='360px'
+      p={4}
+      borderRadius='lg'
+      _hover={{ transform: 'scale(1.025)' }}
+      bg={useColorModeValue('gray.50', 'gray.700')}
+    >
       <VStack spacing={2} align='stretch'>
         <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
           {tags?.map((tag, index) => (
