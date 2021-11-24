@@ -65,7 +65,7 @@ function ResourceCard(props: ResourceCardProps) {
         <Text fontSize='sm' color='gray.500'>
           by {author}
         </Text>
-        <Text lineHeight='tall' py={2} opacity={0.8}>
+        <Text lineHeight='tall' opacity={0.8}>
           {description}
         </Text>
       </VStack>
