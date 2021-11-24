@@ -1,4 +1,4 @@
-import { Resource } from '../components/resource-card'
+import { Resource } from "../components/resource-card"
 
 /**
  * Main function used in resources page; it's a convenient wrapper for the logic needed
