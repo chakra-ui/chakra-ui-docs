@@ -79,6 +79,10 @@
     "title": "Community Resources",
     "description": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
     "message": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+    "searchFilter": {
+      "label": "Search",
+      "placeholder": "Example: React Chakra next.js"
+    },
     "talks": {
       "title": "Talks"
     },
