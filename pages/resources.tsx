@@ -109,10 +109,10 @@ function ResourceSection(props: ResourceSectionProps) {
         <span>{title}</span>
       </Heading>
       <FormControl id={filterInputId} mt="8" mb="8">
-        <FormLabel>Search</FormLabel>
+        <FormLabel>{t('resources.searchFilter.label')}</FormLabel>
         <Input
           onChange={formik.handleChange}
-          placeholder="Example: React Chakra next.js"
+          placeholder={t('resources.searchFilter.placeholder')}
           value={formik.values[filterInputId]}
         />
       </FormControl>
