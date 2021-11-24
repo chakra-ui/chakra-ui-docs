@@ -22,6 +22,7 @@ import { FaMicrophone, FaPenSquare, FaVideo } from "react-icons/fa"
 import { useFormik } from "formik"
 import filterResources from "utils/filter-resources"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import { t } from "utils/i18n"
 
 function Resources() {
   /**
@@ -32,9 +33,9 @@ function Resources() {
   const data = resources.data as Resource[]
   const groups = groupBy(data, 'type')
 
-  const BLOGS = "Blogs"
-  const TALKS = "Talks"
-  const VIDEOS = "Videos"
+  const BLOGS = t("resources.blogs.title")
+  const TALKS = t("resources.talks.title")
+  const VIDEOS = t("resources.videos.title")
 
   return (
     <PageContainer
@@ -44,10 +45,7 @@ function Resources() {
         description: t('resources.description'),
       }}
     >
-      <Text mt="2">
-        A rich compilation of technical descriptions and detailed information of
-        how Chakra UI works.
-      </Text>
+      <Text mt="2">{t("resources.message")}</Text>
       <Tabs colorScheme="teal" variant="enclosed" mt="2">
         <TabList>
           <Tab>{TALKS}</Tab>
