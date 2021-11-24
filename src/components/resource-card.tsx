@@ -35,7 +35,7 @@ function ResourceCard(props: ResourceCardProps) {
       {...rest}
       maxW='360px'
       p={4}
-      borderRadius='lg'
+      rounded='lg'
       _hover={{ transform: 'scale(1.025)' }}
       bg={useColorModeValue('gray.50', 'gray.700')}
     >
