@@ -1,35 +1,75 @@
 import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
+import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
 
+type ShowcaseItem = {
+  name: string
+  description: string | null
+  url: string | null
+  type: string
+  github: string | null
+  image: string | null
+}
+
+type ShowCaseType = Record<string, ShowcaseItem[]>
+
+const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
+
 async function generatePreviewImage() {
+  // Open the browser with width 1920 and height 1080
   const browser = await puppeteer.launch({
     defaultViewport: {
       width: 1920,
       height: 1080,
     },
   })
+  // Create a new page
   const page = await browser.newPage()
-  const keys = Object.keys(showcaseData)
+  // Clone the whole object
+  const newData: ShowCaseType = _.cloneDeep(showcaseData)
+  // Get all categories
+  const keys = Object.keys(newData)
 
   for (let key of keys) {
-    const dir = path.join(__dirname, '..', 'public', 'showcases', key)
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir)
+    const localDirToPreviewImageDir = path.join(
+      process.cwd(),
+      'public',
+      DIR_FOR_STORING_PREVIEW_IMAGE,
+      key,
+    )
+    // If there is no directory, create a new one
+    if (!fs.existsSync(localDirToPreviewImageDir)) {
+      fs.mkdirSync(localDirToPreviewImageDir)
     }
-    const target = showcaseData[key]
+    // Look into a specific category
+    const target = newData[key]
 
     for (let i = 0; i < target.length; i++) {
       const { url, name } = target[i]
+      // If there is no url in the item, jump to the next item
       if (!url) continue
+      // Go to the url and wait for completing loading
       await page.goto(url, { waitUntil: 'networkidle2' })
-      const imagePath = path.join(dir, `${name.split(' ').join('-')}.png`)
+
+      // Get a image file name
+      const fileName = `${name.split(' ').join('-')}.png`
+      // Get an appropriate image path
+      const imagePath = path.join(localDirToPreviewImageDir, fileName)
+      // Add image path into showcase object
+      target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
+      // Take a screenshot of the page
       await page.screenshot({ path: imagePath })
     }
   }
-
+  // Renew the whole showcase data
+  writeImagePathIntoConfigFile(newData)
   await browser.close()
+}
+
+function writeImagePathIntoConfigFile(result: ShowCaseType) {
+  fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
 }
 
 try {
