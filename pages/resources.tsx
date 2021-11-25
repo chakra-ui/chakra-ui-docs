@@ -20,9 +20,9 @@ import groupBy from 'lodash/groupBy'
 import * as React from 'react'
 import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
 import { useFormik } from 'formik'
-import filterResources from 'utils/filter-resources'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { t } from 'utils/i18n'
+import useFilteredResources from 'hooks/use-filtered-resources'
 
 function Resources() {
   /**
@@ -95,6 +95,7 @@ function ResourceSection(props: ResourceSectionProps) {
     initialValues: { [filterInputId]: '' },
     onSubmit: undefined,
   })
+  const filteredResources = useFilteredResources(formik.values[filterInputId], resources)
 
   return (
     <Box as='section' mt='8'>
@@ -118,7 +119,7 @@ function ResourceSection(props: ResourceSectionProps) {
       </FormControl>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 580: 2 }}>
         <Masonry gutter='15px'>
-          {filterResources(formik.values[filterInputId], resources).map(
+          {filteredResources.map(
             (item, index) => (
               <ResourceCard key={index} data={item} />
             ),
