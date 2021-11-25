@@ -4,16 +4,23 @@ import fs from 'fs'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
 
-type ShowcaseItem = {
+export type ShowcaseKeys =
+  | 'projects'
+  | 'websites'
+  | 'libraries'
+  | 'tools'
+  | 'articles'
+
+export type ShowcaseItem = {
   name: string
   description: string | null
   url: string | null
-  type: string
+  type: ShowcaseKeys | null
   github: string | null
   image: string | null
 }
 
-type ShowCaseType = Record<string, ShowcaseItem[]>
+export type IShowcase = Record<string, ShowcaseItem[]>
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
 
@@ -28,7 +35,7 @@ async function generatePreviewImage() {
   // Create a new page
   const page = await browser.newPage()
   // Clone the whole object
-  const newData: ShowCaseType = _.cloneDeep(showcaseData)
+  const newData = _.cloneDeep(showcaseData as IShowcase)
   // Get all categories
   const keys = Object.keys(newData)
 
@@ -68,7 +75,7 @@ async function generatePreviewImage() {
   await browser.close()
 }
 
-function writeImagePathIntoConfigFile(result: ShowCaseType) {
+function writeImagePathIntoConfigFile(result: IShowcase) {
   fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
 }
 

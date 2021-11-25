@@ -1,5 +1,6 @@
 import { chakra } from '@chakra-ui/system'
-import { Box } from '@chakra-ui/layout'
+import { Flex } from '@chakra-ui/layout'
+import type { FlexProps } from '@chakra-ui/layout'
 import NextImage, { ImageProps, ImageLoaderProps } from 'next/image'
 
 const ChakraNextUnwrappedImage = chakra(NextImage, {
@@ -38,10 +39,17 @@ const myLoader = (resolverProps: ImageLoaderProps): string => {
   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality}`
 }
 
-const ChakraNextImage = (props: ImageProps) => {
+const ChakraNextImage = (props: ImageProps & FlexProps) => {
   const { src, width, height, alt, quality, ...rest } = props
   return (
-    <Box pos='relative' cursor='pointer' className='group' {...rest}>
+    <Flex
+      pos='relative'
+      cursor='pointer'
+      className='group'
+      boxShadow='1px 1px 10px 5px rgba(0, 0, 0, .25)'
+      overflow='hidden'
+      {...rest}
+    >
       <ChakraNextUnwrappedImage
         w='auto'
         h='auto'
@@ -50,12 +58,14 @@ const ChakraNextImage = (props: ImageProps) => {
         quality={quality}
         height={height}
         placeholder='blur'
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(
+          shimmer(+width, +height),
+        )}`}
         src={src}
         alt={alt}
         transition='all 0.2s'
       />
-    </Box>
+    </Flex>
   )
 }
 
