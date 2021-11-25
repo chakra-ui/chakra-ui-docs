@@ -60,17 +60,17 @@ function ResourceCard(props: ResourceCardProps) {
           ))}
         </Wrap>
 
-        <Heading as='h3' size='sm'>
-          <LinkOverlay isExternal href={url}>
+        <LinkOverlay isExternal href={url}>
+          <Heading as='h3' size='sm'>
             <span className='content'>{heading}</span>
-          </LinkOverlay>
-        </Heading>
-        <Text fontSize='sm' color='gray.500'>
-          by {author}
-        </Text>
-        <Text lineHeight='tall' opacity={0.8}>
-          {description}
-        </Text>
+          </Heading>
+          <Text fontSize='sm' color='gray.500'>
+            by {author}
+          </Text>
+          <Text lineHeight='tall' opacity={0.8}>
+            {description}
+          </Text>
+        </LinkOverlay>
       </VStack>
     </LinkBox>
   )
