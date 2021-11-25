@@ -9,20 +9,20 @@ import {
   TabPanels,
   Input,
   FormControl,
-  FormLabel
-} from "@chakra-ui/react"
-import PageContainer from "components/page-container"
-import ResourceCard, { Resource } from "components/resource-card"
-import Sidebar from "components/sidebar/sidebar"
-import resources from "configs/resources.json"
-import { getRoutes } from "layouts/mdx"
-import groupBy from "lodash/groupBy"
-import * as React from "react"
-import { FaMicrophone, FaPenSquare, FaVideo } from "react-icons/fa"
-import { useFormik } from "formik"
-import filterResources from "utils/filter-resources"
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
-import { t } from "utils/i18n"
+  FormLabel,
+} from '@chakra-ui/react'
+import PageContainer from 'components/page-container'
+import ResourceCard, { Resource } from 'components/resource-card'
+import Sidebar from 'components/sidebar/sidebar'
+import resources from 'configs/resources.json'
+import { getRoutes } from 'layouts/mdx'
+import groupBy from 'lodash/groupBy'
+import * as React from 'react'
+import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
+import { useFormik } from 'formik'
+import filterResources from 'utils/filter-resources'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { t } from 'utils/i18n'
 
 function Resources() {
   /**
@@ -33,9 +33,9 @@ function Resources() {
   const data = resources.data as Resource[]
   const groups = groupBy(data, 'type')
 
-  const BLOGS = t("resources.blogs.title")
-  const TALKS = t("resources.talks.title")
-  const VIDEOS = t("resources.videos.title")
+  const BLOGS = t('resources.blogs.title')
+  const TALKS = t('resources.talks.title')
+  const VIDEOS = t('resources.videos.title')
 
   return (
     <PageContainer
@@ -45,8 +45,8 @@ function Resources() {
         description: t('resources.description'),
       }}
     >
-      <Text mt="2">{t("resources.message")}</Text>
-      <Tabs colorScheme="teal" variant="enclosed" mt="2">
+      <Text mt='2'>{t('resources.message')}</Text>
+      <Tabs colorScheme='teal' variant='enclosed' mt='2'>
         <TabList>
           <Tab>{TALKS}</Tab>
           <Tab>{VIDEOS}</Tab>
@@ -92,13 +92,13 @@ function ResourceSection(props: ResourceSectionProps) {
   const { icon, title, resources } = props
   const filterInputId = `resources-filter-${title.toLowerCase()}`
   const formik = useFormik({
-    initialValues: { [filterInputId]: "" },
-    onSubmit: undefined
+    initialValues: { [filterInputId]: '' },
+    onSubmit: undefined,
   })
 
   return (
-    <Box as="section" mt="8">
-      <Heading as="h2" size="md">
+    <Box as='section' mt='8'>
+      <Heading as='h2' size='md'>
         <Box
           as={icon}
           display='inline-block'
@@ -108,7 +108,7 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <span>{title}</span>
       </Heading>
-      <FormControl id={filterInputId} mt="8" mb="8">
+      <FormControl id={filterInputId} mt='8' mb='8'>
         <FormLabel>{t('resources.searchFilter.label')}</FormLabel>
         <Input
           onChange={formik.handleChange}
@@ -116,13 +116,13 @@ function ResourceSection(props: ResourceSectionProps) {
           value={formik.values[filterInputId]}
         />
       </FormControl>
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{350: 1, 580: 2}}
-      >
-        <Masonry gutter="15px">
-          {filterResources(formik.values[filterInputId], resources).map((item, index) => (
-            <ResourceCard key={index} data={item} />
-          ))}
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 580: 2 }}>
+        <Masonry gutter='15px'>
+          {filterResources(formik.values[filterInputId], resources).map(
+            (item, index) => (
+              <ResourceCard key={index} data={item} />
+            ),
+          )}
         </Masonry>
       </ResponsiveMasonry>
     </Box>

@@ -8,9 +8,9 @@ import {
   useColorModeValue,
   Wrap,
   WrapItem,
-  VStack
-} from '@chakra-ui/react';
-import * as React from 'react';
+  VStack,
+} from '@chakra-ui/react'
+import * as React from 'react'
 
 export interface Resource {
   heading: string
@@ -36,7 +36,10 @@ function ResourceCard(props: ResourceCardProps) {
       maxW='360px'
       p={4}
       rounded='lg'
-      _hover={{ transform: 'scale(1.025)', boxShadow: 'var(--chakra-shadows-md)' }}
+      _hover={{
+        transform: 'scale(1.025)',
+        boxShadow: 'var(--chakra-shadows-md)',
+      }}
       bg={useColorModeValue('gray.50', 'gray.700')}
     >
       <VStack spacing={2} align='stretch'>
@@ -70,7 +73,7 @@ function ResourceCard(props: ResourceCardProps) {
         </Text>
       </VStack>
     </LinkBox>
-  );
+  )
 }
 
 export default ResourceCard
