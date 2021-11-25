@@ -1,12 +1,13 @@
 import { useState, useCallback } from 'react'
-// import { useRouter } from 'next/router'
 import { Grid, GridItem, Box } from '@chakra-ui/layout'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import SEO from 'components/seo'
 import Header from 'components/header'
 import ChakraNextImage from 'components/chakra-next-image'
+import DiscordStrip from 'components/discord-strip'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
+import Footer from 'components/footer'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
@@ -21,16 +22,9 @@ const allItems = categories.reduce((acc, cur) => {
 
 const Showcase = () => {
   const [index, setIndex] = useState<number>(0)
-  // const { push, pathname } = useRouter()
 
   const handleTabsChange = useCallback((index: number) => {
-    if (index < 0 || index >= categories.length) {
-      setIndex(0)
-      //push({ pathname }, undefined, { shallow: true })
-    }
-
-    const key = categories[index - 1]
-    // push({ pathname, hash: key }), undefined, { shallow: true }
+    if (index < 0 || index >= categories.length) setIndex(0)
     setIndex(index)
   }, [])
 
@@ -59,22 +53,22 @@ const Showcase = () => {
       <SkipNavLink zIndex={20}>Skip to Content</SkipNavLink>
       <AdBanner />
       <Header />
-      <Box mt={20}>
+      <Box mt={20} mb={10}>
         <SkipNavContent />
 
-        <Box mx='auto' maxWidth={1440}>
+        <Box my='20' mx='auto' maxWidth={1440}>
           <Tabs
             size='md'
             variant='soft-rounded'
             colorScheme='green'
+            align={'center'}
+            isLazy={true}
             index={index}
             onChange={handleTabsChange}
           >
-            <TabList>
+            <TabList w='100%' maxW='calc(100% - 3rem)' flexWrap='wrap'>
               {categoriesWithAll.map((c) => (
-                <Tab ml='3' key={c}>
-                  {_.capitalize(c)}
-                </Tab>
+                <Tab key={c}>{_.capitalize(c)}</Tab>
               ))}
             </TabList>
             <TabPanels mt='10'>
@@ -85,18 +79,29 @@ const Showcase = () => {
                     <Grid
                       marginX='auto'
                       paddingX='1rem'
-                      templateColumns='repeat(12, 1fr)'
-                      templateRows='repeat(2, 1fr)'
+                      templateColumns={[
+                        'repeat(1, 1fr)',
+                        'repeat(1, 1fr)',
+                        'repeat(2, 1fr)',
+                        'repeat(12, 1fr)',
+                      ]}
+                      templateRows={[
+                        'repeat(1, 1fr)',
+                        'repeat(1, 1fr)',
+                        'repeat(2, 1fr)',
+                      ]}
                       rowGap={12}
                       columnGap={8}
                     >
                       {items.map(({ name, description, image }, i) => {
+                        const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
+                        const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
                         if (image == null)
                           return (
                             <GridItem
                               key={name}
-                              colSpan={i % 3 === 0 ? 6 : 3}
-                              rowSpan={i % 3 === 0 ? 2 : 1}
+                              colSpan={colSpan}
+                              rowSpan={rowSpan}
                               justifySelf='center'
                               alignSelf='center'
                               borderRadius='10px'
@@ -113,8 +118,8 @@ const Showcase = () => {
                         return (
                           <GridItem
                             key={name}
-                            colSpan={i % 3 === 0 ? 6 : 3}
-                            rowSpan={i % 3 === 0 ? 2 : 1}
+                            colSpan={colSpan}
+                            rowSpan={rowSpan}
                             justifySelf='center'
                             alignSelf='center'
                             borderRadius='10px'
@@ -136,6 +141,8 @@ const Showcase = () => {
             </TabPanels>
           </Tabs>
         </Box>
+        <DiscordStrip />
+        <Footer />
       </Box>
     </>
   )
