@@ -36,6 +36,9 @@ function ResourceCard(props: ResourceCardProps) {
       maxW='360px'
       p={4}
       rounded='lg'
+      transitionProperty='all'
+      transitionDuration='slower'
+      transitionTimingFunction='ease-out'
       _hover={{
         transform: 'scale(1.025)',
         boxShadow: 'var(--chakra-shadows-md)',
