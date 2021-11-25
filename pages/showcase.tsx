@@ -1,7 +1,8 @@
-import { useState, useCallback } from 'react'
-import { Grid, GridItem, Box } from '@chakra-ui/layout'
+import { useState, useCallback, useMemo } from 'react'
+import { Grid, GridItem, Box, Flex, Heading, Text } from '@chakra-ui/layout'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
+import { useColorModeValue } from '@chakra-ui/color-mode'
 import SEO from 'components/seo'
 import Header from 'components/header'
 import ChakraNextImage from 'components/chakra-next-image'
@@ -55,8 +56,26 @@ const Showcase = () => {
       <Header />
       <Box mt={20} mb={10}>
         <SkipNavContent />
+        <Flex mx='auto' flexDir='column' alignItems='center'>
+          <Heading
+            fontSize={{ base: '2xl', lg: '4xl' }}
+            lineHeight='1.2'
+            mb='1'
+          >
+            {t('showcase.title')}
+          </Heading>
 
-        <Box my='20' mx='auto' maxWidth={1440}>
+          <Text
+            maxW='560px'
+            mx='auto'
+            color={useColorModeValue('gray.500', 'gray.400')}
+            fontSize={{ base: 'lg', lg: 'xl' }}
+            mt='6'
+          >
+            {t('showcase.message')}
+          </Text>
+        </Flex>
+        <Box mt='10' mb='20' mx='auto' maxWidth={1440}>
           <Tabs
             size='md'
             variant='soft-rounded'
@@ -72,72 +91,88 @@ const Showcase = () => {
               ))}
             </TabList>
             <TabPanels mt='10'>
-              {categoriesWithAll.map((c) => {
-                let items = c === 'all' ? allItems : showcaseData[c]
-                return (
-                  <TabPanel key={c}>
-                    <Grid
-                      marginX='auto'
-                      paddingX='1rem'
-                      templateColumns={[
-                        'repeat(1, 1fr)',
-                        'repeat(1, 1fr)',
-                        'repeat(2, 1fr)',
-                        'repeat(12, 1fr)',
-                      ]}
-                      templateRows={[
-                        'repeat(1, 1fr)',
-                        'repeat(1, 1fr)',
-                        'repeat(2, 1fr)',
-                      ]}
-                      rowGap={12}
-                      columnGap={8}
-                    >
-                      {items.map(({ name, description, image }, i) => {
-                        const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
-                        const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
-                        if (image == null)
-                          return (
-                            <GridItem
-                              key={name}
-                              colSpan={colSpan}
-                              rowSpan={rowSpan}
-                              justifySelf='center'
-                              alignSelf='center'
-                              borderRadius='10px'
-                            >
-                              <ChakraNextImage
-                                height={478}
-                                width={850}
-                                borderRadius='5px'
-                                layout='responsive'
-                                src={`/og-image.png`}
-                              />
-                            </GridItem>
-                          )
-                        return (
-                          <GridItem
-                            key={name}
-                            colSpan={colSpan}
-                            rowSpan={rowSpan}
-                            justifySelf='center'
-                            alignSelf='center'
-                            borderRadius='10px'
-                          >
-                            <ChakraNextImage
-                              height={478}
-                              width={850}
-                              borderRadius='5px'
-                              layout='responsive'
-                              src={`/${image}`}
-                            />
-                          </GridItem>
-                        )
-                      })}
-                    </Grid>
-                  </TabPanel>
-                )
-              })}
+              {useMemo(
+                () =>
+                  categoriesWithAll.map((c) => {
+                    let items = c === 'all' ? allItems : showcaseData[c]
+                    return (
+                      <TabPanel key={c}>
+                        <Grid
+                          marginX='auto'
+                          paddingX='1rem'
+                          templateColumns={[
+                            'repeat(1, 1fr)',
+                            'repeat(1, 1fr)',
+                            'repeat(2, 1fr)',
+                            'repeat(12, 1fr)',
+                          ]}
+                          templateRows={[
+                            'repeat(1, 1fr)',
+                            'repeat(1, 1fr)',
+                            'repeat(2, 1fr)',
+                          ]}
+                          rowGap={12}
+                          columnGap={8}
+                        >
+                          {items.map(({ name, description, image }, i) => {
+                            const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
+                            const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
+                            if (image == null)
+                              return (
+                                <GridItem
+                                  key={name}
+                                  colSpan={colSpan}
+                                  rowSpan={rowSpan}
+                                  justifySelf='center'
+                                  alignSelf='center'
+                                  borderRadius='10px'
+                                  position='relative'
+                                  _after={{
+                                    content: '""',
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    backgroundColor: 'rgba(0, 0, 0, .2)',
+                                  }}
+                                >
+                                  <ChakraNextImage
+                                    height={478}
+                                    width={850}
+                                    borderRadius='5px'
+                                    layout='responsive'
+                                    src={`/og-image.png`}
+                                  />
+                                </GridItem>
+                              )
+                            return (
+                              <GridItem
+                                key={name}
+                                colSpan={colSpan}
+                                rowSpan={rowSpan}
+                                justifySelf='center'
+                                alignSelf='center'
+                                borderRadius='10px'
+                              >
+                                <ChakraNextImage
+                                  height={478}
+                                  width={850}
+                                  borderRadius='5px'
+                                  layout='responsive'
+                                  src={`/${image}`}
+                                />
+                              </GridItem>
+                            )
+                          })}
+                        </Grid>
+                      </TabPanel>
+                    )
+                  }),
+                [],
+              )}
             </TabPanels>
           </Tabs>
         </Box>
