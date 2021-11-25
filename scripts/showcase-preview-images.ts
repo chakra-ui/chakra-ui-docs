@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
+import sharp from 'sharp'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
 
@@ -23,13 +24,15 @@ export type ShowcaseItem = {
 export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]>
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
+const DEFAULT_VIEWPORT_WIDTH = 1920
+const DEFAULT_VIEWPORT_HEIGHT = 1080
 
 async function generatePreviewImage() {
   // Open the browser with width 1920 and height 1080
   const browser = await puppeteer.launch({
     defaultViewport: {
-      width: 1920,
-      height: 1080,
+      width: DEFAULT_VIEWPORT_WIDTH,
+      height: DEFAULT_VIEWPORT_HEIGHT,
     },
   })
   // Create a new page
@@ -57,8 +60,10 @@ async function generatePreviewImage() {
       const { url, name } = target[i]
       // If there is no url in the item, jump to the next item
       if (!url) continue
-      // Go to the url and wait for completing loading
+      // Go to the url and consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
       await page.goto(url, { waitUntil: 'networkidle2' })
+
+      await wait(1000)
 
       // Get a image file name
       const fileName = `${name.split(' ').join('-')}.png`
@@ -67,12 +72,23 @@ async function generatePreviewImage() {
       // Add image path into showcase object
       target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
       // Take a screenshot of the page
-      await page.screenshot({ path: imagePath })
+      const buffer = await page.screenshot()
+      // Resize the image to avoid performance issues
+      sharp(buffer)
+        .resize(850)
+        .toFile(imagePath, (err, info) => {
+          if (err) console.error(err)
+          console.log(info)
+        })
     }
   }
   // Renew the whole showcase data
   writeImagePathIntoConfigFile(newData)
   await browser.close()
+}
+
+async function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 function writeImagePathIntoConfigFile(result: IShowcase) {
