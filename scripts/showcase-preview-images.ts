@@ -20,7 +20,7 @@ export type ShowcaseItem = {
   image: string | null
 }
 
-export type IShowcase = Record<string, ShowcaseItem[]>
+export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]>
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
 

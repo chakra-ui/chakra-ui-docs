@@ -1,8 +1,18 @@
 import { useState, useCallback, useMemo } from 'react'
-import { Grid, GridItem, Box, Flex, Heading, Text } from '@chakra-ui/layout'
+import {
+  Grid,
+  GridItem,
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Link,
+  HStack,
+} from '@chakra-ui/layout'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
+import { LinkIcon, Icon } from '@chakra-ui/icons'
 import SEO from 'components/seo'
 import Header from 'components/header'
 import ChakraNextImage from 'components/chakra-next-image'
@@ -12,12 +22,15 @@ import Footer from 'components/footer'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
-import type { IShowcase } from '../scripts/showcase-preview-images'
+import type {
+  IShowcase,
+  ShowcaseItem,
+} from '../scripts/showcase-preview-images'
 
 const categories = Object.keys(showcaseData as IShowcase)
 const categoriesWithAll = ['all', ...categories]
 
-const allItems = categories.reduce((acc, cur) => {
+const allItems: ShowcaseItem[] = categories.reduce((acc, cur) => {
   return [...acc, ...showcaseData[cur]]
 }, [])
 
@@ -94,7 +107,8 @@ const Showcase = () => {
               {useMemo(
                 () =>
                   categoriesWithAll.map((c) => {
-                    let items = c === 'all' ? allItems : showcaseData[c]
+                    const items: ShowcaseItem[] =
+                      c === 'all' ? allItems : showcaseData[c]
                     return (
                       <TabPanel key={c}>
                         <Grid
@@ -114,9 +128,10 @@ const Showcase = () => {
                           rowGap={12}
                           columnGap={8}
                         >
-                          {items.map(({ name, description, image }, i) => {
+                          {items.map(({ name, image, url, github }, i) => {
                             const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
                             const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
+
                             if (image == null)
                               return (
                                 <GridItem
@@ -127,18 +142,15 @@ const Showcase = () => {
                                   alignSelf='center'
                                   borderRadius='10px'
                                   position='relative'
-                                  _after={{
-                                    content: '""',
-                                    position: 'absolute',
-                                    width: '100%',
-                                    height: '100%',
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    backgroundColor: 'rgba(0, 0, 0, .2)',
-                                  }}
+                                  role='group'
+                                  bgColor='#dedede'
                                 >
+                                  <Mask
+                                    name={name}
+                                    github={github}
+                                    url={url}
+                                    showMask={true}
+                                  />
                                   <ChakraNextImage
                                     height={478}
                                     width={850}
@@ -156,7 +168,10 @@ const Showcase = () => {
                                 justifySelf='center'
                                 alignSelf='center'
                                 borderRadius='10px'
+                                position='relative'
+                                role='group'
                               >
+                                <Mask name={name} github={github} url={url} />
                                 <ChakraNextImage
                                   height={478}
                                   width={850}
@@ -182,6 +197,90 @@ const Showcase = () => {
     </>
   )
 }
+
+const GithubIcon = (props: React.ComponentProps<'svg'>) => (
+  <svg viewBox='0 0 20 20' {...props}>
+    <path
+      fill='currentColor'
+      d='M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0'
+    />
+  </svg>
+)
+
+interface MaskProps {
+  name: string
+  url?: string
+  github?: string
+  showMask?: boolean
+}
+
+const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
+  <Flex
+    w='100%'
+    h='100%'
+    position='absolute'
+    borderRadius='5px'
+    bgColor='rgba(0, 0, 0, .6)'
+    opacity={showMask ? 0.8 : 0}
+    justifyContent='center'
+    alignItems='flex-end'
+    zIndex={showMask ? 2 : -1}
+    _groupHover={{
+      zIndex: 2,
+      opacity: 0.8,
+    }}
+    transition='.2s opacity ease'
+  >
+    <Box
+      w='100%'
+      borderBottomRadius='5px'
+      bgColor='#000000'
+      opacity='1'
+      py='2.5'
+    >
+      <Box as='span' color='white' mx='auto'>
+        <Text
+          px='10px'
+          fontSize={{ lg: 'lg', base: 'md' }}
+          fontWeight='700'
+          letterSpacing='1.2px'
+        >
+          {name}
+        </Text>
+        <HStack mt='1' alignItems='center' justifyContent='center' spacing='3'>
+          {url && (
+            <Link isExternal aria-label={`Go to ${name} website`} href={url}>
+              <Icon
+                as={LinkIcon}
+                display='block'
+                transition='color 0.2s'
+                w='5'
+                h='5'
+                _hover={{ color: 'gray.600' }}
+              />
+            </Link>
+          )}
+          {github && (
+            <Link
+              isExternal
+              aria-label={`Go to ${name} GitHub page`}
+              href={github}
+            >
+              <Icon
+                as={GithubIcon}
+                display='block'
+                transition='color 0.2s'
+                w='5'
+                h='5'
+                _hover={{ color: 'gray.600' }}
+              />
+            </Link>
+          )}
+        </HStack>
+      </Box>
+    </Box>
+  </Flex>
+)
 
 // const removeHashSign = (hash: string) => hash.replace('#', '')
 // const getHashIndexInCategory = (hash: string) => categoriesWithAll.indexOf(hash)
