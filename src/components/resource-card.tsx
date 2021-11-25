@@ -45,7 +45,7 @@ function ResourceCard(props: ResourceCardProps) {
       <VStack spacing={2} align='stretch'>
         <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
           {tags?.map((tag, index) => (
-            <WrapItem key={index}>
+            <WrapItem key={index} overflow='hidden'>
               <Badge
                 as='a'
                 rel='tag'
@@ -53,6 +53,7 @@ function ResourceCard(props: ResourceCardProps) {
                 textTransform='uppercase'
                 fontSize='xs'
                 fontWeight='bold'
+                whiteSpace='break-spaces'
               >
                 {tag}
               </Badge>
