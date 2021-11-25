@@ -8,14 +8,24 @@ import { Resource } from '../components/resource-card'
  * up the library and usage of that library away from the component.  Essentially,
  * it's responsible for setting up the library and then invoking when appropriate.
  */
- function useFilteredResources(query: string, resources: Resource[]): Resource[] {
-  const resourceKeys = ['heading', 'description', 'author', 'tags', 'type', 'url'];
+function useFilteredResources(
+  query: string,
+  resources: Resource[],
+): Resource[] {
+  const resourceKeys = [
+    'heading',
+    'description',
+    'author',
+    'tags',
+    'type',
+    'url',
+  ]
   const miniSearch = React.useMemo(() => {
     // Create instance
     const miniSearchInstance = new MiniSearch({
       idField: 'heading',
       fields: ['heading', 'description', 'author', 'tags'], // index
-      storeFields: resourceKeys
+      storeFields: resourceKeys,
     })
 
     // Add resources that will be indexed and searched
@@ -29,13 +39,13 @@ import { Resource } from '../components/resource-card'
    */
   function filterResourcesNew(): Resource[] {
     const results = miniSearch.search(query, { fuzzy: 0.2, prefix: true })
-    return results.map(result => ({
+    return results.map((result) => ({
       heading: result.heading,
       description: result.description,
       author: result.author,
       tags: result.tags,
       type: result.type,
-      url: result.url
+      url: result.url,
     }))
   }
 
