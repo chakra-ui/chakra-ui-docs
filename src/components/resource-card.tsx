@@ -12,13 +12,22 @@ import {
 } from '@chakra-ui/react'
 import * as React from 'react'
 
+export enum ResourceKeys {
+  heading = 'heading',
+  type = 'type',
+  description = 'description',
+  url = 'url',
+  author = 'author',
+  tags = 'tags',
+}
+
 export interface Resource {
-  heading: string
-  type: 'blog' | 'talk' | 'video'
-  description: string
-  url: string
-  author: string
-  tags?: string[]
+  [ResourceKeys.heading]: string
+  [ResourceKeys.type]: 'blog' | 'talk' | 'video'
+  [ResourceKeys.description]: string
+  [ResourceKeys.url]: string
+  [ResourceKeys.author]: string
+  [ResourceKeys.tags]?: string[]
 }
 
 interface ResourceCardProps extends BoxProps {
