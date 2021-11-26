@@ -1,6 +1,6 @@
 import * as React from 'react'
 import MiniSearch from 'minisearch'
-import { Resource } from '../components/resource-card'
+import { Resource, ResourceKeys } from '../components/resource-card'
 
 /**
  * Hook used for getting a list of filtered resources for the resources page.
@@ -12,20 +12,12 @@ function useFilteredResources(
   query: string,
   resources: Resource[],
 ): Resource[] {
-  const resourceKeys = [
-    'heading',
-    'description',
-    'author',
-    'tags',
-    'type',
-    'url',
-  ]
   const miniSearch = React.useMemo(() => {
     // Create instance
     const miniSearchInstance = new MiniSearch({
-      idField: 'heading',
-      fields: ['heading', 'description', 'author', 'tags'], // index
-      storeFields: resourceKeys,
+      idField: ResourceKeys.heading,
+      fields: [ResourceKeys.heading, ResourceKeys.description, ResourceKeys.author, ResourceKeys.tags], // index
+      storeFields: Object.values(ResourceKeys),
     })
 
     // Add resources that will be indexed and searched
@@ -35,7 +27,7 @@ function useFilteredResources(
   }, [resources])
 
   /**
-   * HACK: Helper function used to strip out all unnecessary keys
+   * HACK: Helper function used to strip out all unnecessary keys added by library
    */
   function filterResourcesNew(): Resource[] {
     const results = miniSearch.search(query, { fuzzy: 0.2, prefix: true })
