@@ -21,7 +21,7 @@ function useFilteredResources(
         ResourceKeys.description,
         ResourceKeys.author,
         ResourceKeys.tags,
-      ], // index
+      ], // fields to be indexed
       storeFields: Object.values(ResourceKeys),
     })
 
