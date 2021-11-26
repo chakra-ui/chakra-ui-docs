@@ -16,7 +16,12 @@ function useFilteredResources(
     // Create instance
     const miniSearchInstance = new MiniSearch({
       idField: ResourceKeys.heading,
-      fields: [ResourceKeys.heading, ResourceKeys.description, ResourceKeys.author, ResourceKeys.tags], // index
+      fields: [
+        ResourceKeys.heading,
+        ResourceKeys.description,
+        ResourceKeys.author,
+        ResourceKeys.tags,
+      ], // index
       storeFields: Object.values(ResourceKeys),
     })
 
