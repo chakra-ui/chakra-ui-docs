@@ -12,6 +12,17 @@ import {
 } from '@chakra-ui/react'
 import * as React from 'react'
 
+/**
+ * Use this as an aid for contributors.  Essentially,
+ * referencing ResourceKeys via this enum, all of which are
+ * used in the interface below, will help keep references
+ * to the Resource interface keys up to date in hooks/utils.  As an example,
+ * a utility references some keys of the interface.  The alternative
+ * to using an enum is a string literal; in this case, the utility
+ * won't always be flagged by the IDE since the code does not have a
+ * hard reference by which it can check if the string it's referencing
+ * is an existing prop of interface.
+ */
 export enum ResourceKeys {
   heading = 'heading',
   type = 'type',
