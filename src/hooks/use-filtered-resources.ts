@@ -32,9 +32,10 @@ function useFilteredResources(
   }, [resources])
 
   /**
-   * HACK: Helper function used to strip out all unnecessary keys added by library
+   * Helper function used to invoke the library method used to search resources, and then,
+   * it also strips out all unnecessary keys added by library
    */
-  function filterResourcesNew(): Resource[] {
+  function filterResources(): Resource[] {
     const results = miniSearch.search(query, { fuzzy: 0.2, prefix: true })
     return results.map((result) => ({
       heading: result.heading,
@@ -46,7 +47,7 @@ function useFilteredResources(
     }))
   }
 
-  return query.trim() !== '' ? filterResourcesNew() : resources
+  return query.trim() !== '' ? filterResources() : resources
 }
 
 export default useFilteredResources
