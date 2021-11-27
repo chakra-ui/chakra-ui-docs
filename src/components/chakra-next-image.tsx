@@ -46,7 +46,6 @@ const ChakraNextImage = (props: ImageProps & FlexProps) => {
       pos='relative'
       cursor='pointer'
       className='group'
-      boxShadow='1px 1px 10px 5px rgba(0, 0, 0, .25)'
       overflow='hidden'
       {...rest}
     >

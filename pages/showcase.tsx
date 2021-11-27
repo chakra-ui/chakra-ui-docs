@@ -9,6 +9,7 @@ import {
   Link,
   HStack,
 } from '@chakra-ui/layout'
+import type { ResponsiveValue } from '@chakra-ui/react'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
@@ -70,20 +71,15 @@ const Showcase = () => {
       <Box mt={20} mb={10}>
         <SkipNavContent />
         <Flex mx='auto' flexDir='column' alignItems='center'>
-          <Heading
-            fontSize={{ base: '2xl', lg: '4xl' }}
-            lineHeight='1.2'
-            mb='1'
-          >
+          <Heading fontSize={{ base: '2xl', lg: '4xl' }} lineHeight='1.2'>
             {t('showcase.title')}
           </Heading>
-
           <Text
             maxW='560px'
             mx='auto'
             color={useColorModeValue('gray.500', 'gray.400')}
             fontSize={{ base: 'lg', lg: 'xl' }}
-            mt='6'
+            mt='3'
           >
             {t('showcase.message')}
           </Text>
@@ -134,16 +130,10 @@ const Showcase = () => {
 
                             if (image == null)
                               return (
-                                <GridItem
+                                <ShowcaseContainerGridItem
                                   key={name}
                                   colSpan={colSpan}
                                   rowSpan={rowSpan}
-                                  justifySelf='center'
-                                  alignSelf='center'
-                                  borderRadius='10px'
-                                  position='relative'
-                                  role='group'
-                                  bgColor='#dedede'
                                 >
                                   <Mask
                                     name={name}
@@ -158,18 +148,13 @@ const Showcase = () => {
                                     layout='responsive'
                                     src={`/og-image.png`}
                                   />
-                                </GridItem>
+                                </ShowcaseContainerGridItem>
                               )
                             return (
-                              <GridItem
+                              <ShowcaseContainerGridItem
                                 key={name}
                                 colSpan={colSpan}
                                 rowSpan={rowSpan}
-                                justifySelf='center'
-                                alignSelf='center'
-                                borderRadius='10px'
-                                position='relative'
-                                role='group'
                               >
                                 <Mask name={name} github={github} url={url} />
                                 <ChakraNextImage
@@ -179,7 +164,7 @@ const Showcase = () => {
                                   layout='responsive'
                                   src={`/${image}`}
                                 />
-                              </GridItem>
+                              </ShowcaseContainerGridItem>
                             )
                           })}
                         </Grid>
@@ -206,6 +191,32 @@ const GithubIcon = (props: React.ComponentProps<'svg'>) => (
     />
   </svg>
 )
+
+interface ShowcaseContainerGridItem {
+  colSpan: ResponsiveValue<number | 'auto'>
+  rowSpan: ResponsiveValue<number | 'auto'>
+}
+
+const ShowcaseContainerGridItem: React.FC<ShowcaseContainerGridItem> = ({
+  children,
+  colSpan,
+  rowSpan,
+}) => {
+  return (
+    <GridItem
+      colSpan={colSpan}
+      rowSpan={rowSpan}
+      justifySelf='center'
+      alignSelf='center'
+      borderRadius='10px'
+      position='relative'
+      role='group'
+      boxShadow='1px 1px 5px 3px rgba(0, 0, 0, .25)'
+    >
+      {children}
+    </GridItem>
+  )
+}
 
 interface MaskProps {
   name: string
@@ -281,8 +292,5 @@ const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
     </Box>
   </Flex>
 )
-
-// const removeHashSign = (hash: string) => hash.replace('#', '')
-// const getHashIndexInCategory = (hash: string) => categoriesWithAll.indexOf(hash)
 
 export default Showcase
