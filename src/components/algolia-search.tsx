@@ -46,7 +46,6 @@ export const SearchButton = React.forwardRef(function SearchButton(
     <chakra.button
       flex='1'
       type='button'
-      role='search'
       mx='6'
       ref={ref}
       lineHeight='1.2'
@@ -62,7 +61,6 @@ export const SearchButton = React.forwardRef(function SearchButton(
       _focus={{ shadow: 'outline' }}
       shadow='base'
       rounded='md'
-      aria-label='Search the docs'
       {...props}
     >
       <SearchIcon />
