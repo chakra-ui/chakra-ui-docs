@@ -10,6 +10,7 @@ import {
   Input,
   FormControl,
   FormLabel,
+  FormHelperText,
 } from '@chakra-ui/react'
 import PageContainer from 'components/page-container'
 import ResourceCard, { Resource } from 'components/resource-card'
@@ -116,6 +117,7 @@ function ResourceSection(props: ResourceSectionProps) {
           placeholder={t('resources.searchFilter.placeholder')}
           value={formik.values[filterInputId]}
         />
+        <FormHelperText>{t('resources.searchFilter.helperText')}</FormHelperText>
       </FormControl>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 580: 2 }}>
         <Masonry gutter='15px'>
