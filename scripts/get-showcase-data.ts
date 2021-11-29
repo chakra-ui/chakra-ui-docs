@@ -29,6 +29,7 @@ export type ShowcaseItem = {
 export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]> | {}
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
+const CONFIG_PATH = './configs/showcase.json'
 const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
@@ -90,7 +91,7 @@ async function main() {
     }
   }
   // Renew the whole showcase data
-  writeShowcaseConfig(newData)
+  fs.writeFileSync(CONFIG_PATH, JSON.stringify(newData, null, 2))
   await browser.close()
 }
 
@@ -260,10 +261,6 @@ const getHomePage = async ({ owner, repo }) => {
 
 const wait = async (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms))
-
-const writeShowcaseConfig = (result: IShowcase) => {
-  fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
-}
 
 try {
   main()
