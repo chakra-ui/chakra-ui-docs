@@ -10,7 +10,7 @@
     "avatars:gen": "ts-node scripts/avatars.ts",
     "members:gen": "ts-node scripts/all-members.ts",
     "search-meta:gen": "ts-node scripts/get-search-meta.ts",
-    "showcase-preview:gen": "ts-node scripts/showcase-preview-images.ts",
+    "showcase-data:gen": "ts-node scripts/get-showcase-data.ts",
     "prop-table": "yarn props-docs build",
     "start": "next start",
     "test": "jest",

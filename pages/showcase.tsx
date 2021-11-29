@@ -23,10 +23,7 @@ import Footer from 'components/footer'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
-import type {
-  IShowcase,
-  ShowcaseItem,
-} from '../scripts/showcase-preview-images'
+import type { IShowcase, ShowcaseItem } from '../scripts/get-showcase-data'
 
 const categories = Object.keys(showcaseData as IShowcase)
 const categoriesWithAll = ['all', ...categories]

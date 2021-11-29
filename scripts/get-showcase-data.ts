@@ -1,3 +1,8 @@
+/**
+ * Generate showcase data from https://github.com/chakra-ui/awesome-chakra-ui
+ * Take websites' screenshots with puppeteer to display as preview images
+ */
+
 import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
@@ -27,39 +32,7 @@ const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
 const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
-/**
- * We might need to create a token. Or it might reach api rate limit easily
- */
-const octokit = new Octokit({
-  auth: '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',
-})
-
-//https://github.com/chakra-ui/awesome-chakra-ui
-
-const REPO_CONFIG = {
-  mediaType: {
-    format: 'raw',
-  },
-  owner: 'chakra-ui',
-  repo: 'awesome-chakra-ui',
-  path: 'README.md',
-}
-
-async function generateShowcaseData() {
-  const { data } = await octokit.rest.repos.getContent(REPO_CONFIG)
-  const splitContent = (data as any).split('##')
-  const len = splitContent.length
-
-  // Remove the first two sections and the last section (for contributors)
-  const categories = splitContent.slice(2, len - 1)
-
-  // Get the parsed data from awesome-chakra-ui
-  const parsedDataFromRepo = await parseRepoData(categories)
-
-  return parsedDataFromRepo
-}
-
-async function generateShowcaseDataWithPreviewImage() {
+async function main() {
   // Open the browser with width 1920 and height 1080
   const browser = await puppeteer.launch({
     defaultViewport: {
@@ -69,6 +42,8 @@ async function generateShowcaseDataWithPreviewImage() {
   })
   // Create a new page
   const page = await browser.newPage()
+  // Configure the navigation timeout
+  await page.setDefaultNavigationTimeout(0)
   // Clone the whole object
   const newData = await generateShowcaseData()
   // Get all categories
@@ -119,11 +94,37 @@ async function generateShowcaseDataWithPreviewImage() {
   await browser.close()
 }
 
-const wait = async (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms))
+/**
+ * We might need to create a token. Or it might reach api rate limit easily
+ */
+const octokit = new Octokit({
+  auth: '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',
+})
 
-const writeShowcaseConfig = (result: IShowcase) => {
-  fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
+//https://github.com/chakra-ui/awesome-chakra-ui
+
+const REPO_CONFIG = {
+  mediaType: {
+    format: 'raw',
+  },
+  owner: 'chakra-ui',
+  repo: 'awesome-chakra-ui',
+  path: 'README.md',
+}
+
+// Generate showcase data from awesome-chakra-ui without preview images
+async function generateShowcaseData() {
+  const { data } = await octokit.rest.repos.getContent(REPO_CONFIG)
+  const splitContent = (data as any).split('##')
+  const len = splitContent.length
+
+  // Remove the first two sections and the last section (for contributors)
+  const categories = splitContent.slice(2, len - 1)
+
+  // Get the parsed data from awesome-chakra-ui
+  const parsedDataFromRepo = await parseRepoData(categories)
+
+  return parsedDataFromRepo
 }
 
 // An instance of the item inside each of categories
@@ -152,6 +153,7 @@ class Item {
   }
 }
 
+// Parse the data into type of `IShowcase`
 const parseRepoData = async (context: string[]): Promise<IShowcase> => {
   let parsedData: IShowcase = {}
 
@@ -162,8 +164,9 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       .shift()
       .split(' ')
       .filter((s) => s !== '')[1]
-      .toLowerCase()
+      ?.toLowerCase()
     let parsedItems = []
+    if (!category) continue
 
     for (let str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
@@ -255,8 +258,15 @@ const getHomePage = async ({ owner, repo }) => {
   }
 }
 
+const wait = async (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms))
+
+const writeShowcaseConfig = (result: IShowcase) => {
+  fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
+}
+
 try {
-  generateShowcaseDataWithPreviewImage()
+  main()
 } catch (err) {
   console.log(err)
 }
