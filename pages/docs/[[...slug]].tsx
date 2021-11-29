@@ -25,6 +25,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]
-  const doc = allDocs.find((doc) => doc._id.includes(params.join('/')))
+  const doc = allDocs.find((doc) => doc._id.endsWith(`${params.join('/')}.mdx`))
   return { props: { doc } }
 }

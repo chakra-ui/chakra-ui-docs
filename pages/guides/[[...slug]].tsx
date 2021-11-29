@@ -25,6 +25,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]
-  const guide = allGuides.find((guide) => guide._id.includes(params.join('/')))
+  const guide = allGuides.find((guide) =>
+    guide._id.endsWith(`${params.join('/')}.mdx`),
+  )
   return { props: { guide } }
 }
