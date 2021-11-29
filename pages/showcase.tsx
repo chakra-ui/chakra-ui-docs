@@ -236,6 +236,7 @@ const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
           fontSize={{ lg: 'lg', base: 'md' }}
           fontWeight='700'
           letterSpacing='1.2px'
+          noOfLines={2}
         >
           {name}
         </Text>
