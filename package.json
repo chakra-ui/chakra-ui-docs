@@ -42,7 +42,6 @@
     "markdown-toc": "^1.2.0",
     "match-sorter": "^6.3.1",
     "mdx-bundler": "^7.0.0",
-    "minisearch": "^3.2.0",
     "next": "^12.0.4",
     "next-contentlayer": "^0.0.32",
     "next-seo": "^4.28.1",
