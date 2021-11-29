@@ -22,7 +22,7 @@ import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
 import { useFormik } from 'formik'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { t } from 'utils/i18n'
-import useFilteredResources from 'hooks/use-filtered-resources'
+import { filterResources } from 'utils/filter-resources'
 
 function Resources() {
   /**
@@ -95,7 +95,7 @@ function ResourceSection(props: ResourceSectionProps) {
     initialValues: { [filterInputId]: '' },
     onSubmit: undefined,
   })
-  const filteredResources = useFilteredResources(formik.values[filterInputId], resources)
+  const filteredResources = filterResources(formik.values[filterInputId], resources)
 
   return (
     <Box as='section' mt='8'>
