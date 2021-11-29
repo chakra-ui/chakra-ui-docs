@@ -81,7 +81,7 @@
     "message": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
     "searchFilter": {
       "label": "Search",
-      "placeholder": "Example: React Chakra next.js"
+      "placeholder": "react"
     },
     "talks": {
       "title": "Talks"
