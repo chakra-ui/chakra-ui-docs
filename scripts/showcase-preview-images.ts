@@ -5,8 +5,6 @@ import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
 
-import showcaseData from '../configs/showcase.json'
-
 export type ShowcaseKeys =
   | 'projects'
   | 'websites'
@@ -23,7 +21,7 @@ export type ShowcaseItem = {
   image: string | null
 }
 
-export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]>
+export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]> | {}
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
 const DEFAULT_VIEWPORT_WIDTH = 1920
@@ -72,7 +70,7 @@ async function generatePreviewImage() {
   // Create a new page
   const page = await browser.newPage()
   // Clone the whole object
-  const newData = _.cloneDeep(showcaseData as IShowcase)
+  const newData = await generateShowcaseData()
   // Get all categories
   const keys = Object.keys(newData)
 
@@ -155,8 +153,8 @@ class Item {
   }
 }
 
-const parseRepoData = async (context: string[]) => {
-  let parsedData = {}
+const parseRepoData = async (context: string[]): Promise<IShowcase> => {
+  let parsedData: IShowcase = {}
 
   for (let c of context) {
     const splitItems = c.split('\n').filter((s) => s !== '')
@@ -207,25 +205,24 @@ const parseRepoData = async (context: string[]) => {
         }),
       )
     }
-    parsedData[category] = parsedItems
+    parsedData[category as ShowcaseKeys] = parsedItems
   }
 
   return parsedData
 }
 
-const isGithubUrl = (url) => {
+const isGithubUrl = (url: string) => {
   const githubUrlPrefix = '^(https|http)://github.com/'
   return new RegExp(githubUrlPrefix).test(url)
 }
 
-const parseGithubUrl = (url) => {
+const parseGithubUrl = (url: string) => {
   if (!isGithubUrl(url)) return
 
   const splitUrl = url.split('/').filter((s) => s !== '')
   const len = splitUrl.length
 
   const owner = splitUrl[len - 2]
-
   const repo = splitUrl[len - 1]
 
   return { owner, repo }
