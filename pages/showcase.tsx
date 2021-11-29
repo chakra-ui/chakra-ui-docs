@@ -43,22 +43,6 @@ const Showcase = () => {
     setIndex(index)
   }, [])
 
-  /*
-    Set hash in the first render
-
-    Troubleshooting
-    If using hash to get key, it might happen Error: Cancel rendering route
-    More Info: https://github.com/vercel/next.js/issues/2476
-   */
-  // useEffect(() => {
-  //   const hash = window?.location?.hash
-  //   if (hash) {
-  //     const hashStringWithoutSign = removeHashSign(hash)
-  //     const categoryIndex = getHashIndexInCategory(hashStringWithoutSign)
-  //     setIndex(categoryIndex !== -1 ? categoryIndex : 0)
-  //   }
-  // }, [])
-
   return (
     <>
       <SEO
@@ -128,7 +112,7 @@ const Showcase = () => {
                             const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
                             const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
 
-                            if (image == null)
+                            if (image === null)
                               return (
                                 <ShowcaseContainerGridItem
                                   key={name}
@@ -144,7 +128,7 @@ const Showcase = () => {
                                   <ChakraNextImage
                                     height={478}
                                     width={850}
-                                    borderRadius='5px'
+                                    rounded='md'
                                     layout='responsive'
                                     src={`/og-image.png`}
                                   />
@@ -160,7 +144,7 @@ const Showcase = () => {
                                 <ChakraNextImage
                                   height={478}
                                   width={850}
-                                  borderRadius='5px'
+                                  rounded='md'
                                   layout='responsive'
                                   src={`/${image}`}
                                 />
@@ -208,10 +192,10 @@ const ShowcaseContainerGridItem: React.FC<ShowcaseContainerGridItem> = ({
       rowSpan={rowSpan}
       justifySelf='center'
       alignSelf='center'
-      borderRadius='10px'
+      rounded='lg'
       position='relative'
       role='group'
-      boxShadow='1px 1px 5px 3px rgba(0, 0, 0, .25)'
+      boxShadow='md'
     >
       {children}
     </GridItem>
@@ -227,25 +211,25 @@ interface MaskProps {
 
 const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
   <Flex
-    w='100%'
-    h='100%'
+    w='full'
+    h='full'
     position='absolute'
-    borderRadius='5px'
-    bgColor='rgba(0, 0, 0, .6)'
-    opacity={showMask ? 0.8 : 0}
+    rounded='md'
+    bg='blackAlpha.400'
+    opacity={showMask ? 1 : 0}
     justifyContent='center'
     alignItems='flex-end'
     zIndex={showMask ? 2 : -1}
     _groupHover={{
       zIndex: 2,
-      opacity: 0.8,
+      opacity: 1,
     }}
-    transition='.2s opacity ease'
+    transition='.5s opacity ease-out'
   >
     <Box
-      w='100%'
-      borderBottomRadius='5px'
-      bgColor='#000000'
+      w='full'
+      borderBottomRadius='md'
+      bgColor='blackAlpha.700'
       opacity='1'
       py='2.5'
     >
@@ -260,15 +244,24 @@ const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
         </Text>
         <HStack mt='1' alignItems='center' justifyContent='center' spacing='3'>
           {url && (
-            <Link isExternal aria-label={`Go to ${name} website`} href={url}>
-              <Icon
-                as={LinkIcon}
-                display='block'
-                transition='color 0.2s'
-                w='5'
-                h='5'
-                _hover={{ color: 'gray.600' }}
-              />
+            <Link
+              isExternal
+              aria-label={`Go to ${name} website`}
+              href={url}
+              w={!github ? 'full' : 'auto'}
+              px={4}
+            >
+              {!github && <Text isTruncated>{url}</Text>}
+              {github && (
+                <Icon
+                  as={LinkIcon}
+                  display='block'
+                  transition='color 0.2s'
+                  w='5'
+                  h='5'
+                  _hover={{ color: 'gray.600' }}
+                />
+              )}
             </Link>
           )}
           {github && (
@@ -276,15 +269,20 @@ const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
               isExternal
               aria-label={`Go to ${name} GitHub page`}
               href={github}
+              w={!url ? 'full' : 'auto'}
+              px={4}
             >
-              <Icon
-                as={GithubIcon}
-                display='block'
-                transition='color 0.2s'
-                w='5'
-                h='5'
-                _hover={{ color: 'gray.600' }}
-              />
+              {!url && <Text isTruncated>{github}</Text>}
+              {url && (
+                <Icon
+                  as={GithubIcon}
+                  display='block'
+                  transition='color 0.2s'
+                  w='5'
+                  h='5'
+                  _hover={{ color: 'gray.600' }}
+                />
+              )}
             </Link>
           )}
         </HStack>
