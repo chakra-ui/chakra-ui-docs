@@ -46,6 +46,7 @@
     "next": "^12.0.4",
     "next-contentlayer": "^0.0.32",
     "next-seo": "^4.28.1",
+    "octokit": "^1.7.1",
     "prism-react-renderer": "^1.1.1",
     "puppeteer": "^11.0.0",
     "react": "^17.0.2",
