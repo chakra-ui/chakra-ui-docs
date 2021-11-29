@@ -34,6 +34,8 @@ const octokit = new Octokit({
   auth: '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',
 })
 
+//https://github.com/chakra-ui/awesome-chakra-ui
+
 const REPO_CONFIG = {
   mediaType: {
     format: 'raw',
@@ -48,18 +50,16 @@ async function generateShowcaseData() {
   const splitContent = (data as any).split('##')
   const len = splitContent.length
 
+  // Remove the first two sections and the last section (for contributors)
   const categories = splitContent.slice(2, len - 1)
 
-  const parsedDataFromAwesomeChakraUI = await parseRepoData(
-    categories.slice(0, 1),
-  )
+  // Get the parsed data from awesome-chakra-ui
+  const parsedDataFromRepo = await parseRepoData(categories)
 
-  console.log(JSON.stringify(parsedDataFromAwesomeChakraUI, null, 2))
-
-  return parsedDataFromAwesomeChakraUI
+  return parsedDataFromRepo
 }
 
-async function generatePreviewImage() {
+async function generateShowcaseDataWithPreviewImage() {
   // Open the browser with width 1920 and height 1080
   const browser = await puppeteer.launch({
     defaultViewport: {
@@ -115,19 +115,18 @@ async function generatePreviewImage() {
     }
   }
   // Renew the whole showcase data
-  writeImagePathIntoConfigFile(newData)
+  writeShowcaseConfig(newData)
   await browser.close()
 }
 
 const wait = async (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms))
 
-const writeImagePathIntoConfigFile = (result: IShowcase) => {
+const writeShowcaseConfig = (result: IShowcase) => {
   fs.writeFileSync('./configs/showcase.json', JSON.stringify(result, null, 2))
 }
 
-//https://github.com/chakra-ui/awesome-chakra-ui
-
+// An instance of the item inside each of categories
 class Item {
   name: string
   description?: string
@@ -163,21 +162,29 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       .shift()
       .split(' ')
       .filter((s) => s !== '')[1]
+      .toLowerCase()
     let parsedItems = []
 
     for (let str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
       const parentheses = /\(((https|http).*?)\)/
+      /**
+       * More about string.match()
+       * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+       */
+
       // Get the content inside the first curly brackets, array[1]
       const name = str.match(curlyBraces)[1]
       // Get what we caught in the first parentheses, using array[1]
       const link = str.match(parentheses)[1]
       // Description
+
       const description = str
         .replace(curlyBraces, '')
         .replace(parentheses, '')
         .split(':')
         .filter((s) => s !== ' ')[1]
+        ?.trim()
 
       if (!isGithubUrl(link)) {
         parsedItems.push(
@@ -187,18 +194,20 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       }
       const { owner, repo } = parseGithubUrl(link)
 
-      let homepage = ''
+      // Get the homepage from repo
+      let url = ''
 
       try {
-        homepage = await getHomePage({ owner, repo })
+        url = await getHomePage({ owner, repo })
       } catch (err) {
         console.error(err)
+        continue
       }
 
       parsedItems.push(
         new Item({
           name,
-          url: homepage,
+          url,
           github: link,
           description,
           type: category,
@@ -211,16 +220,21 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
   return parsedData
 }
 
+// Check if the url is a github's url
 const isGithubUrl = (url: string) => {
   const githubUrlPrefix = '^(https|http)://github.com/'
   return new RegExp(githubUrlPrefix).test(url)
 }
 
+// Parse the url of the github repo to get { owner, repo }
 const parseGithubUrl = (url: string) => {
   if (!isGithubUrl(url)) return
 
   const splitUrl = url.split('/').filter((s) => s !== '')
   const len = splitUrl.length
+
+  // Check if the url is a root of the repo
+  if (len !== 4) return
 
   const owner = splitUrl[len - 2]
   const repo = splitUrl[len - 1]
@@ -228,22 +242,21 @@ const parseGithubUrl = (url: string) => {
   return { owner, repo }
 }
 
+// Get the homepage's url from repo
 const getHomePage = async ({ owner, repo }) => {
   try {
-    const {
-      data: { homepage },
-    } = await octokit.rest.repos.get({
+    const { data } = await octokit.rest.repos.get({
       owner,
       repo,
     })
-    return homepage || null
+    return data?.homepage || null
   } catch (err) {
     console.error(err)
   }
 }
 
 try {
-  generatePreviewImage()
+  generateShowcaseDataWithPreviewImage()
 } catch (err) {
   console.log(err)
 }
