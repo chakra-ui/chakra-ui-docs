@@ -971,6 +971,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "rodrimaia",
+      "name": "Rodrigo Maia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2081077?v=4",
+      "profile": "http://rodrigomaia.me",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
