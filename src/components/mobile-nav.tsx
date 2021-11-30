@@ -4,6 +4,8 @@ import {
   Center,
   CloseButton,
   Flex,
+  Grid,
+  GridItem,
   HStack,
   IconButton,
   IconButtonProps,
@@ -32,7 +34,7 @@ function NavLink({ href, children }) {
   const isActive = pathname.includes(group)
 
   return (
-    <NextLink href={href}>
+    <GridItem as={NextLink} href={href}>
       <Center
         flex='1'
         minH='40px'
@@ -49,7 +51,7 @@ function NavLink({ href, children }) {
       >
         {children}
       </Center>
-    </NextLink>
+    </GridItem>
   )
 }
 
@@ -118,22 +120,28 @@ export function MobileNavContent(props: MobileNavContentProps) {
                     <CloseButton ref={closeBtnRef} onClick={onClose} />
                   </HStack>
                 </Flex>
-                <Box px='6' pb='6' pt='2' shadow={shadow}>
-                  <HStack>
-                    <NavLink href='/docs/getting-started'>
-                      {t('component.mobile-nav.docs')}
-                    </NavLink>
-                    <NavLink href='/guides/integrations/with-cra'>
-                      {t('component.mobile-nav.guides')}
-                    </NavLink>
-                    <NavLink href='/faq'>
-                      {t('component.mobile-nav.faq')}
-                    </NavLink>
-                    <NavLink href='/team'>
-                      {t('component.mobile-nav.team')}
-                    </NavLink>
-                  </HStack>
-                </Box>
+                <Grid
+                  px='6'
+                  pb='6'
+                  pt='2'
+                  shadow={shadow}
+                  templateColumns='repeat(2, 1fr)'
+                  gap='2'
+                >
+                  <NavLink href='/docs/getting-started'>
+                    {t('component.mobile-nav.docs')}
+                  </NavLink>
+                  <NavLink href='/guides/integrations/with-cra'>
+                    {t('component.mobile-nav.guides')}
+                  </NavLink>
+                  <NavLink href='/resources'>
+                    {t('component.mobile-nav.resources')}
+                  </NavLink>
+                  <NavLink href='/faq'>{t('component.mobile-nav.faq')}</NavLink>
+                  <NavLink href='/team'>
+                    {t('component.mobile-nav.team')}
+                  </NavLink>
+                </Grid>
               </Box>
 
               <ScrollView
