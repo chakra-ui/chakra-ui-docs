@@ -20,10 +20,7 @@
           "title": "The as prop",
           "path": "/guides/as-prop"
         },
-        {
-          "title": "Using Fonts",
-          "path": "/guides/using-fonts"
-        },
+
         {
           "title": "Getting Started",
           "path": "/guides/getting-started",
@@ -75,6 +72,21 @@
             {
               "title": "React Table",
               "path": "/guides/integrations/with-react-table"
+            }
+          ]
+        },
+        {
+          "title": "Recipes",
+          "path": "/guides/recipes",
+          "open": true,
+          "routes": [
+            {
+              "title": "Using Fonts",
+              "path": "/guides/recipes/using-fonts"
+            },
+            {
+              "title": "Page-Specific Color mode",
+              "path": "/guides/recipes/page-specific-color-mode"
             }
           ]
         }
