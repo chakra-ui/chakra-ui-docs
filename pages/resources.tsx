@@ -120,7 +120,7 @@ function ResourceSection(props: ResourceSectionProps) {
         <FormHelperText>{t('resources.searchFilter.helperText')}</FormHelperText>
       </FormControl>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 580: 2 }}>
-        <Masonry gutter='15px'>
+        <Masonry gutter='16px'>
           {filteredResources.map(
             (item, index) => (
               <ResourceCard key={index} data={item} />
