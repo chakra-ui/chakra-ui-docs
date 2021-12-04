@@ -143,7 +143,8 @@
       "component-links": {
         "view-source": "View source",
         "view-storybook": "View storybook",
-        "view-theme-source": "View theme source"
+        "view-theme-source": "View theme source",
+        "view-video": "Watch video"
       }
     },
     "algolia-search": {
