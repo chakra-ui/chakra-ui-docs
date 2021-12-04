@@ -34,6 +34,7 @@ const myLoader = (resolverProps: ImageLoaderProps): string => {
 
 const ChakraNextImage = (props: ImageProps & FlexProps) => {
   const { src, width, height, alt, quality, ...rest } = props
+
   return (
     <Flex
       pos='relative'

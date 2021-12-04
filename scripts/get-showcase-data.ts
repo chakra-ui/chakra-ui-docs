@@ -68,6 +68,13 @@ async function main() {
       const { url, name } = target[i]
       // If there is no url in the item, jump to the next item
       if (!url) continue
+
+      // If the url is from youtube, use the thumbnail's url instead of a screenshot of pages
+      if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
+        target[i].image = getYouTubeThumbnail(url)
+        continue
+      }
+
       // Go to the url and consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
       await page.goto(url, { waitUntil: 'networkidle2' })
 
@@ -99,7 +106,7 @@ async function main() {
  * We might need to create a token. Or it might reach api rate limit easily
  */
 const octokit = new Octokit({
-  auth: process.env.OCTOKIT_TOKEN,
+  auth: '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',
 })
 
 //https://github.com/chakra-ui/awesome-chakra-ui
@@ -228,6 +235,32 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
 const isGithubUrl = (url: string) => {
   const githubUrlPrefix = '^(https|http)://github.com/'
   return new RegExp(githubUrlPrefix).test(url)
+}
+
+/**
+ * The url of youtube video should be
+ * https://www.youtube.com/watch?v={youtubeId} or https://youtu.be/{youtubeId}
+ */
+const youtubeVideoUrlPrefix = /(https|http):\/\/(www.|)youtube.com\/watch\?v=+/i
+const youtubeShortUrlPrefix = /(https|http):\/\/youtu.be\//i
+
+// Check if the url is from youtube
+const isYoutubeVideoUrl = (url: string) => youtubeVideoUrlPrefix.test(url)
+const isYoutubeShortUrl = (url: string) => youtubeShortUrlPrefix.test(url)
+
+const getVideoYoutubeId = (youtubeUrl: string) =>
+  isYoutubeVideoUrl(youtubeUrl)
+    ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/\&.*/, '')
+    : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/\&.*/, '')
+
+/**
+ * A thumbnail's structure should be
+ * https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg
+ * ex: https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg
+ */
+const getYouTubeThumbnail = (youtubeUrl: string) => {
+  const youtubeId = getVideoYoutubeId(youtubeUrl)
+  return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
 }
 
 // Parse the url of the github repo to get { owner, repo }

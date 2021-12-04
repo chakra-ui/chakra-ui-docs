@@ -165,14 +165,6 @@
       "type": "libraries"
     },
     {
-      "name": "Rock-ui",
-      "description": "Rock Content Design System component kit in React. Based out on Chakra-UI.",
-      "url": null,
-      "github": "https://github.com/rockcontent/rock-ui",
-      "image": null,
-      "type": "libraries"
-    },
-    {
       "name": "React-hook-form-generator",
       "description": "Generate React forms from schema using Chakra UI and React Hook Form.",
       "url": null,
@@ -186,6 +178,14 @@
       "url": null,
       "github": "https://github.com/echobind/bisonapp",
       "image": null,
+      "type": "libraries"
+    },
+    {
+      "name": "Fire Hydrant Design System",
+      "description": "FireHydrant flavored React component library, built using Chakra UI",
+      "url": "https://firehydrant.github.io/design-system/",
+      "github": "https://github.com/firehydrant/design-system",
+      "image": "showcases/libraries/Fire-Hydrant-Design-System.png",
       "type": "libraries"
     }
   ],
@@ -367,7 +367,7 @@
       "description": null,
       "url": "https://youtu.be/wI2vqXsjsIo",
       "github": null,
-      "image": "showcases/videos/Getting-Started-with-Chakra-UI.png",
+      "image": "https://img.youtube.com/vi/wI2vqXsjsIo/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -375,7 +375,7 @@
       "description": null,
       "url": "https://www.youtube.com/watch?v=I5xEc9t-HZg&t=1182s",
       "github": null,
-      "image": "showcases/videos/The-Future-of-Chakra-UI-(with-Segun-Adebayo-&-Lee-Robinson).png",
+      "image": "https://img.youtube.com/vi/I5xEc9t-HZg/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -383,7 +383,7 @@
       "description": null,
       "url": "https://youtu.be/bJmFwle8Ax0",
       "github": null,
-      "image": "showcases/videos/Building-an-Absence-Tracker-with-Blitz-JS-and-Chakra-UI-(Series).png",
+      "image": "https://img.youtube.com/vi/bJmFwle8Ax0/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -391,7 +391,7 @@
       "description": null,
       "url": "https://youtube.com/watch?v=ubB5l-HVPgY&feature=share",
       "github": null,
-      "image": "showcases/videos/How-to-use-Chakra-UI-with-Next.js-and-React.png",
+      "image": "https://img.youtube.com/vi/ubB5l-HVPgY/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -399,7 +399,7 @@
       "description": null,
       "url": "https://youtube.com/watch?v=1J8dUyeUWO4&feature=share",
       "github": null,
-      "image": "showcases/videos/Customise-your-theme-and-components.png",
+      "image": "https://img.youtube.com/vi/1J8dUyeUWO4/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -407,7 +407,7 @@
       "description": null,
       "url": "https://youtube.com/watch?v=QVnkGqEsbK0&feature=share",
       "github": null,
-      "image": "showcases/videos/Learn-Chakra-UI-by-building-a-Todo-Application-with-Local-Storage,-Dark-Mode-enabled..png",
+      "image": "https://img.youtube.com/vi/QVnkGqEsbK0/maxresdefault.jpg",
       "type": "videos"
     },
     {
@@ -415,7 +415,7 @@
       "description": null,
       "url": "https://youtu.be/Gm7qHn9Y_Ro",
       "github": null,
-      "image": "showcases/videos/Design-Workflow-with-Chakra-UI-and-Figma.png",
+      "image": "https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg",
       "type": "videos"
     }
   ]

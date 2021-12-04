@@ -87,7 +87,7 @@ const Showcase = () => {
                       width={850}
                       rounded='md'
                       layout='responsive'
-                      src={`/${image}`}
+                      src={/^(https|http)/.test(image) ? image : `/${image}`}
                     />
                   </ShowcaseGridItem>
                 )
