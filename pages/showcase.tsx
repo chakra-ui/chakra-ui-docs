@@ -40,6 +40,74 @@ const Showcase = () => {
     setIndex(index)
   }, [])
 
+  const showcaseItems = useMemo(
+    () =>
+      categoriesWithAll.map((c) => {
+        const items: ShowcaseItem[] = c === 'all' ? allItems : showcaseData[c]
+        return (
+          <TabPanel key={c}>
+            <Grid
+              marginX='auto'
+              paddingX='1rem'
+              templateColumns={[
+                'repeat(1, 1fr)',
+                'repeat(1, 1fr)',
+                'repeat(2, 1fr)',
+                'repeat(12, 1fr)',
+              ]}
+              templateRows={[
+                'repeat(1, 1fr)',
+                'repeat(1, 1fr)',
+                'repeat(2, 1fr)',
+              ]}
+              rowGap={12}
+              columnGap={8}
+            >
+              {items.map(({ name, image, url, github }, i) => {
+                const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
+                const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
+
+                if (image === null)
+                  return (
+                    <ShowcaseContainerGridItem
+                      key={name}
+                      colSpan={colSpan}
+                      rowSpan={rowSpan}
+                    >
+                      <Mask name={name} github={github} url={url} showMask />
+                      <ChakraNextImage
+                        height={478}
+                        width={850}
+                        rounded='md'
+                        layout='responsive'
+                        src={`/og-image.png`}
+                      />
+                    </ShowcaseContainerGridItem>
+                  )
+                return (
+                  <ShowcaseContainerGridItem
+                    key={name}
+                    colSpan={colSpan}
+                    rowSpan={rowSpan}
+                  >
+                    <Mask name={name} github={github} url={url} />
+                    <ChakraNextImage
+                      height={478}
+                      width={850}
+                      rounded='md'
+                      layout='responsive'
+                      src={`/${image}`}
+                    />
+                  </ShowcaseContainerGridItem>
+                )
+              })}
+            </Grid>
+          </TabPanel>
+        )
+      }),
+    [],
+  )
+
   return (
     <>
       <SEO
@@ -71,7 +139,7 @@ const Showcase = () => {
             variant='soft-rounded'
             colorScheme='green'
             align={'center'}
-            isLazy={true}
+            isLazy
             index={index}
             onChange={handleTabsChange}
           >
@@ -80,81 +148,7 @@ const Showcase = () => {
                 <Tab key={c}>{_.capitalize(c)}</Tab>
               ))}
             </TabList>
-            <TabPanels mt='10'>
-              {useMemo(
-                () =>
-                  categoriesWithAll.map((c) => {
-                    const items: ShowcaseItem[] =
-                      c === 'all' ? allItems : showcaseData[c]
-                    return (
-                      <TabPanel key={c}>
-                        <Grid
-                          marginX='auto'
-                          paddingX='1rem'
-                          templateColumns={[
-                            'repeat(1, 1fr)',
-                            'repeat(1, 1fr)',
-                            'repeat(2, 1fr)',
-                            'repeat(12, 1fr)',
-                          ]}
-                          templateRows={[
-                            'repeat(1, 1fr)',
-                            'repeat(1, 1fr)',
-                            'repeat(2, 1fr)',
-                          ]}
-                          rowGap={12}
-                          columnGap={8}
-                        >
-                          {items.map(({ name, image, url, github }, i) => {
-                            const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
-                            const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
-
-                            if (image === null)
-                              return (
-                                <ShowcaseContainerGridItem
-                                  key={name}
-                                  colSpan={colSpan}
-                                  rowSpan={rowSpan}
-                                >
-                                  <Mask
-                                    name={name}
-                                    github={github}
-                                    url={url}
-                                    showMask={true}
-                                  />
-                                  <ChakraNextImage
-                                    height={478}
-                                    width={850}
-                                    rounded='md'
-                                    layout='responsive'
-                                    src={`/og-image.png`}
-                                  />
-                                </ShowcaseContainerGridItem>
-                              )
-                            return (
-                              <ShowcaseContainerGridItem
-                                key={name}
-                                colSpan={colSpan}
-                                rowSpan={rowSpan}
-                              >
-                                <Mask name={name} github={github} url={url} />
-                                <ChakraNextImage
-                                  height={478}
-                                  width={850}
-                                  rounded='md'
-                                  layout='responsive'
-                                  src={`/${image}`}
-                                />
-                              </ShowcaseContainerGridItem>
-                            )
-                          })}
-                        </Grid>
-                      </TabPanel>
-                    )
-                  }),
-                [],
-              )}
-            </TabPanels>
+            <TabPanels mt='10'>{showcaseItems}</TabPanels>
           </Tabs>
         </Box>
         <DiscordStrip />
