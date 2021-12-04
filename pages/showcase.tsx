@@ -1,6 +1,5 @@
 import { useState, useCallback, useMemo } from 'react'
-import { Grid, GridItem, Box, Flex, Heading, Text } from '@chakra-ui/layout'
-import type { ResponsiveValue } from '@chakra-ui/react'
+import { Grid, Box, Flex, Heading, Text } from '@chakra-ui/layout'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
@@ -9,8 +8,9 @@ import Header from 'components/header'
 import ChakraNextImage from 'components/chakra-next-image'
 import DiscordStrip from 'components/discord-strip'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
-import Footer from 'components/footer'
+import ShowcaseGridItem from 'components/showcase-grid-item'
 import Mask from 'components/mask'
+import Footer from 'components/footer'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
@@ -60,7 +60,7 @@ const Showcase = () => {
 
                 if (image === null)
                   return (
-                    <ShowcaseContainerGridItem
+                    <ShowcaseGridItem
                       key={name}
                       colSpan={colSpan}
                       rowSpan={rowSpan}
@@ -73,10 +73,10 @@ const Showcase = () => {
                         layout='responsive'
                         src={`/og-image.png`}
                       />
-                    </ShowcaseContainerGridItem>
+                    </ShowcaseGridItem>
                   )
                 return (
-                  <ShowcaseContainerGridItem
+                  <ShowcaseGridItem
                     key={name}
                     colSpan={colSpan}
                     rowSpan={rowSpan}
@@ -89,7 +89,7 @@ const Showcase = () => {
                       layout='responsive'
                       src={`/${image}`}
                     />
-                  </ShowcaseContainerGridItem>
+                  </ShowcaseGridItem>
                 )
               })}
             </Grid>
@@ -149,29 +149,4 @@ const Showcase = () => {
   )
 }
 
-interface ShowcaseContainerGridItem {
-  colSpan: ResponsiveValue<number | 'auto'>
-  rowSpan: ResponsiveValue<number | 'auto'>
-}
-
-const ShowcaseContainerGridItem: React.FC<ShowcaseContainerGridItem> = ({
-  children,
-  colSpan,
-  rowSpan,
-}) => {
-  return (
-    <GridItem
-      colSpan={colSpan}
-      rowSpan={rowSpan}
-      justifySelf='center'
-      alignSelf='center'
-      rounded='lg'
-      position='relative'
-      role='group'
-      boxShadow='md'
-    >
-      {children}
-    </GridItem>
-  )
-}
 export default Showcase
