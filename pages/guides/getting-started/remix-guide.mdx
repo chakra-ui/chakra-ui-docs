@@ -5,8 +5,6 @@ tags: ['remix']
 author: noobinthisgame
 ---
 
-> This guide is still work in progress! Feel free to contribute if you have built something with Remix and Chakra UI 😃
-
 #### 1. Installation
 
 Inside your `Remix` project root directory, install Chakra UI by running:
@@ -32,6 +30,40 @@ export default function App() {
     <Document>
       <ChakraProvider>
         <Outlet />
+      </ChakraProvider>
+    </Document>
+  )
+}
+```
+
+Additionally with `Remix` you'll need to setup the `ChakraProvider` in every
+other place where the full Document gets replaced as in `ErrorBoundary` and
+`CatchBoundary`:
+
+```jsx live=false
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <Document title='Error!'>
+      <ChakraProvider>
+        <Box>
+          <Heading as={h1}>There was an error</Heading>
+        </Box>
+      </ChakraProvider>
+    </Document>
+  )
+}
+
+export function CatchBoundary() {
+  let caught = useCatch()
+
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <ChakraProvider>
+        <Box>
+          <Heading as={h1}>
+            {caught.status} {caught.statusText}
+          </Heading>
+        </Box>
       </ChakraProvider>
     </Document>
   )
