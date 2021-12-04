@@ -99,7 +99,7 @@ async function main() {
  * We might need to create a token. Or it might reach api rate limit easily
  */
 const octokit = new Octokit({
-  auth: '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',
+  auth: process.env.OCTOKIT_TOKEN,
 })
 
 //https://github.com/chakra-ui/awesome-chakra-ui
