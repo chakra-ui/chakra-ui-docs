@@ -1,25 +1,16 @@
 import { useState, useCallback, useMemo } from 'react'
-import {
-  Grid,
-  GridItem,
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Link,
-  HStack,
-} from '@chakra-ui/layout'
+import { Grid, GridItem, Box, Flex, Heading, Text } from '@chakra-ui/layout'
 import type { ResponsiveValue } from '@chakra-ui/react'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
-import { LinkIcon, Icon } from '@chakra-ui/icons'
 import SEO from 'components/seo'
 import Header from 'components/header'
 import ChakraNextImage from 'components/chakra-next-image'
 import DiscordStrip from 'components/discord-strip'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
 import Footer from 'components/footer'
+import Mask from 'components/mask'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
 import showcaseData from '../configs/showcase.json'
@@ -158,15 +149,6 @@ const Showcase = () => {
   )
 }
 
-const GithubIcon = (props: React.ComponentProps<'svg'>) => (
-  <svg viewBox='0 0 20 20' {...props}>
-    <path
-      fill='currentColor'
-      d='M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0'
-    />
-  </svg>
-)
-
 interface ShowcaseContainerGridItem {
   colSpan: ResponsiveValue<number | 'auto'>
   rowSpan: ResponsiveValue<number | 'auto'>
@@ -192,95 +174,4 @@ const ShowcaseContainerGridItem: React.FC<ShowcaseContainerGridItem> = ({
     </GridItem>
   )
 }
-
-interface MaskProps {
-  name: string
-  url?: string
-  github?: string
-  showMask?: boolean
-}
-
-const Mask: React.FC<MaskProps> = ({ name, url, github, showMask }) => (
-  <Flex
-    w='full'
-    h='full'
-    position='absolute'
-    rounded='md'
-    bg='blackAlpha.400'
-    opacity={showMask ? 1 : 0}
-    justifyContent='center'
-    alignItems='flex-end'
-    zIndex={showMask ? 2 : -1}
-    _groupHover={{
-      zIndex: 2,
-      opacity: 1,
-    }}
-    transition='.5s opacity ease-out'
-  >
-    <Box
-      w='full'
-      borderBottomRadius='md'
-      bgColor='blackAlpha.700'
-      opacity='1'
-      py='2.5'
-    >
-      <Box as='span' color='white' mx='auto'>
-        <Text
-          px='10px'
-          fontSize={{ lg: 'lg', base: 'md' }}
-          fontWeight='700'
-          letterSpacing='1.2px'
-          noOfLines={2}
-        >
-          {name}
-        </Text>
-        <HStack mt='1' alignItems='center' justifyContent='center' spacing='3'>
-          {url && (
-            <Link
-              isExternal
-              aria-label={`Go to ${name} website`}
-              href={url}
-              w={!github ? 'full' : 'auto'}
-              px={4}
-            >
-              {!github && <Text isTruncated>{url}</Text>}
-              {github && (
-                <Icon
-                  as={LinkIcon}
-                  display='block'
-                  transition='color 0.2s'
-                  w='5'
-                  h='5'
-                  _hover={{ color: 'gray.600' }}
-                />
-              )}
-            </Link>
-          )}
-          {github && (
-            <Link
-              isExternal
-              aria-label={`Go to ${name} GitHub page`}
-              href={github}
-              w={!url ? 'full' : 'auto'}
-              px={4}
-            >
-              {!url && <Text isTruncated>{github}</Text>}
-              {url && (
-                <Icon
-                  as={GithubIcon}
-                  display='block'
-                  transition='color 0.2s'
-                  w='5'
-                  h='5'
-                  _hover={{ color: 'gray.600' }}
-                />
-              )}
-            </Link>
-          )}
-        </HStack>
-      </Box>
-    </Box>
-  </Flex>
-)
-
 export default Showcase
