@@ -1,6 +1,5 @@
 import {
   Box,
-  Heading,
   Text,
   Tab,
   Tabs,
@@ -49,30 +48,54 @@ function Resources() {
       <Text mt='2'>{t('resources.message')}</Text>
       <Tabs colorScheme='teal' variant='enclosed' mt='2'>
         <TabList>
-          <Tab>{TALKS}</Tab>
-          <Tab>{VIDEOS}</Tab>
-          <Tab>{BLOGS}</Tab>
+          <Tab>
+            <Box
+              as={FaMicrophone}
+              display='inline-block'
+              verticalAlign='middle'
+              color='teal.500'
+              mr='3'
+            />
+            <span>{TALKS}</span>
+          </Tab>
+          <Tab>
+            <Box
+              as={FaVideo}
+              display='inline-block'
+              verticalAlign='middle'
+              color='teal.500'
+              mr='3'
+            />
+            <span>{VIDEOS}</span>
+          </Tab>
+          <Tab>
+            <Box
+              as={FaPenSquare}
+              display='inline-block'
+              verticalAlign='middle'
+              color='teal.500'
+              mr='3'
+            />
+            <span>{BLOGS}</span>
+          </Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
             <ResourceSection
               title={TALKS}
               resources={groups.talk}
-              icon={FaMicrophone}
             />
           </TabPanel>
           <TabPanel>
             <ResourceSection
               title={VIDEOS}
               resources={groups.video}
-              icon={FaVideo}
             />
           </TabPanel>
           <TabPanel>
             <ResourceSection
               title={BLOGS}
               resources={groups.blog}
-              icon={FaPenSquare}
             />
           </TabPanel>
         </TabPanels>
@@ -85,12 +108,11 @@ export default Resources
 
 interface ResourceSectionProps {
   title: string
-  icon: React.ElementType
   resources: Resource[]
 }
 
 function ResourceSection(props: ResourceSectionProps) {
-  const { icon, title, resources } = props
+  const { title, resources } = props
   const filterInputId = `resources-filter-${title.toLowerCase()}`
   const formik = useFormik({
     initialValues: { [filterInputId]: '' },
@@ -100,16 +122,6 @@ function ResourceSection(props: ResourceSectionProps) {
 
   return (
     <Box as='section' mt='8'>
-      <Heading as='h2' size='md'>
-        <Box
-          as={icon}
-          display='inline-block'
-          verticalAlign='middle'
-          color='teal.500'
-          mr='3'
-        />
-        <span>{title}</span>
-      </Heading>
       <FormControl id={filterInputId} mt='8' mb='8'>
         <FormLabel>{t('resources.searchFilter.label')}</FormLabel>
         <Input
