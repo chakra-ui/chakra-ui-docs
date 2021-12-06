@@ -60,6 +60,7 @@ async function main() {
       const { url, name } = target[i]
       if (!url) continue
 
+      // If it's youtube's url, use a thumbnail instead of a screenshot
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
         target[i].image = getYouTubeThumbnail(url)
         continue
@@ -151,15 +152,14 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       .filter((s) => s !== '')[1]
       ?.toLowerCase()
     let parsedItems = []
+
     if (!category) continue
 
     for (let str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
       const parentheses = /\(((https|http).*?)\)/
 
-      // Get the content inside the first curly brackets, array[1]
       const name = str.match(curlyBraces)[1]
-      // Get what we caught in the first parentheses, using array[1]
       const link = str.match(parentheses)[1]
 
       const description = str
@@ -213,13 +213,13 @@ const youtubeShortUrlPrefix = /(https|http):\/\/youtu.be\//i
 const isYoutubeVideoUrl = (url: string) => youtubeVideoUrlPrefix.test(url)
 const isYoutubeShortUrl = (url: string) => youtubeShortUrlPrefix.test(url)
 
-const getVideoYoutubeId = (youtubeUrl: string) =>
+const getYoutubeVideoId = (youtubeUrl: string) =>
   isYoutubeVideoUrl(youtubeUrl)
     ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/\&.*/, '')
     : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/\&.*/, '')
 
 const getYouTubeThumbnail = (youtubeUrl: string) => {
-  const youtubeId = getVideoYoutubeId(youtubeUrl)
+  const youtubeId = getYoutubeVideoId(youtubeUrl)
   return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
 }
 
