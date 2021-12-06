@@ -49,34 +49,22 @@ function Resources() {
       <Tabs colorScheme='teal' variant='enclosed' mt='2'>
         <TabList>
           <Tab>
-            <Box
-              as={FaMicrophone}
-              display='inline-block'
-              verticalAlign='middle'
-              color='teal.500'
-              mr='3'
+            <ResourcesTabContent
+              icon={FaMicrophone}
+              text={TALKS}
             />
-            <span>{TALKS}</span>
           </Tab>
           <Tab>
-            <Box
-              as={FaVideo}
-              display='inline-block'
-              verticalAlign='middle'
-              color='teal.500'
-              mr='3'
+            <ResourcesTabContent
+              icon={FaVideo}
+              text={VIDEOS}
             />
-            <span>{VIDEOS}</span>
           </Tab>
           <Tab>
-            <Box
-              as={FaPenSquare}
-              display='inline-block'
-              verticalAlign='middle'
-              color='teal.500'
-              mr='3'
+            <ResourcesTabContent
+              icon={FaPenSquare}
+              text={BLOGS}
             />
-            <span>{BLOGS}</span>
           </Tab>
         </TabList>
         <TabPanels>
@@ -141,5 +129,28 @@ function ResourceSection(props: ResourceSectionProps) {
         </Masonry>
       </ResponsiveMasonry>
     </Box>
+  )
+}
+
+interface ResourcesTabContentProps {
+  icon: React.ElementType
+  text: string
+}
+
+function ResourcesTabContent({
+  icon,
+  text
+}: ResourcesTabContentProps) {
+  return (
+    <>
+      <Box
+        as={icon}
+        display='inline-block'
+        verticalAlign='middle'
+        color='teal.500'
+        mr='2'
+      />
+      <span>{text}</span>
+    </>
   )
 }
