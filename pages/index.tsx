@@ -371,7 +371,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
             >
               <StatBox
                 icon={FiDownload}
-                title='488K'
+                title='813K'
                 description={t('homepage.growing-section.downloads-per-month')}
               />
               <StatBox
@@ -386,7 +386,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               />
               <StatBox
                 icon={FaDiscord}
-                title='2.9K'
+                title='5.1K'
                 description={t('homepage.growing-section.discord-members')}
               />
             </SimpleGrid>

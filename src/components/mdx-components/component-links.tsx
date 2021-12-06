@@ -9,7 +9,7 @@ import {
   LinkProps,
   WrapItem,
 } from '@chakra-ui/react'
-import { FaNpm, FaGithub } from 'react-icons/fa'
+import { FaNpm, FaGithub, FaYoutube } from 'react-icons/fa'
 import StorybookIcon from '../storybook-icon'
 import { t } from 'utils/i18n'
 
@@ -55,9 +55,10 @@ export type ComponentLinksProps = {
   github?: { url?: string; package?: string }
   npm?: { package: string }
   storybook?: { url: string }
+  video?: { url: string }
 }
 function ComponentLinks(props: ComponentLinksProps) {
-  const { theme, github, npm, storybook, ...rest } = props
+  const { theme, github, npm, storybook, video, ...rest } = props
   const iconColor = useColorModeValue('gray.600', 'inherit')
 
   const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui'
@@ -103,6 +104,19 @@ function ComponentLinks(props: ComponentLinksProps) {
     </WrapItem>
   )
 
+  const videoLink = video?.url && (
+    <WrapItem>
+      <ComponentLink
+        url={video.url}
+        icon={FaYoutube}
+        iconSize='1.2rem'
+        iconColor='red.500'
+      >
+        {t('component.mdx-components.component-links.view-video')}
+      </ComponentLink>
+    </WrapItem>
+  )
+
   const themeComponentLink = theme && (
     <WrapItem>
       <ComponentLink
@@ -122,6 +136,7 @@ function ComponentLinks(props: ComponentLinksProps) {
       {themeComponentLink}
       {npmLink}
       {storybookLink}
+      {videoLink}
     </Wrap>
   )
 }
