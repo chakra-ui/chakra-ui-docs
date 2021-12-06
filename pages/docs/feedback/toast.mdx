@@ -221,6 +221,39 @@ function ToastVariantsExample() {
 }
 ```
 
+## Custom container styles
+
+The `toast` function now exposes a `containerStyle` property you can use to
+override the default styles for the toast container.
+
+```jsx
+function Example() {
+  // Via instantiation
+  const toast = useToast({
+    position: 'top',
+    title: 'Container style is updated',
+    containerStyle: {
+      width: '800px',
+      maxWidth: '100%',
+    },
+  })
+  // Or via trigger
+  return (
+    <Button
+      onClick={() => {
+        toast({
+          containerStyle: {
+            border: '20px solid red',
+          },
+        })
+      }}
+    >
+      Click me to show toast with custom container style.
+    </Button>
+  )
+}
+```
+
 ## Changing the toast position
 
 Using the `position` prop you can adjust where your toast will be popup from.
