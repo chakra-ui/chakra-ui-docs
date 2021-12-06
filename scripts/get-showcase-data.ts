@@ -1,8 +1,3 @@
-/**
- * Generate showcase data from https://github.com/chakra-ui/awesome-chakra-ui
- * Take websites' screenshots with puppeteer to display as preview images
- */
-
 import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
@@ -34,20 +29,17 @@ const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
 async function main() {
-  // Open the browser with width 1920 and height 1080
   const browser = await puppeteer.launch({
     defaultViewport: {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
     },
   })
-  // Create a new page
   const page = await browser.newPage()
-  // Configure the navigation timeout
   await page.setDefaultNavigationTimeout(0)
-  // Clone the whole object
+
   const newData = await generateShowcaseData()
-  // Get all categories
+
   const keys = Object.keys(newData)
 
   for (let key of keys) {
@@ -57,38 +49,31 @@ async function main() {
       DIR_FOR_STORING_PREVIEW_IMAGE,
       key,
     )
-    // If there is no directory, create a new one
+
     if (!fs.existsSync(localDirToPreviewImageDir)) {
       fs.mkdirSync(localDirToPreviewImageDir)
     }
-    // Look into a specific category
+
     const target = newData[key]
 
     for (let i = 0; i < target.length; i++) {
       const { url, name } = target[i]
-      // If there is no url in the item, jump to the next item
       if (!url) continue
 
-      // If the url is from youtube, use the thumbnail's url instead of a screenshot of pages
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
         target[i].image = getYouTubeThumbnail(url)
         continue
       }
 
-      // Go to the url and consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
       await page.goto(url, { waitUntil: 'networkidle2' })
 
       await wait(1000)
 
-      // Get a image file name
       const fileName = `${name.split(' ').join('-')}.png`
-      // Get an appropriate image path
       const imagePath = path.join(localDirToPreviewImageDir, fileName)
-      // Add image path into showcase object
       target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
-      // Take a screenshot of the page
       const buffer = await page.screenshot()
-      // Resize the image to avoid performance issues
+
       sharp(buffer)
         .resize(850)
         .toFile(imagePath, (err, info) => {
@@ -97,19 +82,13 @@ async function main() {
         })
     }
   }
-  // Renew the whole showcase data
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(newData, null, 2))
   await browser.close()
 }
 
-/**
- * We might need to create a token. Or it might reach api rate limit easily
- */
 const octokit = new Octokit({
   auth: process.env.OCTOKIT_TOKEN,
 })
-
-//https://github.com/chakra-ui/awesome-chakra-ui
 
 const REPO_CONFIG = {
   mediaType: {
@@ -120,7 +99,7 @@ const REPO_CONFIG = {
   path: 'README.md',
 }
 
-// Generate showcase data from awesome-chakra-ui without preview images
+// Generate showcase data from https://github.com/chakra-ui/awesome-chakra-ui
 async function generateShowcaseData() {
   const { data } = await octokit.rest.repos.getContent(REPO_CONFIG)
   const splitContent = (data as any).split('##')
@@ -129,13 +108,11 @@ async function generateShowcaseData() {
   // Remove the first two sections and the last section (for contributors)
   const categories = splitContent.slice(2, len - 1)
 
-  // Get the parsed data from awesome-chakra-ui
   const parsedDataFromRepo = await parseRepoData(categories)
 
   return parsedDataFromRepo
 }
 
-// An instance of the item inside each of categories
 class Item {
   name: string
   description?: string
@@ -179,16 +156,11 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
     for (let str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
       const parentheses = /\(((https|http).*?)\)/
-      /**
-       * More about string.match()
-       * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
-       */
 
       // Get the content inside the first curly brackets, array[1]
       const name = str.match(curlyBraces)[1]
       // Get what we caught in the first parentheses, using array[1]
       const link = str.match(parentheses)[1]
-      // Description
 
       const description = str
         .replace(curlyBraces, '')
@@ -205,7 +177,6 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       }
       const { owner, repo } = parseGithubUrl(link)
 
-      // Get the homepage from repo
       let url = ''
 
       try {
@@ -231,20 +202,14 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
   return parsedData
 }
 
-// Check if the url is a github's url
 const isGithubUrl = (url: string) => {
   const githubUrlPrefix = '^(https|http)://github.com/'
   return new RegExp(githubUrlPrefix).test(url)
 }
 
-/**
- * The url of youtube video should be
- * https://www.youtube.com/watch?v={youtubeId} or https://youtu.be/{youtubeId}
- */
 const youtubeVideoUrlPrefix = /(https|http):\/\/(www.|)youtube.com\/watch\?v=+/i
 const youtubeShortUrlPrefix = /(https|http):\/\/youtu.be\//i
 
-// Check if the url is from youtube
 const isYoutubeVideoUrl = (url: string) => youtubeVideoUrlPrefix.test(url)
 const isYoutubeShortUrl = (url: string) => youtubeShortUrlPrefix.test(url)
 
@@ -253,24 +218,18 @@ const getVideoYoutubeId = (youtubeUrl: string) =>
     ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/\&.*/, '')
     : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/\&.*/, '')
 
-/**
- * A thumbnail's structure should be
- * https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg
- * ex: https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg
- */
 const getYouTubeThumbnail = (youtubeUrl: string) => {
   const youtubeId = getVideoYoutubeId(youtubeUrl)
   return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
 }
 
-// Parse the url of the github repo to get { owner, repo }
 const parseGithubUrl = (url: string) => {
   if (!isGithubUrl(url)) return
 
   const splitUrl = url.split('/').filter((s) => s !== '')
   const len = splitUrl.length
 
-  // Check if the url is a root of the repo
+  // Check if the url is the root of the repo
   if (len !== 4) return
 
   const owner = splitUrl[len - 2]
@@ -279,7 +238,6 @@ const parseGithubUrl = (url: string) => {
   return { owner, repo }
 }
 
-// Get the homepage's url from repo
 const getHomePage = async ({ owner, repo }) => {
   try {
     const { data } = await octokit.rest.repos.get({
