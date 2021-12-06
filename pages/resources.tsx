@@ -46,7 +46,7 @@ function Resources() {
       }}
     >
       <Text mt='2'>{t('resources.message')}</Text>
-      <Tabs colorScheme='teal' variant='enclosed' mt='2'>
+      <Tabs colorScheme='teal' variant='enclosed' mt='6'>
         <TabList>
           <Tab>
             <ResourcesTabContent
