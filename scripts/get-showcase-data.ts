@@ -4,6 +4,9 @@ import fs from 'fs'
 import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export type ShowcaseKeys =
   | 'projects'
@@ -88,7 +91,7 @@ async function main() {
 }
 
 const octokit = new Octokit({
-  auth: process.env.OCTOKIT_TOKEN,
+  auth: process.env.GITHUB_TOKEN,
 })
 
 const REPO_CONFIG = {
