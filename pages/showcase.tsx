@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react'
-import { Grid, Box, Flex, Heading, Text } from '@chakra-ui/layout'
+import { Grid, Box, Heading, Text, VStack, Link } from '@chakra-ui/layout'
+import { Button } from '@chakra-ui/button'
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from '@chakra-ui/tabs'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
@@ -110,7 +111,7 @@ const Showcase = () => {
       <Header />
       <Box mt={20} mb={10}>
         <SkipNavContent />
-        <Flex mx='auto' flexDir='column' alignItems='center'>
+        <VStack mx='auto' spacing='3' alignItems='center'>
           <Heading fontSize={{ base: '2xl', lg: '4xl' }} lineHeight='1.2'>
             {t('showcase.title')}
           </Heading>
@@ -119,11 +120,18 @@ const Showcase = () => {
             mx='auto'
             color={useColorModeValue('gray.500', 'gray.400')}
             fontSize={{ base: 'lg', lg: 'xl' }}
-            mt='3'
           >
             {t('showcase.message')}
           </Text>
-        </Flex>
+          <Link
+            isExternal
+            href='https://github.com/chakra-ui/awesome-chakra-ui'
+          >
+            <Button fontSize='sm' variant='link' colorScheme='teal'>
+              {t('showcase.submit-project-button-title')}
+            </Button>
+          </Link>
+        </VStack>
         <Box mt='10' mb='20' mx='auto' maxWidth={1440}>
           <Tabs
             size='md'

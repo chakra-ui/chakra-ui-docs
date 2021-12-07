@@ -200,6 +200,7 @@
       "description": "A showcase for sharing beautiful websites that are built in Chakra-UI"
     },
     "title": "Showcase",
-    "message": "Meet Websites Built with Chakra UI"
+    "message": "Meet Websites Built with Chakra UI",
+    "submit-project-button-title": "Submit your project"
   }
 }
