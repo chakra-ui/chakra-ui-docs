@@ -18,7 +18,13 @@ import { Routes } from 'utils/get-route-context'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import SidebarCategory from './sidebar-category'
 import SidebarLink from './sidebar-link'
-import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from './sidebar-icons'
+import {
+  DocsIcon,
+  GuidesIcon,
+  TeamIcon,
+  ResourcesIcon,
+  ShowcaseIcon,
+} from './sidebar-icons'
 import { FaQuestionCircle } from 'react-icons/fa'
 
 export type SidebarContentProps = Routes & {
@@ -141,6 +147,11 @@ const mainNavLinks = [
     icon: <ResourcesIcon />,
     href: '/resources',
     label: 'Resources',
+  },
+  {
+    icon: <ShowcaseIcon />,
+    href: '/showcase',
+    label: 'Showcase',
   },
   {
     icon: <FaQuestionCircle color='white' />,
