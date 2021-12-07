@@ -127,7 +127,7 @@ const Showcase = () => {
             isExternal
             href='https://github.com/chakra-ui/awesome-chakra-ui'
           >
-            <Button fontSize='sm' variant='link' colorScheme='teal'>
+            <Button variant='solid' colorScheme='teal'>
               {t('showcase.submit-project-button-title')}
             </Button>
           </Link>
