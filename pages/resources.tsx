@@ -107,6 +107,13 @@ function ResourceSection(props: ResourceSectionProps) {
     onSubmit: undefined,
   })
   const filteredResources = filterResources(formik.values[filterInputId], resources)
+  /**
+   * Notice, that the breakpoints don't follow conventional numbers (e.g. 768, 991).
+   * The reason for that is that the number (e.g. 767) actually represents target
+   * number - 1 (e.g. 768 - 1), where at target number (e.g. 768) is the point at
+   * which the grid should switch.  This might be a bug with the library.
+   */
+  const masonryGridBreakpoints = { 350: 1, 580: 2, 767: 1, 990: 2 }
 
   return (
     <Box as='section' mt='8'>
@@ -119,7 +126,7 @@ function ResourceSection(props: ResourceSectionProps) {
         />
         <FormHelperText>{t('resources.searchFilter.helperText')}</FormHelperText>
       </FormControl>
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 580: 2 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={masonryGridBreakpoints}>
         <Masonry gutter='16px'>
           {filteredResources.map(
             (item, index) => (
