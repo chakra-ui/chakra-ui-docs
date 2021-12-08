@@ -255,6 +255,14 @@
       "author": "Chakra UI",
       "description": "Learn what Chakra UI RangeSlider Component is, how to use RangeSlider component, parts that make up the RangeSlider Component, some of the props RangeSlider accepts and how to customize RangeSlider.",
       "url": "https://www.youtube.com/watch?v=yt0F8srvg_Q"
+    },
+    {
+      "heading": "Maintaining Chakra UI",
+      "type": "talk",
+      "tags": ["Core Team", "Chakra UI", "Open Source"],
+      "author": "Chakra UI",
+      "description": "Watch the maintainers of Chakra UI triage issues, add features and release new versions of the library 🎉",
+      "url": "https://www.youtube.com/watch?v=0TLxtE_GCbM"
     }
   ]
 }
