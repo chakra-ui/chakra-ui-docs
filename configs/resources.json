@@ -97,6 +97,14 @@
       "url": "https://www.youtube.com/watch?v=gTaikL689PU"
     },
     {
+      "heading": "How to enable Right-to-Left (RTL) support using Chakra UI",
+      "type": "video",
+      "author": "Folasade Agbaje",
+      "tags": ["RTL", "v1.0"],
+      "description": "Learn how to enable Right-to-Left (RTL) support using Chakra UI",
+      "url": "https://www.youtube.com/watch?v=PzEHoqLj4OM"
+    },
+    {
       "heading": "Setting Up Chakra UI in a GatsbyJS App",
       "type": "video",
       "author": "Apollo GraphQL",
@@ -113,6 +121,14 @@
       "url": "https://www.pscp.tv/thekitze/1OyJAgleVMbKb"
     },
     {
+      "heading": "How to build a portfolio website using Next.js, Chakra UI, Framer Motion, and Three.js",
+      "type": "video",
+      "tags": ["Portfolio Website", "Next.js", "Framer Motion", "Three.js", "v1.7.2"],
+      "author": "devaslife",
+      "description": "Learn how Takuya Matsuyama builds his portfolio website using Next.js, Chakra UI, Framer Motion, and Three.js.",
+      "url": "https://www.youtube.com/watch?v=yt0F8srvg_Q"
+    },
+    {
       "heading": "Chakra UI Quickstart - With Next.js",
       "type": "video",
       "tags": ["Next.js", "Dark Mode", "v1.0"],
@@ -127,6 +143,14 @@
       "author": "Lazar Nikolov",
       "description": "In this video Lazar is rebuilding a full Chat App interface designed by Denys Sergushkin.",
       "url": "https://www.youtube.com/watch?v=wGhZMOInL18"
+    },
+    {
+      "heading": "Chakra UI: Design vs Dev Challenge #2",
+      "type": "video",
+      "tags": ["Next.js", "Design Implementation", "v1.6.2"],
+      "author": "Lazar Nikolov",
+      "description": "In this video Lazar is rebuilding the Afrosonic Dashboard Concept designed by Jide Pinheiro's",
+      "url": "https://www.youtube.com/watch?v=l30P02RZ7Dk"
     },
     {
       "heading": "The Chakra UI Component Library",
@@ -175,6 +199,70 @@
       "author": "creativedesignsguru.com",
       "description": "Learn how to create a simple, beautiful, and reusable hero component built using NextJs and Chakra UI.",
       "url": "https://creativedesignsguru.com/chakra-ui-next-js/"
+    },
+    {
+      "heading": "SimpleGrid: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI SimpleGrid Component is, how to use, props it accepts and around how to make it auto-responsive.",
+      "url": "https://www.youtube.com/watch?v=uyJNBGBI5sI"
+    },
+    {
+      "heading": "Input: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI Input Component is, how to change input size, style, add elements to input and add add-ons to an input component.",
+      "url": "https://www.youtube.com/watch?v=4y86kDy3Z2E"
+    },
+    {
+      "heading": "Stack: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI Stack Component is, when to use Stack Component, how to stack items horizontally and vertically and about alternative stack components.",
+      "url": "https://www.youtube.com/watch?v=6Az4Yd6f8RA"
+    },
+    {
+      "heading": "Menu: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI Menu Component is, how to use menu component and how to separate/group Menu items.",
+      "url": "https://www.youtube.com/watch?v=Q-AMFseuFrk"
+    },
+    {
+      "heading": "Tabs: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI Tabs Component is, how to use Tabs component, some props that Tabs accepts and about Tab Variants.",
+      "url": "https://www.youtube.com/watch?v=hSVhhOamFaI"
+    },
+    {
+      "heading": "Modal: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI Modal Component is, how to use Modal component, some props that Modal accepts and how to change Modal Behaviour.",
+      "url": "https://www.youtube.com/watch?v=kTwaBM_bJUQ"
+    },
+    {
+      "heading": "RangeSlider: Chakra UI Component of the Week",
+      "type": "video",
+      "tags": ["Chakra UI", "Component of the Week", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "Learn what Chakra UI RangeSlider Component is, how to use RangeSlider component, parts that make up the RangeSlider Component, some of the props RangeSlider accepts and how to customize RangeSlider.",
+      "url": "https://www.youtube.com/watch?v=yt0F8srvg_Q"
+    },
+    {
+      "heading": "Maintaining Chakra UI",
+      "type": "talk",
+      "tags": ["Core Team", "Chakra UI", "Open Source"],
+      "author": "Chakra UI",
+      "description": "Watch the maintainers of Chakra UI triage issues, add features and release new versions of the library 🎉",
+      "url": "https://www.youtube.com/watch?v=0TLxtE_GCbM"
     }
   ]
 }
