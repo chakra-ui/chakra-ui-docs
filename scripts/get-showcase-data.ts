@@ -5,6 +5,7 @@ import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
 import dotenv from 'dotenv'
+import fetch from 'node-fetch'
 
 dotenv.config()
 
@@ -69,6 +70,11 @@ async function main() {
         continue
       }
 
+      if (isGitHubImageUrl(url)) {
+        target[i].image = await getGitHubSocialImage(url, name, localDirToPreviewImageDir, key)
+        continue;
+      }
+
       await page.goto(url, { waitUntil: 'networkidle2' })
 
       await wait(1000)
@@ -121,7 +127,6 @@ class Item {
   name: string
   description?: string
   url?: string
-  github?: string
   image?: string
   type: string
 
@@ -136,7 +141,6 @@ class Item {
     this.name = name
     this.description = description
     this.url = url
-    this.github = github
     this.image = image
     this.type = type
   }
@@ -187,10 +191,10 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
 
       const { owner, repo } = parsedUrl;
 
-      let url = ''
+      let url = link
 
       try {
-        url = await getHomePage({ owner, repo })
+        url = (await getHomePage({ owner, repo })) ?? link
       } catch (err) {
         console.error(err)
         continue
@@ -200,7 +204,6 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
         new Item({
           name,
           url,
-          github: link,
           description,
           type: category,
         }),
@@ -219,9 +222,11 @@ const isGithubUrl = (url: string) => {
 
 const youtubeVideoUrlPrefix = /(https|http):\/\/(www.|)youtube.com\/watch\?v=+/i
 const youtubeShortUrlPrefix = /(https|http):\/\/youtu.be\//i
+const githubUrlPrefix = /(https|http):\/\/github.com\//i
 
 const isYoutubeVideoUrl = (url: string) => youtubeVideoUrlPrefix.test(url)
 const isYoutubeShortUrl = (url: string) => youtubeShortUrlPrefix.test(url)
+const isGitHubImageUrl = (url: string) => githubUrlPrefix.test(url)
 
 const getYoutubeVideoId = (youtubeUrl: string) =>
   isYoutubeVideoUrl(youtubeUrl)
@@ -231,6 +236,33 @@ const getYoutubeVideoId = (youtubeUrl: string) =>
 const getYouTubeThumbnail = (youtubeUrl: string) => {
   const youtubeId = getYoutubeVideoId(youtubeUrl)
   return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+}
+
+const META_IMAGE_REGEX = /<meta(?=\s|>)(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\sproperty=(?:'og:image|"og:image"|og:image))(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\scontent=('[^']*'|"[^"]*"|[^'"][^\s>]*))(?:[^'">=]*|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*>/g;
+const getGitHubSocialImage = async (repoUrl: string, name: string, localDirToPreviewImageDir: string, key: string) => {
+  try {
+    const pageContents = await (await fetch(repoUrl)).text();
+    const metaImage = pageContents.match(META_IMAGE_REGEX);
+    const imageRegex = /https:\/\/.+"/;
+    const imageUrl = imageRegex.exec(metaImage[0])[0].slice(0, -1);
+
+    const fileName = `${name.split(' ').join('-')}.png`
+    const imagePath = path.join(localDirToPreviewImageDir, fileName)
+
+    const blob = await (await fetch(imageUrl)).blob();
+    const buffer = await (blob.stream()).read();
+
+    sharp(buffer)
+      .resize(850)
+      .toFile(imagePath, (err, info) => {
+        if (err) console.error(err)
+        console.log(info)
+      })
+
+    return path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 const parseGithubUrl = (url: string) => {
