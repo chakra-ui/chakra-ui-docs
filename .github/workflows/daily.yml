@@ -67,7 +67,7 @@ jobs:
           git add public/showcases
           git diff --staged --quiet || git commit -m "chore(showcase-preview-images): $GITHUB_SHA"
 
-          git add config/showcase.json
+          git add configs/showcase.json
           git diff --staged --quiet || git commit -m "chore(showcase.json)): $GITHUB_SHA"
 
       - name: Create Pull Request
