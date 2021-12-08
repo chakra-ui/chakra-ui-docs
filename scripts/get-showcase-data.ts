@@ -178,7 +178,14 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
         )
         continue
       }
-      const { owner, repo } = parseGithubUrl(link)
+      const parsedUrl = parseGithubUrl(link)
+
+      if (!parsedUrl) {
+        console.error('ERROR', link);
+        continue;
+      }
+
+      const { owner, repo } = parsedUrl;
 
       let url = ''
 
