@@ -33,7 +33,6 @@ function ResourceCard(props: ResourceCardProps) {
   return (
     <LinkBox
       {...rest}
-      maxW='360px'
       p={4}
       rounded='lg'
       transitionProperty='all'
