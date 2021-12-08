@@ -6,11 +6,11 @@ import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import SEO from 'components/seo'
 import Header from 'components/header'
-import ChakraNextImage from 'components/chakra-next-image'
+import ChakraNextImage from 'components/showcase/chakra-next-image'
 import DiscordStrip from 'components/discord-strip'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
-import ShowcaseGridItem from 'components/showcase-grid-item'
-import Mask from 'components/mask'
+import ShowcaseGridItem from 'components/showcase/showcase-grid-item'
+import Mask from 'components/showcase/mask'
 import Footer from 'components/footer'
 import { t } from 'utils/i18n'
 import _ from 'lodash'
@@ -55,7 +55,7 @@ const Showcase = () => {
               rowGap={12}
               columnGap={8}
             >
-              {items.map(({ name, image, url, github }, i) => {
+              {items.map(({ name, image, url }, i) => {
                 const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
                 const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
 
@@ -66,7 +66,7 @@ const Showcase = () => {
                       colSpan={colSpan}
                       rowSpan={rowSpan}
                     >
-                      <Mask name={name} github={github} url={url} showMask />
+                      <Mask name={name} url={url} showMask />
                       <ChakraNextImage
                         height={478}
                         width={850}
@@ -82,7 +82,7 @@ const Showcase = () => {
                     colSpan={colSpan}
                     rowSpan={rowSpan}
                   >
-                    <Mask name={name} github={github} url={url} />
+                    <Mask name={name} url={url} />
                     <ChakraNextImage
                       height={478}
                       width={850}

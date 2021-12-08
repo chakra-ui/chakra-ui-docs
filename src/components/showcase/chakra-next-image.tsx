@@ -51,6 +51,7 @@ const ChakraNextImage = (props: ImageProps & FlexProps) => {
         quality={quality}
         height={height}
         placeholder='blur'
+        objectFit='cover'
         blurDataURL={`data:image/svg+xml;base64,${toBase64(
           shimmer(+width, +height),
         )}`}
