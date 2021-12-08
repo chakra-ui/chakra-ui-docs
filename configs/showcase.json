@@ -79,6 +79,22 @@
       "github": "https://github.com/chakra-ui/design-vs-dev",
       "image": "showcases/projects/Chakra-UI's-Design-vs-Dev-Challenges.png",
       "type": "projects"
+    },
+    {
+      "name": "Polygon",
+      "description": null,
+      "url": "https://polygon.am",
+      "github": "https://github.com/polygon-isecure/polygon",
+      "image": "showcases/projects/Polygon.png",
+      "type": "projects"
+    },
+    {
+      "name": "UI Foundations",
+      "description": null,
+      "url": "https://www.uifoundations.com/",
+      "github": null,
+      "image": "showcases/projects/UI-Foundations.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -134,7 +150,7 @@
       "name": "Lazar Nikolov's Site",
       "description": "Lazar's personal website. Made using Next.JS, Chakra UI, MDX, Prisma, PlanetScale, Airtable, Raindrop, and it’s deployed on Vercel.",
       "url": "https://nikolovlazar.com",
-      "github": null,
+      "github": "https://github.com/lazarnikolov94/nikolovlazar.com",
       "image": "showcases/websites/Lazar-Nikolov's-Site.png",
       "type": "websites"
     }
