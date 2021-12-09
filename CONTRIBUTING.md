@@ -4,9 +4,23 @@ When it comes to open source, there are different ways you can contribute, all
 of which are valuable. Here's a few guidelines that should help you as you
 prepare your contribution.
 
+Here's the table of contents:
+
+- [Setup the Project](#setup-the-project)
+  - [Commands](#commands)
+- [Updating the docs for new release](#updating-the-docs-for-new-release)
+- [Proposing new or changed API?](#proposing-new-or-changed-api)
+- [Making a Pull Request?](#making-a-pull-request)
+  - [Commit Convention](#commit-convention)
+  - [Steps to PR](#steps-to-pr)
+- [Want to write a blog post or tutorial](#want-to-write-a-blog-post-or-tutorial)
+- [Want to help improve the docs?](#want-to-help-improve-the-docs)
+- [License](#license)
+
 ## Setup the Project
 
-Setting up the docsite project is easy. It's a Next JS site. The following steps will get you up and running to contribute to the Chakra UI docsite:
+Setting up the docsite project is easy. It's a Next JS site. The following steps
+will get you up and running to contribute to the Chakra UI docsite:
 
 1. Fork the repo (click the <kbd>Fork</kbd> button at the top right of
    [this page](https://github.com/chakra-ui/chakra-ui-docs))
@@ -21,8 +35,8 @@ cd chakra-ui-docs
 1. Setup all the dependencies and packages by running `yarn`.
 2. Execute `yarn dev` to spin up a local development server
 
-> If you run into any issues, kindly reach out to the Chakra UI
-> React team here: https://discord.gg/chakra-ui
+> If you run into any issues, kindly reach out to the Chakra UI React team here:
+> https://discord.gg/chakra-ui
 
 ### Commands
 
@@ -33,6 +47,16 @@ cd chakra-ui-docs
 **`yarn build`**: builds the docsite for production.
 
 **`yarn lint`**: runs the nextjs linter which checks for code issues.
+
+## Updating the docs for new release
+
+When a new version of `@chakra-ui/react` has been released, here's what you need
+to do to get it reflected in the docs:
+
+- Bump the version of `@chakra-ui/react`
+- Run `yarn changelog:gen` to fetch the most recent changelog from the
+  [main repository](https://github.com/chakra-ui/chakra-ui)
+- Open a Pull Request titled `docs: updates for new release`
 
 ## Proposing new or changed API?
 
@@ -54,8 +78,7 @@ When you create a commit we kindly ask you to follow the convention
 `category(scope or module): message` in your commit message while using one of
 the following categories:
 
-- `feat / feature`: all changes that introduce completely new code or new
-  features
+- `feat`: all changes that introduce completely new code or new features
 - `fix`: changes that fix a bug (ideally you will additionally reference an
   issue if present)
 - `refactor`: any code related change that is not a fix nor a feature
@@ -85,7 +108,9 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` and `yarn lint` to make sure everything works as expected. Please note that you might have to run `yarn` first in order to install all dependencies.
+   As you develop, you can run `yarn lint` and `yarn lint` to make sure
+   everything works as expected. Please note that you might have to run `yarn`
+   first in order to install all dependencies.
 
 ## Want to write a blog post or tutorial
 
