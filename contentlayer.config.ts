@@ -2,13 +2,13 @@ import {
   ComputedFields,
   defineDocumentType,
   makeSource,
-} from 'contentlayer/source-files';
-import remarkEmoji from 'remark-emoji';
-import remarkGfm from 'remark-gfm';
-import remarkSlug from 'remark-slug';
-import siteConfig from './configs/site-config';
-import { getTableOfContents } from './src/utils/mdx-utils';
-import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta';
+} from 'contentlayer/source-files'
+import remarkEmoji from 'remark-emoji'
+import remarkGfm from 'remark-gfm'
+import remarkSlug from 'remark-slug'
+import siteConfig from './configs/site-config'
+import { getTableOfContents } from './src/utils/mdx-utils'
+import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta'
 
 const computedFields: ComputedFields = {
   slug: {
@@ -19,7 +19,7 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => `${siteConfig.repo.editUrl}/${doc._id}`,
   },
-};
+}
 
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -41,7 +41,7 @@ const Blog = defineDocumentType(() => ({
       }),
     },
   },
-}));
+}))
 
 const Guides = defineDocumentType(() => ({
   name: 'Guide',
@@ -67,7 +67,7 @@ const Guides = defineDocumentType(() => ({
       }),
     },
   },
-}));
+}))
 
 const Doc = defineDocumentType(() => ({
   name: 'Doc',
@@ -95,7 +95,7 @@ const Doc = defineDocumentType(() => ({
       }),
     },
   },
-}));
+}))
 
 const FAQ = defineDocumentType(() => ({
   name: 'FAQ',
@@ -117,15 +117,35 @@ const FAQ = defineDocumentType(() => ({
       }),
     },
   },
-}));
+}))
+
+const Changelog = defineDocumentType(() => ({
+  name: 'Changelog',
+  filePathPattern: 'changelog/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+  },
+  computedFields: {
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        title: doc.title,
+        description: doc.description,
+        slug: '/changelog',
+      }),
+    },
+  },
+}))
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'pages',
-  documentTypes: [Blog, Doc, Guides, FAQ],
+  documentTypes: [Blog, Doc, Guides, FAQ, Changelog],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
   },
-});
+})
 
-export default contentLayerConfig;
+export default contentLayerConfig
