@@ -9104,6 +9104,11 @@ react-remove-scroll@2.4.1:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
+react-responsive-masonry@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/react-responsive-masonry/-/react-responsive-masonry-2.1.4.tgz#28d6058167c5b047c9df2ae41216c4fdc6ca976b"
+  integrity sha512-Neqkc6gM7F5d+nBvDSlKQmQOjdWNabLT2EXpVvpJb6oD8lD3hRujd8IDd1UViQR++SSTkhLcsC3Ru7hc6XjT5A==
+
 react-simple-code-editor@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.11.0.tgz#bb57c7c29b570f2ab229872599eac184f5bc673c"

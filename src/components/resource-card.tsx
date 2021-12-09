@@ -1,13 +1,14 @@
 import {
   Badge,
-  Box,
   BoxProps,
   Heading,
-  Link,
+  LinkBox,
+  LinkOverlay,
   Text,
   useColorModeValue,
   Wrap,
   WrapItem,
+  VStack,
 } from '@chakra-ui/react'
 import * as React from 'react'
 
@@ -30,36 +31,53 @@ function ResourceCard(props: ResourceCardProps) {
   const color = useColorModeValue('teal.600', 'teal.400')
 
   return (
-    <Box {...rest} maxW='360px'>
-      <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
-        {tags?.map((tag, index) => (
-          <WrapItem key={index}>
-            <Badge
-              as='a'
-              rel='tag'
-              color={color}
-              textTransform='uppercase'
-              fontSize='xs'
-              fontWeight='bold'
-            >
-              {tag}
-            </Badge>
-          </WrapItem>
-        ))}
-      </Wrap>
+    <LinkBox
+      {...rest}
+      p={4}
+      rounded='lg'
+      transitionProperty='all'
+      transitionDuration='slower'
+      transitionTimingFunction='ease-out'
+      _hover={{
+        transform: 'scale(1.025)',
+        boxShadow: 'var(--chakra-shadows-md)',
+      }}
+      bg={useColorModeValue('gray.50', 'gray.700')}
+    >
+      <VStack spacing={2} align='stretch'>
+        <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
+          {tags?.map((tag, index) => (
+            <WrapItem key={index} overflow='hidden'>
+              <Badge
+                as='a'
+                rel='tag'
+                color={color}
+                textTransform='uppercase'
+                fontSize='xs'
+                fontWeight='bold'
+                whiteSpace='break-spaces'
+              >
+                {tag}
+              </Badge>
+            </WrapItem>
+          ))}
+        </Wrap>
 
-      <Heading as='h3' size='sm'>
-        <Link isExternal href={url}>
-          <span className='content'>{heading}</span>
-        </Link>
-      </Heading>
-      <Text fontSize='sm' color='gray.500' mt='2'>
-        by {author}
-      </Text>
-      <Text lineHeight='tall' py={2} opacity={0.8}>
-        {description}
-      </Text>
-    </Box>
+        <LinkOverlay isExternal href={url}>
+          <VStack spacing={2} align='stretch'>
+            <Heading as='h3' size='sm'>
+              <span className='content'>{heading}</span>
+            </Heading>
+            <Text fontSize='sm' color='gray.500'>
+              by {author}
+            </Text>
+            <Text lineHeight='tall' opacity={0.8}>
+              {description}
+            </Text>
+          </VStack>
+        </LinkOverlay>
+      </VStack>
+    </LinkBox>
   )
 }
 
