@@ -45,6 +45,9 @@ async function main() {
 
   const newData = await generateShowcaseData()
 
+  // Remove those data existing in showcase.json but not existing in chakra-awesome-repo
+  const polishedCurrentData = removeDeletedData(newData)
+
   const keys = Object.keys(newData)
 
   for (let key of keys) {
@@ -61,13 +64,13 @@ async function main() {
 
     const target = newData[key]
 
-    if (!showcaseData[key]) {
-      showcaseData[key] = []
+    if (!polishedCurrentData[key]) {
+      polishedCurrentData[key] = []
     }
 
     for (let i = 0; i < target.length; i++) {
       const { url, name } = target[i]
-      const currentDataTarget = showcaseData[key]
+      const currentDataTarget = polishedCurrentData[key]
 
       const showcaseDataTargetItem = currentDataTarget.filter(
         (item) => item.url === url,
@@ -117,7 +120,7 @@ async function main() {
         })
     }
   }
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(showcaseData, null, 2))
+  fs.writeFileSync(CONFIG_PATH, JSON.stringify(polishedCurrentData, null, 2))
   await browser.close()
 }
 
@@ -231,6 +234,28 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
   }
 
   return parsedData
+}
+
+const removeDeletedData = (newData: IShowcase) => {
+  const duplicatedData = _.cloneDeep(showcaseData)
+
+  for (const [key, value] of Object.entries(duplicatedData as IShowcase)) {
+    const categoryInNewData: ShowcaseItem[] = newData[key]
+    if (!categoryInNewData) {
+      delete duplicatedData[key]
+      continue
+    }
+
+    const polishedValue = value.filter(({ name }) => {
+      return categoryInNewData.some(
+        ({ name: newDataName }) => newDataName === name,
+      )
+    })
+
+    duplicatedData[key] = polishedValue
+  }
+
+  return duplicatedData
 }
 
 const isGithubUrl = (url: string) => {
