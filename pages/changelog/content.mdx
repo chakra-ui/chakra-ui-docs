@@ -1,6 +1,7 @@
 ---
 title: Changelog
 description: The changelog for Chakra UI React
+slug: "/changelog"
 ---
 
 The Changelog gives an overview of the meaningful changes we've made to Chakra
@@ -13,6 +14,138 @@ To better understand the changelog, here are some legends we use:
 - 🚀 Feature
 - 🐛 Bug fix
 - 🛠 Refactor
+
+
+
+## 09-12-2021
+
+`@chakra-ui/react@1.7.3`
+
+- Update storybook url configuration for `@chakra-ui/react` to
+  [https://storybook.chakra-ui.com](https://storybook.chakra-ui.com)
+
+**Layout** `v1.6.0`
+
+- Add support for style props `gap`, `columnGap` and `rowGap`. Those CSS
+  properties are valid in a grid or flex context
+
+> For further information see
+> [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
+
+- Fix TS issue with Grid component due to the native `gap`, `rowGap` and
+  `columnGap` we added to styled system.
+
+**Styled System** `v1.15.0`
+
+- Add support for style props `gap`, `columnGap` and `rowGap`. Those CSS
+  properties are valid in a grid or flex context
+
+> For further information see
+> [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
+
+- Fix issue where `bgGradient` parser doesn't work when a position is specified
+- Fix issue where tokens autocomplete don't show up anymore except user runs the
+  cli command.
+- Fixed issue where multi-value `inset` property doesn't work.
+
+**Menu** `v1.8.2`
+
+- Fix issue where `enabled` TS type was exposed to popover and menu from
+  `UsePopperProps`. This was resolved by omitting `enabled` from the type
+
+**Popover** `v1.11.0`
+
+- Fix issue where `enabled` TS type was exposed to popover and menu from
+  `UsePopperProps`. This was resolved by omitting `enabled` from the type
+- Fix issue where `Popover` will be `display:none` when inner element focused.
+- Add `PopoverAnchor` component which allows you to set the `Popover` reference
+  point without acting as a trigger.
+
+```jsx live=false
+<Popover>
+  {/* triggers the popover to open/close */}
+  <PopoverTrigger>
+    <button>Trigger</button>
+  </PopoverTrigger>
+  {/* popover will be positioned relative to this */}
+  <PopoverAnchor>
+    <Box width="40px" height="40px" />
+  </PopoverAnchor>
+  <PopoverContent>Hello World</PopoverContent>
+</Popover>
+```
+
+**Input** `v1.3.2`
+
+- Fixed an issue where `InputGroup` passes undefined `size` and `variant` props
+  which overrides the ones defined by default in a custom `Input` component.
+
+**System** `v1.8.3`
+
+- Allow retrieving breakpoint tokens when using useToken
+
+**Theme** `v1.12.2`
+
+- Fix issue where tokens autocomplete don't show up anymore except user runs the
+  cli command.
+
+**Toast** `v1.5.0`
+
+- The `toast` function now exposes a `containerStyle` property you can use to
+  override the default styles for the toast container.
+
+```jsx live=false
+function Example() {
+  // Via instantiation
+  const toast = useToast({
+    position: "top",
+    title: "Container style is customizable",
+    containerStyle: {
+      maxWidth: "100%",
+    },
+  })
+
+  // Or via trigger
+  return (
+    <Button
+      onClick={() => {
+        toast({
+          containerStyle: {
+            maxWidth: "100%",
+          },
+        })
+      }}
+    >
+      Click me to show toast with custom container style.
+    </Button>
+  )
+}
+```
+
+- Fix TS issue with toast placement utility
+
+**Tooltip** `v1.4.2`
+
+- Prevent `onKeyDown` callback from de/registering on every call of `useTooltip`
+
+**Media Query** `v1.2.2`
+
+- Improved performance and behavior of `useMediaQuery` hook.
+
+**Transition** `v1.4.2`
+
+- Fixed issue where the `ref` of `Slider` returns `null` due to prop override
+
+**Icon** `v2.0.0`
+
+- Auto assign `key` when passing array of paths to `createIcon`
+
+```jsx live=false
+const HeartIcon = createIcon({
+  displayName: "HeartIcon",
+  path: [<path stroke="none" d="..." fill="none" />, <path d="..." />],
+})
+```
 
 ## 17-11-2021
 
@@ -76,10 +209,10 @@ Here's how to resolve it:
 
 ```jsx live=false
 // Won't work 🎇
-import { useOutsideClick } from '@chakra-ui/hooks/dist/use-outside-click'
+import { useOutsideClick } from "@chakra-ui/hooks/dist/use-outside-click"
 
 // Works ✅
-import { useOutsideClick } from '@chakra-ui/hooks'
+import { useOutsideClick } from "@chakra-ui/hooks"
 ```
 
 If this affected your project, we recommend that you import hooks, functions or
@@ -489,10 +622,10 @@ theme but we promise to revisit the typings and API very soon.
 Creating a CSS variable in the theme
 
 ```jsx live=false
-import { cssVar, calc } from '@chakra-ui/theme-tools'
+import { cssVar, calc } from "@chakra-ui/theme-tools"
 
-const $width = cssVar('slider-width')
-const $height = cssVar('slider-height')
+const $width = cssVar("slider-width")
+const $height = cssVar("slider-height")
 
 const $diff = calc($width).subtract($height).toString()
 
@@ -562,7 +695,7 @@ type-safe, multipart component styles.
   root FormControl element to be themed.
 
 ```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from "@chakra-ui/react"
 
 export const theme = extendTheme({
   components: {
@@ -572,8 +705,8 @@ export const theme = extendTheme({
         custom: {
           // style the root `FormControl` element
           container: {
-            color: 'white',
-            bg: 'blue.900',
+            color: "white",
+            bg: "blue.900",
           },
         },
       },
@@ -755,7 +888,7 @@ export or an export named `theme`.
 
 ```jsx live=false
 // chakra-theme-package/src/index.js
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({})
 
@@ -887,7 +1020,7 @@ To use this API, you'll need to set `transform` to `auto` or `auto-gpu` (for the
 GPU accelerated version).
 
 ```jsx live=false
-<Circle transform='auto' translateX='4' _hover={{ translateX: '8' }}>
+<Circle transform="auto" translateX="4" _hover={{ translateX: "8" }}>
   <CheckIcon />
 </Circle>
 ```
@@ -1100,35 +1233,35 @@ import {
   withDefaultSize,
   withDefaultVariant,
   withDefaultProps,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 
 const customTheme = extendTheme(
   {
     colors: {
       brand: {
         // ...
-        500: '#b4d455',
+        500: "#b4d455",
         // ...
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: 'brand' }),
+  withDefaultColorScheme({ colorScheme: "brand" }),
   withDefaultSize({
-    size: 'lg',
-    components: ['Input', 'NumberInput', 'PinInput'],
+    size: "lg",
+    components: ["Input", "NumberInput", "PinInput"],
   }),
   withDefaultVariant({
-    variant: 'outline',
-    components: ['Input', 'NumberInput', 'PinInput'],
+    variant: "outline",
+    components: ["Input", "NumberInput", "PinInput"],
   }),
   // or all in one:
   withDefaultProps({
     defaultProps: {
-      colorScheme: 'brand',
-      variant: 'outline',
-      size: 'lg',
+      colorScheme: "brand",
+      variant: "outline",
+      size: "lg",
     },
-    components: ['Input', 'NumberInput', 'PinInput'],
+    components: ["Input", "NumberInput", "PinInput"],
   }),
   // optional:
   yourCustomBaseTheme, // defaults to our chakra default theme
@@ -1175,7 +1308,7 @@ const customTheme = extendTheme(
   or `end`.
 
 ```jsx live=false
-<Button isLoading spinnerPlacement='end'>
+<Button isLoading spinnerPlacement="end">
   Click me
 </Button>
 ```
@@ -1437,7 +1570,7 @@ Popover
 - 🐛 Use `--popover-bg` css property to control popover and arrow background.
 
 ```jsx live=false
-<PopoverContent style={{ '--popover-bg': 'purple' }}>
+<PopoverContent style={{ "--popover-bg": "purple" }}>
   <PopoverArrow />
 </PopoverContent>
 ```
@@ -1557,9 +1690,9 @@ Table
 ```jsx live=false
 <Box
   sx={{
-    '--banner-color': 'colors.red.200',
-    '& .banner': {
-      bg: 'var(--banner-color)',
+    "--banner-color": "colors.red.200",
+    "& .banner": {
+      bg: "var(--banner-color)",
     },
   }}
 />
@@ -1777,7 +1910,7 @@ Table
   `extendTheme` function even further.
 
 ```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from "@chakra-ui/react"
 
 export const customTheme = extendTheme({
   // here you get autocomplete for
@@ -1819,13 +1952,13 @@ You can get typesafe access to your custom theme like this:
 const theme = {
   textStyles: {
     caps: {
-      fontWeight: 'bold',
-      fontSize: '24px',
+      fontWeight: "bold",
+      fontSize: "24px",
     },
   },
 }
 
-const styles = css({ textStyle: 'caps' })(theme)
+const styles = css({ textStyle: "caps" })(theme)
 ```
 
 This also works for the component theme as well.
