@@ -122,7 +122,7 @@ async function main() {
 }
 
 const octokit = new Octokit({
-  auth: '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',
+  auth: process.env.GITHUB_TOKEN,
 })
 
 const REPO_CONFIG = {
