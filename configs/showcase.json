@@ -134,6 +134,13 @@
       "url": "https://nikolovlazar.com",
       "image": "showcases/websites/Lazar-Nikolov's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "DevKit",
+      "description": "A PWA that houses a number of developer focussed 🧰 tools. Free and Open Source, built with NextJS, ⚡ Chakra UI and a number of smaller libraries, by [@AnishDe12020](https",
+      "url": "https://www.devkit.one/",
+      "image": "showcases/websites/DevKit.png",
+      "type": "websites"
     }
   ],
   "libraries": [

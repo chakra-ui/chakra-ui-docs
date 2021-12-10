@@ -5,6 +5,7 @@ import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
 import dotenv from 'dotenv'
+import showcaseData from '../configs/showcase.json'
 import fetch from 'node-fetch'
 
 dotenv.config()
@@ -21,11 +22,10 @@ export type ShowcaseItem = {
   description: string | null
   url: string | null
   type: ShowcaseKeys | null
-  github: string | null
   image: string | null
 }
 
-export type IShowcase = Record<ShowcaseKeys, ShowcaseItem[]> | {}
+export type IShowcase = Partial<Record<ShowcaseKeys, ShowcaseItem[]>>
 
 const DIR_FOR_STORING_PREVIEW_IMAGE = 'showcases'
 const CONFIG_PATH = './configs/showcase.json'
@@ -38,11 +38,15 @@ async function main() {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
     },
+    headless: false,
   })
+
   const page = await browser.newPage()
-  await page.setDefaultNavigationTimeout(0)
 
   const newData = await generateShowcaseData()
+
+  // Remove those data existing in showcase.json but not existing in chakra-awesome-repo
+  const polishedCurrentData = removeDeletedData(newData)
 
   const keys = Object.keys(newData)
 
@@ -60,9 +64,22 @@ async function main() {
 
     const target = newData[key]
 
+    if (!polishedCurrentData[key]) {
+      polishedCurrentData[key] = []
+    }
+
     for (let i = 0; i < target.length; i++) {
       const { url, name } = target[i]
+      const currentDataTarget = polishedCurrentData[key]
+
+      const showcaseDataTargetItem = currentDataTarget.filter(
+        (item) => item.url === url,
+      )[0]
+
       if (!url) continue
+
+      // If the data does exist and we fetched the image before, pass it
+      if (showcaseDataTargetItem) continue
 
       // If it's youtube's url, use a thumbnail instead of a screenshot
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
@@ -71,11 +88,20 @@ async function main() {
       }
 
       if (isGitHubImageUrl(url)) {
-        target[i].image = await getGitHubSocialImage(url, name, localDirToPreviewImageDir, key)
-        continue;
+        target[i].image = await getGitHubSocialImage(
+          url,
+          name,
+          localDirToPreviewImageDir,
+          key,
+        )
+        continue
       }
 
-      await page.goto(url, { waitUntil: 'networkidle2' })
+      try {
+        await page.goto(url, { waitUntil: 'networkidle2' })
+      } catch (error) {
+        console.log(error)
+      }
 
       await wait(1000)
 
@@ -83,6 +109,8 @@ async function main() {
       const imagePath = path.join(localDirToPreviewImageDir, fileName)
       target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
       const buffer = await page.screenshot()
+
+      currentDataTarget.push(target[i])
 
       sharp(buffer)
         .resize(850)
@@ -92,7 +120,7 @@ async function main() {
         })
     }
   }
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(newData, null, 2))
+  fs.writeFileSync(CONFIG_PATH, JSON.stringify(polishedCurrentData, null, 2))
   await browser.close()
 }
 
@@ -130,14 +158,7 @@ class Item {
   image?: string
   type: string
 
-  constructor({
-    name,
-    description = null,
-    url = null,
-    github = null,
-    image = null,
-    type,
-  }) {
+  constructor({ name, description = null, url = null, image = null, type }) {
     this.name = name
     this.description = description
     this.url = url
@@ -185,11 +206,11 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       const parsedUrl = parseGithubUrl(link)
 
       if (!parsedUrl) {
-        console.error('ERROR', link);
-        continue;
+        console.error('ERROR', link)
+        continue
       }
 
-      const { owner, repo } = parsedUrl;
+      const { owner, repo } = parsedUrl
 
       let url = link
 
@@ -215,6 +236,28 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
   return parsedData
 }
 
+const removeDeletedData = (newData: IShowcase) => {
+  const duplicatedData = _.cloneDeep(showcaseData)
+
+  for (const [key, value] of Object.entries(duplicatedData as IShowcase)) {
+    const categoryInNewData: ShowcaseItem[] = newData[key]
+    if (!categoryInNewData) {
+      delete duplicatedData[key]
+      continue
+    }
+
+    const polishedValue = value.filter(({ name }) => {
+      return categoryInNewData.some(
+        ({ name: newDataName }) => newDataName === name,
+      )
+    })
+
+    duplicatedData[key] = polishedValue
+  }
+
+  return duplicatedData
+}
+
 const isGithubUrl = (url: string) => {
   const githubUrlPrefix = '^(https|http)://github.com/'
   return new RegExp(githubUrlPrefix).test(url)
@@ -238,19 +281,25 @@ const getYouTubeThumbnail = (youtubeUrl: string) => {
   return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
 }
 
-const META_IMAGE_REGEX = /<meta(?=\s|>)(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\sproperty=(?:'og:image|"og:image"|og:image))(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\scontent=('[^']*'|"[^"]*"|[^'"][^\s>]*))(?:[^'">=]*|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*>/g;
-const getGitHubSocialImage = async (repoUrl: string, name: string, localDirToPreviewImageDir: string, key: string) => {
+const META_IMAGE_REGEX =
+  /<meta(?=\s|>)(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\sproperty=(?:'og:image|"og:image"|og:image))(?=(?:[^>=]|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*?\scontent=('[^']*'|"[^"]*"|[^'"][^\s>]*))(?:[^'">=]*|='[^']*'|="[^"]*"|=[^'"][^\s>]*)*>/g
+const getGitHubSocialImage = async (
+  repoUrl: string,
+  name: string,
+  localDirToPreviewImageDir: string,
+  key: string,
+) => {
   try {
-    const pageContents = await (await fetch(repoUrl)).text();
-    const metaImage = pageContents.match(META_IMAGE_REGEX);
-    const imageRegex = /https:\/\/.+"/;
-    const imageUrl = imageRegex.exec(metaImage[0])[0].slice(0, -1);
+    const pageContents = await (await fetch(repoUrl)).text()
+    const metaImage = pageContents.match(META_IMAGE_REGEX)
+    const imageRegex = /https:\/\/.+"/
+    const imageUrl = imageRegex.exec(metaImage[0])[0].slice(0, -1)
 
     const fileName = `${name.split(' ').join('-')}.png`
     const imagePath = path.join(localDirToPreviewImageDir, fileName)
 
-    const blob = await (await fetch(imageUrl)).blob();
-    const buffer = await (blob.stream()).read();
+    const blob = await (await fetch(imageUrl)).blob()
+    const buffer = await blob.stream().read()
 
     sharp(buffer)
       .resize(850)
