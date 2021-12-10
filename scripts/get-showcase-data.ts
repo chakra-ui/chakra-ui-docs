@@ -189,12 +189,17 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       const name = str.match(curlyBraces)[1]
       const link = str.match(parentheses)[1]
 
-      const description = str
+      let description = str
         .replace(curlyBraces, '')
         .replace(parentheses, '')
-        .split(':')
-        .filter((s) => s !== ' ')[1]
-        ?.trim()
+        .slice(4);
+
+      let innerLinks = description.match(curlyBraces);
+
+      while (innerLinks) {
+        description = description.replace(parentheses, '').replace(curlyBraces, innerLinks[1]);
+        innerLinks = description.match(curlyBraces);
+      }
 
       if (!isGithubUrl(link)) {
         parsedItems.push(
