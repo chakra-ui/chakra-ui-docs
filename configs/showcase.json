@@ -137,9 +137,16 @@
     },
     {
       "name": "DevKit",
-      "description": "A PWA that houses a number of developer focussed 🧰 tools. Free and Open Source, built with NextJS, ⚡ Chakra UI and a number of smaller libraries, by [@AnishDe12020](https",
+      "description": "A PWA that houses a number of developer focussed 🧰 tools. Free and Open Source, built with NextJS, ⚡ Chakra UI and a number of smaller libraries, by @AnishDe12020 and the 🧑‍🤝‍🧑 community.",
       "url": "https://www.devkit.one/",
       "image": "showcases/websites/DevKit.png",
+      "type": "websites"
+    },
+    {
+      "name": "Bloomberg Global Coal Countdown",
+      "description": "A Rich data vizualitation website built with Next.JS, Chakra UI, and Nivo as the go-to online resource to track the world’s progress towards a coal-free future, by Zero One Group.",
+      "url": "https://bloombergcoalcountdown.com/",
+      "image": "showcases/websites/Bloomberg-Global-Coal-Countdown.png",
       "type": "websites"
     }
   ],
