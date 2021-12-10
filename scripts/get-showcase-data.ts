@@ -38,7 +38,6 @@ async function main() {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
     },
-    headless: false,
   })
 
   const page = await browser.newPage()
