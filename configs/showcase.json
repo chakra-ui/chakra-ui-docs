@@ -299,6 +299,13 @@
       "url": "https://uselessdev-datepicker.netlify.app",
       "image": "showcases/tools/Chakra-Datepicker.png",
       "type": "tools"
+    },
+    {
+      "name": "HyperTheme Editor",
+      "description": "n advanced live theme editor for your Chakra UI projects",
+      "url": "https://www.hyperthe.me/",
+      "image": "showcases/tools/HyperTheme-Editor.png",
+      "type": "tools"
     }
   ],
   "articles": [
