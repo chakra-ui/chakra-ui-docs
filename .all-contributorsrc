@@ -1007,6 +1007,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "navarroaxel",
+      "name": "Axel Navarro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1536740?v=4",
+      "profile": "http://cloudx.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

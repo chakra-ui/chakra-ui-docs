@@ -235,6 +235,7 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/bryg217"><img src="https://avatars.githubusercontent.com/u/23528307?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bryan Guillen</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=bryg217" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://cloudx.com"><img src="https://avatars.githubusercontent.com/u/1536740?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Axel Navarro</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=navarroaxel" title="Documentation">📖</a></td>
   </tr>
 </table>
 
