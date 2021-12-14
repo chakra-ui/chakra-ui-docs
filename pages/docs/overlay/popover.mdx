@@ -29,6 +29,7 @@ clickable trigger element.
 - `PopoverBody`: The body of the popover.
 - `PopoverArrow`: A visual arrow that points to the reference (or trigger).
 - `PopoverCloseButton`: A button to close the popover.
+- `PopoverAnchor`: Used to wrap the position-reference element.
 
 ```js
 import {
@@ -40,6 +41,7 @@ import {
   PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
+  PopoverAnchor,
 } from '@chakra-ui/react'
 ```
 
@@ -267,6 +269,64 @@ function ControlledUsage() {
         </PopoverContent>
       </Popover>
     </>
+  )
+}
+```
+
+## Popover Anchor
+
+You can wrap your component with `PopoverAnchor` to prevent trigger any action.
+The wrapped component will become a position reference. Actions will only be
+triggerred by components inside `PopoverTrigger`.
+
+In this case, you can only open and close the popover with `Button`. If you
+click on `Input`, it acts same as the original input and doesn't trigger any
+action about popover.
+
+```jsx
+function WithPopoverAnchor() {
+  const [isEditing, setIsEditing] = useBoolean()
+  const [color, setColor] = React.useState('red')
+
+  return (
+    <Popover
+      isOpen={isEditing}
+      onOpen={setIsEditing.on}
+      onClose={setIsEditing.off}
+      closeOnBlur={false}
+      isLazy
+      lazyBehavior='keepMounted'
+    >
+      <HStack>
+        <PopoverAnchor>
+          <Input
+            color={color}
+            w='auto'
+            display='inline-flex'
+            isDisabled={!isEditing}
+            defaultValue='Popover Anchor'
+          />
+        </PopoverAnchor>
+
+        <PopoverTrigger>
+          <Button h='40px' colorScheme='pink'>
+            {isEditing ? 'Save' : 'Edit'}
+          </Button>
+        </PopoverTrigger>
+      </HStack>
+
+      <PopoverContent>
+        <PopoverBody>
+          Colors:
+          <RadioGroup value={color} onChange={(newColor) => setColor(newColor)}>
+            <Radio value='red'>red</Radio>
+            <Radio value='blue'>blue</Radio>
+            <Radio value='green'>green</Radio>
+            <Radio value='purple'>purple</Radio>
+          </RadioGroup>
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
   )
 }
 ```
