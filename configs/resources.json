@@ -263,6 +263,14 @@
       "author": "Chakra UI",
       "description": "Watch the maintainers of Chakra UI triage issues, add features and release new versions of the library 🎉",
       "url": "https://www.youtube.com/watch?v=0TLxtE_GCbM"
+    },
+    {
+      "heading": "Chakra Shorts #1 - Dynamic Shadow Image",
+      "type": "video",
+      "tags": ["Chakra UI", "Chakra Shorts", "v1.7.2"],
+      "author": "Chakra UI",
+      "description": "In this Short we'll we're covering dynamic shadows and how you can create them using Chakra UI.",
+      "url": "https://www.youtube.com/watch?v=HMTyQjASff4"
     }
   ]
 }
