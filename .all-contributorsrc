@@ -1016,6 +1016,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "aacevski",
+      "name": "Andrej",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44305048?v=4",
+      "profile": "https://github.com/aacevski",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
