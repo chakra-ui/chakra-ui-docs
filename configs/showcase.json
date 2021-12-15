@@ -90,6 +90,13 @@
       "url": "https://www.devkit.one/",
       "image": "showcases/projects/DevKit.png",
       "type": "projects"
+    },
+    {
+      "name": "React Python IDE",
+      "description": " Python IDE run in browser,  built with ReactJS,  🔥 Chakra UI, skulpt and Xterm.js. ",
+      "url": "https://react-python-ide.vercel.app/",
+      "image": "showcases/projects/React-Python-IDE.png",
+      "type": "projects"
     }
   ],
   "websites": [
