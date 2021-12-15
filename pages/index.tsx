@@ -202,6 +202,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                   height={55}
                   width={240}
                   src='/git-nation-badge.png'
+                  alt='Git Nations Award for the most impactful project to the community'
                 />
               </Box>
             </Center>
