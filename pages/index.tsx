@@ -10,7 +10,6 @@ import {
   Grid,
   Heading,
   Icon,
-  Img,
   LightMode,
   SimpleGrid,
   Stack,
@@ -44,6 +43,23 @@ import { getAllMembers } from 'utils/get-all-members'
 import { getAllSponsors } from 'utils/get-all-sponsors'
 import { getGithubStars } from 'utils/get-github-stars'
 import { t } from 'utils/i18n'
+import { default as NextImage } from 'next/image'
+import ChakraNextImage from 'components/showcase/chakra-next-image'
+
+const NextChakraImage = chakra(NextImage, {
+  shouldForwardProp: (prop) =>
+    [
+      'width',
+      'height',
+      'src',
+      'alt',
+      'quality',
+      'placeholder',
+      'blurDataURL',
+      'loader ',
+      'loading',
+    ].includes(prop),
+})
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -198,7 +214,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 px='6'
                 py='4'
               >
-                <Img h='55px' src='/git-nation-badge.png' />
+                <NextChakraImage
+                  height={55}
+                  width={240}
+                  src='/git-nation-badge.png'
+                />
               </Box>
             </Center>
           </Container>
@@ -227,11 +247,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 .filter((user) => user.image.includes('.'))
                 .map((user) => (
                   <WrapItem key={user.name} bg='white' p='5' rounded='md'>
-                    <chakra.img
+                    <NextChakraImage
                       key={user.image}
                       alt={user.name}
-                      h='24px'
-                      w='auto'
+                      height={24}
+                      width={120}
                       src={user.image}
                       loading='lazy'
                     />
@@ -397,16 +417,16 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               </chakra.p>
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
-                  <WrapItem
-                    as={Img}
-                    key={i.login}
-                    width='80px'
-                    height='80px'
-                    rounded='full'
-                    alt={i.name}
-                    src={i.avatar_url}
-                    loading='lazy'
-                  />
+                  <WrapItem key={i.login}>
+                    <NextChakraImage
+                      alt={i.name}
+                      src={i.avatar_url}
+                      width={80}
+                      height={80}
+                      rounded='full'
+                      loading='lazy'
+                    />
+                  </WrapItem>
                 ))}
               </Wrap>
             </Box>
@@ -566,10 +586,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                       bg='white'
                       shadow='lg'
                     >
-                      <Img
+                      <ChakraNextImage
                         rounded='full'
-                        w='56px'
-                        h='56px'
+                        width={56}
+                        height={56}
                         alt={i.name}
                         key={i.MemberId}
                         src={i.image}
@@ -585,17 +605,17 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
-                  <WrapItem
-                    as={Img}
-                    rounded='full'
-                    w='40px'
-                    h='40px'
-                    objectFit='cover'
-                    alt={i.name}
-                    key={i.MemberId}
-                    src={i.image}
-                    loading='lazy'
-                  />
+                  <WrapItem key={i.MemberId}>
+                    <ChakraNextImage
+                      src={i.image}
+                      alt={i.name}
+                      loading='lazy'
+                      rounded='full'
+                      width={40}
+                      height={40}
+                      objectFit='cover'
+                    />
+                  </WrapItem>
                 ))}
               </Wrap>
             </Box>
