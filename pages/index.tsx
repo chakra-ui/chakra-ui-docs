@@ -43,23 +43,7 @@ import { getAllMembers } from 'utils/get-all-members'
 import { getAllSponsors } from 'utils/get-all-sponsors'
 import { getGithubStars } from 'utils/get-github-stars'
 import { t } from 'utils/i18n'
-import { default as NextImage } from 'next/image'
 import ChakraNextImage from 'components/chakra-next-image'
-
-const NextChakraImage = chakra(NextImage, {
-  shouldForwardProp: (prop) =>
-    [
-      'width',
-      'height',
-      'src',
-      'alt',
-      'quality',
-      'placeholder',
-      'blurDataURL',
-      'loader ',
-      'loading',
-    ].includes(prop),
-})
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
