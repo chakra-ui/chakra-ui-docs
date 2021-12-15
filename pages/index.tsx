@@ -44,7 +44,7 @@ import { getAllSponsors } from 'utils/get-all-sponsors'
 import { getGithubStars } from 'utils/get-github-stars'
 import { t } from 'utils/i18n'
 import { default as NextImage } from 'next/image'
-import ChakraNextImage from 'components/showcase/chakra-next-image'
+import ChakraNextImage from 'components/chakra-next-image'
 
 const NextChakraImage = chakra(NextImage, {
   shouldForwardProp: (prop) =>
@@ -214,7 +214,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 px='6'
                 py='4'
               >
-                <NextChakraImage
+                <ChakraNextImage
                   height={55}
                   width={240}
                   src='/git-nation-badge.png'
@@ -247,7 +247,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 .filter((user) => user.image.includes('.'))
                 .map((user) => (
                   <WrapItem key={user.name} bg='white' p='5' rounded='md'>
-                    <NextChakraImage
+                    <ChakraNextImage
                       key={user.image}
                       alt={user.name}
                       height={24}
@@ -418,7 +418,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
                   <WrapItem key={i.login}>
-                    <NextChakraImage
+                    <ChakraNextImage
                       alt={i.name}
                       src={i.avatar_url}
                       width={80}
