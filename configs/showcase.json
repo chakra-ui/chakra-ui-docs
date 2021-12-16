@@ -97,6 +97,13 @@
       "url": "https://react-python-ide.vercel.app/",
       "image": "showcases/projects/React-Python-IDE.png",
       "type": "projects"
+    },
+    {
+      "name": "Markdown Notes",
+      "description": " fully responsive note-taking application in markdown language, built with Chakra UI, react-markdown and codemirror.",
+      "url": "https://markdown-notes.netlify.app/",
+      "image": "showcases/projects/Markdown-Notes.png",
+      "type": "projects"
     }
   ],
   "websites": [
