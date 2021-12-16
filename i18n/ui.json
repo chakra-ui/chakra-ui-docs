@@ -79,6 +79,11 @@
     "title": "Community Resources",
     "description": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
     "message": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+    "searchFilter": {
+      "helperText": "Filter by resource title.",
+      "label": "Search",
+      "placeholder": "react"
+    },
     "talks": {
       "title": "Talks"
     },
@@ -143,7 +148,8 @@
       "component-links": {
         "view-source": "View source",
         "view-storybook": "View storybook",
-        "view-theme-source": "View theme source"
+        "view-theme-source": "View theme source",
+        "view-video": "Watch video"
       }
     },
     "algolia-search": {
@@ -169,7 +175,8 @@
       "guides": "Guides",
       "resources": "Resources",
       "faq": "FAQ",
-      "team": "Team"
+      "team": "Team",
+      "showcase": "Showcase"
     },
     "page-container": {
       "skip-to-content": "Skip to Content"
@@ -194,5 +201,14 @@
     "vercel-callout": {
       "deployed-by": "Deployed by"
     }
+  },
+  "showcase": {
+    "seo": {
+      "title": "Chakra UI Showcase",
+      "description": "A showcase for sharing beautiful websites that are built in Chakra-UI"
+    },
+    "title": "Showcase",
+    "message": "Meet Websites Built with Chakra UI",
+    "submit-project-button-title": "Submit your project"
   }
 }

@@ -1,0 +1,145 @@
+---
+title: Remix
+description: A guide for installing Chakra UI with Remix projects
+tags: ['remix']
+author: noobinthisgame
+---
+
+> This guide is still work in progress! Feel free to contribute if you have
+> something built with Remix and Chakra UI 😃
+
+#### 1. Installation
+
+Inside your `Remix` project root directory, install Chakra UI by running either
+of the following:
+
+```bash
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+```
+
+```bash
+yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+```
+
+> 🚨 Right now `yarn` is not officially supported in Remix projects, so use it
+> with care!
+
+#### 2. Provider Setup
+
+After installing Chakra UI, you need to set up the `ChakraProvider` at the root
+of your application. The root of your `Remix` application is `/app/root.tsx`
+
+Put in the following code:
+
+```jsx live=false
+import { ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <Document>
+      <ChakraProvider>
+        <Outlet />
+      </ChakraProvider>
+    </Document>
+  )
+}
+```
+
+Additionally with `Remix` you'll need to setup the `ChakraProvider` in every
+other place where the full Document gets replaced as in `ErrorBoundary` and
+`CatchBoundary`:
+
+```jsx live=false
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <Document title='Error!'>
+      <ChakraProvider>
+        <Box>
+          <Heading as='h1'>There was an error</Heading>
+        </Box>
+      </ChakraProvider>
+    </Document>
+  )
+}
+
+export function CatchBoundary() {
+  let caught = useCatch()
+
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <ChakraProvider>
+        <Box>
+          <Heading as='h1'>
+            {caught.status} {caught.statusText}
+          </Heading>
+        </Box>
+      </ChakraProvider>
+    </Document>
+  )
+}
+```
+
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+
+> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
+> take it a step further, check out step 3.
+
+#### 3. Optional Setup
+
+- Customizing Theme
+
+If you intend to customise the default theme object to match your design
+requirements, you can extend the `theme` from `@chakra-ui/react`.
+
+Chakra UI provides an `extendTheme` function that deep merges the default theme
+with your customizations.
+
+```jsx live=false
+import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+const theme = extendTheme({ colors })
+
+export default function App() {
+  return (
+    <Document>
+      <ChakraProvider theme={theme}>
+        <Outlet />
+      </ChakraProvider>
+    </Document>
+  )
+}
+```
+
+> To further customize components or build your own design system, the
+> `theme-tools` package includes useful utilities. Install
+> `@chakra-ui/theme-tools`.
+
+- Using Chakra Icons
+
+Chakra provides a set of commonly used interface icons you can use in your
+project.
+
+If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
+
+> Follow this guide for customising Chakra Icons
+> [Using Chakra UI Icons](/docs/media-and-icons/icon).
+
+#### Notes on TypeScript 🚨
+
+Please note that when adding Chakra UI to a TypeScript project, a minimum
+TypeScript version of `4.1.0` is required.

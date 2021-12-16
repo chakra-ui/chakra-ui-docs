@@ -426,6 +426,10 @@
               "path": "/docs/hooks/use-controllable"
             },
             {
+              "title": "useConst",
+              "path": "/docs/hooks/use-const"
+            },
+            {
               "title": "useDisclosure",
               "path": "/docs/hooks/use-disclosure"
             },

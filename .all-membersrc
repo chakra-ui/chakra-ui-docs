@@ -66,7 +66,7 @@
       "url": "https://github.com/lazarnikolov94",
       "blog": "https://nikolovlazar.com",
       "name": "Lazar Nikolov",
-      "bio": "Partner @codechem. Core & DevRel at @chakra-ui. Instructor @eggheadio. Streaming #WebDev on http://twitch.tv/nikolovlazar. OSS Advocate 🥑",
+      "bio": "Partner @codechem. Core & DevRel at @chakra-ui. Instructor @eggheadio. Streaming #WebDev on https://twitch.tv/nikolovlazar. OSS Advocate 🥑",
       "twitter_username": "NikolovLazar",
       "location": "Skopje, Macedonia"
     },
@@ -76,7 +76,7 @@
       "url": "https://github.com/ljosberinn",
       "blog": "https://gerritalex.de",
       "name": "Gerrit Alex",
-      "bio": "professional unblocker on discord & at work, frontend engineer @Interhyp, maintainer \r\n@chakra-ui, self taught",
+      "bio": null,
       "twitter_username": "gerrit_alex",
       "location": "Munich, Bavaria"
     },

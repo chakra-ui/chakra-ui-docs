@@ -989,6 +989,42 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "MustafaHaddara",
+      "name": "Mustafa Haddara",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11722214?v=4",
+      "profile": "https://github.com/MustafaHaddara",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "bryg217",
+      "name": "Bryan Guillen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23528307?v=4",
+      "profile": "https://github.com/bryg217",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "navarroaxel",
+      "name": "Axel Navarro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1536740?v=4",
+      "profile": "http://cloudx.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "aacevski",
+      "name": "Andrej",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44305048?v=4",
+      "profile": "https://github.com/aacevski",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
