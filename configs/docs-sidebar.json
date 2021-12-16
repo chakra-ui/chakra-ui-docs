@@ -426,6 +426,14 @@
               "path": "/docs/hooks/use-controllable"
             },
             {
+              "title": "useCheckbox",
+              "path": "/docs/hooks/use-checkbox"
+            },
+            {
+              "title": "useCheckboxGroup",
+              "path": "/docs/hooks/use-checkbox-group"
+            },
+            {
               "title": "useConst",
               "path": "/docs/hooks/use-const"
             },
