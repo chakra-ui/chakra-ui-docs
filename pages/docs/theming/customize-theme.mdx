@@ -25,6 +25,7 @@ brand colors, here's what you'll do:
 ```jsx live=false
 // 1. Import `extendTheme`
 import { extendTheme } from "@chakra-ui/react"
+import { mode } from '@chakra-ui/theme-tools'
 
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
@@ -34,6 +35,7 @@ const theme = extendTheme({
       // ...
       900: "#1a202c",
     },
+    primary: mode('black', 'pink.400') // for light and dark color mode
   },
 })
 
