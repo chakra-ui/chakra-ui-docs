@@ -320,6 +320,13 @@
       "url": "https://www.hyperthe.me/",
       "image": "showcases/tools/HyperTheme-Editor.png",
       "type": "tools"
+    },
+    {
+      "name": "Chakra Capsize",
+      "description": "he power of Capsize inside Chakra UI",
+      "url": "https://githubbox.com/ceteio/chakra-capsize/tree/main/example",
+      "image": "showcases/tools/Chakra-Capsize.png",
+      "type": "tools"
     }
   ],
   "articles": [
