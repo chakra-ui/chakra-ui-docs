@@ -6,12 +6,7 @@ module.exports = withContentlayer()({
     modern: true,
   },
   images: {
-    domains: [
-      'img.youtube.com',
-      'assets-global.website-files.com',
-      'www.brikl.com',
-      'avatars.githubusercontent.com',
-    ],
+    domains: ['img.youtube.com', 'avatars.githubusercontent.com'],
   },
   target: 'serverless',
   redirects: require('./next-redirect'),
