@@ -1025,6 +1025,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "giacomorebonato",
+      "name": "Giacomo Rebonato",
+      "avatar_url": "https://avatars.githubusercontent.com/u/630796?v=4",
+      "profile": "http://www.giacomorebonato.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
