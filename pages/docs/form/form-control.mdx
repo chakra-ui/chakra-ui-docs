@@ -34,9 +34,9 @@ import {
 ## Usage
 
 ```jsx
-<FormControl id='email'>
-  <FormLabel>Email address</FormLabel>
-  <Input type='email' />
+<FormControl>
+  <FormLabel htmlFor='email'>Email address</FormLabel>
+  <Input id='email' type='email' />
   <FormHelperText>We'll never share your email.</FormHelperText>
 </FormControl>
 ```
@@ -64,18 +64,18 @@ By passing the `isRequired` props, the `Input` field has `aria-required` set to
 `true`, and the `FormLabel` will show a red asterisk.
 
 ```jsx
-<FormControl id='first-name' isRequired>
-  <FormLabel>First name</FormLabel>
-  <Input placeholder='First name' />
+<FormControl isRequired>
+  <FormLabel htmlFor='first-name'>First name</FormLabel>
+  <Input id='first-name' placeholder='First name' />
 </FormControl>
 ```
 
 ### Select Example
 
 ```jsx
-<FormControl id='country'>
-  <FormLabel>Country</FormLabel>
-  <Select placeholder='Select country'>
+<FormControl>
+  <FormLabel htmlFor='country'>Country</FormLabel>
+  <Select id='country' placeholder='Select country'>
     <option>United Arab Emirates</option>
     <option>Nigeria</option>
   </Select>
@@ -85,10 +85,10 @@ By passing the `isRequired` props, the `Input` field has `aria-required` set to
 ### Number Input Example
 
 ```jsx
-<FormControl id='amount'>
-  <FormLabel>Amount</FormLabel>
+<FormControl>
+  <FormLabel htmlFor='amount'>Amount</FormLabel>
   <NumberInput max={50} min={10}>
-    <NumberInputField />
+    <NumberInputField id='amount' />
     <NumberInputStepper>
       <NumberIncrementStepper />
       <NumberDecrementStepper />

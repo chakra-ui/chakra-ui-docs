@@ -41,7 +41,9 @@ import type { Member, Sponsor } from 'src/types/github'
 import { getAllContributors } from 'utils/get-all-contributors'
 import { getAllMembers } from 'utils/get-all-members'
 import { getAllSponsors } from 'utils/get-all-sponsors'
+import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
+import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
 
@@ -105,13 +107,21 @@ const StatBox = (props: StatBoxProps) => {
 interface HomePageProps {
   members: Member[]
   githubStars: string
+  npmDownloads: string
+  discordMembers: string
   sponsors: {
     companies: Sponsor[]
     individuals: Sponsor[]
   }
 }
 
-const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
+const HomePage = ({
+  members,
+  sponsors,
+  githubStars,
+  npmDownloads,
+  discordMembers,
+}: HomePageProps) => {
   return (
     <>
       <SEO
@@ -376,7 +386,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
             >
               <StatBox
                 icon={FiDownload}
-                title='813K'
+                title={npmDownloads}
                 description={t('homepage.growing-section.downloads-per-month')}
               />
               <StatBox
@@ -391,7 +401,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               />
               <StatBox
                 icon={FaDiscord}
-                title='5.1K'
+                title={discordMembers}
                 description={t('homepage.growing-section.discord-members')}
               />
             </SimpleGrid>
@@ -657,17 +667,28 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
 }
 
 export async function getStaticProps() {
-  const { prettyCount } = await getGithubStars()
+  const [
+    { prettyCount: githubStars },
+    { prettyCount: npmDownloads },
+    { prettyCount: discordMembers },
+  ] = await Promise.all([
+    getGithubStars(),
+    getNpmDownloads(),
+    getDiscordMembers(),
+  ])
+
   const contributors = getAllContributors()
   const members = getAllMembers()
   const sponsors = getAllSponsors()
 
   return {
     props: {
-      githubStars: prettyCount,
+      githubStars,
       members,
       contributors,
       sponsors,
+      discordMembers,
+      npmDownloads,
     },
   }
 }

@@ -1,11 +1,7 @@
 import { Octokit } from '@octokit/rest'
+import { numberFormatter } from './number-formatter'
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
-
-const formatter = Intl.NumberFormat('en', {
-  notation: 'compact',
-  maximumFractionDigits: 1,
-})
 
 // "https://api.npms.io/v2/package/@chakra-ui%2Freact"
 export async function getGithubStars() {
@@ -24,6 +20,6 @@ export async function getGithubStars() {
 
   return {
     count,
-    prettyCount: formatter.format(count),
+    prettyCount: numberFormatter.format(count),
   }
 }
