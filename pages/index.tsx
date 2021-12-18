@@ -47,7 +47,7 @@ import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
 import SandpackEmbed from 'components/sandpack-embed'
-import { App, Index } from 'components/sandpack-embed/file-contents'
+import { App, Index } from 'configs/sandpack-contents/homepage/files'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
