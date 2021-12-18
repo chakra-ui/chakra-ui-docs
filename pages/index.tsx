@@ -46,6 +46,8 @@ import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
+import SandpackEmbed from 'components/sandpack-embed'
+import { App, Index } from 'components/sandpack-embed/file-contents'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -285,24 +287,23 @@ const HomePage = ({
               px={{ base: '4', md: 0 }}
               position='relative'
             >
-              <Box
-                as='iframe'
-                tabIndex={-1}
-                src='https://codesandbox.io/embed/homepage-s7pkh?codemirror=1&fontsize=12&hidenavigation=1&theme=dark'
-                style={{
-                  width: '100%',
-                  background: 'white',
-                  height: '600px',
-                  border: '0',
-                  borderRadius: 8,
-                  overflow: 'hidden',
-                  position: 'static',
-                  zIndex: 0,
+              <SandpackEmbed
+                options={{
+                  editorHeight: 600,
+                  editorWidthPercentage: 60,
                 }}
+                files={{
+                  '/src/App.tsx': App,
+                  '/src/index.tsx': Index,
+                }}
+                background={'white'}
+                border={'0'}
+                borderRadius={8}
+                overflow={'hidden'}
+                position={'static'}
+                zIndex={0}
                 shadow='2xl'
-                title='Chakra Playground'
-                allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
-                sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
+                tabIndex={-1}
               />
             </Box>
           </Container>
