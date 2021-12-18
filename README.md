@@ -242,6 +242,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://czyz.it"><img src="https://avatars.githubusercontent.com/u/24492356?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bartek Czyż</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Abartekczyz" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://imadatyatalah.vercel.app"><img src="https://avatars.githubusercontent.com/u/70093484?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Imad Atyat-Alah</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=imadatyatalah" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/AnishDe12020"><img src="https://avatars.githubusercontent.com/u/63192115?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Anish De</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=AnishDe12020" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
