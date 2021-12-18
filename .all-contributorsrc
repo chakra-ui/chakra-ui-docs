@@ -1034,6 +1034,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "ashalfarhan",
+      "name": "Ashal Farhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70800415?v=4",
+      "profile": "https://github.com/ashalfarhan",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
