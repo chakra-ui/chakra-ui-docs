@@ -1052,6 +1052,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "imadatyatalah",
+      "name": "Imad Atyat-Alah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70093484?v=4",
+      "profile": "https://imadatyatalah.vercel.app",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
