@@ -1043,6 +1043,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bartekczyz",
+      "name": "Bartek Czyż",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24492356?v=4",
+      "profile": "https://czyz.it",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
