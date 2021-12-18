@@ -296,13 +296,7 @@ const HomePage = ({
                   '/src/App.tsx': App,
                   '/src/index.tsx': Index,
                 }}
-                background={'white'}
-                border={'0'}
-                borderRadius={8}
-                overflow={'hidden'}
-                position={'static'}
                 zIndex={0}
-                shadow='2xl'
                 tabIndex={-1}
               />
             </Box>
