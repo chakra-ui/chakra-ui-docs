@@ -239,6 +239,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/aacevski"><img src="https://avatars.githubusercontent.com/u/44305048?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Andrej</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=aacevski" title="Documentation">📖</a></td>
     <td align="center"><a href="http://www.giacomorebonato.com"><img src="https://avatars.githubusercontent.com/u/630796?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Giacomo Rebonato</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=giacomorebonato" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/ashalfarhan"><img src="https://avatars.githubusercontent.com/u/70800415?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Ashal Farhan</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=ashalfarhan" title="Code">💻</a></td>
+    <td align="center"><a href="https://czyz.it"><img src="https://avatars.githubusercontent.com/u/24492356?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bartek Czyż</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Abartekczyz" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
