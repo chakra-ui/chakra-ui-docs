@@ -157,14 +157,17 @@ And you can also use `Tooltip` with `SliderThumb`
 ```jsx
 function SliderThumbWithTooltip() {
   const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
   return (
     <Slider
       id='slider'
       defaultValue={5}
       min={0}
       max={100}
-      colorScheme='blue'
+      colorScheme='teal'
       onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
     >
       <SliderMark value={25} mt='1' ml='-2.5' fontSize='sm'>
         25%
@@ -180,12 +183,12 @@ function SliderThumbWithTooltip() {
       </SliderTrack>
       <Tooltip
         hasArrow
-        bg='red.600'
+        bg='teal.500'
+        color='white'
         placement='top'
-        gutter='10'
         closeOnClick={false}
-        isOpen
-        label={`${sliderValue}`}
+        isOpen={showTooltip}
+        label={`${sliderValue}%`}
       >
         <SliderThumb />
       </Tooltip>
