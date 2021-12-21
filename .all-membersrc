@@ -61,16 +61,6 @@
       "location": null
     },
     {
-      "login": "lazarnikolov94",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
-      "url": "https://github.com/lazarnikolov94",
-      "blog": "https://nikolovlazar.com",
-      "name": "Lazar Nikolov",
-      "bio": "Partner @codechem. Core & DevRel at @chakra-ui. Instructor @eggheadio. Streaming #WebDev on https://twitch.tv/nikolovlazar. OSS Advocate 🥑",
-      "twitter_username": "NikolovLazar",
-      "location": "Skopje, Macedonia"
-    },
-    {
       "login": "ljosberinn",
       "avatar_url": "https://avatars.githubusercontent.com/u/29307652?v=4",
       "url": "https://github.com/ljosberinn",
@@ -79,6 +69,16 @@
       "bio": null,
       "twitter_username": "gerrit_alex",
       "location": "Munich, Bavaria"
+    },
+    {
+      "login": "nikolovlazar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
+      "url": "https://github.com/nikolovlazar",
+      "blog": "https://nikolovlazar.com",
+      "name": "Lazar Nikolov",
+      "bio": "Developer, designer, course creator. Works @codechem. Core & DevRel at @chakra-ui. Instructor @eggheadio. Streaming on twitch.tv/nikolovlazar. OSS Advocate 🥑",
+      "twitter_username": "NikolovLazar",
+      "location": "Skopje, Macedonia"
     },
     {
       "login": "peoray",
