@@ -22,6 +22,16 @@ forms.
 
 ## Import
 
+Chakra UI export 4 components for Form Control:
+
+- **`FormControl`**: The wrapper that provides context and functionality for all
+  children.
+- **`FormLabel`**: The label of a form section. The usage is similar to
+  [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+- **`FormHelperText`**: The message that tells users more details about the form
+  section.
+- **`FormErrorMessage`**: The message that shows up when an error occurs.
+
 ```js
 import {
   FormControl,
@@ -56,6 +66,40 @@ import {
   </RadioGroup>
   <FormHelperText>Select only if you're a fan.</FormHelperText>
 </FormControl>
+```
+
+### Error message
+
+`FormErrorMessage` will only show up when the property `isInvalid` in
+`FormControl` is true.
+
+```jsx
+function errorMessageExample() {
+  const [input, setInput] = useState('')
+
+  const handleInputChange = (e) => setInput(e.target.value)
+
+  const isError = input === ''
+
+  return (
+    <FormControl isInvalid={isError}>
+      <FormLabel htmlFor='email'>Email</FormLabel>
+      <Input
+        id='email'
+        type='email'
+        value={input}
+        onChange={handleInputChange}
+      />
+      {!isError ? (
+        <FormHelperText>
+          Enter the email you'd like to receive the newsletter on.
+        </FormHelperText>
+      ) : (
+        <FormErrorMessage>Email is required.</FormErrorMessage>
+      )}
+    </FormControl>
+  )
+}
 ```
 
 ### Making a field required
