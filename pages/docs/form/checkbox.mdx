@@ -69,7 +69,7 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 `sm`, `md` or `lg`.
 
 ```jsx
-<HStack spacing={10} direction='row'>
+<Stack spacing={[1, 5]} direction={['column', 'row']}>
   <Checkbox size='sm' colorScheme='red'>
     Checkbox
   </Checkbox>
@@ -79,7 +79,7 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
   <Checkbox size='lg' colorScheme='orange' defaultIsChecked>
     Checkbox
   </Checkbox>
-</HStack>
+</Stack>
 ```
 
 ### Invalid Checkbox
