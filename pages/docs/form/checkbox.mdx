@@ -185,11 +185,11 @@ shared styling props.
 
 ```jsx
 <CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
-  <HStack>
+  <Stack spacing={[1, 5]} direction={['column', 'row']}>
     <Checkbox value='naruto'>Naruto</Checkbox>
     <Checkbox value='sasuke'>Sasuke</Checkbox>
     <Checkbox value='kakashi'>kakashi</Checkbox>
-  </HStack>
+  </Stack>
 </CheckboxGroup>
 ```
 
