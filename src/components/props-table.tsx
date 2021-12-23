@@ -58,7 +58,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
   }
 
   return (
-    <Stack spacing='10' my='10'>
+    <Stack overflowX='auto' spacing='10' my='10'>
       {propList.map((prop) => (
         <chakra.div
           key={prop.name}
