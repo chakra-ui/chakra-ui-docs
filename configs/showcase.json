@@ -104,6 +104,13 @@
       "url": "https://markdown-notes.netlify.app/",
       "image": "showcases/projects/Markdown-Notes.png",
       "type": "projects"
+    },
+    {
+      "name": "Third Web",
+      "description": " web3 platform that offer tools, intuitive SDKs and widgets for developers.",
+      "url": "https://thirdweb.com/",
+      "image": "showcases/projects/Third-Web.png",
+      "type": "projects"
     }
   ],
   "websites": [
