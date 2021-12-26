@@ -244,6 +244,7 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/AnishDe12020"><img src="https://avatars.githubusercontent.com/u/63192115?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Anish De</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=AnishDe12020" title="Code">💻</a></td>
+    <td align="center"><a href="http://gillespie59.github.io/"><img src="https://avatars.githubusercontent.com/u/555768?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Emmanuel DEMEY</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=EmmanuelDemey" title="Documentation">📖</a></td>
   </tr>
 </table>
 
