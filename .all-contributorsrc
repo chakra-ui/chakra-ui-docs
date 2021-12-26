@@ -1080,6 +1080,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "puku0x",
+      "name": "Noriyuki Shinpuku",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2607019?v=4",
+      "profile": "https://dev.to/puku0x",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
