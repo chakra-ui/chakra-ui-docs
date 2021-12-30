@@ -129,10 +129,20 @@ For Next.js, you need to add the `ColorModeScript` to the `_document.js` file.
 // pages/_document.js
 
 import { ColorModeScript } from '@chakra-ui/react'
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import theme from './theme'
 
 export default class Document extends NextDocument {
+   static async getInitialProps(ctx: DocumentContext) {
+      /* 
+         Watchout typo when compare code snippet between this and Next.js "Custom Document" docs
+         Here we extends "NextDocument", not "Document"
+         "Document.getInitialProps" --> "NextDocument.getInitialProps"
+      */
+      const initialProps = await NextDocument.getInitialProps(ctx); 
+      return { ...initialProps };
+  }
+
   render() {
     return (
       <Html lang='en'>
