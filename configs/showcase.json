@@ -111,6 +111,13 @@
       "url": "https://thirdweb.com/",
       "image": "showcases/projects/Third-Web.png",
       "type": "projects"
+    },
+    {
+      "name": "Top.gg",
+      "description": "he Best Discord Bots and Servers.",
+      "url": "https://top.gg/",
+      "image": "showcases/projects/Top.gg.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -168,6 +175,13 @@
       "description": "A Rich data vizualitation website built with Next.JS, Chakra UI, and Nivo as the go-to online resource to track the world’s progress towards a coal-free future, by Zero One Group.",
       "url": "https://bloombergcoalcountdown.com/",
       "image": "showcases/websites/Bloomberg-Global-Coal-Countdown.png",
+      "type": "websites"
+    },
+    {
+      "name": "Klerye",
+      "description": "A platform to add and find Ghanaian Youtube and Twitch channels. Created using Next.js, Chakra-UI, Prisma, Railway's postgres, trpc and deployed on Vercel.",
+      "url": "https://www.klerye.com/",
+      "image": "showcases/websites/Klerye.png",
       "type": "websites"
     }
   ],
@@ -377,6 +391,13 @@
       "description": null,
       "url": "https://dev.to/estheragbaje/how-to-truncate-text-using-chakra-ui-4mpj",
       "image": "showcases/articles/Truncating-Text-using-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "How to Set Up Chakra UI with Next JS by creating a Hero component",
+      "description": "",
+      "url": "https://creativedesignsguru.com/chakra-ui-next-js/",
+      "image": "showcases/articles/How-to-Set-Up-Chakra-UI-with-Next-JS-by-creating-a-Hero-component.png",
       "type": "articles"
     }
   ],
