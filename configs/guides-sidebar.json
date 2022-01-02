@@ -87,6 +87,10 @@
             {
               "title": "Page-Specific Color mode",
               "path": "/guides/recipes/page-specific-color-mode"
+            },
+            {
+              "title": "Horizontal Collapse",
+              "path": "/guides/recipes/horizontal-collapse"
             }
           ]
         }
