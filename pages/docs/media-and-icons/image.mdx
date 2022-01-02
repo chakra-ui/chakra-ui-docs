@@ -67,9 +67,15 @@ The size of the image can be adjusted using the `boxSize` prop.
 
 ## Fallback support
 
-You can provide a fallback image for when there is an error loading the `src` of
-the image. You can also opt out of this behavior by passing the `ignoreFallback`
-prop.
+The `Image` component allows you provide a fallback placeholder. The placeholder
+is displayed when:
+
+- The `fallback` or `fallbackSrc` prop is provided
+- The image provided in `src` is currently loading
+- An error occurred while loading the image `src`
+- No `src` prop was passed
+
+You can also opt out of this behavior by passing the `ignoreFallback` prop.
 
 ```jsx
 <Image src='gibbresh.png' fallbackSrc='https://via.placeholder.com/150' />
