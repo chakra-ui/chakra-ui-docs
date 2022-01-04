@@ -1,0 +1,50 @@
+---
+title: Chakra UI + Storybook
+description: Render your Chakra UI Components in Storybook
+tags: ['storybook', 'documentation', testing']
+author: TimKolberger
+---
+
+Use the official Storybook Addon for Chakra UI to configure Storybook to
+automatically wrap your stories with the `<ChakraProvider />` and add a color
+mode toggle.
+
+## Installation
+
+```sh
+yarn add -D @chakra-ui/storybook-addon
+yarn add @chakra-ui/icons
+```
+
+```sh
+npm i -D @chakra-ui/storybook-addon
+npm i @chakra-ui/icons
+```
+
+## Usage
+
+Add the addon to your configuration in `.storybook/main.js`:
+
+```js live=false
+module.exports = {
+  addons: ['@chakra-ui/storybook-addon'],
+}
+```
+
+You can specify global parameters for the addon in `.storybook/preview.js`.
+These options are the same as the props to `ChakraProvider` (without
+`children`).
+
+```js live=false
+// .storybook/preview.js
+
+const theme = require('../path/to/your/theme')
+
+export const parameters = {
+  chakra: {
+    theme,
+  },
+}
+```
+
+<PropsTable of='ChakraProvider' omit={['children']} />

@@ -72,6 +72,10 @@
             {
               "title": "React Table",
               "path": "/guides/integrations/with-react-table"
+            },
+            {
+              "title": "Storybook",
+              "path": "/guides/integrations/with-storybook"
             }
           ]
         },
