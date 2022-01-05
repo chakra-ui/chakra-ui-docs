@@ -27,7 +27,7 @@ The `useBreakpointValue` hook returns the value for the current breakpoint.
 
 ## Usage
 
-> `useBreakpointValue` need `base` value (not `sm`) to not return `undefined` in first render.
+> Make sure to provide a base value when using `useBreakpointValue` so it doesn't return `undefined` in the first render.
 
 ```jsx
 function Example() {
