@@ -63,6 +63,21 @@ Reach's `Link`.
 </Link>
 ```
 
+## Usage with Next.js
+
+To use the `Link` with Next.js, all you need to do is to wrap `Link` with
+Next.js `Link` component and pass the `passHref` prop. `passHref` Forces Next.js
+`Link` to send the `href` property to its child.
+
+```jsx live=false
+// 1. import NextLink from "next/link"
+
+// 2. Then use it like this
+<NextLink href='/home' passHref>
+  <Link>Home</Link>
+</NextLink>
+```
+
 ## Props
 
 The Link component composes the `Box` component.

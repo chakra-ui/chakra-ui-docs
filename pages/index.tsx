@@ -10,7 +10,6 @@ import {
   Grid,
   Heading,
   Icon,
-  Img,
   LightMode,
   SimpleGrid,
   Stack,
@@ -42,8 +41,13 @@ import type { Member, Sponsor } from 'src/types/github'
 import { getAllContributors } from 'utils/get-all-contributors'
 import { getAllMembers } from 'utils/get-all-members'
 import { getAllSponsors } from 'utils/get-all-sponsors'
+import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
+import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
+import ChakraNextImage from 'components/chakra-next-image'
+import SandpackEmbed from 'components/sandpack-embed'
+import { App, Index } from 'configs/sandpack-contents/homepage/files'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -105,13 +109,21 @@ const StatBox = (props: StatBoxProps) => {
 interface HomePageProps {
   members: Member[]
   githubStars: string
+  npmDownloads: string
+  discordMembers: string
   sponsors: {
     companies: Sponsor[]
     individuals: Sponsor[]
   }
 }
 
-const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
+const HomePage = ({
+  members,
+  sponsors,
+  githubStars,
+  npmDownloads,
+  discordMembers,
+}: HomePageProps) => {
   return (
     <>
       <SEO
@@ -198,7 +210,12 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 px='6'
                 py='4'
               >
-                <Img h='55px' src='/git-nation-badge.png' />
+                <ChakraNextImage
+                  height={55}
+                  width={240}
+                  src='/git-nation-badge.png'
+                  alt='Git Nations Award for the most impactful project to the community'
+                />
               </Box>
             </Center>
           </Container>
@@ -227,11 +244,11 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                 .filter((user) => user.image.includes('.'))
                 .map((user) => (
                   <WrapItem key={user.name} bg='white' p='5' rounded='md'>
-                    <chakra.img
+                    <ChakraNextImage
                       key={user.image}
                       alt={user.name}
-                      h='24px'
-                      w='auto'
+                      height={24}
+                      width={120}
                       src={user.image}
                       loading='lazy'
                     />
@@ -270,24 +287,17 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               px={{ base: '4', md: 0 }}
               position='relative'
             >
-              <Box
-                as='iframe'
-                tabIndex={-1}
-                src='https://codesandbox.io/embed/homepage-s7pkh?codemirror=1&fontsize=12&hidenavigation=1&theme=dark'
-                style={{
-                  width: '100%',
-                  background: 'white',
-                  height: '600px',
-                  border: '0',
-                  borderRadius: 8,
-                  overflow: 'hidden',
-                  position: 'static',
-                  zIndex: 0,
+              <SandpackEmbed
+                options={{
+                  editorHeight: 600,
+                  editorWidthPercentage: 60,
                 }}
-                shadow='2xl'
-                title='Chakra Playground'
-                allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
-                sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
+                files={{
+                  '/src/App.tsx': App,
+                  '/src/index.tsx': Index,
+                }}
+                zIndex={0}
+                tabIndex={-1}
               />
             </Box>
           </Container>
@@ -371,7 +381,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
             >
               <StatBox
                 icon={FiDownload}
-                title='813K'
+                title={npmDownloads}
                 description={t('homepage.growing-section.downloads-per-month')}
               />
               <StatBox
@@ -386,7 +396,7 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               />
               <StatBox
                 icon={FaDiscord}
-                title='5.1K'
+                title={discordMembers}
                 description={t('homepage.growing-section.discord-members')}
               />
             </SimpleGrid>
@@ -397,16 +407,16 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               </chakra.p>
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
-                  <WrapItem
-                    as={Img}
-                    key={i.login}
-                    width='80px'
-                    height='80px'
-                    rounded='full'
-                    alt={i.name}
-                    src={i.avatar_url}
-                    loading='lazy'
-                  />
+                  <WrapItem key={i.login}>
+                    <ChakraNextImage
+                      alt={i.name}
+                      src={i.avatar_url}
+                      width={80}
+                      height={80}
+                      rounded='full'
+                      loading='lazy'
+                    />
+                  </WrapItem>
                 ))}
               </Wrap>
             </Box>
@@ -566,10 +576,10 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
                       bg='white'
                       shadow='lg'
                     >
-                      <Img
+                      <ChakraNextImage
                         rounded='full'
-                        w='56px'
-                        h='56px'
+                        width={56}
+                        height={56}
                         alt={i.name}
                         key={i.MemberId}
                         src={i.image}
@@ -585,17 +595,17 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
-                  <WrapItem
-                    as={Img}
-                    rounded='full'
-                    w='40px'
-                    h='40px'
-                    objectFit='cover'
-                    alt={i.name}
-                    key={i.MemberId}
-                    src={i.image}
-                    loading='lazy'
-                  />
+                  <WrapItem key={i.MemberId}>
+                    <ChakraNextImage
+                      src={i.image}
+                      alt={i.name}
+                      loading='lazy'
+                      rounded='full'
+                      width={40}
+                      height={40}
+                      objectFit='cover'
+                    />
+                  </WrapItem>
                 ))}
               </Wrap>
             </Box>
@@ -652,17 +662,28 @@ const HomePage = ({ members, sponsors, githubStars }: HomePageProps) => {
 }
 
 export async function getStaticProps() {
-  const { prettyCount } = await getGithubStars()
+  const [
+    { prettyCount: githubStars },
+    { prettyCount: npmDownloads },
+    { prettyCount: discordMembers },
+  ] = await Promise.all([
+    getGithubStars(),
+    getNpmDownloads(),
+    getDiscordMembers(),
+  ])
+
   const contributors = getAllContributors()
   const members = getAllMembers()
   const sponsors = getAllSponsors()
 
   return {
     props: {
-      githubStars: prettyCount,
+      githubStars,
       members,
       contributors,
       sponsors,
+      discordMembers,
+      npmDownloads,
     },
   }
 }

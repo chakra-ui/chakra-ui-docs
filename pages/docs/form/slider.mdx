@@ -22,13 +22,15 @@ or applying image filters.
 
 ## Import
 
-Chakra UI export 4 components for Slider:
+Chakra UI export 5 components for Slider:
 
 - **`Slider`**: The wrapper that provides context and functionality for all
   children.
 - **`SliderTrack`**: The empty part of the slider that shows the track.
 - **`SliderFilledTrack`**: The filled part of the slider.
 - **`SliderThumb`**: The handle that's used to change the slider value.
+- **`SliderMark`**: The label or mark that shows names for specific slider
+  values
 
 ```js
 import {
@@ -36,6 +38,7 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
+  SliderMark,
 } from '@chakra-ui/react'
 ```
 
@@ -109,6 +112,88 @@ accomplished using the `step` prop.
   </SliderTrack>
   <SliderThumb boxSize={6} />
 </Slider>
+```
+
+### Slider with custom labels and marks
+
+You can have custom labels and marks by using `SliderMark` component
+
+```jsx
+function SliderMarkExample() {
+  const [sliderValue, setSliderValue] = useState(50)
+  return (
+    <Slider aria-label='slider-ex-6' onChange={(val) => setSliderValue(val)}>
+      <SliderMark value={25} mt='1' ml='-2.5' fontSize='sm'>
+        25%
+      </SliderMark>
+      <SliderMark value={50} mt='1' ml='-2.5' fontSize='sm'>
+        50%
+      </SliderMark>
+      <SliderMark value={75} mt='1' ml='-2.5' fontSize='sm'>
+        75%
+      </SliderMark>
+      <SliderMark
+        value={sliderValue}
+        textAlign='center'
+        bg='blue.500'
+        color='white'
+        mt='-10'
+        ml='-5'
+        w='12'
+      >
+        {sliderValue}%
+      </SliderMark>
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <SliderThumb />
+    </Slider>
+  )
+}
+```
+
+And you can also use `Tooltip` with `SliderThumb`
+
+```jsx
+function SliderThumbWithTooltip() {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={100}
+      colorScheme='teal'
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderMark value={25} mt='1' ml='-2.5' fontSize='sm'>
+        25%
+      </SliderMark>
+      <SliderMark value={50} mt='1' ml='-2.5' fontSize='sm'>
+        50%
+      </SliderMark>
+      <SliderMark value={75} mt='1' ml='-2.5' fontSize='sm'>
+        75%
+      </SliderMark>
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}%`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
 ```
 
 ### Getting the final value when dragging the slider

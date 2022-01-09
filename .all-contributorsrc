@@ -1005,7 +1005,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/23528307?v=4",
       "profile": "https://github.com/bryg217",
       "contributions": [
-        "doc"
+        "doc",
+        "bug"
       ]
     },
     {
@@ -1022,6 +1023,69 @@
       "name": "Andrej",
       "avatar_url": "https://avatars.githubusercontent.com/u/44305048?v=4",
       "profile": "https://github.com/aacevski",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "giacomorebonato",
+      "name": "Giacomo Rebonato",
+      "avatar_url": "https://avatars.githubusercontent.com/u/630796?v=4",
+      "profile": "http://www.giacomorebonato.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "ashalfarhan",
+      "name": "Ashal Farhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70800415?v=4",
+      "profile": "https://github.com/ashalfarhan",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bartekczyz",
+      "name": "Bartek Czyż",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24492356?v=4",
+      "profile": "https://czyz.it",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "imadatyatalah",
+      "name": "Imad Atyat-Alah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70093484?v=4",
+      "profile": "https://imadatyatalah.vercel.app",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "AnishDe12020",
+      "name": "Anish De",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63192115?v=4",
+      "profile": "https://github.com/AnishDe12020",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "EmmanuelDemey",
+      "name": "Emmanuel DEMEY",
+      "avatar_url": "https://avatars.githubusercontent.com/u/555768?v=4",
+      "profile": "http://gillespie59.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "puku0x",
+      "name": "Noriyuki Shinpuku",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2607019?v=4",
+      "profile": "https://dev.to/puku0x",
       "contributions": [
         "doc"
       ]

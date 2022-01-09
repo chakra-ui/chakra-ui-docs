@@ -49,42 +49,24 @@ function Resources() {
       <Tabs colorScheme='teal' variant='enclosed' mt='6'>
         <TabList>
           <Tab>
-            <ResourcesTabContent
-              icon={FaMicrophone}
-              text={TALKS}
-            />
+            <ResourcesTabContent icon={FaMicrophone} text={TALKS} />
           </Tab>
           <Tab>
-            <ResourcesTabContent
-              icon={FaVideo}
-              text={VIDEOS}
-            />
+            <ResourcesTabContent icon={FaVideo} text={VIDEOS} />
           </Tab>
           <Tab>
-            <ResourcesTabContent
-              icon={FaPenSquare}
-              text={BLOGS}
-            />
+            <ResourcesTabContent icon={FaPenSquare} text={BLOGS} />
           </Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <ResourceSection
-              title={TALKS}
-              resources={groups.talk}
-            />
+            <ResourceSection title={TALKS} resources={groups.talk} />
           </TabPanel>
           <TabPanel>
-            <ResourceSection
-              title={VIDEOS}
-              resources={groups.video}
-            />
+            <ResourceSection title={VIDEOS} resources={groups.video} />
           </TabPanel>
           <TabPanel>
-            <ResourceSection
-              title={BLOGS}
-              resources={groups.blog}
-            />
+            <ResourceSection title={BLOGS} resources={groups.blog} />
           </TabPanel>
         </TabPanels>
       </Tabs>
@@ -106,7 +88,10 @@ function ResourceSection(props: ResourceSectionProps) {
     initialValues: { [filterInputId]: '' },
     onSubmit: undefined,
   })
-  const filteredResources = filterResources(formik.values[filterInputId], resources)
+  const filteredResources = filterResources(
+    formik.values[filterInputId],
+    resources,
+  )
   /**
    * Notice, that the breakpoints don't follow conventional numbers (e.g. 768, 991).
    * The reason for that is that the number (e.g. 767) actually represents target
@@ -120,19 +105,20 @@ function ResourceSection(props: ResourceSectionProps) {
       <FormControl id={filterInputId} mt='8' mb='8'>
         <FormLabel>{t('resources.searchFilter.label')}</FormLabel>
         <Input
+          name={filterInputId}
           onChange={formik.handleChange}
           placeholder={t('resources.searchFilter.placeholder')}
           value={formik.values[filterInputId]}
         />
-        <FormHelperText>{t('resources.searchFilter.helperText')}</FormHelperText>
+        <FormHelperText>
+          {t('resources.searchFilter.helperText')}
+        </FormHelperText>
       </FormControl>
       <ResponsiveMasonry columnsCountBreakPoints={masonryGridBreakpoints}>
         <Masonry gutter='16px'>
-          {filteredResources.map(
-            (item, index) => (
-              <ResourceCard key={index} data={item} />
-            ),
-          )}
+          {filteredResources.map((item, index) => (
+            <ResourceCard key={index} data={item} />
+          ))}
         </Masonry>
       </ResponsiveMasonry>
     </Box>
@@ -144,10 +130,7 @@ interface ResourcesTabContentProps {
   text: string
 }
 
-function ResourcesTabContent({
-  icon,
-  text
-}: ResourcesTabContentProps) {
+function ResourcesTabContent({ icon, text }: ResourcesTabContentProps) {
   return (
     <>
       <Box

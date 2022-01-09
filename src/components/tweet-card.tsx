@@ -1,5 +1,6 @@
 import { Avatar, Box, useColorModeValue } from '@chakra-ui/react'
 import * as React from 'react'
+import ChakraNextImage from './chakra-next-image'
 
 interface TweetCardProps {
   name: string
@@ -26,7 +27,7 @@ function TweetCard(props: TweetCardProps) {
       bg={useColorModeValue('white', 'gray.700')}
       shadow='base'
     >
-      <Avatar mr='16px' size='sm' src={image} name={name} loading='lazy' />
+      <Avatar mr='16px' w={8} h={8} src={image} name={name} loading='lazy' />
       <Box fontSize='sm'>
         <p>
           {name}{' '}

@@ -6,6 +6,7 @@ import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-
 import { InlineCode } from 'components/mdx-components/inline-code'
 import { Anchor } from 'components/mdx-components/anchor'
 import { t } from 'utils/i18n'
+import { isObject, isString } from '@chakra-ui/utils'
 
 /**
  * A map of components that use foreign theme key.
@@ -58,7 +59,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
   }
 
   return (
-    <Stack spacing='10' my='10'>
+    <Stack overflowX='auto' spacing='10' my='10'>
       {propList.map((prop) => (
         <chakra.div
           key={prop.name}
@@ -139,9 +140,40 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
 
 export default PropsTable
 
-interface MakePropsTableOptions extends PropsTableProps {}
+const TYPE_GENERIC_THEMEABLE = [
+  'string',
+  'string | (string & {})',
+  '(string & {})',
+]
 
-const TYPE_GENERIC_THEMABLE = '(string & {})'
+const isGenericThemeable = (type: string) =>
+  TYPE_GENERIC_THEMEABLE.includes(type)
+
+const omitGenericThemeableType = (type: string) =>
+  type
+    .split(' | ')
+    .filter((type) => isGenericThemeable(type))
+    .join(' | ') || type
+
+function toLiteralStringType(strings: string[]) {
+  return (
+    strings
+      .map((s) => `"${s}"`)
+      .join(' | ')
+      .trim() || 'string'
+  )
+}
+
+function isColorScheme(value: any): value is Record<string, string> {
+  return (
+    isObject(value) &&
+    ['50', '100', '200', '300', '400', '600', '700', '800', '900'].every((k) =>
+      isString(value[k]),
+    )
+  )
+}
+
+interface MakePropsTableOptions extends PropsTableProps {}
 
 function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
   const props = ComponentProps[of]?.props
@@ -189,41 +221,59 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
 
       if (name === 'size') {
         const defaultSize = componentTheme?.defaultProps?.size
+        const sizes = componentTheme?.sizes
+
+        if (sizes) {
+          prop.type = toLiteralStringType(Object.keys(sizes))
+        } else {
+          prop.description = featNotImplemented('Sizes')
+        }
 
         if (defaultSize != null) {
           prop.defaultValue = `"${defaultSize}"`
+        } else {
+          prop.type = 'string'
         }
 
-        if (prop.type === TYPE_GENERIC_THEMABLE) {
+        if (isGenericThemeable(prop.type)) {
           prop.type = 'string'
-          prop.description = featNotImplemented('Sizes')
         } else {
-          prop.type = omitGenericThemableType(prop.type)
+          prop.type = omitGenericThemeableType(prop.type)
         }
       }
 
       if (name === 'variant') {
         const defaultVariant = componentTheme?.defaultProps?.variant
+        const variants = componentTheme?.variants
+
+        if (variants) {
+          prop.type = toLiteralStringType(Object.keys(variants))
+        } else {
+          prop.description = featNotImplemented('Variants')
+        }
 
         if (defaultVariant != null) {
           prop.defaultValue = `"${defaultVariant}"`
         }
 
-        if (prop.type === TYPE_GENERIC_THEMABLE) {
+        if (!defaultVariant) {
           prop.type = 'string'
-          prop.description = featNotImplemented('Variants')
         } else {
-          prop.type = omitGenericThemableType(prop.type)
+          prop.type = omitGenericThemeableType(prop.type)
         }
       }
 
       if (name === 'colorScheme') {
-        prop.type = omitGenericThemableType(prop.type)
+        prop.type = omitGenericThemeableType(prop.type)
 
         const defaultColorScheme = componentTheme?.defaultProps?.colorScheme
+        const colorSchemes = Object.entries(theme.colors)
+          .filter(([, value]) => isColorScheme(value))
+          .map(([k]) => k)
 
         if (defaultColorScheme != null) {
           prop.defaultValue = `"${defaultColorScheme}"`
+          prop.type = toLiteralStringType(colorSchemes)
         } else {
           prop.description = featNotImplemented('Color Schemes')
         }
@@ -238,9 +288,3 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
       return String(propA.name).localeCompare(propB.name) - requiredOffset
     })
 }
-
-const omitGenericThemableType = (type: string) =>
-  type
-    .split(' | ')
-    .filter((type) => type !== TYPE_GENERIC_THEMABLE)
-    .join(' | ')
