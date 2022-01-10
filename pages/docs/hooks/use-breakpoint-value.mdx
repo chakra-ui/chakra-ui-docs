@@ -27,6 +27,8 @@ The `useBreakpointValue` hook returns the value for the current breakpoint.
 
 ## Usage
 
+> Make sure to provide a base value when using `useBreakpointValue` so it doesn't return `undefined` in the first render.
+
 ```jsx
 function Example() {
   const variant = useBreakpointValue({ base: 'outline', md: 'solid' })

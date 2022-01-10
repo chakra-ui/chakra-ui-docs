@@ -118,6 +118,13 @@
       "url": "https://top.gg/",
       "image": "showcases/projects/Top.gg.png",
       "type": "projects"
+    },
+    {
+      "name": "Octoclairvoyant",
+      "description": " webapp to compare GitHub changelogs across multiple releases. Made with Next.js and Chakra UI.",
+      "url": "https://octoclairvoyant.vercel.app/",
+      "image": "showcases/projects/Octoclairvoyant.png",
+      "type": "projects"
     }
   ],
   "websites": [
