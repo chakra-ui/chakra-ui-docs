@@ -1107,6 +1107,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "bintay",
+      "name": "Ben ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13704341?v=4",
+      "profile": "https://github.com/bintay",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
