@@ -1116,6 +1116,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "rodrigofuentes",
+      "name": "Rodrigo Fuentes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7374840?v=4",
+      "profile": "https://github.com/rodrigofuentes",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
