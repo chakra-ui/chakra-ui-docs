@@ -1,11 +1,23 @@
 ---
 title: useCheckbox
 package: '@chakra-ui/checkbox'
-description: 'React hooks to manage checkboxes.'
+description: 'React hook to manage checkboxes.'
 ---
 
 `useCheckbox` is a custom hook used to provide checkbox functionality, aswell as
 state and focus management to custom checkbox components when using it.
+
+## Return value
+
+The `useCheckbox` hook returns following props
+
+| Name               | Type            | Description                                                                 |
+| ------------------ | --------------- | --------------------------------------------------------------------------- |
+| `state`            | `CheckboxState` | An object that contains all props defining the current state of a checkbox. |
+| `getCheckboxProps` | `PropGetter`    | A function to get the props of the checkbox.                                |
+| `getInputProps`    | `PropGetter`    | A function to get the props of the input field.                             |
+| `getLabelProps`    | `PropGetter`    | A function to get the props of the checkbox label.                          |
+| `htmlProps`        | `object`        | An object with all htmlProps.                                               |
 
 ## Import
 
@@ -13,20 +25,11 @@ state and focus management to custom checkbox components when using it.
 import { useCheckbox } from '@chakra-ui/react'
 ```
 
-## Return value
-
-The `useCheckbox` hook returns following props
-
-| Name     | Type         | Description                                     |
-| -------- | ------------ | ----------------------------------------------- |
-| `on`     | `() => void` | A function to set the boolean value to `true`.  |
-| `off`    | `() => void` | A function to set the boolean value to `false`. |
-| `toggle` | `() => void` | A function to negate the boolean state.         |
-
 ## Usage
 
 ```jsx
-function Example() {
+const {} = useCheckbox()
+function CustomCheckbox() {
   return <Box>Example goes here</Box>
 }
 ```
