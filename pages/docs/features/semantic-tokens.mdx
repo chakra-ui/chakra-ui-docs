@@ -54,12 +54,6 @@ like e.g. `#F7FAFC`.
 ```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 const customTheme = extendTheme({
-  colors: {
-    gray: {
-      50: '#F7FAFC',
-      900: '#171923',
-    },
-  },
   semanticTokens: {
     colors: {
       text: {
@@ -85,18 +79,6 @@ const App = () => (
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
-  colors: {
-    green: {
-      500: '#00ff50',
-    },
-    red: {
-      100: '#ff0010',
-      400: '#ff0040',
-      500: '#ff0050',
-      700: '#ff0070',
-      800: '#ff0080',
-    },
-  },
   semanticTokens: {
     colors: {
       error: 'red.500',
