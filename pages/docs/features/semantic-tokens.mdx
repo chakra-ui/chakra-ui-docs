@@ -30,9 +30,14 @@ selector. Try `_dark`, `_light`, `_rtl`, `_ltr` and `_mediaReduceMotion`.
 If you are tempted to use a CSS selector like `_focus`, `_hover` etc. define
 those CSS variables on a component level.
 
-> Since the CSS variables are attached to `:host, :root` by default we can only
-> specify certain CSS selectors. E.g. `_hover` would always trigger, when the
-> `html` element is hovered - that's mostly not intended.
+The CSS variables of the semantic tokens are attached to the host element (CSS
+selector `:host, :root`) and cannot react to the components `<LightMode />` and
+`<DarkMode />`, `data-theme` attributes nor body class `.chakra-ui-dark`. It
+listens to e.g. `html[data-theme="dark"]`.
+
+> Since the CSS variables are attached to the host element by default we can
+> only specify certain CSS selectors. E.g. `_hover` would always trigger, when
+> the `html` element is hovered - that's mostly not intended.
 
 ```js
 {
