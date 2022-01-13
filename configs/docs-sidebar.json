@@ -46,6 +46,7 @@
               "path": "/docs/features/css-variables"
             },
             {
+              "new": true,
               "title": "Semantic Tokens",
               "path": "/docs/features/semantic-tokens"
             },
