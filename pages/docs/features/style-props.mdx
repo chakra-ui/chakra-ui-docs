@@ -455,48 +455,67 @@ import { Button } from "@chakra-ui/react"
 </Box>
 ```
 
-| Prop             | CSS Property                                                             | Theme Field |
-| ---------------- | ------------------------------------------------------------------------ | ----------- |
-| `_hover`         | `:hover`,<br/>`[data-hover]`                                             | none        |
-| `_active`        | `:active`,<br/>`[data-active]`                                           | none        |
-| `_focus`         | `:focus`,<br/>`[data-focus]`                                             | none        |
-| `_highlighted`   | `[data-highlighted]`                                                     | none        |
-| `_focusWithin`   | `:focus-within`                                                          | none        |
-| `_focusVisible`  | `:focus-visible`                                                         | none        |
-| `_disabled`      | `[disabled]`,<br/>`[aria-disabled=true]`,<br/>`[data-disabled]`          | none        |
-| `_readOnly`      | `[aria-readonly=true]`,<br/>`[readonly]`, <br/>`[data-readonly]`         | none        |
-| `_before`        | `::before`                                                               | none        |
-| `_after`         | `::after`                                                                | none        |
-| `_empty`         | `:empty`                                                                 | none        |
-| `_expanded`      | `[aria-expanded=true]`,<br/>`[data-expanded]`                            | none        |
-| `_checked`       | `[aria-checked=true]`,<br/>`[data-checked]`                              | none        |
-| `_grabbed`       | `[aria-grabbed=true]`,<br/>`[data-grabbed]`                              | none        |
-| `_pressed`       | `[aria-pressed=true]`,<br/>`[data-pressed]`                              | none        |
-| `_invalid`       | `[aria-invalid=true]`,<br/>`[data-invalid]`                              | none        |
-| `_valid`         | `[data-valid]`,<br/>`[data-state=valid]`                                 | none        |
-| `_loading`       | `[data-loading]`,<br/>`[aria-busy=true]`                                 | none        |
-| `_selected`      | `[aria-selected=true]`,<br/>`[data-selected]`                            | none        |
-| `_hidden`        | `[hidden]`,<br/>`[data-hidden]`                                          | none        |
-| `_autofill`      | `:-webkit-autofill`                                                      | none        |
-| `_even`          | `:nth-of-type(even)`                                                     | none        |
-| `_odd`           | `:nth-of-type(odd)`                                                      | none        |
-| `_first`         | `:first-of-type`                                                         | none        |
-| `_last`          | `:last-of-type`                                                          | none        |
-| `_notFirst`      | `:not(:first-of-type)`                                                   | none        |
-| `_notLast`       | `:not(:last-of-type)`                                                    | none        |
-| `_visited`       | `:visited`                                                               | none        |
-| `_activeLink`    | `[aria-current=page]`                                                    | none        |
-| `_activeStep`    | `[aria-current=step]`                                                    | none        |
-| `_indeterminate` | `:indeterminate`,<br/>`[aria-checked=mixed]`,<br/>`[data-indeterminate]` | none        |
-| `_groupHover`    | `[role=group]:hover &`, <br/> `[role=group][data-hover] &`               | none        |
-| `_groupFocus`    | `[role=group]:focus &`, <br/> `[role=group][data-focus] &`               | none        |
-| `_groupActive`   | `[role=group]:active &`, <br/> `[role=group][data-active] &`             | none        |
-| `_groupDisabled` | `[role=group]:disabled &`, <br/> `[role=group][data-disabled] &`         | none        |
-| `_groupInvalid`  | `[role=group][data-invalid] &`                                           | none        |
-| `_groupChecked`  | `[role=group][data-checked] &`                                           | none        |
-| `_placeholder`   | `::placeholder`                                                          | none        |
-| `_fullScreen`    | `:fullscreen`                                                            | none        |
-| `_selection`     | `::selection`                                                            | none        |
+| Prop                    | CSS Property                                                                                                                                                                               | Theme Field |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| `_hover`                | `&:hover`<br />`&[data-hover]`                                                                                                                                                             | none        |
+| `_active`               | `&:active`<br />`&[data-active]`                                                                                                                                                           | none        |
+| `_focus`                | `&:focus`<br />`&[data-focus]`                                                                                                                                                             | none        |
+| `_highlighted`          | `&[data-highlighted]`                                                                                                                                                                      | none        |
+| `_focusWithin`          | `&:focus-within`                                                                                                                                                                           | none        |
+| `_focusVisible`         | `&:focus-visible`                                                                                                                                                                          | none        |
+| `_disabled`             | `&[disabled]`<br />`&[aria-disabled=true]`<br />`&[data-disabled]`                                                                                                                         | none        |
+| `_readOnly`             | `&[aria-readonly=true]`<br />`&[readonly]`<br />`&[data-readonly]`                                                                                                                         | none        |
+| `_before`               | `&::before`                                                                                                                                                                                | none        |
+| `_after`                | `&::after`                                                                                                                                                                                 | none        |
+| `_empty`                | `&:empty`                                                                                                                                                                                  | none        |
+| `_expanded`             | `&[aria-expanded=true]`<br />`&[data-expanded]`                                                                                                                                            | none        |
+| `_checked`              | `&[aria-checked=true]`<br />`&[data-checked]`                                                                                                                                              | none        |
+| `_grabbed`              | `&[aria-grabbed=true]`<br />`&[data-grabbed]`                                                                                                                                              | none        |
+| `_pressed`              | `&[aria-pressed=true]`<br />`&[data-pressed]`                                                                                                                                              | none        |
+| `_invalid`              | `&[aria-invalid=true]`<br />`&[data-invalid]`                                                                                                                                              | none        |
+| `_valid`                | `&[data-valid]`<br />`&[data-state=valid]`                                                                                                                                                 | none        |
+| `_loading`              | `&[data-loading]`<br />`&[aria-busy=true]`                                                                                                                                                 | none        |
+| `_selected`             | `&[aria-selected=true]`<br />`&[data-selected]`                                                                                                                                            | none        |
+| `_hidden`               | `&[hidden]`<br />`&[data-hidden]`                                                                                                                                                          | none        |
+| `_autofill`             | `&:-webkit-autofill`                                                                                                                                                                       | none        |
+| `_even`                 | `&:nth-of-type(even)`                                                                                                                                                                      | none        |
+| `_odd`                  | `&:nth-of-type(odd)`                                                                                                                                                                       | none        |
+| `_first`                | `&:first-of-type`                                                                                                                                                                          | none        |
+| `_last`                 | `&:last-of-type`                                                                                                                                                                           | none        |
+| `_notFirst`             | `&:not(:first-of-type)`                                                                                                                                                                    | none        |
+| `_notLast`              | `&:not(:last-of-type)`                                                                                                                                                                     | none        |
+| `_visited`              | `&:visited`                                                                                                                                                                                | none        |
+| `_activeLink`           | `&[aria-current=page]`                                                                                                                                                                     | none        |
+| `_activeStep`           | `&[aria-current=step]`                                                                                                                                                                     | none        |
+| `_indeterminate`        | `&:indeterminate`<br />`&[aria-checked=mixed]`<br />`&[data-indeterminate]`                                                                                                                | none        |
+| `_groupHover`           | `[role=group]:hover &`<br />`[role=group][data-hover] &`<br />`[data-group]:hover &`<br />`[data-group][data-hover] &`<br />`.group:hover &`<br />`.group[data-hover] &`                   | none        |
+| `_peerHover`            | `[data-peer]:hover ~ &`<br />`[data-peer][data-hover] ~ &`<br />`.peer:hover ~ &`<br />`.peer[data-hover] ~ &`                                                                             | none        |
+| `_groupFocus`           | `[role=group]:focus &`<br />`[role=group][data-focus] &`<br />`[data-group]:focus &`<br />`[data-group][data-focus] &`<br />`.group:focus &`<br />`.group[data-focus] &`                   | none        |
+| `_peerFocus`            | `[data-peer]:focus ~ &`<br />`[data-peer][data-focus] ~ &`<br />`.peer:focus ~ &`<br />`.peer[data-focus] ~ &`                                                                             | none        |
+| `_groupFocusVisible`    | `[role=group]:focus-visible &`<br />`[data-group]:focus-visible &`<br />`.group:focus-visible &`                                                                                           | none        |
+| `_peerFocusVisible`     | `[data-peer]:focus-visible ~ &`<br />`.peer:focus-visible ~ &`                                                                                                                             | none        |
+| `_groupActive`          | `[role=group]:active &`<br />`[role=group][data-active] &`<br />`[data-group]:active &`<br />`[data-group][data-active] &`<br />`.group:active &`<br />`.group[data-active] &`             | none        |
+| `_peerActive`           | `[data-peer]:active ~ &`<br />`[data-peer][data-active] ~ &`<br />`.peer:active ~ &`<br />`.peer[data-active] ~ &`                                                                         | none        |
+| `_groupDisabled`        | `[role=group]:disabled &`<br />`[role=group][data-disabled] &`<br />`[data-group]:disabled &`<br />`[data-group][data-disabled] &`<br />`.group:disabled &`<br />`.group[data-disabled] &` | none        |
+| `_peerDisabled`         | `[data-peer]:disabled ~ &`<br />`[data-peer][data-disabled] ~ &`<br />`.peer:disabled ~ &`<br />`.peer[data-disabled] ~ &`                                                                 | none        |
+| `_groupInvalid`         | `[role=group]:invalid &`<br />`[role=group][data-invalid] &`<br />`[data-group]:invalid &`<br />`[data-group][data-invalid] &`<br />`.group:invalid &`<br />`.group[data-invalid] &`       | none        |
+| `_peerInvalid`          | `[data-peer]:invalid ~ &`<br />`[data-peer][data-invalid] ~ &`<br />`.peer:invalid ~ &`<br />`.peer[data-invalid] ~ &`                                                                     | none        |
+| `_groupChecked`         | `[role=group]:checked &`<br />`[role=group][data-checked] &`<br />`[data-group]:checked &`<br />`[data-group][data-checked] &`<br />`.group:checked &`<br />`.group[data-checked] &`       | none        |
+| `_peerChecked`          | `[data-peer]:checked ~ &`<br />`[data-peer][data-checked] ~ &`<br />`.peer:checked ~ &`<br />`.peer[data-checked] ~ &`                                                                     | none        |
+| `_groupFocusWithin`     | `[role=group]:focus-within &`<br />`[data-group]:focus-within &`<br />`.group:focus-within &`                                                                                              | none        |
+| `_peerFocusWithin`      | `[data-peer]:focus-within ~ &`<br />`.peer:focus-within ~ &`                                                                                                                               | none        |
+| `_peerPlaceholderShown` | `[data-peer]:placeholder-shown ~ &`<br />`.peer:placeholder-shown ~ &`                                                                                                                     | none        |
+| `_placeholder`          | `&::placeholder`                                                                                                                                                                           | none        |
+| `_placeholderShown`     | `&:placeholder-shown`                                                                                                                                                                      | none        |
+| `_fullScreen`           | `&:fullscreen`                                                                                                                                                                             | none        |
+| `_selection`            | `&::selection`                                                                                                                                                                             | none        |
+| `_rtl`                  | `[dir=rtl] &`<br />`&[dir=rtl]`                                                                                                                                                            | none        |
+| `_ltr`                  | `[dir=ltr] &`<br />`&[dir=ltr]`                                                                                                                                                            | none        |
+| `_mediaDark`            | `@media (prefers-color-scheme: dark)`                                                                                                                                                      | none        |
+| `_mediaReduceMotion`    | `@media (prefers-reduced-motion: reduce)`                                                                                                                                                  | none        |
+| `_dark`                 | `.chakra-ui-dark &`<br />`[data-theme=dark] &`<br />`&[data-theme=dark]`                                                                                                                   | none        |
+| `_light`                | `.chakra-ui-light &`<br />`[data-theme=light] &`<br />`&[data-theme=light]`                                                                                                                | none        |
+| none                    |
 
 ### Other Props
 
