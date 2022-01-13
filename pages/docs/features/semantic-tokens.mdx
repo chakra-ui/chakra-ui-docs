@@ -9,9 +9,8 @@ Chakra UI supports **conditional semantic tokens** for every scale (colors, font
 sizes, stc). This allows to change the value of a token depending on the
 environment, like dark mode, direction and other CSS selectors.
 
-We are using CSS variables to define references which can change with a CSS
-condition. E.g. the color token `text` can have different values in dark and
-light mode.
+We are using CSS variables which can change with a CSS condition. E.g. the color
+token `text` can have a different value in dark and light mode.
 
 ## Token References
 
@@ -32,12 +31,12 @@ conditional keys. The condition can be one of
 selector. Try `_dark`, `_light`, `_rtl`, `_ltr` and `_mediaReduceMotion`.
 
 If you are tempted to use a CSS selector like `_focus`, `_hover` etc. define
-those CSS variables on a component level.
+those CSS variables at the component level.
 
-The CSS variables of the semantic tokens are attached to the host element (CSS
-selector `:host, :root`) and cannot react to the components `<LightMode />` and
-`<DarkMode />`, `data-theme` attributes nor body class `.chakra-ui-dark`. It
-listens to e.g. `html[data-theme="dark"]`.
+The CSS variables are attached to the host element (CSS selector `:host, :root`)
+and cannot react to the components `<LightMode />` and `<DarkMode />`,
+`data-theme` attributes nor body class `.chakra-ui-dark`. It listens to e.g.
+`html[data-theme="dark"]`.
 
 > Since the CSS variables are attached to the host element by default we can
 > only specify certain CSS selectors. E.g. `_hover` would always trigger, when
@@ -52,8 +51,8 @@ listens to e.g. `html[data-theme="dark"]`.
 }
 ```
 
-Semantic Tokens can reference theme tokens like `gray.900` and allow CSS values
-like e.g. `#F7FAFC`.
+Semantic Tokens can reference theme tokens like `gray.900` and allow plain CSS
+values like e.g. `#F7FAFC`.
 
 ```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
