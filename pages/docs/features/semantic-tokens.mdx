@@ -13,6 +13,8 @@ We are using CSS variables to define references which can change with a CSS
 condition. E.g. the color token `text` can have different values in dark and
 light mode.
 
+## Token References
+
 A semantic token value can be a `string | SemanticValue`. The `string` value is
 used as reference to another token in the same scale e.g.
 
@@ -21,6 +23,8 @@ used as reference to another token in the same scale e.g.
   error: 'red.500'
 }
 ```
+
+## Conditional Tokens
 
 The object notation `SemanticValue` allows to define the default value and
 conditional keys. The condition can be one of
@@ -56,6 +60,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 const customTheme = extendTheme({
   semanticTokens: {
     colors: {
+      error: 'red.500',
       text: {
         default: 'gray.900',
         _dark: 'gray.50',
