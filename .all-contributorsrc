@@ -1125,6 +1125,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "yuschick",
+      "name": "Daniel Yuschick",
+      "avatar_url": "https://avatars.githubusercontent.com/u/563226?v=4",
+      "profile": "https://github.com/yuschick",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
