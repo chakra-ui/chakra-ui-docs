@@ -399,23 +399,21 @@ to pass state internally. Your custom `Tab` component must use
 
 ```jsx
 function CustomTabs() {
-
   const CustomTab = React.forwardRef((props, ref) => {
     // 1. Reuse the `useTab` hook
     const tabProps = useTab({ ...props, ref })
     const isSelected = !!tabProps['aria-selected']
 
     // 2. Hook into the Tabs `size`, `variant`, props
-    const styles = useMultiStyleConfig("Tabs", tabProps);
-
+    const styles = useMultiStyleConfig('Tabs', tabProps)
 
     return (
-      <Box __css={styles.tab} {...tabProps}>
+      <Button __css={styles.tab} {...tabProps}>
         <Box as='span' mr='2'>
           {isSelected ? '😎' : '😐'}
         </Box>
         {tabProps.children}
-      </Box>
+      </Button>
     )
   })
 
