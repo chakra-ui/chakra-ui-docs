@@ -48,6 +48,7 @@ import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
 import SandpackEmbed from 'components/sandpack-embed'
 import { App, Index } from 'configs/sandpack-contents/homepage/files'
+import ShowcaseSection from 'components/showcase/showcase-section'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -361,6 +362,8 @@ const HomePage = ({
             </Grid>
           </Container>
         </Box>
+
+        <ShowcaseSection />
 
         <Box as='section' bg='teal.500'>
           <Container py='7.5rem' maxW='1280px' color='white'>

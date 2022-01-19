@@ -38,6 +38,11 @@
         "description": "We're a team of active maintainers ready to help you whenever you need."
       }
     },
+    "built-with-chakra-section": {
+      "title": "Built with Chakra UI ⚡️",
+      "description": "A collection of websites and projects built with Chakra UI",
+      "see-showcase": "See showcase"
+    },
     "growing-section": {
       "title": "Chakra is growing quickly",
       "description": "We're dedicated to improving the experience and performance of Chakra UI.",
