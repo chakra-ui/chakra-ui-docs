@@ -170,6 +170,7 @@ const ShowcaseSection = () => {
                   size='lg'
                   isExternal
                   bg='white'
+                  color='gray.900'
                   rightIcon={<FiArrowUpRight fontSize='0.8em' />}
                 >
                   {t('homepage.built-with-chakra-section.see-showcase')}
