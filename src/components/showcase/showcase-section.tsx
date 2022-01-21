@@ -27,7 +27,6 @@ import Snappify from 'public/showcases/projects/Snappify.png'
 import ThirdWeb from 'public/showcases/projects/Third-Web.png'
 import UIFoundations from 'public/showcases/projects/UI-Foundations.png'
 import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
-import useHasTouch from 'hooks/use-has-touch'
 
 type Website = {
   src: StaticImageData
