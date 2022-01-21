@@ -4,27 +4,21 @@ import {
   Button,
   chakra,
   Container,
-  Flex,
   Link,
-  LinkBox,
-  LinkOverlay,
   SimpleGrid,
   useBreakpointValue,
   BoxProps,
+  VStack,
+  Heading,
+  HStack,
 } from '@chakra-ui/react'
-import Image from 'next/image'
 import NextLink from 'next/link'
-import { useEffect, useRef } from 'react'
+import { useRef, PointerEvent, FocusEvent } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
-import { FiArrowUpRight } from 'react-icons/fi'
-import {
-  motion,
-  MotionValue,
-  useSpring,
-  useMotionTemplate,
-} from 'framer-motion'
+import { motion, useSpring, useMotionTemplate } from 'framer-motion'
 
 import { t } from 'utils/i18n'
+import ChakraNextImage from 'components/chakra-next-image'
 import LazarsWebsite from "public/showcases/websites/Lazar-Nikolov's-Site.png"
 import ChakraTemplates from 'public/showcases/projects/Chakra-Templates.png'
 import ChakraUIPro from 'public/showcases/projects/Chakra-UI-Pro.png'
@@ -88,40 +82,28 @@ const websites: Website[] = [
 
 const ShowcaseSection = () => {
   const itemsRef = useRef<HTMLDivElement>()
-  const hasTouch = useHasTouch()
-  const isMdDown = useBreakpointValue({ base: true, md: false })
-
-  const shouldScrollItems = !(hasTouch || isMdDown)
+  const isXlDown = useBreakpointValue({ base: true, xl: false })
 
   const x = useSpring(0, { stiffness: 100, mass: 0.1, damping: 30 })
 
   const xTranslate = useMotionTemplate`translateX(${x}px)`
 
-  const updateRowTranslate = (e: MouseEvent, value: MotionValue<number>) => {
-    const scrollWidth = itemsRef.current?.scrollWidth - e.view.outerWidth
-    const xPosition = e.x
-    const position = xPosition / e.view.outerWidth
-    const translateX = position * -scrollWidth
-    value.set(translateX)
-  }
+  const updateRowTranslate = (
+    e: PointerEvent<HTMLAnchorElement> | FocusEvent<HTMLAnchorElement>,
+  ) => {
+    if (!itemsRef.current || isXlDown) return
 
-  const resetTranslate = (value: MotionValue<number>) => {
-    value.set(0)
-  }
+    const xPosition = e.currentTarget.getBoundingClientRect().left
+    const elementWidth = e.currentTarget.clientWidth
 
-  useEffect(() => {
-    const ref = itemsRef.current
-
-    if (shouldScrollItems && ref) {
-      ref.addEventListener('mousemove', (e) => updateRowTranslate(e, x))
-      ref.addEventListener('mouseleave', () => resetTranslate(x))
+    if (xPosition < 0) {
+      x.set(0)
+    } else if (elementWidth + xPosition > itemsRef.current.clientWidth) {
+      const translateX =
+        -itemsRef.current.scrollWidth + itemsRef.current.clientWidth
+      x.set(translateX)
     }
-
-    return () => {
-      ref?.removeEventListener('mousemove', (e) => updateRowTranslate(e, x))
-      ref.removeEventListener('mouseleave', () => resetTranslate(x))
-    }
-  }, [itemsRef, shouldScrollItems, x])
+  }
 
   const ShowcaseItem = ({
     src,
@@ -133,53 +115,52 @@ const ShowcaseSection = () => {
     alt: string
   }) => {
     return (
-      <LinkBox>
-        <Box
-          position='relative'
-          role='group'
-          w={{ base: 'full', md: shouldScrollItems ? '27.5vw' : 'full' }}
-          transition='0.25s transform ease-out'
-          _hover={{ transform: 'translateY(-10px)' }}
-        >
+      <Link
+        isExternal
+        href={href}
+        role='group'
+        onPointerEnter={updateRowTranslate}
+        onFocus={updateRowTranslate}
+        w={{
+          base: 'full',
+          xl: '27.5vw',
+        }}
+        p={2}
+        rounded='md'
+        overflow='hidden'
+        transition='0.25s transform ease-out, 0.25s box-shadow ease-out'
+        _hover={{ transform: 'translateY(-10px)' }}
+        _focus={{
+          transform: 'translateY(-10px)',
+          shadow: 'outline',
+        }}
+      >
+        <VStack position='relative' alignItems='flex-start'>
           <AspectRatio ratio={16 / 9} w='full'>
-            <Image
+            <ChakraNextImage
               alt={alt}
               src={src}
               layout='fill'
               objectFit='cover'
               placeholder='blur'
+              transition='0.25s box-shadow ease-out'
+              _groupHover={{ shadow: 'lg' }}
+              _groupFocus={{ shadow: 'lg' }}
+              rounded='sm'
             />
           </AspectRatio>
-          <Flex
-            alignItems='center'
-            justifyContent='center'
-            position='absolute'
-            inset={0}
-            bg='blackAlpha.500'
-            opacity={0}
-            transition='0.25s opacity ease-out'
-            _groupHover={{
-              opacity: 1,
-            }}
-          >
-            <LinkOverlay href={href} isExternal>
-              <NextLink href={href} passHref>
-                <Button
-                  fontSize='1.2rem'
-                  as={Link}
-                  size='lg'
-                  isExternal
-                  bg='white'
-                  color='gray.900'
-                  rightIcon={<FiArrowUpRight fontSize='0.8em' />}
-                >
-                  {t('homepage.built-with-chakra-section.see-showcase')}
-                </Button>
-              </NextLink>
-            </LinkOverlay>
-          </Flex>
-        </Box>
-      </LinkBox>
+          <HStack spacing={6}>
+            <Heading
+              fontSize='md'
+              _groupHover={{ color: 'teal.500' }}
+              _groupFocus={{ color: 'teal.500' }}
+              transition='0.25s color ease-out'
+            >
+              {alt}
+            </Heading>
+          </HStack>
+        </VStack>
+      </Link>
     )
   }
 
@@ -210,16 +191,16 @@ const ShowcaseSection = () => {
       </Container>
       <MotionBox
         ref={itemsRef}
-        width={{ base: 'full', md: shouldScrollItems ? 'fit-content' : 'full' }}
-        px={{ base: 10, xl: 0 }}
+        width='full'
+        px={{ base: 4, xl: 8 }}
         style={{
-          transform: xTranslate,
+          transform: isXlDown ? 'translateX(0px)' : xTranslate,
         }}
       >
         <SimpleGrid
           columns={{ base: 1, md: 2, xl: 4 }}
           gap={12}
-          width={{ base: 'full', md: shouldScrollItems ? '116vw' : 'full' }}
+          width={{ base: 'full', xl: '116vw' }}
         >
           {websites.map(({ src, href, alt }, index) => (
             <ShowcaseItem key={index} src={src} href={href} alt={alt} />
