@@ -99,6 +99,7 @@ portal, wrap the `PopoverContent` in a `Portal`
 
 By default, focus is to sent to `PopoverContent` when it opens. Pass the
 `initialFocusRef` prop to send focus to a specific element instead.
+> Focusing a child element only works for popovers with a `click` trigger, not `hover`.
 
 ```jsx
 function WalkthroughPopover() {
