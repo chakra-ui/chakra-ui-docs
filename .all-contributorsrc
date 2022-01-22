@@ -1107,6 +1107,42 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "bintay",
+      "name": "Ben ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13704341?v=4",
+      "profile": "https://github.com/bintay",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "rodrigofuentes",
+      "name": "Rodrigo Fuentes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7374840?v=4",
+      "profile": "https://github.com/rodrigofuentes",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "yuschick",
+      "name": "Daniel Yuschick",
+      "avatar_url": "https://avatars.githubusercontent.com/u/563226?v=4",
+      "profile": "https://github.com/yuschick",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "bbovenzi",
+      "name": "Brent Bovenzi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4600967?v=4",
+      "profile": "http://bbovenzi.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

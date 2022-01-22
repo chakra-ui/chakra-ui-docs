@@ -422,10 +422,6 @@
               "path": "/docs/hooks/use-clipboard"
             },
             {
-              "title": "useControllable",
-              "path": "/docs/hooks/use-controllable"
-            },
-            {
               "title": "useCheckbox",
               "path": "/docs/hooks/use-checkbox"
             },
@@ -436,6 +432,10 @@
             {
               "title": "useConst",
               "path": "/docs/hooks/use-const"
+            },
+            {
+              "title": "useControllable",
+              "path": "/docs/hooks/use-controllable"
             },
             {
               "title": "useDisclosure",
