@@ -1134,6 +1134,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "bbovenzi",
+      "name": "Brent Bovenzi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4600967?v=4",
+      "profile": "http://bbovenzi.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
