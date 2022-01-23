@@ -600,10 +600,8 @@ const HomePage = ({
                       src={i.image}
                       alt={i.name}
                       loading='lazy'
-                      rounded='full'
                       width={40}
                       height={40}
-                      objectFit='cover'
                     />
                   </WrapItem>
                 ))}
