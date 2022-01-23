@@ -254,6 +254,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://github.com/yuschick"><img src="https://avatars.githubusercontent.com/u/563226?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Daniel Yuschick</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=yuschick" title="Documentation">📖</a></td>
     <td align="center"><a href="http://bbovenzi.com/"><img src="https://avatars.githubusercontent.com/u/4600967?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Brent Bovenzi</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=bbovenzi" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jakeboone02"><img src="https://avatars.githubusercontent.com/u/366438?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jake Boone</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=jakeboone02" title="Documentation">📖</a></td>
   </tr>
 </table>
 
