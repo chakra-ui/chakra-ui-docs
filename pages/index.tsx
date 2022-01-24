@@ -242,6 +242,7 @@ const HomePage = ({
             >
               {users
                 .filter((user) => user.image.includes('.'))
+                .slice(0, 7)
                 .map((user) => (
                   <WrapItem key={user.name} bg='white' p='5' rounded='md'>
                     <ChakraNextImage
