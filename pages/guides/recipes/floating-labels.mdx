@@ -15,21 +15,28 @@ this is the only way to achieve this.
 Below is the gist to achieve floating labels. Find a complete working solution
 in the Code Sandbox.
 
-```jsx live=false
-import {
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  files={{
+    '/src/App.tsx': `import {
   Container,
+  ChakraProvider,
   FormControl,
   FormErrorMessage,
   FormHelperText,
   FormLabel,
   Input,
   extendTheme,
+  Box,
 } from '@chakra-ui/react'
-
 const activeLabelStyles = {
   transform: 'scale(0.85) translateY(-24px) translateX(-10px)',
 }
-
 export const theme = extendTheme({
   components: {
     Form: {
@@ -41,8 +48,7 @@ export const theme = extendTheme({
                 ...activeLabelStyles,
               },
             },
-            `input:not(:placeholder-shown) + label,
-              .chakra-select__wrapper + label`:
+            'input:not(:placeholder-shown) + label, .chakra-select__wrapper + label':
               {
                 ...activeLabelStyles,
               },
@@ -52,6 +58,7 @@ export const theme = extendTheme({
               zIndex: 2,
               position: 'absolute',
               backgroundColor: 'white',
+              pointerEvents: 'none',
               mx: 3,
               px: 1,
               my: 2,
@@ -62,20 +69,33 @@ export const theme = extendTheme({
     },
   },
 })
-
 export default function App() {
   return (
     <ChakraProvider theme={theme}>
-      <FormControl variant='floating' id='first-name' isRequired isInvalid>
-        <Input placeholder=' ' />
-        {/* It is important that the Label comes after the Control due to css selectors */}
-        <FormLabel>First name</FormLabel>
-        <FormHelperText>Keep it very short and sweet!</FormHelperText>
-        <FormErrorMessage>Your First name is invalid</FormErrorMessage>
-      </FormControl>
+      <Box p={8}>
+        <FormControl variant='floating' id='first-name' isRequired isInvalid>
+          <Input placeholder=' ' />
+          {/* It is important that the Label comes after the Control due to css selectors */}
+          <FormLabel>First name</FormLabel>
+          <FormHelperText>Keep it very short and sweet!</FormHelperText>
+          <FormErrorMessage>Your First name is invalid</FormErrorMessage>
+        </FormControl>
+      </Box>
     </ChakraProvider>
   )
 }
-```
+`,
+    '/src/index.tsx': `import * as React from "react";
+import { render } from "react-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 
-[Explore on Code Sandbox](https://codesandbox.io/s/optimistic-shockley-g0uls?file=/src/index.tsx)
+import App from './App'
+
+const rootElement = document.getElementById("root");
+
+render(
+
+<ChakraProvider>
+  <App />
+</ChakraProvider>
+, rootElement, );`, }} />
