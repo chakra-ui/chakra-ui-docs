@@ -17,7 +17,7 @@ The `useCheckbox` hook returns following props
 | `getCheckboxProps` | `PropGetter`    | A function to get the props of the checkbox.                                |
 | `getInputProps`    | `PropGetter`    | A function to get the props of the input field.                             |
 | `getLabelProps`    | `PropGetter`    | A function to get the props of the checkbox label.                          |
-| `htmlProps`        | `object`        | An object with all htmlProps.                                               |
+| `htmlProps`        | `{}`            | An object with all htmlProps.                                               |
 
 ## Import
 
@@ -28,9 +28,44 @@ import { useCheckbox } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-const {} = useCheckbox()
-function CustomCheckbox() {
-  return <Box>Example goes here</Box>
+function Example() {
+  const CustomCheckbox = forwardRef((props, ref) => {
+    const { state, getCheckboxProps, getInputProps, getLabelProps, htmlProps } =
+      useCheckbox()
+    return (
+      <chakra.label
+        display='flex'
+        flexDirection='row'
+        alignItems='center'
+        gridColumnGap={2}
+        maxW='36'
+        bg='green.50'
+        border='1px solid'
+        borderColor='green.500'
+        rounded='lg'
+        px={3}
+        py={1}
+        cursor='pointer'
+        {...htmlProps}
+      >
+        <input {...getInputProps({}, ref)} hidden />
+        <Flex
+          alignItems='center'
+          justifyContent='center'
+          border='2px solid'
+          borderColor='green.500'
+          w={4}
+          h={4}
+          {...getCheckboxProps()}
+        >
+          {state.isChecked && <Box w={2} h={2} bg='green.500' />}
+        </Flex>
+        <Text {...getLabelProps()}>Click me</Text>
+      </chakra.label>
+    )
+  })
+
+  return <CustomCheckbox />
 }
 ```
 
