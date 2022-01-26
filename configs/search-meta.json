@@ -8984,5 +8984,12 @@
       "lvl2": "Further reading",
       "lvl3": null
     }
+  },
+  {
+    "content": "Floating Labels",
+    "id": "4dac846c-0fb5-46eb-8362-95eccbb326be",
+    "type": "lvl1",
+    "url": "/guides/recipes/floating-labels",
+    "hierarchy": { "lvl1": "Floating Labels" }
   }
 ]
