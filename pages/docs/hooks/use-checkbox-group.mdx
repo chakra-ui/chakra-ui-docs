@@ -4,9 +4,9 @@ package: '@chakra-ui/checkbox'
 description: 'React hooks to manage checkbox group.'
 ---
 
-`useCheckboxGroup` is a custom hook used to provide checkbox functionality,
-aswell as state and focus management to custom checkbox components when using
-it.
+`useCheckboxGroup` is a custom hook used to provide checkbox group
+functionality, aswell as state and focus management to custom checkbox group
+components when using it.
 
 ## Import
 
@@ -18,11 +18,13 @@ import { useCheckboxGroup } from '@chakra-ui/react'
 
 The `useCheckboxGroup` hook returns following props
 
-| Name     | Type         | Description                                     |
-| -------- | ------------ | ----------------------------------------------- |
-| `on`     | `() => void` | A function to set the boolean value to `true`.  |
-| `off`    | `() => void` | A function to set the boolean value to `false`. |
-| `toggle` | `() => void` | A function to negate the boolean state.         |
+| Name               | Type                            | Description                                     |
+| ------------------ | ------------------------------- | ----------------------------------------------- |
+| `value`            | `boolean`                       | A function to set the boolean value to `true`.  |
+| `isDisabled`       | `boolean`                       | A function to set the boolean value to `false`. |
+| `onChange`         | `(input: EventOrValue) => void` | A function to negate the boolean state.         |
+| `setValue`         | `() => void`                    | A function to negate the boolean state.         |
+| `getCheckboxProps` | `() => void`                    | A function to negate the boolean state.         |
 
 ## Usage
 
