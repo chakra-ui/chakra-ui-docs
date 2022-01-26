@@ -46,6 +46,11 @@
               "path": "/docs/features/css-variables"
             },
             {
+              "new": true,
+              "title": "Semantic Tokens",
+              "path": "/docs/features/semantic-tokens"
+            },
+            {
               "title": "Responsive Styles",
               "path": "/docs/features/responsive-styles"
             },

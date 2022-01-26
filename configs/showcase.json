@@ -125,6 +125,13 @@
       "url": "https://octoclairvoyant.vercel.app/",
       "image": "showcases/projects/Octoclairvoyant.png",
       "type": "projects"
+    },
+    {
+      "name": "Roadster",
+      "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
+      "url": "https://r0adster.live",
+      "image": "showcases/projects/Roadster.png",
+      "type": "projects"
     }
   ],
   "websites": [
