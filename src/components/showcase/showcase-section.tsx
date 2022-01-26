@@ -91,6 +91,10 @@ const ShowcaseSection = () => {
     e: PointerEvent<HTMLAnchorElement> | FocusEvent<HTMLAnchorElement>,
   ) => {
     if (!itemsRef.current || isXlDown) return
+    if (isXlDown) {
+      x.set(0)
+      return
+    }
 
     const xPosition = e.currentTarget.getBoundingClientRect().left
     const elementWidth = e.currentTarget.clientWidth
