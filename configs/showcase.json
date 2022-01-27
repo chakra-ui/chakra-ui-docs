@@ -413,6 +413,13 @@
       "url": "https://creativedesignsguru.com/chakra-ui-next-js/",
       "image": "showcases/articles/How-to-Set-Up-Chakra-UI-with-Next-JS-by-creating-a-Hero-component.png",
       "type": "articles"
+    },
+    {
+      "name": "Choosing the right component library for your design system: MUI vs Chakra",
+      "description": "",
+      "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
+      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system:-MUI-vs-Chakra.png",
+      "type": "articles"
     }
   ],
   "videos": [
