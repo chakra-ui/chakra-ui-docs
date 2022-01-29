@@ -13,7 +13,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { useRef, PointerEvent, FocusEvent } from 'react'
+import { useRef, PointerEvent, FocusEvent, useEffect, useCallback } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import { motion, useSpring, useMotionTemplate } from 'framer-motion'
 
@@ -87,24 +87,45 @@ const ShowcaseSection = () => {
 
   const xTranslate = useMotionTemplate`translateX(${x}px)`
 
-  const updateRowTranslate = (
-    e: PointerEvent<HTMLAnchorElement> | FocusEvent<HTMLAnchorElement>,
-  ) => {
-    if (!itemsRef.current || isXlDown) return
-    if (isXlDown) {
-      x.set(0)
-      return
+  const setTranslateXToRight = useCallback(() => {
+    const translateX =
+      -itemsRef.current.scrollWidth + itemsRef.current.clientWidth
+    x.set(translateX)
+  }, [x])
+
+  useEffect(() => {
+    const optimizeTranslateX = (e: WindowEventMap['resize']) => {
+      if (e.currentTarget['innerWidth'] > 1280 && x.get() < 0) {
+        setTranslateXToRight()
+      } else if (isXlDown) {
+        x.set(0)
+      }
     }
 
-    const xPosition = e.currentTarget.getBoundingClientRect().left
-    const elementWidth = e.currentTarget.clientWidth
+    if (window) {
+      window.addEventListener('resize', optimizeTranslateX)
+    }
 
-    if (xPosition < 0) {
+    return () => {
+      window.removeEventListener('resize', optimizeTranslateX)
+    }
+  }, [x, isXlDown, setTranslateXToRight])
+
+  const updateTranslateX = (
+    e: PointerEvent<HTMLAnchorElement> | FocusEvent<HTMLAnchorElement>,
+  ) => {
+    if (!itemsRef.current) return
+    if (isXlDown) {
       x.set(0)
-    } else if (elementWidth + xPosition > itemsRef.current.clientWidth) {
-      const translateX =
-        -itemsRef.current.scrollWidth + itemsRef.current.clientWidth
-      x.set(translateX)
+    } else {
+      const xPosition = e.currentTarget.getBoundingClientRect().left
+      const elementWidth = e.currentTarget.clientWidth
+
+      if (xPosition < 0) {
+        x.set(0)
+      } else if (elementWidth + xPosition > itemsRef.current.clientWidth) {
+        setTranslateXToRight()
+      }
     }
   }
 
@@ -122,8 +143,8 @@ const ShowcaseSection = () => {
         isExternal
         href={href}
         role='group'
-        onPointerEnter={updateRowTranslate}
-        onFocus={updateRowTranslate}
+        onPointerEnter={updateTranslateX}
+        onFocus={updateTranslateX}
         w={{
           base: 'full',
           xl: '27.5vw',
@@ -197,7 +218,7 @@ const ShowcaseSection = () => {
         width='full'
         px={{ base: 4, xl: 8 }}
         style={{
-          transform: isXlDown ? 'translateX(0px)' : xTranslate,
+          transform: xTranslate,
         }}
       >
         <SimpleGrid
