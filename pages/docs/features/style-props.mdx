@@ -427,6 +427,72 @@ import { Box } from "@chakra-ui/react"
 | `textShadow`          | `text-shadow` | `shadows`   |
 | `shadow`, `boxShadow` | `box-shadow`  | `shadows`   |
 
+### Filter
+
+```jsx live=false
+import {Box} from '@chakra-ui/react'
+
+// adding filter property to the element
+<Box bg='red' filter='grayscale(50%)'>
+  Box with Filter
+</Box>
+
+// adding blur property to the element
+<Box bg='red' filter='auto' blur='2px'>
+  Box with Blur
+</Box>
+
+// adding brightness property to the element
+<Box bg='red' filter='auto' brightness='40%'>
+  Box with Brightness
+</Box>
+```
+
+> Note: To apply `blur`, `brightness`, `contrast`, `hueRotate`, `invert`,
+> `saturate` props on the element, set `filter` prop value to "auto".
+
+```jsx live=false
+import { Box } from '@chakra-ui/react'
+
+// adding backdrop-filter property to the element
+<Box p='10' bg='blackAlpha.800' backdropFilter='contrast(40%)'>
+  Box with Backdrop Filter
+</Box>
+
+// adding backdrop-blur property to the element
+<Box p='10' bg='blackAlpha.800' backdropFilter='auto' backdropBlur='2px'>
+  Box with Backdrop Blur
+</Box>
+
+// adding backdrop-contrast property to the element
+<Box p='10' bg='blackAlpha.800' backdropFilter='auto' backdropContrast='50%'>
+  Box with Backdrop Contrast
+</Box>
+
+```
+
+> Note: To apply `backdropBlur`, `backdropBrightness`, `backdropContrast`,
+> `backdropHueRotate`, `backdropInvert`, `backdropSaturate` props on the
+> element, set `backdropFilter` prop value to "auto".
+
+| Prop                 | CSS Property      | Theme Field |
+| -------------------- | ----------------- | ----------- |
+| `filter`             | `filter`          | none        |
+| `blur`               | `filter`          | `blur`      |
+| `brightness`         | `filter`          | none        |
+| `contrast`           | `filter`          | none        |
+| `hueRotate`          | `filter`          | none        |
+| `invert`             | `filter`          | none        |
+| `saturate`           | `filter`          | none        |
+| `dropShadow`         | `filter`          | `shadows`   |
+| `backdropFilter`     | `backdrop-filter` | `blur`      |
+| `backdropBlur`       | `backdrop-filter` | none        |
+| `backdropBrightness` | `backdrop-filter` | none        |
+| `backdropContrast`   | `backdrop-filter` | none        |
+| `backdropHueRotate`  | `backdrop-filter` | none        |
+| `backdropInvert`     | `backdrop-filter` | none        |
+| `backdropSaturate`   | `backdrop-filter` | none        |
+
 ### Pseudo
 
 ```jsx live=false
