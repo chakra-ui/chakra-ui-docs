@@ -95,6 +95,10 @@
             {
               "title": "Horizontal Collapse",
               "path": "/guides/recipes/horizontal-collapse"
+            },
+            {
+              "title": "Floating Labels",
+              "path": "/guides/recipes/floating-labels"
             }
           ]
         }

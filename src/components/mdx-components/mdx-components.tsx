@@ -18,6 +18,7 @@ import CodeBlock from './codeblock/codeblock'
 import ComponentLinks from './component-links'
 import IconsList from './icons-list'
 import EggheadCourseBanner from './egghead-course-banner'
+import SandpackEmbed from 'components/sandpack-embed'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -73,4 +74,9 @@ export const MDXComponents = {
   ColorPalettes,
   ColorWrapper,
   EggheadCourseBanner,
+  SandpackEmbed: (props) => (
+    <Box my={6}>
+      <SandpackEmbed {...props} />
+    </Box>
+  ),
 }

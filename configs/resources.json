@@ -49,6 +49,14 @@
       "url": "https://www.freecodecamp.org/news/how-to-use-chakra-ui-with-next-js-and-react/"
     },
     {
+      "heading": "Choosing the right component library for your design system: MUI vs Chakra",
+      "type": "blog",
+      "tags": ["Chakra UI", "Design Systems"],
+      "author": "Kolby Sisk",
+      "description": "Comparison between MUI and Chakra UI for building Design Systems",
+      "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150"
+    },
+    {
       "heading": "Installing and Using Chakra UI with React",
       "type": "blog",
       "tags": ["Create React App", "Basics", "v0.8"],

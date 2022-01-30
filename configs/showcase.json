@@ -125,6 +125,13 @@
       "url": "https://octoclairvoyant.vercel.app/",
       "image": "showcases/projects/Octoclairvoyant.png",
       "type": "projects"
+    },
+    {
+      "name": "Roadster",
+      "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
+      "url": "https://r0adster.live",
+      "image": "showcases/projects/Roadster.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -405,6 +412,13 @@
       "description": "",
       "url": "https://creativedesignsguru.com/chakra-ui-next-js/",
       "image": "showcases/articles/How-to-Set-Up-Chakra-UI-with-Next-JS-by-creating-a-Hero-component.png",
+      "type": "articles"
+    },
+    {
+      "name": "Choosing the right component library for your design system: MUI vs Chakra",
+      "description": "",
+      "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
+      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system:-MUI-vs-Chakra.png",
       "type": "articles"
     }
   ],
