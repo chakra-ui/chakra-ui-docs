@@ -67,14 +67,14 @@ function Example() {
   }
 
   const { getCheckboxProps } = useCheckboxGroup({
-    defaultValue: [2],
+    defaultValue: ['2'],
   })
 
   return (
     <Stack>
-      <CustomCheckbox {...getCheckboxProps({ value: 1 })} />
-      <CustomCheckbox {...getCheckboxProps({ value: 2 })} />
-      <CustomCheckbox {...getCheckboxProps({ value: 3 })} />
+      <CustomCheckbox {...getCheckboxProps({ value: '1' })} />
+      <CustomCheckbox {...getCheckboxProps({ value: '2' })} />
+      <CustomCheckbox {...getCheckboxProps({ value: '3' })} />
     </Stack>
   )
 }
