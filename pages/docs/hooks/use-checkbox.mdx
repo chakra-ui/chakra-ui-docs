@@ -29,9 +29,10 @@ import { useCheckbox } from '@chakra-ui/react'
 
 ```jsx
 function Example() {
-  const CustomCheckbox = forwardRef((props, ref) => {
+  const CustomCheckbox = (props) => {
     const { state, getCheckboxProps, getInputProps, getLabelProps, htmlProps } =
-      useCheckbox()
+      useCheckbox(props)
+
     return (
       <chakra.label
         display='flex'
@@ -48,7 +49,7 @@ function Example() {
         cursor='pointer'
         {...htmlProps}
       >
-        <input {...getInputProps({}, ref)} hidden />
+        <input {...getInputProps()} hidden />
         <Flex
           alignItems='center'
           justifyContent='center'
@@ -63,9 +64,13 @@ function Example() {
         <Text {...getLabelProps()}>Click me</Text>
       </chakra.label>
     )
-  })
+  }
 
-  return <CustomCheckbox />
+  return (
+    <div>
+      <CustomCheckbox />
+    </div>
+  )
 }
 ```
 
