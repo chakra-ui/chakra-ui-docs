@@ -423,16 +423,16 @@
               "path": "/docs/hooks/use-breakpoint-value"
             },
             {
-              "title": "useClipboard",
-              "path": "/docs/hooks/use-clipboard"
-            },
-            {
               "title": "useCheckbox",
               "path": "/docs/hooks/use-checkbox"
             },
             {
               "title": "useCheckboxGroup",
               "path": "/docs/hooks/use-checkbox-group"
+            },
+            {
+              "title": "useClipboard",
+              "path": "/docs/hooks/use-clipboard"
             },
             {
               "title": "useConst",
