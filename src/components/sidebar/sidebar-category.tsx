@@ -60,7 +60,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
         alignItems='center'
         justifyContent='space-between'
         userSelect='none'
-        color={useColorModeValue('gray.500', 'inherit')}
+        color={useColorModeValue('teal.500', 'teal.300')}
       >
         {title}
       </chakra.p>
