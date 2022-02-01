@@ -17,13 +17,13 @@ import { useCheckboxGroup } from '@chakra-ui/react'
 
 The `useCheckboxGroup` hook returns following props
 
-| Name               | Type                                                                         | Description                                                                                 |
-| ------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `value`            | `StringOrNumber[]`                                                           | The value of checkbox group.                                                                |
-| `isDisabled`       | `boolean`                                                                    | A function to set the boolean value to `false`.                                             |
-| `onChange`         | `(input: EventOrValue) => void`                                              | The onChange handler for the checkbox group.                                                |
-| `setValue`         | `React.Dispatch<React.SetStateAction<StringOrNumber[]>>`                     | A function to set the value of the checkbox group.                                          |
-| `getCheckboxProps` | `(props?: Dict = {}) => {...props, onChange: (input: EventOrValue) => void}` | A function that returns the checkbox props with an onChange handler for the checkbox group. |
+| Name               | Type                                | Description                                                                                                             |
+| ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `value`            | `StringOrNumber[]`                  | The value of checkbox group.                                                                                            |
+| `isDisabled`       | `boolean`                           | A function to set the boolean value to `false`.                                                                         |
+| `onChange`         | `(input: EventOrValue) => void`     | The onChange handler for the checkbox group.                                                                            |
+| `setValue`         | `(state: StringOrNumber[]) => void` | A function to set the value of the checkbox group.                                                                      |
+| `getCheckboxProps` | `(props?: Dict) => object`          | A function that takes checkbox props returns them with a onChange handler for the checkbox group and the checked state. |
 
 ## Usage
 
