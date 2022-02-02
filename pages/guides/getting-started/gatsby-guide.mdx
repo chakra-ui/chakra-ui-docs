@@ -1,96 +1,85 @@
 ---
-title: Gatsby
-description: A guide for installing Chakra UI with Gatsby projects
-tags: ['gatsby']
-author: estheragbaje
+title: Chakra UI + Gatsby
+description: Adding Chakra UI Components to Gatsby sites
+tags: ['gatsby', 'websites', 'ssr']
+author: KenzoBenzo
 ---
 
-### 1. Installation
+Chakra UI is a great UI library to get your [Gatsby](https://www.gatsbyjs.com/)
+website up and running fast. The setup is slightly different than other
+projects, however the API usage seen in the rest of the docs is the same!
 
-Add the
-[@chakra-ui/gatsby-plugin](https://www.gatsbyjs.com/plugins/@chakra-ui/gatsby-plugin/).
-It does everything automatically for you!
+## Installation
+
+Gatsby plugins make external APIs plug-and-play into your website. Installing
+can be done with the following command:
 
 ```bash
-npm i @chakra-ui/gatsby-plugin
+npm i @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+# or
+
+yarn add @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
-```bash
-yarn add @chakra-ui/gatsby-plugin
-```
+## Usage
 
-Then add the plugin to your `gatsby-config`.
+After installation, you'll need to add `@chakra-ui/gatsby-plugin` to the
+`gatsby-config.js` file.
 
-```js
+```jsx live=false
 // gatsby-config.js
 
 module.exports = {
-  plugins: ['@chakra-ui/gatsby-plugin'],
+  plugins: [
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        /**
+         * @property {boolean} [resetCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        resetCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
+      },
+    },
+  ],
 }
 ```
 
-### ChakraProvider Props
-
-| Name             | Type             | Default               | Description                                         |
-| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
-
-> Boom! You're good to go 🚀🚀🚀 However, if you'd love to take it a step
-> further, check out step 2.
-
-#### 2. Optional Setup
-
-- Customizing Theme
-
-If you intend to customise the default theme object to match your design
-requirements, you can extend the `theme` from `@chakra-ui/react`.
-
-Chakra UI provides an `extendTheme` function that deep merges the default theme
-with your customizations.
+To use a custom theme, you can
+[shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
+this plugin’s `theme.js` file with your own theme:
 
 ```jsx live=false
-// 1. Import the extendTheme function
+// src/@chakra-ui/gatsby-plugin/theme.js
 import { extendTheme } from '@chakra-ui/react'
-
-// 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
+const theme = {
+  colors: {
+    primary: 'rebeccapurple',
   },
 }
 
-const theme = extendTheme({ colors })
-
-// 3. Pass the `theme` prop to the `ChakraProvider`
-function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
-  )
-}
+export default extendTheme(theme)
 ```
 
-> To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities. Install
-> `@chakra-ui/theme-tools`.
+If you want to use the [default theme](/docs/theming/theme) there's no need to
+shadow the file.
 
-- Using Chakra Icons
+## Migration Notes
 
-Chakra provides a set of commonly used interface icons you can use in your
-project.
+### From v1.x to v2.x
 
-If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
+- The `isUsingColorMode` option was removed. The `ChakraProvider` will always
+  use the `ColorModeProvider`
+- The `isResettingCSS` option was renamed to `resetCSS`
 
-> Follow this guide for customising Chakra Icons
-> [Using Chakra UI Icons](/docs/media-and-icons/icon).
+### From v0.8.x to v1.x
 
-#### Notes on TypeScript 🚨
-
-Please note that when adding Chakra UI to a TypeScript project, a minimum
-TypeScript version of `4.1.0` is required.
+- The Gatsby plugin has been renamed from `gatsby-plugin-chakra-ui` to
+  `@chakra-ui/gatsby-plugin`. Please make sure to have updated this when
+  installing Chakra UI in your next Gatsby project.
