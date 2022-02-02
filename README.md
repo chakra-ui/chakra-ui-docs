@@ -257,6 +257,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/jakeboone02"><img src="https://avatars.githubusercontent.com/u/366438?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jake Boone</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=jakeboone02" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Patrick-Ullrich"><img src="https://avatars.githubusercontent.com/u/6193042?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Patrick Ullrich</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=Patrick-Ullrich" title="Documentation">📖</a></td>
     <td align="center"><a href="http://aboveyunhai@gmail.com"><img src="https://avatars.githubusercontent.com/u/35160613?v=4?s=64" width="64px;" alt=""/><br /><sub><b>aboveyunhai</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=aboveyunhai" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://natecation.com"><img src="https://avatars.githubusercontent.com/u/10874225?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Nathan H. Leung</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=nathanhleung" title="Documentation">📖</a></td>
   </tr>
 </table>
 
