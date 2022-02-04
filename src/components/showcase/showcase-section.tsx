@@ -69,7 +69,7 @@ const websites: Website[] = [
   },
   {
     src: ChocUI,
-    href: 'https://choc-ui.tech/',
+    href: 'https://choc-ui.com/',
     alt: 'Choc UI',
   },
   {
