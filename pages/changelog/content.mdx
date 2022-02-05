@@ -8,9 +8,105 @@ The Changelog gives an overview of the meaningful changes we've made to Chakra
 UI as we keep driving for better performance and best-in-class developer
 experience.
 
-## 26-01-2022
+## 05-02-2022
 
-`@chakra-ui/react@1.8.1`
+`@chakra-ui/react@1.8.3`
+
+- fixed an issue where the release process was not working
+
+## 05-02-2022
+
+`@chakra-ui/react@1.8.2`
+
+- allow framer motion v6 as peer dependency
+
+**Input** `v1.4.0`
+
+- Add new prop `htmlSize` to `Input` to allow the usage of the native input
+  attribute `size`.
+- Apply theme styles for `InputLeftElement` and `InputRightElement`.
+
+**Media Query** `v2.0.0`
+
+- Support useMediaQuery for older browsers. Conditionally check if the
+  MediaQueryList object supports the addEventListener() method, else fallback to
+  the legacy .addListener() method.
+
+**Cli** `v1.8.0`
+
+- Fixed an internal version number mismatch
+- When the
+  [Chakra CLI](https://chakra-ui.com/docs/theming/advanced#theme-typings) fails
+  to generate theme typings, it now exits with a status code of `1`. This
+  resolves an issue where failures exited with a success status code.
+- Increased scan depth for tokens in cli tooling
+
+**Tooltip** `v1.4.5`
+
+- Fix an issue where arrow tooltip background color only consider bg props. It
+  considers `bg`, `background`, `bgColor` and `backgroundColor` now.
+- allow framer motion v6 as peer dependency
+
+**Accordion** `v1.4.5`
+
+- allow framer motion v6 as peer dependency
+- Add missing peer dependencies
+
+**Checkbox** `v1.6.4`
+
+- allow framer motion v6 as peer dependency
+- Fixing a bug that happens when using the useCheckboxGroup hook with number
+  values instead of string values
+
+**Menu** `v1.8.5`
+
+- allow framer motion v6 as peer dependency
+
+**Modal** `v1.10.6`
+
+- allow framer motion v6 as peer dependency
+
+**Popover** `v1.11.3`
+
+- allow framer motion v6 as peer dependency
+
+**Switch** `v1.3.4`
+
+- allow framer motion v6 as peer dependency
+- Add missing peer dependencies
+
+**Toast** `v1.5.3`
+
+- allow framer motion v6 as peer dependency
+- Fixed an issue where the `useToast` function returned a new object on every
+  render.
+
+**Transition** `v1.4.4`
+
+- allow framer motion v6 as peer dependency
+
+**Utils** `v1.10.1`
+
+- Fixing a bug that happens when using the useCheckboxGroup hook with number
+  values instead of string values
+
+**System** `v1.10.2`
+
+- Disallow props that do not exist in the prop interface
+
+**Form Control** `v1.5.5`
+
+- Remove redundant `useMemo` from `FormControl`
+
+**Anatomy** `v1.2.2`
+
+- Add missing peer dependencies
+
+**Skeleton** `v1.2.8`
+
+- Add missing peer dependencies
+
+## 26-01-2022
 
 **Color Mode** `v1.4.1`
 
@@ -29,15 +125,171 @@ experience.
 
 **Styled System** `v1.17.0`
 
-- Introducing **semantic tokens**. Semantic tokens provide the ability to create
-  css variables which can change with a CSS condition.
+- Introducing **semantic tokens**
+
+Semantic tokens provide the ability to create css variables which can change
+with a CSS condition.
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    900: '#171923',
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='gray.900'>will always be gray.900</Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    50: '#F7FAFC',
+    900: '#171923',
+  },
+  semanticTokens: {
+    colors: {
+      text: {
+        default: 'gray.900',
+        _dark: 'gray.50',
+      },
+    },
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='text'>
+      will be gray.900 in light mode and gray.50 in dark mode
+    </Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+  colors: {
+    red: {
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
+    },
+  },
+  semanticTokens: {
+    colors: {
+      error: 'red.500', // create a token alias
+      success: 'red.100',
+      primary: {
+        // set variable conditionally with pseudo selectors like `_dark` and `_light`
+        // use `default` to define fallback value
+        default: 'red.500',
+        _dark: 'red.400',
+      },
+      secondary: {
+        default: 'red.800',
+        _dark: 'red.700',
+      },
+    },
+  },
+})
+```
+
 - Updated the `_placeholderShown` selector
 - Export TypeScript types ResponsiveObject and ResponsiveArray
 
 **Theme** `v1.13.0`
 
-- Introducing **semantic tokens**. Semantic tokens provide the ability to create
-  css variables which can change with a CSS condition.
+- Introducing **semantic tokens**
+
+Semantic tokens provide the ability to create css variables which can change
+with a CSS condition.
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    900: '#171923',
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='gray.900'>will always be gray.900</Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    50: '#F7FAFC',
+    900: '#171923',
+  },
+  semanticTokens: {
+    colors: {
+      text: {
+        default: 'gray.900',
+        _dark: 'gray.50',
+      },
+    },
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='text'>
+      will be gray.900 in light mode and gray.50 in dark mode
+    </Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+  colors: {
+    red: {
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
+    },
+  },
+  semanticTokens: {
+    colors: {
+      error: 'red.500', // create a token alias
+      success: 'red.100',
+      primary: {
+        // set variable conditionally with pseudo selectors like `_dark` and `_light`
+        // use `default` to define fallback value
+        default: 'red.500',
+        _dark: 'red.400',
+      },
+      secondary: {
+        default: 'red.800',
+        _dark: 'red.700',
+      },
+    },
+  },
+})
+```
+
 - refactoring(theme): Simplify exports
 - Add entrypoints to the different parts of the theme (colors, fonts,
   components, spacing, etc.)
@@ -70,6 +322,81 @@ Here's a table of the theme parts and entrypoints
 
 Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    900: '#171923',
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='gray.900'>will always be gray.900</Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const customTheme = extendTheme({
+  colors: {
+    50: '#F7FAFC',
+    900: '#171923',
+  },
+  semanticTokens: {
+    colors: {
+      text: {
+        default: 'gray.900',
+        _dark: 'gray.50',
+      },
+    },
+  },
+})
+
+const App = () => (
+  <ChakraProvider theme={customTheme}>
+    <Text color='text'>
+      will be gray.900 in light mode and gray.50 in dark mode
+    </Text>
+  </ChakraProvider>
+)
+```
+
+```tsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+  colors: {
+    red: {
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
+    },
+  },
+  semanticTokens: {
+    colors: {
+      error: 'red.500', // create a token alias
+      success: 'red.100',
+      primary: {
+        // set variable conditionally with pseudo selectors like `_dark` and `_light`
+        // use `default` to define fallback value
+        default: 'red.500',
+        _dark: 'red.400',
+      },
+      secondary: {
+        default: 'red.800',
+        _dark: 'red.700',
+      },
+    },
+  },
+})
+```
 
 **System** `v1.10.0`
 
