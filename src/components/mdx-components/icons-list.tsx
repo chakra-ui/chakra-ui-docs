@@ -94,10 +94,10 @@ const IconsList = () => {
             pb={9}
             onClick={() => onCopyIcon()}
             key={i}
-            align='center'
+            textAlign='center'
             variant='outline'
             flexDir='column'
-            justify='center'
+            justifyContent='center'
           >
             <Icon />
             <Text
