@@ -191,7 +191,7 @@ const ShowcaseSection = () => {
   return (
     <Box as='section' overflow='hidden' mb={12}>
       <Container py='7.5rem' maxW='1280px'>
-        <Box spacing={5} maxW='760px' mx='auto' textAlign='center'>
+        <Box maxW='760px' mx='auto' textAlign='center'>
           <chakra.h2 textStyle='heading' mb={4}>
             {t('homepage.built-with-chakra-section.title')}
           </chakra.h2>
