@@ -362,6 +362,13 @@
       "url": "https://githubbox.com/ceteio/chakra-capsize/tree/main/example",
       "image": "showcases/tools/Chakra-Capsize.png",
       "type": "tools"
+    },
+    {
+      "name": "create-chakra-icons",
+      "description": "ransform SVG to React Chakra UI <Icon /> ✨",
+      "url": "https://chakra-icons.com",
+      "image": "showcases/tools/create-chakra-icons.png",
+      "type": "tools"
     }
   ],
   "articles": [
