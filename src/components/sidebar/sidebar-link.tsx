@@ -40,7 +40,7 @@ const SidebarLink = (props: SidebarLinkProps) => {
   const { href, icon, children, ...rest } = props
 
   const { asPath } = useRouter()
-  const isActive = asPath === href
+  const isActive = asPath.includes(href)
 
   return (
     <chakra.div
