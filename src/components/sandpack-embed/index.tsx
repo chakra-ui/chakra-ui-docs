@@ -1,8 +1,10 @@
-import { Box, BoxProps } from '@chakra-ui/react'
+import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
 import { Sandpack, SandpackProps } from '@codesandbox/sandpack-react'
 import '@codesandbox/sandpack-react/dist/index.css'
 
 const SandpackEmbed = (props: BoxProps & SandpackProps) => {
+  const { colorMode } = useColorMode()
+
   return (
     <Box
       as={Sandpack}
@@ -11,7 +13,7 @@ const SandpackEmbed = (props: BoxProps & SandpackProps) => {
         ...props.options,
         showLineNumbers: true,
       }}
-      theme='dark'
+      theme={colorMode}
       template='react-ts'
       customSetup={{
         dependencies: {
