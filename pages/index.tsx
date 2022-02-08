@@ -295,8 +295,8 @@ const HomePage = ({
                   editorWidthPercentage: 60,
                 }}
                 files={{
-                  '/src/App.tsx': App,
-                  '/src/index.tsx': Index,
+                  '/App.tsx': App,
+                  '/index.tsx': Index,
                 }}
                 zIndex={0}
                 tabIndex={-1}
