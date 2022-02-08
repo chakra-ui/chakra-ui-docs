@@ -219,7 +219,7 @@ passed, the `defaultProps` defined in the style config will be used.
 import { Box, useStyleConfig } from '@chakra-ui/react'
 
 function Card(props) {
-  const { variant, children, ...rest } = props
+  const { variant, ...rest } = props
 
   const styles = useStyleConfig('Card', { variant })
 
