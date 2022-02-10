@@ -71,7 +71,9 @@ is critical for accessiblity.
 ## Rendering the Popover in a Portal
 
 By default, the Popover doesn't render in a Portal. To make them display in a
-portal, wrap the `PopoverContent` in a `Portal`
+portal, wrap the `PopoverContent` in a `Portal`.
+This means u can not set e.g. a `filter` with blur for the rest of your 
+application.
 
 > You might need to **Inspect Element** to see this in action. Notice that
 > `PopoverContent` is rendered as a child of `<body>`
