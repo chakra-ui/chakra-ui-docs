@@ -130,7 +130,7 @@ experience.
 Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -146,7 +146,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -173,7 +173,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
@@ -215,7 +215,7 @@ const theme = extendTheme({
 Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -231,7 +231,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -258,7 +258,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
@@ -323,7 +323,7 @@ Here's a table of the theme parts and entrypoints
 Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -339,7 +339,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
@@ -366,7 +366,7 @@ const App = () => (
 )
 ```
 
-```tsx live=false
+```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
@@ -568,7 +568,7 @@ Here's a full list of properties:
 chakra-cli tokens --strict-component-types
 ```
 
-```tsx live=false
+```jsx live=false
 // before
 <Button variant="abc" />
 // valid type but variant is not available in the theme
@@ -587,7 +587,7 @@ chakra-cli tokens --strict-component-types
 chakra-cli tokens --strict-component-types
 ```
 
-```tsx live=false
+```jsx live=false
 // before
 <Button variant="abc" />
 // valid type but variant is not available in the theme
@@ -1292,7 +1292,7 @@ $width.reference // => 'var(--slider-width)'
 
 Create a component anatomy
 
-```jsx live=false
+```tsx live=false
 import { anatomy }  from "@chakra-ui/theme-tools"
 import type { PartsStyle } from "@chakra-ui/theme-tools"
 
@@ -2561,7 +2561,7 @@ Update text align attribute to use end instead of right for RTL.
 - Introducing a generic TypeScript type `ChakraTheme` to improve the
   `extendTheme` function even further.
 
-```jsx live=false
+```tsx live=false
 import { extendTheme } from '@chakra-ui/react'
 
 export const customTheme = extendTheme({

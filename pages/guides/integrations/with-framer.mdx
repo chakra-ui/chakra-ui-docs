@@ -69,9 +69,8 @@ function Example() {
 
 For TypeScript users, here's what you need to do:
 
-```jsx live=false
-import React from 'react'
-import { Box, BoxProps } from '@chakra-ui/layout'
+```tsx live=false
+import { Box, type BoxProps } from '@chakra-ui/layout'
 import { motion } from 'framer-motion'
 
 export const MotionBox = motion<BoxProps>(Box)
