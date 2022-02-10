@@ -1,28 +1,12 @@
 {
   "routes": [
     {
-      "title": "Getting Started",
+      "title": "Docs",
       "heading": true,
       "routes": [
         {
-          "title": "Installation",
-          "path": "/docs/getting-started"
-        },
-        {
-          "title": "Upgrade to v1",
-          "path": "/docs/migration"
-        },
-        {
-          "title": "Design Principles",
-          "path": "/docs/principles"
-        },
-        {
-          "title": "Comparison",
-          "path": "/docs/comparison"
-        },
-        {
-          "title": "Changelog",
-          "path": "/changelog"
+          "title": "Overview",
+          "path": "/docs/overview"
         },
         {
           "title": "Features",

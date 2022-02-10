@@ -5,22 +5,21 @@
       "heading": true,
       "routes": [
         {
-          "title": "How to Create a guide",
-          "path": "/guides/how-to-create-a-guide"
+          "title": "Installation",
+          "path": "/guides/installation"
         },
         {
-          "title": "Component guide",
-          "path": "/guides/component-guide"
+          "title": "Upgrade to v1",
+          "path": "/guides/migration"
         },
         {
-          "title": "Portals and z-Index",
-          "path": "/guides/z-index"
+          "title": "Design Principles",
+          "path": "/guides/principles"
         },
         {
-          "title": "The as prop",
-          "path": "/guides/as-prop"
+          "title": "Comparison",
+          "path": "/guides/comparison"
         },
-
         {
           "title": "Getting Started",
           "path": "/guides/getting-started",
@@ -80,25 +79,21 @@
           ]
         },
         {
-          "title": "Recipes",
-          "path": "/guides/recipes",
+          "title": "Advanced",
+          "path": "/guides/advanced",
           "open": true,
           "routes": [
             {
-              "title": "Using Fonts",
-              "path": "/guides/recipes/using-fonts"
+              "title": "Component Guide",
+              "path": "/guides/advanced/component-guide"
             },
             {
-              "title": "Page-Specific Color mode",
-              "path": "/guides/recipes/page-specific-color-mode"
+              "title": "How to create a Guide",
+              "path": "/guides/advanced/how-to-create-a-guide"
             },
             {
-              "title": "Horizontal Collapse",
-              "path": "/guides/recipes/horizontal-collapse"
-            },
-            {
-              "title": "Floating Labels",
-              "path": "/guides/recipes/floating-labels"
+              "title": "Contribute",
+              "path": "/guides/advanced/contributing"
             }
           ]
         }

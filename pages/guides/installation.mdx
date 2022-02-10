@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 description: How to install and set up Chakra UI in your project
+tags: ['principles']
 ---
 
 ## Watch the Egghead Course
@@ -16,47 +17,6 @@ Whichever framework or tool you're using, we've put together step-by-step guides
 to get you up and running with Chakra UI.
 
 <FrameworkLinks />
-
-## Direct integrations
-
-If you're working without any of the frameworks above, install Chakra UI using
-the steps below
-
-### Installation
-
-Inside your React project directory, install Chakra UI by running either of the
-following:
-
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^5
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^5
-```
-
-### Set up Provider
-
-For Chakra UI to work correctly, you need to set up the `ChakraProvider` at the
-root of your application.
-
-Go to the root of your application and do this:
-
-```jsx live=false
-import * as React from 'react'
-
-// 1. import `ChakraProvider` component
-import { ChakraProvider } from '@chakra-ui/react'
-
-function App({ Component }) {
-  // 2. Use at the root of your app
-  return (
-    <ChakraProvider>
-      <Component />
-    </ChakraProvider>
-  )
-}
-```
 
 ## Use our Create-React-App Templates
 

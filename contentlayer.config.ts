@@ -50,8 +50,8 @@ const Guides = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
-    tags: { type: 'list', of: { type: 'string' } },
-    author: { type: 'string', required: true },
+    tags: { type: 'list', of: { type: 'string' }, required: false },
+    author: { type: 'string' },
   },
   computedFields: {
     ...computedFields,

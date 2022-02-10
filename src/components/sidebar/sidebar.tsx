@@ -134,14 +134,19 @@ const MainNavLink = ({ href, icon, children }) => {
 
 const mainNavLinks = [
   {
-    icon: <DocsIcon />,
-    href: '/docs/getting-started',
-    label: 'Docs',
+    icon: <GuidesIcon />,
+    href: '/guides/installation',
+    label: 'Getting Started',
   },
   {
-    icon: <GuidesIcon />,
-    href: '/guides/integrations/with-cra',
-    label: 'Guides',
+    icon: <DocsIcon />,
+    href: '/changelog',
+    label: 'Features',
+  },
+  {
+    icon: <DocsIcon />,
+    href: '/changelog',
+    label: 'Components',
   },
   {
     icon: <ResourcesIcon />,
@@ -149,19 +154,24 @@ const mainNavLinks = [
     label: 'Resources',
   },
   {
-    icon: <ShowcaseIcon />,
-    href: '/showcase',
-    label: 'Showcase',
-  },
-  {
     icon: <FaQuestionCircle color='white' />,
     href: '/faqs',
     label: 'FAQ',
   },
   {
+    icon: <FaQuestionCircle color='white' />,
+    href: '/changelog',
+    label: 'Changelog',
+  },
+  {
     icon: <TeamIcon />,
     href: '/team',
     label: 'Team',
+  },
+  {
+    icon: <ShowcaseIcon />,
+    href: '/showcase',
+    label: 'Showcase',
   },
 ]
 
