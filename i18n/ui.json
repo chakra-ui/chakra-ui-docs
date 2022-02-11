@@ -176,10 +176,12 @@
       "proudly-made-in": "Proudly made in"
     },
     "mobile-nav": {
-      "docs": "Docs",
-      "guides": "Guides",
+      "api": "API",
+      "components": "Components",
+      "getting-started": "Getting Started",
       "resources": "Resources",
       "faq": "FAQ",
+      "changelog": "Changelog",
       "team": "Team",
       "showcase": "Showcase"
     },
