@@ -1206,6 +1206,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "curdin",
+      "name": "Curdin Krummenacher",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31509?v=4",
+      "profile": "https://github.com/curdin",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
