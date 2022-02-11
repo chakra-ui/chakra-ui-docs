@@ -128,7 +128,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   templateColumns='repeat(2, 1fr)'
                   gap='2'
                 >
-                  <NavLink href='/docs/getting-started'>
+                  <NavLink href='/guides/installation'>
                     {t('component.mobile-nav.docs')}
                   </NavLink>
                   <NavLink href='/guides/integrations/with-cra'>

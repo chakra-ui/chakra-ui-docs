@@ -1,6 +1,5 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import * as React from 'react'
 import sortBy from 'lodash/sortBy'
 import {
   Badge,
@@ -25,11 +24,18 @@ import {
   ResourcesIcon,
   ShowcaseIcon,
 } from './sidebar-icons'
-import { FaQuestionCircle } from 'react-icons/fa'
+import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
+import { Fragment, useRef, ReactElement, ReactNode } from 'react'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
   contentRef?: any
+}
+
+type MainNavLinkProps = {
+  href: string
+  icon: ReactElement
+  children: ReactNode
 }
 
 export function SidebarContent(props: SidebarContentProps) {
@@ -39,7 +45,7 @@ export function SidebarContent(props: SidebarContentProps) {
     <>
       {routes.map((lvl1, idx) => {
         return (
-          <React.Fragment key={idx}>
+          <Fragment key={idx}>
             {lvl1.heading && (
               <chakra.h4
                 fontSize='sm'
@@ -98,17 +104,19 @@ export function SidebarContent(props: SidebarContentProps) {
                 </SidebarCategory>
               )
             })}
-          </React.Fragment>
+          </Fragment>
         )
       })}
     </>
   )
 }
 
-const MainNavLink = ({ href, icon, children }) => {
+const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
   const { pathname } = useRouter()
-  const [, group] = href.split('/')
-  const active = pathname.includes(group)
+  const [, group, category] = href.split('/')
+  const active = pathname.includes(
+    href.split('/').length > 3 ? `${group}/${category}` : group,
+  )
   const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')
 
   return (
@@ -139,13 +147,13 @@ const mainNavLinks = [
     label: 'Getting Started',
   },
   {
-    icon: <DocsIcon />,
-    href: '/changelog',
-    label: 'Features',
+    icon: <FaTools color='white' />,
+    href: '/docs/api/overview',
+    label: 'API',
   },
   {
     icon: <DocsIcon />,
-    href: '/changelog',
+    href: '/docs/components/overview',
     label: 'Components',
   },
   {
@@ -159,7 +167,7 @@ const mainNavLinks = [
     label: 'FAQ',
   },
   {
-    icon: <FaQuestionCircle color='white' />,
+    icon: <FaFileAlt color='white' />,
     href: '/changelog',
     label: 'Changelog',
   },
@@ -191,7 +199,7 @@ const MainNavLinkGroup = (props: ListProps) => {
 
 const Sidebar = ({ routes }) => {
   const { pathname } = useRouter()
-  const ref = React.useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   return (
     <Box

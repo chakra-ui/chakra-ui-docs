@@ -21,28 +21,6 @@ const computedFields: ComputedFields = {
   },
 }
 
-const Blog = defineDocumentType(() => ({
-  name: 'Blog',
-  filePathPattern: 'blogs/**/*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-  },
-  computedFields: {
-    ...computedFields,
-    frontMatter: {
-      type: 'json',
-      resolve: (doc) => ({
-        title: doc.title,
-        description: doc.description,
-        slug: `/${doc._raw.flattenedPath}`,
-        headings: getTableOfContents(doc.body.raw),
-      }),
-    },
-  },
-}))
-
 const Guides = defineDocumentType(() => ({
   name: 'Guide',
   filePathPattern: 'guides/**/*.mdx',
@@ -109,12 +87,15 @@ const FAQ = defineDocumentType(() => ({
     ...computedFields,
     frontMatter: {
       type: 'json',
-      resolve: (doc) => ({
-        title: doc.title,
-        description: doc.description,
-        slug: `/${doc._raw.flattenedPath}`,
-        headings: getTableOfContents(doc.body.raw),
-      }),
+      resolve: (doc) => {
+        console.log(doc._raw.flattenedPath)
+        return {
+          title: doc.title,
+          description: doc.description,
+          slug: `/${doc._raw.flattenedPath}`,
+          headings: getTableOfContents(doc.body.raw),
+        }
+      },
     },
   },
 }))
@@ -142,7 +123,7 @@ const Changelog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'pages',
-  documentTypes: [Blog, Doc, Guides, FAQ, Changelog],
+  documentTypes: [Doc, Guides, FAQ, Changelog],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],

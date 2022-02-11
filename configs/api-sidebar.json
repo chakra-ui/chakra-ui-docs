@@ -1,0 +1,162 @@
+{
+  "routes": [
+    {
+      "title": "API",
+      "heading": true,
+      "routes": [
+        {
+          "title": "Overview",
+          "path": "/docs/api/overview"
+        },
+        {
+          "title": "Features",
+          "path": "/docs/api/features",
+          "open": true,
+          "routes": [
+            {
+              "title": "Style Props",
+              "path": "/docs/api/features/style-props"
+            },
+            {
+              "title": "Gradient",
+              "path": "/docs/api/features/gradient"
+            },
+            {
+              "title": "Color Mode",
+              "path": "/docs/api/features/color-mode"
+            },
+            {
+              "title": "CSS Variables",
+              "path": "/docs/api/features/css-variables"
+            },
+            {
+              "new": true,
+              "title": "Semantic Tokens",
+              "path": "/docs/api/features/semantic-tokens"
+            },
+            {
+              "title": "Responsive Styles",
+              "path": "/docs/api/features/responsive-styles"
+            },
+            {
+              "title": "Chakra Factory",
+              "path": "/docs/api/features/chakra-factory"
+            },
+            {
+              "title": "Global Styles",
+              "path": "/docs/api/features/global-styles"
+            },
+            {
+              "title": "Text & Layer Styles",
+              "path": "/docs/api/features/text-and-layer-styles"
+            },
+            {
+              "title": "The `sx` Prop",
+              "path": "/docs/api/features/the-sx-prop"
+            },
+            {
+              "title": "RTL Support",
+              "path": "/docs/api/features/rtl-support"
+            }
+          ]
+        },
+
+        {
+          "title": "Theming",
+          "path": "/docs/theming",
+          "open": true,
+          "routes": [
+            {
+              "title": "Default Theme",
+              "path": "/docs/api/theming/theme"
+            },
+            {
+              "title": "Customize Theme",
+              "path": "/docs/api/theming/customize-theme"
+            },
+            {
+              "title": "Component Style",
+              "path": "/docs/api/theming/component-style"
+            },
+            {
+              "title": "Advanced",
+              "path": "/docs/api/theming/advanced"
+            }
+          ]
+        },
+        {
+          "title": "Utility Hooks",
+          "path": "/docs/api/utility-hooks",
+          "open": true,
+          "sort": true,
+          "routes": [
+            {
+              "title": "useBoolean",
+              "path": "/docs/api/utility-hooks/use-boolean"
+            },
+            {
+              "title": "useBreakpointValue",
+              "path": "/docs/api/utility-hooks/use-breakpoint-value"
+            },
+            {
+              "title": "useClipboard",
+              "path": "/docs/api/utility-hooks/use-clipboard"
+            },
+            {
+              "title": "useConst",
+              "path": "/docs/api/utility-hooks/use-const"
+            },
+            {
+              "title": "useControllable",
+              "path": "/docs/api/utility-hooks/use-controllable"
+            },
+            {
+              "title": "useDisclosure",
+              "path": "/docs/api/utility-hooks/use-disclosure"
+            },
+            {
+              "title": "useMediaQuery",
+              "path": "/docs/api/utility-hooks/use-media-query"
+            },
+            {
+              "title": "useMergeRefs",
+              "path": "/docs/api/utility-hooks/use-merge-refs"
+            },
+            {
+              "title": "useOutsideClick",
+              "path": "/docs/api/utility-hooks/use-outside-click"
+            },
+            {
+              "title": "usePrefersReducedMotion",
+              "path": "/docs/api/utility-hooks/use-prefers-reduced-motion"
+            },
+            {
+              "title": "useTheme",
+              "path": "/docs/api/utility-hooks/use-theme"
+            },
+            {
+              "title": "useToken",
+              "path": "/docs/api/utility-hooks/use-token"
+            }
+          ]
+        },
+        {
+          "title": "Component Hooks",
+          "path": "/docs/api/component-hooks",
+          "open": true,
+          "sort": true,
+          "routes": [
+            {
+              "title": "useCheckbox",
+              "path": "/docs/api/component-hooks/use-checkbox"
+            },
+            {
+              "title": "useCheckboxGroup",
+              "path": "/docs/api/component-hooks/use-checkbox-group"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
