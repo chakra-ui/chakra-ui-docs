@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "name": "Chakra UI Pro",
-      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
-      "url": "https://pro.chakra-ui.com",
-      "image": "showcases/projects/Chakra-UI-Pro.png",
-      "type": "projects"
-    },
-    {
       "name": "Chakra Templates",
       "description": "A growing collection of hand-crafted & responsive Chakra UI templates ready to drop into your React project.",
       "url": "https://chakra-templates.dev",
@@ -47,13 +40,6 @@
       "description": "Opensource.builders is a website to find and request open-source alternatives to popular software you already use.",
       "url": "https://opensource.builders",
       "image": "showcases/projects/Opensource.builders.png",
-      "type": "projects"
-    },
-    {
-      "name": "Snappify",
-      "description": null,
-      "url": "https://snappify.io/",
-      "image": "showcases/projects/Snappify.png",
       "type": "projects"
     },
     {
@@ -132,6 +118,20 @@
       "url": "https://r0adster.live",
       "image": "showcases/projects/Roadster.png",
       "type": "projects"
+    },
+    {
+      "name": "Chakra UI Pro",
+      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
+      "url": "https://pro.chakra-ui.com",
+      "image": "showcases/projects/Chakra-UI-Pro.png",
+      "type": "projects"
+    },
+    {
+      "name": "Snappify",
+      "description": " code snippet creator",
+      "url": "https://snappify.io/",
+      "image": "showcases/projects/Snappify.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -196,6 +196,13 @@
       "description": "A platform to add and find Ghanaian Youtube and Twitch channels. Created using Next.js, Chakra-UI, Prisma, Railway's postgres, trpc and deployed on Vercel.",
       "url": "https://www.klerye.com/",
       "image": "showcases/websites/Klerye.png",
+      "type": "websites"
+    },
+    {
+      "name": "June",
+      "description": "An app that generates instant product analytics reports on top of Segment. Made using Next.js and a custom Chakra UI theme.",
+      "url": "https://june.so",
+      "image": "showcases/websites/June.png",
       "type": "websites"
     }
   ],

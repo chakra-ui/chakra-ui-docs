@@ -58,11 +58,11 @@ export default theme
 For typescript, you need to explicitly describe the theme config type as
 `ThemeConfig` object.
 
-```jsx live=false
+```tsx live=false
 // theme.ts
 
 // 1. import `extendTheme` function
-import { extendTheme, ThemeConfig } from '@chakra-ui/react'
+import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
 
 // 2. Add your color mode config
 const config: ThemeConfig = {

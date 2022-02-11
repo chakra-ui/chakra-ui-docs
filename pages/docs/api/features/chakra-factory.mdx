@@ -109,7 +109,7 @@ Another example that combines the default `shouldForwardProp` from Chakra UI
 with custom logic.
 
 ```jsx live=false
-import { shouldForwardProp } from '@chakra-ui/react'
+import { chakra, shouldForwardProp } from '@chakra-ui/react'
 
 const Div = chakra('div', {
   shouldForwardProp: (prop) => {
@@ -129,7 +129,7 @@ package.
 
 ```jsx live=false
 import isValidHTMLProp from '@emotion/is-prop-valid'
-import { shouldForwardProp } from '@chakra-ui/react'
+import { chakra, shouldForwardProp } from '@chakra-ui/react'
 
 const Div = chakra('div', {
   shouldForwardProp: (prop) => {
