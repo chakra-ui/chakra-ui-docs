@@ -197,6 +197,13 @@
       "url": "https://www.klerye.com/",
       "image": "showcases/websites/Klerye.png",
       "type": "websites"
+    },
+    {
+      "name": "June",
+      "description": "An app that generates instant product analytics reports on top of Segment. Made using Next.js and a custom Chakra UI theme.",
+      "url": "https://june.so",
+      "image": "showcases/websites/June.png",
+      "type": "websites"
     }
   ],
   "libraries": [
