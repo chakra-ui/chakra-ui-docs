@@ -11,6 +11,7 @@ import {
   Heading,
   Icon,
   LightMode,
+  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -245,15 +246,17 @@ const HomePage = ({
                 .filter((user) => user.image.includes('.'))
                 .slice(0, 7)
                 .map((user) => (
-                  <WrapItem key={user.name} bg='white' p='5' rounded='md'>
-                    <ChakraNextImage
-                      key={user.image}
-                      alt={user.name}
-                      height={24}
-                      width={120}
-                      src={user.image}
-                      loading='lazy'
-                    />
+                  <WrapItem key={user.name} bg='white' rounded='md'>
+                    <Link href={user.url}>
+                      <ChakraNextImage
+                        src={user.image}
+                        alt={user.name}
+                        width={120}
+                        height={24}
+                        p='5'
+                        loading='lazy'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
               <Box
@@ -412,14 +415,16 @@ const HomePage = ({
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
                   <WrapItem key={i.login}>
-                    <ChakraNextImage
-                      alt={i.name}
-                      src={i.avatar_url}
-                      width={80}
-                      height={80}
-                      rounded='full'
-                      loading='lazy'
-                    />
+                    <Link href={i.url}>
+                      <ChakraNextImage
+                        alt={i.name}
+                        src={i.avatar_url}
+                        width={80}
+                        height={80}
+                        rounded='full'
+                        loading='lazy'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
               </Wrap>
@@ -600,13 +605,15 @@ const HomePage = ({
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
                   <WrapItem key={i.MemberId}>
-                    <ChakraNextImage
-                      src={i.image}
-                      alt={i.name}
-                      loading='lazy'
-                      width={40}
-                      height={40}
-                    />
+                    <Link href={i.profile}>
+                      <ChakraNextImage
+                        src={i.image}
+                        alt={i.name}
+                        width={40}
+                        height={40}
+                        loading='lazy'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
               </Wrap>
