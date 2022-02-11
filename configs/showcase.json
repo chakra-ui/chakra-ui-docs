@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "name": "Chakra UI Pro",
-      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
-      "url": "https://pro.chakra-ui.com",
-      "image": "showcases/projects/Chakra-UI-Pro.png",
-      "type": "projects"
-    },
-    {
       "name": "Chakra Templates",
       "description": "A growing collection of hand-crafted & responsive Chakra UI templates ready to drop into your React project.",
       "url": "https://chakra-templates.dev",
@@ -47,13 +40,6 @@
       "description": "Opensource.builders is a website to find and request open-source alternatives to popular software you already use.",
       "url": "https://opensource.builders",
       "image": "showcases/projects/Opensource.builders.png",
-      "type": "projects"
-    },
-    {
-      "name": "Snappify",
-      "description": null,
-      "url": "https://snappify.io/",
-      "image": "showcases/projects/Snappify.png",
       "type": "projects"
     },
     {
@@ -131,6 +117,20 @@
       "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
       "url": "https://r0adster.live",
       "image": "showcases/projects/Roadster.png",
+      "type": "projects"
+    },
+    {
+      "name": "Chakra UI Pro",
+      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
+      "url": "https://pro.chakra-ui.com",
+      "image": "showcases/projects/Chakra-UI-Pro.png",
+      "type": "projects"
+    },
+    {
+      "name": "Snappify",
+      "description": " code snippet creator",
+      "url": "https://snappify.io/",
+      "image": "showcases/projects/Snappify.png",
       "type": "projects"
     }
   ],
