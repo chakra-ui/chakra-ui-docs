@@ -331,16 +331,12 @@
               "path": "/docs/components/recipes/horizontal-collapse"
             },
             {
-              "title": "Z-Index",
+              "title": "Portals and z-Index",
               "path": "/docs/components/recipes/z-index"
             },
             {
-              "title": "Horizontal Collapse",
-              "path": "/docs/components/recipes/horizontal-collapse"
-            },
-            {
               "title": "The as prop",
-              "path": "/docs/components/recipes/horizontal-collapse"
+              "path": "/docs/components/recipes/as-prop"
             }
           ]
         }
