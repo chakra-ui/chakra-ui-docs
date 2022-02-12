@@ -51,6 +51,8 @@ import SandpackEmbed from 'components/sandpack-embed'
 import { App, Index } from 'configs/sandpack-contents/homepage/files'
 import ShowcaseSection from 'components/showcase/showcase-section'
 
+const openCollectiveLink = 'https://opencollective.com/chakra-ui'
+
 const Feature = ({ title, icon, children, ...props }) => {
   return (
     <Box
@@ -259,18 +261,26 @@ const HomePage = ({
                     </Link>
                   </WrapItem>
                 ))}
-              <Box
-                p='4'
-                border='1px dashed'
-                borderColor={useColorModeValue('teal.200', 'teal.500')}
-                bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
-                rounded='md'
-              >
-                <Box as='span' mr='1' role='img'>
-                  💖
-                </Box>{' '}
-                {t('homepage.your-company')}
-              </Box>
+              <WrapItem>
+                <Button
+                  as='a'
+                  w='40'
+                  h='16'
+                  href={`${openCollectiveLink}/contribute`}
+                  rel='noopener'
+                  target='_blank'
+                  border='1px dashed'
+                  borderColor={useColorModeValue('teal.200', 'teal.500')}
+                  bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
+                  _hover={{ bg: useColorModeValue('teal.100', 'whiteAlpha.300') }}
+                  rounded='md'
+                >
+                  <Box as='span' mr='1' role='img'>
+                    💖
+                  </Box>{' '}
+                  {t('homepage.your-company')}
+                </Button>
+              </WrapItem>
             </Wrap>
           </Container>
         </Box>
@@ -504,7 +514,7 @@ const HomePage = ({
                   as='a'
                   minW='7rem'
                   colorScheme='teal'
-                  href='https://opencollective.com/chakra-ui'
+                  href={openCollectiveLink}
                   rel='noopener'
                   target='_blank'
                 >
