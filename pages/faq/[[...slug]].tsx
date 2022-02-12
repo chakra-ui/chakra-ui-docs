@@ -17,7 +17,7 @@ export default function Page({ faq }: { faq: FAQ }) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const faqs = allFAQs
     .map((t) =>
-      t._id.replace('faqs/', '').replace('.mdx', '').replace('index', ''),
+      t._id.replace('faq/', '').replace('.mdx', '').replace('index', ''),
     )
     .map((id) => ({ params: { slug: id.split('/') } }))
   return { paths: faqs, fallback: false }

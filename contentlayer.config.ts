@@ -77,7 +77,7 @@ const Doc = defineDocumentType(() => ({
 
 const FAQ = defineDocumentType(() => ({
   name: 'FAQ',
-  filePathPattern: 'faqs/*.mdx',
+  filePathPattern: 'faq/*.mdx',
   bodyType: 'mdx',
   fields: {
     title: { type: 'string', required: true },

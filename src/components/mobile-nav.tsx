@@ -11,6 +11,7 @@ import {
   IconButtonProps,
   useBreakpointValue,
   useColorModeValue,
+  useId,
   useUpdateEffect,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
@@ -21,9 +22,12 @@ import { useRouter } from 'next/router'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
 import Logo from './logo'
-import { SidebarContent } from './sidebar/sidebar'
+import {
+  isMainNavLinkActive,
+  mainNavLinks,
+  SidebarContent,
+} from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
-import { t } from 'utils/i18n'
 import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 
 type NavLinkProps = {
@@ -32,15 +36,10 @@ type NavLinkProps = {
 }
 
 function NavLink({ href, children }: NavLinkProps) {
-  const { pathname } = useRouter()
+  const { asPath } = useRouter()
   const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
-  const [, group, category] = href.split('/')
-  const isActive = pathname.includes(
-    href.split('/').length > 3 ? `${group}/${category}` : group,
-  )
-
-  console.log(isActive)
+  const isActive = isMainNavLinkActive(href, asPath)
 
   return (
     <GridItem as={NextLink} href={href}>
@@ -74,6 +73,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const closeBtnRef = useRef<HTMLButtonElement>()
   const { pathname } = useRouter()
   const bgColor = useColorModeValue('white', 'gray.800')
+  const id = useId()
 
   useRouteChanged(onClose)
 
@@ -137,28 +137,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   templateColumns='repeat(2, 1fr)'
                   gap='2'
                 >
-                  <NavLink href='/guides/installation'>
-                    {t('component.mobile-nav.getting-started')}
-                  </NavLink>
-                  <NavLink href='/docs/api/overview'>
-                    {t('component.mobile-nav.api')}
-                  </NavLink>
-                  <NavLink href='/docs/components/overview'>
-                    {t('component.mobile-nav.components')}
-                  </NavLink>
-                  <NavLink href='/resources'>
-                    {t('component.mobile-nav.resources')}
-                  </NavLink>
-                  <NavLink href='/faq'>{t('component.mobile-nav.faq')}</NavLink>
-                  <NavLink href='/changelog'>
-                    {t('component.mobile-nav.changelog')}
-                  </NavLink>
-                  <NavLink href='/team'>
-                    {t('component.mobile-nav.team')}
-                  </NavLink>
-                  <NavLink href='/showcase'>
-                    {t('component.mobile-nav.showcase')}
-                  </NavLink>
+                  {mainNavLinks.map((item) => (
+                    <NavLink href={item.href} key={item.label}>
+                      {item.label}
+                    </NavLink>
+                  ))}
                 </Grid>
               </Box>
 

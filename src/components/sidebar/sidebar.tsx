@@ -36,6 +36,7 @@ type MainNavLinkProps = {
   href: string
   icon: ReactElement
   children: ReactNode
+  label?: string
 }
 
 export function SidebarContent(props: SidebarContentProps) {
@@ -111,12 +112,17 @@ export function SidebarContent(props: SidebarContentProps) {
   )
 }
 
-const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
-  const { pathname } = useRouter()
+export const isMainNavLinkActive = (href: string, path: string) => {
   const [, group, category] = href.split('/')
-  const active = pathname.includes(
+
+  return path.includes(
     href.split('/').length > 3 ? `${group}/${category}` : group,
   )
+}
+
+const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
+  const { asPath } = useRouter()
+  const active = isMainNavLinkActive(href, asPath)
   const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')
 
   return (
@@ -140,7 +146,7 @@ const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
   )
 }
 
-const mainNavLinks = [
+export const mainNavLinks = [
   {
     icon: <GuidesIcon />,
     href: '/guides/installation',
@@ -163,7 +169,7 @@ const mainNavLinks = [
   },
   {
     icon: <FaQuestionCircle color='white' />,
-    href: '/faqs',
+    href: '/faq',
     label: 'FAQ',
   },
   {
@@ -188,7 +194,7 @@ const MainNavLinkGroup = (props: ListProps) => {
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
         <ListItem key={item.label}>
-          <MainNavLink icon={item.icon} href={item.href}>
+          <MainNavLink icon={item.icon} href={item.href} label={item.label}>
             {item.label}
           </MainNavLink>
         </ListItem>
