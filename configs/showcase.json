@@ -204,6 +204,13 @@
       "url": "https://june.so",
       "image": "showcases/websites/June.png",
       "type": "websites"
+    },
+    {
+      "name": "Confused's Site",
+      "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
+      "url": "https://confused.studio",
+      "image": "showcases/websites/Confused's-Site.png",
+      "type": "websites"
     }
   ],
   "libraries": [
