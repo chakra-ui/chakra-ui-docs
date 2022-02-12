@@ -315,6 +315,34 @@
               "path": "/docs/components/other/portal"
             }
           ]
+        },
+        {
+          "title": "Recipes",
+          "path": "/docs/components/recipes",
+          "open": true,
+          "sort": true,
+          "routes": [
+            {
+              "title": "Floating Labels",
+              "path": "/docs/components/recipes/floating-labels"
+            },
+            {
+              "title": "Horizontal Collapse",
+              "path": "/docs/components/recipes/horizontal-collapse"
+            },
+            {
+              "title": "Z-Index",
+              "path": "/docs/components/recipes/z-index"
+            },
+            {
+              "title": "Horizontal Collapse",
+              "path": "/docs/components/recipes/horizontal-collapse"
+            },
+            {
+              "title": "The as prop",
+              "path": "/docs/components/recipes/horizontal-collapse"
+            }
+          ]
         }
       ]
     }

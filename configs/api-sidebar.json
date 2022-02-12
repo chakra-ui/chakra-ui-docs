@@ -155,6 +155,22 @@
               "path": "/docs/api/component-hooks/use-checkbox-group"
             }
           ]
+        },
+        {
+          "title": "Recipes",
+          "path": "/docs/api/recipes",
+          "open": true,
+          "sort": true,
+          "routes": [
+            {
+              "title": "Page Specific Color Mode",
+              "path": "/docs/api/recipes/page-specific-color-mode"
+            },
+            {
+              "title": "Using Fonts",
+              "path": "/docs/api/recipes/using-fonts"
+            }
+          ]
         }
       ]
     }
