@@ -6,81 +6,129 @@ description:
 tags: ['contributing']
 ---
 
-Thanks for being interested in contributing! We're so glad you want to help!
+Thanks for showing interest to contribute to Chakra UI 💖, you rock!
 
-We want contributing to Chakra UI to be enjoyable and educational for anyone and
-everyone. All contributions are welcome, including: issues, new docs, as well as
-updates and tweaks, blog posts, workshops, and more.
+When it comes to open source, there are different ways you can contribute, all
+of which are valuable. Here's a few guidelines that should help you as you
+prepare your contribution.
 
-Please note that we have a [code of conduct](#code-of-conduct). Please follow it
-in all of your interactions with the project and our community.
+Here's the table of contents:
 
-## Getting started
+- [Setup the Project](#setup-the-project)
+  - [Commands](#commands)
+- [Updating the docs for new release](#updating-the-docs-for-new-release)
+- [Proposing new or changed API?](#proposing-new-or-changed-api)
+- [Making a Pull Request?](#making-a-pull-request)
+  - [Commit Convention](#commit-convention)
+  - [Steps to PR](#steps-to-pr)
+- [Want to write a blog post or tutorial](#want-to-write-a-blog-post-or-tutorial)
+- [Want to help improve the docs?](#want-to-help-improve-the-docs)
+- [License](#license)
 
-Please create a new branch from an up to date `main` on your fork. (Note: urgent
-hotfixes should be branched off the latest stable release rather than `main`)
+## Setup the Project
 
-- Fork the Chakra UI repository on GitHub
-- Clone your fork on your local machine
-  `git clone git@github.com:<yourname>/chakra-ui.git`
-- Create a branch `git checkout -b my-feature-branch`
-- Make your changes, lint, then push to GitHub with
-  `git push --set-upstream origin my-feature-branch`.
-- Visit GitHub and make your pull request.
+Setting up the docsite project is easy. It's a Next JS site. The following steps
+will get you up and running to contribute to the Chakra UI docsite:
 
-If you have an existing local repository, please update it before you start, to
-minimise the chance of merge conflicts.
+1. Fork the repo (click the <kbd>Fork</kbd> button at the top right of
+   [this page](https://github.com/chakra-ui/chakra-ui-docs))
+
+2. Clone your fork locally
 
 ```sh
-git remote add upstream git@github.com:chakra-ui/chakra-ui.git
-git checkout main
-git pull upstream main
-git checkout -b my-feature-branch
+git clone https://github.com/<your_github_username>/chakra-ui-docs.git
+cd chakra-ui-docs
 ```
 
-## Docs contribution
+3. Setup all the dependencies and packages by running `yarn`.
+4. Execute `yarn dev` to spin up a local development server
 
-Chakra UI uses Next.js for its documentation website. Thank you in advance and
-cheers for contributing to our documentation! To get started:
+> If you run into any issues, kindly reach out to the Chakra UI React team here:
+> https://discord.gg/chakra-ui
 
-- Fork the [docsite repo](https://github.com/chakra-ui/chakra-ui-docs) on GitHub
-- Clone your fork on your local machine
-  `git clone git@github.com:<yourname>/chakra-ui-docs.git`
-- Create a branch `git checkout -b my-feature-branch`
-- Make your changes, lint, then push to GitHub with
-  `git push --set-upstream origin my-feature-branch`.
-- Visit GitHub and make your pull request.
+### Commands
 
-To access the documentation site locally, simply run `npm run dev` or `yarn dev`
-and visit `localhost:3000`. Changes to the docs will hot reload the site.
+**`yarn`**: installs the dependency packages.
 
-### Documentation Goals
+**`yarn dev`**: starts the local development server.
 
-As an organization, we've established a few goals for our documentation in order
-to keep them accessible, friendly, and useful.
+**`yarn build`**: builds the docsite for production.
 
-- Docs should be friendly and human
+**`yarn lint`**: runs the nextjs linter which checks for code issues.
 
-Our documentation should be accessible to everyone, regardless of their skill
-level with React. This means we should try to write documentation that someone
-totally new to React can get started with.
+**`yarn avatars:gen`**: regenerates the avatars
 
-It also means that we want the voice of our docs to be casual and
-straightforward. We want people to fall in love with Chakra and have fun with
-it, and our docs should reflect that desire!
+**`yarn members:gen`**: regenerates the members
 
-- Cover FAQs and common issues
+**`yarn search-meta:gen`**: regenerates the search meta
 
-Chakra has a lot going on with it! In order to help users as much as possible,
-we want our documentation to cover frequently asked questions and common issues.
+**`yarn showcase-data:gen`**: regenerates the showcase data
 
-- Copy-able
+**`yarn changelog:gen`**: regenerates the Changelog
 
-Code snippets should be easily copied and pasted. We should also try to cover as
-many use cases as possible for each component, so that users can learn by code
-example as much as they can by reading through the docs.
+**`yarn cache:clean`**: deletes the `.contentlayer` folder
 
-### Notes on Github Token
+**`yarn clean`**: deletes the `yarn.lock` file and `node_modules`
+
+## Updating the docs for new release
+
+When a new version of `@chakra-ui/react` has been released, here's what you need
+to do to get it reflected in the docs:
+
+- Bump the version of `@chakra-ui/react`
+- Run `yarn changelog:gen` to fetch the most recent changelog from the
+  [main repository](https://github.com/chakra-ui/chakra-ui)
+- Open a Pull Request titled `docs: updates for new release`
+
+### Commit Convention
+
+Before you create a Pull Request, please check whether your commits comply with
+the commit conventions used in this repository.
+
+When you create a commit we kindly ask you to follow the convention
+`category(scope or module): message` in your commit message while using one of
+the following categories:
+
+- `feat`: all changes that introduce completely new code or new features
+- `fix`: changes that fix a bug (ideally you will additionally reference an
+  issue if present)
+- `refactor`: any code related change that is not a fix nor a feature
+- `docs`: changing existing or creating new documentation (i.e. README, docs for
+  usage of a lib or cli usage)
+- `build`: all changes regarding the build of the software, changes to
+  dependencies or the addition of new dependencies
+- `test`: all changes regarding tests (adding new tests or changing existing
+  ones)
+- `ci`: all changes regarding the configuration of continuous integration (i.e.
+  github actions, ci system)
+- `chore`: all changes to the repository that do not fit into any of the above
+  categories
+
+If you are interested in the detailed specification you can visit
+https://www.conventionalcommits.org/ or check out the
+[Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
+
+### Steps to PR
+
+1. Fork of the chakra-ui-docs repository and clone your fork
+
+2. Create a new branch out of the `main` branch. We follow the convention
+   `[type/scope]`. For example `fix/accordion-hook` or `docs/menu-typo`. `type`
+   can be either `docs`, `fix`, `feat`, `build`, or any other conventional
+   commit type. `scope` is just a short id that describes the scope of work.
+
+3. Make and commit your changes following the
+   [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
+   As you develop, you can run `yarn lint` and `yarn lint` to make sure
+   everything works as expected. Please note that you might have to run `yarn`
+   first in order to install all dependencies.
+
+## Want to write a blog post or tutorial
+
+That would be amazing! Reach out to the core team here:
+https://discord.gg/chakra-ui. We would love to support you any way we can.
+
+## Want to help improve the docs?
 
 By default, the GitHub REST API has an anonymous user rate limit. This can be
 hit during heavy local docs development if the server is frequently restarted.
@@ -88,71 +136,19 @@ hit during heavy local docs development if the server is frequently restarted.
 Creating a GitHub token and storing it as the `GITHUB_TOKEN` environment
 variable allows the user to avoid the limit.
 
-## Code of Conduct
+Visit
+https://github.com/settings/tokens/new?description=Chakra+website+development to
+create a new personal access token. After creating the token, be sure to copy
+the token string to your clipboard.
 
-### Our Pledge
+You'll then run the following command in the terminal that you'll start the docs
+from:
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of
-experience, nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+```sh
+export GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>
+```
 
-### Our Standards
+## License
 
-Examples of behavior that contributes to creating a positive environment
-include:
-
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
-- Focusing on what is best for the community
-- Showing empathy towards other community members
-
-Examples of unacceptable behavior by participants include:
-
-- The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-- Trolling, insulting/derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-- Other conduct which could reasonably be considered inappropriate in a
-  professional setting
-
-### Our Responsibilities
-
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
-
-Project maintainers have the right and responsibility to remove, edit, or reject
-comments, commits, code, wiki edits, issues, and other contributions that are
-not aligned to this Code of Conduct, or to ban temporarily or permanently any
-contributor for other behaviors that they deem inappropriate, threatening,
-offensive, or harmful.
-
-### Scope
-
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
-
-### Enforcement
-
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
-
-### Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 1.4, available at
-[https://contributor-covenant.org/version/1/4][version]
-
-[homepage]: https://contributor-covenant.org
-[version]: https://contributor-covenant.org/version/1/4/
+By contributing your code to the chakra-ui-docs GitHub repository, you agree to
+license your contribution under the MIT license.

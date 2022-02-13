@@ -211,6 +211,13 @@
       "url": "https://confused.studio",
       "image": "showcases/websites/Confused's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "TRIGO's Site",
+      "description": "Company Website. We are a software development company specializing in business software. Our Website and all of our apps are powered by Chakra UI & co.",
+      "url": "https://trigodev.com",
+      "image": "showcases/websites/TRIGO's-Site.png",
+      "type": "websites"
     }
   ],
   "libraries": [
@@ -439,7 +446,7 @@
       "name": "Choosing the right component library for your design system: MUI vs Chakra",
       "description": "",
       "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
-      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system:-MUI-vs-Chakra.png",
+      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system-MUI-vs-Chakra.png",
       "type": "articles"
     }
   ],
