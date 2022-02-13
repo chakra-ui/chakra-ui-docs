@@ -3,7 +3,7 @@ import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
 import componentsSidebar from 'configs/components-sidebar.json'
 import guidesSidebar from 'configs/guides-sidebar.json'
-import apiSidebar from 'configs/api-sidebar.json'
+import styledSystemSidebar from 'configs/styled-system-sidebar.json'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
 import { ReactNode } from 'react'
@@ -14,7 +14,7 @@ export function getRoutes(slug: string) {
 
   const configMap = {
     '/guides': guidesSidebar,
-    '/docs/api': apiSidebar,
+    '/docs/styled-system': styledSystemSidebar,
     '/docs/components': componentsSidebar,
   }
 

@@ -154,8 +154,8 @@ export const mainNavLinks = [
   },
   {
     icon: <FaTools color='white' />,
-    href: '/docs/api/overview',
-    label: 'API',
+    href: '/docs/styled-system/overview',
+    label: 'Styled System',
   },
   {
     icon: <DocsIcon />,
