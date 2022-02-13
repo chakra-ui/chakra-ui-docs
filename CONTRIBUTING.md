@@ -31,7 +31,11 @@ cd chakra-ui-docs
 ```
 
 3. Setup all the dependencies and packages by running `yarn`.
-4. Execute `yarn dev` to spin up a local development server
+
+4. Execute `yarn dev` to spin up a local development server. If you're running
+   Windows, contentlayer might not work as expected, so you'd need to do
+   `npx contentlayer build` before running `yarn dev` in order to generate the
+   docsite content.
 
 > If you run into any issues, kindly reach out to the Chakra UI React team here:
 > https://discord.gg/chakra-ui
