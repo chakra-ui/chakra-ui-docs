@@ -211,6 +211,13 @@
       "url": "https://confused.studio",
       "image": "showcases/websites/Confused's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "TRIGO's Site",
+      "description": "Company Website. We are a software development company specializing in business software. Our Website and all of our apps are powered by Chakra UI & co.",
+      "url": "https://trigodev.com",
+      "image": "showcases/websites/TRIGO's-Site.png",
+      "type": "websites"
     }
   ],
   "libraries": [
