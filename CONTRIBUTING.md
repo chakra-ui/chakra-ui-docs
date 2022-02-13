@@ -9,8 +9,6 @@ Here's the table of contents:
 - [Setup the Project](#setup-the-project)
   - [Commands](#commands)
 - [Updating the docs for new release](#updating-the-docs-for-new-release)
-- [Proposing new or changed API?](#proposing-new-or-changed-api)
-- [Making a Pull Request?](#making-a-pull-request)
   - [Commit Convention](#commit-convention)
   - [Steps to PR](#steps-to-pr)
 - [Want to write a blog post or tutorial](#want-to-write-a-blog-post-or-tutorial)
@@ -32,8 +30,8 @@ git clone https://github.com/<your_github_username>/chakra-ui-docs.git
 cd chakra-ui-docs
 ```
 
-1. Setup all the dependencies and packages by running `yarn`.
-2. Execute `yarn dev` to spin up a local development server
+3. Setup all the dependencies and packages by running `yarn`.
+4. Execute `yarn dev` to spin up a local development server
 
 > If you run into any issues, kindly reach out to the Chakra UI React team here:
 > https://discord.gg/chakra-ui
@@ -48,6 +46,20 @@ cd chakra-ui-docs
 
 **`yarn lint`**: runs the nextjs linter which checks for code issues.
 
+**`yarn avatars:gen`**: regenerates the avatars
+
+**`yarn members:gen`**: regenerates the members
+
+**`yarn search-meta:gen`**: regenerates the search meta
+
+**`yarn showcase-data:gen`**: regenerates the showcase data
+
+**`yarn changelog:gen`**: regenerates the Changelog
+
+**`yarn cache:clean`**: deletes the `.contentlayer` folder
+
+**`yarn clean`**: deletes the `yarn.lock` file and `node_modules`
+
 ## Updating the docs for new release
 
 When a new version of `@chakra-ui/react` has been released, here's what you need
@@ -57,17 +69,6 @@ to do to get it reflected in the docs:
 - Run `yarn changelog:gen` to fetch the most recent changelog from the
   [main repository](https://github.com/chakra-ui/chakra-ui)
 - Open a Pull Request titled `docs: updates for new release`
-
-## Proposing new or changed API?
-
-Please provide thoughtful comments and some sample API code. Proposals that
-don't line up with our roadmap or don't have a thoughtful explanation will be
-closed.
-
-## Making a Pull Request?
-
-Pull requests need only the ✅ of two or more collaborators to be merged; when
-the PR author is a collaborator, that counts as one.
 
 ### Commit Convention
 

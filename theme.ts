@@ -1,5 +1,5 @@
-import { extendTheme } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
+import { extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 const customTheme = extendTheme({
   config: {},
@@ -109,7 +109,7 @@ const customTheme = extendTheme({
       my: '1.5rem',
     },
     ul: {
-      mt: '1.5rem',
+      mt: '0.5rem',
       ml: '1.25rem',
       'blockquote &': { mt: 0 },
       '& > * + *': {
@@ -125,6 +125,6 @@ const customTheme = extendTheme({
       lineHeight: 'normal',
     },
   },
-});
+})
 
-export default customTheme;
+export default customTheme
