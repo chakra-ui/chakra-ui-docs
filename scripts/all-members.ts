@@ -27,6 +27,13 @@ async function getMembers() {
         username: member.login,
       })
 
+      if (
+        (data.blog as string).length > 0 &&
+        !(data.blog as string).startsWith('http')
+      ) {
+        data.blog = `http://${data.blog}`
+      }
+
       return {
         login: data.login,
         avatar_url: data.avatar_url,
