@@ -446,6 +446,72 @@ there are certain situations where you might not want the modal to trap focus.
 
 To prevent focus trapping, pass `trapFocus` and set its value to `false`.
 
+### Styling the backdrop
+
+In the case you want to keep the users focus on the modal you can use the
+`backdropFilter` property. To do this you can add one or multiple filters and
+change the `bg` property, which is per default set to `blackAlpha.600`.
+
+Another approach is to use e.g. the `backdropBlur` or other similar defined
+properties. To do so you need to set the `backdropFilter` to `auto`.
+
+> Please be aware that not every browser supports the
+> [backdrop-filter](https://caniuse.com/css-backdrop-filter) CSS property.
+
+The `filter` property will have no effect on the background because the Modal is
+rendered within a `Portal`. This mean you can only style components within the
+Modal by using this property.
+
+```jsx
+function BackdropExample() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [firstOverlay, setFirstOverlay] = React.useState(true)
+
+  const handleOnClick = (isFirst) => {
+    onOpen()
+    setFirstOverlay(isFirst)
+  }
+
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+  const OverlayTwo = () => (
+    <ModalOverlay
+      bg='none'
+      backdropFilter='auto'
+      backdropInvert='80%'
+      backdropBlur='2px'
+    />
+  )
+
+  return (
+    <>
+      <Button onClick={() => handleOnClick(true)}>Use Overlay one</Button>
+      <Button ml='4' onClick={() => handleOnClick(false)}>
+        Use Overlay two
+      </Button>
+      <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        {firstOverlay ? <OverlayOne /> : <OverlayTwo />}
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Lorem count={1} />
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
+```
+
 ## Accessibility
 
 ### Keyboard and Focus Management
