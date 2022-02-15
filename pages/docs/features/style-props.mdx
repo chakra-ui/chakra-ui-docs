@@ -429,47 +429,102 @@ import { Box } from "@chakra-ui/react"
 
 ### Filter
 
-```jsx live=false
-import {Box} from '@chakra-ui/react'
-
-// adding filter property to the element
-<Box bg='red' filter='grayscale(50%)'>
-  Box with Filter
-</Box>
-
-// adding blur property to the element
-<Box bg='red' filter='auto' blur='2px'>
-  Box with Blur
-</Box>
-
-// adding brightness property to the element
-<Box bg='red' filter='auto' brightness='40%'>
-  Box with Brightness
-</Box>
+```jsx
+function Filters() {
+  const basicBoxStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    boxSize: '250px',
+    color: 'white',
+    textShadow: '0 0 20px black',
+    fontWeight: 'bold',
+    fontSize: '20px',
+    px: 4,
+    background:
+      'url(https://picsum.photos/id/1080/200/300) center/cover no-repeat',
+  }
+  return (
+    <Flex
+      flexWrap='wrap'
+      spacing='24px'
+      gap='16px'
+      justifyContent='space-evenly'
+    >
+      {/* adding filter property to the element */}
+      <Box sx={basicBoxStyles} filter='grayscale(80%)'>
+        Box with Filter
+      </Box>
+      {/* adding blur property to the element */}
+      <Box sx={basicBoxStyles} filter='auto' blur='2px'>
+        Box with Blur
+      </Box>
+      {/* adding brightness property to the element */}
+      <Box sx={basicBoxStyles} filter='auto' brightness='40%'>
+        Box with Brightness
+      </Box>
+    </Flex>
+  )
+}
 ```
 
 > Note: To apply `blur`, `brightness`, `contrast`, `hueRotate`, `invert`,
 > `saturate` props on the element, set `filter` prop value to "auto".
 
-```jsx live=false
-import { Box } from '@chakra-ui/react'
+```jsx
+function BackdropFilters() {
+  const outerBoxStyles = {
+    boxSize: '250px',
+    p: '10',
+    background:
+      'url(https://picsum.photos/id/1068/200/300) center/cover no-repeat',
+  }
 
-// adding backdrop-filter property to the element
-<Box p='10' bg='blackAlpha.800' backdropFilter='contrast(40%)'>
-  Box with Backdrop Filter
-</Box>
-
-// adding backdrop-blur property to the element
-<Box p='10' bg='blackAlpha.800' backdropFilter='auto' backdropBlur='2px'>
-  Box with Backdrop Blur
-</Box>
-
-// adding backdrop-contrast property to the element
-<Box p='10' bg='blackAlpha.800' backdropFilter='auto' backdropContrast='50%'>
-  Box with Backdrop Contrast
-</Box>
-
+  const innerBoxStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    boxSize: 'full',
+    color: 'white',
+    textShadow: '0 0 20px black',
+    fontWeight: 'bold',
+    fontSize: '20px',
+  }
+  return (
+    <Flex
+      flexWrap='wrap'
+      spacing='24px'
+      gap='16px'
+      justifyContent='space-evenly'
+    >
+      {/* adding backdrop-filter property to the element */}
+      <Box sx={outerBoxStyles}>
+        <Box sx={innerBoxStyles} backdropFilter='invert(100%)'>
+          Box with Backdrop Filter
+        </Box>
+      </Box>
+      {/* adding backdrop-blur property to the element */}
+      <Box sx={outerBoxStyles}>
+        <Box sx={innerBoxStyles} backdropFilter='auto' backdropBlur='8px'>
+          Box with Backdrop Blur
+        </Box>
+      </Box>
+      {/* adding backdrop-contrast property to the element */}
+      <Box sx={outerBoxStyles}>
+        <Box sx={innerBoxStyles} backdropFilter='auto' backdropContrast='30%'>
+          Box with Backdrop Contrast
+        </Box>
+      </Box>
+    </Flex>
+  )
+}
 ```
+
+> 🚨 `backdrop-filter` is not supported in Firefox. It can be enabled by the
+> user, but it is suggested to design a component that looks good with and
+> without this property.
 
 > Note: To apply `backdropBlur`, `backdropBrightness`, `backdropContrast`,
 > `backdropHueRotate`, `backdropInvert`, `backdropSaturate` props on the
@@ -485,8 +540,8 @@ import { Box } from '@chakra-ui/react'
 | `invert`             | `filter`          | none        |
 | `saturate`           | `filter`          | none        |
 | `dropShadow`         | `filter`          | `shadows`   |
-| `backdropFilter`     | `backdrop-filter` | `blur`      |
-| `backdropBlur`       | `backdrop-filter` | none        |
+| `backdropFilter`     | `backdrop-filter` | none        |
+| `backdropBlur`       | `backdrop-filter` | `blur`      |
 | `backdropBrightness` | `backdrop-filter` | none        |
 | `backdropContrast`   | `backdrop-filter` | none        |
 | `backdropHueRotate`  | `backdrop-filter` | none        |
