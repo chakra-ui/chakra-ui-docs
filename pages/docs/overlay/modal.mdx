@@ -448,15 +448,15 @@ To prevent focus trapping, pass `trapFocus` and set its value to `false`.
 
 ### Styling the backdrop
 
-In the case you want to keep the users focus on the modal you can use the
-`backdropFilter` property. To do this you can add one or multiple filters and
-change the `bg` property, which is per default set to `blackAlpha.600`.
-
-Another approach is to use e.g. the `backdropBlur` or other similar defined
-properties. To do so you need to set the `backdropFilter` to `auto`.
+The backdrop's background by default is set to `blackAlpha.600`, but if you want
+to achieve a different style you can also use the backdrop style props, like
+`backdropBlur`, `backdropBrightness`, `backdropContrast`, `backdropHueRotate`,
+`backdropInvert`, and `backdropSaturate`. To use these style props, you'd have
+to set the `backdropFilter` prop to `auto`.
 
 > Please be aware that not every browser supports the
-> [backdrop-filter](https://caniuse.com/css-backdrop-filter) CSS property.
+> [backdrop-filter](https://caniuse.com/css-backdrop-filter) CSS property, the
+> example below included.
 
 The `filter` property will have no effect on the background because the Modal is
 rendered within a `Portal`. This mean you can only style components within the
@@ -465,12 +465,7 @@ Modal by using this property.
 ```jsx
 function BackdropExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [firstOverlay, setFirstOverlay] = React.useState(true)
-
-  const handleOnClick = (isFirst) => {
-    onOpen()
-    setFirstOverlay(isFirst)
-  }
+  const [overlay, setOverlay] = React.useState()
 
   const OverlayOne = () => (
     <ModalOverlay
@@ -490,17 +485,30 @@ function BackdropExample() {
 
   return (
     <>
-      <Button onClick={() => handleOnClick(true)}>Use Overlay one</Button>
-      <Button ml='4' onClick={() => handleOnClick(false)}>
+      <Button
+        onClick={() => {
+          setOverlay(<OverlayOne />)
+          onOpen()
+        }}
+      >
+        Use Overlay one
+      </Button>
+      <Button
+        ml='4'
+        onClick={() => {
+          setOverlay(<OverlayTwo />)
+          onOpen()
+        }}
+      >
         Use Overlay two
       </Button>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
-        {firstOverlay ? <OverlayOne /> : <OverlayTwo />}
+        {overlay}
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Lorem count={1} />
+            <Text>Custom backdrop filters!</Text>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
