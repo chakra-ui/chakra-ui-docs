@@ -464,9 +464,6 @@ Modal by using this property.
 
 ```jsx
 function BackdropExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [overlay, setOverlay] = React.useState()
-
   const OverlayOne = () => (
     <ModalOverlay
       bg='blackAlpha.300'
@@ -482,6 +479,9 @@ function BackdropExample() {
       backdropBlur='2px'
     />
   )
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
   return (
     <>
