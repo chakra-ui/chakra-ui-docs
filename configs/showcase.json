@@ -132,6 +132,13 @@
       "url": "https://snappify.io/",
       "image": "showcases/projects/Snappify.png",
       "type": "projects"
+    },
+    {
+      "name": "MockRocket",
+      "description": "how off your app with jaw-dropping 3D mockups and product videos, right in your browser",
+      "url": "https://mockrocket.io/",
+      "image": "showcases/projects/MockRocket.png",
+      "type": "projects"
     }
   ],
   "websites": [
