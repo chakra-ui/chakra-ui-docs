@@ -149,7 +149,7 @@ const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
 export const mainNavLinks = [
   {
     icon: <GuidesIcon />,
-    href: '/guides/installation',
+    href: '/guides/first-steps',
     label: 'Getting Started',
   },
   {

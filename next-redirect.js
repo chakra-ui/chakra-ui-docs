@@ -327,7 +327,7 @@ async function redirect() {
     // DOCS STRUCTURE REWORK REDIRECTS
     {
       source: '/docs/getting-started',
-      destination: '/guides/installation',
+      destination: '/guides/first-steps',
       permanent: true,
     },
     {

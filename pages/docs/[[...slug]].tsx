@@ -1,6 +1,6 @@
 import { allDocs } from '.contentlayer/data'
 import type { Doc } from '.contentlayer/types'
-import { MDXComponents } from 'src/components/mdx-components'
+import { MDXComponents } from 'components/mdx-components'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Layout from 'layouts'

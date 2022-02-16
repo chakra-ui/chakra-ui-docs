@@ -9,8 +9,8 @@ import { getRouteContext } from 'utils/get-route-context'
 import { ReactNode } from 'react'
 
 export function getRoutes(slug: string) {
-  // for home page, use docs sidebat
-  if (slug === '/') return componentsSidebar.routes
+  // for home page, use docs sidebar
+  if (slug === '/') return guidesSidebar.routes
 
   const configMap = {
     '/guides': guidesSidebar,
