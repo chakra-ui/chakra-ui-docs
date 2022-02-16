@@ -11,7 +11,6 @@ import {
   IconButtonProps,
   useBreakpointValue,
   useColorModeValue,
-  useId,
   useUpdateEffect,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
@@ -21,6 +20,7 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
+import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 import Logo from './logo'
 import {
   isMainNavLinkActive,
@@ -28,7 +28,6 @@ import {
   SidebarContent,
 } from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
-import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 
 type NavLinkProps = {
   href: string
@@ -73,7 +72,6 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const closeBtnRef = useRef<HTMLButtonElement>()
   const { pathname } = useRouter()
   const bgColor = useColorModeValue('white', 'gray.800')
-  const id = useId()
 
   useRouteChanged(onClose)
 

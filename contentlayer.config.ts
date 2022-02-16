@@ -88,15 +88,12 @@ const FAQ = defineDocumentType(() => ({
     ...computedFields,
     frontMatter: {
       type: 'json',
-      resolve: (doc) => {
-        console.log(doc._raw.flattenedPath)
-        return {
-          title: doc.title,
-          description: doc.description,
-          slug: `/${doc._raw.flattenedPath}`,
-          headings: getTableOfContents(doc.body.raw),
-        }
-      },
+      resolve: (doc) => ({
+        title: doc.title,
+        description: doc.description,
+        slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
+      }),
     },
   },
 }))

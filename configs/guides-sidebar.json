@@ -5,8 +5,8 @@
       "heading": true,
       "routes": [
         {
-          "title": "Installation",
-          "path": "/guides/installation"
+          "title": "First Steps",
+          "path": "/guides/first-steps"
         },
         {
           "title": "Upgrade to v1",
@@ -56,10 +56,6 @@
           "path": "/guides/integrations",
           "open": true,
           "routes": [
-            {
-              "title": "Create React App",
-              "path": "/guides/integrations/with-cra"
-            },
             {
               "title": "Framer Motion",
               "path": "/guides/integrations/with-framer"
