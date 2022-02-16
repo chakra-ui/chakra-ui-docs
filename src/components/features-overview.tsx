@@ -55,7 +55,6 @@ export const FeaturesOverview = () => {
 
   const features = featureSidebar[asPath].routes[0].routes
 
-  console.log(features)
   return (
     <SimpleGrid mt='12' minChildWidth='160px' spacing='20'>
       {features
