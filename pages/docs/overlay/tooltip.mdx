@@ -102,6 +102,52 @@ cursor out of the element.
 </Tooltip>
 ```
 
+### Tooltip around disabled Button
+
+By default the `Tooltip` is not shown when it is around a disabled `Button`.
+
+```jsx
+<Tooltip hasArrow label='You can not see me'>
+  <Button isDisabled>Button</Button>
+</Tooltip>
+```
+
+To show the `Tooltip` on a disabled `Button` you need to give the `Tooltip` the
+`shouldWrapChildren` prop. This means that the `Button` is surrounded by a span 
+on which the `Tooltip` is pinned. 
+You could simply add a margin to the `Tooltip` to have it more or less 'pinned' 
+on the `Button` again.
+
+```jsx
+<Tooltip hasArrow label='You can see me' shouldWrapChildren mt='3'>
+  <Button isDisabled>Button</Button>
+</Tooltip>
+```
+
+> The `borderRadius` of `Buttons` with the `shouldWrapChildren` prop within 
+> a `ButtonGroup` with the `isAttached` prop will break. 
+> A workaround could be to pass the specific `borderRadius` depending on the
+> `isDisabled` prop of the `Button`.
+
+```jsx
+<ButtonGroup colorScheme="teal" isAttached>
+  <Tooltip label="works">
+    <Button>1</Button>
+  </Tooltip>
+
+  <Tooltip label="messes up border radius" shouldWrapChildren>
+    <Button isDisabled>2</Button>
+  </Tooltip>
+
+  <Tooltip label="this could be a workaround" shouldWrapChildren>
+    <Button isDisabled borderRadius='0'>3</Button>
+  </Tooltip>
+
+  <Button>4</Button>
+</ButtonGroup>
+```
+
+
 ## Placement
 
 Using the `placement` prop you can adjust where your tooltip will be displayed.
