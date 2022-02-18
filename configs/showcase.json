@@ -232,6 +232,13 @@
       "url": "https://harikotha.netlify.app/",
       "image": "showcases/websites/Hari-Kotha's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "Beema Finance",
+      "description": "Earn ultra-high, stable yields on dollars. Powered by DeFi. Built with Chakra UI 🌿.",
+      "url": "https://beema.finance",
+      "image": "showcases/websites/Beema-Finance.png",
+      "type": "websites"
     }
   ],
   "libraries": [
