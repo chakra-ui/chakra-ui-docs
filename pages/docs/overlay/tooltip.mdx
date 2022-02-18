@@ -112,11 +112,10 @@ By default the `Tooltip` is not shown when it is around a disabled `Button`.
 </Tooltip>
 ```
 
-To show the `Tooltip` on a disabled `Button` you need to give the `Tooltip` the
+To show the `Tooltip` on a disabled `Button` you need to provide the 
 `shouldWrapChildren` prop. This means that the `Button` is surrounded by a span 
-on which the `Tooltip` is pinned. 
-You could simply add a margin to the `Tooltip` to have it more or less 'pinned' 
-on the `Button` again.
+on which the `Tooltip` is pinned. You could simply add a margin to the `Tooltip` 
+to have it more or less 'pinned' on the `Button` again.
 
 ```jsx
 <Tooltip hasArrow label='You can see me' shouldWrapChildren mt='3'>
@@ -124,8 +123,9 @@ on the `Button` again.
 </Tooltip>
 ```
 
-> The `borderRadius` of `Buttons` with the `shouldWrapChildren` prop within 
-> a `ButtonGroup` with the `isAttached` prop will break. 
+> There's a case where the `borderRadius` of a button breaks when the button 
+> is in a `ButtonGroup` that has the `isAttached` prop set, and the tooltip 
+> has the `shouldWrapChildren` prop set.
 > A workaround could be to pass the specific `borderRadius` depending on the
 > `isDisabled` prop of the `Button`.
 
