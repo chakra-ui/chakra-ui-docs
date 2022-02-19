@@ -70,7 +70,7 @@ interface MobileNavContentProps {
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose } = props
   const closeBtnRef = useRef<HTMLButtonElement>()
-  const { pathname } = useRouter()
+  const { pathname, asPath } = useRouter()
   const bgColor = useColorModeValue('white', 'gray.800')
 
   useRouteChanged(onClose)
@@ -150,7 +150,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
               >
                 <SidebarContent
                   pathname={pathname}
-                  routes={getRoutes(pathname)}
+                  routes={getRoutes(asPath)}
                 />
               </ScrollView>
             </Flex>
