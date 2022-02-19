@@ -11,6 +11,7 @@ import {
   Heading,
   Icon,
   LightMode,
+  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -49,6 +50,8 @@ import ChakraNextImage from 'components/chakra-next-image'
 import SandpackEmbed from 'components/sandpack-embed'
 import { App, Index } from 'configs/sandpack-contents/homepage/files'
 import ShowcaseSection from 'components/showcase/showcase-section'
+
+const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
@@ -245,29 +248,41 @@ const HomePage = ({
                 .filter((user) => user.image.includes('.'))
                 .slice(0, 7)
                 .map((user) => (
-                  <WrapItem key={user.name} bg='white' p='5' rounded='md'>
-                    <ChakraNextImage
-                      key={user.image}
-                      alt={user.name}
-                      height={24}
-                      width={120}
-                      src={user.image}
-                      loading='lazy'
-                    />
+                  <WrapItem key={user.name} bg='white' rounded='md'>
+                    <Link href={user.url}>
+                      <ChakraNextImage
+                        src={user.image}
+                        alt={user.name}
+                        width={120}
+                        height={24}
+                        p='5'
+                        loading='lazy'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
-              <Box
-                p='4'
-                border='1px dashed'
-                borderColor={useColorModeValue('teal.200', 'teal.500')}
-                bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
-                rounded='md'
-              >
-                <Box as='span' mr='1' role='img'>
-                  💖
-                </Box>{' '}
-                {t('homepage.your-company')}
-              </Box>
+              <WrapItem>
+                <Button
+                  as='a'
+                  w='40'
+                  h='16'
+                  href={`${openCollectiveLink}/contribute`}
+                  rel='noopener'
+                  target='_blank'
+                  border='1px dashed'
+                  borderColor={useColorModeValue('teal.200', 'teal.500')}
+                  bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
+                  _hover={{
+                    bg: useColorModeValue('teal.100', 'whiteAlpha.300'),
+                  }}
+                  rounded='md'
+                >
+                  <Box as='span' mr='1' role='img'>
+                    💖
+                  </Box>{' '}
+                  {t('homepage.your-company')}
+                </Button>
+              </WrapItem>
             </Wrap>
           </Container>
         </Box>
@@ -412,14 +427,16 @@ const HomePage = ({
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
                   <WrapItem key={i.login}>
-                    <ChakraNextImage
-                      alt={i.name}
-                      src={i.avatar_url}
-                      width={80}
-                      height={80}
-                      rounded='full'
-                      loading='lazy'
-                    />
+                    <Link href={i.url}>
+                      <ChakraNextImage
+                        alt={i.name}
+                        src={i.avatar_url}
+                        width={80}
+                        height={80}
+                        rounded='full'
+                        loading='lazy'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
               </Wrap>
@@ -499,7 +516,7 @@ const HomePage = ({
                   as='a'
                   minW='7rem'
                   colorScheme='teal'
-                  href='https://opencollective.com/chakra-ui'
+                  href={openCollectiveLink}
                   rel='noopener'
                   target='_blank'
                 >
@@ -600,14 +617,16 @@ const HomePage = ({
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
                   <WrapItem key={i.MemberId}>
-                    <ChakraNextImage
-                      src={i.image}
-                      alt={i.name}
-                      loading='lazy'
-                      width={40}
-                      height={40}
-                      rounded='full'
-                    />
+                    <Link href={i.profile}>
+                      <ChakraNextImage
+                        src={i.image}
+                        alt={i.name}
+                        width={40}
+                        height={40}
+                        loading='lazy'
+                        rounded='full'
+                      />
+                    </Link>
                   </WrapItem>
                 ))}
               </Wrap>

@@ -83,8 +83,12 @@ below.
 
 Here's a contrived implementation of the design:
 
-```jsx live=false
-const Button = {
+```tsx live=false
+import type { ComponentStyleConfig } from '@chakra-ui/theme'
+
+// You can also use the more specific type for
+// a single part component: ComponentSingleStyleConfig
+const Button: ComponentStyleConfig = {
   // The styles all button have in common
   baseStyle: {
     fontWeight: 'bold',
@@ -317,8 +321,14 @@ export default {
 For example, here's what the style configurations for a custom menu component
 looks like:
 
-```jsx live=false
-const Menu = {
+```tsx live=false
+import type { ComponentStyleConfig } from '@chakra-ui/theme'
+
+// You can also use the more specific type for
+// a multipart component: ComponentMultiStyleConfig
+const Menu: ComponentStyleConfig = {
+  // All parts of multipart components can be found in the @chakra-ui/anatomy package,
+  // the menuAnatomy has as well these parts: button, list, groupTitle, command, divider
   parts: ['menu', 'item'],
   baseStyle: {
     menu: {

@@ -22,7 +22,7 @@ const Card = (props: BoxProps) => (
 and you need to consume this component in a way that works with the `as` prop,
 like this:
 
-```tsx live=false
+```jsx live=false
 const Usage = () => <Card as='button'>This is a card</Card>
 ```
 
@@ -80,7 +80,7 @@ Chakra enabled component.
 What you need to do is to call the `chakra` function and pass it any element or
 component type.
 
-```tsx live=false
+```jsx live=false
 import { chakra } from '@chakra-ui/react'
 
 const Card = chakra('div', {

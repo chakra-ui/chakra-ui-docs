@@ -19,7 +19,7 @@ import { motion, useSpring, useMotionTemplate } from 'framer-motion'
 
 import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
-import LazarsWebsite from "public/showcases/websites/Lazar-Nikolov's-Site.png"
+import June from 'public/showcases/websites/June.png'
 import ChakraTemplates from 'public/showcases/projects/Chakra-Templates.png'
 import ChakraUIPro from 'public/showcases/projects/Chakra-UI-Pro.png'
 import ChocUI from 'public/showcases/projects/Choc-UI.png'
@@ -63,6 +63,11 @@ const websites: Website[] = [
     alt: 'Chakra UI Pro',
   },
   {
+    src: June,
+    href: 'https://june.so',
+    alt: 'June',
+  },
+  {
     src: ChakraTemplates,
     href: 'https://chakra-templates.dev',
     alt: 'Chakra Templates',
@@ -71,11 +76,6 @@ const websites: Website[] = [
     src: ChocUI,
     href: 'https://choc-ui.com/',
     alt: 'Choc UI',
-  },
-  {
-    src: LazarsWebsite,
-    href: 'https://nikolovlazar.com',
-    alt: "Lazar Nikolov's Site",
   },
 ]
 
