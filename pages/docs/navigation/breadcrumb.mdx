@@ -100,6 +100,55 @@ icon.
 </Breadcrumb>
 ```
 
+### Using a separator in last item
+
+If you want to have a `BreadcrumbSeparator` in the last item of the 
+`Breadcrumb` you have different ways to achieve it. But to avoid the *'React 
+does not recognize the `isLastChild` prop on a DOM element.'* error you can not 
+simply add the separator directly in the `Breadcrumb`.
+
+The clean way to achieve it is to put the separator in the last
+`BreadcrumbItem`. Feel free to also inspect the example below with the browsers 
+dev tools.
+
+```jsx
+<Box>
+  <Breadcrumb>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 1</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 2</BreadcrumbLink>
+    </BreadcrumbItem>
+    {/* this will generate a span in the ol HTML tag which causes the error: */}
+    {/* <BreadcrumbSeparator /> */}
+  </Breadcrumb>
+
+  {/* preferred solution: */}
+  <Breadcrumb pt="3">
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 1</BreadcrumbLink>
+    </BreadcrumbItem>
+    {/* this creates the exact same HTML as for page 1 */}
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 2</BreadcrumbLink>
+      <BreadcrumbSeparator />
+    </BreadcrumbItem>
+  </Breadcrumb>
+
+  <Breadcrumb pt="3">
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 1</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="">Page 2</BreadcrumbLink>
+    </BreadcrumbItem>
+      {/* this works too, but creates an additional empty li HTML tag */}
+    <BreadcrumbItem />
+  </Breadcrumb>
+</Box>
+```
+
 ## Composition
 
 Breadcrumb composes [Box](/docs/layout/box) so you can pass all `Box` props to

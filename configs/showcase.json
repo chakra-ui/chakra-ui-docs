@@ -225,6 +225,20 @@
       "url": "https://trigodev.com",
       "image": "showcases/websites/TRIGO's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "Hari Kotha's Site",
+      "description": "Personal portfolio website built with React.js, React-Router and Chakra UI.",
+      "url": "https://harikotha.netlify.app/",
+      "image": "showcases/websites/Hari-Kotha's-Site.png",
+      "type": "websites"
+    },
+    {
+      "name": "Beema Finance",
+      "description": "Earn ultra-high, stable yields on dollars. Powered by DeFi. Built with Chakra UI 🌿.",
+      "url": "https://beema.finance",
+      "image": "showcases/websites/Beema-Finance.png",
+      "type": "websites"
     }
   ],
   "libraries": [
