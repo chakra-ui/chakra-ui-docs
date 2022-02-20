@@ -33,7 +33,7 @@ import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 Basic usage of `Checkbox`.
 
 ```jsx
-<Checkbox defaultIsChecked>Checkbox</Checkbox>
+<Checkbox defaultChecked>Checkbox</Checkbox>
 ```
 
 ### Disabled Checkbox
@@ -41,7 +41,7 @@ Basic usage of `Checkbox`.
 ```jsx
 <Stack spacing={5} direction='row'>
   <Checkbox isDisabled>Checkbox</Checkbox>
-  <Checkbox isDisabled defaultIsChecked>
+  <Checkbox isDisabled defaultChecked>
     Checkbox
   </Checkbox>
 </Stack>
@@ -54,10 +54,10 @@ in `theme.colors`.
 
 ```jsx
 <Stack spacing={5} direction='row'>
-  <Checkbox colorScheme='red' defaultIsChecked>
+  <Checkbox colorScheme='red' defaultChecked>
     Checkbox
   </Checkbox>
-  <Checkbox colorScheme='green' defaultIsChecked>
+  <Checkbox colorScheme='green' defaultChecked>
     Checkbox
   </Checkbox>
 </Stack>
@@ -73,10 +73,10 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
   <Checkbox size='sm' colorScheme='red'>
     Checkbox
   </Checkbox>
-  <Checkbox size='md' colorScheme='green' defaultIsChecked>
+  <Checkbox size='md' colorScheme='green' defaultChecked>
     Checkbox
   </Checkbox>
-  <Checkbox size='lg' colorScheme='orange' defaultIsChecked>
+  <Checkbox size='lg' colorScheme='orange' defaultChecked>
     Checkbox
   </Checkbox>
 </Stack>

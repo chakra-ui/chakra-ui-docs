@@ -9,3 +9,12 @@ description:
 
 No, currently we don't provide a datepicker component. We recommend building your
 own custom datepicker with Chakra UI and either `react-datepicker` or `dayzed`.
+
+## Tooltip does not work around disabled Button
+
+In case you have wrapped a `Tooltip` around a disabled `Button` and you still 
+want to show the `Tooltip`, you need to provide the `shouldWrapChildren` prop to 
+the `Tooltip`.
+
+Please be aware that this prop will break the `borderRadius` of the buttons 
+within a `ButtonGroup` because it wraps a span around the disabled buttons.
