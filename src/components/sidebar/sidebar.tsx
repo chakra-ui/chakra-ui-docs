@@ -23,7 +23,6 @@ import {
   GuidesIcon,
   TeamIcon,
   ResourcesIcon,
-  ShowcaseIcon,
 } from './sidebar-icons'
 import { FaQuestionCircle } from 'react-icons/fa'
 
@@ -147,11 +146,6 @@ const mainNavLinks = [
     icon: <ResourcesIcon />,
     href: '/resources',
     label: 'Resources',
-  },
-  {
-    icon: <ShowcaseIcon />,
-    href: '/showcase',
-    label: 'Showcase',
   },
   {
     icon: <FaQuestionCircle color='white' />,
