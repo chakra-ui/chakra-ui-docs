@@ -272,7 +272,9 @@ const HomePage = ({
                   border='1px dashed'
                   borderColor={useColorModeValue('teal.200', 'teal.500')}
                   bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
-                  _hover={{ bg: useColorModeValue('teal.100', 'whiteAlpha.300') }}
+                  _hover={{
+                    bg: useColorModeValue('teal.100', 'whiteAlpha.300'),
+                  }}
                   rounded='md'
                 >
                   <Box as='span' mr='1' role='img'>
@@ -622,6 +624,7 @@ const HomePage = ({
                         width={40}
                         height={40}
                         loading='lazy'
+                        rounded='full'
                       />
                     </Link>
                   </WrapItem>
