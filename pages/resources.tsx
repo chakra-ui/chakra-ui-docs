@@ -170,7 +170,7 @@ const ShowcaseIcon = (props: HTMLChakraProps<'svg'>) => (
 
 const ShowcaseBanner = () => {
   return (
-    <LinkBox role='group' mt='10'>
+    <LinkBox role='group' mt='6'>
       <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
         <Box>
           <LinkOverlay href="/showcase" target='_blank' color='white'>
@@ -181,7 +181,7 @@ const ShowcaseBanner = () => {
               <ShowcaseIcon w='8' h='8' ml='1' />
             </Flex>
           </LinkOverlay>
-          <Text mb='5' color='gray.400'>
+          <Text color='gray.400'>
             {t('resources.showcaseBannerDescription')}
           </Text>
         </Box>
