@@ -8,6 +8,9 @@ author: DecliningLotus
 Fonts can be loaded into your project either by using NPM or by using the
 `Global` component from the `@emotion/react` package.
 
+> Please do not forget to add font-family fallbacks like e.g. `sans-serif`
+> on both options.
+
 ## Option 1: Install with NPM
 
 [Fontsource](https://github.com/fontsource/fontsource) is an updating monorepo
@@ -41,8 +44,8 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: 'Open Sans',
-    body: 'Raleway',
+    heading: 'Open Sans, sans-serif',
+    body: 'Raleway, sans-serif',
   },
 })
 
@@ -146,8 +149,8 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: 'Heading Font Name',
-    body: 'Body Font Name',
+    heading: 'Heading Font Name, sans-serif',
+    body: 'Body Font Name, sans-serif',
   },
 })
 
