@@ -68,7 +68,7 @@ States like `isDisabled` have an impact on the usability of a `Switch` and on
 the styles, except for the `isInvalid` and the `isRequired` prop.
 
 ```jsx
-<FormControl as={SimpleGrid} columns={4}>
+<FormControl as={SimpleGrid} columns={{ base: 2, lg: 4 }}>
   <FormLabel htmlFor='isChecked'>isChecked:</FormLabel>
   <Switch id='isChecked' isChecked />
 
