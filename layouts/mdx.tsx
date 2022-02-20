@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import PageContainer from 'components/page-container'
 import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
@@ -6,7 +7,6 @@ import guidesSidebar from 'configs/guides-sidebar.json'
 import styledSystemSidebar from 'configs/styled-system-sidebar.json'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
-import { ReactNode } from 'react'
 
 export function getRoutes(slug: string) {
   // for home page, use docs sidebar
