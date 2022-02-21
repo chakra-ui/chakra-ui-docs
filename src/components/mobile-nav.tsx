@@ -137,9 +137,6 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   <NavLink href='/resources'>
                     {t('component.mobile-nav.resources')}
                   </NavLink>
-                  <NavLink href='/showcase'>
-                    {t('component.mobile-nav.showcase')}
-                  </NavLink>
                   <NavLink href='/faq'>{t('component.mobile-nav.faq')}</NavLink>
                   <NavLink href='/team'>
                     {t('component.mobile-nav.team')}
