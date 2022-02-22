@@ -17,12 +17,7 @@ import { Routes } from 'utils/get-route-context'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import SidebarCategory from './sidebar-category'
 import SidebarLink from './sidebar-link'
-import {
-  DocsIcon,
-  GuidesIcon,
-  TeamIcon,
-  ResourcesIcon,
-} from './sidebar-icons'
+import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from './sidebar-icons'
 import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
 import { Fragment, useRef, ReactElement, ReactNode } from 'react'
 
@@ -180,11 +175,6 @@ export const mainNavLinks = [
     icon: <TeamIcon />,
     href: '/team',
     label: 'Team',
-  },
-  {
-    icon: <ShowcaseIcon />,
-    href: '/showcase',
-    label: 'Showcase',
   },
 ]
 
