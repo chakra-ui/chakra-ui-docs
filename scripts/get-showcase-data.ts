@@ -104,7 +104,10 @@ async function main() {
 
       await wait(1000)
 
-      const fileName = `${name.split(' ').join('-')}.png`
+      // Escapes characters that cannot be used on Windows.
+      const escapedName = name.replace(/[<>:"/¥|?*]+/g, '-')
+
+      const fileName = `${escapedName.split(' ').join('-')}.png`
       const imagePath = path.join(localDirToPreviewImageDir, fileName)
       target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
       const buffer = await page.screenshot()
@@ -192,13 +195,15 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       let description = str
         .replace(curlyBraces, '')
         .replace(parentheses, '')
-        .slice(4);
+        .slice(4)
 
-      let innerLinks = description.match(curlyBraces);
+      let innerLinks = description.match(curlyBraces)
 
       while (innerLinks) {
-        description = description.replace(parentheses, '').replace(curlyBraces, innerLinks[1]);
-        innerLinks = description.match(curlyBraces);
+        description = description
+          .replace(parentheses, '')
+          .replace(curlyBraces, innerLinks[1])
+        innerLinks = description.match(curlyBraces)
       }
 
       if (!isGithubUrl(link)) {

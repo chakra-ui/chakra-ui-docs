@@ -1215,6 +1215,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "TylerAPfledderer",
+      "name": "Tyler Pfledderer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65234762?v=4",
+      "profile": "https://tylerpweb.dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "moloughlin",
+      "name": "Matthew O'Loughlin ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3859277?v=4",
+      "profile": "https://github.com/moloughlin",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -140,7 +140,7 @@ const Showcase = () => {
           <Tabs
             size='md'
             variant='soft-rounded'
-            colorScheme='green'
+            colorScheme='teal'
             align={'center'}
             isLazy
             index={index}

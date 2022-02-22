@@ -83,6 +83,8 @@
   "resources": {
     "title": "Community Resources",
     "description": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
+    "showcaseBannerTitle": "Visit the Showcase",
+    "showcaseBannerDescription": "See what other Devs made with Chakra UI. Those are community projects, websites, libraries, tools, articles and videos that you can use to get inspired, implement a feature, or learn Chakra UI.",
     "message": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
     "searchFilter": {
       "helperText": "Filter by resource title.",

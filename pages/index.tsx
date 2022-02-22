@@ -624,6 +624,7 @@ const HomePage = ({
                         width={40}
                         height={40}
                         loading='lazy'
+                        rounded='full'
                       />
                     </Link>
                   </WrapItem>
