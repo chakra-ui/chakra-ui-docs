@@ -8,10 +8,26 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import styledSystemSidebar from 'configs/styled-system-sidebar.json'
-import componentsSidebar from 'configs/components-sidebar.json'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import {
+  RiArchiveFill,
+  RiCheckboxMultipleFill,
+  RiDashboardFill,
+  RiEyeCloseLine,
+  RiFeedbackFill,
+  RiFileList3Fill,
+  RiImage2Fill,
+  RiInputMethodLine,
+  RiLayout5Line,
+  RiListOrdered,
+  RiNavigationFill,
+  RiPaletteLine,
+  RiPictureInPictureExitFill,
+  RiRepeat2Fill,
+} from 'react-icons/ri'
+import styledSystemSidebar from 'configs/styled-system-sidebar.json'
+import componentsSidebar from 'configs/components-sidebar.json'
 
 const featureSidebar = {
   '/docs/styled-system/overview': styledSystemSidebar,
@@ -25,7 +41,9 @@ const Feature = ({ title, icon, children, ...props }) => {
       bg={useColorModeValue('white', 'gray.700')}
       rounded='12px'
       shadow='base'
+      spacing={4}
       p='6'
+      cursor='pointer'
       {...props}
     >
       <Flex
@@ -53,19 +71,52 @@ const Feature = ({ title, icon, children, ...props }) => {
 export const FeaturesOverview = () => {
   const { asPath } = useRouter()
 
-  const features = featureSidebar[asPath].routes[0].routes
+  const features = featureSidebar[asPath].routes[0].routes.filter(
+    (feature) => feature.path !== asPath,
+  )
+
+  const changeFeatureText = (path: string) => {
+    switch (true) {
+      case path.includes('recipes'):
+        return 'recipes'
+      case path.includes('hooks'):
+        return 'hooks'
+      default:
+        return 'components'
+    }
+  }
+
+  const icons = {
+    Features: RiListOrdered,
+    Theming: RiPaletteLine,
+    'Utility Hooks': RiRepeat2Fill,
+    'Component Hooks': RiRepeat2Fill,
+    Recipes: RiFileList3Fill,
+    Layout: RiLayout5Line,
+    Forms: RiCheckboxMultipleFill,
+    'Data Display': RiDashboardFill,
+    Overlay: RiPictureInPictureExitFill,
+    Feedback: RiFeedbackFill,
+    Typography: RiInputMethodLine,
+    Disclosure: RiEyeCloseLine,
+    Navigation: RiNavigationFill,
+    'Media and icons': RiImage2Fill,
+    Other: RiArchiveFill,
+  }
 
   return (
-    <SimpleGrid mt='12' minChildWidth='160px' spacing='20'>
-      {features
-        .filter((feature) => feature.path !== asPath)
-        .map((feature) => (
-          <Link key={feature.title} passHref href={feature.path}>
-            <Feature icon={null} title={feature.title}>
-              Test
-            </Feature>
-          </Link>
-        ))}
+    <SimpleGrid mt='12' minChildWidth='15.625rem' spacing='8'>
+      {features.map((feature) => (
+        <Link key={feature.title} passHref href={feature.routes[0].path}>
+          <Feature icon={icons[feature.title] ?? null} title={feature.title}>
+            {feature.summarize
+              ? `${feature.routes.length} ${changeFeatureText(
+                  feature.path,
+                )}`
+              : null}
+          </Feature>
+        </Link>
+      ))}
     </SimpleGrid>
   )
 }
