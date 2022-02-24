@@ -311,6 +311,10 @@
               "path": "/docs/components/other/portal"
             },
             {
+              "title": "Show / Hide",
+              "path": "/docs/components/other/show-hide"
+            },
+            {
               "title": "Close Button",
               "path": "/docs/components/other/close-button"
             }
