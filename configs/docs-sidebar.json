@@ -405,6 +405,10 @@
             {
               "title": "Portal",
               "path": "/docs/components/portal"
+            },
+            {
+              "title": "Show / Hide",
+              "path": "/docs/components/show-hide"
             }
           ]
         },
