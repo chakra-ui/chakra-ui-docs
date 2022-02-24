@@ -19,6 +19,7 @@ import ComponentLinks from './component-links'
 import IconsList from './icons-list'
 import EggheadCourseBanner from './egghead-course-banner'
 import SandpackEmbed from 'components/sandpack-embed'
+import { FeaturesOverview } from 'components/features-overview'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -79,4 +80,5 @@ export const MDXComponents = {
       <SandpackEmbed {...props} />
     </Box>
   ),
+  FeaturesOverview
 }
