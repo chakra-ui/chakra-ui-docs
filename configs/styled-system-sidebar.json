@@ -89,6 +89,7 @@
           "path": "/docs/styled-system/utility-hooks",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "useBoolean",
@@ -145,6 +146,7 @@
           "path": "/docs/styled-system/component-hooks",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "useCheckbox",
@@ -161,6 +163,7 @@
           "path": "/docs/styled-system/recipes",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Page Specific Color Mode",

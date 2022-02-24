@@ -13,6 +13,7 @@
           "path": "/docs/components/layout",
           "sort": true,
           "open": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Aspect Ratio",
@@ -57,6 +58,7 @@
           "path": "/docs/components/form",
           "sort": true,
           "open": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Button",
@@ -122,6 +124,7 @@
           "path": "/docs/components/data-display",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Badge",
@@ -162,6 +165,7 @@
           "path": "/docs/components/feedback",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Alert",
@@ -193,6 +197,7 @@
           "title": "Typography",
           "path": "/docs/components/typography",
           "open": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Text",
@@ -209,6 +214,7 @@
           "path": "/docs/components/overlay",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Alert Dialog",
@@ -241,6 +247,7 @@
           "path": "/docs/components/disclosure",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Accordion",
@@ -261,6 +268,7 @@
           "path": "/docs/components/navigation",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Breadcrumb",
@@ -281,6 +289,7 @@
           "path": "/docs/components/media-and-icons",
           "sort": true,
           "open": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Avatar",
@@ -301,6 +310,7 @@
           "path": "/docs/components/other",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Transitions",
@@ -325,6 +335,7 @@
           "path": "/docs/components/recipes",
           "open": true,
           "sort": true,
+          "summarize": true,
           "routes": [
             {
               "title": "Floating Labels",
