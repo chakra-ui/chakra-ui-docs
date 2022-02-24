@@ -14,8 +14,6 @@ import {
   useUpdateEffect,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
-import useRouteChanged from 'hooks/use-route-changed'
-import { getRoutes } from 'layouts/mdx'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
@@ -24,6 +22,8 @@ import { RemoveScroll } from 'react-remove-scroll'
 import Logo from './logo'
 import { SidebarContent } from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
+import useRouteChanged from 'hooks/use-route-changed'
+import { getRoutes } from 'layouts/mdx'
 import { t } from 'utils/i18n'
 
 function NavLink({ href, children }) {

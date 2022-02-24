@@ -1,8 +1,8 @@
 import { chakra } from '@chakra-ui/react'
 import BaseHighlight, {
-  defaultProps,
   Language,
   PrismTheme,
+  defaultProps,
 } from 'prism-react-renderer'
 import React from 'react'
 import { liveEditorStyle } from './styles'

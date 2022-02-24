@@ -1,34 +1,34 @@
 import {
   Box,
-  Text,
+  Flex,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  HTMLChakraProps,
+  Heading,
+  Input,
+  LinkBox,
+  LinkOverlay,
   Tab,
-  Tabs,
   TabList,
   TabPanel,
   TabPanels,
-  Input,
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  HTMLChakraProps,
-  chakra,
-  LinkBox,
-  LinkOverlay,
-  Flex,
-  Heading
+  Tabs,
+  Text,
+  chakra
 } from '@chakra-ui/react'
+import { useFormik } from 'formik'
+import groupBy from 'lodash/groupBy'
+import * as React from 'react'
+import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import PageContainer from 'components/page-container'
 import ResourceCard, { Resource } from 'components/resource-card'
 import Sidebar from 'components/sidebar/sidebar'
 import resources from 'configs/resources.json'
 import { getRoutes } from 'layouts/mdx'
-import groupBy from 'lodash/groupBy'
-import * as React from 'react'
-import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
-import { useFormik } from 'formik'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import { t } from 'utils/i18n'
 import { filterResources } from 'utils/filter-resources'
+import { t } from 'utils/i18n'
 
 function Resources() {
   /**

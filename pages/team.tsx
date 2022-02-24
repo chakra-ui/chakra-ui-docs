@@ -1,7 +1,7 @@
+import fs from 'fs'
 import {
   Avatar,
   Box,
-  chakra,
   Heading,
   Icon,
   Link,
@@ -10,16 +10,16 @@ import {
   Text,
   Wrap,
   WrapItem,
+  chakra,
 } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
+import * as React from 'react'
+import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
 import Container from 'components/container'
 import Header from 'components/header'
 import PageTransition from 'components/page-transition'
 import SEO from 'components/seo'
-import fs from 'fs'
-import * as React from 'react'
-import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { Contributor, Member as IMember } from 'src/types/github'
 import { t } from 'utils/i18n'
 

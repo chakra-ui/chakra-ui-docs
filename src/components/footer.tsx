@@ -1,17 +1,9 @@
+import { Icon, Link, Stack, Text, VStack, chakra } from '@chakra-ui/react'
 import React from 'react'
-import {
-  VStack,
-  Icon,
-  Text,
-  Stack,
-  Link,
-  useBreakpointValue,
-  chakra,
-} from '@chakra-ui/react'
-import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io'
-import { FaYoutube } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
 import { DiGithubBadge } from 'react-icons/di'
+import { FaYoutube } from 'react-icons/fa'
+import { IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io'
+import { MdEmail } from 'react-icons/md'
 import { VercelCallout } from './vercel-callout'
 import { t } from 'utils/i18n'
 

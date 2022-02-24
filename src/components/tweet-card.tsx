@@ -1,6 +1,6 @@
 import { Box, chakra, useColorModeValue } from '@chakra-ui/react'
-import * as React from 'react'
 import NextImage from 'next/image'
+import * as React from 'react'
 interface TweetCardProps {
   name: string
   image: string

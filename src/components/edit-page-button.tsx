@@ -1,5 +1,5 @@
+import { Icon, Link, Stack, chakra } from '@chakra-ui/react'
 import * as React from 'react'
-import { chakra, Icon, Stack, Link } from '@chakra-ui/react'
 import { MdEdit } from 'react-icons/md'
 import { t } from 'utils/i18n'
 

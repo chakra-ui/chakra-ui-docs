@@ -1,12 +1,12 @@
 import * as ComponentProps from '@chakra-ui/props-docs'
-import { chakra, Code, Flex, HStack, Stack, theme } from '@chakra-ui/react'
+import { Code, Flex, HStack, Stack, chakra, theme } from '@chakra-ui/react'
+import { isObject, isString } from '@chakra-ui/utils'
 import Link from 'next/link'
 import * as React from 'react'
-import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
-import { InlineCode } from 'components/mdx-components/inline-code'
 import { Anchor } from 'components/mdx-components/anchor'
+import { InlineCode } from 'components/mdx-components/inline-code'
+import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { t } from 'utils/i18n'
-import { isObject, isString } from '@chakra-ui/utils'
 
 /**
  * A map of components that use foreign theme key.
@@ -173,7 +173,7 @@ function isColorScheme(value: any): value is Record<string, string> {
   )
 }
 
-interface MakePropsTableOptions extends PropsTableProps {}
+type MakePropsTableOptions = PropsTableProps
 
 function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
   const props = ComponentProps[of]?.props

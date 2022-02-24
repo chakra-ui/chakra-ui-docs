@@ -1,8 +1,8 @@
 import { allGuides } from '.contentlayer/data'
 import type { Guide } from '.contentlayer/types'
-import { MDXComponents } from 'components/mdx-components'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 
 export default function Page({ guide }: { guide: Guide }) {

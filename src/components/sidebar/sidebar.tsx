@@ -1,38 +1,36 @@
-import NextLink from 'next/link'
-import { useRouter } from 'next/router'
-import * as React from 'react'
-import sortBy from 'lodash/sortBy'
 import {
   Badge,
   Box,
   Center,
-  chakra,
   Flex,
   List,
   ListItem,
   ListProps,
   Stack,
+  chakra,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { Routes } from 'utils/get-route-context'
-import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
-import SidebarCategory from './sidebar-category'
-import SidebarLink from './sidebar-link'
-import {
-  DocsIcon,
-  GuidesIcon,
-  TeamIcon,
-  ResourcesIcon,
-} from './sidebar-icons'
+import sortBy from 'lodash/sortBy'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import * as React from 'react'
 import { FaQuestionCircle } from 'react-icons/fa'
+import SidebarCategory from './sidebar-category'
+import { DocsIcon, GuidesIcon, ResourcesIcon, TeamIcon } from './sidebar-icons'
+import SidebarLink from './sidebar-link'
+import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
+import { Routes } from 'utils/get-route-context'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
   contentRef?: any
 }
 
-export function SidebarContent(props: SidebarContentProps) {
-  const { routes, pathname, contentRef } = props
+export function SidebarContent({
+  routes,
+  pathname,
+  contentRef,
+}: SidebarContentProps) {
   const color = useColorModeValue('gray.700', 'inherit')
   return (
     <>

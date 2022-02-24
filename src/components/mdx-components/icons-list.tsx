@@ -1,6 +1,6 @@
-import React from 'react'
-import { Grid, Button, Text, useClipboard, useToast } from '@chakra-ui/react'
 import * as icons from '@chakra-ui/icons'
+import { Button, Grid, Text, useClipboard, useToast } from '@chakra-ui/react'
+import React from 'react'
 
 const iconList = {
   AddIcon: icons.AddIcon,

@@ -3,7 +3,6 @@ import {
   BoxProps,
   Button,
   Center,
-  chakra,
   Circle,
   Divider,
   Flex,
@@ -15,21 +14,12 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
   Wrap,
   WrapItem,
+  chakra,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { chunk } from '@chakra-ui/utils'
-import users from 'chakra-users'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
-import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
-import Container from 'components/container'
-import DiscordStrip from 'components/discord-strip'
-import { Footer } from 'components/footer'
-import Header from 'components/header'
-import SEO from 'components/seo'
-import TweetCard from 'components/tweet-card'
-import tweets from 'configs/tweets.json'
 import NextLink from 'next/link'
 import * as React from 'react'
 import { AiFillThunderbolt } from 'react-icons/ai'
@@ -38,6 +28,20 @@ import { FaArrowRight, FaDiscord, FaMicrophone } from 'react-icons/fa'
 import { FiDownload, FiGithub, FiUsers } from 'react-icons/fi'
 import { IoMdMoon } from 'react-icons/io'
 import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md'
+import users from 'chakra-users'
+import ChakraNextImage from 'components/chakra-next-image'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
+import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
+import Container from 'components/container'
+import DiscordStrip from 'components/discord-strip'
+import { Footer } from 'components/footer'
+import Header from 'components/header'
+import SandpackEmbed from 'components/sandpack-embed'
+import SEO from 'components/seo'
+import ShowcaseSection from 'components/showcase/showcase-section'
+import TweetCard from 'components/tweet-card'
+import { App, Index } from 'configs/sandpack-contents/homepage/files'
+import tweets from 'configs/tweets.json'
 import type { Member, Sponsor } from 'src/types/github'
 import { getAllContributors } from 'utils/get-all-contributors'
 import { getAllMembers } from 'utils/get-all-members'
@@ -46,10 +50,6 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
-import ChakraNextImage from 'components/chakra-next-image'
-import SandpackEmbed from 'components/sandpack-embed'
-import { App, Index } from 'configs/sandpack-contents/homepage/files'
-import ShowcaseSection from 'components/showcase/showcase-section'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 

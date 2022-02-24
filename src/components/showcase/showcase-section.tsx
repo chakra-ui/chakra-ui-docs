@@ -1,25 +1,23 @@
 import {
   AspectRatio,
   Box,
+  BoxProps,
   Button,
-  chakra,
   Container,
+  HStack,
+  Heading,
   Link,
   SimpleGrid,
-  useBreakpointValue,
-  BoxProps,
   VStack,
-  Heading,
-  HStack,
+  chakra,
+  useBreakpointValue,
 } from '@chakra-ui/react'
+import { motion, useMotionTemplate, useSpring } from 'framer-motion'
 import NextLink from 'next/link'
-import { useRef, PointerEvent, FocusEvent, useEffect, useCallback } from 'react'
+import { FocusEvent, PointerEvent, useCallback, useEffect, useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
-import { motion, useSpring, useMotionTemplate } from 'framer-motion'
 
-import { t } from 'utils/i18n'
 import ChakraNextImage from 'components/chakra-next-image'
-import June from 'public/showcases/websites/June.png'
 import ChakraTemplates from 'public/showcases/projects/Chakra-Templates.png'
 import ChakraUIPro from 'public/showcases/projects/Chakra-UI-Pro.png'
 import ChocUI from 'public/showcases/projects/Choc-UI.png'
@@ -27,6 +25,8 @@ import Snappify from 'public/showcases/projects/Snappify.png'
 import ThirdWeb from 'public/showcases/projects/Third-Web.png'
 import UIFoundations from 'public/showcases/projects/UI-Foundations.png'
 import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
+import June from 'public/showcases/websites/June.png'
+import { t } from 'utils/i18n'
 
 type Website = {
   src: StaticImageData
