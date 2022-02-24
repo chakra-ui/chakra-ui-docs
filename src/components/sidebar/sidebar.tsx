@@ -22,7 +22,6 @@ import {
   GuidesIcon,
   TeamIcon,
   ResourcesIcon,
-  ShowcaseIcon,
 } from './sidebar-icons'
 import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
 import { Fragment, useRef, ReactElement, ReactNode } from 'react'
