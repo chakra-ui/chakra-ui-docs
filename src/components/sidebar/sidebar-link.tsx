@@ -5,6 +5,7 @@ import { forwardRef, Ref } from 'react'
 
 const StyledLink = forwardRef(function StyledLink(
   props: PropsOf<typeof chakra.a> & { isActive?: boolean },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: Ref<any>,
 ) {
   const { isActive, ...rest } = props

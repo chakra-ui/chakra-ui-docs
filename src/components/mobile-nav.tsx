@@ -162,9 +162,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ScrollView = (props: BoxProps & { onScroll?: any }) => {
   const { onScroll, ...rest } = props
   const [y, setY] = React.useState(0)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const elRef = React.useRef<any>()
   const { scrollY } = useElementScroll(elRef)
   React.useEffect(() => {
@@ -189,7 +191,7 @@ const ScrollView = (props: BoxProps & { onScroll?: any }) => {
 }
 
 export const MobileNavButton = React.forwardRef(
-  (props: IconButtonProps, ref: React.Ref<any>) => {
+  (props: IconButtonProps, ref: React.Ref<HTMLButtonElement>) => {
     return (
       <IconButton
         ref={ref}

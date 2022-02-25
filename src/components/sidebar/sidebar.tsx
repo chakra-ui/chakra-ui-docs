@@ -23,6 +23,7 @@ import { Routes } from 'utils/get-route-context'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: any
 }
 

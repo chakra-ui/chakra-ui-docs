@@ -10,6 +10,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import type {
+  InternalDocSearchHit,
+  StoredDocSearchHit,
+} from '@docsearch/react/dist/esm/types'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -20,8 +24,12 @@ import { t } from 'utils/i18n'
 const ACTION_KEY_DEFAULT = ['Ctrl', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
 
-function Hit(props: any) {
-  const { hit, children } = props
+interface HitProps {
+  hit: InternalDocSearchHit | StoredDocSearchHit
+  children: React.ReactNode
+}
+
+function Hit({ hit, children }: HitProps) {
   return (
     <Link href={hit.url} passHref>
       <a>{children}</a>

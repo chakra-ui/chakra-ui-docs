@@ -82,6 +82,15 @@ const Feature = ({ title, icon, children, ...props }) => {
   )
 }
 
+interface Tweet {
+  content: string
+  handle: string
+  name: string
+  date: string
+  image: string
+  url: string
+}
+
 interface StatBoxProps extends BoxProps {
   icon?: React.ElementType
   title: string
@@ -452,7 +461,7 @@ const HomePage = ({
             <SimpleGrid spacing='32px' columns={{ base: 1, md: 3 }}>
               {chunk(tweets.tweets, 3).map((tweetList, idx) => (
                 <Stack spacing='6' key={idx}>
-                  {tweetList.map((tweet: any, idx) => (
+                  {tweetList.map((tweet: Tweet, idx) => (
                     <TweetCard key={idx} {...tweet} />
                   ))}
                 </Stack>

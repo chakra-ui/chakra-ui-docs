@@ -22,9 +22,12 @@ import scrollIntoView from 'scroll-into-view-if-needed'
 import { SearchButton } from './algolia-search'
 import searchData from 'configs/search-meta.json'
 
-function OptionText(props: any) {
-  const { searchWords, textToHighlight } = props
+interface OptionTextProps {
+  searchWords: string[]
+  textToHighlight: string
+}
 
+function OptionText({ searchWords, textToHighlight }: OptionTextProps) {
   const chunks = findAll({
     searchWords,
     textToHighlight,

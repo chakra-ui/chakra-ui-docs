@@ -164,7 +164,7 @@ function toLiteralStringType(strings: string[]) {
   )
 }
 
-function isColorScheme(value: any): value is Record<string, string> {
+function isColorScheme(value: unknown): value is Record<string, string> {
   return (
     isObject(value) &&
     ['50', '100', '200', '300', '400', '600', '700', '800', '900'].every((k) =>

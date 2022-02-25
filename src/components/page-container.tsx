@@ -43,8 +43,8 @@ interface PageContainerProps {
     headings?: Heading[]
   }
   children: React.ReactNode
-  sidebar?: any
-  pagination?: any
+  sidebar?: React.ReactElement
+  pagination?: React.ReactElement
 }
 
 function PageContainer(props: PageContainerProps) {

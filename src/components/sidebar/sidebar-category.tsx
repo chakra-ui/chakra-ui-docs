@@ -7,6 +7,7 @@ interface SidebarCategoryProps extends BoxProps {
   opened?: boolean
   selected?: boolean
   children: ReactNode
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: RefObject<any>
 }
 

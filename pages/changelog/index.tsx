@@ -10,6 +10,7 @@ export default function Page({ doc }: { doc: Changelog }) {
   const Component = useMDXComponent(doc.body.code)
   return (
     <Layout frontMatter={doc.frontMatter}>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <Component components={MDXComponents as any} />
     </Layout>
   )
