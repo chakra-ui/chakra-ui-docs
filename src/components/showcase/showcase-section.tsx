@@ -40,7 +40,7 @@ const websites: Website[] = [
   {
     src: ThirdWeb,
     href: 'https://thirdweb.com/',
-    alt: 'Third Web',
+    alt: 'thirdweb',
   },
   {
     src: Snappify,
