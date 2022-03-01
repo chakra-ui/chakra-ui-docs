@@ -21,7 +21,7 @@ const FrameworkLink = (props) => {
   return (
     <Link passHref href={href}>
       <ChakraLink textDecoration='none' _hover={{ textDecoration: 'none' }}>
-        <Box boxShadow='md' bg='white' borderRadius='lg' pt='4'>
+        <Box boxShadow='md' bg='white' borderRadius='xl' pt='4'>
           {children}
 
           <Center
