@@ -104,22 +104,24 @@ function HeaderContent() {
               />
             </Link>
           </HStack>
-          <IconButton
-            size='md'
-            fontSize='lg'
-            aria-label={`Switch to ${text} mode`}
-            variant='ghost'
-            color='current'
-            ml={{ base: '0', md: '3' }}
-            onClick={toggleMode}
-            icon={<SwitchIcon />}
-          />
-          <SponsorButton ml='5' />
-          <MobileNavButton
-            ref={mobileNavBtnRef}
-            aria-label='Open Menu'
-            onClick={mobileNav.onOpen}
-          />
+          <HStack spacing='5'>
+            <IconButton
+              size='md'
+              fontSize='lg'
+              aria-label={`Switch to ${text} mode`}
+              variant='ghost'
+              color='current'
+              ml={{ base: '0', md: '3' }}
+              onClick={toggleMode}
+              icon={<SwitchIcon />}
+            />
+            <SponsorButton ml='5' />
+            <MobileNavButton
+              ref={mobileNavBtnRef}
+              aria-label='Open Menu'
+              onClick={mobileNav.onOpen}
+            />
+          </HStack>
         </Flex>
       </Flex>
       <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
