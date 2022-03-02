@@ -246,6 +246,13 @@
       "url": "https://beema.finance",
       "image": "showcases/websites/Beema-Finance.png",
       "type": "websites"
+    },
+    {
+      "name": "wattanx's Site",
+      "description": "Personal website of wattanx. Made using Next.js, Chakra UI.",
+      "url": "https://wattanx.dev/",
+      "image": "showcases/websites/wattanx's-Site.png",
+      "type": "websites"
     }
   ],
   "libraries": [
