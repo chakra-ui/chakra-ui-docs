@@ -122,6 +122,10 @@ help with this scenario. Here's what you need to do:
 1. Create a component that consumes the `useRadio` hook.
 2. Use the `useRadioGroup` hook to control a group of custom radios.
 
+> Please be aware that the example below should only be used if you really need
+> a radio button for data collection purposes. If you want to toggle between
+> different content on activation of a button use the `Tabs` component.
+
 ```jsx manual=true
 // 1. Create a component that consumes the `useRadio` hook
 function RadioCard(props) {
