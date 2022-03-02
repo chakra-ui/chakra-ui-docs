@@ -1,0 +1,57 @@
+## 20-03-2021
+
+`@chakra-ui/react@1.4.0`
+
+**React** `v1.4.0`
+
+- Added support for `framer-motion` v4.
+
+**Popper** `v2.0.0`
+
+- Refactor the positioning logic to improve stability and leverage CSS custom
+  properties.
+
+**Styled System** `v1.9.0`
+
+- Fix issue where responsive styles defined in text styles not overridden by
+  style props.
+- Fix issue where `toCSSVars` omitted the transition tokens.
+- Fix issue where RTL property keys are incorrect due to `config.property`
+  mutation.
+- Added typings for the theme prop in `ThemingPropsThunk` and export a
+  standalone type ThemeComponentProps. ThemingPropsThunk
+- Update `mx` and `px` to use logical properties. Instead of mapping to
+  `marginLeft` and `marginRight`, it maps to `marginInlineStart` and
+  `marginInlineEnd`. Same for `px`.
+
+**CLI** `v1.3.0`
+
+- Add support for text style and layer style theme type generation to
+  `@chakra-ui/cli`.
+
+**Color Mode** `v1.1.2`
+
+- Memoize the context value for `ColorModeProvider`.
+
+**Editable** `v1.1.3`
+
+- Fix issue where blur/submit fires unexpectedly if `submitOnBlur` is true and
+  you try to click the cancel button.
+
+**Radio** `v1.2.5`
+
+- Fix issue where controlled radio group can't be cleared.
+- Fix `onChange` type for use-radio-group props.
+
+**Tag** `v1.1.3`
+
+- Add `aria-label` to tag close button.
+
+**Gatsby Plugin** `v1.0.2`
+
+- Update peer-dependency range for gatsby to support the latest.
+
+**Popover** `v1.3.0`
+
+- Fix issue (for Safari and Firefox) where popover doesn't close when you click
+  the trigger and popover is open.

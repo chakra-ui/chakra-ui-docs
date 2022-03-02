@@ -1,0 +1,60 @@
+## 17-01-2021
+
+`@chakra-ui/react@1.1.5`
+
+**Popper** `v1.1.0`
+
+- Added enabled property to `usePopper`. Popper won't be updated while it is set
+  to false. Menu now uses this option to not update its position while it's
+  closed.
+
+**Styled System** `v1.5.0`
+
+- Move `srOnly` prop to styled system props. This will deprecate the need for
+  the visually hidden package. Less is more!
+
+```jsx live=false
+  // If `true`, hide an element visually without hiding it from screen readers.
+  <Box srOnly>Visually hidden</Box>
+
+  // If `focusable`, the sr-only styles will be undone, making the element visible to sighted users as well as screen readers.
+  <Box srOnly _active={{ srOnly: "focusable" }}>Visually hidden but shown on focus
+  </Box>
+```
+
+- Add `polyfill` for inset style prop as the CSS inset doesn't work in Safari
+  Add missing style props for grid and flex layouts: gridTemplate, gridRowStart,
+  gridRowEnd, flexFlow, clipPath
+
+**Checkbox** `v1.1.2`
+
+- Update styles to use css logical style props
+
+**Hooks** `v1.1.1`
+
+- Resolved an issue where event handlers for certain components were removed
+  after the first event occurred.
+- Fixed SSR issue with useId hook.
+
+**Menu** `v1.0.5`
+
+- Update styles to use css logical style props
+- Added enabled property to usePopper. Popper won't be updated while it is set
+  to false. Menu now uses this option to not update its position while it's
+  closed.
+
+**Popover** `v1.0.7`
+
+- Popover now won't update its popper position while it's closed.
+
+**Portal** `v1.0.5`
+
+- Fixed issue where adding `portalZIndex` to `ChakraProvider` makes app unusable
+
+**Progress** `v1.0.5`
+
+- You can now override linear progress component's border radius in the theme.
+
+**Radio** `v1.1.2`
+
+- Update styles to use css logical style props.

@@ -1,0 +1,27 @@
+## 03-01-2021
+
+`@chakra-ui/react@1.1.1`
+
+**Button** `v1.0.3`
+
+- Update the style props applied for `leftIcon` and `rightIcon` to support RTL.
+  Changed `ml` and `mr` to marginStart and marginEnd respectively.
+- Update the style props applied when isLoading is `true`. Changed `marginRight`
+  to `marginEnd`.
+
+**Stack**
+
+- Update `directionStyles` to use logical CSS properties for RTL support.
+- Changed `marginLeft` and `marginRight` to `marginStart` and `marginEnd`
+  respectively.
+
+**Styled System** `v1.3.1`
+
+- Add missing `borderStart`, and `borderEnd` types for for style and color.
+- Sort `Object.assign` keys in `configs/border.ts` for better readability.
+
+Other RTL fixes:
+
+- Alignment for the close icon for `Tag`, `Modal`, and `Drawer` components to
+  support RTL.
+- Add RTL storybook toolbar to make it easy to test RTL layouts.

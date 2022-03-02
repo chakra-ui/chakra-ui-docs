@@ -1,0 +1,110 @@
+## 06-02-2021
+
+`@chakra-ui/react@1.3.2`
+
+**Pin Input** `v1.4.0`
+
+- Resolved an issue where completing character entry in PinInput failed to call
+  `onComplete`.
+
+**React** `v1.3.0`
+
+- Introducing a generic TypeScript type `ChakraTheme` to improve the
+  `extendTheme` function even further.
+
+```jsx live=false
+import { extendTheme } from "@chakra-ui/react"
+
+export const customTheme = extendTheme({
+  // here you get autocomplete for
+  //   - existing definitions from the default theme
+  //   - new components (Single and MultiStyle)
+  //   - CSS definitions
+  //   - color hues
+  //   - etc.
+})
+
+export type MyCustomTheme = typeof customTheme
+```
+
+You can get typesafe access to your custom theme like this:
+
+```jsx live=false
+ import { useTheme } from "@chakra-ui/react"
+  import { MyCustomTheme } from "./my-custom-theme"
+
+  const MyComponent = () => {
+    const customTheme = useTheme<MyCustomTheme>()
+    //...
+  }
+```
+
+- Fixed issue in `extendTheme` where overrides defined as function replaced all
+  base styles defined as a plain object.
+- Fixed an issue where the TypeScript types were too narrow for component
+  defaultProps and ComponentMultiStyleConfig.
+
+**Styled System** `v1.7.0`
+
+- Theme Typings: Add autocomplete for negative space values.
+- Add support for `textStyle` and `layerStyle` in styled-system package. This
+  makes it possible to use them in the component theme, `css` function and `sx`
+  prop as well.
+
+```jsx live=false
+const theme = {
+  textStyles: {
+    caps: {
+      fontWeight: "bold",
+      fontSize: "24px",
+    },
+  },
+}
+
+const styles = css({ textStyle: "caps" })(theme)
+```
+
+This also works for the component theme as well.
+
+`layerStyle`, `textStyle` and `apply` can now take responsive values as well.
+
+- Refactored `apply` prop handling to use the style config pattern instead of
+  add it imperatively.
+- Allow numbers for `borderTop` and provide autocomplete for `fontWeight` prop.
+- Support negative scale values for css variables.
+
+**System** `v1.3.0`
+
+- Add support for responsive values when using `apply`, `textStyle` and
+  `layerStyle`.
+
+**Theme** `v1.6.0`
+
+- Fixed an issue where a `Tooltip` with negative `gutter` causes flickering on
+  hover.
+- Fixed an issue in Firefox where `Input` overflows it's flex container.
+
+**CLI** `v1.2.0`
+
+- Theme Typings: Add autocomplete for negative space values
+
+**Accordion** `v1.1.2` & **Avatar** `v1.1.2` & **Button** `v1.1.2` &
+**Checkbox** `v1.2.2` & **Radio** `v1.2.2`
+
+- Provide better typings for `size` and `variant` for `AvatarGroup`,
+  `CheckboxGroup`, `ButtonGroup`, and `RadioGroup`
+
+**Color Mode** `v1.0.7`
+
+- Fix issue where reading from localStorage maybe fail due to several reasons
+  (SecurityError, Uncaught DOMException, TypeError, etc.)
+
+**Input** `v1.1.1`
+
+- Fixed the typo in `InputProps` interface due to which theming types were not
+  correct.
+
+**Tool tip** `v1.1.1`
+
+- Fixed an issue where a `Tooltip` with negative `gutter` causes flickering on
+  hover.

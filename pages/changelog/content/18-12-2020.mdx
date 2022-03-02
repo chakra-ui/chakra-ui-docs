@@ -1,0 +1,49 @@
+## 18-12-2020
+
+`@chakra-ui/react@1.0.4`
+
+⚠️ Peer dep version bump! framer-motion is now at 3.0.0
+
+**Form Control** `v1.1.0`
+
+- Add support for controlling focus lock across frames.
+- Removed isLoading prop from FormControl out of a lack of need.
+- Fixed an issue where FormHelperText was not rendering when parent
+  FormControl.isInvalid was set.
+
+**Modal** `v1.3.0`
+
+- Add support for controlling focus lock across frames.
+
+**Styled System** `v1.2.0`
+
+- Add suppotr for css logical properties and direction in the theme for future
+  RTL optimizations.
+
+**Pin Input** `v1.1.1`
+
+- Fixed an issue where copy pasting didnt work.
+
+**Number Input** `v1.0.3`
+
+- Fixed an issue where input didnt work with form libraries that rely on ref
+  (e.g. react-hook-form).
+- Added support to override `type` and `pattern` props.
+
+**Input** `v1.0.3`
+
+- Fixed an issue where removing an element didnt reset the padding.
+
+**Skeleton** `v1.0.3`
+
+- Fixed an issue where Skeleton.isLoading would fade the skeleton even if
+  isLoading is true.
+
+**Theme** `v1.2.2`
+
+- Focus outline > isInvalid outline (affects all components extending from
+  Input, e.g. Select, PinInput, ...)
+
+**Utils** `v1.0.2`
+
+- Custom breakpoints beginning with a number are now working
