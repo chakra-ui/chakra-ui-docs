@@ -100,6 +100,11 @@
               "title": "Floating Labels",
               "path": "/guides/recipes/floating-labels"
             }
+            ,
+            {
+              "title": "Atlaskit editable",
+              "path": "/guides/recipes/atlaskit-editable"
+            }
           ]
         }
       ]
