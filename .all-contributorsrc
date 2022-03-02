@@ -1233,6 +1233,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "jacobhq",
+      "name": "Jacob Marshall",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29145479?v=4",
+      "profile": "https://jacob.omg.lol",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
