@@ -1242,6 +1242,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "aroyan",
+      "name": "Aroyan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43630681?v=4",
+      "profile": "https://github.com/aroyan",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
