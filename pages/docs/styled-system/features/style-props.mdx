@@ -577,6 +577,14 @@ import { Button } from "@chakra-ui/react"
   >
   </Box>
 </Box>
+
+// add ::before pseudo element
+<Box
+  _before={{ content: '"🙂"', display: 'inline-block', me: '5px'} // Note: the content value need an extra set of quotes!
+>
+A pseudo element
+</Box>
+
 ```
 
 | Prop                    | CSS Property                                                                                                                                                                               | Theme Field |
@@ -650,6 +658,7 @@ following props:
 | ----------------- | ------------------ | ----------- |
 | `animation`       | `animation`        | none        |
 | `appearance`      | `appearance`       | none        |
+| `content`         | `content`          | none        |
 | `transform`       | `transform`        | none        |
 | `transformOrigin` | `transform-origin` | none        |
 | `visibility`      | `visibility`       | none        |
