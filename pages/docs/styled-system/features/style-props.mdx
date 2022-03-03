@@ -579,10 +579,11 @@ import { Button } from "@chakra-ui/react"
 </Box>
 
 // add ::before pseudo element
+// Note: the content value needs an extra set of quotes!
 <Box
-  _before={{ content: '"🙂"', display: 'inline-block', me: '5px'} // Note: the content value need an extra set of quotes!
+  _before={{ content: '"🙂"', display: 'inline-block', mr: '5px' }}
 >
-A pseudo element
+  A pseudo element
 </Box>
 
 ```
