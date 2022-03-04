@@ -106,7 +106,11 @@ export const FeaturesOverview = () => {
   return (
     <SimpleGrid mt='12' minChildWidth='15.625rem' spacing='8'>
       {features.map((feature) => (
-        <Link key={feature.title} passHref href={feature.routes[0].path}>
+        <Link
+          key={feature.title}
+          passHref
+          href={`${feature.routes[0].path}?scroll=true`}
+        >
           <Feature icon={icons[feature.title] ?? null} title={feature.title}>
             {feature.summarize
               ? `${feature.routes.length} ${changeFeatureText(feature.path)}`
