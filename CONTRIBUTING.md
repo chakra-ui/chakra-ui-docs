@@ -113,7 +113,7 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` and `yarn lint` to make sure
+   As you develop, you can run `yarn lint` to make sure
    everything works as expected. Please note that you might have to run `yarn`
    first in order to install all dependencies.
 
