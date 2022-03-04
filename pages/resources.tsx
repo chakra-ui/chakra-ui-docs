@@ -1,34 +1,35 @@
 import {
   Box,
-  Text,
+  chakra,
+  Flex,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Heading,
+  HTMLChakraProps,
+  Input,
+  LinkBox,
+  LinkOverlay,
   Tab,
-  Tabs,
   TabList,
   TabPanel,
   TabPanels,
-  Input,
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  HTMLChakraProps,
-  chakra,
-  LinkBox,
-  LinkOverlay,
-  Flex,
-  Heading
+  Tabs,
+  Text,
 } from '@chakra-ui/react'
 import PageContainer from 'components/page-container'
 import ResourceCard, { Resource } from 'components/resource-card'
 import Sidebar from 'components/sidebar/sidebar'
 import resources from 'configs/resources.json'
+import { useFormik } from 'formik'
 import { getRoutes } from 'layouts/mdx'
 import groupBy from 'lodash/groupBy'
+import NextLink from 'next/link'
 import * as React from 'react'
 import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
-import { useFormik } from 'formik'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import { t } from 'utils/i18n'
 import { filterResources } from 'utils/filter-resources'
+import { t } from 'utils/i18n'
 
 function Resources() {
   /**
@@ -168,24 +169,20 @@ const ShowcaseIcon = (props: HTMLChakraProps<'svg'>) => (
   </chakra.svg>
 )
 
-const ShowcaseBanner = () => {
-  return (
-    <LinkBox role='group' mt='6'>
-      <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
-        <Box>
-          <LinkOverlay href="/showcase" target='_blank' color='white'>
+const ShowcaseBanner = () => (
+  <LinkBox role='group' mt='6'>
+    <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
+      <Box>
+        <NextLink href='/showcase' passHref>
+          <LinkOverlay color='white'>
             <Flex align='center' mb='4'>
-              <Heading size='md'>
-                {t('resources.showcaseBannerTitle')}
-              </Heading>
+              <Heading size='md'>{t('resources.showcaseBannerTitle')}</Heading>
               <ShowcaseIcon w='8' h='8' ml='1' />
             </Flex>
           </LinkOverlay>
-          <Text color='gray.400'>
-            {t('resources.showcaseBannerDescription')}
-          </Text>
-        </Box>
-      </Flex>
-    </LinkBox>
-  )
-}
+        </NextLink>
+        <Text color='gray.400'>{t('resources.showcaseBannerDescription')}</Text>
+      </Box>
+    </Flex>
+  </LinkBox>
+)

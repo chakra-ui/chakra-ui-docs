@@ -91,6 +91,11 @@
               "title": "Contribute",
               "path": "/guides/advanced/contributing"
             }
+            ,
+            {
+              "title": "Atlaskit editable",
+              "path": "/guides/recipes/atlaskit-editable"
+            }
           ]
         }
       ]

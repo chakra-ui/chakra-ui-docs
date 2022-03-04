@@ -30,10 +30,16 @@ Chakra UI exports 3 components to handle this functionality.
 - `Editable`: The wrapper component that provides context value.
 - `EditableInput`: The edit view of the component. It shows when you click or
   focus on the text.
+- `EditableTextarea`: Use the textarea element to handle multi line text input in an editable context.
 - `EditablePreview`: The read-only view of the component.
 
 ```js
-import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
+import {
+  Editable,
+  EditableInput,
+  EditableTextarea,
+  EditablePreview,
+} from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -46,11 +52,19 @@ import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
 </Editable>
 ```
 
-### With custom controls
+### Usage with textarea
 
-In some cases, you might need to use custom controls to toggle the edit and read
-mode. We use the render prop pattern to provide access to the internal state of
-the component.
+```jsx
+// Click the text to edit
+<Editable defaultValue='Take some chakra'>
+  <EditablePreview />
+  <EditableTextarea />
+</Editable>
+```
+
+### With custom input and controls
+
+In some cases, you might need to use custom controls to toggle the edit and read mode. We use the render prop pattern to provide access to the internal state of the component. You may want to customize the `EditableInput` as well. This can be achieved by using a custom `Input` component in the `as` prop.
 
 ```jsx
 function CustomControlsExample() {
@@ -83,12 +97,17 @@ function CustomControlsExample() {
       isPreviewFocusable={false}
     >
       <EditablePreview />
-      <EditableInput />
+      {/* Here is the custom input */}
+      <Input as={EditableInput} />
       <EditableControls />
     </Editable>
   )
 }
 ```
+
+### Styling the editable
+
+Please see the [recipe](/guides/recipes/atlaskit-editable) for a styled example.
 
 ## Props
 

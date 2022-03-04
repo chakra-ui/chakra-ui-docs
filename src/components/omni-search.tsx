@@ -183,6 +183,10 @@ function OmniSearch() {
           break
         }
         case 'Enter': {
+          if (results?.length <= 0) {
+            break
+          }
+
           modal.onClose()
           router.push(results[active].url)
           break

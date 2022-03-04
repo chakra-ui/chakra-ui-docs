@@ -22,9 +22,9 @@ author: estheragbaje
   </AspectRatio>
 </Box>
 
-### 1. Installation
+### Installation
 
-In your `nextjs` project, install Chakra UI by running either of the following:
+In your Next.js project, install Chakra UI by running either of the following:
 
 ```bash
 npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
@@ -34,13 +34,13 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 ```
 
-### 2. Provider Setup
+### Provider Setup
 
 After installing Chakra UI, you need to set up the `ChakraProvider` at the root
 of your application.
 
-Go to `pages/_app.js` or `pages/_app.tsx` (create if it doesn't exist) and add
-this:
+Go to `pages/_app.js` or `pages/_app.tsx` (create it if it doesn't exist) and
+wrap the `Component` with the `ChakraProvider`:
 
 ```jsx live=false
 import { ChakraProvider } from '@chakra-ui/react'
@@ -56,24 +56,10 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-### ChakraProvider Props
-
-| Name             | Type             | Default               | Description                                         |
-| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
-
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
-
-### 3. Optional Setup
-
-- Customizing Theme
+### Customizing theme
 
 If you intend to customise the default theme object to match your design
-requirements, you can extend the `theme` from `@chakra-ui/react`.
+requirements, you need to extend the `theme`.
 
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
@@ -104,20 +90,53 @@ function App() {
 ```
 
 > To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities. Install
-> `@chakra-ui/theme-tools`.
+> `theme-tools` package includes useful utilities.
 
-- Using Chakra Icons
+### Color Mode Script
 
-Chakra provides a set of commonly used interface icons you can use in your
-project.
+The color mode script needs to be added before the content inside the `body` tag
+for local storage syncing to work correctly.
 
-If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
+> When setting the initial color mode, we recommend adding it as a config to
+> your theme and reference that in the `ColorModeScript`.
 
-> Follow this guide for customising Chakra Icons
-> [Using Chakra UI Icons](/docs/components/media-and-icons/icon).
+> To use `ColorModeScript` on a site with strict `Content-Security-Policy`, you
+> can use the `nonce` prop that will be passed to the `<script>` tag.
+
+```jsx live=false ln={14}
+// pages/_document.js
+
+import { ColorModeScript } from '@chakra-ui/react'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import theme from './theme'
+
+export default class Document extends NextDocument {
+  render() {
+    return (
+      <Html lang='en'>
+        <Head />
+        <body>
+          {/* 👇 Here's the script */}
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+```
 
 #### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
+
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
