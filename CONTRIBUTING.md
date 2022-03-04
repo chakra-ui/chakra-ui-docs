@@ -91,8 +91,6 @@ the following categories:
   usage of a lib or cli usage)
 - `build`: all changes regarding the build of the software, changes to
   dependencies or the addition of new dependencies
-- `test`: all changes regarding tests (adding new tests or changing existing
-  ones)
 - `ci`: all changes regarding the configuration of continuous integration (i.e.
   github actions, ci system)
 - `chore`: all changes to the repository that do not fit into any of the above
@@ -113,7 +111,7 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` and `yarn lint` to make sure
+   As you develop, you can run `yarn lint` to make sure
    everything works as expected. Please note that you might have to run `yarn`
    first in order to install all dependencies.
 

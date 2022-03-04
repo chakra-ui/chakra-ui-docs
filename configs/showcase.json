@@ -92,8 +92,8 @@
       "type": "projects"
     },
     {
-      "name": "Third Web",
-      "description": " web3 platform that offer tools, intuitive SDKs and widgets for developers.",
+      "name": "thirdweb",
+      "description": " web3 platform that offers contracts, intuitive SDKs, a dashboard and widgets for developers.",
       "url": "https://thirdweb.com/",
       "image": "showcases/projects/Third-Web.png",
       "type": "projects"
@@ -245,6 +245,13 @@
       "description": "Earn ultra-high, stable yields on dollars. Powered by DeFi. Built with Chakra UI 🌿.",
       "url": "https://beema.finance",
       "image": "showcases/websites/Beema-Finance.png",
+      "type": "websites"
+    },
+    {
+      "name": "wattanx's Site",
+      "description": "Personal website of wattanx. Made using Next.js, Chakra UI.",
+      "url": "https://wattanx.dev/",
+      "image": "showcases/websites/wattanx's-Site.png",
       "type": "websites"
     }
   ],

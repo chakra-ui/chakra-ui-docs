@@ -15,10 +15,11 @@ import {
   TabPanels,
   Tabs,
   Text,
-  chakra
+  chakra,
 } from '@chakra-ui/react'
 import { useFormik } from 'formik'
 import groupBy from 'lodash/groupBy'
+import NextLink from 'next/link'
 import * as React from 'react'
 import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
@@ -168,24 +169,20 @@ const ShowcaseIcon = (props: HTMLChakraProps<'svg'>) => (
   </chakra.svg>
 )
 
-const ShowcaseBanner = () => {
-  return (
-    <LinkBox role='group' mt='6'>
-      <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
-        <Box>
-          <LinkOverlay href="/showcase" target='_blank' color='white'>
+const ShowcaseBanner = () => (
+  <LinkBox role='group' mt='6'>
+    <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
+      <Box>
+        <NextLink href='/showcase' passHref>
+          <LinkOverlay color='white'>
             <Flex align='center' mb='4'>
-              <Heading size='md'>
-                {t('resources.showcaseBannerTitle')}
-              </Heading>
+              <Heading size='md'>{t('resources.showcaseBannerTitle')}</Heading>
               <ShowcaseIcon w='8' h='8' ml='1' />
             </Flex>
           </LinkOverlay>
-          <Text color='gray.400'>
-            {t('resources.showcaseBannerDescription')}
-          </Text>
-        </Box>
-      </Flex>
-    </LinkBox>
-  )
-}
+        </NextLink>
+        <Text color='gray.400'>{t('resources.showcaseBannerDescription')}</Text>
+      </Box>
+    </Flex>
+  </LinkBox>
+)

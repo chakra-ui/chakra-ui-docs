@@ -16,7 +16,7 @@ export default function Page({ doc }: { doc: Doc }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const docs = allDocs
-    .map((t) => t._raw.flattenedPath.replace('docs/', ''))
+    .map((t) => t._id.replace('docs/', '').replace('.mdx', ''))
     .map((id) => ({ params: { slug: id.split('/') } }))
   return { paths: docs, fallback: false }
 }

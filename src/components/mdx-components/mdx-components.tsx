@@ -19,6 +19,7 @@ import { Pre } from 'components/mdx-components/pre'
 import { TData, THead, Table } from 'components/mdx-components/table'
 import { VideoPlayer } from 'components/mdx-components/video-player'
 import SandpackEmbed from 'components/sandpack-embed'
+import { FeaturesOverview } from 'components/features-overview'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -79,4 +80,5 @@ export const MDXComponents = {
       <SandpackEmbed {...props} />
     </Box>
   ),
+  FeaturesOverview
 }

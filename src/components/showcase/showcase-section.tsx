@@ -22,7 +22,7 @@ import ChakraTemplates from 'public/showcases/projects/Chakra-Templates.png'
 import ChakraUIPro from 'public/showcases/projects/Chakra-UI-Pro.png'
 import ChocUI from 'public/showcases/projects/Choc-UI.png'
 import Snappify from 'public/showcases/projects/Snappify.png'
-import ThirdWeb from 'public/showcases/projects/Third-Web.png'
+import thirdweb from 'public/showcases/projects/thirdweb.png'
 import UIFoundations from 'public/showcases/projects/UI-Foundations.png'
 import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
 import June from 'public/showcases/websites/June.png'
@@ -38,9 +38,9 @@ const MotionBox = motion<Omit<BoxProps, 'style'>>(Box)
 
 const websites: Website[] = [
   {
-    src: ThirdWeb,
+    src: thirdweb,
     href: 'https://thirdweb.com/',
-    alt: 'Third Web',
+    alt: 'thirdweb',
   },
   {
     src: Snappify,

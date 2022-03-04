@@ -16,22 +16,29 @@ import {
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import * as React from 'react'
+import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
 import Logo from './logo'
-import { SidebarContent } from './sidebar/sidebar'
+import {
+  isMainNavLinkActive,
+  mainNavLinks,
+  SidebarContent,
+} from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
 import useRouteChanged from 'hooks/use-route-changed'
 import { getRoutes } from 'layouts/mdx'
-import { t } from 'utils/i18n'
 
-function NavLink({ href, children }) {
-  const { pathname } = useRouter()
+type NavLinkProps = {
+  href: string
+  children: ReactNode
+}
+
+function NavLink({ href, children }: NavLinkProps) {
+  const { asPath } = useRouter()
   const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
-  const [, group] = href.split('/')
-  const isActive = pathname.includes(group)
+  const isActive = isMainNavLinkActive(href, asPath)
 
   return (
     <GridItem as={NextLink} href={href}>
@@ -62,8 +69,8 @@ interface MobileNavContentProps {
 
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose } = props
-  const closeBtnRef = React.useRef<HTMLButtonElement>()
-  const { pathname } = useRouter()
+  const closeBtnRef = useRef<HTMLButtonElement>()
+  const { pathname, asPath } = useRouter()
   const bgColor = useColorModeValue('white', 'gray.800')
 
   useRouteChanged(onClose)
@@ -74,7 +81,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
    */
   const showOnBreakpoint = useBreakpointValue({ base: true, lg: false })
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (showOnBreakpoint == false) {
       onClose()
     }
@@ -88,7 +95,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
     }
   }, [isOpen])
 
-  const [shadow, setShadow] = React.useState<string>()
+  const [shadow, setShadow] = useState<string>()
 
   return (
     <AnimatePresence>
@@ -128,19 +135,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   templateColumns='repeat(2, 1fr)'
                   gap='2'
                 >
-                  <NavLink href='/docs/getting-started'>
-                    {t('component.mobile-nav.docs')}
-                  </NavLink>
-                  <NavLink href='/guides/integrations/with-cra'>
-                    {t('component.mobile-nav.guides')}
-                  </NavLink>
-                  <NavLink href='/resources'>
-                    {t('component.mobile-nav.resources')}
-                  </NavLink>
-                  <NavLink href='/faq'>{t('component.mobile-nav.faq')}</NavLink>
-                  <NavLink href='/team'>
-                    {t('component.mobile-nav.team')}
-                  </NavLink>
+                  {mainNavLinks.map((item) => (
+                    <NavLink href={item.href} key={item.label}>
+                      {item.label}
+                    </NavLink>
+                  ))}
                 </Grid>
               </Box>
 
@@ -151,7 +150,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
               >
                 <SidebarContent
                   pathname={pathname}
-                  routes={getRoutes(pathname)}
+                  routes={getRoutes(asPath)}
                 />
               </ScrollView>
             </Flex>
@@ -165,11 +164,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ScrollView = (props: BoxProps & { onScroll?: any }) => {
   const { onScroll, ...rest } = props
-  const [y, setY] = React.useState(0)
+  const [y, setY] = useState(0)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const elRef = React.useRef<any>()
+  const elRef = useRef<any>()
   const { scrollY } = useElementScroll(elRef)
-  React.useEffect(() => {
+  useEffect(() => {
     return scrollY.onChange(() => setY(scrollY.get()))
   }, [scrollY])
 
@@ -190,8 +189,8 @@ const ScrollView = (props: BoxProps & { onScroll?: any }) => {
   )
 }
 
-export const MobileNavButton = React.forwardRef(
-  (props: IconButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+export const MobileNavButton = forwardRef(
+  (props: IconButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (
       <IconButton
         ref={ref}

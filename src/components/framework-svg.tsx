@@ -99,7 +99,7 @@ export const RemixSvg = ({ ...props }) => {
       role='img'
       width='1em'
       height='1em'
-      fill='currentColor'
+      fill='#000'
       {...props}
     >
       <title id='remix-run-logo-title'>Remix Logo</title>
