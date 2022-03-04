@@ -1,5 +1,4 @@
 import {
-  Box,
   Flex,
   Heading,
   Icon,
@@ -8,8 +7,8 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {
   RiArchiveFill,
   RiCheckboxMultipleFill,
@@ -26,8 +25,8 @@ import {
   RiPictureInPictureExitFill,
   RiRepeat2Fill,
 } from 'react-icons/ri'
-import styledSystemSidebar from 'configs/styled-system-sidebar.json'
 import componentsSidebar from 'configs/components-sidebar.json'
+import styledSystemSidebar from 'configs/styled-system-sidebar.json'
 
 const featureSidebar = {
   '/docs/styled-system/overview': styledSystemSidebar,
@@ -110,9 +109,7 @@ export const FeaturesOverview = () => {
         <Link key={feature.title} passHref href={feature.routes[0].path}>
           <Feature icon={icons[feature.title] ?? null} title={feature.title}>
             {feature.summarize
-              ? `${feature.routes.length} ${changeFeatureText(
-                  feature.path,
-                )}`
+              ? `${feature.routes.length} ${changeFeatureText(feature.path)}`
               : null}
           </Feature>
         </Link>
