@@ -371,6 +371,11 @@ async function redirect() {
       permanent: true,
     },
     {
+      source: '/guides/integrations/with-cra',
+      destination: '/guides/getting-started/cra-guide',
+      permanent: true,
+    },
+    {
       source: '/guides/recipes/using-fonts',
       destination: '/docs/styled-system/recipes/using-fonts',
       permanent: true,
