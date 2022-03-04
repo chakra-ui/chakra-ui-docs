@@ -42,11 +42,11 @@ const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
 
   const isActive = asPath.split('?')[0] === href
 
-  const link = useRef<HTMLAnchorElement>(null)
+  const link = useRef<HTMLAnchorElement>()
 
   useEffect(() => {
     if (isActive && query.scroll === 'true') {
-      link.current.scrollIntoView(true)
+      link.current.scrollIntoView({ block: 'center' })
     }
   }, [isActive, query])
 
