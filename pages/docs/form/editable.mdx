@@ -30,10 +30,16 @@ Chakra UI exports 3 components to handle this functionality.
 - `Editable`: The wrapper component that provides context value.
 - `EditableInput`: The edit view of the component. It shows when you click or
   focus on the text.
+- `EditableTextarea`: Use the textarea element to handle multi line text input in an editable context.
 - `EditablePreview`: The read-only view of the component.
 
 ```js
-import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
+import {
+  Editable,
+  EditableInput,
+  EditableTextarea,
+  EditablePreview,
+} from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -43,6 +49,16 @@ import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
 <Editable defaultValue='Take some chakra'>
   <EditablePreview />
   <EditableInput />
+</Editable>
+```
+
+### Usage with textarea
+
+```jsx
+// Click the text to edit
+<Editable defaultValue='Take some chakra'>
+  <EditablePreview />
+  <EditableTextarea />
 </Editable>
 ```
 
