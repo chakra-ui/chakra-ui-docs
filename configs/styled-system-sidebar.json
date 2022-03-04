@@ -1,0 +1,181 @@
+{
+  "routes": [
+    {
+      "title": "Styled System",
+      "heading": true,
+      "routes": [
+        {
+          "title": "Overview",
+          "path": "/docs/styled-system/overview"
+        },
+        {
+          "title": "Features",
+          "path": "/docs/styled-system/features",
+          "open": true,
+          "routes": [
+            {
+              "title": "Style Props",
+              "path": "/docs/styled-system/features/style-props"
+            },
+            {
+              "title": "Gradient",
+              "path": "/docs/styled-system/features/gradient"
+            },
+            {
+              "title": "Color Mode",
+              "path": "/docs/styled-system/features/color-mode"
+            },
+            {
+              "title": "CSS Variables",
+              "path": "/docs/styled-system/features/css-variables"
+            },
+            {
+              "new": true,
+              "title": "Semantic Tokens",
+              "path": "/docs/styled-system/features/semantic-tokens"
+            },
+            {
+              "title": "Responsive Styles",
+              "path": "/docs/styled-system/features/responsive-styles"
+            },
+            {
+              "title": "Chakra Factory",
+              "path": "/docs/styled-system/features/chakra-factory"
+            },
+            {
+              "title": "Global Styles",
+              "path": "/docs/styled-system/features/global-styles"
+            },
+            {
+              "title": "Text & Layer Styles",
+              "path": "/docs/styled-system/features/text-and-layer-styles"
+            },
+            {
+              "title": "The `sx` Prop",
+              "path": "/docs/styled-system/features/the-sx-prop"
+            },
+            {
+              "title": "RTL Support",
+              "path": "/docs/styled-system/features/rtl-support"
+            }
+          ]
+        },
+
+        {
+          "title": "Theming",
+          "path": "/docs/theming",
+          "open": true,
+          "routes": [
+            {
+              "title": "Default Theme",
+              "path": "/docs/styled-system/theming/theme"
+            },
+            {
+              "title": "Customize Theme",
+              "path": "/docs/styled-system/theming/customize-theme"
+            },
+            {
+              "title": "Component Style",
+              "path": "/docs/styled-system/theming/component-style"
+            },
+            {
+              "title": "Advanced",
+              "path": "/docs/styled-system/theming/advanced"
+            }
+          ]
+        },
+        {
+          "title": "Utility Hooks",
+          "path": "/docs/styled-system/utility-hooks",
+          "open": true,
+          "sort": true,
+          "summarize": true,
+          "routes": [
+            {
+              "title": "useBoolean",
+              "path": "/docs/styled-system/utility-hooks/use-boolean"
+            },
+            {
+              "title": "useBreakpointValue",
+              "path": "/docs/styled-system/utility-hooks/use-breakpoint-value"
+            },
+            {
+              "title": "useClipboard",
+              "path": "/docs/styled-system/utility-hooks/use-clipboard"
+            },
+            {
+              "title": "useConst",
+              "path": "/docs/styled-system/utility-hooks/use-const"
+            },
+            {
+              "title": "useControllable",
+              "path": "/docs/styled-system/utility-hooks/use-controllable"
+            },
+            {
+              "title": "useDisclosure",
+              "path": "/docs/styled-system/utility-hooks/use-disclosure"
+            },
+            {
+              "title": "useMediaQuery",
+              "path": "/docs/styled-system/utility-hooks/use-media-query"
+            },
+            {
+              "title": "useMergeRefs",
+              "path": "/docs/styled-system/utility-hooks/use-merge-refs"
+            },
+            {
+              "title": "useOutsideClick",
+              "path": "/docs/styled-system/utility-hooks/use-outside-click"
+            },
+            {
+              "title": "usePrefersReducedMotion",
+              "path": "/docs/styled-system/utility-hooks/use-prefers-reduced-motion"
+            },
+            {
+              "title": "useTheme",
+              "path": "/docs/styled-system/utility-hooks/use-theme"
+            },
+            {
+              "title": "useToken",
+              "path": "/docs/styled-system/utility-hooks/use-token"
+            }
+          ]
+        },
+        {
+          "title": "Component Hooks",
+          "path": "/docs/styled-system/component-hooks",
+          "open": true,
+          "sort": true,
+          "summarize": true,
+          "routes": [
+            {
+              "title": "useCheckbox",
+              "path": "/docs/styled-system/component-hooks/use-checkbox"
+            },
+            {
+              "title": "useCheckboxGroup",
+              "path": "/docs/styled-system/component-hooks/use-checkbox-group"
+            }
+          ]
+        },
+        {
+          "title": "Recipes",
+          "path": "/docs/styled-system/recipes",
+          "open": true,
+          "sort": true,
+          "summarize": true,
+          "routes": [
+            {
+              "title": "Page Specific Color Mode",
+              "path": "/docs/styled-system/recipes/page-specific-color-mode"
+            },
+            {
+              "title": "Using Fonts",
+              "path": "/docs/styled-system/recipes/using-fonts"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

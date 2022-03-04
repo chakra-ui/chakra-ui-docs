@@ -1,22 +1,21 @@
+import { ReactNode } from 'react'
 import PageContainer from 'components/page-container'
 import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
-import docsSidebar from 'configs/docs-sidebar.json'
+import componentsSidebar from 'configs/components-sidebar.json'
 import guidesSidebar from 'configs/guides-sidebar.json'
-import * as React from 'react'
+import styledSystemSidebar from 'configs/styled-system-sidebar.json'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
 
 export function getRoutes(slug: string) {
-  // for home page, use docs sidebat
-  if (slug === '/') return docsSidebar.routes
+  // for home page, use docs sidebar
+  if (slug === '/') return guidesSidebar.routes
 
   const configMap = {
-    '/resources': docsSidebar,
-    '/changelog': docsSidebar,
     '/guides': guidesSidebar,
-    '/docs': docsSidebar,
-    '/faq': docsSidebar,
+    '/docs/styled-system': styledSystemSidebar,
+    '/docs/components': componentsSidebar,
   }
 
   const [, sidebar] =
@@ -27,7 +26,7 @@ export function getRoutes(slug: string) {
 
 interface MDXLayoutProps {
   frontmatter: any
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export default function MDXLayout(props: MDXLayoutProps) {
