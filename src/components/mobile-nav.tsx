@@ -14,13 +14,11 @@ import {
   useUpdateEffect,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
-import useRouteChanged from 'hooks/use-route-changed'
-import { getRoutes } from 'layouts/mdx'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
-import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 import Logo from './logo'
 import {
   isMainNavLinkActive,
@@ -28,6 +26,8 @@ import {
   SidebarContent,
 } from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
+import useRouteChanged from 'hooks/use-route-changed'
+import { getRoutes } from 'layouts/mdx'
 
 type NavLinkProps = {
   href: string
@@ -161,9 +161,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ScrollView = (props: BoxProps & { onScroll?: any }) => {
   const { onScroll, ...rest } = props
   const [y, setY] = useState(0)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const elRef = useRef<any>()
   const { scrollY } = useElementScroll(elRef)
   useEffect(() => {
@@ -188,7 +190,7 @@ const ScrollView = (props: BoxProps & { onScroll?: any }) => {
 }
 
 export const MobileNavButton = forwardRef(
-  (props: IconButtonProps, ref: Ref<any>) => {
+  (props: IconButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (
       <IconButton
         ref={ref}

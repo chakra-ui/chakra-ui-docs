@@ -1,15 +1,19 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import {
-  chakra,
   HStack,
   HTMLChakraProps,
   Kbd,
   Portal,
   Text,
-  useColorModeValue,
   VisuallyHidden,
+  chakra,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import type {
+  InternalDocSearchHit,
+  StoredDocSearchHit,
+} from '@docsearch/react/dist/esm/types'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -20,8 +24,12 @@ import { t } from 'utils/i18n'
 const ACTION_KEY_DEFAULT = ['Ctrl', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
 
-function Hit(props: any) {
-  const { hit, children } = props
+interface HitProps {
+  hit: InternalDocSearchHit | StoredDocSearchHit
+  children: React.ReactNode
+}
+
+function Hit({ hit, children }: HitProps) {
   return (
     <Link href={hit.url} passHref>
       <a>{children}</a>
@@ -146,7 +154,7 @@ function AlgoliaSearch() {
             indexName='chakra-ui'
             apiKey='df1dcc41f7b8e5d68e73dd56d1e19701'
             appId='BH4D9OD16A'
-            //@ts-expect-error
+            //@ts-expect-error we allow this error because we don't need what is missing here.
             navigator={{
               navigate({ suggestionUrl }) {
                 setIsOpen(false)

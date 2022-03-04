@@ -1,15 +1,15 @@
-import React from 'react'
 import {
-  Icon,
-  Text,
   HStack,
-  Wrap,
+  Icon,
   Link,
-  useColorModeValue,
   LinkProps,
+  Text,
+  Wrap,
   WrapItem,
+  useColorModeValue,
 } from '@chakra-ui/react'
-import { FaNpm, FaGithub, FaYoutube } from 'react-icons/fa'
+import React from 'react'
+import { FaGithub, FaNpm, FaYoutube } from 'react-icons/fa'
 import StorybookIcon from '../storybook-icon'
 import { t } from 'utils/i18n'
 

@@ -1,12 +1,11 @@
 import {
   Box,
   Flex,
-  Text,
   HStack,
   LinkBox,
   LinkOverlay,
+  Text,
 } from '@chakra-ui/layout'
-import _ from 'lodash'
 
 interface MaskProps {
   name: string

@@ -1,9 +1,9 @@
-import { Badge, Box, Flex, Heading, HStack, Text } from '@chakra-ui/react'
-import Container from 'components/container'
+import { Badge, Box, Flex, HStack, Heading, Text } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import * as React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 import { getUrl } from './get-url'
+import Container from 'components/container'
 import { t } from 'utils/i18n'
 
 export const ChakraProAd = () => (
