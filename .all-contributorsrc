@@ -1251,6 +1251,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "Luccasoli",
+      "name": "Lucas Mesquita",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31039396?v=4",
+      "profile": "https://lucas-mesquita.tech",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
