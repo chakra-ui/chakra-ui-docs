@@ -260,6 +260,13 @@
       "url": "https://wattanx.dev/",
       "image": "showcases/websites/wattanx's-Site.png",
       "type": "websites"
+    },
+    {
+      "name": "Gurudutt Perichetla's Website",
+      "description": "Guru's personal website. Built with NextJS and Chakra UI.",
+      "url": "https://www.guruduttperi.com/",
+      "image": "showcases/websites/Gurudutt-Perichetla's-Website.png",
+      "type": "websites"
     }
   ],
   "libraries": [
