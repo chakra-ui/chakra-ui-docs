@@ -71,6 +71,10 @@
             {
               "title": "Storybook",
               "path": "/guides/integrations/with-storybook"
+            },
+            {
+              "title": "Capsize",
+              "path": "/guides/integrations/with-capsize"
             }
           ]
         },
@@ -90,8 +94,7 @@
             {
               "title": "Contribute",
               "path": "/guides/advanced/contributing"
-            }
-            ,
+            },
             {
               "title": "Atlaskit editable",
               "path": "/guides/recipes/atlaskit-editable"
