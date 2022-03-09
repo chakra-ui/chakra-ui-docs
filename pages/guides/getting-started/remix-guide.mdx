@@ -14,11 +14,11 @@ Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
 
 ```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server^11
 ```
 
 ```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server^11
 ```
 
 > 🚨 Right now `yarn` is not officially supported in Remix projects, so use it
@@ -26,54 +26,196 @@ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^
 
 ### 2. Provider Setup
 
-After installing Chakra UI, you need to set up the `ChakraProvider` at the root
-of your application. The root of your `Remix` application is `/app/root.tsx`
+To prevent loss of styles we need to do some changes on the server-side and
+client-side.
 
-Put in the following code:
+We’ll create a context.tsx in the `app` folder.
 
 ```jsx live=false
-import { ChakraProvider } from '@chakra-ui/react'
+// context.tsx
+import * as React from "react"
 
-export default function App() {
-  return (
-    <Document>
-      <ChakraProvider>
-        <Outlet />
-      </ChakraProvider>
-    </Document>
-  )
+export interface ServerStyleContextData {
+    key: string
+    ids: Array<string>
+    css: string
+}
+
+export const ServerStyleContext = React.createContext<ServerStyleContextData[] | null>(null)
+
+export interface ClientStyleContextData {
+    reset: () => void
+}
+
+export const ClientStyleContext = React.createContext<ClientStyleContextData | null>(null)
+```
+
+Next on the agenda is to create emote cache in the `app` folder.
+
+```jsx live=false
+// createEmotionCache.ts
+import createCache from '@emotion/cache'
+
+export default function createEmotionCache() {
+  return createCache({ key: 'css' })
 }
 ```
 
-Additionally with `Remix` you'll need to setup the `ChakraProvider` in every
-other place where the full Document gets replaced as in `ErrorBoundary` and
-`CatchBoundary`:
+After creating the emotion cache, we need to modify the entry files for both the
+client and the server. We'll use our createEmotionCache function here.
 
 ```jsx live=false
-export function ErrorBoundary({ error }: { error: Error }) {
+// entry.client.tsx
+import * as React from 'react'
+import { hydrate } from 'react-dom'
+import { CacheProvider } from '@emotion/react'
+import { RemixBrowser } from 'remix'
+
+import { ClientStyleContext } from './context'
+import { createEmotionCache } from './createEmotionCache'
+
+interface ClientCacheProviderProps {
+  children: React.ReactNode;
+}
+
+function ClientCacheProvider({ children }: ClientCacheProviderProps) {
+  const [cache, setCache] = React.useState(createEmotionCache())
+
+  function reset() {
+    setCache(createEmotionCache())
+  }
+
   return (
-    <Document title='Error!'>
-      <ChakraProvider>
-        <Box>
-          <Heading as='h1'>There was an error</Heading>
-        </Box>
-      </ChakraProvider>
-    </Document>
+    <ClientStyleContext.Provider value={{ reset }}>
+      <CacheProvider value={cache}>{children}</CacheProvider>
+    </ClientStyleContext.Provider>
   )
 }
 
-export function CatchBoundary() {
-  let caught = useCatch()
+hydrate(
+  <ClientCacheProvider>
+    <RemixBrowser />
+  </ClientCacheProvider>,
+  document,
+)
+```
 
+```jsx live=false
+// entry.server.tsx
+import { renderToString } from 'react-dom/server'
+import { CacheProvider } from '@emotion/react'
+import createEmotionServer from '@emotion/server/create-instance'
+import type { EntryContext } from 'remix'
+import { RemixServer } from 'remix'
+import 'dotenv/config'
+
+import { ServerStyleContext } from './context'
+import { createEmotionCache } from './createEmotionCache'
+
+export default function handleRequest(
+  request: Request,
+  responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext,
+) {
+  const cache = createEmotionCache()
+  const { extractCriticalToChunks } = createEmotionServer(cache)
+
+  const html = renderToString(
+    <ServerStyleContext.Provider value={null}>
+      <CacheProvider value={cache}>
+        <RemixServer context={remixContext} url={request.url} />
+      </CacheProvider>
+    </ServerStyleContext.Provider>,
+  )
+
+  const chunks = extractCriticalToChunks(html)
+
+  const markup = renderToString(
+    <ServerStyleContext.Provider value={chunks.styles}>
+      <CacheProvider value={cache}>
+        <RemixServer context={remixContext} url={request.url} />
+      </CacheProvider>
+    </ServerStyleContext.Provider>,
+  )
+
+  responseHeaders.set('Content-Type', 'text/html')
+
+  return new Response(`<!DOCTYPE html>${markup}`, {
+    status: responseStatusCode,
+    headers: responseHeaders,
+  })
+}
+```
+
+Inside our root.tsx file we'll create a `Document` wrapper and then we'll wrap
+our `App` with the Document.
+
+```jsx live=false
+// root.tsx
+interface DocumentProps {
+  children: React.ReactNode;
+}
+
+const Document = withEmotionCache(
+  ({ children }: DocumentProps, emotionCache) => {
+    const serverSyleData = React.useContext(ServerStyleContext);
+    const clientStyleData = React.useContext(ClientStyleContext);
+
+    // Only executed on client
+    React.useEffect(() => {
+      // re-link sheet container
+      emotionCache.sheet.container = document.head;
+      // re-inject tags
+      const tags = emotionCache.sheet.tags;
+      emotionCache.sheet.flush();
+      tags.forEach((tag) => {
+        (emotionCache.sheet as any)._insertTag(tag);
+      });
+      // reset cache to reapply global styles
+      clientStyleData?.reset();
+    }, []);
+
+    return (
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstaticom" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
+          />
+          <Meta />
+          <Links />
+          {serverSyleData?.map(({ key, ids, css }) => (
+            <style
+              key={key}
+              data-emotion={`${key} ${ids.join(' ')}`}
+              dangerouslySetInnerHTML={{ __html: css }}
+            />
+          ))}
+        </head>
+        <body>
+          <ChakraProvider>{children}</ChakraProvider>
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
+        </body>
+      </html>
+    );
+  }
+);
+```
+
+And then we'll wrap the App just like so:
+
+```jsx live=false
+export default function App() {
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
-      <ChakraProvider>
-        <Box>
-          <Heading as='h1'>
-            {caught.status} {caught.statusText}
-          </Heading>
-        </Box>
-      </ChakraProvider>
+    <Document>
+      <Outlet />
     </Document>
   )
 }
