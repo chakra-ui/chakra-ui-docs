@@ -3592,6 +3592,24 @@
     "hierarchy": { "lvl1": "Stack" }
   },
   {
+    "content": "Stack",
+    "id": "dd909056-21f4-42a9-be63-1e22806452f7",
+    "type": "lvl1",
+    "url": "/docs/components/layout/stack",
+    "hierarchy": {
+      "lvl1": "Stack"
+    }
+  },
+  {
+    "content": "VStack",
+    "id": "dd909056-21f4-42a9-be63-1e22806452f7",
+    "type": "lvl1",
+    "url": "/docs/components/layout/stack",
+    "hierarchy": {
+      "lvl1": "Stack"
+    }
+  },
+  {
     "content": "Import",
     "id": "09ef7fec-588b-4f72-95b8-3e946d669627",
     "type": "lvl2",
