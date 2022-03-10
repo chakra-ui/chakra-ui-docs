@@ -267,6 +267,13 @@
       "url": "https://www.guruduttperi.com/",
       "image": "showcases/websites/Gurudutt-Perichetla's-Website.png",
       "type": "websites"
+    },
+    {
+      "name": "Rakhi Boxes",
+      "description": "A beautiful gift delivered straight to your loved ones door.",
+      "url": "https://rakhiboxes.com",
+      "image": "showcases/websites/Rakhi-Boxes.png",
+      "type": "websites"
     }
   ],
   "libraries": [
