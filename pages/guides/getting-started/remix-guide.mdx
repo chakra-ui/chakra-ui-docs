@@ -5,9 +5,6 @@ tags: ['remix']
 author: noobinthisgame
 ---
 
-> This guide is still work in progress! Feel free to contribute if you have
-> something built with Remix and Chakra UI 😃
-
 ### 1. Installation
 
 Inside your `Remix` project root directory, install Chakra UI by running either
@@ -26,21 +23,21 @@ We’ll create a `context.tsx` in the `app` folder.
 
 ```jsx live=false
 // context.tsx
-import * as React from "react"
+import React, { createContext } as React from "react"
 
 export interface ServerStyleContextData {
-    key: string
-    ids: Array<string>
-    css: string
+  key: string
+  ids: Array<string>
+  css: string
 }
 
-export const ServerStyleContext = React.createContext<ServerStyleContextData[] | null>(null)
+export const ServerStyleContext = createContext<ServerStyleContextData[] | null>(null)
 
 export interface ClientStyleContextData {
-    reset: () => void
+  reset: () => void
 }
 
-export const ClientStyleContext = React.createContext<ClientStyleContextData | null>(null)
+export const ClientStyleContext = createContext<ClientStyleContextData | null>(null)
 ```
 
 Next on the agenda is to create the emotion cache file. To do that, create a new
@@ -60,7 +57,7 @@ client and the server. We'll use our createEmotionCache function here.
 
 ```jsx live=false
 // entry.client.tsx
-import * as React from 'react'
+import React, { useState } as React from 'react'
 import { hydrate } from 'react-dom'
 import { CacheProvider } from '@emotion/react'
 import { RemixBrowser } from 'remix'
@@ -73,7 +70,7 @@ interface ClientCacheProviderProps {
 }
 
 function ClientCacheProvider({ children }: ClientCacheProviderProps) {
-  const [cache, setCache] = React.useState(createEmotionCache())
+  const [cache, setCache] = useState(createEmotionCache())
 
   function reset() {
     setCache(createEmotionCache())
@@ -147,7 +144,7 @@ our `App` with the Document.
 
 ```jsx live=false
 // root.tsx
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { withEmotionCache } from '@emotion/react';
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -159,11 +156,11 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children }: DocumentProps, emotionCache) => {
-    const serverSyleData = React.useContext(ServerStyleContext);
-    const clientStyleData = React.useContext(ClientStyleContext);
+    const serverSyleData = useContext(ServerStyleContext);
+    const clientStyleData = useContext(ClientStyleContext);
 
     // Only executed on client
-    React.useEffect(() => {
+    useEffect(() => {
       // re-link sheet container
       emotionCache.sheet.container = document.head;
       // re-inject tags
