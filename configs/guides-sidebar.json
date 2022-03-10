@@ -57,6 +57,14 @@
           "open": true,
           "routes": [
             {
+              "title": "Capsize",
+              "path": "/guides/integrations/with-capsize"
+            },
+            {
+              "title": "Formik",
+              "path": "/guides/integrations/with-formik"
+            },
+            {
               "title": "Framer Motion",
               "path": "/guides/integrations/with-framer"
             },
@@ -71,10 +79,6 @@
             {
               "title": "Storybook",
               "path": "/guides/integrations/with-storybook"
-            },
-            {
-              "title": "Capsize",
-              "path": "/guides/integrations/with-capsize"
             }
           ]
         },
