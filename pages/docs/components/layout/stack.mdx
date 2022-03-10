@@ -26,12 +26,17 @@ to add spacing between its children.
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 ```
 
-- **Stack:** Used to add spacing between elements in the horizontal or vertical
-  direction. It supports responsive values.
-- **HStack:** Used to add spacing between elements in horizontal direction, and
-  centers them.
-- **VStack:** Used to add spacing between elements in vertical direction only,
-  and centers them.
+## VStack
+
+The `VStack` component is a component which is **only** facing the vertical
+direction. Additionally you can add a divider and vertical spacing between the
+items.
+
+## HStack
+
+The `HStack` component is a component which is **only** facing the horizontal
+direction. Additionally you can add a divider and horizontal spacing between the
+items.
 
 ## Usage
 
@@ -72,7 +77,7 @@ direction and/or spacing between elements.
 </Stack>
 ```
 
-### Adding dividers
+### Stack Dividers
 
 In some scenarios, you may want to add dividers between stacked elements. Pass
 the `divider` prop and set its value to the `StackDivider` or any custom React
