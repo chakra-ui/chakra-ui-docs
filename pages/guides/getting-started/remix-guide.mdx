@@ -14,11 +14,11 @@ Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
 
 ```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server^11
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
 ```
 
 ```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server^11
+yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server^11
 ```
 
 > 🚨 Right now `yarn` is not officially supported in Remix projects, so use it
@@ -29,7 +29,7 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @
 To prevent loss of styles we need to do some changes on the server-side and
 client-side.
 
-We’ll create a context.tsx in the `app` folder.
+We’ll create a `context.tsx` in the `app` folder.
 
 ```jsx live=false
 // context.tsx
@@ -50,7 +50,8 @@ export interface ClientStyleContextData {
 export const ClientStyleContext = React.createContext<ClientStyleContextData | null>(null)
 ```
 
-Next on the agenda is to create emote cache in the `app` folder.
+Next on the agenda is to create the emotion cache file. To do that, create a new
+`createEmotionCache.ts` file in the `app` folder.
 
 ```jsx live=false
 // createEmotionCache.ts
@@ -72,7 +73,7 @@ import { CacheProvider } from '@emotion/react'
 import { RemixBrowser } from 'remix'
 
 import { ClientStyleContext } from './context'
-import { createEmotionCache } from './createEmotionCache'
+import createEmotionCache from './createEmotionCache'
 
 interface ClientCacheProviderProps {
   children: React.ReactNode;
@@ -105,12 +106,12 @@ hydrate(
 import { renderToString } from 'react-dom/server'
 import { CacheProvider } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
-import type { EntryContext } from 'remix'
 import { RemixServer } from 'remix'
+import type { EntryContext } from 'remix'
 import 'dotenv/config'
 
 import { ServerStyleContext } from './context'
-import { createEmotionCache } from './createEmotionCache'
+import createEmotionCache from './createEmotionCache'
 
 export default function handleRequest(
   request: Request,
@@ -148,11 +149,17 @@ export default function handleRequest(
 }
 ```
 
-Inside our root.tsx file we'll create a `Document` wrapper and then we'll wrap
+Inside our `root.tsx` file we'll create a `Document` wrapper and then we'll wrap
 our `App` with the Document.
 
 ```jsx live=false
 // root.tsx
+import React from 'react';
+import { withEmotionCache } from '@emotion/react';
+import { ChakraProvider } from '@chakra-ui/react';
+
+import { ServerStyleContext, ClientStyleContext } from './context';
+
 interface DocumentProps {
   children: React.ReactNode;
 }
@@ -198,7 +205,7 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
-          <ChakraProvider>{children}</ChakraProvider>
+          {children}
           <ScrollRestoration />
           <Scripts />
           {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
@@ -215,7 +222,9 @@ And then we'll wrap the App just like so:
 export default function App() {
   return (
     <Document>
-      <Outlet />
+      <ChakraProvider>
+        <Outlet />
+      </ChakraProvider>
     </Document>
   )
 }
@@ -285,3 +294,11 @@ If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
+
+### 4. Community boilerplates
+
+In the links below you can clone and take a look at the boilerplate projects
+created by the community. 👇
+
+- https://github.com/aacevski/chakra-remix-boilerplate
+- https://github.com/NoQuarterTeam/boilerplate-remix
