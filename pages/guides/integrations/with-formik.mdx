@@ -10,37 +10,26 @@ its `useFormik` hook that returns us the formik instance. That Formik instance
 contains pretty much everything we need to connect our form's UI elements and
 submit handler. Let's see a pure React + Formik example:
 
-```typescript
-import React from 'react'
-import { useFormik } from 'formik'
+import {
+  App as AppPlain,
+  Index as IndexPlain,
+} from 'configs/sandpack-contents/formik-examples/plain-formik'
 
-const SignupForm = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2))
-    },
-  })
-  return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor='email'>Email Address</label>
-      <input
-        id='email'
-        name='email'
-        type='email'
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-
-      <button type='submit'>Submit</button>
-    </form>
-  )
-}
-```
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  dependencies={{
+    formik: '2.2.9',
+  }}
+  files={{
+    '/App.tsx': AppPlain,
+    '/index.tsx': IndexPlain,
+  }}
+/>
 
 As you can see from the example above, our `formik` instance contains the
 `handleSubmit`, `handleChange`, and `values`, and we use them to handle the
