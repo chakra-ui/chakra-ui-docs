@@ -274,6 +274,13 @@
       "url": "https://rakhiboxes.com",
       "image": "showcases/websites/Rakhi-Boxes.png",
       "type": "websites"
+    },
+    {
+      "name": "Bobobox Mandalika Campsite",
+      "description": "A landing page for promoting Mandalika Campsite by Bobobox X Eiger.",
+      "url": "https://bobobox.co.id/campsite/mandalika/",
+      "image": "showcases/websites/Bobobox-Mandalika-Campsite.png",
+      "type": "websites"
     }
   ],
   "libraries": [
