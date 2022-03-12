@@ -18,12 +18,19 @@ async function getSponsors() {
   const response = await fetch(
     'https://opencollective.com/chakra-ui/members/all.json',
   )
-  const sponsors = await response.json()
+  const unfilteredSponsors = await response.json()
 
-  const individuals = sponsors.filter(
-    (i: any) => i.type === 'USER' && i.image != null,
+  // filter the sponsors by opencollectice profile link to avoid double entries
+  const sponsors = unfilteredSponsors.filter((value: any, index: any, self: any) =>
+    index === self.findIndex((s: any) => (
+      s.profile === value.profile
+    ))
   )
-  const companies = sponsors.filter((i: any) => i.type === 'ORGANIZATION')
+  
+  const individuals = sponsors.filter(
+    (sponsor: any) => sponsor.type === 'USER' && sponsor.image != null,
+  )
+  const companies = sponsors.filter((sponsor: any) => sponsor.type === 'ORGANIZATION')
 
   return { individuals, companies }
 }
