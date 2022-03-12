@@ -11,13 +11,14 @@ export const InlineCode = (props: any) => {
    * before the layout shifts to mobile.
    */
   const MIN_CONTENT_WIDTH = 363
+
   return (
     <chakra.code
       apply='mdx.code'
       color={useColorModeValue('purple.500', 'purple.200')}
       ref={codeRef}
       whiteSpace={
-        dimensions?.borderBox.width <= MIN_CONTENT_WIDTH ? 'nowrap' : ''
+        dimensions?.borderBox.width > MIN_CONTENT_WIDTH ? '' : 'nowrap'
       }
       {...props}
     />
