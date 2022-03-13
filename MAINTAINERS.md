@@ -9,6 +9,5 @@ list the names of maintainers per components.
 | Tim Kolberger @TimKolberger | Styled System, TypeScript |
 | Lazar Nikolov @nikolovlazar | Docs, DevRel, Education   |
 | Esther Agbaje @estheragbaje | Education, DevRel         |
-| Mark Chandler @with-heart   | Community, Triage         |
 
 > Feel free to open a PR to update this
