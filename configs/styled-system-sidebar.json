@@ -112,6 +112,10 @@
               "path": "/docs/styled-system/utility-hooks/use-controllable"
             },
             {
+              "title": "useDimensions",
+              "path": "/docs/styled-system/utility-hooks/use-dimensions"
+            },
+            {
               "title": "useDisclosure",
               "path": "/docs/styled-system/utility-hooks/use-disclosure"
             },
