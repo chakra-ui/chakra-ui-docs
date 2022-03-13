@@ -51,13 +51,12 @@ to prevent users from accidentally confirming the destructive action.
 
 ```jsx
 function AlertDialogExample() {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const onClose = () => setIsOpen(false)
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = React.useRef()
 
   return (
     <>
-      <Button colorScheme='red' onClick={() => setIsOpen(true)}>
+      <Button colorScheme='red' onClick={onOpen}>
         Delete Customer
       </Button>
 
