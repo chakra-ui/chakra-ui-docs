@@ -23,7 +23,7 @@ We’ll create a `context.tsx` in the `app` folder.
 
 ```jsx live=false
 // context.tsx
-import React, { createContext } as React from "react"
+import React, { createContext } from 'react'
 
 export interface ServerStyleContextData {
   key: string
@@ -57,7 +57,7 @@ client and the server. We'll use our createEmotionCache function here.
 
 ```jsx live=false
 // entry.client.tsx
-import React, { useState } as React from 'react'
+import React, { useState } from 'react'
 import { hydrate } from 'react-dom'
 import { CacheProvider } from '@emotion/react'
 import { RemixBrowser } from 'remix'
