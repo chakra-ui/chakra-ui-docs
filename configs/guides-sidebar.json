@@ -48,6 +48,10 @@
             {
               "title": "Remix",
               "path": "/guides/getting-started/remix-guide"
+            },
+            {
+              "title": "Vite",
+              "path": "/guides/getting-started/vite-guide"
             }
           ]
         },
