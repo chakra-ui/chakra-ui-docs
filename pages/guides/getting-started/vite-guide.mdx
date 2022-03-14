@@ -7,7 +7,8 @@ author: estheragbaje
 
 ### 1. Installation
 
-In your Vite React project, install Chakra UI by running either of the following:
+In your Vite React project, install Chakra UI by running either of the
+following:
 
 ```bash
 npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
@@ -73,6 +74,36 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 )
+```
+
+> **⚡Quick tip:** In cases where hot reload doesn't work, first check to make
+> sure you're using the latest version of Vite. If hot reload issue persists,
+> use this workaround in your `vite.config.js` or `vite.config.ts` file:
+
+```jsx live=false
+
+server: {
+    watch: {
+      usePolling: true,
+    },
+
+```
+
+Now, your `vite.config.js` or `vite.config.ts` should now look like this:
+
+```jsx live=false
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
+})
 ```
 
 #### Notes on TypeScript 🚨
