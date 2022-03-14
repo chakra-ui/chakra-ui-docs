@@ -95,7 +95,7 @@ export const FrameworkLinks = () => {
 
       <FrameworkLink
         href='/guides/getting-started/vite-guide'
-        accentColor='#D78504'
+        accentColor='#C07600'
         name='Vite'
       >
         <ViteSvg style={{ margin: 'auto' }} />
