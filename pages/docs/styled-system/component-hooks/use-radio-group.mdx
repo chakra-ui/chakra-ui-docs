@@ -17,13 +17,19 @@ import { useRadioGroup } from '@chakra-ui/react'
 
 The `useRadioGroup` hook returns following props
 
-| Name               | Type                                | Description                                                                                                             |
-| ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `value`            | `StringOrNumber[]`                  | The value of checkbox group.                                                                                            |
-| `isDisabled`       | `boolean`                           | A function to set the boolean value to `false`.                                                                         |
-| `onChange`         | `(input: EventOrValue) => void`     | The onChange handler for the checkbox group.                                                                            |
-| `setValue`         | `(state: StringOrNumber[]) => void` | A function to set the value of the checkbox group.                                                                      |
-| `getCheckboxProps` | `(props?: Dict) => Dict`            | A function that takes checkbox props returns them with a onChange handler for the checkbox group and the checked state. |
+| Name            | Type                                | Description                                                                    |
+| --------------- | ----------------------------------- | ------------------------------------------------------------------------------ |
+| `value`         | `StringOrNumber[]`                  | The value of radio group.                                                      |
+| `name`          | `string`                            | The name of the radio options. All radio options must use the same name.       |
+| `ref`           | `any`                               | The ref of the radio group.                                                    |
+| `isDisabled`    | `boolean`                           | A utility to manage disabled state.                                            |
+| `isFocusable`   | `boolean`                           | A utility to manage focused state.                                             |
+| `focus`         | `() => void`                        | A utility function to set the focus on the first enabled radio.                |
+| `onChange`      | `(nextValue: EventOrValue) => void` | The onChange handler for the radio group.                                      |
+| `setValue`      | `(state: StringOrNumber[]) => void` | A function to set the value of the radio group.                                |
+| `getRadioProps` | `(props?: Dict) => Dict`            | A function that takes root props and handles changes for the radio group       |
+| `getRootProps`  | `(props?: Dict) => Dict`            | A function that takes radio root props and handles changes for the radio group |
+| `htmlProps`     | `{}`                                | A function that takes radio root props and handles changes for the radio group |
 
 ## Usage
 

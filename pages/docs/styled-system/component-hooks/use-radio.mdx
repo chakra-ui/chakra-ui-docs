@@ -23,17 +23,17 @@ The `useRadio` hook returns following props
 | `getCheckboxProps` | `PropGetter` | A function to get the props of the radio.                                |
 | `getInputProps`    | `PropGetter` | A function to get the props of the input field.                          |
 | `getLabelProps`    | `PropGetter` | A function to get the props of the radio label.                          |
+| `getRootProps`     | `PropGetter` | A function to get the props of the radio root.                           |
 | `htmlProps`        | `{}`         | An object with all htmlProps.                                            |
 
 > The `getCheckboxProps` function does return the props of the radio. The naming
-> error is known and would mean a breaking change to a lot of users, which is
-> why we kept it like that.
+> error is known. Changing it would mean a breaking change to a lot of users,
+> which is why it will stay like this until the next major release.
 
 ## Usage
 
 ```jsx
 function Example() {
-  
   const CustomRadio = (props) => {
     const { image, ...radioProps } = props
     const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
