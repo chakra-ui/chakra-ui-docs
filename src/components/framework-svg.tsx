@@ -116,10 +116,10 @@ export const ViteSvg = ({ ...props }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='410'
-      height='404'
-      viewBox='0 0 410 404'
+      width='1em'
+      height='1em'
       fill='none'
+      viewBox='0 0 659 165'
       {...props}
     >
       <title id='vite-logo-title'>Vite Logo</title>

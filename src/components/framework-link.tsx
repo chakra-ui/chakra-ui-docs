@@ -14,6 +14,7 @@ import {
   NextjsSvg,
   RedwoodSvg,
   RemixSvg,
+  ViteSvg,
 } from './framework-svg'
 
 const FrameworkLink = (props) => {
@@ -90,6 +91,14 @@ export const FrameworkLinks = () => {
         name='Remix'
       >
         <RemixSvg style={{ margin: 'auto' }} />
+      </FrameworkLink>
+
+      <FrameworkLink
+        href='/guides/getting-started/vite-guide'
+        accentColor='#F3AC3C'
+        name='Vite'
+      >
+        <ViteSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
     </SimpleGrid>
   )
