@@ -35,8 +35,8 @@ async function getMDXMeta(file: string) {
   const tableOfContent = toc(content)
   const json = tableOfContent.json as TOCResultItem[]
   const slug = fileToPath(file)
-    .replace(`/${websiteRoot}`, '')
-    .replace(process.cwd(), '')
+    .replace(`${websiteRoot}`, '')
+    .replace(fileToPath(process.cwd()), '')
 
   const result: ResultType[] = []
 
