@@ -598,13 +598,15 @@ const HomePage = ({
                 {sponsors.companies.map((i) => (
                   <WrapItem key={i.MemberId}>
                     <Circle
-                      as='a'
-                      href={i.website}
-                      target='_blank'
-                      rel='noopener'
                       size='80px'
                       bg='white'
                       shadow='lg'
+                      {...(i.website && {
+                        as: 'a',
+                        href: i.website,
+                        target: '_blank',
+                        rel: 'noopener',
+                      })}
                     >
                       <ChakraNextImage
                         rounded='full'
@@ -614,6 +616,7 @@ const HomePage = ({
                         key={i.MemberId}
                         src={i.image}
                         loading='lazy'
+                        cursor={i.website ? 'pointer' : 'auto'}
                       />
                     </Circle>
                   </WrapItem>

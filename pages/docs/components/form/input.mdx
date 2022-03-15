@@ -202,9 +202,35 @@ CSS value.
 </Stack>
 ```
 
+### Styling the placeholder
+
+The placeholder of an input can be styled by using the `_placeholder` prop. Per
+default the placeholder has an opacity of 0.6, so it can be necessary to set the
+opacity to 1 if you want the placeholder to have a specific color.
+
+```jsx
+<Stack spacing={3}>
+  <Input placeholder='default placeholder' />
+  <Input
+    placeholder='custom placeholder'
+    _placeholder={{ opacity: 1, color: 'gray.500' }}
+  />
+  <Input
+    color='teal'
+    placeholder='custom placeholder'
+    _placeholder={{ color: 'inherit' }}
+  />
+  <Input
+    color='tomato'
+    placeholder='custom placeholder'
+    _placeholder={{ opacity: 0.4, color: 'inherit' }}
+  />
+</Stack>
+```
+
 ## Props
 
-The `Input` component composes [Box](/docs/components/layout/box) so you can pass all `Box`
-props, and `React.InputHTMLAttributes`.
+The `Input` component composes [Box](/docs/components/layout/box) so you can
+pass all `Box` props, and `React.InputHTMLAttributes`.
 
 <PropsTable of='Input' />
