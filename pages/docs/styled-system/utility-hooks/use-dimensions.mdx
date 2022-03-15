@@ -83,9 +83,7 @@ function example() {
 
 ## Parameters
 
-`useDimensions` requires a ref from the element you want to measure as its first
-parameter.
-
-Optionally it also accepts the paramenter `observe` where if set to true, the
-`resize` and `scroll` events will be attached to the window and recaluclate the
-dimensions on each event.
+| Parameter            | Type                     | Description                                                                                                             |
+| -------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| `ref`                | `RefObject<HTMLElement>` | Reference to the element you want to measure                                                                            |
+| `observe (optional)` | `boolean`                | If set to true, the `resize` and `scroll` events will be attached to the window and update the dimensions on each event |
