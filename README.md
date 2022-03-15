@@ -266,6 +266,11 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/curdin"><img src="https://avatars.githubusercontent.com/u/31509?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Curdin Krummenacher</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=curdin" title="Documentation">📖</a></td>
     <td align="center"><a href="https://tylerpweb.dev"><img src="https://avatars.githubusercontent.com/u/65234762?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Tyler Pfledderer</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=TylerAPfledderer" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/moloughlin"><img src="https://avatars.githubusercontent.com/u/3859277?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Matthew O'Loughlin </b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=moloughlin" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://jacob.omg.lol"><img src="https://avatars.githubusercontent.com/u/29145479?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jacob Marshall</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=jacobhq" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/aroyan"><img src="https://avatars.githubusercontent.com/u/43630681?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Aroyan</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Aaroyan" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://lucas-mesquita.tech"><img src="https://avatars.githubusercontent.com/u/31039396?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Lucas Mesquita</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=Luccasoli" title="Documentation">📖</a></td>
   </tr>
 </table>
 

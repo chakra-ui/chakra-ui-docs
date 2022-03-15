@@ -1,28 +1,28 @@
 import {
   Box,
-  chakra,
   Flex,
   HStack,
   HTMLChakraProps,
   Icon,
   IconButton,
   Link,
+  chakra,
   useColorMode,
   useColorModeValue,
   useDisclosure,
   useUpdateEffect,
 } from '@chakra-ui/react'
-import siteConfig from 'configs/site-config'
 import { useViewportScroll } from 'framer-motion'
 import NextLink from 'next/link'
-import React from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa'
-import { GithubIcon, DiscordIcon } from 'components/icons'
 import Logo, { LogoIcon } from './logo'
 import { MobileNavButton, MobileNavContent } from './mobile-nav'
 import Search from './omni-search'
 import SponsorButton from './sponsor-button'
 import VersionSwitcher from './version-switcher'
+import { DiscordIcon, GithubIcon } from 'components/icons'
+import siteConfig from 'configs/site-config'
 
 function HeaderContent() {
   const mobileNav = useDisclosure()
@@ -31,7 +31,7 @@ function HeaderContent() {
 
   const text = useColorModeValue('dark', 'light')
   const SwitchIcon = useColorModeValue(FaMoon, FaSun)
-  const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
+  const mobileNavBtnRef = useRef<HTMLButtonElement>()
 
   useUpdateEffect(() => {
     mobileNavBtnRef.current?.focus()
@@ -104,22 +104,24 @@ function HeaderContent() {
               />
             </Link>
           </HStack>
-          <IconButton
-            size='md'
-            fontSize='lg'
-            aria-label={`Switch to ${text} mode`}
-            variant='ghost'
-            color='current'
-            ml={{ base: '0', md: '3' }}
-            onClick={toggleMode}
-            icon={<SwitchIcon />}
-          />
-          <SponsorButton ml='5' />
-          <MobileNavButton
-            ref={mobileNavBtnRef}
-            aria-label='Open Menu'
-            onClick={mobileNav.onOpen}
-          />
+          <HStack spacing='5'>
+            <IconButton
+              size='md'
+              fontSize='lg'
+              aria-label={`Switch to ${text} mode`}
+              variant='ghost'
+              color='current'
+              ml={{ base: '0', md: '3' }}
+              onClick={toggleMode}
+              icon={<SwitchIcon />}
+            />
+            <SponsorButton ml='5' />
+            <MobileNavButton
+              ref={mobileNavBtnRef}
+              aria-label='Open Menu'
+              onClick={mobileNav.onOpen}
+            />
+          </HStack>
         </Flex>
       </Flex>
       <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
@@ -129,12 +131,12 @@ function HeaderContent() {
 
 function Header(props: HTMLChakraProps<'header'>) {
   const bg = useColorModeValue('white', 'gray.800')
-  const ref = React.useRef<HTMLHeadingElement>()
-  const [y, setY] = React.useState(0)
+  const ref = useRef<HTMLHeadingElement>()
+  const [y, setY] = useState(0)
   const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
 
   const { scrollY } = useViewportScroll()
-  React.useEffect(() => {
+  useEffect(() => {
     return scrollY.onChange(() => setY(scrollY.get()))
   }, [scrollY])
 

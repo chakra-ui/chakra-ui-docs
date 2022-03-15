@@ -9,6 +9,5 @@ module.exports = withContentlayer()({
     domains: ['img.youtube.com', 'avatars.githubusercontent.com'],
   },
   productionBrowserSourceMaps: true,
-  target: 'serverless',
   redirects: require('./next-redirect'),
 })

@@ -1,15 +1,15 @@
-import * as React from 'react'
-import { useScrollSpy } from 'hooks/use-scrollspy'
 import {
   Box,
+  BoxProps,
   ListItem,
   OrderedList,
-  chakra,
   Text,
+  chakra,
   useColorModeValue,
-  BoxProps,
 } from '@chakra-ui/react'
+import * as React from 'react'
 import { Heading } from 'components/page-container'
+import { useScrollSpy } from 'hooks/use-scrollspy'
 import { t } from 'utils/i18n'
 
 interface TableOfContentProps extends BoxProps {

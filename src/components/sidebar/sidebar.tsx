@@ -1,44 +1,51 @@
-import NextLink from 'next/link'
-import { useRouter } from 'next/router'
-import * as React from 'react'
-import sortBy from 'lodash/sortBy'
 import {
   Badge,
   Box,
   Center,
-  chakra,
   Flex,
   List,
   ListItem,
   ListProps,
   Stack,
+  chakra,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { Routes } from 'utils/get-route-context'
-import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
+import sortBy from 'lodash/sortBy'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import { Fragment, useRef, ReactElement, ReactNode } from 'react'
+import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
 import SidebarCategory from './sidebar-category'
+import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from './sidebar-icons'
 import SidebarLink from './sidebar-link'
-import {
-  DocsIcon,
-  GuidesIcon,
-  TeamIcon,
-  ResourcesIcon,
-} from './sidebar-icons'
-import { FaQuestionCircle } from 'react-icons/fa'
+import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
+import { Routes } from 'utils/get-route-context'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: any
 }
 
-export function SidebarContent(props: SidebarContentProps) {
-  const { routes, pathname, contentRef } = props
+type MainNavLinkProps = {
+  href: string
+  icon: ReactElement
+  children: ReactNode
+  label?: string
+}
+
+export function SidebarContent({
+  routes,
+  pathname,
+  contentRef,
+}: SidebarContentProps) {
   const color = useColorModeValue('gray.700', 'inherit')
   return (
     <>
       {routes.map((lvl1, idx) => {
         return (
-          <React.Fragment key={idx}>
+          <Fragment key={idx}>
             {lvl1.heading && (
               <chakra.h4
                 fontSize='sm'
@@ -97,17 +104,24 @@ export function SidebarContent(props: SidebarContentProps) {
                 </SidebarCategory>
               )
             })}
-          </React.Fragment>
+          </Fragment>
         )
       })}
     </>
   )
 }
 
-const MainNavLink = ({ href, icon, children }) => {
-  const { pathname } = useRouter()
-  const [, group] = href.split('/')
-  const active = pathname.includes(group)
+export const isMainNavLinkActive = (href: string, path: string) => {
+  const [, group, category] = href.split('/')
+
+  return path.includes(
+    href.split('/').length > 3 ? `${group}/${category}` : group,
+  )
+}
+
+const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
+  const { asPath } = useRouter()
+  const active = isMainNavLinkActive(href, asPath)
   const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')
 
   return (
@@ -131,16 +145,21 @@ const MainNavLink = ({ href, icon, children }) => {
   )
 }
 
-const mainNavLinks = [
-  {
-    icon: <DocsIcon />,
-    href: '/docs/getting-started',
-    label: 'Docs',
-  },
+export const mainNavLinks = [
   {
     icon: <GuidesIcon />,
-    href: '/guides/integrations/with-cra',
-    label: 'Guides',
+    href: '/guides/first-steps',
+    label: 'Getting Started',
+  },
+  {
+    icon: <FaTools color='white' />,
+    href: '/docs/styled-system/overview',
+    label: 'Styled System',
+  },
+  {
+    icon: <DocsIcon />,
+    href: '/docs/components/overview',
+    label: 'Components',
   },
   {
     icon: <ResourcesIcon />,
@@ -149,8 +168,13 @@ const mainNavLinks = [
   },
   {
     icon: <FaQuestionCircle color='white' />,
-    href: '/faqs',
+    href: '/faq',
     label: 'FAQ',
+  },
+  {
+    icon: <FaFileAlt color='white' />,
+    href: '/changelog',
+    label: 'Changelog',
   },
   {
     icon: <TeamIcon />,
@@ -164,7 +188,7 @@ const MainNavLinkGroup = (props: ListProps) => {
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
         <ListItem key={item.label}>
-          <MainNavLink icon={item.icon} href={item.href}>
+          <MainNavLink icon={item.icon} href={item.href} label={item.label}>
             {item.label}
           </MainNavLink>
         </ListItem>
@@ -175,7 +199,7 @@ const MainNavLinkGroup = (props: ListProps) => {
 
 const Sidebar = ({ routes }) => {
   const { pathname } = useRouter()
-  const ref = React.useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   return (
     <Box

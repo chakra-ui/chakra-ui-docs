@@ -1,8 +1,8 @@
 import { allDocs } from '.contentlayer/data'
 import type { Doc } from '.contentlayer/types'
-import { MDXComponents } from 'components/mdx-components'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 
 export default function Page({ doc }: { doc: Doc }) {
@@ -16,7 +16,7 @@ export default function Page({ doc }: { doc: Doc }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const docs = allDocs
-    .map((t) => t._raw.flattenedPath.replace('docs/', ''))
+    .map((t) => t._id.replace('docs/', '').replace('.mdx', ''))
     .map((id) => ({ params: { slug: id.split('/') } }))
   return { paths: docs, fallback: false }
 }

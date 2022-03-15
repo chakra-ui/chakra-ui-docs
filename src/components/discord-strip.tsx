@@ -1,7 +1,7 @@
-import { Box, BoxProps, chakra, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, BoxProps, Flex, Heading, Text, chakra } from '@chakra-ui/react'
 import * as React from 'react'
-import DiscordIcon from './docs/discord-logo'
 import Container from './container'
+import DiscordIcon from './docs/discord-logo'
 import { t } from 'utils/i18n'
 
 function DiscordStrip(props: BoxProps) {

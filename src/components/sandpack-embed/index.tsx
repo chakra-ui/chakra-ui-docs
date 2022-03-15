@@ -2,7 +2,12 @@ import { Box, BoxProps } from '@chakra-ui/react'
 import { Sandpack, SandpackProps } from '@codesandbox/sandpack-react'
 import '@codesandbox/sandpack-react/dist/index.css'
 
-const SandpackEmbed = (props: BoxProps & SandpackProps) => (
+type Props = BoxProps &
+  SandpackProps & {
+    dependencies?: Record<string, string>
+  }
+
+const SandpackEmbed = ({ dependencies, ...props }: Props) => (
   <Box
     as={Sandpack}
     {...props}
@@ -20,6 +25,7 @@ const SandpackEmbed = (props: BoxProps & SandpackProps) => (
         '@emotion/react': '^11.7.0',
         '@emotion/styled': '^11.6.0',
         'framer-motion': '^4.1.17',
+        ...dependencies,
       },
     }}
   />

@@ -5,10 +5,10 @@ import {
   LinkBox,
   LinkOverlay,
   Text,
-  useColorModeValue,
+  VStack,
   Wrap,
   WrapItem,
-  VStack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
 

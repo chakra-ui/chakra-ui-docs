@@ -1,15 +1,15 @@
 import {
   Box,
-  chakra,
   Flex,
   SystemStyleObject,
+  chakra,
   useColorModeValue,
   useTheme,
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import * as React from 'react'
-import loadScript from 'utils/load-script'
 import { t } from 'utils/i18n'
+import loadScript from 'utils/load-script'
 
 export function CarbonAd() {
   const ref = React.useRef(null)
