@@ -1260,6 +1260,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "stephane-ruhlmann",
+      "name": "Stephane Ruhlmann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6011018?v=4",
+      "profile": "https://stephane-ruhlmann.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
