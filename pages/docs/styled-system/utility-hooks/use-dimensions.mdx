@@ -21,17 +21,15 @@ This hook returns an object with the properties `marginBox`, `paddingBox`,
 Each of these properties contains a nested object which provides values
 respective to that property:
 
-| Inside the `*Box` properties | Inside `border`, `padding`, and `margin` properties |
-| ---------------------------- | --------------------------------------------------- |
-| `top`                        | `top`                                               |
-| `right`                      | `right`                                             |
-| `bottom`                     | `bottom`                                            |
-| `left`                       | `left`                                              |
-| `width`                      |                                                     |
-| `height`                     |                                                     |
-| `x`                          |                                                     |
-| `y`                          |                                                     |
-| `center` (x,y)               |                                                     |
+| Value:     | Contents:                                                    |
+| ---------- | ------------------------------------------------------------ |
+| marginBox  | top, right, bottom, left, width, height, x, y, center (x, y) |
+| borderBox  | top, right, bottom, left, width, height, x, y, center (x, y) |
+| paddingBox | top, right, bottom, left, width, height, x, y, center (x, y) |
+| contentBox | top, right, bottom, left, width, height, x, y, center (x, y) |
+| border     | top, right, bottom, left                                     |
+| padding    | top, right, bottom, left                                     |
+| margin     | top, right, bottom, left                                     |
 
 ## Usage
 
