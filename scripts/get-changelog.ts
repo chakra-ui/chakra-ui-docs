@@ -18,7 +18,7 @@ export async function main() {
   content = content.replace('<!-- CHANGELOG:INSERT -->', '')
 
   fs.writeFileSync(
-    path.join(process.cwd(), 'pages', 'changelog', 'content.mdx'),
+    path.join(process.cwd(), 'pages', 'changelog', 'index.mdx'),
     content,
   )
 }

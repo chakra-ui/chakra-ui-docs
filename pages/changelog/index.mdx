@@ -1,18 +1,14 @@
 ---
 title: Changelog
 description: The changelog for Chakra UI React
-slug: "/changelog"
+slug: '/changelog'
 ---
 
 The Changelog gives an overview of the meaningful changes we've made to Chakra
 UI as we keep driving for better performance and best-in-class developer
 experience.
 
-
-
 ## 28-02-2022
-
-`@chakra-ui/react@1.8.6`
 
 **Anatomy** `v1.3.0`
 
@@ -29,7 +25,7 @@ experience.
   to handle multi line text input in an editable context.
 
 ```tsx live=false
-<Editable defaultValue="Change me" onChange={console.log}>
+<Editable defaultValue='Change me' onChange={console.log}>
   <EditablePreview />
   <EditableTextarea />
 </Editable>
@@ -446,34 +442,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -481,7 +477,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -489,31 +485,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -531,34 +527,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -566,7 +562,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -574,31 +570,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -611,7 +607,7 @@ const theme = extendTheme({
 
 ```jsx live=false
 // Now you can use only colors from the theme
-import colors from "@chakra-ui/theme/foundations/colors"
+import colors from '@chakra-ui/theme/foundations/colors'
 ```
 
 Here's a table of the theme parts and entrypoints
@@ -639,34 +635,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -674,7 +670,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -682,31 +678,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -760,7 +756,7 @@ const theme = extendTheme({
 - Add helper function `flatten`
 
 ```ts
-import { flatten } from "@chakra-ui/utils"
+import { flatten } from '@chakra-ui/utils'
 
 flatten({ space: [0, 1, 2, 4, 8, 16, 32] })
 /** =>
@@ -812,9 +808,9 @@ template area.
 
 ```jsx live=false
 <Grid templateAreas='"one two three"'>
-   <GridItem area='one'>one</GridItem>
-   <GridItem area='two'>two</GridItem>
-   <GridItem area='three'>three</GridItem>
+  <GridItem area='one'>one</GridItem>
+  <GridItem area='two'>two</GridItem>
+  <GridItem area='three'>three</GridItem>
 </Grid>
 ```
 
@@ -839,8 +835,8 @@ with `.peer` or `data-peer`) attribute.
 
 ```jsx live=false
 <>
-  <input type="checkbox" data-peer />
-  <Box bg="white" _peerFocus={{ bg: "green.400" }} />
+  <input type='checkbox' data-peer />
+  <Box bg='white' _peerFocus={{ bg: 'green.400' }} />
 </>
 ```
 
@@ -942,7 +938,7 @@ Add the addon to your configuration in `.storybook/main.js`:
 
 ```js live=false
 module.exports = {
-  addons: ["@chakra-ui/storybook-addon"],
+  addons: ['@chakra-ui/storybook-addon'],
 }
 ```
 
@@ -1041,7 +1037,7 @@ module.exports = {
   </PopoverTrigger>
   {/* popover will be positioned relative to this */}
   <PopoverAnchor>
-    <Box width="40px" height="40px" />
+    <Box width='40px' height='40px' />
   </PopoverAnchor>
   <PopoverContent>Hello World</PopoverContent>
 </Popover>
@@ -1070,10 +1066,10 @@ module.exports = {
 function Example() {
   // Via instantiation
   const toast = useToast({
-    position: "top",
-    title: "Container style is customizable",
+    position: 'top',
+    title: 'Container style is customizable',
     containerStyle: {
-      maxWidth: "100%",
+      maxWidth: '100%',
     },
   })
 
@@ -1083,7 +1079,7 @@ function Example() {
       onClick={() => {
         toast({
           containerStyle: {
-            maxWidth: "100%",
+            maxWidth: '100%',
           },
         })
       }}
@@ -1114,8 +1110,8 @@ function Example() {
 
 ```jsx live=false
 const HeartIcon = createIcon({
-  displayName: "HeartIcon",
-  path: [<path stroke="none" d="..." fill="none" />, <path d="..." />],
+  displayName: 'HeartIcon',
+  path: [<path stroke='none' d='...' fill='none' />, <path d='...' />],
 })
 ```
 
@@ -1181,10 +1177,10 @@ Here's how to resolve it:
 
 ```jsx live=false
 // Won't work 🎇
-import { useOutsideClick } from "@chakra-ui/hooks/dist/use-outside-click"
+import { useOutsideClick } from '@chakra-ui/hooks/dist/use-outside-click'
 
 // Works ✅
-import { useOutsideClick } from "@chakra-ui/hooks"
+import { useOutsideClick } from '@chakra-ui/hooks'
 ```
 
 If this affected your project, we recommend that you import hooks, functions or
@@ -1594,10 +1590,10 @@ theme but we promise to revisit the typings and API very soon.
 Creating a CSS variable in the theme
 
 ```jsx live=false
-import { cssVar, calc } from "@chakra-ui/theme-tools"
+import { cssVar, calc } from '@chakra-ui/theme-tools'
 
-const $width = cssVar("slider-width")
-const $height = cssVar("slider-height")
+const $width = cssVar('slider-width')
+const $height = cssVar('slider-height')
 
 const $diff = calc($width).subtract($height).toString()
 
@@ -1667,7 +1663,7 @@ type-safe, multipart component styles.
   root FormControl element to be themed.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
   components: {
@@ -1677,8 +1673,8 @@ export const theme = extendTheme({
         custom: {
           // style the root `FormControl` element
           container: {
-            color: "white",
-            bg: "blue.900",
+            color: 'white',
+            bg: 'blue.900',
           },
         },
       },
@@ -1860,7 +1856,7 @@ export or an export named `theme`.
 
 ```jsx live=false
 // chakra-theme-package/src/index.js
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({})
 
@@ -1992,7 +1988,7 @@ To use this API, you'll need to set `transform` to `auto` or `auto-gpu` (for the
 GPU accelerated version).
 
 ```jsx live=false
-<Circle transform="auto" translateX="4" _hover={{ translateX: "8" }}>
+<Circle transform='auto' translateX='4' _hover={{ translateX: '8' }}>
   <CheckIcon />
 </Circle>
 ```
@@ -2204,35 +2200,35 @@ import {
   withDefaultSize,
   withDefaultVariant,
   withDefaultProps,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 const customTheme = extendTheme(
   {
     colors: {
       brand: {
         // ...
-        500: "#b4d455",
+        500: '#b4d455',
         // ...
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: "brand" }),
+  withDefaultColorScheme({ colorScheme: 'brand' }),
   withDefaultSize({
-    size: "lg",
-    components: ["Input", "NumberInput", "PinInput"],
+    size: 'lg',
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   withDefaultVariant({
-    variant: "outline",
-    components: ["Input", "NumberInput", "PinInput"],
+    variant: 'outline',
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   // or all in one:
   withDefaultProps({
     defaultProps: {
-      colorScheme: "brand",
-      variant: "outline",
-      size: "lg",
+      colorScheme: 'brand',
+      variant: 'outline',
+      size: 'lg',
     },
-    components: ["Input", "NumberInput", "PinInput"],
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   // optional:
   yourCustomBaseTheme, // defaults to our chakra default theme
@@ -2279,7 +2275,7 @@ const customTheme = extendTheme(
   `end`.
 
 ```jsx live=false
-<Button isLoading spinnerPlacement="end">
+<Button isLoading spinnerPlacement='end'>
   Click me
 </Button>
 ```
@@ -2539,7 +2535,7 @@ Popover
 - Use `--popover-bg` css property to control popover and arrow background.
 
 ```jsx live=false
-<PopoverContent style={{ "--popover-bg": "purple" }}>
+<PopoverContent style={{ '--popover-bg': 'purple' }}>
   <PopoverArrow />
 </PopoverContent>
 ```
@@ -2658,9 +2654,9 @@ Update text align attribute to use end instead of right for RTL.
 ```jsx live=false
 <Box
   sx={{
-    "--banner-color": "colors.red.200",
-    "& .banner": {
-      bg: "var(--banner-color)",
+    '--banner-color': 'colors.red.200',
+    '& .banner': {
+      bg: 'var(--banner-color)',
     },
   }}
 />
@@ -2877,7 +2873,7 @@ Update text align attribute to use end instead of right for RTL.
   `extendTheme` function even further.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 export const customTheme = extendTheme({
   // here you get autocomplete for
@@ -2919,13 +2915,13 @@ You can get typesafe access to your custom theme like this:
 const theme = {
   textStyles: {
     caps: {
-      fontWeight: "bold",
-      fontSize: "24px",
+      fontWeight: 'bold',
+      fontSize: '24px',
     },
   },
 }
 
-const styles = css({ textStyle: "caps" })(theme)
+const styles = css({ textStyle: 'caps' })(theme)
 ```
 
 This also works for the component theme as well.
