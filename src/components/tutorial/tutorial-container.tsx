@@ -1,4 +1,12 @@
-import { Box, Flex, chakra, Stack, HStack } from '@chakra-ui/react'
+import {
+  Box,
+  chakra,
+  Stack,
+  HStack,
+  Flex,
+  VStack,
+  Text,
+} from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import {
   SandpackCodeEditor,
@@ -77,36 +85,37 @@ function TutorialContainer({
           <TutorialSidebar />
           <Box flex='1' minW='0'>
             <SkipNavContent />
-            <Box id='content' px={5} mx='auto' minH='76vh'>
+            <Box id='content' pr={5} mx='auto' minH='70vh'>
               <SandpackProvider customSetup={{ files }} template='react'>
-                {/* <ScrollContainer h='100vh' w='53vw'> */}
                 <Box
                   minW='0'
                   flex='auto'
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <PageTransition style={{ maxWidth: '48rem' }}>
+                  <PageTransition>
                     <HStack>
-                      <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
-                        {title}
-                      </chakra.h1>
-                      {children}
-                      <Box mt='40px'>
-                        <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
-                        {pagination || null}
+                      <Box overflowY={'auto'} flex={1} h={'75vh'} pr={'6'}>
+                        <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                          {title}
+                        </chakra.h1>
+                        {children}
+                        <Box mt='40px'>
+                          <Box>
+                            {editUrl && <EditPageLink href={editUrl} />}
+                          </Box>
+                          {pagination || null}
+                        </Box>
+                        <Box pb='20'></Box>
                       </Box>
-
-                      {/* </ScrollContainer> */}
-                      <Box>
+                      <Box flex={1}>
                         <SandpackLayout theme={'night-owl'}>
-                          <Stack spacing={0} h='100vh' w='100%'>
+                          <Stack spacing={0} w={'full'} h={'75vh'}>
                             <Navigator />
                             <SandpackCodeEditor
                               showLineNumbers
                               customStyle={{
                                 height: '50%',
-                                fontFamily: 'poppins',
                               }}
                             />
                             <SandpackPreview
@@ -116,9 +125,7 @@ function TutorialContainer({
                         </SandpackLayout>
                       </Box>
                     </HStack>
-                    <Box pb='20'>
-                      <Footer />
-                    </Box>
+                    <Footer showVercelCallout={false} mt={'6'} spacing={2} />
                   </PageTransition>
                 </Box>
               </SandpackProvider>

@@ -23,12 +23,12 @@ export function getRoutes(slug: string) {
   return sidebar?.routes ?? []
 }
 
-interface MDXLayoutProps {
+interface MDXTutorialLayoutProps {
   frontmatter: any
   children: ReactNode
 }
 
-export default function MDXLayout({ frontmatter, children }: MDXLayoutProps) {
+export default function MDXTutorialLayout({ frontmatter, children }: MDXTutorialLayoutProps) {
   const routes = getRoutes(frontmatter.slug)
 
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
