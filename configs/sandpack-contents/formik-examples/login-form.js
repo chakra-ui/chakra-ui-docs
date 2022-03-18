@@ -75,7 +75,7 @@ import App from "./App";
 
 const rootElement = document.getElementById("root");
 render(
-  <ChakraProvider er>
+  <ChakraProvider>
     <App />
   </ChakraProvider>,
   rootElement
