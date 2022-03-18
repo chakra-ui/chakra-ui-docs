@@ -9,129 +9,50 @@ If you'd like to extend your [Formik](https://formik.org/) integration, you can
 definetly do that with ChakraUI. In the following example we'll create a custom
 `ImageRadio` component.
 
-For starters, we'll create the type for the props this component will recieve.
-It will use the `UseRadioProps` and `ImageProps` from ChakraUI, additionally it
-will have an image url.
-
-```js live=false
-// image-radio.tsx
-import { UseRadioProps, ImageProps } from '@chakra-ui/react'
-
-type Props = UseRadioProps &
-  ImageProps & {
-    image: string,
-  }
-```
-
-Then we'll create the component itself. We'll use `forwardRef` to automatically
-pass the ref to the children.
-
-```js live=false
-// image-radio.tsx
-import * as React from 'react'
-import { UseRadioProps, ImageProps } from '@chakra-ui/react'
-
-type Props = UseRadioProps &
-  ImageProps & {
-    image: string,
-  }
-
-const ImageRadio = React.forwardRef((props: Props, ref) => {
-  const { image, name, ...radioProps } = props
-})
-
-export default ImageRadio
-```
-
 To get the necessary props from ChakraUI for the Radio button, we'll use
 `useRadio` and on top of that we'll define constant to see if the `Radio` is
 checked.
 
-```js live=false
-// image-radio.tsx
-import * as React from 'react'
-import { UseRadioProps, ImageProps, useRadio } from '@chakra-ui/react'
-
-const ImageRadio = React.forwardRef((props: Props, ref) => {
-  const { image, name, ...radioProps } = props
-
-  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
-    useRadio({
-      isChecked: isChecked,
-      ...field,
-    })
-})
-
-export default ImageRadio
-```
-
 To hook up our custom `Radio` component with Formik, we'll use `useField`.
-
-```js live=false
-// image-radio.tsx
-import * as React from 'react'
-import { UseRadioProps, ImageProps, useRadio } from '@chakra-ui/react'
-import { useField } from 'formik'
-
-const ImageRadio = React.forwardRef((props: Props, ref) => {
-  const { image, name, ...radioProps } = props
-
-  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
-    useRadio({
-      isChecked: isChecked,
-      ...field,
-    })
-
-  const [{ checked, ...field }] = useField({
-    name,
-    type: 'radio',
-    value: radioProps.value.toString(),
-    checked: isChecked,
-  })
-})
-
-export default ImageRadio
-```
 
 Last but not least, we'll need to render our content, we'll pass the
 `getInputProps` and `getCheckedProps` from Chakra to complete the integration.
 
-```js live=false
-// image-radio.tsx
-import * as React from 'react'
-import { UseRadioProps, ImageProps, useRadio } from '@chakra-ui/react'
-import { useField } from 'formik'
+import {
+  App as AppValidation,
+  Index as IndexValidation,
+  ImageRadio as ImageRadioValidation,
+  RadioGroup as RadioGroupValidation,
+  Input as InputValidation,
+} from 'configs/sandpack-contents/advanced-formik-integration/image-radio-buttons'
 
-const ImageRadio = React.forwardRef((props: Props, ref) => {
-  const { image, name, ...radioProps } = props
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  dependencies={{
+    formik: '2.2.9',
+  }}
+  files={{
+    '/App.tsx': AppValidation,
+    '/index.tsx': IndexValidation,
+    '/image-radio.tsx': ImageRadioValidation,
+    '/radio-group.tsx': RadioGroupValidation,
+    '/input.tsx': InputValidation,
+  }}
+/>
 
-  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
-    useRadio({
-      isChecked: isChecked,
-      ...field,
-    })
+As you can see in this example we're using a `Radio Group` to render multiple
+radio buttons and on top of that we've also created an `Input`.
 
-  const [{ checked, ...field }] = useField({
-    name,
-    type: 'radio',
-    value: radioProps.value.toString(),
-    checked: isChecked,
-  })
-  return (
-    <chakra.label {...htmlProps} cursor='pointer'>
-      <input {...getInputProps({}, ref)} hidden />
-      <Box
-        {...getCheckboxProps()}
-        bg={state.isChecked ? 'green.200' : 'transparent'}
-        w={12}
-        p={1}
-        rounded='full'
-      >
-        <Image src={image} rounded='full' {...getLabelProps()} />
-      </Box>
-    </chakra.label>
-  )
-})
+The goal is when we submit the form, we should get the value of the input and
+which **radio** we've picked.
 
-export default ImageRadio
-```
+So to go ahead and try it, submit the form and check the console in the
+CodeSandbox.
+
+> If you have any questions, or need help around an advanced usage, don't
+> hesitate to reach out in our [Discord server](https://discord.gg/chakra-ui).
