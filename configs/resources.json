@@ -279,6 +279,18 @@
       "author": "Andrej Acevski",
       "description": "In this Short we'll we're covering dynamic shadows and how you can create them using Chakra UI.",
       "url": "https://www.youtube.com/watch?v=HMTyQjASff4"
+    }, 
+    {
+      "heading": "Chakra Shorts #2 - Custom Ring Colors",
+      "type": "video",
+      "tags": [
+        "Chakra UI",
+        "Chakra Shorts",
+        "Open Source"
+      ],
+      "author": "Andrej Acevski",
+      "description": "In this video, I'll show you how to change the default ring color. This method can be applied to not just the button, but any element that has a ring and a focus state.",
+      "url": "https://www.youtube.com/watch?v=7p16X1JkEE0"
     }
   ]
 }
