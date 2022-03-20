@@ -30,6 +30,7 @@ import {
   Th,
   Td,
   TableCaption,
+  TableContainer,
 } from '@chakra-ui/react'
 ```
 
@@ -157,6 +158,56 @@ is `md`.
     </Tr>
   </Tfoot>
 </Table>
+```
+
+## Table Container
+
+The table container component renders a `div` that wraps the table component to
+not allow the table to overflow the parent container, not allow data content to
+break lines without exception, and enable horizontal scrolling.
+
+It can optionally accept the `overflow` or `overflowX` props to override the
+`overflowX` default value of `auto` rendered by this component.
+
+```jsx
+// The below table is in a constrained parent container to show the hidden overflow from `TableContainer`
+<Box w='260px' mx='auto' p={6} border='2px solid' borderColor='blue.700'>
+  <TableContainer>
+    <Table>
+      <Thead>
+        <Tr>
+          <Th>To convert</Th>
+          <Th>into</Th>
+          <Th isNumeric>multiply by</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>inches</Td>
+          <Td>millimetres (mm)</Td>
+          <Td isNumeric>25.4</Td>
+        </Tr>
+        <Tr>
+          <Td>feet</Td>
+          <Td>centimetres (cm)</Td>
+          <Td isNumeric>30.48</Td>
+        </Tr>
+        <Tr>
+          <Td>yards</Td>
+          <Td>metres (m)</Td>
+          <Td isNumeric>0.91444</Td>
+        </Tr>
+      </Tbody>
+      <Tfoot>
+        <Tr>
+          <Th>To convert</Th>
+          <Th>into</Th>
+          <Th isNumeric>multiply by</Th>
+        </Tr>
+      </Tfoot>
+    </Table>
+  </TableContainer>
+</Box>
 ```
 
 ## Props
