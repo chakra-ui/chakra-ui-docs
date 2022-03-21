@@ -56,6 +56,8 @@ function Example() {
     )
   }
 
+  const toast = useToast()
+
   const avatars = [
     { name: 'Kat', image: 'https://randomuser.me/api/portraits/women/44.jpg' },
     { name: 'Kevin', image: 'https://randomuser.me/api/portraits/men/86.jpg' },
@@ -63,8 +65,17 @@ function Example() {
     { name: 'Jess', image: 'https://randomuser.me/api/portraits/women/95.jpg' },
   ]
 
+  const handleChange = (value) => {
+    toast({
+      title: `The value got changed to ${value}!`,
+      status: 'success',
+      duration: 2000,
+    })
+  }
+
   const { value, getRadioProps, getRootProps } = useRadioGroup({
     defaultValue: 'Kevin',
+    onChange: handleChange,
   })
 
   return (
@@ -74,6 +85,7 @@ function Example() {
         {avatars.map((avatar) => {
           return (
             <CustomRadio
+              key={avatar.name}
               image={avatar.image}
               {...getRadioProps({ value: avatar.name })}
             />
