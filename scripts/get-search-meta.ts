@@ -1,4 +1,9 @@
-import { fileToPath, parseMarkdownFile, removePrefix } from '@docusaurus/utils'
+import {
+  fileToPath,
+  parseMarkdownFile,
+  posixPath,
+  removePrefix,
+} from '@docusaurus/utils'
 import fs from 'fs'
 //@ts-ignore
 import toc from 'markdown-toc'
@@ -30,20 +35,19 @@ interface TOCResultItem {
 const websiteRoot = 'pages'
 
 async function getMDXMeta(file: string) {
-  /**
-   * Windows fix
-   *  - Ensure the slashes in the incoming file string are foward slashes
-   *  to allow `fileToPath` function to operate as intended.
-   */
-  const filePathWithForwardSlashes = file.replace(/\\/g, '/')
+  // For Windows: convert backslashes to forwards slashes for consistency
+  const posixFile = posixPath(file)
+  const posixCWD = posixPath(process.cwd())
 
-  const { content, frontMatter: _frontMatter } = await parseMarkdownFile(file)
+  const { content, frontMatter: _frontMatter } = await parseMarkdownFile(
+    posixFile,
+  )
   const frontMatter = _frontMatter as Record<string, any>
   const tableOfContent = toc(content)
   const json = tableOfContent.json as TOCResultItem[]
-  const slug = fileToPath(filePathWithForwardSlashes)
-    .replace(`${websiteRoot}`, '')
-    .replace(fileToPath(process.cwd()), '')
+  const slug = fileToPath(posixFile)
+    .replace(`/${websiteRoot}`, '')
+    .replace(posixCWD, '')
 
   const result: ResultType[] = []
 
