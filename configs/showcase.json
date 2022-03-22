@@ -453,6 +453,13 @@
       "url": "https://chakra-icons.com",
       "image": "showcases/tools/create-chakra-icons.png",
       "type": "tools"
+    },
+    {
+      "name": "react-spreadsheet-import",
+      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "url": "https://ugnissoftware.github.io/react-spreadsheet-import/iframe.html?id=react-spreadsheet-import--basic&args=&viewMode=story",
+      "image": "showcases/tools/react-spreadsheet-import.png",
+      "type": "tools"
     }
   ],
   "articles": [
