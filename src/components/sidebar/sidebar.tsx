@@ -119,7 +119,7 @@ export const isMainNavLinkActive = (href: string, path: string) => {
   )
 }
 
-const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
+export const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
   const { asPath } = useRouter()
   const active = isMainNavLinkActive(href, asPath)
   const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')

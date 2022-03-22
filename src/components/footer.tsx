@@ -80,9 +80,7 @@ const NigeriaFlag = (props) => (
   </chakra.svg>
 )
 
-export const Footer: React.FunctionComponent<
-  StackProps & { showVercelCallout?: boolean }
-> = ({ showVercelCallout = true, ...props }) => (
+export const Footer: React.FunctionComponent<StackProps> = (props) => (
   <VStack as='footer' spacing={4} mt={12} textAlign='center' {...props}>
     <Text fontSize='sm'>
       <span>
@@ -96,7 +94,7 @@ export const Footer: React.FunctionComponent<
         <FooterLink key={link.href} {...link} />
       ))}
     </Stack>
-    {showVercelCallout && <VercelCallout />}
+    <VercelCallout />
   </VStack>
 )
 
