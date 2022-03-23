@@ -35,19 +35,19 @@ interface TOCResultItem {
 const websiteRoot = 'pages'
 
 async function getMDXMeta(file: string) {
-  // For Windows: convert backslashes to forwards slashes for consistency
-  const posixFile = posixPath(file)
-  const posixCWD = posixPath(process.cwd())
+  // For Windows: convert backslashes to forwards slashes with `posixPath()` for consistency
+  const filePath = posixPath(file)
+  const processCWD = posixPath(process.cwd())
 
   const { content, frontMatter: _frontMatter } = await parseMarkdownFile(
-    posixFile,
+    filePath,
   )
   const frontMatter = _frontMatter as Record<string, any>
   const tableOfContent = toc(content)
   const json = tableOfContent.json as TOCResultItem[]
-  const slug = fileToPath(posixFile)
+  const slug = fileToPath(filePath)
     .replace(`/${websiteRoot}`, '')
-    .replace(posixCWD, '')
+    .replace(processCWD, '')
 
   const result: ResultType[] = []
 
