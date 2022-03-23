@@ -1,22 +1,19 @@
 ---
 title: Advanced Formik integration
-description: How you can take ChakraUI and Formik to the next level.
+description: Advanced customization and integration of Chakra UI and Formik.
 tags: ['formik', 'form', 'integration']
 author: aacevski
 ---
 
-If you'd like to extend your [Formik](https://formik.org/) integration, you can
-definetly do that with ChakraUI. In the following example we'll create a custom
-`ImageRadio` component.
+Chakra UI can be coupled smoothly with [Formik](https://formik.org/), by the end
+of the example up ahead, you will be proficient at Chakra & Formik.
 
-To get the necessary props from ChakraUI for the Radio button, we'll use
-`useRadio` and on top of that we'll define constant to see if the `Radio` is
-checked.
+In the `ImageRadio` component, we will utilize the `useRadio` hook from Chakra
+UI to get the necessary props and the `isChecked` boolean. `isChecked` will be
+used for validation in Formik's `useField` hook.
 
-To hook up our custom `Radio` component with Formik, we'll use `useField`.
-
-Last but not least, we'll need to render our content, we'll pass the
-`getInputProps` and `getCheckedProps` from Chakra to complete the integration.
+To finalize, we will need to render our content and pass `getInputProps` and
+`getCheckedProps` from Chakra UI.
 
 import {
   App as AppValidation,
@@ -45,14 +42,13 @@ import {
   }}
 />
 
-As you can see in this example we're using a `Radio Group` to render multiple
-radio buttons and on top of that we've also created an `Input`.
+In the example above, there are 2 more components:
 
-The goal is when we submit the form, we should get the value of the input and
-which **radio** we've picked.
+- `Radio Group` - which renders multiple radio buttons
+- `Input` - where we will enter our value of choice
 
-So to go ahead and try it, submit the form and check the console in the
-CodeSandbox.
+Upon submitting the form, in the CodeSandbox console, you should see the result
+of which radio you've selected but also the value of the input.
 
 > If you have any questions, or need help around an advanced usage, don't
 > hesitate to reach out in our [Discord server](https://discord.gg/chakra-ui).
