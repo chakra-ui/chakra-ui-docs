@@ -1269,6 +1269,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "aiji42",
+      "name": "AijiUejima",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6711766?v=4",
+      "profile": "https://github.com/aiji42",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
