@@ -135,8 +135,10 @@ To manage Typography options, the theme object supports the following keys:
 - `letterSpacings`
 
 ```js
-// example theme object
-export default {
+import { extendTheme } from '@chakra-ui/react'
+
+// example theme
+const theme = extendTheme({
   colors: {...},
   fonts: {
     body: "system-ui, sans-serif",
@@ -194,7 +196,7 @@ export default {
     wider: "0.05em",
     widest: "0.1em",
   },
-};
+});
 ```
 
 ## Breakpoints
@@ -205,16 +207,17 @@ Chakra UI comes with a predefined set of commonly used breakpoints.
 > [Responsive Styles and Customizing Breakpoints](/docs/styled-system/features/responsive-styles).
 
 ```js
-// theme.js
-import { createBreakpoints } from '@chakra-ui/theme-tools'
+import { extendTheme } from '@chakra-ui/react'
 
-export default createBreakpoints({
+const breakpoints = {
   sm: '30em',
   md: '48em',
   lg: '62em',
   xl: '80em',
   '2xl': '96em',
-})
+}
+
+const theme = extendTheme({ breakpoints, ... })
 ```
 
 ## Spacing
@@ -224,7 +227,9 @@ your project. By default these spacing value can be referenced by the `padding`,
 `margin`, and `top`, `left`, `right`, `bottom` styles.
 
 ```js
-export default {
+import { extendTheme } from '@chakra-ui/react'
+
+const spacing = {
   space: {
     px: '1px',
     0.5: '0.125rem',
@@ -261,6 +266,8 @@ export default {
     96: '24rem',
   },
 }
+
+const theme = extendTheme({ spacing, ... })
 ```
 
 By default, Chakra includes a comprehensive numeric spacing scale inspired by
@@ -312,7 +319,9 @@ build for your project. By default these sizes value can be referenced by the
 `width`, `height`, and `maxWidth`, `minWidth`, `maxHeight`, `minHeight` styles.
 
 ```js
-export default {
+import { extendTheme } from '@chakra-ui/react'
+
+const sizes = {
   sizes: {
     ...theme.space,
     max: 'max-content',
@@ -340,6 +349,8 @@ export default {
     },
   },
 }
+
+const theme = extendTheme({ sizes, ...})
 ```
 
 A component like this: `<Box w={4} h={3} />` will generate an empty `div` with
@@ -350,7 +361,9 @@ width set to `1rem` or `16px` and height set to `0.75rem` or `12px`.
 Chakra provides a set of smooth corner radius values.
 
 ```js
-export default {
+import { extendTheme } from '@chakra-ui/react'
+
+const borderRadius = {
   radii: {
     none: '0',
     sm: '0.125rem',
@@ -363,6 +376,8 @@ export default {
     full: '9999px',
   },
 }
+
+const theme = extendTheme({ borderRadius, ...})
 ```
 
 ## z-index values
@@ -375,7 +390,9 @@ Chakra provides a minimal set of z-Indices out of the box to help control the
 stacking order of components.
 
 ```js
-export default {
+import { extendTheme } from '@chakra-ui/react'
+
+const zIndices = {
   zIndices: {
     hide: -1,
     auto: 'auto',
@@ -392,6 +409,7 @@ export default {
     tooltip: 1800,
   },
 }
+const theme = extendTheme({ zIndices, ...})
 ```
 
 ## Config
@@ -409,6 +427,8 @@ You can leverage the `extendTheme` function to override a specific theme config
 property.
 
 ```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
 const theme = extendTheme({
   config: {
     cssVarPrefix: 'ck',

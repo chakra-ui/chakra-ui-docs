@@ -179,21 +179,17 @@ only one prop to manage this, you can rename it to `boxSize`.
 
 **You may skip this if you didn't customize your breakpoints.**
 
-To provide easier extensibility and typesafety, breakpoints should now be
-created through `createBreakpoints` by passing an object:
+To provide easier extensibility, breakpoints should now be passed as an object:
 
 ```diff
 + import { extendTheme } from "@chakra-ui/react"
-+ import { createBreakpoints } from "@chakra-ui/theme-tools"
 
-
-+ const breakpoints = createBreakpoints({
++ const breakpoints = {
 +   sm: "30em",
 +   md: "48em",
 +   lg: "62em",
 +   xl: "80em",
-+ })
-
++ }
 
 const overrides = {
 - breakpoints: ["30em", "48em", "62em", "80em"]
@@ -206,9 +202,9 @@ const overrides = {
 **Please note that unless you plan overriding all components, `sm` to `xl` are
 required.**
 
-You may of course add for example `xxl` or other breakpoints in between -
-`createBreakpoints` will sort in ascending order. It is advisable to not mix css
-units.
+You may of course add for example `xxl` or other breakpoints in between - they
+will be ordered automatically by their value. Therefore it is advisable to not
+mix css units.
 
 > **Reason:** Previously, breakpoints on a theme had to be an array with your
 > breakpoints in ascending order which made it hard to reference which value was

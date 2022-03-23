@@ -159,6 +159,14 @@
             {
               "title": "useCheckboxGroup",
               "path": "/docs/styled-system/component-hooks/use-checkbox-group"
+            },
+            {
+              "title": "useRadio",
+              "path": "/docs/styled-system/component-hooks/use-radio"
+            },
+            {
+              "title": "useRadioGroup",
+              "path": "/docs/styled-system/component-hooks/use-radio-group"
             }
           ]
         },
