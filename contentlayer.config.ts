@@ -47,6 +47,35 @@ const Guides = defineDocumentType(() => ({
   },
 }))
 
+const Blogs = defineDocumentType(() => ({
+  name: 'Blog',
+  filePathPattern: 'blogs/**/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    author: { type: 'string' },
+    publishedDate: { type: 'string' },
+  },
+  computedFields: {
+    ...computedFields,
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        publishedDate: {
+          raw: doc.publishedDate,
+          iso: new Date(doc.publishedDate).toISOString(),
+          text: new Date(doc.publishedDate).toDateString(),
+        },
+        author: doc.author,
+        title: doc.title,
+        description: doc.description,
+        slug: `/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}))
+
 const Doc = defineDocumentType(() => ({
   name: 'Doc',
   filePathPattern: 'docs/**/*.mdx',
@@ -121,7 +150,7 @@ const Changelog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'pages',
-  documentTypes: [Doc, Guides, FAQ, Changelog],
+  documentTypes: [Doc, Guides, FAQ, Changelog, Blogs],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
