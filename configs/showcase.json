@@ -153,6 +153,13 @@
       "url": "https://pre-alpha.polygon.am/",
       "image": "showcases/projects/Polygon.png",
       "type": "projects"
+    },
+    {
+      "name": "Polygon",
+      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
+      "url": "https://polygon.am/",
+      "image": "showcases/projects/Polygon.png",
+      "type": "projects"
     }
   ],
   "websites": [
