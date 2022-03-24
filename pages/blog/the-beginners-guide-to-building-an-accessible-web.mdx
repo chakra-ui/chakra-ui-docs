@@ -7,8 +7,6 @@ author: estheragbaje
 publishedDate: 03/23/2022
 ---
 
-## Introduction
-
 Accessibility
 ([a11y](https://developer.mozilla.org/en-US/docs/Web/Accessibility)) is an
 essential part of web development because it provides unrestricted access to
@@ -26,9 +24,6 @@ Luckily, accessibility isn’t so difficult to implement. Once you understand th
 issues that make a site nearly impossible to use by certain people, you can take
 the measures to prevent those issues and ensure your site is welcoming to all.
 
-This article will explain web accessibility, its importance and equip you with
-some actionable practices to start building a more accessible web.
-
 ## What is Web Accessibility?
 
 Web accessibility is the method of making websites and web applications usable
@@ -36,17 +31,16 @@ by everyone, including those with a form of disability, impairments, or
 limitations.
 
 [Nearly 15% of the world's population](https://www.who.int/en/news-room/fact-sheets/detail/disability-and-health)
-live with some form of disability. Safe to say, if you don't develop your site
-to work well with Assistive Technology (AT) like a screen reader, you prevent
-almost 1 billion people from engaging with your content.
+lives with some form of disability. Safe to say, if you don't develop your site
+to work with Assistive Technology (AT) like a screen reader, you prevent almost
+1 billion people from engaging with your content.
 
 When you build an accessible website, you're breaking down the walls of web
 exclusion and granting all users equal access to the web.
 
 ### Reasons for Web Accessibility
 
-Building an accessible web is important for many reasons. Three primary reasons
-include:
+Building an accessible web is important for the following reasons:
 
 **1. Improves usability:** Usability involves creating an effective, efficient,
 and satisfying product. When you make the web accessible, you automatically
@@ -69,23 +63,27 @@ cognitive ability.
 
 The two main guidelines that set web accessibility standards are:
 
-#### 1. The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) ([WCAG 2.1](https://www.w3.org/TR/WCAG21/))
+#### 1. The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) (WCAG 2.1)
 
 The Web Accessibility Initiative (WAI), managed by the World Wide Web Consortium
 (W3C), published these guidelines. They are basic rules that explain how
 developers can create more accessible content for people with disabilities.
 
-The WCAG is based on four principles, known as "**POUR**."
+The WCAG is based on four principles, known as
+["**POUR**."](https://www.w3.org/WAI/fundamentals/accessibility-principles/)
 
-- Perceivable: All information and user interface components must be presented
-  to users in a way they can perceive it.
-- Operable: User interface (UI) components and navigation must be operable.
-- Understandable: All information and the operation of the user interface must
-  be understandable by users
-- Robust: Content must be robust enough to be interpreted by many users and
-  assistive technologies.
+**1. Perceivable**: All information and user interface components must be
+presented to users in a way they can perceive it.
 
-#### 2. The [Web Accessibility Initiative — Accessible Rich Internet Applications (WAI-ARIA)](https://www.w3.org/WAI/intro/aria)
+**2. Operable**: User interface (UI) components and navigation must be operable.
+
+**3. Understandable**: All information and the operation of the user interface
+must be understandable by users
+
+**4. Robust**: Content must be robust enough to be interpreted by many users and
+assistive technologies.
+
+#### 2. The [Web Accessibility Initiative — Accessible Rich Internet Applications](https://www.w3.org/WAI/intro/aria) (WAI-ARIA)
 
 The Accessible Rich Internet Applications Working Group
 ([ARIA WG](https://www.w3.org/WAI/ARIA/)), also run by the W3C WAI, came up with
@@ -104,8 +102,9 @@ for building accessible web components and offers the following:
 
 ## 10 best practices for building an accessible web
 
-For you to truly build accessible websites and web apps, you have a lot of
-factors to consider. Below are a few best practices:
+To build accessible websites and web apps following the principles and
+guidelines above, let's examine some action items and best practices you can
+implement:
 
 ### 1. Write Semantic HTML
 
@@ -119,9 +118,9 @@ button and a user should take action. What about the `<div>` tag? You probably
 guessed right! The `<div>` tag is a non-semantic HTML because it only acts as a
 wrap and doesn't communicate the meaning of its enclosed content.
 
-When developing a product, should strive to write semantic HTML because
-assistive technologies like screen readers use semantic HTML to understand how
-best to interpret each element to a user.
+When developing a product, strive to write semantic HTML because assistive
+technologies like screen readers use semantic HTML to understand how best to
+interpret each element to a user.
 
 ![Semantic HTML](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6q75pkuu7m934yyqwml2.png)
 
@@ -138,22 +137,24 @@ ALT provides descriptive text to images. These ALT texts allow screen readers to
 notify users of the kind of image. Without an ALT text, a screen reader would
 simply say `<image>` and not the image's description.
 
-Here's an example ALT text for an image
-
-![Tower bridge at dawn](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/80z7sddjqqlih0vs5jlp.jpeg)
-
-_Source: [Flicker](https://www.flickr.com/photos/duncanh1/25316870168)_
+Here's an example ALT text for the image below:
 
 ```jsx live=false
 <img src='/images/towerbridge.jpg' alt='Tower bridge at dawn' />
 ```
 
-### 3. Avoid using divs as buttons
+![Tower bridge at dawn](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/80z7sddjqqlih0vs5jlp.jpeg)
+
+_Source: [Flickr](https://www.flickr.com/photos/duncanh1/25316870168)_
+
+### 3. Avoid using div for button
 
 As a developer, the chances are that you can style a `<div>` to look exactly
-like a button.
+like a `<button>`.
 
 ![Avoid using divs as buttons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7fpbsydcgnhdupl6bhvw.png)
+
+_Visual representation of div styled as a button vs a button_
 
 Although, these two elements may look alike, they don't communicate the same
 thing to a screen reader. In the first instance, the screen reader will only
@@ -161,7 +162,7 @@ read out the text content, and users aren't aware they should click the button
 for the download. In the second instance, a screen reader will announce that
 users should click the button to download.
 
-To be fair, some people may argue that assigning `'role=button` makes the div a
+To be fair, some people may argue that assigning `'role=button'` makes the div a
 button. However, this approach is bad practice as you'd need to get many "bells
 and whistles" going, such as `onClick` handlers, `preventDefault,` and more.
 
@@ -181,13 +182,15 @@ for accessibility and a good user experience.
 
 ![HTML Heading structure](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0n43qo8vap7psgahblsx.png)
 
+_HTML Heading Structure_
+
 Without proper headings, visually impaired users won't be able to do a quick
 scan of the page sections and would have to read the entire web page for
 information. However, with a proper heading structure, screen readers can read a
 page's layout aloud, allowing users to quickly jump from one heading to another.
 
-A golden rule is to avoid using headings to set font sizes or for visual
-styling. For instance, using a `<h2>` tag because you need a large font size.
+**A golden rule is to avoid using headings to set font sizes or for visual
+styling.** For instance, using a `<h2>` tag because you need a large font size.
 Doing this will result in a poor HTML structure and overall a bad user
 experience for assistive technology users. In short, use CSS for styling.
 
@@ -198,38 +201,40 @@ or without motor disabilities) rely on the keyboard to navigate.
 
 Developers need to be aware of the following to enforce keyboard accessibility:
 
-- Keyboard focus: This enables sighted users to know what element on the webpage
-  has focus. If the keyboard focus is missing, it becomes difficult for users to
-  access information through a keyboard.
-- Keyboard tab order: When a keyboard user navigates through a website using the
-  tab, it must be logical, in the correct order, and direct them to the desired
-  point on the page.
-- Keyboard traps: A keyboard trap happens when a keyboard user cannot move focus
-  away from an interactive element while using the keyboard only. Keyboard traps
-  often occur in calendar widgets or dialogue boxes. A classic scenario is when
-  a user opens a dialogue box but is unable to move to the next item with the
-  tab key or is unable to close the dialog box with the ESC key.
+- **Keyboard focus**: This enables sighted users to know what element on the
+  webpage has focus. If the keyboard focus is missing, it becomes difficult for
+  users to access information through a keyboard.
 
-1. To check the accessibility of your site:
-2. Place the cursor at the address bar of the browser.
-3. Start to press the tab.
-4. Confirm if you're able to navigate through every link or button.
+- **Keyboard tab order**: When a keyboard user navigates through a website using
+  the tab, it must be logical, in the correct order, and direct them to the
+  desired point on the page.
+
+- **Keyboard traps**: A keyboard trap happens when a keyboard user cannot move
+  focus away from an interactive element while using the keyboard only. Keyboard
+  traps often occur in calendar widgets or dialogue boxes. A classic scenario is
+  when a user opens a dialogue box but is unable to move to the next item with
+  the tab key or is unable to close the dialog box with the ESC key.
+
+To check the accessibility of your site:
+
+1. Place the cursor at the address bar of the browser.
+2. Start to press the tab.
+3. Confirm if you're able to navigate through every link or button.
 
 ### 6. Provide sufficient color contrast
 
-The color contrast ratio describes the differences between the darkest and
-lightest color brightness. If the color contrast between the background and
-foreground (text) is low, users with visual impairments like color blindness
-will have trouble reading content on your page. As a standard, WCAG advises that
-for body text and background (text with font sizes of 18px and below), [the
-color contrast should be at least 4.5:1]
-(http://web-accessibility.carnegiemuseums.org/design/color/).
+Color contrast describes the differences between the darkest and lightest color
+brightness. If the color contrast between the background and text is low, users
+with visual impairments like color blindness will have trouble reading content
+on your page. As a standard, WCAG advises that for body text and background
+(text with font sizes of 18px and below),
+[the color contrast should be at least 4.5:1](http://web-accessibility.carnegiemuseums.org/design/color/).
 
 The
 [WCAG guidelines recommend](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
 the following contrast ratios for designing readable interfaces:
 
-![WCAG color contrast standard](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pwptp12k82yikjm82mvp.png)
+![WCAG color contrast standard](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fbrwlbdhaelp6mfs3bdb.png)
 
 Web Developers should ensure they
 [validate their color contrast according to accessibility standards](https://webaim.org/resources/contrastchecker/)
@@ -252,6 +257,8 @@ or differentiate links within a block of tex. By standard,
 should also be underlined.
 
 ![Underline links](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j1gat10np6tnm9eir271.png)
+
+_Comparison between links_
 
 ### 8. Use ARIA landmarks
 
@@ -286,13 +293,13 @@ There are two major categories of ARIA attributes: Roles and State & properties:
 3 popular ARIA States and properties are: **aria-label**, **aria-labelledby**
 and **aria-describedby**.
 
-Note that ARIA doesn't replace HTML; instead, it complements it.
+**Note that ARIA doesn't replace HTML; instead, it complements it.**
 
 ### 9. Add caption to tables
 
 The same reason you would label a table for sighted users to get a quick idea of
 its content is why you'd need to add a caption to your table for visually
-impaired users. A caption describes the type of table to screen readers.
+impaired users. A caption describes the content of the table to screen readers.
 
 To add caption to a table, use the `<caption>` tag and place it immediately
 after opening the `<table>` tag.
@@ -306,8 +313,8 @@ Example:
 </table>
 ```
 
-With the caption, a screen reader can understand the information in a table and
-convey it to users.
+With the caption, a screen reader can now understand the information in a table
+and convey it to users.
 
 ### 10. Add `<label>` tags to forms
 
@@ -336,8 +343,16 @@ There are two ways to attach `<label>` to `<input>` fields:
 
 ## Build a web that's inclusive of everyone
 
-While there are many aspects to consider when weaving accessibility into a site,
-the above information are a good foundation for building an accessible web.
+While there are many aspects to consider when weaving accessibility into your
+site, the above information are a good foundation for building an accessible
+web.
+
+At [Chakra UI](https://chakra-ui.com/), we fully understand the importance of
+accessibility and know that it may require a lot more time to build
+accessibility into your sites and apps from the ground up. All our components
+are fully accessible, giving developers the superpowers to create accessible
+sites with speed. Feel free to
+[use any of our components](https://chakra-ui.com/docs/components/overview).
 
 Building an accessible web isn't a "nice to have" and should be a priority for
 everyone.
