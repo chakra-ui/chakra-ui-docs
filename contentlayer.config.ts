@@ -49,7 +49,7 @@ const Guides = defineDocumentType(() => ({
 
 const Blogs = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blogs/**/*.mdx',
+  filePathPattern: 'blog/**/*.mdx',
   bodyType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
