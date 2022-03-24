@@ -1,4 +1,4 @@
-import { Avatar, Box, chakra, Flex, Stack } from '@chakra-ui/react'
+import { Avatar, Box, chakra, Flex, HStack, Text } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import * as React from 'react'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
@@ -45,21 +45,37 @@ export default function BlogLayout(props: BlogLayoutProps) {
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <PageTransition style={{ maxWidth: '48rem' }}>
-                    <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                  <PageTransition style={{ maxWidth: '48rem', margin: 'auto' }}>
+                    <chakra.h1
+                      tabIndex={-1}
+                      outline={0}
+                      apply='mdx.h1'
+                      style={{ fontSize: '2.5rem' }}
+                    >
                       {title}
                     </chakra.h1>
-                    <time dateTime={publishedDate.iso}>
-                      {publishedDate.text}
-                    </time>
 
-                    <Stack>
-                      <Avatar size='sm' src={data.avatar_url} />
+                    <HStack mt='8' mb='4'>
+                      <Avatar size='md' src={data.avatar_url} />
                       <Box>
-                        <p>{data.name}</p>
-                        <a href={data.url}>{data.login}</a>
+                        <Text fontWeight='bold' fontSize='sm'>
+                          {data.name}
+                        </Text>
+                        <Text fontSize='xs'>
+                          <a href={data.url}>{data.login}</a>
+                        </Text>
                       </Box>
-                    </Stack>
+                    </HStack>
+                    <Box
+                      as='time'
+                      dateTime={publishedDate.iso}
+                      color='gray.500'
+                      fontSize='sm'
+                      display='block'
+                      mb='16'
+                    >
+                      {publishedDate.text}
+                    </Box>
 
                     {children}
                     <Box mt='40px'>
