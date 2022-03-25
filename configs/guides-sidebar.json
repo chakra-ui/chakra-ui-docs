@@ -98,6 +98,10 @@
             {
               "title": "Atlaskit editable",
               "path": "/guides/recipes/atlaskit-editable"
+            },
+            {
+              "title": "Chakra UI Prose",
+              "path": "/guides/recipes/prose"
             }
           ]
         },
