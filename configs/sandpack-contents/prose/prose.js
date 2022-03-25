@@ -5,6 +5,10 @@ import { Container } from "@chakra-ui/react";
 export default function App() {
   return (
     <Container w="full" maxW="container.lg">
+      <h1>H1 outside of Prose</h1>
+      <h1>H2 outside of Prose</h1>
+      <h1>H3 outside of Prose</h1>
+      <blockquote>Blockquote outside of Prose</blockquote>
       <Prose>
         <h1>Title Heading 1</h1>
         <h2>Title Heading 2</h2>
