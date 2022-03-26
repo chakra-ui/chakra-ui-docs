@@ -60,7 +60,7 @@ const ComponentsOverview = ({ categories, headings }: Props) => {
                     {title}
                   </Heading>
                 </Link>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={4}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                   {components.map(({ title, description, url }) => (
                     <GridItem key={title}>
                       <OverviewItem
