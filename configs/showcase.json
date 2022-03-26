@@ -153,6 +153,13 @@
       "url": "https://pre-alpha.polygon.am/",
       "image": "showcases/projects/Polygon.png",
       "type": "projects"
+    },
+    {
+      "name": "Polygon",
+      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
+      "url": "https://polygon.am/",
+      "image": "showcases/projects/Polygon.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -280,6 +287,13 @@
       "description": "A landing page for promoting Mandalika Campsite by Bobobox X Eiger.",
       "url": "https://bobobox.co.id/campsite/mandalika/",
       "image": "showcases/websites/Bobobox-Mandalika-Campsite.png",
+      "type": "websites"
+    },
+    {
+      "name": "SURE Trust",
+      "description": " Free e-Learning platform. Build with chakra UI and ReactJs.",
+      "url": "https://suretrustforruralyouth.com/",
+      "image": "showcases/websites/SURE-Trust.png",
       "type": "websites"
     }
   ],
@@ -453,6 +467,13 @@
       "url": "https://chakra-icons.com",
       "image": "showcases/tools/create-chakra-icons.png",
       "type": "tools"
+    },
+    {
+      "name": "react-spreadsheet-import",
+      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "url": "https://ugnissoftware.github.io/react-spreadsheet-import/iframe.html?id=react-spreadsheet-import--basic&args=&viewMode=story",
+      "image": "showcases/tools/react-spreadsheet-import.png",
+      "type": "tools"
     }
   ],
   "articles": [
@@ -510,6 +531,34 @@
       "description": "",
       "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
       "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system-MUI-vs-Chakra.png",
+      "type": "articles"
+    },
+    {
+      "name": "I have created Web Gallery app using Reactjs , WebRTC and Chakra UI",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/i-have-created-web-gallery-app-using-reactjs-webrtc-and-chakra-ui-5cfn",
+      "image": "showcases/articles/I-have-created-Web-Gallery-app-using-Reactjs-,-WebRTC-and-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "Track user location coordinates realtime using geolocation api, nextjs , nodejs and socket.io",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/track-user-location-coordinates-realtime-using-geolocation-api-nextjs-nodejs-and-socket-io-2nf3",
+      "image": "showcases/articles/Track-user-location-coordinates-realtime-using-geolocation-api,-nextjs-,-nodejs-and-socket.io.png",
+      "type": "articles"
+    },
+    {
+      "name": "Setup Nextjs , Apollo client and Chakra UI for your upcomming projects",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/setup-nextjs-apollo-client-and-chakra-ui-for-your-upcomming-projects-10ja",
+      "image": "showcases/articles/Setup-Nextjs-,-Apollo-client-and-Chakra-UI-for-your-upcomming-projects.png",
+      "type": "articles"
+    },
+    {
+      "name": "Image Uploading using golang and react",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/image-upload-using-golang-and-react-29n1",
+      "image": "showcases/articles/Image-Uploading-using-golang-and-react.png",
       "type": "articles"
     }
   ],

@@ -112,6 +112,10 @@
               "path": "/docs/styled-system/utility-hooks/use-controllable"
             },
             {
+              "title": "useDimensions",
+              "path": "/docs/styled-system/utility-hooks/use-dimensions"
+            },
+            {
               "title": "useDisclosure",
               "path": "/docs/styled-system/utility-hooks/use-disclosure"
             },
@@ -155,6 +159,14 @@
             {
               "title": "useCheckboxGroup",
               "path": "/docs/styled-system/component-hooks/use-checkbox-group"
+            },
+            {
+              "title": "useRadio",
+              "path": "/docs/styled-system/component-hooks/use-radio"
+            },
+            {
+              "title": "useRadioGroup",
+              "path": "/docs/styled-system/component-hooks/use-radio-group"
             }
           ]
         },

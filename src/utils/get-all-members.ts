@@ -11,3 +11,7 @@ export function getAllMembers() {
   const filters = ['christiannwamba']
   return members.filter((m) => !filters.includes(m.login))
 }
+
+export function getMember(login: string) {
+  return getAllMembers().find((member) => member.login === login)
+}

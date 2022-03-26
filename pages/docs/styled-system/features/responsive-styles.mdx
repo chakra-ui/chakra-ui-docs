@@ -14,15 +14,13 @@ Responsive syntax relies on the breakpoints defined in the theme object. Chakra
 UI provides default breakpoints, here's what it looks like:
 
 ```js
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const breakpoints = createBreakpoints({
+const breakpoints = {
   sm: '30em',
   md: '48em',
   lg: '62em',
   xl: '80em',
   '2xl': '96em',
-})
+}
 ```
 
 To make styles responsive, you can use either the array or object syntax.
@@ -54,16 +52,14 @@ To interpret array responsive values, Chakra UI converts the values defined in
 values defined in the array to the breakpoints
 
 ```js
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-// This is the default breakpoint
-const breakpoints = createBreakpoints({
+// These are the default breakpoints
+const breakpoints = {
   sm: '30em',
   md: '48em',
   lg: '62em',
   xl: '80em',
   '2xl': '96em',
-})
+}
 
 // Internally, we transform to this
 const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em']
@@ -176,8 +172,7 @@ In some scenarios, you might need to define custom breakpoints for your
 application. We recommended using common aliases like `sm`, `md`, `lg`, and
 `xl`.
 
-To define custom breakpoints, install `@chakra-ui/theme-tools`, and use the
-`createBreakpoints` utility we provide.
+To define custom breakpoints, just pass them as an object into the theme.
 
 > Note: Ensure the css unit of your breakpoints are the same. Use all `px` or
 > all `em`, don't mix them.
@@ -185,16 +180,15 @@ To define custom breakpoints, install `@chakra-ui/theme-tools`, and use the
 ```jsx live=false
 // 1. Import the utilities
 import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 // 2. Update the breakpoints as key-value pairs
-const breakpoints = createBreakpoints({
+const breakpoints = {
   sm: '320px',
   md: '768px',
   lg: '960px',
   xl: '1200px',
   '2xl': '1536px',
-})
+}
 
 // 3. Extend the theme
 const theme = extendTheme({ breakpoints })

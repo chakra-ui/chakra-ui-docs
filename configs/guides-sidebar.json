@@ -48,6 +48,10 @@
             {
               "title": "Remix",
               "path": "/guides/getting-started/remix-guide"
+            },
+            {
+              "title": "Vite",
+              "path": "/guides/getting-started/vite-guide"
             }
           ]
         },
@@ -83,6 +87,25 @@
           ]
         },
         {
+          "title": "Recipes",
+          "path": "/guides/recipes",
+          "open": true,
+          "routes": [
+            {
+              "title": "Advanced Formik Integration",
+              "path": "/guides/recipes/advanced-formik-integration"
+            },
+            {
+              "title": "Atlaskit editable",
+              "path": "/guides/recipes/atlaskit-editable"
+            },
+            {
+              "title": "Chakra UI Prose",
+              "path": "/guides/recipes/prose"
+            }
+          ]
+        },
+        {
           "title": "Advanced",
           "path": "/guides/advanced",
           "open": true,
@@ -98,10 +121,6 @@
             {
               "title": "Contribute",
               "path": "/guides/advanced/contributing"
-            },
-            {
-              "title": "Atlaskit editable",
-              "path": "/guides/recipes/atlaskit-editable"
             }
           ]
         }
