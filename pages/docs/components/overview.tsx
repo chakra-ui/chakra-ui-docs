@@ -1,6 +1,8 @@
+import { allDocs } from '.contentlayer/data'
 import {
   GridItem,
   Heading,
+  Link,
   List,
   ListItem,
   SimpleGrid,
@@ -9,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 
+import OverviewItem from 'components/overview/item'
 import componentsSidebar from 'configs/components-sidebar.json'
 import Layout from 'layouts'
 
@@ -25,14 +28,16 @@ type Category = {
 
 type Props = {
   categories: Category[]
+  headings: { id: string; text: string; level: number }[]
 }
 
-const ComponentsOverview = ({ categories }: Props) => {
+const ComponentsOverview = ({ categories, headings }: Props) => {
   return (
     <Layout
       frontMatter={{
         title: 'Components',
         slug: '/docs/components/overview',
+        headings,
       }}
     >
       <VStack w='full' mt={5} alignItems='stretch' spacing={12}>
@@ -41,23 +46,34 @@ const ComponentsOverview = ({ categories }: Props) => {
           faster. Here is an overview of the component categories:
         </Text>
         <List w='full' spacing={12}>
-          {categories.map(({ title, components }) => (
-            <ListItem
-              key={title}
-              display='flex'
-              flexDirection='column'
-              rowGap={6}
-            >
-              <Heading as='h2' size='md'>
-                {title}
-              </Heading>
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }}>
-                {components.map(({ title }) => (
-                  <GridItem key={title}>{title}</GridItem>
-                ))}
-              </SimpleGrid>
-            </ListItem>
-          ))}
+          {categories.map(({ title, components }) => {
+            const slug = title.toLowerCase().replaceAll(' ', '-')
+            return (
+              <ListItem
+                key={title}
+                display='flex'
+                flexDirection='column'
+                rowGap={6}
+              >
+                <Link href={`#${slug}`} id={slug}>
+                  <Heading as='h2' size='md'>
+                    {title}
+                  </Heading>
+                </Link>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={4}>
+                  {components.map(({ title, description, url }) => (
+                    <GridItem key={title}>
+                      <OverviewItem
+                        url={url}
+                        title={title}
+                        description={description}
+                      />
+                    </GridItem>
+                  ))}
+                </SimpleGrid>
+              </ListItem>
+            )
+          })}
         </List>
       </VStack>
     </Layout>
@@ -65,15 +81,18 @@ const ComponentsOverview = ({ categories }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = componentsSidebar.routes[0].routes.splice(1)
+  const data = componentsSidebar.routes[0].routes
+    .splice(1)
+    .filter(({ path }) => path !== '/docs/components/recipes')
   const categories: Category[] = await Promise.all(
     data.map(async ({ title, routes }) => {
       const components = await Promise.all(
-        routes.map(async ({ title, path }) => {
+        routes.map(async ({ title, path: url }) => {
+          const { description } = allDocs.find((doc) => doc.slug === url)
           const component: Component = {
             title,
-            url: path,
-            description: 'Bla bla',
+            url,
+            description,
           }
 
           return component
@@ -89,9 +108,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }),
   )
 
+  const headings = categories.map(({ title }) => ({
+    id: title.toLowerCase().replaceAll(' ', '-'),
+    text: title,
+    level: 1,
+  }))
+
   return {
     props: {
       categories,
+      headings,
     },
   }
 }
