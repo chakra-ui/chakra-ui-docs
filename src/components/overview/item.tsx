@@ -1,4 +1,12 @@
-import { Heading, LinkBox, LinkOverlay, Text, VStack } from '@chakra-ui/react'
+import {
+  AspectRatio,
+  Box,
+  Heading,
+  LinkBox,
+  LinkOverlay,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 type Props = {
@@ -27,6 +35,9 @@ const OverviewItem = ({ url, title, description }: Props) => {
       }}
     >
       <VStack alignItems='flex-start' spacing={4}>
+        <AspectRatio ratio={4 / 3} w='full'>
+          <Box bg='gray.100' w='full' h='full' rounded='md' />
+        </AspectRatio>
         <Heading as='h3' size='sm'>
           {title}
         </Heading>
