@@ -111,7 +111,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   )
 
   const headings = categories.map(({ title }) => ({
-    id: title.toLowerCase().replaceAll(' ', '-'),
+    id: title.toLowerCase().replace(/ /g, '-'),
     text: title,
     level: 1,
   }))
