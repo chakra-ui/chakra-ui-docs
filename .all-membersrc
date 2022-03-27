@@ -61,16 +61,6 @@
       "location": null
     },
     {
-      "login": "ljosberinn",
-      "avatar_url": "https://avatars.githubusercontent.com/u/29307652?v=4",
-      "url": "https://github.com/ljosberinn",
-      "blog": "https://gerritalex.de",
-      "name": "Gerrit Alex",
-      "bio": null,
-      "twitter_username": "gerrit_alex",
-      "location": "Munich, Bavaria"
-    },
-    {
       "login": "nikolovlazar",
       "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
       "url": "https://github.com/nikolovlazar",
@@ -91,16 +81,6 @@
       "location": "Nigeria"
     },
     {
-      "login": "takethefake",
-      "avatar_url": "https://avatars.githubusercontent.com/u/3123354?v=4",
-      "url": "https://github.com/takethefake",
-      "blog": "http://schulz.codes",
-      "name": "Daniel Schulz",
-      "bio": "DevOps Engineer at DB Systel",
-      "twitter_username": "takethefake",
-      "location": "Germany"
-    },
-    {
       "login": "TimKolberger",
       "avatar_url": "https://avatars.githubusercontent.com/u/16899513?v=4",
       "url": "https://github.com/TimKolberger",
@@ -109,16 +89,6 @@
       "bio": "DevOps Engineer at DB Systel | maintainer @chakra-ui |\r\n[React, nodeJS, GraphQL, ...❤️]",
       "twitter_username": "TimKolberger",
       "location": "Darmstadt, Germany"
-    },
-    {
-      "login": "with-heart",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1954752?v=4",
-      "url": "https://github.com/with-heart",
-      "blog": "https://with-heart.me/",
-      "name": "with-heart",
-      "bio": "Open Source-ist. Developer DAO core team & development guild \"leader\".",
-      "twitter_username": "grow_love",
-      "location": "Cincinnati, Ohio"
     }
   ]
 }
