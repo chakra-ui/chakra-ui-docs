@@ -116,7 +116,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
             <Flex>
               <div className='row'>{t('component.props-table.type')}</div>
               <div className='cell'>
-                <InlineCode whiteSpace='wrap' fontSize='0.8em'>
+                <InlineCode whiteSpace='normal' fontSize='0.8em'>
                   {prop.type}
                 </InlineCode>
               </div>
@@ -125,7 +125,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
               <Flex>
                 <div className='row'>{t('component.props-table.default')}</div>
                 <div className='cell'>
-                  <InlineCode whiteSpace='wrap' fontSize='0.8em'>
+                  <InlineCode whiteSpace='normal' fontSize='0.8em'>
                     {prop.defaultValue}
                   </InlineCode>
                 </div>
