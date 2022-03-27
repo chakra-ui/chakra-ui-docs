@@ -47,7 +47,7 @@ const ComponentsOverview = ({ categories, headings }: Props) => {
         </Text>
         <List w='full' spacing={12}>
           {categories.map(({ title, components }) => {
-            const slug = title.toLowerCase().replaceAll(' ', '-')
+            const slug = title.toLowerCase().replace(/ /g, '-')
             return (
               <ListItem
                 key={title}
