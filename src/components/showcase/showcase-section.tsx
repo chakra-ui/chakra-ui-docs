@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { motion, useMotionTemplate, useSpring } from 'framer-motion'
+import { StaticImageData } from 'next/image'
 import NextLink from 'next/link'
 import { FocusEvent, PointerEvent, useCallback, useEffect, useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
@@ -27,7 +28,6 @@ import thirdweb from 'public/showcases/projects/thirdweb.png'
 import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
 import June from 'public/showcases/websites/June.png'
 import { t } from 'utils/i18n'
-import { StaticImageData } from 'next/image'
 
 type Website = {
   src: StaticImageData
