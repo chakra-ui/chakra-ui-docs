@@ -61,15 +61,17 @@ const ComponentsOverview = ({ categories, headings }: Props) => {
                   </Heading>
                 </Link>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
-                  {components.map(({ title, description, url }) => (
-                    <GridItem key={title}>
-                      <OverviewItem
-                        url={url}
-                        title={title}
-                        description={description}
-                      />
-                    </GridItem>
-                  ))}
+                  {components.map(
+                    ({ title: componentTitle, description, url }) => (
+                      <GridItem key={componentTitle}>
+                        <OverviewItem
+                          url={url}
+                          title={componentTitle}
+                          description={description}
+                        />
+                      </GridItem>
+                    ),
+                  )}
                 </SimpleGrid>
               </ListItem>
             )
@@ -87,10 +89,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const categories: Category[] = await Promise.all(
     data.map(async ({ title, routes }) => {
       const components = await Promise.all(
-        routes.map(async ({ title, path: url }) => {
+        routes.map(async ({ title: routeTitle, path: url }) => {
           const { description } = allDocs.find((doc) => doc.slug === url)
           const component: Component = {
-            title,
+            title: routeTitle,
             url,
             description,
           }
