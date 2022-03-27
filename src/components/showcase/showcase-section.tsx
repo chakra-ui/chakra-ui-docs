@@ -27,6 +27,7 @@ import thirdweb from 'public/showcases/projects/thirdweb.png'
 import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
 import June from 'public/showcases/websites/June.png'
 import { t } from 'utils/i18n'
+import { StaticImageData } from 'next/image'
 
 type Website = {
   src: StaticImageData
