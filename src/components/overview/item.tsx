@@ -44,21 +44,16 @@ const OverviewItem = ({ url, title, description }: Props) => {
             _dark={{ bg: 'whiteAlpha.200' }}
           />
         </AspectRatio>
-        <Heading as='h3' size='sm'>
-          {title}
-        </Heading>
-        <Text fontSize='xs'>{description}</Text>
         <NextLink href={url} passHref>
           <LinkOverlay>
-            <Text
-              fontSize='xs'
-              transition='color 0.1s ease-out'
-              _groupHover={{ color: 'teal.400', textDecoration: 'underline' }}
-            >
-              See {title} &gt;
-            </Text>
+            <Heading as='h3' size='sm'>
+              {title}
+            </Heading>
           </LinkOverlay>
         </NextLink>
+        <Text fontSize='sm' noOfLines={3}>
+          {description}
+        </Text>
       </VStack>
     </LinkBox>
   )

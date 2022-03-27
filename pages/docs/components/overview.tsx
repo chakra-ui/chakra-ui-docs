@@ -55,11 +55,9 @@ const ComponentsOverview = ({ categories, headings }: Props) => {
                 flexDirection='column'
                 rowGap={6}
               >
-                <Link href={`#${slug}`} id={slug}>
-                  <Heading as='h2' size='md'>
-                    {title}
-                  </Heading>
-                </Link>
+                <Heading as='h2' size='md' id={slug}>
+                  {title}
+                </Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                   {components.map(
                     ({ title: componentTitle, description, url }) => (

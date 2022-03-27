@@ -2,12 +2,8 @@
   "routes": [
     {
       "title": "Components",
-      "heading": true,
+      "heading": false,
       "routes": [
-        {
-          "title": "Overview",
-          "path": "/docs/components/overview"
-        },
         {
           "title": "Layout",
           "path": "/docs/components/layout",
