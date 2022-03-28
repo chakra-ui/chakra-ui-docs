@@ -9345,5 +9345,12 @@
     "type": "lvl1",
     "url": "/guides/recipes/atlaskit-editable",
     "hierarchy": { "lvl1": "Atlaskit editable" }
+  },
+  {
+    "content": "Chakra UI Prose",
+    "id": "586f22e9-0221-4ede-9fd2-67b8c5887c10",
+    "type": "lvl1",
+    "url": "/guides/recipes/prose",
+    "hierarchy": { "lvl1": "Chakra UI Prose" }
   }
 ]
