@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { motion, useMotionTemplate, useSpring } from 'framer-motion'
+import { StaticImageData } from 'next/image'
 import NextLink from 'next/link'
 import { FocusEvent, PointerEvent, useCallback, useEffect, useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa'

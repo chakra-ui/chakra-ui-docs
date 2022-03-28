@@ -9,14 +9,6 @@
     "react/display-name": "off",
     "@next/next/no-img-element": "off",
     "no-console": "warn",
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "order": "asc"
-        }
-      }
-    ],
     "import/no-named-as-default": "off",
     "import/namespace": ["error", {
       "allowComputed": true

@@ -1,7 +1,12 @@
-import { chakra, useColorModeValue, useDimensions } from '@chakra-ui/react'
+import {
+  chakra,
+  HTMLChakraProps,
+  useColorModeValue,
+  useDimensions,
+} from '@chakra-ui/react'
 import React, { useRef } from 'react'
 
-export const InlineCode = (props: any) => {
+export const InlineCode = (props: HTMLChakraProps<'code'>) => {
   const codeRef = useRef(null)
   const dimensions = useDimensions(codeRef)
 
@@ -11,15 +16,14 @@ export const InlineCode = (props: any) => {
    * before the layout shifts to mobile.
    */
   const MIN_CONTENT_WIDTH = 363
+  const shouldWrap = dimensions?.borderBox.width > MIN_CONTENT_WIDTH
 
   return (
     <chakra.code
       apply='mdx.code'
       color={useColorModeValue('purple.500', 'purple.200')}
       ref={codeRef}
-      whiteSpace={
-        dimensions?.borderBox.width > MIN_CONTENT_WIDTH ? '' : 'nowrap'
-      }
+      whiteSpace={shouldWrap ? undefined : 'nowrap'}
       {...props}
     />
   )
