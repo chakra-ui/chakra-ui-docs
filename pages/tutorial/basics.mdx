@@ -1,21 +1,51 @@
 ---
-title: 'Basics'
-description:
-  'Some of the most asked questions with their answers to help you get started
-  with Chakra UI.'
+title: 'Basics' 
+description: 'Some of the most asked questions with their
+answers to help you get started with Chakra UI.'
 ---
+
+<TutorialFileAction type='open' path='/package.json' />
+<TutorialFileAction type='open' path='/App.js' />
+<TutorialFileAction type='add' path='/Test.jsx' />
+<TutorialFileAction type='delete' path='/Test.jsx' />
 
 This is the section about chakra ui basics
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue.
-Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Tempus
-imperdiet nulla malesuada pellentesque. Ultricies leo integer malesuada nunc vel
-risus. Augue ut lectus arcu bibendum at varius vel. Nulla at volutpat diam ut
-venenatis tellus in metus vulputate. Ac orci phasellus egestas tellus rutrum.
-Est pellentesque elit ullamcorper dignissim cras. Vitae turpis massa sed
-elementum tempus. Quis varius quam quisque id diam vel. Elementum integer enim
-neque volutpat ac tincidunt.
+<TutorialFileAction type='open' path='/App.js' /> incididunt ut labore et dolore
+magna aliqua. Ipsum a arcu cursus vitae congue. Risus viverra adipiscing at in
+tellus integer feugiat scelerisque varius. Tempus imperdiet nulla malesuada
+pellentesque. Ultricies leo integer malesuada nunc vel risus. Augue ut lectus
+arcu bibendum at varius vel. Nulla at volutpat diam ut venenatis tellus in metus
+vulputate. Ac orci phasellus egestas tellus rutrum. Est pellentesque elit
+ullamcorper dignissim cras. Vitae turpis massa sed elementum tempus. Quis varius
+quam quisque id diam vel. Elementum integer enim neque volutpat ac tincidunt.
+
+```tsx path=/App.js type=tutorial
+import { Center, ChakraProvider, List, ListItem, Text } from '@chakra-ui/react'
+import { useState } from 'react'
+
+export default function App() {
+  const [usernames, setUsernames] = useState([
+    'malerba118',
+    'compulves',
+    'dan_abramov',
+  ])
+  return (
+    <ChakraProvider>
+      <Center h='100vh'>
+        <List spacing={2}>
+          {usernames.map((username) => (
+            <ListItem key={username} p={2} bg='gray.100' rounded='lg'>
+              <Text>{username}</Text>
+            </ListItem>
+          ))}
+        </List>
+      </Center>
+    </ChakraProvider>
+  )
+}
+```
 
 Pretium fusce id velit ut tortor. Mi quis hendrerit dolor magna eget est. Velit
 egestas dui id ornare arcu odio ut sem nulla. Quisque egestas diam in arcu

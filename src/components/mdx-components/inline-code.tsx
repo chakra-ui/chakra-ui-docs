@@ -1,9 +1,4 @@
-import {
-  chakra,
-  HTMLChakraProps,
-  useColorModeValue,
-  useDimensions,
-} from '@chakra-ui/react'
+import { chakra, HTMLChakraProps, useDimensions } from '@chakra-ui/react'
 import React, { useRef } from 'react'
 
 export const InlineCode = (props: HTMLChakraProps<'code'>) => {
@@ -21,7 +16,10 @@ export const InlineCode = (props: HTMLChakraProps<'code'>) => {
   return (
     <chakra.code
       apply='mdx.code'
-      color={useColorModeValue('purple.500', 'purple.200')}
+      color={'purple.500'}
+      _dark={{
+        color: 'purple.200',
+      }}
       ref={codeRef}
       whiteSpace={shouldWrap ? undefined : 'nowrap'}
       {...props}
