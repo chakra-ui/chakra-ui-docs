@@ -85,7 +85,8 @@ different widths differently.
   container and also have equal spacing between them.
 
 ```jsx
-<Box>
+// TableContainer is used as a wrapper to prevent overflow in mobile screens
+<TableContainer>
   <Text>Flex and Spacer: Full width, equal Spacing</Text>
   <Flex>
     <Box w='70px' h='10' bg='red.500' />
@@ -112,7 +113,7 @@ different widths differently.
     <Box w='170px' h='10' bg='teal.500' />
     <Box w='180px' h='10' bg='teal.500' />
   </HStack>
-</Box>
+</TableContainer>
 ```
 
 A good use case for `Spacer` is to create a navbar with a signup/login button
