@@ -8,8 +8,8 @@ description:
 ---
 
 `Code` is a component used to display inline code. It is composed from the
-[Box](/docs/components/layout/box) component with a font family of `mono` for displaying
-code.
+[Box](/docs/components/layout/box) component with a font family of `mono` for
+displaying code.
 
 <ComponentLinks
   theme={{ componentName: 'code' }}
@@ -37,11 +37,14 @@ You can change the color scheme of the component by passing the `colorScheme`
 prop.
 
 ```jsx
-<Stack direction='row'>
-  <Code children='console.log(welcome)' />
-  <Code colorScheme='red' children="var chakra = 'awesome!'" />
-  <Code colorScheme='yellow' children='npm install chakra' />
-</Stack>
+// TableContainer is used as a wrapper to prevent overflow in mobile screens
+<TableContainer>
+  <Stack direction='row'>
+    <Code children='console.log(welcome)' />
+    <Code colorScheme='red' children="var chakra = 'awesome!'" />
+    <Code colorScheme='yellow' children='npm install chakra' />
+  </Stack>
+</TableContainer>
 ```
 
 ## Props
