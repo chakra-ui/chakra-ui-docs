@@ -240,17 +240,20 @@ function Example() {
   // Or via trigger
   // Style here will overwrite the entire style above
   return (
-    <Button
-      onClick={() => {
-        toast({
-          containerStyle: {
-            border: '20px solid red',
-          },
-        })
-      }}
-    >
-      Click me to show toast with custom container style.
-    </Button>
+    // TableContainer is used as a wrapper to prevent overflow in mobile screens
+    <TableContainer>
+      <Button
+        onClick={() => {
+          toast({
+            containerStyle: {
+              border: '20px solid red',
+            },
+          })
+        }}
+      >
+        Click me to show toast with custom container style.
+      </Button>
+    </TableContainer>
   )
 }
 ```
