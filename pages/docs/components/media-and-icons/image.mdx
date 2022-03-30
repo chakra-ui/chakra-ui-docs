@@ -40,21 +40,24 @@ import { Image } from '@chakra-ui/react'
 The size of the image can be adjusted using the `boxSize` prop.
 
 ```jsx
-<Stack direction='row'>
-  <Image
-    boxSize='100px'
-    objectFit='cover'
-    src='https://bit.ly/dan-abramov'
-    alt='Dan Abramov'
-  />
-  <Image
-    boxSize='150px'
-    objectFit='cover'
-    src='https://bit.ly/dan-abramov'
-    alt='Dan Abramov'
-  />
-  <Image boxSize='200px' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-</Stack>
+// TableContainer is used as a wrapper to prevent overflow in mobile screens
+<TableContainer>
+  <Stack direction='row'>
+    <Image
+      boxSize='100px'
+      objectFit='cover'
+      src='https://bit.ly/dan-abramov'
+      alt='Dan Abramov'
+    />
+    <Image
+      boxSize='150px'
+      objectFit='cover'
+      src='https://bit.ly/dan-abramov'
+      alt='Dan Abramov'
+    />
+    <Image boxSize='200px' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+  </Stack>
+</TableContainer>
 ```
 
 ## Image with border radius
