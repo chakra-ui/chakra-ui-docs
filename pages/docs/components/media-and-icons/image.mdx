@@ -27,9 +27,12 @@ import { Image } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Box boxSize='sm'>
-  <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-</Box>
+// TableContainer is used as a wrapper to prevent overflow in mobile screens
+<TableContainer>
+  <Box boxSize='sm'>
+    <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+  </Box>
+</TableContainer>
 ```
 
 ## Size
