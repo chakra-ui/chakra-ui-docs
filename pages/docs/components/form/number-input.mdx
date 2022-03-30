@@ -183,39 +183,42 @@ Like the `Input` component, you can pass the `size` prop to change the size of
 the input.
 
 ```jsx
-<Stack shouldWrapChildren direction='row'>
-  <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+// TableContainer is used as a wrapper to prevent overflow in mobile screens
+<TableContainer>
+  <Stack shouldWrapChildren direction='row'>
+    <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
 
-  <NumberInput size='sm' maxW={20} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+    <NumberInput size='sm' maxW={20} defaultValue={15} min={10}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
 
-  <NumberInput size='md' maxW={24} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+    <NumberInput size='md' maxW={24} defaultValue={15} min={10}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
 
-  <NumberInput size='lg' maxW={32} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
-</Stack>
+    <NumberInput size='lg' maxW={32} defaultValue={15} min={10}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  </Stack>
+</TableContainer>
 ```
 
 ### Changing the styles
