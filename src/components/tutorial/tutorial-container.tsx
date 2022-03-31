@@ -64,72 +64,63 @@ function TutorialContainer({
   const { title, description, editUrl, headings = [] } = frontmatter
 
   const files = {
-    '/App.js': TutorialApp,
+    '/App.tsx': TutorialApp,
     '/package.json': packageJson,
   }
 
   return (
-    <>
+    <Box minH='100vh'>
       <SEO title={title} description={description} />
       <SkipNavLink zIndex={20}>
         {t('component.page-container.skip-to-content')}
       </SkipNavLink>
       <Header maxWidth={'full'} />
-      <Box as='main' className='main-content' w='full'>
-        <Box display={{ md: 'flex' }}>
-          <TutorialSidebar />
-          <Box flex='1'>
-            <SkipNavContent />
-            <Box id='content' mx='auto'>
-              <SandpackProvider customSetup={{ files }} template='react'>
+      <Box as='main' w='full'>
+        {/* <TutorialSidebar /> */}
+        <SkipNavContent />
+        <Box id='content'>
+          <SandpackProvider customSetup={{ files }} template='react-ts'>
+            <PageTransition>
+              <HStack spacing={0}>
                 <Box
-                  minW='0'
-                  flex='auto'
-                  px={{ base: '4', sm: '6', xl: '8' }}
-                  pt='5'
+                  overflowY={'auto'}
+                  minW={{ base: '40%', xl: '35%' }}
+                  h='calc(100vh - 4.5rem)'
+                  pr={'6'}
+                  pl={{ base: '4', sm: '6', xl: '8' }}
                 >
-                  <PageTransition>
-                    <HStack>
-                      <Box
-                        overflowY={'auto'}
-                        flex={1}
-                        h='calc(100vh - 8rem)'
-                        pr={'6'}
-                      >
-                        <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
-                          {title}
-                        </chakra.h1>
-                        {children}
-                        <Box mt='40px'>
-                          <Box>
-                            {editUrl && <EditPageLink href={editUrl} />}
-                          </Box>
-                          {pagination || null}
-                        </Box>
-                      </Box>
-                      <Box flex={1}>
-                        <SandpackLayout theme={'night-owl'}>
-                          <Stack spacing={0} w={'50vw'} h='calc(100vh - 8rem)'>
-                            <Navigator />
-                            <SandpackCodeEditor
-                              showLineNumbers
-                              customStyle={{
-                                height: '50%',
-                              }}
-                            />
-                            <SandpackPreview customStyle={{ height: '50%' }} />
-                          </Stack>
-                        </SandpackLayout>
-                      </Box>
-                    </HStack>
-                  </PageTransition>
+                  <Box h='5' color='white' bg='teal'>
+                    Menu
+                  </Box>
+                  <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                    {title}
+                  </chakra.h1>
+                  {children}
+                  <Box mt='40px'>
+                    <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
+                    {pagination || null}
+                  </Box>
                 </Box>
-              </SandpackProvider>
-            </Box>
-          </Box>
+                <Box minW={{ base: '60%', xl: '65%' }}>
+                  <SandpackLayout theme={'night-owl'}>
+                    <Stack h='calc(100vh - 4.5rem)' w={'full'}>
+                      {/* <Navigator /> */}
+                      <SandpackCodeEditor
+                        showLineNumbers
+                        customStyle={{
+                          height: '50%',
+                        }}
+                      />
+                      <SandpackPreview customStyle={{ minHeight: '50%' }} />
+                    </Stack>
+                  </SandpackLayout>
+                </Box>
+              </HStack>
+            </PageTransition>
+          </SandpackProvider>
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }
 
