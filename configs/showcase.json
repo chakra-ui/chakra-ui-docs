@@ -227,13 +227,6 @@
       "type": "websites"
     },
     {
-      "name": "June",
-      "description": "An app that generates instant product analytics reports on top of Segment. Made using Next.js and a custom Chakra UI theme.",
-      "url": "https://june.so",
-      "image": "showcases/websites/June.png",
-      "type": "websites"
-    },
-    {
       "name": "Confused's Site",
       "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
       "url": "https://confused.studio",
@@ -294,6 +287,13 @@
       "description": " Free e-Learning platform. Build with chakra UI and ReactJs.",
       "url": "https://suretrustforruralyouth.com/",
       "image": "showcases/websites/SURE-Trust.png",
+      "type": "websites"
+    },
+    {
+      "name": "June",
+      "description": "An app that generates instant product analytics reports on top of Segment. Made using Next.js and a custom Chakra UI theme.",
+      "url": "https://june.so",
+      "image": "showcases/websites/June.png",
       "type": "websites"
     }
   ],
