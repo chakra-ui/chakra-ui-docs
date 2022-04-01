@@ -2,47 +2,60 @@
 title: Redwood JS
 description: A guide for installing Chakra UI with redwoodjs projects
 tags: ['redwoodjs']
-author: estheragbaje
+author: estheragbaje, philzen
 ---
 
-### 1. Installation
+### Automatic Installation
 
-Inside your `Redwoodjs` project , cd into `web`, then, install Chakra UI by
+RedwoodJS provides a convenient setup script via its [CLI tool](https://redwoodjs.com/docs/cli-commands#setup-ui) 
+to enable Chakra UI in your project with a single command. In your project folder, simply enter:
+
+```bash
+yarn redwood setup ui chakra-ui
+```
+
+This will make the necessary modifications to your `App.tsx` (or `App.js`, respectively) 
+which are basically the same as outlined in manual installation steps below.
+
+See [below](#optional-customize-theme) for additional (optional) setup steps.
+
+### Manual Installation
+
+1. Inside your `Redwoodjs` project , cd into `web`, then, install Chakra UI by
 running either of the following:
 
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
+   ```bash
+   npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+   ```
 
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
+   ```bash
+   yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+   ```
 
-### 2. Provider Setup
+2. After installing Chakra UI, you need to set up the `ChakraProvider` at the root
+of your application.  Go to `App.js` and add the `ChakraProvider` like this:
 
-After installing Chakra UI, you need to set up the `ChakraProvider` at the root
-of your application.
+   ```jsx live=false
+   import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 
-Go to `App.js` and add the `ChakraProvider` like this:
+   const App = () => (
+     <FatalErrorBoundary page={FatalErrorPage}>
+       <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+         <ColorModeScript />
+         <ChakraProvider>
+           <RedwoodApolloProvider>
+             <Routes />
+           </RedwoodApolloProvider>
+         </ChakraProvider>
+       </RedwoodProvider>
+     </FatalErrorBoundary>
+   )
 
-```jsx live=false
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
+   export default App
+   ```
 
-const App = () => (
-  <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-      <ColorModeScript />
-      <ChakraProvider>
-        <RedwoodApolloProvider>
-          <Routes />
-        </RedwoodApolloProvider>
-      </ChakraProvider>
-    </RedwoodProvider>
-  </FatalErrorBoundary>
-)
-
-export default MyApp
-```
+> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
+> take it a step further, check out the optional steps [outlined below](#optional-customize-theme).
 
 ### ChakraProvider Props
 
@@ -53,14 +66,9 @@ export default MyApp
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
+### Optional: Customize Theme
 
-### 3. Optional Setup
-
-- Customizing Theme
-
-If you intend to customise the default theme object to match your design
+If you intend to customize the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
 
 Chakra UI provides an `extendTheme` function that deep merges the default theme
@@ -107,7 +115,7 @@ project.
 
 If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
 
-> Follow this guide for customising Chakra Icons
+> Follow this guide for customizing Chakra Icons
 > [Using Chakra UI Icons](/docs/components/media-and-icons/icon).
 
 #### Notes on TypeScript 🚨
