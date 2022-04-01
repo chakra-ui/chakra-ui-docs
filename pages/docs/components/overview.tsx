@@ -2,7 +2,6 @@ import { allDocs } from '.contentlayer/data'
 import {
   GridItem,
   Heading,
-  Link,
   List,
   ListItem,
   SimpleGrid,
@@ -60,15 +59,21 @@ const ComponentsOverview = ({ categories, headings }: Props) => {
                 </Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                   {components.map(
-                    ({ title: componentTitle, description, url }) => (
-                      <GridItem key={componentTitle}>
-                        <OverviewItem
-                          url={url}
-                          title={componentTitle}
-                          description={description}
-                        />
-                      </GridItem>
-                    ),
+                    ({ title: componentTitle, description, url }) => {
+                      const componentSlug = componentTitle
+                        .toLowerCase()
+                        .replace(/ /g, '-')
+                      return (
+                        <GridItem key={componentSlug}>
+                          <OverviewItem
+                            url={url}
+                            title={componentTitle}
+                            description={description}
+                            slug={componentSlug}
+                          />
+                        </GridItem>
+                      )
+                    },
                   )}
                 </SimpleGrid>
               </ListItem>

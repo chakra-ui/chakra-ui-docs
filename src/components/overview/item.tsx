@@ -9,13 +9,27 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
+import * as Illustrations from './illustrations'
+
+const componentIllustrations = {
+  button: <Illustrations.ButtonIllustration />,
+  checkbox: <Illustrations.CheckboxIllustration />,
+  editable: <Illustrations.EditableIllustration />,
+  'form-control': <Illustrations.FormControlIllustration />,
+  'icon-button': <Illustrations.IconButtonIllustration />,
+  input: <Illustrations.InputIllustration />,
+  'number-input': <Illustrations.NumberInputIllustration />,
+  'pin-input': <Illustrations.PinInputIllustration />,
+}
+
 type Props = {
   url: string
   title: string
   description: string
+  slug: string
 }
 
-const OverviewItem = ({ url, title, description }: Props) => {
+const OverviewItem = ({ url, title, description, slug }: Props) => {
   return (
     <LinkBox
       as='article'
@@ -35,14 +49,19 @@ const OverviewItem = ({ url, title, description }: Props) => {
       }}
     >
       <VStack alignItems='flex-start' spacing={4}>
-        <AspectRatio ratio={4 / 3} w='full'>
-          <Box
-            bg='gray.100'
-            w='full'
-            h='full'
-            rounded='md'
-            _dark={{ bg: 'whiteAlpha.200' }}
-          />
+        <AspectRatio ratio={4 / 3} w='full' rounded='md' overflow='hidden'>
+          {componentIllustrations[slug] ?? (
+            <Box
+              bg='gray.100'
+              w='full'
+              h='full'
+              filter='saturate(0)'
+              _groupHover={{ filter: 'unset' }}
+              transition='all 200ms ease-out'
+              rounded='md'
+              _dark={{ bg: 'whiteAlpha.200' }}
+            />
+          )}
         </AspectRatio>
         <NextLink href={url} passHref>
           <LinkOverlay>
