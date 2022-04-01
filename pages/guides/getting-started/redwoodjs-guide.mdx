@@ -82,20 +82,18 @@ const colors = {
 const theme = extendTheme({ colors })
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
-function App() {
-  return (
-    <FatalErrorBoundary page={FatalErrorPage}>
-      <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-        <ColorModeScript />
-        <ChakraProvider>
-          <RedwoodApolloProvider>
-            <Routes />
-          </RedwoodApolloProvider>
-        </ChakraProvider>
-      </RedwoodProvider>
-    </FatalErrorBoundary>
-  )
-}
+const App = () => (
+  <FatalErrorBoundary page={FatalErrorPage}>
+    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+      <ColorModeScript />
+      <ChakraProvider theme={theme}>
+        <RedwoodApolloProvider>
+          <Routes />
+        </RedwoodApolloProvider>
+      </ChakraProvider>
+    </RedwoodProvider>
+  </FatalErrorBoundary>
+)
 ```
 
 > To further customize components or build your own design system, the
