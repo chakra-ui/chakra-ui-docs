@@ -26,16 +26,19 @@ of your application.
 Go to `App.js` and add the `ChakraProvider` like this:
 
 ```jsx live=false
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 
 const App = () => (
-  <ChakraProvider>
-    <FatalErrorBoundary page={FatalErrorPage}>
-      <RedwoodApolloProvider>
-        <Routes />
-      </RedwoodApolloProvider>
-    </FatalErrorBoundary>
-  </ChakraProvider>
+  <FatalErrorBoundary page={FatalErrorPage}>
+    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+      <ColorModeScript />
+      <ChakraProvider>
+        <RedwoodApolloProvider>
+          <Routes />
+        </RedwoodApolloProvider>
+      </ChakraProvider>
+    </RedwoodProvider>
+  </FatalErrorBoundary>
 )
 
 export default MyApp
@@ -81,13 +84,16 @@ const theme = extendTheme({ colors })
 // 3. Pass the `theme` prop to the `ChakraProvider`
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <FatalErrorBoundary page={FatalErrorPage}>
-        <RedwoodApolloProvider>
-          <Routes />
-        </RedwoodApolloProvider>
-      </FatalErrorBoundary>
-    </ChakraProvider>
+    <FatalErrorBoundary page={FatalErrorPage}>
+      <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+        <ColorModeScript />
+        <ChakraProvider>
+          <RedwoodApolloProvider>
+            <Routes />
+          </RedwoodApolloProvider>
+        </ChakraProvider>
+      </RedwoodProvider>
+    </FatalErrorBoundary>
   )
 }
 ```
