@@ -6,3 +6,5 @@ export * from './icon-button-illustration';
 export * from './input-illustration';
 export * from './number-input-illustration';
 export * from './pin-input-illustration';
+export * from './radio-illustration';
+export * from './range-slider-illustration';

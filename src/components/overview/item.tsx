@@ -20,6 +20,8 @@ const componentIllustrations = {
   input: <Illustrations.InputIllustration />,
   'number-input': <Illustrations.NumberInputIllustration />,
   'pin-input': <Illustrations.PinInputIllustration />,
+  radio: <Illustrations.RadioIllustration />,
+  'range-slider': <Illustrations.RangeSliderIllustration />,
 }
 
 type Props = {
@@ -49,15 +51,19 @@ const OverviewItem = ({ url, title, description, slug }: Props) => {
       }}
     >
       <VStack alignItems='flex-start' spacing={4}>
-        <AspectRatio ratio={4 / 3} w='full' rounded='md' overflow='hidden'>
+        <AspectRatio
+          ratio={4 / 3}
+          w='full'
+          rounded='md'
+          overflow='hidden'
+          transition='all 200ms ease-out'
+          _groupHover={{ transform: 'scale(1.05, 1.05)' }}
+        >
           {componentIllustrations[slug] ?? (
             <Box
               bg='gray.100'
               w='full'
               h='full'
-              filter='saturate(0)'
-              _groupHover={{ filter: 'unset' }}
-              transition='all 200ms ease-out'
               rounded='md'
               _dark={{ bg: 'whiteAlpha.200' }}
             />

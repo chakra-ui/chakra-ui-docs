@@ -6,9 +6,6 @@ export const NumberInputIllustration = () => {
       width='400'
       height='300'
       viewBox='0 0 400 300'
-      filter='saturate(0)'
-      _groupHover={{ filter: 'unset' }}
-      transition='all 200ms ease-out'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
