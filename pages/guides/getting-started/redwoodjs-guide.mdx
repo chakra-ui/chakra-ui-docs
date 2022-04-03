@@ -5,43 +5,26 @@ tags: ['redwoodjs']
 author: estheragbaje
 ---
 
-### 1. Installation
+### 1. Setup
 
-Inside your `Redwoodjs` project , cd into `web`, then, install Chakra UI by
-running either of the following:
-
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
+Getting stated with Chakra UI in RedwoodJs is as easy as running the following
+command:
 
 ```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+yarn rw setup ui chakra-ui
 ```
 
-### 2. Provider Setup
-
-After installing Chakra UI, you need to set up the `ChakraProvider` at the root
-of your application.
-
-Go to `App.js` and add the `ChakraProvider` like this:
-
-```jsx live=false
-import { ChakraProvider } from '@chakra-ui/react'
-
-const App = () => (
-  <ChakraProvider>
-    <FatalErrorBoundary page={FatalErrorPage}>
-      <RedwoodApolloProvider>
-        <Routes />
-      </RedwoodApolloProvider>
-    </FatalErrorBoundary>
-  </ChakraProvider>
-)
-
-export default MyApp
-```
+Under the hood this command installs the necessary packages, sets up the Chakra
+provider and configures the lib to work with Storybook so you can start creating
+components right away.
 
 ### ChakraProvider Props
+
+After setting up Chakra UI, if you check out your `App.js` file you'll see that
+the `ChakraProvider` has been set up for you there.
+
+In case you need to do some further adjustments, it is good to know that these
+are the props that it accepts:
 
 | Name             | Type             | Default               | Description                                         |
 | ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
@@ -50,10 +33,10 @@ export default MyApp
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
+> Boom! You're good to go 🚀🚀🚀. However, if you'd love to take it a step
+> further, check out step 2.
 
-### 3. Optional Setup
+### 2. Optional Setup
 
 - Customizing Theme
 
