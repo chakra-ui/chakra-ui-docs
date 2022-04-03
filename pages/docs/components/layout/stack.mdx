@@ -101,7 +101,12 @@ element.
 </VStack>
 ```
 
-### Example
+### Stack items horizontally
+
+Pass the `direction` and set it to `row`. Optionally, you can use `align` and
+`justify` to adjust the alignment and distribution of the items.
+
+#### Feature Cards with Stack Component
 
 ```jsx manual=true
 function Feature({ title, desc, ...rest }) {
@@ -115,7 +120,7 @@ function Feature({ title, desc, ...rest }) {
 
 function StackEx() {
   return (
-    <Stack spacing={8}>
+    <Stack spacing={8} direction='row'>
       <Feature
         title='Plan Money'
         desc='The future can be even brighter but a goal without a plan is just a wish'
@@ -131,22 +136,12 @@ function StackEx() {
 render(<StackEx />)
 ```
 
-### Stack items horizontally
-
-Pass the `direction` and set it to `row`. Optionally, you can use `align` and
-`justify` to adjust the alignment and distribution of the items.
+#### Feature Cards with HStack Component
 
 ```jsx manual=true
 function Feature({ title, desc, ...rest }) {
   return (
-    <Box
-      p={5}
-      shadow='md'
-      borderWidth='1px'
-      flex='1'
-      borderRadius='md'
-      {...rest}
-    >
+    <Box p={5} shadow='md' borderWidth='1px' {...rest}>
       <Heading fontSize='xl'>{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
@@ -162,7 +157,7 @@ function StackEx() {
       />
       <Feature
         title='Save Money'
-        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings.'
+        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
       />
     </HStack>
   )
