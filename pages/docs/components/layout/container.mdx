@@ -44,6 +44,14 @@ characters (`60ch`) but you can customize this by passing custom `maxWidth`
 values or changing the size tokens defined in
 [theme.sizes](https://chakra-ui.com/docs/styled-system/theming/theme#sizes).
 
+> - About the default value: The `ch` unit is a relative unit defined by the
+>   rendered typeface's "0" character width. This width varies by the shape and
+>   style of the font.
+> - If you are curious about the reason for this default value of `60`
+>   characters, consider this explanation about
+>   [line length](https://betterwebtype.com/articles/2019/06/16/5-keys-to-accessible-web-typography/#line-length)
+>   from Better Web Type.
+
 ```jsx
 <VStack>
   <Container maxW='md' bg='blue.600' color='white'>
