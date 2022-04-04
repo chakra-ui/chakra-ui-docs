@@ -68,11 +68,17 @@ of your application.  Go to `App.js` and add the `ChakraProvider` like this:
 
 ### Optional: Customize Theme
 
+<<<<<<< HEAD
 If you intend to customize the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
 
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
+=======
+If you intend to [customise the default theme](/docs/styled-system/theming/customize-theme), 
+you will need to pass your extended theme object as a prop 
+to `ChakraProvider` as follows:
+>>>>>>> 9a7fc6458 (Add link to customisation page and condense that section)
 
 ```jsx live=false
 // 1. Import the extendTheme function
@@ -103,10 +109,6 @@ const App = () => (
   </FatalErrorBoundary>
 )
 ```
-
-> To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities. Install
-> `@chakra-ui/theme-tools`.
 
 #### Notes on TypeScript 🚨
 
