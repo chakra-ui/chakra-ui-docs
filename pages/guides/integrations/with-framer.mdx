@@ -5,88 +5,95 @@ tags: ['framer', 'animation']
 author: segunadebayo
 ---
 
-If you'd like to add some interesting motion interaction or animation to your
-Chakra UI websites or apps, here's a quick tip:
+This example shows how to add some interesting motion interaction or animation
+to your Chakra UI websites or apps with
+[Framer Motion](https://www.framer.com/docs/).
 
-If you're using a version of `framer motion` less than `v 3.10.0`:
+## Usage
 
-```jsx live=false
-import { Box, forwardRef } from '@chakra-ui/react'
+There are two ways to use `as props` and `chakra factory`.
+
+### chakra factory
+
+The chakra factory function can be used to represent animation and interaction
+using `framer motion` props, as in the example below.
+
+```tsx live=false
+import { chakra } from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
 
-// 1. Create a custom motion component from Box
-const MotionBox = motion.custom(
-  forwardRef((props, ref) => {
-    const chakraProps = Object.fromEntries(
-      // do not pass framer props to DOM element
-      Object.entries(props).filter(([key]) => !isValidMotionProp(key)),
-    )
-    return <Box ref={ref} {...chakraProps} />
-  }),
-)
-
-// 2. You'll get access to `motion` and `chakra` props in `MotionBox`
-function Example() {
-  return (
-    <MotionBox
-      boxSize='40px'
-      bg='red.300'
-      drag='x'
-      dragConstraints={{ left: -100, right: 100 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    />
-  )
-}
+const ChakraBox = chakra(motion.div, {
+  shouldForwardProp: isValidMotionProp,
+})
 ```
 
-[![Edit with CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/chakra-ui-motion-box-sbk9e?file=/src/App.tsx)
+Let's see an example using the chakra factory function!
 
-If you're using the latest version of `framer motion`, which is `>= v 3.10.0`.
-In this version, `framer-motion` automatically filters out motion-related props
-forwarded to the provided component.
-[Reference](https://www.framer.com/api/motion/component/#custom-components)
+import {
+  App as AppFactory,
+  Index as IndexFactory,
+} from 'configs/sandpack-contents/framer-motion-examples/chakra-factory'
 
-```jsx live=false
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  files={{
+    '/App.tsx': AppFactory,
+    '/index.tsx': IndexFactory,
+  }}
+/>
+
+### as prop
+
+You can also use `as` prop to add animations and interactions.
+
+> It is important to note that if there are props with the same name as the
+> `chakra` props, they take precedence over the `framer motion` props. For
+> example, a `transition` will take precedence over a `framer motion` prop and
+> the `framer motion` feature will not work.
+
+```tsx live=false
 import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
-const MotionBox = motion(Box)
-
 function Example() {
   return (
-    <MotionBox
+    <Box
+      as={motion.div}
       height='40px'
-      bg='red.300'
+      width='40px'
+      bg='orange.400'
       drag='x'
       dragConstraints={{ left: -100, right: 100 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      transition='0.5s linear'
+      // not work: transition={{ transition: "0.5", ease: "linear" }}
     />
   )
 }
 ```
 
-For TypeScript users, here's what you need to do:
+Let's look at an example of `as` prop!
 
-```tsx live=false
-import { Box, type BoxProps } from '@chakra-ui/layout'
-import { motion } from 'framer-motion'
+import {
+  App as AppAsProps,
+  Index as IndexAsProps,
+} from 'configs/sandpack-contents/framer-motion-examples/as-props'
 
-export const MotionBox = motion<BoxProps>(Box)
-
-function Example() {
-  return (
-    <MotionBox
-      height='40px'
-      bg='red.300'
-      drag='x'
-      dragConstraints={{ left: -100, right: 100 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    />
-  )
-}
-```
-
-[![Edit with CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/chakra-ui-motion-box-new-drj95?file=/src/App.tsx)
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  files={{
+    '/App.tsx': AppAsProps,
+    '/index.tsx': IndexAsProps,
+  }}
+/>

@@ -71,14 +71,24 @@
       "location": "Skopje, North Macedonia"
     },
     {
+      "login": "noobinthisgame",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21695702?v=4",
+      "url": "https://github.com/noobinthisgame",
+      "blog": "https://johann-ehlers.eu/",
+      "name": "Johann Ehlers",
+      "bio": "Full-Stack dev with a strong affinity for React, Chakra UI, Typescript and AWS.",
+      "twitter_username": "noobinthisgame",
+      "location": "Darmstadt, Germany"
+    },
+    {
       "login": "peoray",
       "avatar_url": "https://avatars.githubusercontent.com/u/23735423?v=4",
       "url": "https://github.com/peoray",
       "blog": "https://peoray.dev",
       "name": "Emmanuel Raymond",
-      "bio": "Full-stack software engineer specializing in modern JavaScript. ",
+      "bio": "Full-stack software engineer",
       "twitter_username": "peoray_",
-      "location": "Nigeria"
+      "location": "Remote"
     },
     {
       "login": "TimKolberger",
