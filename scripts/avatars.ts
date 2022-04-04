@@ -11,6 +11,7 @@ const publicDir = path.join(process.cwd(), 'public')
 const avatarsDir = path.join(publicDir, 'avatars')
 
 //test
+// test 22
 
 interface Sponsor {
   MemberId: number;
