@@ -151,7 +151,9 @@ Enable them in `web/config/storybook.preview.js` like this:
 
 | Name             | Type             | Default               | Description                                         |
 | ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+| colorModeManager | `StorageManager` | `localStorageManager` | Manager to persist a user's color mode preference in |
+| cssVarsRoot      | `string`         | `:root`               | The root element that Chakra attaches the CSS variables to |
+| environment      | `Environment`    | Depends on context    | The environment (`window` and `document`) to be used by all components and hooks. By default, we smartly determine the ownerDocument and defaultView based on where `ChakraProvider` is rendered. |
+| portalZIndex     | `number`         | `undefined`           | Common z-index to use for `Portal`                  |
+| resetCSS         | `boolean`        | `true`                | Automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | Optional custom theme                               |
