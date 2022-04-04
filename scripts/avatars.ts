@@ -10,6 +10,8 @@ const { tweets } = tweetsJson
 const publicDir = path.join(process.cwd(), 'public')
 const avatarsDir = path.join(publicDir, 'avatars')
 
+//test
+
 interface Sponsor {
   MemberId: number;
   createdAt: string;
@@ -48,7 +50,7 @@ async function getSponsors() {
       s.profile === currentSponsor.profile
     ))
   )
-  
+
   const individuals = sponsors.filter(
     (sponsor) => sponsor.type === 'USER' && sponsor.image != null,
   )
