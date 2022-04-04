@@ -1,0 +1,12 @@
+name: New version release
+
+on: repository_dispatch
+
+jobs:
+  update_changelog:
+    name: 'Update changelog on new Chakra UI release'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a message
+      run: echo "A new version has been released!"
