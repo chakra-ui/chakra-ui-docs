@@ -19,7 +19,8 @@ yarn redwood setup ui chakra-ui
 This will make the necessary modifications to your `App.tsx` (or `App.js`, respectively) 
 which are basically the same as outlined in manual installation steps below.
 
-See [below](#optional-customize-theme) for additional (optional) setup steps.
+See [additional setup](#additional-setup) (such as including 
+theme customizations and Storybook integration) below.
 
 ### Manual
 
@@ -57,14 +58,16 @@ of your application.  Go to `App.js` and add the `ChakraProvider` like this:
    ```
 
 > Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out the optional steps [outlined below](#optional-customize-theme).
+> take it a step further, check out the additional steps [outlined below](#additional-setup).
 
 ### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
 
-## Optional: Customize Theme
+## Additional setup
+
+### Customize Theme
 
 If you intend to [customize the default theme](/docs/styled-system/theming/customize-theme), 
 you will need to pass your extended theme object as a prop 
@@ -99,6 +102,50 @@ const App = () => (
   </FatalErrorBoundary>
 )
 ```
+
+### Storybook Integration
+
+RedwoodJS ships with Storybook included. To automatically wrap your 
+your stories with the `<ChakraProvider />` and add a color mode toggle, follow 
+the steps below.
+
+> The steps outlined here are semantically identical to 
+our [Storybook integration Guide](/guides/integrations/with-storybook), 
+only the install commands and file locations differ.
+
+1. Install the official Storybook Addon for Chakra UI:
+   ```bash
+   yarn workspace web add -D @chakra-ui/storybook-addon
+   yarn workspace web add @chakra-ui/icons
+   ```
+   
+2. Add the addon to your configuration in `web/config/storybook.config.js`:
+   ```jsx live=false
+   module.exports = {
+     addons: [
+       // ...
+       '@chakra-ui/storybook-addon'
+     ],
+   }
+   ```
+
+3. Additional configuration:  
+   In case you are using any [Theme customizations](/docs/styled-system/theming/customize-theme),
+you will want to see them applied in Storybook as well. 
+Enable them in `web/config/storybook.preview.js` like this:
+
+   ```jsx live=false
+   const theme = require('../path/to/your/theme')
+
+   export const parameters = {
+     // ...
+     chakra: {
+       theme,
+     },
+   }
+   ```
+
+   The `chakra` object accepts the same [props](#chakraprovider-props) as `ChakraProvider` (without `children`).
 
 ## ChakraProvider Props
 
