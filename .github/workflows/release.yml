@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Print a message
-      run: echo "A new version has been released!"
+        run: echo "A new version has been released!"
