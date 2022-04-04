@@ -5,7 +5,9 @@ tags: ['redwoodjs']
 author: estheragbaje, philzen
 ---
 
-### Automatic Installation
+## Installation
+
+### Automatic
 
 RedwoodJS provides a convenient setup script via its [CLI tool](https://redwoodjs.com/docs/cli-commands#setup-ui) 
 to enable Chakra UI in your project with a single command. In your project folder, simply enter:
@@ -19,7 +21,7 @@ which are basically the same as outlined in manual installation steps below.
 
 See [below](#optional-customize-theme) for additional (optional) setup steps.
 
-### Manual Installation
+### Manual
 
 1. Inside your `Redwoodjs` project , cd into `web`, then, install Chakra UI by
 running either of the following:
@@ -57,28 +59,16 @@ of your application.  Go to `App.js` and add the `ChakraProvider` like this:
 > Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
 > take it a step further, check out the optional steps [outlined below](#optional-customize-theme).
 
-### ChakraProvider Props
+### Notes on TypeScript 🚨
 
-| Name             | Type             | Default               | Description                                         |
-| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+Please note that when adding Chakra UI to a TypeScript project, a minimum
+TypeScript version of `4.1.0` is required.
 
-### Optional: Customize Theme
+## Optional: Customize Theme
 
-<<<<<<< HEAD
-If you intend to customize the default theme object to match your design
-requirements, you can extend the `theme` from `@chakra-ui/react`.
-
-Chakra UI provides an `extendTheme` function that deep merges the default theme
-with your customizations.
-=======
-If you intend to [customise the default theme](/docs/styled-system/theming/customize-theme), 
+If you intend to [customize the default theme](/docs/styled-system/theming/customize-theme), 
 you will need to pass your extended theme object as a prop 
 to `ChakraProvider` as follows:
->>>>>>> 9a7fc6458 (Add link to customisation page and condense that section)
 
 ```jsx live=false
 // 1. Import the extendTheme function
@@ -110,7 +100,11 @@ const App = () => (
 )
 ```
 
-#### Notes on TypeScript 🚨
+## ChakraProvider Props
 
-Please note that when adding Chakra UI to a TypeScript project, a minimum
-TypeScript version of `4.1.0` is required.
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
