@@ -1,8 +1,6 @@
 name: New version release
 
-on:
-  repository_dispatch
-  workflow_dispatch
+on: repository_dispatch
 
 jobs:
   update_changelog:
