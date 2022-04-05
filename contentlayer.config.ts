@@ -121,6 +121,7 @@ const Tutorial = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/tutorial`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },

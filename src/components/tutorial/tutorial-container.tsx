@@ -1,16 +1,31 @@
-import { Box, chakra, Stack, HStack } from '@chakra-ui/react'
+import {
+  AddIcon,
+  ExternalLinkIcon,
+  RepeatIcon,
+  EditIcon,
+} from '@chakra-ui/icons'
+import {
+  Box,
+  chakra,
+  Stack,
+  HStack,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import {
   SandpackCodeEditor,
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
-  Navigator,
 } from '@codesandbox/sandpack-react'
 import { useRouter } from 'next/router'
 import * as React from 'react'
+import { AiOutlineMenu } from 'react-icons/ai'
 import PageTransition from '../page-transition'
-import { TutorialSidebar } from './tutorial-sidebar'
 import EditPageLink from 'components/edit-page-button'
 import Header from 'components/header'
 import SEO from 'components/seo'
@@ -63,10 +78,13 @@ function TutorialContainer({
 
   const { title, description, editUrl, headings = [] } = frontmatter
 
+  // TODO move this to a config file depending on the current tutorial page
   const files = {
     '/App.tsx': TutorialApp,
     '/package.json': packageJson,
   }
+
+  console.log(editUrl)
 
   return (
     <Box minH='100vh'>
@@ -76,7 +94,6 @@ function TutorialContainer({
       </SkipNavLink>
       <Header maxWidth={'full'} />
       <Box as='main' w='full'>
-        {/* <TutorialSidebar /> */}
         <SkipNavContent />
         <Box id='content'>
           <SandpackProvider customSetup={{ files }} template='react-ts'>
@@ -86,31 +103,68 @@ function TutorialContainer({
                   overflowY={'auto'}
                   minW={{ base: '40%', xl: '35%' }}
                   h='calc(100vh - 4.5rem)'
-                  pr={'6'}
-                  pl={{ base: '4', sm: '6', xl: '8' }}
                 >
-                  <Box h='5' color='white' bg='teal'>
-                    Menu
-                  </Box>
-                  <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
-                    {title}
-                  </chakra.h1>
-                  {children}
-                  <Box mt='40px'>
-                    <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
-                    {pagination || null}
+                  <HStack
+                    bg='white'
+                    _dark={{ bg: 'gray.800' }}
+                    position='sticky'
+                    top='0'
+                    zIndex={'dropdown'}
+                    pb='4'
+                    pt='1'
+                    pl='6'
+                    spacing={4}
+                  >
+                    {/* TODO Add MenuGroup for active page and links to other
+                    pages */}
+                    <Menu>
+                      <MenuButton
+                        as={IconButton}
+                        icon={<AiOutlineMenu />}
+                        aria-label='Tutorial menu'
+                        variant='outline'
+                      />
+                      <MenuList>
+                        {headings.map((heading) => (
+                          <MenuItem
+                            as='a'
+                            key={heading.id}
+                            href={`#${heading.id}`}
+                          >
+                            {heading.text}
+                          </MenuItem>
+                        ))}
+                      </MenuList>
+                    </Menu>
+                    <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                      {title}
+                    </chakra.h1>
+                  </HStack>
+                  <Box px={'6'}>
+                    {children}
+                    <Box mt='40px'>
+                      <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
+                      {pagination || null}
+                    </Box>
                   </Box>
                 </Box>
                 <Box minW={{ base: '60%', xl: '65%' }}>
-                  <SandpackLayout theme={'night-owl'}>
+                  <SandpackLayout
+                    theme={'night-owl'}
+                    style={{
+                      borderRadius: 0,
+                      borderTop: 'none',
+                      borderBottom: 'none',
+                    }}
+                  >
                     <Stack h='calc(100vh - 4.5rem)' w={'full'}>
-                      {/* <Navigator /> */}
                       <SandpackCodeEditor
                         showLineNumbers
                         customStyle={{
                           height: '50%',
                         }}
                       />
+
                       <SandpackPreview customStyle={{ minHeight: '50%' }} />
                     </Stack>
                   </SandpackLayout>
