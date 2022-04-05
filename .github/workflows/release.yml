@@ -4,9 +4,31 @@ on: repository_dispatch
 
 jobs:
   update_changelog:
-    name: 'Update changelog on new Chakra UI release'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Print a message
-        run: echo "A new version has been released!"
+      - uses: actions/checkout@v3
+
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: changelog:gen
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.PAT }}
+          commit-message: Update report
+          committer: GitHub <noreply@github.com>
+          author:
+            ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: feat/release-new-version
+          delete-branch: true
+          title: 'feat: Update change log for new Chakra UI version'
+          body: |
+            - This is an automatically generated PR to update the change log.
+          labels: |
+            automated pr
+          assignees: aacevski
+          reviewers: aacevski
+          draft: false
