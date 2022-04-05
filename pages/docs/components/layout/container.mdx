@@ -10,10 +10,6 @@ description:
 Containers are used to constrain a content's width to the current breakpoint,
 while keeping it fluid.
 
-By default, it sets the `max-width` of the content to 60 characters (`60ch`) but
-you can customize this by passing custom `maxWidth` values or changing the
-container size tokens defined in `theme.sizes.container`.
-
 <ComponentLinks
   theme={{ componentName: 'container' }}
   github={{ package: 'layout' }}
@@ -43,14 +39,30 @@ To contain any piece of content, wrap it in the `Container` component.
 
 ## Container Size
 
-To set the size of a Container, use the `maxW` attribute.
+By default, the `Container` component sets the `maxWidth` of the content to 60
+characters (`60ch`) but you can customize this by passing custom `maxWidth`
+values or changing the size tokens defined in
+[theme.sizes.container](https://chakra-ui.com/docs/styled-system/theming/theme#sizes).
+
+> - About the default value: The `ch` unit is a relative unit defined by the
+>   rendered typeface's "0" character width. This width varies by the shape and
+>   style of the font.
+> - If you are curious about the reason for this default value of `60`
+>   characters, consider this explanation about
+>   [line length](https://betterwebtype.com/articles/2019/06/16/5-keys-to-accessible-web-typography/#line-length)
+>   from Better Web Type.
 
 ```jsx
 <VStack>
-  <Container maxW='container.xl'>Extra-Large Container</Container>
-  <Container maxW='container.lg'>Large Container</Container>
-  <Container maxW='container.md'>Medium Container</Container>
-  <Container maxW='container.sm'>Small Container</Container>
+  <Container maxW='md' bg='blue.600' color='white'>
+    "md" Container
+  </Container>
+  <Container maxW='550px' bg='purple.600' color='white'>
+    "550px" Container
+  </Container>
+  <Container maxW='container.sm' bg='green.400' color='#262626'>
+    "container.sm" Container
+  </Container>
 </VStack>
 ```
 
