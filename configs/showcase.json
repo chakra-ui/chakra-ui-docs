@@ -295,6 +295,13 @@
       "url": "https://june.so",
       "image": "showcases/websites/June.png",
       "type": "websites"
+    },
+    {
+      "name": "inspektre",
+      "description": "SAAS Platform for Application Security Posture Management",
+      "url": "https://inspektre.io",
+      "image": "showcases/websites/inspektre.png",
+      "type": "websites"
     }
   ],
   "libraries": [
