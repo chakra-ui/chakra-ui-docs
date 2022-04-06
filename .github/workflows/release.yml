@@ -44,9 +44,23 @@ jobs:
           git add pages/changelog/index.mdx
           git diff --staged --quiet || git commit -m "docs(changelog): $GITHUB_SHA"
 
+      - name: Bump Chakra UI version
+        run: /
+          yarn upgrade @chakra-ui/react --latest
+          yarn upgrade @chakra-ui/cli --latest
+          yarn upgrade @chakra-ui/props-docs --latest
+          yarn upgrade @chakra-ui/skip-nav --latest
+          yarn upgrade @chakra-ui/theme-tools --latest
+          yarn upgrade @chakra-ui/utils --latest
+
+      - name: Commit package.json
+        run: |
+          git add pages/changelog/index.mdx
+          git diff --staged --quiet || git commit -m "chore(bump-version): $GITHUB_SHA"
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           delete-branch: true
-          title: 'docs: update changelog'
+          title: 'docs: update changelog and bump chakra version'
           branch: docs/changelog-updates
