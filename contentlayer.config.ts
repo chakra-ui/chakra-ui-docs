@@ -120,7 +120,7 @@ const Tutorial = defineDocumentType(() => ({
       resolve: (doc) => ({
         title: doc.title,
         description: doc.description,
-        slug: `/tutorial`,
+        slug: `/${doc._raw.flattenedPath}`,
         headings: getTableOfContents(doc.body.raw),
       }),
     },

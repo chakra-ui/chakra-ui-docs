@@ -5,6 +5,7 @@ import Sidebar from 'components/sidebar/sidebar'
 import componentsSidebar from 'configs/components-sidebar'
 import guidesSidebar from 'configs/guides-sidebar.json'
 import styledSystemSidebar from 'configs/styled-system-sidebar.json'
+import { tutorialSidebar } from 'configs/tutorial-sidebar'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
 
@@ -16,6 +17,7 @@ export function getRoutes(slug: string) {
     '/guides': guidesSidebar,
     '/docs/styled-system': styledSystemSidebar,
     '/docs/components': componentsSidebar,
+    '/tutorial': tutorialSidebar,
   }
 
   const [, sidebar] =
@@ -31,10 +33,18 @@ interface MDXLayoutProps {
 
 export default function MDXLayout(props: MDXLayoutProps) {
   const { frontmatter, children } = props
-  const routes = getRoutes(frontmatter.slug)
+  // const routes = getRoutes(frontmatter.slug)
 
+  // const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
+  // const routeContext = getRouteContext(route, routes)
+  const routes = getRoutes(frontmatter.slug)
+  console.log('routes', routes)
+  console.log('removeLast', removeFromLast(frontmatter.slug, '#'))
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
+  console.log('route', route)
   const routeContext = getRouteContext(route, routes)
+
+  console.log('routeContext', routeContext)
 
   return (
     <PageContainer

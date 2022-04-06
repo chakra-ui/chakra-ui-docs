@@ -71,6 +71,7 @@ function TutorialContainer({
   frontmatter,
   children,
   pagination,
+  sidebar,
 }: PageContainerProps) {
   useHeadingFocusOnRouteChange()
 
@@ -117,25 +118,7 @@ function TutorialContainer({
                   >
                     {/* TODO Add MenuGroup for active page and links to other
                     pages */}
-                    <Menu>
-                      <MenuButton
-                        as={IconButton}
-                        icon={<AiOutlineMenu />}
-                        aria-label='Tutorial menu'
-                        variant='outline'
-                      />
-                      <MenuList>
-                        {headings.map((heading) => (
-                          <MenuItem
-                            as='a'
-                            key={heading.id}
-                            href={`#${heading.id}`}
-                          >
-                            {heading.text}
-                          </MenuItem>
-                        ))}
-                      </MenuList>
-                    </Menu>
+                    {sidebar}
                     <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
                       {title}
                     </chakra.h1>
