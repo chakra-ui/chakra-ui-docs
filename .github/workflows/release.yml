@@ -45,7 +45,7 @@ jobs:
           git diff --staged --quiet || git commit -m "docs(changelog): $GITHUB_SHA"
 
       - name: Bump Chakra UI version
-        run: /
+        run: |
           yarn upgrade @chakra-ui/react --latest
           yarn upgrade @chakra-ui/cli --latest
           yarn upgrade @chakra-ui/props-docs --latest
