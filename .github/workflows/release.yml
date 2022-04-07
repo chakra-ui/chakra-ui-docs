@@ -1,6 +1,6 @@
 name: Generate changelog on new release
 
-on: repository_dispatch
+on: [repository_dispatch, workflow_dispatch]
 
 jobs:
   update_changelog:
