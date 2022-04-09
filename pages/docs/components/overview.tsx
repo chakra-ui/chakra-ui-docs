@@ -11,7 +11,7 @@ import {
 import { GetStaticProps } from 'next'
 
 import OverviewItem from 'components/overview/item'
-import componentsSidebar from 'configs/components-sidebar.json'
+import componentsSidebar from 'configs/components-sidebar'
 import Layout from 'layouts'
 
 type Component = {
