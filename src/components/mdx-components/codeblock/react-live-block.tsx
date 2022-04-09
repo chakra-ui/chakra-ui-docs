@@ -15,7 +15,6 @@ const LiveCodePreview = chakra(LivePreview, {
     borderWidth: 1,
     borderRadius: '12px',
     overflowX: 'auto',
-    whiteSpace: 'pre',
   },
 })
 
