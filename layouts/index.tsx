@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import * as React from 'react'
+
 import PageContainer from 'components/page-container'
 
 const BlogLayout = dynamic(() => import('layouts/blog'))
