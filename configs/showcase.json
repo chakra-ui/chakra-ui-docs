@@ -302,6 +302,13 @@
       "url": "https://inspektre.io",
       "image": "showcases/websites/inspektre.png",
       "type": "websites"
+    },
+    {
+      "name": "CeloPunk Auction",
+      "description": "CeloPunk is a NFT marketplace on celo testnet chain. Made using Next.js, Chakra UI, MDX icon, and it's deployed on Vercel. ",
+      "url": "https://celopunk-auction.vercel.app/",
+      "image": "showcases/websites/CeloPunk-Auction.png",
+      "type": "websites"
     }
   ],
   "libraries": [
