@@ -60,7 +60,7 @@ client and the server. We'll use our createEmotionCache function here.
 import React, { useState } from 'react'
 import { hydrate } from 'react-dom'
 import { CacheProvider } from '@emotion/react'
-import { RemixBrowser } from 'remix'
+import { RemixBrowser } from '@remix-run/react'
 
 import { ClientStyleContext } from './context'
 import createEmotionCache from './createEmotionCache'
@@ -96,8 +96,8 @@ hydrate(
 import { renderToString } from 'react-dom/server'
 import { CacheProvider } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
-import { RemixServer } from 'remix'
-import type { EntryContext } from 'remix'
+import { RemixServer } from '@remix-run/react'
+import type { EntryContext } from '@remix-run/node'
 
 import { ServerStyleContext } from './context'
 import createEmotionCache from './createEmotionCache'
