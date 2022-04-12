@@ -60,7 +60,7 @@ client and the server. We'll use our createEmotionCache function here.
 import React, { useState } from 'react'
 import { hydrate } from 'react-dom'
 import { CacheProvider } from '@emotion/react'
-import { RemixBrowser } from 'remix'
+import { RemixBrowser } from '@remix-run/react'
 
 import { ClientStyleContext } from './context'
 import createEmotionCache from './createEmotionCache'
@@ -96,8 +96,8 @@ hydrate(
 import { renderToString } from 'react-dom/server'
 import { CacheProvider } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
-import { RemixServer } from 'remix'
-import type { EntryContext } from 'remix'
+import { RemixServer } from '@remix-run/server'
+import type { EntryContext } from '@remix-run/node' // Depends on the runtime you choose
 
 import { ServerStyleContext } from './context'
 import createEmotionCache from './createEmotionCache'
@@ -143,11 +143,37 @@ our `App` with the Document.
 
 ```jsx live=false
 // root.tsx
-import React, { useContext, useEffect } from 'react';
-import { withEmotionCache } from '@emotion/react';
-import { ChakraProvider } from '@chakra-ui/react';
+import React, { useContext, useEffect } from 'react'
+import { withEmotionCache } from '@emotion/react'
+import { ChakraProvider } from '@chakra-ui/react'
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from '@remix-run/react'
+import { MetaFunction, LinksFunction } from '@remix-run/node' // Depends on the runtime you choose
 
-import { ServerStyleContext, ClientStyleContext } from './context';
+import { ServerStyleContext, ClientStyleContext } from './context'
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'New Remix App',
+  viewport: 'width=device-width,initial-scale=1',
+});
+
+export let links: LinksFunction = () => {
+  return [
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstaticom' },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'
+    },
+  ]
+}
 
 interface DocumentProps {
   children: React.ReactNode;
@@ -175,14 +201,6 @@ const Document = withEmotionCache(
     return (
       <html lang="en">
         <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstaticom" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-            rel="stylesheet"
-          />
           <Meta />
           <Links />
           {serverStyleData?.map(({ key, ids, css }) => (
@@ -197,7 +215,7 @@ const Document = withEmotionCache(
           {children}
           <ScrollRestoration />
           <Scripts />
-          {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
+          <LiveReload />
         </body>
       </html>
     );
