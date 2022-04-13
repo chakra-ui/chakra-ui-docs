@@ -32,11 +32,11 @@ export const TutorialFileAction = ({
   }
 
   return (
-    <InlineCode
-      as={Button}
+    <Button
+      as={InlineCode}
       leftIcon={<Icon as={icons[type]} />}
-      h={6}
-      lineHeight='2'
+      size='xs'
+      fontSize='sm'
       onClick={() => {
         switch (type) {
           case 'open':
@@ -53,12 +53,12 @@ export const TutorialFileAction = ({
             break
           default:
             // eslint-disable-next-line no-console
-            console.log('Please select a valid type.')
+            console.error('Please select a valid type.')
             break
         }
       }}
     >
       {label || formatFilePath(path)}
-    </InlineCode>
+    </Button>
   )
 }
