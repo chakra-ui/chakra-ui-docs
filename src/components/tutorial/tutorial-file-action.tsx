@@ -37,6 +37,7 @@ export const TutorialFileAction = ({
       leftIcon={<Icon as={icons[type]} />}
       size='xs'
       fontSize='sm'
+      cursor='pointer'
       onClick={() => {
         switch (type) {
           case 'open':

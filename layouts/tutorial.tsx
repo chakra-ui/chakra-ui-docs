@@ -16,6 +16,7 @@ import Pagination from 'components/pagination'
 import TutorialContainer from 'components/tutorial/tutorial-container'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
+import { packageJson, TutorialApp } from 'configs/sandpack-contents/tutorial'
 
 interface MDXTutorialLayoutProps {
   frontmatter: any
@@ -44,7 +45,7 @@ const TutorialMenu = ({
           if (route.path === asPath) {
             return (
               <>
-                <MenuDivider />
+                <MenuDivider key={'1'} />
                 <MenuGroup
                   key={route.path}
                   title={route.title}
@@ -61,7 +62,7 @@ const TutorialMenu = ({
                     </MenuItem>
                   ))}
                 </MenuGroup>
-                <MenuDivider />
+                <MenuDivider key={'2'} />
               </>
             )
           }
@@ -78,6 +79,21 @@ const TutorialMenu = ({
   )
 }
 
+const getFiles = (slug: string) => {
+  switch (true) {
+    case slug.includes('/basics'):
+      return {
+        '/App.tsx': TutorialApp,
+        '/package.json': packageJson,
+      }
+    default:
+      return {
+        '/App.tsx': TutorialApp,
+        '/package.json': packageJson,
+      }
+  }
+}
+
 export default function MDXTutorialLayout({
   frontmatter,
   children,
@@ -85,6 +101,8 @@ export default function MDXTutorialLayout({
   const routes = getRoutes(frontmatter.slug)
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
   const routeContext = getRouteContext(route, routes)
+
+  const files = getFiles(frontmatter.slug)
 
   return (
     <TutorialContainer
@@ -101,6 +119,7 @@ export default function MDXTutorialLayout({
           routes={routes[0].routes}
         />
       }
+      files={files}
     >
       {children}
     </TutorialContainer>

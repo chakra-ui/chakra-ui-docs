@@ -1,6 +1,5 @@
 import { Box, chakra, Stack, HStack, Flex } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import { autocompletion, completionKeymap } from '@codemirror/autocomplete'
 import {
   SandpackCodeEditor,
   SandpackLayout,
@@ -13,7 +12,6 @@ import PageTransition from '../page-transition'
 import EditPageLink from 'components/edit-page-button'
 import Header from 'components/header'
 import SEO from 'components/seo'
-import { packageJson, TutorialApp } from 'configs/sandpack-contents/tutorial'
 import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
 
@@ -50,6 +48,9 @@ interface PageContainerProps {
   children: React.ReactNode
   sidebar?: React.ReactElement
   pagination?: React.ReactElement
+  files: {
+    [x: string]: string
+  }
 }
 
 function TutorialContainer({
@@ -57,18 +58,13 @@ function TutorialContainer({
   children,
   pagination,
   sidebar,
+  files,
 }: PageContainerProps) {
   useHeadingFocusOnRouteChange()
 
   if (!frontmatter) return <></>
 
   const { title, description, editUrl } = frontmatter
-
-  // TODO move this to a config file depending on the current tutorial page
-  const files = {
-    '/App.tsx': TutorialApp,
-    '/package.json': packageJson,
-  }
 
   const dependenciesNames = [
     '@chakra-ui/react',
@@ -145,10 +141,6 @@ function TutorialContainer({
                         customStyle={{
                           height: '50%',
                         }}
-                        extensions={[
-                          autocompletion({ activateOnTyping: true }),
-                        ]}
-                        extensionsKeymap={[completionKeymap]}
                       />
                       <SandpackPreview customStyle={{ minHeight: '50%' }} />
                     </Stack>

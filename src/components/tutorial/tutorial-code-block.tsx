@@ -40,7 +40,7 @@ const CodeBlock = ({ path, code, showLineNumbers = false }: CodeBlockProps) => {
               leftIcon={<Icon as={RiFileEditLine} />}
               onClick={() => {
                 sandpack.openFile(path)
-                sandpack.updateFile(path, code || '')
+                sandpack.updateFile(path, code)
               }}
             >
               Copy to Sandbox
