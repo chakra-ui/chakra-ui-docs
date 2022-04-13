@@ -1,39 +1,20 @@
 import {
   Button,
-  Flex,
   Stack,
-  Tag,
-  Box,
   Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverFooter,
-  PopoverHeader,
-  Portal,
-  Tooltip,
+  HStack,
   Text,
+  ButtonGroup,
 } from '@chakra-ui/react'
-import { lineNumbers } from '@codemirror/gutter'
-import { EditorState } from '@codemirror/state'
-import { EditorView } from '@codemirror/view'
 import {
+  SandpackCodeViewer,
   SandpackThemeProvider,
   useSandpack,
   useSandpackTheme,
 } from '@codesandbox/sandpack-react'
 import * as React from 'react'
-import { RiFileEditLine } from 'react-icons/ri'
-import {
-  formatFilePath,
-  SandpackLanguageSupport,
-  getCodeMirrorLanguage,
-  getEditorTheme,
-  getSyntaxHighlight,
-} from './utils'
+import { RiFileEditLine, RiFileTransferLine } from 'react-icons/ri'
+import { formatFilePath, SandpackLanguageSupport } from './utils'
 
 interface CodeBlockProps {
   path: string
@@ -42,105 +23,55 @@ interface CodeBlockProps {
   showLineNumbers?: boolean
 }
 
-const CodeBlock = ({
-  path,
-  code,
-  language = 'typescript',
-  showLineNumbers = false,
-}: CodeBlockProps) => {
+const CodeBlock = ({ path, code, showLineNumbers = false }: CodeBlockProps) => {
   const { theme } = useSandpackTheme()
   const { sandpack } = useSandpack()
-  const editor = React.useRef<HTMLDivElement>(null)
-
-  React.useEffect(() => {
-    const currentEditor = editor.current as HTMLDivElement
-
-    const extensions = [
-      getCodeMirrorLanguage(language),
-      getEditorTheme(theme),
-      getSyntaxHighlight(theme),
-      EditorState.readOnly.of(true),
-      EditorView.editable.of(false),
-    ]
-
-    if (showLineNumbers) {
-      extensions.push(lineNumbers())
-    }
-
-    const state = EditorState.create({
-      doc: code,
-      extensions,
-    })
-    const view = new EditorView({ state, parent: currentEditor })
-
-    return () => view.destroy()
-  }, [code, language, showLineNumbers, theme])
 
   return (
-    <Stack
-      bg={theme.palette.defaultBackground}
-      rounded='md'
-      spacing={-2}
-      w='100%'
-      my={8}
-    >
+    <Stack bg={theme.palette.defaultBackground} rounded='md' my={4}>
       {path && (
-        <Flex p={2} justifyContent='space-between' position={'relative'}>
-          <Tag
-            size='md'
-            bg='none'
-            color='purple.300'
-            opacity={0.8}
-            cursor='pointer'
-            _hover={{
-              opacity: 1,
-            }}
-            rounded='lg'
-            onClick={() => {
-              sandpack.openFile(path)
-            }}
-          >
-            {formatFilePath(path)}
-          </Tag>
-          <Button
-            size='sm'
-            position='absolute'
-            textTransform='uppercase'
-            colorScheme='teal'
-            fontSize='xs'
-            height='24px'
-            top='3'
-            zIndex='1'
-            right='1.25em'
-            leftIcon={<Icon as={RiFileEditLine} />}
-            onClick={() => {
-              sandpack.openFile(path)
-              sandpack.updateFile(path, code || '')
-            }}
-          >
-            Copy to Sandbox
-          </Button>
-        </Flex>
+        <HStack px={4} pt={2} justifyContent='space-between'>
+          <Text color='purple.300'>{formatFilePath(path)}</Text>
+          <ButtonGroup>
+            <Button
+              size='xs'
+              textTransform='uppercase'
+              colorScheme='teal'
+              leftIcon={<Icon as={RiFileEditLine} />}
+              onClick={() => {
+                sandpack.openFile(path)
+                sandpack.updateFile(path, code || '')
+              }}
+            >
+              Copy to Sandbox
+            </Button>
+            <Button
+              size='xs'
+              textTransform='uppercase'
+              colorScheme='teal'
+              leftIcon={<Icon as={RiFileTransferLine} />}
+              onClick={() => {
+                sandpack.openFile(path)
+              }}
+            >
+              Open File
+            </Button>
+          </ButtonGroup>
+        </HStack>
       )}
-      <Box
-        p={4}
-        px={1}
-        bg={theme.palette.defaultBackground}
-        rounded='lg'
-        overflow='hidden'
-        tabIndex={-1}
-        ref={editor}
+      <SandpackCodeViewer
+        showTabs={false}
+        code={code}
+        showLineNumbers={showLineNumbers}
       />
     </Stack>
   )
 }
 
-const CodeBlockWrapper = (props: CodeBlockProps) => {
+export const TutorialCodeBlock = (props: CodeBlockProps) => {
   return (
     <SandpackThemeProvider theme='night-owl'>
       <CodeBlock {...props} />
     </SandpackThemeProvider>
   )
 }
-
-export default CodeBlockWrapper

@@ -20,7 +20,7 @@ import { Pre } from 'components/mdx-components/pre'
 import { TData, THead, Table } from 'components/mdx-components/table'
 import { VideoPlayer } from 'components/mdx-components/video-player'
 import SandpackEmbed from 'components/sandpack-embed'
-import TutorialCodeBlock from 'components/tutorial/tutorial-code-block'
+import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra

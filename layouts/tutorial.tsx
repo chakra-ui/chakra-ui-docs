@@ -45,7 +45,11 @@ const TutorialMenu = ({
             return (
               <>
                 <MenuDivider />
-                <MenuGroup key={route.path} title={route.title}>
+                <MenuGroup
+                  key={route.path}
+                  title={route.title}
+                  color='teal.500'
+                >
                   {headings.map((heading) => (
                     <MenuItem
                       as='a'
@@ -63,7 +67,7 @@ const TutorialMenu = ({
           }
           return (
             <Link key={route.path} href={route.path} passHref>
-              <MenuItem fontSize='sm' fontWeight='semibold'>
+              <MenuItem fontSize='sm' fontWeight='semibold' color='teal.500'>
                 {route.title}
               </MenuItem>
             </Link>

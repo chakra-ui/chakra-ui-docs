@@ -1,21 +1,6 @@
-import {
-  AddIcon,
-  ExternalLinkIcon,
-  RepeatIcon,
-  EditIcon,
-} from '@chakra-ui/icons'
-import {
-  Box,
-  chakra,
-  Stack,
-  HStack,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-} from '@chakra-ui/react'
+import { Box, chakra, Stack, HStack, Flex } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
+import { autocompletion, completionKeymap } from '@codemirror/autocomplete'
 import {
   SandpackCodeEditor,
   SandpackLayout,
@@ -24,12 +9,12 @@ import {
 } from '@codesandbox/sandpack-react'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import { AiOutlineMenu } from 'react-icons/ai'
 import PageTransition from '../page-transition'
 import EditPageLink from 'components/edit-page-button'
 import Header from 'components/header'
 import SEO from 'components/seo'
 import { packageJson, TutorialApp } from 'configs/sandpack-contents/tutorial'
+import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
 
 function useHeadingFocusOnRouteChange() {
@@ -77,7 +62,7 @@ function TutorialContainer({
 
   if (!frontmatter) return <></>
 
-  const { title, description, editUrl, headings = [] } = frontmatter
+  const { title, description, editUrl } = frontmatter
 
   // TODO move this to a config file depending on the current tutorial page
   const files = {
@@ -85,7 +70,17 @@ function TutorialContainer({
     '/package.json': packageJson,
   }
 
-  console.log(editUrl)
+  const dependenciesNames = [
+    '@chakra-ui/react',
+    'typescript',
+    '@emotion/react',
+    '@emotion/styled',
+    'framer-motion',
+  ]
+
+  const dependencies = dependenciesNames.reduce((prev, cur) => {
+    return { ...prev, [cur]: mainPackageJson.dependencies[cur] }
+  }, {})
 
   return (
     <Box minH='100vh'>
@@ -97,7 +92,13 @@ function TutorialContainer({
       <Box as='main' w='full'>
         <SkipNavContent />
         <Box id='content'>
-          <SandpackProvider customSetup={{ files }} template='react-ts'>
+          <SandpackProvider
+            customSetup={{
+              files,
+              dependencies,
+            }}
+            template='react-ts'
+          >
             <PageTransition>
               <HStack spacing={0}>
                 <Box
@@ -116,20 +117,18 @@ function TutorialContainer({
                     pl='6'
                     spacing={4}
                   >
-                    {/* TODO Add MenuGroup for active page and links to other
-                    pages */}
                     {sidebar}
                     <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
                       {title}
                     </chakra.h1>
                   </HStack>
-                  <Box px={'6'}>
-                    {children}
+                  <Flex px={'6'} direction='column' height='95%'>
+                    <Box flex='1'>{children}</Box>
                     <Box mt='40px'>
                       <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
                       {pagination || null}
                     </Box>
-                  </Box>
+                  </Flex>
                 </Box>
                 <Box minW={{ base: '60%', xl: '65%' }}>
                   <SandpackLayout
@@ -146,8 +145,11 @@ function TutorialContainer({
                         customStyle={{
                           height: '50%',
                         }}
+                        extensions={[
+                          autocompletion({ activateOnTyping: true }),
+                        ]}
+                        extensionsKeymap={[completionKeymap]}
                       />
-
                       <SandpackPreview customStyle={{ minHeight: '50%' }} />
                     </Stack>
                   </SandpackLayout>
