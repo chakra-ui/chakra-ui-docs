@@ -1,4 +1,15 @@
-import { Box, chakra, Stack, HStack, Flex } from '@chakra-ui/react'
+import {
+  Box,
+  chakra,
+  Stack,
+  HStack,
+  Flex,
+  Button,
+  Center,
+  VStack,
+  Heading,
+  Text,
+} from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import {
   SandpackCodeEditor,
@@ -14,6 +25,8 @@ import Header from 'components/header'
 import SEO from 'components/seo'
 import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
+import { ErrorBoundary } from 'react-error-boundary'
+import NextLink from 'next/link'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -64,7 +77,7 @@ function TutorialContainer({
 
   if (!frontmatter) return <></>
 
-  const { title, description, editUrl } = frontmatter
+  const { title, description, editUrl, slug } = frontmatter
 
   const dependenciesNames = [
     '@chakra-ui/react',
@@ -88,67 +101,97 @@ function TutorialContainer({
       <Box as='main' w='full'>
         <SkipNavContent />
         <Box id='content'>
-          <SandpackProvider
-            customSetup={{
-              files,
-              dependencies,
-            }}
-            template='react-ts'
-          >
-            <PageTransition>
-              <HStack spacing={0}>
-                <Box
-                  overflowY={'auto'}
-                  minW={{ base: '40%', xl: '35%' }}
-                  h='calc(100vh - 4.5rem)'
+          <ErrorBoundary
+            FallbackComponent={() => (
+              <Center>
+                <VStack
+                  justify='center'
+                  spacing='4'
+                  as='section'
+                  mt={['20', null, '40']}
+                  textAlign='center'
                 >
-                  <HStack
-                    bg='white'
-                    _dark={{ bg: 'gray.800' }}
-                    position='sticky'
-                    top='0'
-                    zIndex={'dropdown'}
-                    pb='4'
-                    pt='1'
-                    pl='6'
-                    spacing={4}
+                  <Heading>{t('tutorialError.heading')}</Heading>
+                  <Text fontSize={{ md: 'xl' }}>
+                    {t('tutorialError.message')}
+                  </Text>
+                  <Text fontSize={{ md: 'lg' }}>
+                    {t('tutorialError.submessage')}
+                  </Text>
+                  <Button
+                    aria-label='Reload'
+                    colorScheme='teal'
+                    size='lg'
+                    onClick={() => window.location.reload()}
                   >
-                    {sidebar}
-                    <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
-                      {title}
-                    </chakra.h1>
-                  </HStack>
-                  <Flex px={'6'} direction='column' height='95%'>
-                    <Box flex='1'>{children}</Box>
-                    <Box mt='40px'>
-                      <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
-                      {pagination || null}
-                    </Box>
-                  </Flex>
-                </Box>
-                <Box minW={{ base: '60%', xl: '65%' }}>
-                  <SandpackLayout
-                    theme={'night-owl'}
-                    style={{
-                      borderRadius: 0,
-                      borderTop: 'none',
-                      borderBottom: 'none',
-                    }}
+                    {t('tutorialError.reload')}
+                  </Button>
+                </VStack>
+              </Center>
+            )}
+          >
+            <SandpackProvider
+              customSetup={{
+                files,
+                dependencies,
+              }}
+              template='react-ts'
+            >
+              <PageTransition>
+                <HStack spacing={0}>
+                  <Box
+                    overflowY={'auto'}
+                    minW={{ base: '40%', xl: '35%' }}
+                    h='calc(100vh - 4.5rem)'
                   >
-                    <Stack h='calc(100vh - 4.5rem)' w={'full'}>
-                      <SandpackCodeEditor
-                        showLineNumbers
-                        customStyle={{
-                          height: '50%',
-                        }}
-                      />
-                      <SandpackPreview customStyle={{ minHeight: '50%' }} />
-                    </Stack>
-                  </SandpackLayout>
-                </Box>
-              </HStack>
-            </PageTransition>
-          </SandpackProvider>
+                    <HStack
+                      bg='white'
+                      _dark={{ bg: 'gray.800' }}
+                      position='sticky'
+                      top='0'
+                      zIndex={'dropdown'}
+                      pb='4'
+                      pt='1'
+                      pl='6'
+                      spacing={4}
+                    >
+                      {sidebar}
+                      <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                        {title}
+                      </chakra.h1>
+                    </HStack>
+                    <Flex px={'6'} direction='column' height='95%'>
+                      <Box flex='1'>{children}</Box>
+                      <Box mt='40px'>
+                        <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
+                        {pagination || null}
+                      </Box>
+                    </Flex>
+                  </Box>
+                  <Box minW={{ base: '60%', xl: '65%' }}>
+                    <SandpackLayout
+                      theme={'night-owl'}
+                      style={{
+                        borderRadius: 0,
+                        borderTop: 'none',
+                        borderBottom: 'none',
+                      }}
+                    >
+                      <Stack h='calc(100vh - 4.5rem)' w={'full'}>
+                        <SandpackCodeEditor
+                          showLineNumbers
+                          customStyle={{
+                            height: '50%',
+                          }}
+                        />
+                        <SandpackPreview customStyle={{ minHeight: '50%' }} />
+                      </Stack>
+                    </SandpackLayout>
+                  </Box>
+                </HStack>
+              </PageTransition>
+            </SandpackProvider>
+          </ErrorBoundary>
         </Box>
       </Box>
     </Box>

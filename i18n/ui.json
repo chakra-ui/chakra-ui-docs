@@ -80,6 +80,14 @@
     "message": "You just hit a route that doesn't exist... the sadness.😢",
     "back-to-home": "Back to Home"
   },
+  "tutorialError": {
+    "title": "Ooops something broke",
+    "description": "Error in the tutorial framework",
+    "heading": "Ooops something broke 😭",
+    "message": "You just found a really nasty issue. We are aware of it. Just hit 'Reload' and code on!",
+    "submessage": "PS: Try to have no code selected in the sandbox before copying new code 😉",
+    "reload": "Reload"
+  },
   "resources": {
     "title": "Community Resources",
     "description": "A rich compilation of technical descriptions and detailed information of how Chakra UI works.",
