@@ -132,20 +132,35 @@ kinds of layouts. Here's an example of a custom alert style and layout:
 ```
 
 `Alert` can also incorporate other Chakra components. Here's an example of an
-alert with wrapping description text:
+alert with wrapping description text and the `CloseButton` component with simple
+close functionality:
 
 ```jsx
-<Alert status='success'>
-  <AlertIcon />
-  <Box flex='1'>
-    <AlertTitle>Success!</AlertTitle>
-    <AlertDescription display='block'>
-      Your application has been received. We will review your application and
-      respond within the next 48 hours.
-    </AlertDescription>
-  </Box>
-  <CloseButton position='absolute' right='8px' top='8px' />
-</Alert>
+function CompExample() {
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
+
+  return (
+    isOpen && (
+      <Alert status='success'>
+        <AlertIcon />
+        <Box>
+          <AlertTitle>Success!</AlertTitle>
+          <AlertDescription>
+            Your application has been receivd. We will review your application
+            and respond within the next 48 hours.
+          </AlertDescription>
+        </Box>
+        <CloseButton
+          alignSelf='flex-start'
+          position='relative'
+          right='-4px'
+          top='-4px'
+          onClick={onClose}
+        />
+      </Alert>
+    )
+  )
+}
 ```
 
 ## Props
