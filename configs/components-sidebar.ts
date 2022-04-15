@@ -280,6 +280,10 @@ const sidebar: Routes = {
               title: 'LinkOverlay',
               path: '/docs/components/navigation/link-overlay',
             },
+            {
+              title: 'SkipNav',
+              path: '/docs/components/navigation/skip-nav',
+            },
           ],
         },
         {
