@@ -160,6 +160,13 @@
       "url": "https://polygon.am/",
       "image": "showcases/projects/Polygon.png",
       "type": "projects"
+    },
+    {
+      "name": "Dev Resources",
+      "description": " collaborative list of resources for developers.",
+      "url": "https://devresourc.es",
+      "image": "showcases/projects/Dev-Resources.png",
+      "type": "projects"
     }
   ],
   "websites": [
