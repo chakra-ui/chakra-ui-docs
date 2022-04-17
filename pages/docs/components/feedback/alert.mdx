@@ -137,9 +137,13 @@ close functionality:
 
 ```jsx
 function CompExample() {
-  const { isOpen, onClose, onOpen } = useDisclosure({ defaultIsOpen: true })
+  const {
+    isOpen: isVisible,
+    onClose,
+    onOpen,
+  } = useDisclosure({ defaultIsOpen: true })
 
-  return isOpen ? (
+  return isVisible ? (
     <Alert status='success'>
       <AlertIcon />
       <Box>
