@@ -137,28 +137,28 @@ close functionality:
 
 ```jsx
 function CompExample() {
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
+  const { isOpen, onClose, onOpen } = useDisclosure({ defaultIsOpen: true })
 
-  return (
-    isOpen && (
-      <Alert status='success'>
-        <AlertIcon />
-        <Box>
-          <AlertTitle>Success!</AlertTitle>
-          <AlertDescription>
-            Your application has been receivd. We will review your application
-            and respond within the next 48 hours.
-          </AlertDescription>
-        </Box>
-        <CloseButton
-          alignSelf='flex-start'
-          position='relative'
-          right={-1}
-          top={-1}
-          onClick={onClose}
-        />
-      </Alert>
-    )
+  return isOpen ? (
+    <Alert status='success'>
+      <AlertIcon />
+      <Box>
+        <AlertTitle>Success!</AlertTitle>
+        <AlertDescription>
+          Your application has been receivd. We will review your application and
+          respond within the next 48 hours.
+        </AlertDescription>
+      </Box>
+      <CloseButton
+        alignSelf='flex-start'
+        position='relative'
+        right={-1}
+        top={-1}
+        onClick={onClose}
+      />
+    </Alert>
+  ) : (
+    <Button onClick={onOpen}>Show Alert</Button>
   )
 }
 ```
