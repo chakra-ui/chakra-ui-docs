@@ -50,6 +50,8 @@ export const SearchButton = React.forwardRef(function SearchButton(
     }
   }, [])
 
+  const searchTextColor = useColorModeValue('gray.600', 'gray.400')
+
   return (
     <chakra.button
       flex='1'
@@ -62,7 +64,7 @@ export const SearchButton = React.forwardRef(function SearchButton(
       whiteSpace='nowrap'
       display={{ base: 'none', sm: 'flex' }}
       alignItems='center'
-      color='gray.400'
+      color={searchTextColor}
       py='3'
       px='4'
       outline='0'
