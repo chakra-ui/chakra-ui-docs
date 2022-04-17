@@ -316,6 +316,13 @@
       "url": "https://celopunk-auction.vercel.app/",
       "image": "showcases/websites/CeloPunk-Auction.png",
       "type": "websites"
+    },
+    {
+      "name": "Gio Gold",
+      "description": "Gio Gold is an e-commerce web app, built with Next.js & Chakra UI. Our goal is to make investing in gold easy, affordable, and profitable for our valued customers.",
+      "url": "https://www.giogold.com/",
+      "image": "showcases/websites/Gio-Gold.png",
+      "type": "websites"
     }
   ],
   "libraries": [
