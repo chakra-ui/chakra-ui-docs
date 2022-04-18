@@ -50,6 +50,8 @@ export const SearchButton = React.forwardRef(function SearchButton(
     }
   }, [])
 
+  const searchTextColor = useColorModeValue('gray.600', 'gray.400')
+
   return (
     <chakra.button
       flex='1'
@@ -62,7 +64,7 @@ export const SearchButton = React.forwardRef(function SearchButton(
       whiteSpace='nowrap'
       display={{ base: 'none', sm: 'flex' }}
       alignItems='center'
-      color='gray.400'
+      color={searchTextColor}
       py='3'
       px='4'
       outline='0'
@@ -80,7 +82,7 @@ export const SearchButton = React.forwardRef(function SearchButton(
           <VisuallyHidden>
             {t('component.algolia-search.press')}{' '}
           </VisuallyHidden>
-          <Kbd color='gray.500' rounded='2px'>
+          <Kbd rounded='2px'>
             <chakra.div
               as='abbr'
               title={actionKey[1]}
@@ -90,9 +92,7 @@ export const SearchButton = React.forwardRef(function SearchButton(
             </chakra.div>
           </Kbd>
           <VisuallyHidden> {t('component.algolia-search.and')} </VisuallyHidden>
-          <Kbd color='gray.500' rounded='2px'>
-            K
-          </Kbd>
+          <Kbd rounded='2px'>K</Kbd>
           <VisuallyHidden>
             {' '}
             {t('component.algolia-search.to-search')}
