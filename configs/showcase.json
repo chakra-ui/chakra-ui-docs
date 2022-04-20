@@ -323,6 +323,13 @@
       "url": "https://www.giogold.com/",
       "image": "showcases/websites/Gio-Gold.png",
       "type": "websites"
+    },
+    {
+      "name": "Sharehouse",
+      "description": "Australian Sharehouse/Housemate finder, built with Chakra UI, Next.js & Prisma 🏡💗",
+      "url": "https://sharehouse.app",
+      "image": "showcases/websites/Sharehouse.png",
+      "type": "websites"
     }
   ],
   "libraries": [
