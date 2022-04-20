@@ -16,7 +16,6 @@ export const packageJson = `
     "hash-it": "5.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-jazzicon": "1.0.3",
     "react-scripts": "4.0.0"
   },
   "devDependencies": {

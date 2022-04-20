@@ -80,7 +80,7 @@ const NigeriaFlag = (props) => (
   </chakra.svg>
 )
 
-export const Footer: React.FunctionComponent<StackProps> = (props) => (
+export const Footer = (props: StackProps) => (
   <VStack as='footer' spacing={4} mt={12} textAlign='center' {...props}>
     <Text fontSize='sm'>
       <span>

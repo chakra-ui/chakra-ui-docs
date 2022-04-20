@@ -13,13 +13,16 @@ import { ReactNode } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { getRoutes } from './mdx'
 import Pagination from 'components/pagination'
-import TutorialContainer from 'components/tutorial/tutorial-container'
+import TutorialContainer, {
+  Frontmatter,
+} from 'components/tutorial/tutorial-container'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
-import { getRouteContext } from 'utils/get-route-context'
+import { getRouteContext, RouteItem } from 'utils/get-route-context'
 import { packageJson, TutorialApp } from 'configs/sandpack-contents/tutorial'
+import { Heading } from 'components/page-container'
 
 interface MDXTutorialLayoutProps {
-  frontmatter: any
+  frontmatter: Frontmatter
   children: ReactNode
 }
 
@@ -27,8 +30,8 @@ const TutorialMenu = ({
   headings,
   routes,
 }: {
-  headings: any[]
-  routes: any[]
+  headings: Heading[]
+  routes: RouteItem[]
 }) => {
   const { asPath } = useRouter()
 

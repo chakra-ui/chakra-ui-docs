@@ -49,15 +49,19 @@ export interface Heading {
   id: string
 }
 
+export interface Frontmatter {
+  slug?: string
+  title: string
+  description?: string
+  editUrl?: string
+  version?: string
+  headings?: Heading[]
+  publishedDate: Date
+  authorData: any
+}
+
 interface PageContainerProps {
-  frontmatter: {
-    slug?: string
-    title: string
-    description?: string
-    editUrl?: string
-    version?: string
-    headings?: Heading[]
-  }
+  frontmatter: Frontmatter
   children: React.ReactNode
   sidebar?: React.ReactElement
   pagination?: React.ReactElement

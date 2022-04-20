@@ -1,4 +1,6 @@
-export const tutorialSidebar = {
+import { RouteItem } from 'utils/get-route-context'
+
+export const tutorialSidebar: { routes: RouteItem[] } = {
   routes: [
     {
       title: 'Tutorial',
