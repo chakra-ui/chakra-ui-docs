@@ -1,4 +1,12 @@
-import { Icon, Link, Stack, Text, VStack, chakra } from '@chakra-ui/react'
+import {
+  Icon,
+  Link,
+  Stack,
+  Text,
+  VStack,
+  chakra,
+  StackProps,
+} from '@chakra-ui/react'
 import React from 'react'
 import { DiGithubBadge } from 'react-icons/di'
 import { FaYoutube } from 'react-icons/fa'
@@ -72,8 +80,8 @@ const NigeriaFlag = (props) => (
   </chakra.svg>
 )
 
-export const Footer = () => (
-  <VStack as='footer' spacing={4} mt={12} textAlign='center'>
+export const Footer = (props: StackProps) => (
+  <VStack as='footer' spacing={4} mt={12} textAlign='center' {...props}>
     <Text fontSize='sm'>
       <span>
         {t('component.footer.proudly-made-in')}

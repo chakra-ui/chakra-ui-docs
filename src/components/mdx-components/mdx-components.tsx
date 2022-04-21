@@ -20,6 +20,8 @@ import { Pre } from 'components/mdx-components/pre'
 import { TData, THead, Table } from 'components/mdx-components/table'
 import { VideoPlayer } from 'components/mdx-components/video-player'
 import SandpackEmbed from 'components/sandpack-embed'
+import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
+import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -34,6 +36,19 @@ export const MDXComponents = {
   code: InlineCode,
   pre: (props) => {
     if (typeof props.children === 'string') return <Pre {...props} />
+    if (props.children.props.type === 'tutorial') {
+      const className = props.children.props.className || ''
+      const code = props.children.props.children.trim() || ''
+      const language = className.replace(/language-/, '')
+      return (
+        <TutorialCodeBlock
+          language={language}
+          code={code}
+          path={props.children.props.path}
+          showLineNumbers={props.showLineNumbers}
+        />
+      )
+    }
     return <CodeBlock {...props} />
   },
   kbd: Kbd,
@@ -80,5 +95,6 @@ export const MDXComponents = {
       <SandpackEmbed {...props} />
     </Box>
   ),
-  FeaturesOverview
+  FeaturesOverview,
+  TutorialFileAction,
 }

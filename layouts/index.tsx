@@ -5,6 +5,7 @@ import PageContainer from 'components/page-container'
 
 const BlogLayout = dynamic(() => import('layouts/blog'))
 const MDXLayout = dynamic(() => import('layouts/mdx'))
+const TutorialLayout = dynamic(() => import('layouts/tutorial'))
 
 export default function DefaultLayout({ children, frontMatter }) {
   const slug = frontMatter?.slug
@@ -15,6 +16,9 @@ export default function DefaultLayout({ children, frontMatter }) {
     docs: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     changelog: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     faq: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
+    tutorial: (
+      <TutorialLayout frontmatter={frontMatter}>{children}</TutorialLayout>
+    ),
     default: (
       <PageContainer frontmatter={frontMatter}>{children}</PageContainer>
     ),

@@ -26,6 +26,7 @@ function CodeBlock(props) {
     viewlines,
     ln,
     mountStylesheet = false,
+    tutorialButton,
   } = props.children.props
 
   const _live = live === 'true' || live === true

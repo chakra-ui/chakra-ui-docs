@@ -183,7 +183,7 @@ export const mainNavLinks = [
   },
 ]
 
-const MainNavLinkGroup = (props: ListProps) => {
+export const MainNavLinkGroup = (props: ListProps) => {
   return (
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (

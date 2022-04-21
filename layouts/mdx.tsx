@@ -5,8 +5,10 @@ import Sidebar from 'components/sidebar/sidebar'
 import componentsSidebar from 'configs/components-sidebar'
 import guidesSidebar from 'configs/guides-sidebar.json'
 import styledSystemSidebar from 'configs/styled-system-sidebar.json'
+import { tutorialSidebar } from 'configs/tutorial-sidebar'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
+import { Frontmatter } from 'components/tutorial/tutorial-container'
 
 export function getRoutes(slug: string) {
   // for home page, use docs sidebar
@@ -16,6 +18,7 @@ export function getRoutes(slug: string) {
     '/guides': guidesSidebar,
     '/docs/styled-system': styledSystemSidebar,
     '/docs/components': componentsSidebar,
+    '/tutorial': tutorialSidebar,
   }
 
   const [, sidebar] =
@@ -25,14 +28,14 @@ export function getRoutes(slug: string) {
 }
 
 interface MDXLayoutProps {
-  frontmatter: any
+  frontmatter: Frontmatter
   children: ReactNode
 }
 
 export default function MDXLayout(props: MDXLayoutProps) {
   const { frontmatter, children } = props
-  const routes = getRoutes(frontmatter.slug)
 
+  const routes = getRoutes(frontmatter.slug)
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
   const routeContext = getRouteContext(route, routes)
 
