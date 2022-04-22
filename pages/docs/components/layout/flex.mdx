@@ -118,18 +118,23 @@ different widths differently.
 A good use case for `Spacer` is to create a navbar with a signup/login button
 aligned to the right.
 
+Since `Spacer` renders a `div`, any `gap` value provided to the parent is
+applied to both sides of this component, and therefore make the gap appear
+doubled when the spacer is completely collapsed.
+
+> The example below is not responsive on purpose as you might switch to a
+> collapsed menu on mobile.
+
 ```jsx
-<Flex>
+<Flex minWidth='max-content' alignItems='center' gap='2'>
   <Box p='2'>
     <Heading size='md'>Chakra App</Heading>
   </Box>
   <Spacer />
-  <Box>
-    <Button colorScheme='teal' mr='4'>
-      Sign Up
-    </Button>
+  <ButtonGroup gap='2'>
+    <Button colorScheme='teal'>Sign Up</Button>
     <Button colorScheme='teal'>Log in</Button>
-  </Box>
+  </ButtonGroup>
 </Flex>
 ```
 
