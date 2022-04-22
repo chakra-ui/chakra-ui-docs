@@ -97,6 +97,64 @@ function Example() {
 }
 ```
 
+## Using `isDisabled` and `isFocusable`
+
+When providing the hook with the `isDisabled` and/or `isFocusable` props, this
+values also need to be returned and passed to the radio inputs.
+
+This is different than simply passing them as props to the `RadioGroup`
+component because the component has access to context to supply the values to
+the radio inputs.
+
+Below is an example with `isDisabled` being passed to the hook and used with the
+`Radio` component. If needed, this custom component can than be controllable by
+a parent, which would supply the logic to determine if the inputs need to be
+disabled.
+
+```jsx manual=true
+function CustomRadioGroup(props) {
+  const { options, ...rest } = props
+
+  const { getRootProps, getRadioProps, isDisabled } = useRadioGroup({
+    ...rest,
+  })
+
+  const group = getRootProps()
+
+  return (
+    <HStack {...group}>
+      {options.map((value) => {
+        const radio = getRadioProps({ value })
+        return (
+          <Radio isDisabled={isDisabled} key={value} {...radio}>
+            {value}
+          </Radio>
+        )
+      })}
+    </HStack>
+  )
+}
+
+function Parent() {
+  const [isDisabled, setIsDisabled] = useState(true)
+
+  // Some logic to handle the disabled state
+
+  return (
+    <>
+      {/* Any components above */}
+      <CustomRadioGroup
+        isDisabled={isDisabled}
+        options={['react', 'vue', 'svelte']}
+      />
+      {/* Any components below */}
+    </>
+  )
+}
+
+render(<Parent />)
+```
+
 ## Parameters
 
 The `useRadioGroup` hook accepts an object with the following properties:
