@@ -1278,6 +1278,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "angie",
+      "name": "Angie Merryweather",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6738119?v=4",
+      "profile": "https://github.com/angie",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
