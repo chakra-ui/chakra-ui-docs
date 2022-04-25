@@ -94,10 +94,14 @@ Using the `as` prop of the `MenuButton`, you can render a custom component
 instead of the default `MenuButton`. For instance, you can use Chakra's `Button`
 component, or your own custom component.
 
-> Custom components must take a `ref` prop which is assigned to the React
-> component that triggers the menu opening. This is so that the `MenuList`
-> popover can be positioned correctly. Without this, the `MenuList` will render
-> in an undefined position.
+> If you decide to pass your own component to `MenuButton`, it needs to accept a
+> `ref` so that the `MenuList` can be positioned correctly. You can use Chakra's
+> `forwardRef` to supply the `ref` along with being able to use Chakra props.
+> Without a `ref`, the `MenuList` will render in an undefined position.
+
+(See the documentation on setting up the
+[forwardRef](/docs/components/recipes/as-prop#option-1-using-forwardref-from-chakra-uireact)
+with your custom component.)
 
 ### Letter Navigation
 
@@ -325,13 +329,13 @@ options. Use the `MenuOptionGroup` and `MenuItemOption` components.
 
 ### MenuButton Props
 
-`MenuButton` composes [Box](/docs/components/layout/box) so you can pass all `Box` props to
-change its style.
+`MenuButton` composes [Box](/docs/components/layout/box) so you can pass all
+`Box` props to change its style.
 
 ### MenuList Props
 
-`MenuList` composes [Box](/docs/components/layout/box) so you can pass all `Box` props to
-change its style.
+`MenuList` composes [Box](/docs/components/layout/box) so you can pass all `Box`
+props to change its style.
 
 <PropsTable of='MenuList' />
 
@@ -341,8 +345,8 @@ change its style.
 
 ### MenuGroup Props
 
-`MenuGroup` composes [Box](/docs/components/layout/box) so you can pass all `Box` props to
-change its style.
+`MenuGroup` composes [Box](/docs/components/layout/box) so you can pass all
+`Box` props to change its style.
 
 ### MenuOptionGroup Props
 
@@ -350,7 +354,7 @@ change its style.
 
 ### MenuItemOption Props
 
-`MenuItemOption` composes [Box](/docs/components/layout/box) so you can pass all box props
-in addition to these:
+`MenuItemOption` composes [Box](/docs/components/layout/box) so you can pass all
+box props in addition to these:
 
 <PropsTable of='MenuItemOption' />
