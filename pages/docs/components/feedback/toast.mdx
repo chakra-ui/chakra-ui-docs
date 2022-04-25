@@ -107,7 +107,7 @@ function ClosingToastExample() {
   }
 
   return (
-    <Stack isInline spacing={2}>
+    <Wrap>
       <Button onClick={addToast} type='button'>
         Toast
       </Button>
@@ -119,7 +119,7 @@ function ClosingToastExample() {
       <Button onClick={closeAll} type='button' variant='outline'>
         Close all toasts
       </Button>
-    </Stack>
+    </Wrap>
   )
 }
 ```
