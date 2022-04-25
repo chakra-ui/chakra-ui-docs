@@ -273,6 +273,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://lucas-mesquita.tech"><img src="https://avatars.githubusercontent.com/u/31039396?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Lucas Mesquita</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=Luccasoli" title="Documentation">📖</a></td>
     <td align="center"><a href="https://stephane-ruhlmann.com"><img src="https://avatars.githubusercontent.com/u/6011018?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Stephane Ruhlmann</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=stephane-ruhlmann" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/aiji42"><img src="https://avatars.githubusercontent.com/u/6711766?v=4?s=64" width="64px;" alt=""/><br /><sub><b>AijiUejima</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=aiji42" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/angie"><img src="https://avatars.githubusercontent.com/u/6738119?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Angie Merryweather</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Aangie" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
