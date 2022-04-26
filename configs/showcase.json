@@ -167,6 +167,27 @@
       "url": "https://devresourc.es",
       "image": "showcases/projects/Dev-Resources.png",
       "type": "projects"
+    },
+    {
+      "name": "Horizon UI",
+      "description": "rendiest Open Source Admin Template based on Chakra UI!",
+      "url": "https://horizon-ui.com/horizon-ui-chakra/",
+      "image": "showcases/projects/Horizon-UI.png",
+      "type": "projects"
+    },
+    {
+      "name": "Pesabooks",
+      "description": " digital platform to save and invest together, with Crypto.",
+      "url": "https://pesabooks.com/",
+      "image": "showcases/projects/Pesabooks.png",
+      "type": "projects"
+    },
+    {
+      "name": "Portion Monitor",
+      "description": "ecord Daily Portion Intake, Set Limits, and View Reports.",
+      "url": "https://portionmonitor.com/",
+      "image": "showcases/projects/Portion-Monitor.png",
+      "type": "projects"
     }
   ],
   "websites": [
