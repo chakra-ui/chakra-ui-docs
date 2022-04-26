@@ -61,6 +61,7 @@ const componentIllustrations = {
   portal: <Illustrations.PortalIllustration />,
   'show-/-hide': <Illustrations.ShowHideIllustration />,
   'close-button': <Illustrations.CloseButtonIllustration />,
+  skipnav: <Illustrations.SkipNavIllustration />,
 }
 
 type Props = {
