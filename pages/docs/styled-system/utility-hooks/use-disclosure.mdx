@@ -74,6 +74,13 @@ function Basic() {
 }
 ```
 
+If you need more control over the disclosure behavior, you can use a combination
+of the getter props along with the other methods and values returned by the
+hook.
+
+Below is use of the return fields of the hook without a getter to control the
+`Drawer` component on button toggle.
+
 ```jsx
 function Example() {
   const { isOpen, onOpen, onClose } = useDisclosure()
