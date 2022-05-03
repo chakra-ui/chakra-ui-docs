@@ -20,12 +20,14 @@ import { useDisclosure } from '@chakra-ui/react'
 
 The `useDisclosure` hook returns an object with the following fields:
 
-| Name       | Type       | Default | Description                                                         |
-| ---------- | ---------- | ------- | ------------------------------------------------------------------- |
-| `isOpen`   | `boolean`  | `false` | If `true`, it sets the controlled component to its visible state.   |
-| `onClose`  | `function` |         | Callback function to set a falsy value for the `isOpen` parameter.  |
-| `onOpen`   | `function` |         | Callback function to set a truthy value for the `isOpen` parameter. |
-| `onToggle` | `function` |         | Callback function to toggle the value of the `isOpen` parameter.    |
+| Name                 | Type       | Default | Description                                                                               |
+| -------------------- | ---------- | ------- | ----------------------------------------------------------------------------------------- |
+| `isOpen`             | `boolean`  | `false` | If `true`, it sets the controlled component to its visible state.                         |
+| `onClose`            | `function` |         | Callback function to set a falsy value for the `isOpen` parameter.                        |
+| `onOpen`             | `function` |         | Callback function to set a truthy value for the `isOpen` parameter.                       |
+| `onToggle`           | `function` |         | Callback function to toggle the value of the `isOpen` parameter.                          |
+| `getDisclosureProps` | `function` |         | Callback function to retrieve a set of props for the controlled component.                |
+| `getButtonProps`     | `function` |         | Callback function to retrieve a set of props for the button that triggers the disclosure. |
 
 ## Usage
 
