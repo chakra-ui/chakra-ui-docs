@@ -42,7 +42,7 @@ The component that uses `getDisclosureProps` receives the following props:
 - An optional custom `id` provided as a prop to the hook.
 - A dynamically rendered `hidden` attribute.
 
-This getter can directly accept any additional props for the component.
+`getDisclosureProps` can directly accept any additional props for the component.
 
 The button that uses `getButtonProps` for toggling receives the following props:
 
@@ -54,7 +54,7 @@ The button that uses `getButtonProps` for toggling receives the following props:
 - An onClick handler that uses the `onToggle` callback along with any other
   click events passed as an `onClick` prop to `getButtonProps`;
 
-This getter can also directly accept any additional props for the button.
+`getButtonProps` can also directly accept any additional props for the button.
 
 ```jsx
 function Basic() {
