@@ -46,11 +46,11 @@ The component that uses `getDisclosureProps` receives the following props:
 
 The button that uses `getButtonProps` for toggling receives the following props:
 
-- An optional custom `id` provided as a prop to the hook.
 - A dynamically rendered `aria-expanded` attribute to let a screen reader know
   whether the disclosure component is visible.
-- The `aria-controls` attribute to let a screen reader know which disclosure
-  component is controlled by the button.
+- The `aria-controls` attribute using the custom `id` provided as a prop to the
+  hook. This lets a screen reader know which disclosure component is controlled
+  by the button.
 - An onClick handler that uses the `onToggle` callback along with any other
   click events passed as an `onClick` prop to `getButtonProps`;
 
