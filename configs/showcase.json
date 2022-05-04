@@ -188,6 +188,13 @@
       "url": "https://portionmonitor.com/",
       "image": "showcases/projects/Portion-Monitor.png",
       "type": "projects"
+    },
+    {
+      "name": "TemplatesKart",
+      "description": "roduction-ready hand crafted beautiful Projects and Components list built on top of Chakra UI.",
+      "url": "https://templateskart.com/",
+      "image": "showcases/projects/TemplatesKart.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -350,6 +357,13 @@
       "description": "Australian Sharehouse/Housemate finder, built with Chakra UI, Next.js & Prisma 🏡💗",
       "url": "https://sharehouse.app",
       "image": "showcases/websites/Sharehouse.png",
+      "type": "websites"
+    },
+    {
+      "name": "Muhammad Ahmad's Site",
+      "description": "My personal portfolio website to show my skills, experience, and articles I published. This site built by using Next.js, Chakra Ui, Typescript and Dev.to api.",
+      "url": "https://mahmad.me",
+      "image": "showcases/websites/Muhammad-Ahmad's-Site.png",
       "type": "websites"
     }
   ],
