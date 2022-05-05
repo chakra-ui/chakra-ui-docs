@@ -18,7 +18,8 @@ import TutorialContainer, {
 } from 'components/tutorial/tutorial-container'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext, RouteItem } from 'utils/get-route-context'
-import { packageJson, TutorialApp } from 'configs/sandpack-contents/tutorial'
+import * as HelloWorldTutorial from 'configs/sandpack-contents/tutorial/hello-world'
+import * as BasicsTutorial from 'configs/sandpack-contents/tutorial/basics'
 import { Heading } from 'components/page-container'
 
 interface MDXTutorialLayoutProps {
@@ -84,15 +85,19 @@ const TutorialMenu = ({
 
 const getFiles = (slug: string) => {
   switch (true) {
-    case slug.includes('/basics'):
+    case slug.includes('/hello-world'):
       return {
-        '/App.tsx': TutorialApp,
-        '/package.json': packageJson,
+        '/App.tsx': HelloWorldTutorial.TutorialApp1,
+        '/package.json': HelloWorldTutorial.packageJson,
+      }
+    case slug.includes('basics'):
+      return {
+        '/App.tsx': HelloWorldTutorial.TutorialApp2,
       }
     default:
       return {
-        '/App.tsx': TutorialApp,
-        '/package.json': packageJson,
+        '/App.tsx': HelloWorldTutorial.TutorialApp1,
+        '/package.json': HelloWorldTutorial.packageJson,
       }
   }
 }
