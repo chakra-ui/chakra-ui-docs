@@ -17,7 +17,26 @@ Here is a list of steps to migrate your project to v2.
 ### 1. Update your dependencies
 
 Make sure you update all `@chakra-ui` packages you use to
-`@chakra-ui/<package-name>@2.0.0`
+`@chakra-ui/<package-name>@2.0.0` and your `react` dependencies to at least v18
+
+> 🚨 Chakra UI v2 is not backwards compatible with React v17 and lower. Make
+> sure you upgrade to React v18 if you want to use it.
+
+Here is how your dependencies could look like:
+
+```json
+{
+  "dependencies": {
+    "@chakra-ui/react": "^2.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  }
+}
+```
 
 Step 2 and 3 are only necessary if you used the mentioned functions in your
 project.
