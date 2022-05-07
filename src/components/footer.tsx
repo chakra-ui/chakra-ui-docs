@@ -21,7 +21,7 @@ type FooterLinkProps = {
   label?: string
 }
 
-const FooterLink: React.FC<FooterLinkProps> = ({ icon, href, label }) => (
+const FooterLink = ({ icon, href, label }: FooterLinkProps) => (
   <Link display='inline-block' href={href} aria-label={label} isExternal>
     <Icon as={icon} fontSize='xl' color='gray.400' />
   </Link>

@@ -1,4 +1,4 @@
-import { allFAQs } from '.contentlayer/generated'
+import { allFAQs } from 'contentlayer/generated'
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'

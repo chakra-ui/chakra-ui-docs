@@ -1,4 +1,4 @@
-import { allDocs } from '.contentlayer/generated'
+import { allDocs } from 'contentlayer/generated'
 import {
   GridItem,
   Heading,

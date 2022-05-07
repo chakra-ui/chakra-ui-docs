@@ -1,4 +1,4 @@
-import { allChangelogs } from '.contentlayer/generated'
+import { allChangelogs } from 'contentlayer/generated'
 import { InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import React from 'react'

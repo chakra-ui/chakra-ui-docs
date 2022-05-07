@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListProps,
-  Stack,
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react'
