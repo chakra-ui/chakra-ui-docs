@@ -13,13 +13,13 @@ mode toggle.
 
 ```sh
 yarn add -D @chakra-ui/storybook-addon
-yarn add @chakra-ui/icons
 ```
 
 ```sh
 npm i -D @chakra-ui/storybook-addon
-npm i @chakra-ui/icons
 ```
+
+> @chakra-ui/storybook-addon@>2.0.0 is compatible with storybook >6.4
 
 ## Usage
 
@@ -28,6 +28,9 @@ Add the addon to your configuration in `.storybook/main.js`:
 ```js live=false
 module.exports = {
   addons: ['@chakra-ui/storybook-addon'],
+  features: {
+    emotionAlias: false,
+  },
 }
 ```
 
