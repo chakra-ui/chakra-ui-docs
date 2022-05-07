@@ -329,11 +329,20 @@ Components.
 > `createStandaloneToast`. If you don't, the default theme will be applied,
 > causing the font size of your page to shift when the toast is open.
 
-```js
-import { createStandaloneToast } from '@chakra-ui/react'
+```tsx
+import * as ReactDOM from 'react-dom/client'
+import { createStandaloneToast } from '@chakra-ui/toast'
 
-const toast = createStandaloneToast()
-// const customToast = createStandaloneToast({ theme: yourCustomTheme })
+const { ToastContainer, toast } = createStandaloneToast()
+
+// render the ToastContainer in your React root
+const rootElement = document.getElementById('root')
+ReactDOM.createRoot(yourRootElement).render(
+  <>
+    <App />
+    <ToastContainer />
+  </>,
+)
 
 toast({
   title: 'An error occurred.',
