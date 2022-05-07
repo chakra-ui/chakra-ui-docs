@@ -83,24 +83,22 @@ export function SidebarContent({
                   selected={selected}
                   opened={opened}
                 >
-                  <Stack as='ul'>
-                    {sortedRoutes.map((lvl3) => (
-                      <SidebarLink as='li' key={lvl3.path} href={lvl3.path}>
-                        <span>{convertBackticksToInlineCode(lvl3.title)}</span>
-                        {lvl3.new && (
-                          <Badge
-                            ml='2'
-                            lineHeight='tall'
-                            fontSize='10px'
-                            variant='solid'
-                            colorScheme='purple'
-                          >
-                            New
-                          </Badge>
-                        )}
-                      </SidebarLink>
-                    ))}
-                  </Stack>
+                  {sortedRoutes.map((lvl3) => (
+                    <SidebarLink key={lvl3.path} href={lvl3.path}>
+                      <span>{convertBackticksToInlineCode(lvl3.title)}</span>
+                      {lvl3.new && (
+                        <Badge
+                          ml='2'
+                          lineHeight='tall'
+                          fontSize='10px'
+                          variant='solid'
+                          colorScheme='purple'
+                        >
+                          New
+                        </Badge>
+                      )}
+                    </SidebarLink>
+                  ))}
                 </SidebarCategory>
               )
             })}
@@ -204,8 +202,8 @@ const Sidebar = ({ routes }) => {
   return (
     <Box
       ref={ref}
-      as='nav'
       aria-label='Main Navigation'
+      as='nav'
       pos='sticky'
       overscrollBehavior='contain'
       top='6.5rem'

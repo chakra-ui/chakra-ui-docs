@@ -8,7 +8,7 @@ import Layout from 'layouts'
 export default function Page({
   doc,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const Component = useMDXComponent(doc.body.html)
+  const Component = useMDXComponent(doc.body.code)
   return (
     <Layout frontMatter={doc.frontMatter}>
       <Component components={MDXComponents} />
