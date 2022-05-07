@@ -1,11 +1,4 @@
-import {
-  HStack,
-  Link,
-  LinkBox,
-  LinkOverlay,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
+import { HStack, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react'
 
 export default function HackathonBanner() {
   return (
@@ -27,9 +20,7 @@ export default function HackathonBanner() {
       >
         <Stack direction={{ base: 'column', md: 'row' }} spacing={1}>
           <LinkOverlay href='https://hackathon.chakra-ui.com' isExternal>
-            <Text fontWeight='bold' as={Link}>
-              Ready, Set, Build! 🚀
-            </Text>
+            <Text fontWeight='bold'>Ready, Set, Build! 🚀</Text>
           </LinkOverlay>
           <Text>Join the Chakra Hackathon!</Text>
         </Stack>

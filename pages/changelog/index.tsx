@@ -1,13 +1,14 @@
-import { allChangelogs } from '.contentlayer/data'
-import { Changelog } from '.contentlayer/types'
-import { GetStaticProps } from 'next'
+import { allChangelogs } from '.contentlayer/generated'
+import { InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import React from 'react'
 import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 
-export default function Page({ doc }: { doc: Changelog }) {
-  const Component = useMDXComponent(doc.body.code)
+export default function Page({
+  doc,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const Component = useMDXComponent(doc.body.html)
   return (
     <Layout frontMatter={doc.frontMatter}>
       <Component components={MDXComponents} />
@@ -15,7 +16,7 @@ export default function Page({ doc }: { doc: Changelog }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
     props: { doc: allChangelogs[0] },
   }
