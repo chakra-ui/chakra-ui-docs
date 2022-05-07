@@ -32,54 +32,10 @@ The `useDisclosure` hook returns an object with the following fields:
 
 ## Usage
 
-For simple disclosures, you can use the `getDisclosureProps` and
-`getButtonProps` methods returned by the hook to provide the needed attributes
-and handlers to the respective component and button for basic toggling behavior
-and accessibility.
+You can use a combination of the methods and values returned by the hook for
+various control of the components affected by the disclosure.
 
-The component that uses `getDisclosureProps` receives the following props:
-
-- An `id` (provided optionally as a custom prop to the hook).
-- A dynamically rendered `hidden` attribute.
-
-`getDisclosureProps` can directly accept any additional props for the component.
-
-The button that uses `getButtonProps` for toggling receives the following props:
-
-- A dynamically rendered `aria-expanded` attribute to let a screen reader know
-  whether the disclosure component is visible.
-- The `aria-controls` attribute using the `id` (provided optionally as a custom
-  prop to the hook). This lets a screen reader know which component is
-  controlled by the button.
-- An onClick handler that uses the `onToggle` callback along with any other
-  click events passed as an `onClick` prop to `getButtonProps`;
-
-`getButtonProps` can also directly accept any additional props for the button.
-
-```jsx
-function Basic() {
-  const { getDisclosureProps, getButtonProps } = useDisclosure()
-
-  const buttonProps = getButtonProps()
-  const disclosureProps = getDisclosureProps()
-  return (
-    <>
-      <Button {...buttonProps}>Toggle Me</Button>
-      <Text {...disclosureProps} mt={4}>
-        This text is being visibly toggled hidden and shown by the button.
-        <br />
-        (Inspect these components to see the rendered attributes)
-      </Text>
-    </>
-  )
-}
-```
-
-If you need more control over the disclosure behavior, you can use a combination
-of the getter props along with the other methods and values returned by the
-hook.
-
-Below is use of the return fields of the hook without a getter to control the
+Below is the use of returned fields of the hook without a getter to control the
 `Drawer` component on button toggle.
 
 ```jsx
@@ -100,6 +56,49 @@ function Example() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+    </>
+  )
+}
+```
+
+Using the `getDisclosureProps` and `getButtonProps` methods returned by the hook
+provides the needed attributes and handlers to the respective component and
+button for visibility toggling and accessibility.
+
+The component that uses `getDisclosureProps` receives the following props:
+
+- An `id` (can optionally pass this in as a prop to the hook to render a custom
+  value).
+- A dynamically rendered `hidden` attribute.
+
+`getDisclosureProps` can directly accept any additional props for the component.
+
+The button that uses `getButtonProps` for toggling receives the following props:
+
+- A dynamically rendered `aria-expanded` attribute to let a screen reader know
+  whether the disclosure component is visible.
+- The `aria-controls` attribute using the `id` (can optionally pass `id` in as a
+  prop to the hook to render a custom value). This lets a screen reader know
+  which component is controlled by the button.
+- An onClick handler that uses the `onToggle` callback along with any other
+  click events passed as an `onClick` prop to `getButtonProps`
+
+`getButtonProps` can also directly accept any additional props for the button.
+
+```jsx
+function Basic() {
+  const { getDisclosureProps, getButtonProps } = useDisclosure()
+
+  const buttonProps = getButtonProps()
+  const disclosureProps = getDisclosureProps()
+  return (
+    <>
+      <Button {...buttonProps}>Toggle Me</Button>
+      <Text {...disclosureProps} mt={4}>
+        This text is being visibly toggled hidden and shown by the button.
+        <br />
+        (Inspect these components to see the rendered attributes)
+      </Text>
     </>
   )
 }
