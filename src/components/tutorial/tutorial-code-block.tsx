@@ -71,7 +71,7 @@ const CodeBlock = ({ path, code, showLineNumbers = false }: CodeBlockProps) => {
 export const TutorialCodeBlock = (props: CodeBlockProps) => {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore - sanpack has not yet fully provided React 18 support
+    // @ts-ignore - sandpack has not yet fully provided React 18 support
     <SandpackThemeProvider theme='night-owl'>
       <CodeBlock {...props} />
     </SandpackThemeProvider>

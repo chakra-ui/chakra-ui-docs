@@ -134,7 +134,7 @@ function TutorialContainer({
             )}
           >
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore - sanpack has not yet fully provided React 18 support */}
+            {/* @ts-ignore - sandpack has not yet fully provided React 18 support */}
             <SandpackProvider
               customSetup={{
                 files,
