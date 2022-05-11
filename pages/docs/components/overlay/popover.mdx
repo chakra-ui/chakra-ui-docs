@@ -127,7 +127,7 @@ function WalkthroughPopover() {
         </PopoverBody>
         <PopoverFooter
           border='0'
-          d='flex'
+          display='flex'
           alignItems='center'
           justifyContent='space-between'
           pb={4}
@@ -179,7 +179,7 @@ const Form = ({ firstFieldRef, onCancel }) => {
         defaultValue='John'
       />
       <TextInput label='Last name' id='last-name' defaultValue='Smith' />
-      <ButtonGroup d='flex' justifyContent='flex-end'>
+      <ButtonGroup display='flex' justifyContent='flex-end'>
         <Button variant='outline' onClick={onCancel}>
           Cancel
         </Button>
@@ -199,7 +199,7 @@ const PopoverForm = () => {
 
   return (
     <>
-      <Box d='inline-block' mr={3}>
+      <Box display='inline-block' mr={3}>
         John Smith
       </Box>
       <Popover
@@ -263,7 +263,7 @@ function ControlledUsage() {
           <PopoverBody>
             Are you sure you want to continue with your action?
           </PopoverBody>
-          <PopoverFooter d='flex' justifyContent='flex-end'>
+          <PopoverFooter display='flex' justifyContent='flex-end'>
             <ButtonGroup size='sm'>
               <Button variant='outline'>Cancel</Button>
               <Button colorScheme='red'>Apply</Button>

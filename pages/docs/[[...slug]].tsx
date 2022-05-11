@@ -1,11 +1,12 @@
-import { allDocs } from '.contentlayer/data'
-import type { Doc } from '.contentlayer/types'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { allDocs } from 'contentlayer/generated'
+import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 
-export default function Page({ doc }: { doc: Doc }) {
+export default function Page({
+  doc,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc.body.code)
   return (
     <Layout frontMatter={doc.frontMatter}>
@@ -21,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: docs, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]

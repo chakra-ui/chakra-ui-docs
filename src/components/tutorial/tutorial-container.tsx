@@ -26,7 +26,6 @@ import SEO from 'components/seo'
 import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
 import { ErrorBoundary } from 'react-error-boundary'
-import NextLink from 'next/link'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -81,7 +80,7 @@ function TutorialContainer({
 
   if (!frontmatter) return <></>
 
-  const { title, description, editUrl, slug } = frontmatter
+  const { title, description, editUrl } = frontmatter
 
   const dependenciesNames = [
     '@chakra-ui/react',
@@ -134,6 +133,8 @@ function TutorialContainer({
               </Center>
             )}
           >
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore - sandpack has not yet fully provided React 18 support */}
             <SandpackProvider
               customSetup={{
                 files,

@@ -1,4 +1,4 @@
-import { BoxProps, chakra, useColorModeValue } from '@chakra-ui/react'
+import { BoxProps, chakra, Stack, useColorModeValue } from '@chakra-ui/react'
 import { ReactNode, RefObject, useEffect, useRef, useState } from 'react'
 
 interface SidebarCategoryProps extends BoxProps {
@@ -65,9 +65,9 @@ function SidebarCategory(props: SidebarCategoryProps) {
       >
         {title}
       </chakra.p>
-      <chakra.div role='group' hidden={!toggle} mt='16px' mx='-3'>
+      <Stack role='group' hidden={!toggle} mt='16px' mx='-3'>
         {children}
-      </chakra.div>
+      </Stack>
     </chakra.div>
   )
 }
