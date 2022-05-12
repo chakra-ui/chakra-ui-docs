@@ -21,7 +21,23 @@ responsive videos and maps.
 A rule of thumb is to avoid using fixed width and heights on elements when using
 the Aspect ratio.
 
-[Insert sample code for AspectRatio]
+```tsx path=/App.tsx type=tutorial
+import { AspectRatio, ChakraProvider, Image } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <AspectRatio maxW='400px' ratio={4 / 3}>
+        <Image
+          src='https://bit.ly/naruto-sage'
+          alt='naruto'
+          objectFit='cover'
+        />
+      </AspectRatio>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Box
 
@@ -109,7 +125,6 @@ elements while HStack allows you to layout elements in the horizontal direction
 and center its elements.
 
 [Insert sample code for VStack and HStack]
-
 
 ### Wrap
 
