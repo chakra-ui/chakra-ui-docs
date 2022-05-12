@@ -57,7 +57,7 @@ import { Box, ChakraProvider } from '@chakra-ui/react'
 export default function App() {
   return (
     <ChakraProvider>
-      <Box bg='red' w='100%' p={4} color='white'>
+      <Box bg='tomato' w='100%' p={4} color='white'>
         This is a Box
       </Box>
     </ChakraProvider>
@@ -70,13 +70,43 @@ export default function App() {
 When you need to center an element, use the Center component. Center
 automatically centers elements placed within it.
 
-[Insert sample code for Center]
+```tsx path=/App.tsx type=tutorial
+import { Center, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Center bg='tomato' h='100px' color='white'>
+        This text is at the Center
+      </Center>
+    </ChakraProvider>
+  )
+}
+```
 
 In some cases, you may also want to create circle or square frames around
 elements like numbers or icons. The Circle and Square components come in handy
 here.
 
-[Insert sample code for Circle, Square]
+```tsx path=/App.tsx type=tutorial
+import { Circle, Square, HStack, ChakraProvider } from '@chakra-ui/react'
+import { PhoneIcon } from '@chakra-ui/icons'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <HStack p="8">
+        <Circle size='40px' bg='tomato' color='white'>
+          1
+        </Circle>
+        <Square size='40px' bg='purple.700' color='white'>
+          <PhoneIcon />
+        </Square>
+      </HStack>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Container
 
