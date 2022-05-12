@@ -148,7 +148,34 @@ Examples of shorthand props are, `direction` for `flexDirection`, `basis` for
 https://chakra-ui.com/docs/components/layout/flex for a full list of Flex
 shorthand props.
 
-[Insert sample code for Flex]
+```tsx path=/App.tsx type=tutorial
+import {
+  Flex,
+  Center,
+  Square,
+  Text,
+  Box,
+  ChakraProvider,
+} from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Flex justify='space-around' align='center' color='white'>
+        <Center w='100px' h='40px' bg='green.500'>
+          <Text>Box 1</Text>
+        </Center>
+        <Square bg='blue.500' size='120px'>
+          <Text>Box 2</Text>
+        </Square>
+        <Box bg='tomato' p='8'>
+          <Text>Box 3</Text>
+        </Box>
+      </Flex>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Grid
 
