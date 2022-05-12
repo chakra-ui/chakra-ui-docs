@@ -1,4 +1,4 @@
-import { allDocs } from '.contentlayer/data'
+import { allDocs } from 'contentlayer/generated'
 import {
   GridItem,
   Heading,
@@ -30,7 +30,7 @@ type Props = {
   headings: { id: string; text: string; level: number }[]
 }
 
-const ComponentsOverview = ({ categories, headings }: Props) => {
+export const ComponentsOverview = ({ categories, headings }: Props) => {
   return (
     <Layout
       frontMatter={{

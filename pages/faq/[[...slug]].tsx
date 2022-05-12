@@ -1,11 +1,12 @@
-import { allFAQs } from '.contentlayer/data'
-import type { FAQ } from '.contentlayer/types'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { allFAQs } from 'contentlayer/generated'
+import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 
-export default function Page({ faq }: { faq: FAQ }) {
+export default function Page({
+  faq,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(faq.body.code)
   return (
     <Layout frontMatter={faq.frontMatter}>
@@ -23,7 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: faqs, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]

@@ -95,7 +95,6 @@ const sidebar: Routes = {
               path: '/docs/components/form/radio',
             },
             {
-              new: true,
               title: 'Range Slider',
               path: '/docs/components/form/range-slider',
             },

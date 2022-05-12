@@ -58,7 +58,7 @@ export const ColorPalettes = (props: { color: string }) => {
   ))
 }
 
-export const ColorWrapper: React.FC<GridProps> = (props) => (
+export const ColorWrapper = (props: GridProps) => (
   <Grid
     mt={7}
     gap={6}

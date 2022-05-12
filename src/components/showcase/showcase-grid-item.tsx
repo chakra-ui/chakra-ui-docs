@@ -6,11 +6,11 @@ interface ShowcaseGridItemProps {
   rowSpan: ResponsiveValue<number | 'auto'>
 }
 
-const ShowcaseGridItem: React.FC<ShowcaseGridItemProps> = ({
+const ShowcaseGridItem = ({
   children,
   colSpan,
   rowSpan,
-}) => {
+}: React.PropsWithChildren<ShowcaseGridItemProps>) => {
   return (
     <GridItem
       colSpan={colSpan}

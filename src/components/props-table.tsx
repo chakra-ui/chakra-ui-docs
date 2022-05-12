@@ -36,7 +36,6 @@ export type PropsTableProps = {
 const PropsTable = ({
   of,
   omit = [
-    'isTruncated',
     'layerStyle',
     'noOfLines',
     'textStyle',

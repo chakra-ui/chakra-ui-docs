@@ -13,7 +13,7 @@ interface MaskProps {
   showMask?: boolean
 }
 
-const Mask: React.FC<MaskProps> = ({ name, url, showMask }) => (
+const Mask = ({ name, url, showMask }: React.PropsWithChildren<MaskProps>) => (
   <LinkBox
     as={Flex}
     w='full'
@@ -57,7 +57,7 @@ const Mask: React.FC<MaskProps> = ({ name, url, showMask }) => (
               w='full'
               px={4}
             >
-              <Text isTruncated color='teal.400'>
+              <Text noOfLines={0} color='teal.400'>
                 {url}
               </Text>
             </LinkOverlay>
