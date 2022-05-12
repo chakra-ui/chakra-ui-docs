@@ -50,7 +50,6 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
-import HackathonBanner from 'components/hackathon'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -150,7 +149,6 @@ const HomePage = ({
         <Box as='section' pt='6rem' pb={{ base: '0', md: '5rem' }}>
           <Container>
             <Box textAlign='center'>
-              <HackathonBanner />
               <chakra.h1
                 maxW='16ch'
                 mx='auto'
