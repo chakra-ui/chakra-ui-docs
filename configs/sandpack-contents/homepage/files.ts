@@ -35,13 +35,13 @@ export default function Example() {
 }`
 
 export const Index = `import * as React from "react";
-import { render } from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-render(
+ReactDOM.createRoot(rootElement).render(
   <ChakraProvider>
     <App />
   </ChakraProvider>,

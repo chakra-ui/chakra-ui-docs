@@ -5,9 +5,10 @@ import '@codesandbox/sandpack-react/dist/index.css'
 type Props = BoxProps &
   SandpackProps & {
     dependencies?: Record<string, string>
+    devDependencies?: Record<string, string>
   }
 
-const SandpackEmbed = ({ dependencies, ...props }: Props) => (
+const SandpackEmbed = ({ dependencies, devDependencies, ...props }: Props) => (
   <Box
     as={Sandpack}
     {...props}
@@ -25,7 +26,16 @@ const SandpackEmbed = ({ dependencies, ...props }: Props) => (
         '@emotion/react': '^11.7.0',
         '@emotion/styled': '^11.6.0',
         'framer-motion': '^4.1.17',
+        react: '^18.0.0',
+        'react-dom': '^18.0.0',
+        'react-scripts': '^4.0.0',
         ...dependencies,
+      },
+      devDependencies: {
+        '@types/react': '^18.0.0',
+        '@types/react-dom': '^18.0.0',
+        typescript: '^4.0.0',
+        ...devDependencies,
       },
     }}
   />
