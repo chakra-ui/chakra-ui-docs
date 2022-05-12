@@ -2,9 +2,10 @@ module.exports = {
   App: `
 import React from "react";
 import { Button, Flex, useColorMode, extendTheme, useStyleConfig, forwardRef, chakra, HTMLChakraProps, ThemingProps } from "@chakra-ui/react";
+import { StyleConfig } from '@chakra-ui/theme-tools';
 
 // 1. define component configuration
-const components = {
+const components: Record<string, StyleConfig> = {
   CustomBadge: {
     baseStyle: ({ colorMode }) => ({
       bg: colorMode === 'dark' ? 'green.300' : 'green.500',
