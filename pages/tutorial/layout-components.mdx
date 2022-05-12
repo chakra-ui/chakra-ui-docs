@@ -95,7 +95,7 @@ import { PhoneIcon } from '@chakra-ui/icons'
 export default function App() {
   return (
     <ChakraProvider>
-      <HStack p="8">
+      <HStack p='8'>
         <Circle size='40px' bg='tomato' color='white'>
           1
         </Circle>
@@ -116,7 +116,25 @@ automatically sets the maxWidth of the content to 60 characters (60ch). However,
 you can customize the maxWidth by passing custom maxWidth values or by changing
 the size tokens defined in theme.sizes. Container.
 
-[Insert sample code for Container]
+```tsx path=/App.tsx type=tutorial
+import { Container, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Container bg='blue.800' centerContent>
+        <Box padding='4' bg='blue.400' color='black' maxW='md'>
+          There are many benefits to a joint design and development system. Not
+          only does it bring benefits to the design team, but it also brings
+          benefits to engineering teams. It makes sure that our experiences have
+          a consistent look and feel, not just in our design specs, but in
+          production.
+        </Box>
+      </Container>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Flex
 
