@@ -51,7 +51,19 @@ Whenever you use Box, you can pass in any style props such as `backgroundColor,`
 You can also compose new components with the Box by using the `as` prop to
 override the underlying HTML element.
 
-[Insert sample code for Box]
+```tsx path=/App.tsx type=tutorial
+import { Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Box bg='red' w='100%' p={4} color='white'>
+        This is a Box
+      </Box>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Center
 
