@@ -184,7 +184,27 @@ Use Grid when you need to create two-dimensional layouts of rows and columns.
 But first, you'll need to wrap each child within it with a GridItem and pass the
 required props like `gap` `templateColumns` and/or `templateRows`.
 
-[Insert sample code for Grid]
+```tsx path=/App.tsx type=tutorial
+import { Grid, GridItem, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Grid
+        h='200px'
+        templateRows='repeat(2, 1fr)'
+        templateColumns='repeat(5, 1fr)'
+        gap={4}
+      >
+        <GridItem rowSpan={2} colSpan={1} bg='tomato' />
+        <GridItem colSpan={2} bg='papayawhip' />
+        <GridItem colSpan={2} bg='papayawhip' />
+        <GridItem colSpan={4} bg='tomato' />
+      </Grid>
+    </ChakraProvider>
+  )
+}
+```
 
 ### SimpleGrid
 
