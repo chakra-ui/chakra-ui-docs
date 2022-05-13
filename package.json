@@ -90,7 +90,7 @@
     "imagemin-jpegtran": "7.0.0",
     "prettier": "^2.4.1",
     "react-multi-ref": "^1.0.0",
-    "sharp": "^0.29.3",
+    "sharp": "^0.30.4",
     "ts-node": "10.7.0",
     "yarn-deduplicate": "^3.1.0"
   }
