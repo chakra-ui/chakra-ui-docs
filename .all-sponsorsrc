@@ -1526,7 +1526,7 @@
       "role": "BACKER",
       "isActive": true,
       "totalAmountDonated": 18,
-      "lastTransactionAt": "2022-05-14 00:09",
+      "lastTransactionAt": "2022-05-15 00:08",
       "lastTransactionAmount": 0,
       "profile": "https://opencollective.com/triplebyte",
       "name": "Triplebyte",
@@ -1545,7 +1545,7 @@
       "role": "BACKER",
       "isActive": true,
       "totalAmountDonated": 20,
-      "lastTransactionAt": "2022-05-14 00:09",
+      "lastTransactionAt": "2022-05-15 00:08",
       "lastTransactionAmount": 0,
       "profile": "https://opencollective.com/thinkmill",
       "name": "Thinkmill",
@@ -2025,9 +2025,9 @@
       "description": null,
       "image": "/avatars/240287.jpg",
       "email": null,
-      "twitter": null,
+      "twitter": "https://twitter.com/thepadding_co",
       "github": null,
-      "website": "https://paddn.com/"
+      "website": "https://paddn.com/hk"
     },
     {
       "MemberId": 244719,
@@ -2099,7 +2099,7 @@
       "role": "BACKER",
       "isActive": true,
       "totalAmountDonated": 60,
-      "lastTransactionAt": "2022-05-14 00:09",
+      "lastTransactionAt": "2022-05-15 00:08",
       "lastTransactionAmount": 0,
       "profile": "https://opencollective.com/strapijs",
       "name": "Strapi",
