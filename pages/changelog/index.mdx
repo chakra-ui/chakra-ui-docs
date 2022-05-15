@@ -1,14 +1,631 @@
 ---
 title: Changelog
 description: The changelog for Chakra UI React
-slug: "/changelog"
+slug: '/changelog'
 ---
 
 The Changelog gives an overview of the meaningful changes we've made to Chakra
 UI as we keep driving for better performance and best-in-class developer
 experience.
 
+## 12-05-2022
 
+`@chakra-ui/react@2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Image** `v2.0.0`
+
+- Added `fallbackStrategies` for `Image` to provide different behaviors when to
+  display/load the `fallback`
+
+- `beforeLoadOrError` is the default strategy and previous behaviour of `Image`
+  which displays/loads the placeholder when `loading` the `src`/`srcSet` and on
+  `error`
+- `onError` strategy displays/loads the fallback image only on `error`
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Alert** `v2.0.0`
+
+- The `AlertIcon` component accepts custom icons as React children
+
+```jsx live=false
+<AlertIcon>
+  <MyCustomIcon />
+</AlertIcon>
+```
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Storybook Addon** `v2.0.0`
+
+- Fixed an issue where the storybook addon did not use the default theme if none
+  was provided
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bumped the supported version of storybook to >6.4 to support other bundlers
+  than webpack.
+
+Disable the new Storybook feature flag `emotionAlias` to prevent version
+mismatch issues with emotion:
+
+```js live=false
+module.exports = {
+  addons: ['@chakra-ui/storybook-addon'],
+  features: {
+    emotionAlias: false,
+  },
+}
+```
+
+The ColorMode Toggle moved to the Storybook toolbar together with a new layout
+direction toggle (ltr/rtl).
+
+A new helper function extracts the ArgTypes for a given Chakra UI component. You
+can quickly preview all variants, sizes and colorSchemes of your components
+which are present in your Chakra UI Theme.
+
+```tsx
+// button.stories.tsx
+import { getThemingArgTypes } from '@chakra-ui/storybook-addon'
+import { theme } from '<your-theme>'
+
+export default {
+  title: 'Components / Forms / Button',
+  argTypes: getThemingArgTypes(theme, 'Button'),
+}
+
+interface StoryProps extends ThemingProps<'Button'> {}
+
+export const Basic: StoryFn<StoryProps> = (props) => (
+  <Button {...props}>Button</Button>
+)
+```
+
+- Bump peer dependency to React and ReactDOM to >=18
+- Replace the button on the corner with a toggle tool
+
+**Toast** `v2.0.0`
+
+- Removed dependency to @reach-ui/alert
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- > Please note: There are **no breaking changes** to the hook `useToast`. There
+  > are only breaking changes to `createStandaloneToast`.
+
+### Breaking changes to `createStandaloneToast`
+
+Chakra UI v1 rendered the toast container DOM element for you. In v2 you need to
+render the `ToastContainer` in your application code. This allows you have only
+one React root in your application.
+
+#### @chakra-ui/react v1
+
+```ts
+import { createStandaloneToast } from '@chakra-ui/toast'
+
+const toast = createStandaloneToast()
+toast({ title: 'Chakra UI' })
+```
+
+#### @chakra-ui/react v2
+
+```tsx
+import * as ReactDOM from 'react-dom/client'
+import { createStandaloneToast } from '@chakra-ui/toast'
+
+const { ToastContainer, toast } = createStandaloneToast()
+
+// render the ToastContainer in your React root
+const rootElement = document.getElementById('root')
+ReactDOM.createRoot(yourRootElement).render(
+  <>
+    <App />
+    <ToastContainer />
+  </>,
+)
+
+toast({ title: 'Chakra UI' })
+```
+
+- Added support for custom icons in a toast:
+
+```tsx
+const toast = useToast()
+return (
+  <Button
+    onClick={() => {
+      toast({
+        title: 'Message me',
+        icon: '💬',
+      })
+    }}
+  >
+    Show Toast with custom icon
+  </Button>
+)
+```
+
+- Added memoization to the toast function from `useToast`
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Create React App Ts** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Gatsby Starter Default** `v1.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Chakra Nextjs** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Chakra Nextjs Ts** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Storybook Addon** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Accordion** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Anatomy** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Avatar** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Breadcrumb** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Button** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**Checkbox** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+- Removed `defaultIsChecked`. Use `defaultChecked`
+
+**Clickable** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Close Button** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Color Mode** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed references to `--chakra-ui-color-mode`. Use `data-theme` property
+  instead
+
+Allow user configure the storage key for the provider and script. We now export
+a `createLocalStorageManager` and `createCookieStorageManager` functions.
+
+```jsx live=false
+const manager = createLocalStorageManager('{storageKey}')
+
+function App({ Component, pageProps }) {
+  return (
+    <ChakraProvider colorModeManager={manager}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
+}
+```
+
+Add better support for cookie storage to provide better SSG experience. To use
+cookie script, you can set `type=cookie`.
+
+> Pro tip: You can also configure the `storageKey` from script as well
+
+```jsx live=false
+import { ColorModeScript } from '@chakra-ui/react'
+function Document() {
+  return (
+    <Html>
+      <Head>
+        <title>App</title>
+      </Head>
+      <Body>
+        <ColorModeScript type='cookie' />
+        <Main />
+      </Body>
+    </Html>
+  )
+}
+```
+
+Refactored color mode to behave consistently between provider and script. The
+new precedence is as follows:
+
+- Get the color mode value in the specified localStorage or cookie manager
+- If value doesn't exist, use the `initialColorMode` value specified.
+  - If the initial value is `system`, then we'll compute the color mode using
+    `matchMedia`
+  - Else, we use the initial value as is.
+- If user specifies `useSystemColorMode: true`, then we'll subscribe to color
+  mode changes from the operating system. It is no longer used to determine the
+  initial color mode. To achieve that, please use `initialColorMode: "system"`
+
+Removed `--chakra-ui-color-mode` CSS variable and use `data-theme` attribute on
+the `html` element.
+
+Added `color-scheme` to the `html` element to ensure native form-elements render
+in the correct mode.
+
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Control Box** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Counter** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Css Reset** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- When using the focus-visible package, you can now opt out of the automatic
+  focus style override by adding `data-focus-visible-disabled` to a DOM element.
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Descendant** `v3.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Editable** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Fix issue where `onCancel` was not called when the input is blurred and
+  `submitOnBlur` is `false`
+- Bump peer dependency to React and ReactDOM to >=18
+
+**React Env** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Fix issue where `EnviromentProvider` causes suspense boundary to throw
+  hydration errors.
+
+Always render the `env` getter element to ensure consistent behavior in all
+environments.
+
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Focus Lock** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Form Control** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Hooks** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed `useEventCallback` hook
+
+**Icon** `v3.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Icons** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Input** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**Layout** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `area` prop from `Grid` component. Should be passed to the
+  `GridItem` instead.
+
+**Live Region** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Media Query** `v3.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+
+**Menu** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Modal** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Make `leastDestructiveRef` non-nullable
+- Upgrade dependency react-remove-scroll
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Number Input** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**Pin Input** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Popover** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Fixed an issue where the `Popover` closes when a `select` element is within it
+  and the selection overflows the `Popover` boundaries.
+- Add a reference to popover close button
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Popper** `v3.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Fix issue where matchWidth doesn't work as expected due to the fixed
+  `min-width: max-content` style attached to the element
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Portal** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Progress** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Provider** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Radio** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**React Utils** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Select** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**Skeleton** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Skip Nav** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Slider** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Spinner** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Stat** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Styled System** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `d` style prop. Use `display` instead.
+- Removed the `isTruncated` style prop. Use `noOfLines={1}` instead.
+
+**Switch** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**System** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Table** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Tabs** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Tag** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Textarea** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Removed the `isFullWidth` deprecation. Use `width=full` or `width=100%`
+
+**Theme** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Fix typescript errors
+- Removed deprecated types.
+- Improve accessibility of input placeholders
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Tooltip** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Transition** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Utils** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Visually Hidden** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Cra Template** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Cra Template Typescript** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Gatsby Plugin** `v3.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Props Docs** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Test Utils** `v2.0.0`
+
+- Bump all packages to next major for Chakra UI version 2.
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Vite Ts** `v1.0.0`
+
+- Omit `src` directory from being published to npm
+
+**Theme Tools** `v2.0.0`
+
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
+
+**Cli** `v2.0.0`
+
+- Omit `src` directory from being published to npm
+- Bump peer dependency to React and ReactDOM to >=18
 
 ## 06-04-2022
 
@@ -48,7 +665,7 @@ field is optional.
 - Add support for vertical and horizontal spacing options in the Wrap component.
 
 ```jsx live=false
-<Wrap spacingX="2" spacingY="4">
+<Wrap spacingX='2' spacingY='4'>
   <Box />
   <Box />
   <Box />
@@ -137,7 +754,7 @@ field is optional.
   to handle multi line text input in an editable context.
 
 ```tsx live=false
-<Editable defaultValue="Change me" onChange={console.log}>
+<Editable defaultValue='Change me' onChange={console.log}>
   <EditablePreview />
   <EditableTextarea />
 </Editable>
@@ -414,34 +1031,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -449,7 +1066,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -457,31 +1074,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -499,34 +1116,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -534,7 +1151,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -542,31 +1159,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -579,7 +1196,7 @@ const theme = extendTheme({
 
 ```jsx live=false
 // Now you can use only colors from the theme
-import colors from "@chakra-ui/theme/foundations/colors"
+import colors from '@chakra-ui/theme/foundations/colors'
 ```
 
 Here's a table of the theme parts and entrypoints
@@ -607,34 +1224,34 @@ Semantic tokens provide the ability to create css variables which can change
 with a CSS condition.
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    900: "#171923",
+    900: '#171923',
   },
 })
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="gray.900">will always be gray.900</Text>
+    <Text color='gray.900'>will always be gray.900</Text>
   </ChakraProvider>
 )
 ```
 
 ```tsx live=false
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const customTheme = extendTheme({
   colors: {
-    50: "#F7FAFC",
-    900: "#171923",
+    50: '#F7FAFC',
+    900: '#171923',
   },
   semanticTokens: {
     colors: {
       text: {
-        default: "gray.900",
-        _dark: "gray.50",
+        default: 'gray.900',
+        _dark: 'gray.50',
       },
     },
   },
@@ -642,7 +1259,7 @@ const customTheme = extendTheme({
 
 const App = () => (
   <ChakraProvider theme={customTheme}>
-    <Text color="text">
+    <Text color='text'>
       will be gray.900 in light mode and gray.50 in dark mode
     </Text>
   </ChakraProvider>
@@ -650,31 +1267,31 @@ const App = () => (
 ```
 
 ```tsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#ff0010",
-      400: "#ff0040",
-      500: "#ff0050",
-      700: "#ff0070",
-      800: "#ff0080",
+      100: '#ff0010',
+      400: '#ff0040',
+      500: '#ff0050',
+      700: '#ff0070',
+      800: '#ff0080',
     },
   },
   semanticTokens: {
     colors: {
-      error: "red.500", // create a token alias
-      success: "red.100",
+      error: 'red.500', // create a token alias
+      success: 'red.100',
       primary: {
         // set variable conditionally with pseudo selectors like `_dark` and `_light`
         // use `default` to define fallback value
-        default: "red.500",
-        _dark: "red.400",
+        default: 'red.500',
+        _dark: 'red.400',
       },
       secondary: {
-        default: "red.800",
-        _dark: "red.700",
+        default: 'red.800',
+        _dark: 'red.700',
       },
     },
   },
@@ -728,7 +1345,7 @@ const theme = extendTheme({
 - Add helper function `flatten`
 
 ```ts
-import { flatten } from "@chakra-ui/utils"
+import { flatten } from '@chakra-ui/utils'
 
 flatten({ space: [0, 1, 2, 4, 8, 16, 32] })
 /** =>
@@ -807,8 +1424,8 @@ with `.peer` or `data-peer`) attribute.
 
 ```jsx live=false
 <>
-  <input type="checkbox" data-peer />
-  <Box bg="white" _peerFocus={{ bg: "green.400" }} />
+  <input type='checkbox' data-peer />
+  <Box bg='white' _peerFocus={{ bg: 'green.400' }} />
 </>
 ```
 
@@ -910,7 +1527,7 @@ Add the addon to your configuration in `.storybook/main.js`:
 
 ```js live=false
 module.exports = {
-  addons: ["@chakra-ui/storybook-addon"],
+  addons: ['@chakra-ui/storybook-addon'],
 }
 ```
 
@@ -1009,7 +1626,7 @@ module.exports = {
   </PopoverTrigger>
   {/* popover will be positioned relative to this */}
   <PopoverAnchor>
-    <Box width="40px" height="40px" />
+    <Box width='40px' height='40px' />
   </PopoverAnchor>
   <PopoverContent>Hello World</PopoverContent>
 </Popover>
@@ -1038,10 +1655,10 @@ module.exports = {
 function Example() {
   // Via instantiation
   const toast = useToast({
-    position: "top",
-    title: "Container style is customizable",
+    position: 'top',
+    title: 'Container style is customizable',
     containerStyle: {
-      maxWidth: "100%",
+      maxWidth: '100%',
     },
   })
 
@@ -1051,7 +1668,7 @@ function Example() {
       onClick={() => {
         toast({
           containerStyle: {
-            maxWidth: "100%",
+            maxWidth: '100%',
           },
         })
       }}
@@ -1082,8 +1699,8 @@ function Example() {
 
 ```jsx live=false
 const HeartIcon = createIcon({
-  displayName: "HeartIcon",
-  path: [<path stroke="none" d="..." fill="none" />, <path d="..." />],
+  displayName: 'HeartIcon',
+  path: [<path stroke='none' d='...' fill='none' />, <path d='...' />],
 })
 ```
 
@@ -1149,10 +1766,10 @@ Here's how to resolve it:
 
 ```jsx live=false
 // Won't work 🎇
-import { useOutsideClick } from "@chakra-ui/hooks/dist/use-outside-click"
+import { useOutsideClick } from '@chakra-ui/hooks/dist/use-outside-click'
 
 // Works ✅
-import { useOutsideClick } from "@chakra-ui/hooks"
+import { useOutsideClick } from '@chakra-ui/hooks'
 ```
 
 If this affected your project, we recommend that you import hooks, functions or
@@ -1562,10 +2179,10 @@ theme but we promise to revisit the typings and API very soon.
 Creating a CSS variable in the theme
 
 ```jsx live=false
-import { cssVar, calc } from "@chakra-ui/theme-tools"
+import { cssVar, calc } from '@chakra-ui/theme-tools'
 
-const $width = cssVar("slider-width")
-const $height = cssVar("slider-height")
+const $width = cssVar('slider-width')
+const $height = cssVar('slider-height')
 
 const $diff = calc($width).subtract($height).toString()
 
@@ -1635,7 +2252,7 @@ type-safe, multipart component styles.
   root FormControl element to be themed.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
   components: {
@@ -1645,8 +2262,8 @@ export const theme = extendTheme({
         custom: {
           // style the root `FormControl` element
           container: {
-            color: "white",
-            bg: "blue.900",
+            color: 'white',
+            bg: 'blue.900',
           },
         },
       },
@@ -1828,7 +2445,7 @@ export or an export named `theme`.
 
 ```jsx live=false
 // chakra-theme-package/src/index.js
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({})
 
@@ -1960,7 +2577,7 @@ To use this API, you'll need to set `transform` to `auto` or `auto-gpu` (for the
 GPU accelerated version).
 
 ```jsx live=false
-<Circle transform="auto" translateX="4" _hover={{ translateX: "8" }}>
+<Circle transform='auto' translateX='4' _hover={{ translateX: '8' }}>
   <CheckIcon />
 </Circle>
 ```
@@ -2172,35 +2789,35 @@ import {
   withDefaultSize,
   withDefaultVariant,
   withDefaultProps,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 const customTheme = extendTheme(
   {
     colors: {
       brand: {
         // ...
-        500: "#b4d455",
+        500: '#b4d455',
         // ...
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: "brand" }),
+  withDefaultColorScheme({ colorScheme: 'brand' }),
   withDefaultSize({
-    size: "lg",
-    components: ["Input", "NumberInput", "PinInput"],
+    size: 'lg',
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   withDefaultVariant({
-    variant: "outline",
-    components: ["Input", "NumberInput", "PinInput"],
+    variant: 'outline',
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   // or all in one:
   withDefaultProps({
     defaultProps: {
-      colorScheme: "brand",
-      variant: "outline",
-      size: "lg",
+      colorScheme: 'brand',
+      variant: 'outline',
+      size: 'lg',
     },
-    components: ["Input", "NumberInput", "PinInput"],
+    components: ['Input', 'NumberInput', 'PinInput'],
   }),
   // optional:
   yourCustomBaseTheme, // defaults to our chakra default theme
@@ -2247,7 +2864,7 @@ const customTheme = extendTheme(
   `end`.
 
 ```jsx live=false
-<Button isLoading spinnerPlacement="end">
+<Button isLoading spinnerPlacement='end'>
   Click me
 </Button>
 ```
@@ -2507,7 +3124,7 @@ Popover
 - Use `--popover-bg` css property to control popover and arrow background.
 
 ```jsx live=false
-<PopoverContent style={{ "--popover-bg": "purple" }}>
+<PopoverContent style={{ '--popover-bg': 'purple' }}>
   <PopoverArrow />
 </PopoverContent>
 ```
@@ -2626,9 +3243,9 @@ Update text align attribute to use end instead of right for RTL.
 ```jsx live=false
 <Box
   sx={{
-    "--banner-color": "colors.red.200",
-    "& .banner": {
-      bg: "var(--banner-color)",
+    '--banner-color': 'colors.red.200',
+    '& .banner': {
+      bg: 'var(--banner-color)',
     },
   }}
 />
@@ -2845,7 +3462,7 @@ Update text align attribute to use end instead of right for RTL.
   `extendTheme` function even further.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 export const customTheme = extendTheme({
   // here you get autocomplete for
@@ -2887,13 +3504,13 @@ You can get typesafe access to your custom theme like this:
 const theme = {
   textStyles: {
     caps: {
-      fontWeight: "bold",
-      fontSize: "24px",
+      fontWeight: 'bold',
+      fontSize: '24px',
     },
   },
 }
 
-const styles = css({ textStyle: "caps" })(theme)
+const styles = css({ textStyle: 'caps' })(theme)
 ```
 
 This also works for the component theme as well.

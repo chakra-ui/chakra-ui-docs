@@ -3,7 +3,7 @@ import * as React from 'react'
 import { MdEdit } from 'react-icons/md'
 import { t } from 'utils/i18n'
 
-const EditPageLink: React.FC<{ href?: string }> = ({ href }) => {
+const EditPageLink = ({ href }: { href?: string }) => {
   return (
     <Link href={href} isExternal>
       <Stack

@@ -62,7 +62,7 @@ Wiring up to the rest of your app:
 
 ```jsx live=false
 import React from 'react'
-import ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom/client'
 import HookForm from './HookForm'
 import { ChakraProvider, CSSReset, Box } from '@chakra-ui/react'
 
@@ -78,7 +78,7 @@ function App() {
 }
 
 const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+ReactDOM.createRoot(rootElement).render(<App />)
 ```
 
 credit: Abhishek Kumar Singh - https://abheist.com/
