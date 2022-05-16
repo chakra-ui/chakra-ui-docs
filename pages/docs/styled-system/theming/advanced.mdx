@@ -35,40 +35,35 @@ interface StyleConfig {
 ```
 
 For example, to create a simple badge that changes its background based on color
-mode. Here's how to go about it.
+mode, here's how to go about it:
 
-```jsx live=false
-import { extendTheme, useStyleConfig } from '@chakra-ui/react'
+import {
+  App as AppSingleComponentStyle,
+  Index as IndexSingleComponentStyle,
+} from 'configs/sandpack-contents/single-component-style/custom-badge.js'
 
-// 1. define component configuration
-const components = {
-  CustomBadge: {
-    baseStyle: ({ colorMode }) => ({
-      bg: colorMode === 'dark' ? 'green.300' : 'green.500',
-      color: colorMode === 'dark' ? 'gray.800' : 'white',
-      textTransform: 'uppercase',
-      fontWeight: 'semibold',
-      letterSpacing: '0.02em',
-      padding: '4px',
-      borderRadius: '2px',
-      fontSize: '12px',
-    }),
-  },
-}
-
-// 2. Call `extendTheme` and pass your custom values`
-const theme = extendTheme({ components })
-
-// 3. Use it in your components
-function CustomBadge(props) {
-  const { size, variant, ...rest } = props
-  const styles = useStyleConfig('CustomBadge', { size, variant })
-  return <Box as='span' sx={styles} {...rest} />
-}
-
-// 4. Use the component
-render(<CustomBadge>I am a custom badge</CustomBadge>)
-```
+<SandpackEmbed
+  options={{
+    editorHeight: 600,
+    editorWidthPercentage: 60,
+  }}
+  zIndex={0}
+  tabIndex={-1}
+  dependencies={{
+    '@chakra-ui/theme-tools': '2.0.0',
+    react: '^18.0.0',
+    'react-dom': '^18.0.0',
+    'react-scripts': '^5.0.0',
+  }}
+  devDependencies={{
+    '@types/react': '^18.0.0',
+    '@types/react-dom': '^18.0.0',
+  }}
+  files={{
+    '/App.tsx': AppSingleComponentStyle,
+    '/index.tsx': IndexSingleComponentStyle,
+  }}
+/>
 
 ## Multipart or Composite Component
 
