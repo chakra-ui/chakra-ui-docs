@@ -51,7 +51,7 @@ When using this component, ensure the children passed to `PopoverTrigger` is
 focusable and has a forwarded ref. Users can tab to it using their keyboard and
 is critical for accessibility. If you are using a custom component inside
 `PopoverTrigger` (or [PopoverAnchor](#popover-anchor)) it needs Chakra's
-[forwardRef](https://chakra-ui.com/docs/components/recipes/as-prop#option-1-using-forwardref-from-chakra-uireact).
+[forwardRef](../recipes/as-prop#option-1-using-forwardref-from-chakra-uireact).
 
 > **A11y:** When Popover opens, focus is sent to `PopoverContent`. When it
 > closes, focus is returned to the trigger.
@@ -290,7 +290,7 @@ action about popover.
 
 > 🚨 Note: As with [PopoverTrigger](#basic-usage), if you use a custom component
 > inside `PopoverAnchor` ensure that it uses Chakra's
-> [forwardRef](https://chakra-ui.com/docs/components/recipes/as-prop#option-1-using-forwardref-from-chakra-uireact)
+> [forwardRef](../recipes/as-prop#option-1-using-forwardref-from-chakra-uireact)
 > so the popover is triggered successfully.
 
 ```jsx
