@@ -100,7 +100,7 @@ const Input = ({ name, ...props }: Props) => {
 
 export default Input;`,
 
-  App: `import { Box, ChakraProvider, Button } from "@chakra-ui/react";
+  App: `import { Box, Button } from "@chakra-ui/react";
 import { Formik, FormikProps } from "formik";
 
 import Input from "./input";
@@ -116,7 +116,7 @@ const AVATARS = [
 
 type Values = {
   email: string;
-  avatar: number;
+  avatar: string;
 };
 
 export default function App() {
@@ -130,9 +130,11 @@ export default function App() {
           <form onSubmit={props.handleSubmit}>
             <Input name="email" />
             <RadioGroup name="avatar" py={2} display="flex" gridColumnGap={2}>
-              {AVATARS.map(({ name, image }) => (
+              {AVATARS.map(({ name, image }) => {
+                console.log("App line 32 ~ name: ", name)
+                return (
                 <ImageRadio key={image} image={image} value={name} />
-              ))}
+              )})}
             </RadioGroup>
             <Button type="submit">Submit</Button>
           </form>
@@ -140,19 +142,18 @@ export default function App() {
       </Formik>
     </Box>
   );
-}
-`,
+}`,
   Index: `import * as React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import App from "./App";
 
-const rootElement = document.getElementById("root");
-render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
   <ChakraProvider>
     <App />
-  </ChakraProvider>,
-  rootElement
+  </ChakraProvider>
 );`,
 }
