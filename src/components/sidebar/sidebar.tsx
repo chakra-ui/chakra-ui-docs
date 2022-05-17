@@ -39,7 +39,6 @@ export function SidebarContent({
   pathname,
   contentRef,
 }: SidebarContentProps) {
-  const color = useColorModeValue('gray.700', 'inherit')
   return (
     <>
       {routes.map((lvl1, idx) => {
@@ -52,7 +51,8 @@ export function SidebarContent({
                 my='1.25rem'
                 textTransform='uppercase'
                 letterSpacing='wider'
-                color={color}
+                color='gray.700'
+                _dark={{ color: 'inherit' }}
               >
                 {lvl1.title}
               </chakra.h4>

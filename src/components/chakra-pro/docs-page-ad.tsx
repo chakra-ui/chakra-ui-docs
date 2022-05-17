@@ -1,13 +1,14 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import * as React from 'react'
-import { getUrl } from './get-url'
 import { t } from 'utils/i18n'
+import { getUrl } from './get-url'
 
 const DocsPageChakraProAd = () => (
   <Flex
     p='4'
-    bg={useColorModeValue('gray.50', 'rgba(36, 70, 93, 0.32)')}
+    bg='gray.50'
+    _dark={{ bg: 'rgba(36, 70, 93, 0.32)' }}
     as='a'
     href={getUrl('docs-ad')}
     rel='noopener sponsored'

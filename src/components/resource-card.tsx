@@ -8,7 +8,6 @@ import {
   VStack,
   Wrap,
   WrapItem,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
 
@@ -28,7 +27,6 @@ interface ResourceCardProps extends BoxProps {
 function ResourceCard(props: ResourceCardProps) {
   const { data, ...rest } = props
   const { heading, author, description, url, tags } = data
-  const color = useColorModeValue('teal.600', 'teal.400')
 
   return (
     <LinkBox
@@ -38,11 +36,12 @@ function ResourceCard(props: ResourceCardProps) {
       transitionProperty='all'
       transitionDuration='slower'
       transitionTimingFunction='ease-out'
+      bg='gray.50'
+      _dark={{ bg: 'gray.700' }}
       _hover={{
         transform: 'scale(1.025)',
         boxShadow: 'var(--chakra-shadows-md)',
       }}
-      bg={useColorModeValue('gray.50', 'gray.700')}
     >
       <VStack spacing={2} align='stretch'>
         <Wrap className='algolia-exclude' spacing='3' mb='2' align='center'>
@@ -51,7 +50,8 @@ function ResourceCard(props: ResourceCardProps) {
               <Badge
                 as='a'
                 rel='tag'
-                color={color}
+                color='teal.600'
+                _dark={{ color: 'teal.400' }}
                 textTransform='uppercase'
                 fontSize='xs'
                 fontWeight='bold'

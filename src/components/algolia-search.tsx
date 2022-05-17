@@ -7,7 +7,6 @@ import {
   Text,
   VisuallyHidden,
   chakra,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 import type {
@@ -50,8 +49,6 @@ export const SearchButton = React.forwardRef(function SearchButton(
     }
   }, [])
 
-  const searchTextColor = useColorModeValue('gray.600', 'gray.400')
-
   return (
     <chakra.button
       flex='1'
@@ -60,11 +57,12 @@ export const SearchButton = React.forwardRef(function SearchButton(
       ref={ref}
       lineHeight='1.2'
       w='100%'
-      bg={useColorModeValue('white', 'gray.700')}
+      bg='white'
       whiteSpace='nowrap'
       display={{ base: 'none', sm: 'flex' }}
       alignItems='center'
-      color={searchTextColor}
+      color='gray.600'
+      _dark={{ bg: 'gray.700', color: 'gray.400' }}
       py='3'
       px='4'
       outline='0'
