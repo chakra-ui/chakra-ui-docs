@@ -238,18 +238,90 @@ export default function App() {
 ### Stack
 
 Stack is the easiest way to achieve one-dimensional layout models with a uniform
-space between elements. Using the ' direction ' prop, you can decide to layout
+space between elements. Using the `direction` prop, you can decide to layout
 components in the horizontal or vertical direction.
 
-[Insert sample code for Stack]
+By default, Stack lays out elements vertically, except you set the `direction`
+to `row`. Go ahead and try it out.
 
-Stack also provides two custom components: HStack and VStack.
+```tsx path=/App.tsx type=tutorial
+import { Stack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Stack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </Stack>
+    </ChakraProvider>
+  )
+}
+```
+
+Stack also provides two custom components:
+
+- HStack and
+- VStack.
 
 VStack allows you to layout elements in the vertical direction and center its
-elements while HStack allows you to layout elements in the horizontal direction
-and center its elements.
+elements
 
-[Insert sample code for VStack and HStack]
+```tsx path=/App.tsx type=tutorial
+import { VStack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <VStack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </VStack>
+    </ChakraProvider>
+  )
+}
+```
+
+HStack allows you to layout elements in the horizontal direction and center its
+elements.
+
+```tsx path=/App.tsx type=tutorial
+import { HStack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <HStack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </HStack>
+    </ChakraProvider>
+  )
+}
+```
+
+Now, can you tell the difference between Stack, HStack and VStack?
 
 ### Wrap
 
