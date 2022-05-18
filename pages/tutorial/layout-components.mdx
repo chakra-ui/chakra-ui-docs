@@ -145,9 +145,9 @@ the Flex component allows you to pass shorthand CSS props that save you time and
 make 'Flexing' delightful.
 
 Examples of shorthand props are, `direction` for `flexDirection`, `basis` for
-`flexBasis` and `shrink` for `flexShrink`. Check [here](https://chakra-ui.com/docs/components/layout/flex)
- for a full list of Flex
-shorthand props.
+`flexBasis` and `shrink` for `flexShrink`. Check
+[here](https://chakra-ui.com/docs/components/layout/flex) for a full list of
+Flex shorthand props.
 
 ```tsx path=/App.tsx type=tutorial
 import {
@@ -216,7 +216,24 @@ SimpleGrid provides you with two main props, amongst others. The first is
 `spacing` is used to define the spacing between each grid item while the second
 prop, `columns` specifies the number of columns the Grid should have.
 
-[Insert sample code for SimpleGrid]
+```tsx path=/App.tsx type=tutorial
+import { SimpleGrid, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <SimpleGrid columns={3} spacing={10}>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+      </SimpleGrid>
+    </ChakraProvider>
+  )
+}
+```
 
 ### Stack
 
