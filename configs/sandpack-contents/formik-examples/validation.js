@@ -67,7 +67,7 @@ export default function App() {
                 >
                   Remember me?
                 </Field>
-                <Button type="submit" colorScheme="purple" isFullWidth>
+                <Button type="submit" colorScheme="purple" width="full">
                   Login
                 </Button>
               </VStack>

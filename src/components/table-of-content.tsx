@@ -51,7 +51,8 @@ function TableOfContent(props: TableOfContentProps) {
         textTransform='uppercase'
         fontWeight='bold'
         fontSize='xs'
-        color={useColorModeValue('gray.700', 'gray.400')}
+        color='gray.700'
+        _dark={{ color: 'gray.400' }}
         letterSpacing='wide'
       >
         {t('component.table-of-content.on-this-page')}

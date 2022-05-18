@@ -1,12 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Icon,
-  SimpleGrid,
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Flex, Heading, Icon, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
@@ -37,12 +29,13 @@ const Feature = ({ title, icon, children, ...props }) => {
   return (
     <Stack
       direction='row'
-      bg={useColorModeValue('white', 'gray.700')}
+      bg='white'
       rounded='12px'
       shadow='base'
       spacing={4}
       p='6'
       cursor='pointer'
+      _dark={{ bg: 'gray.700' }}
       {...props}
     >
       <Flex

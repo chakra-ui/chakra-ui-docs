@@ -17,7 +17,6 @@ import {
   Wrap,
   WrapItem,
   chakra,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import { chunk } from '@chakra-ui/utils'
 import NextLink from 'next/link'
@@ -50,17 +49,17 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
-import HackathonBanner from 'components/hackathon'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
 const Feature = ({ title, icon, children, ...props }) => {
   return (
     <Box
-      bg={useColorModeValue('white', 'gray.700')}
+      bg='white'
       rounded='12px'
       shadow='base'
       p='40px'
+      _dark={{ bg: 'gray.700' }}
       {...props}
     >
       <Flex
@@ -150,7 +149,6 @@ const HomePage = ({
         <Box as='section' pt='6rem' pb={{ base: '0', md: '5rem' }}>
           <Container>
             <Box textAlign='center'>
-              <HackathonBanner />
               <chakra.h1
                 maxW='16ch'
                 mx='auto'
@@ -162,10 +160,7 @@ const HomePage = ({
                 lineHeight='1.2'
               >
                 {t('homepage.title.main')}
-                <Box
-                  as='span'
-                  color={useColorModeValue('teal.500', 'teal.300')}
-                >
+                <Box as='span' color='teal.500' _dark={{ color: 'teal.300' }}>
                   {' '}
                   {t('homepage.title.highlighted')}
                 </Box>
@@ -174,7 +169,8 @@ const HomePage = ({
               <Text
                 maxW='560px'
                 mx='auto'
-                color={useColorModeValue('gray.500', 'gray.400')}
+                color='gray.500'
+                _dark={{ color: 'gray.400' }}
                 fontSize={{ base: 'lg', lg: 'xl' }}
                 mt='6'
               >
@@ -243,7 +239,8 @@ const HomePage = ({
             <chakra.p
               fontWeight='500'
               textStyle='caps'
-              color={useColorModeValue('teal.600', 'teal.300')}
+              color='teal.600'
+              _dark={{ color: 'teal.300' }}
               mb='48px'
             >
               {t('homepage.supported-and-backed-by')}
@@ -281,10 +278,13 @@ const HomePage = ({
                   rel='noopener'
                   target='_blank'
                   border='1px dashed'
-                  borderColor={useColorModeValue('teal.200', 'teal.500')}
-                  bg={useColorModeValue('teal.50', 'whiteAlpha.200')}
-                  _hover={{
-                    bg: useColorModeValue('teal.100', 'whiteAlpha.300'),
+                  borderColor='teal.200'
+                  bg='teal.50'
+                  _hover={{ bg: 'teal.100' }}
+                  _dark={{
+                    borderColor: 'teal.500',
+                    bg: 'whiteAlpha.200',
+                    _hover: { bg: 'whiteAlpha.300' },
                   }}
                   rounded='md'
                 >
@@ -331,11 +331,7 @@ const HomePage = ({
           </Container>
         </Box>
 
-        <Box
-          as='section'
-          pt='240px'
-          bg={useColorModeValue('gray.50', 'gray.900')}
-        >
+        <Box as='section' pt='240px' bg='gray.50' _dark={{ bg: 'gray.900' }}>
           <Container py='120px' maxW='1280px'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>

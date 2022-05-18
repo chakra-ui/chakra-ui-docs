@@ -1,4 +1,4 @@
-import { chakra, useColorModeValue } from '@chakra-ui/react'
+import { chakra } from '@chakra-ui/react'
 import * as React from 'react'
 
 export const Table = (props) => (
@@ -9,7 +9,8 @@ export const Table = (props) => (
 
 export const THead = (props) => (
   <chakra.th
-    bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+    bg='gray.50'
+    _dark={{ bg: 'whiteAlpha.100' }}
     fontWeight='semibold'
     p={2}
     fontSize='sm'

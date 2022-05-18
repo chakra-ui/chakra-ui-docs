@@ -30,7 +30,6 @@
               "path": "/docs/styled-system/features/css-variables"
             },
             {
-              "new": true,
               "title": "Semantic Tokens",
               "path": "/docs/styled-system/features/semantic-tokens"
             },

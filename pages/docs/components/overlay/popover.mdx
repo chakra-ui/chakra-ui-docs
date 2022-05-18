@@ -48,8 +48,10 @@ import {
 ## Basic Usage
 
 When using this component, ensure the children passed to `PopoverTrigger` is
-focusable. Users can tab to it using their keyboard, and it can take a `ref`. It
-is critical for accessiblity.
+focusable and has a forwarded ref. Users can tab to it using their keyboard and
+is critical for accessibility. If you are using a custom component inside
+`PopoverTrigger` (or [PopoverAnchor](#popover-anchor)) it needs Chakra's
+[forwardRef](../recipes/as-prop#option-1-using-forwardref-from-chakra-uireact).
 
 > **A11y:** When Popover opens, focus is sent to `PopoverContent`. When it
 > closes, focus is returned to the trigger.
@@ -127,7 +129,7 @@ function WalkthroughPopover() {
         </PopoverBody>
         <PopoverFooter
           border='0'
-          d='flex'
+          display='flex'
           alignItems='center'
           justifyContent='space-between'
           pb={4}
@@ -179,7 +181,7 @@ const Form = ({ firstFieldRef, onCancel }) => {
         defaultValue='John'
       />
       <TextInput label='Last name' id='last-name' defaultValue='Smith' />
-      <ButtonGroup d='flex' justifyContent='flex-end'>
+      <ButtonGroup display='flex' justifyContent='flex-end'>
         <Button variant='outline' onClick={onCancel}>
           Cancel
         </Button>
@@ -199,7 +201,7 @@ const PopoverForm = () => {
 
   return (
     <>
-      <Box d='inline-block' mr={3}>
+      <Box display='inline-block' mr={3}>
         John Smith
       </Box>
       <Popover
@@ -234,7 +236,7 @@ You can control the opening and closing of the popover by passing the `isOpen`,
 and `onClose` props.
 
 Sometimes you might need to set the `returnFocusOnClose` prop to `false` to
-prevent popver from returning focus to `PopoverTrigger`'s children.
+prevent popover from returning focus to `PopoverTrigger`'s children.
 
 ```jsx
 function ControlledUsage() {
@@ -263,7 +265,7 @@ function ControlledUsage() {
           <PopoverBody>
             Are you sure you want to continue with your action?
           </PopoverBody>
-          <PopoverFooter d='flex' justifyContent='flex-end'>
+          <PopoverFooter display='flex' justifyContent='flex-end'>
             <ButtonGroup size='sm'>
               <Button variant='outline'>Cancel</Button>
               <Button colorScheme='red'>Apply</Button>
@@ -280,11 +282,16 @@ function ControlledUsage() {
 
 You can wrap your component with `PopoverAnchor` to prevent trigger any action.
 The wrapped component will become a position reference. Actions will only be
-triggerred by components inside `PopoverTrigger`.
+triggered by components inside `PopoverTrigger`.
 
 In this case, you can only open and close the popover with `Button`. If you
 click on `Input`, it acts same as the original input and doesn't trigger any
 action about popover.
+
+> 🚨 Note: As with [PopoverTrigger](#basic-usage), if you use a custom component
+> inside `PopoverAnchor` ensure that it uses Chakra's
+> [forwardRef](../recipes/as-prop#option-1-using-forwardref-from-chakra-uireact)
+> so the popover is triggered successfully.
 
 ```jsx
 function WithPopoverAnchor() {
@@ -460,7 +467,7 @@ happen when the component is displayed.
 </Popover>
 ```
 
-## Accessiblity
+## Accessibility
 
 > When you see the word _"trigger"_, it is referring to the `children` of
 > `PopoverTrigger`

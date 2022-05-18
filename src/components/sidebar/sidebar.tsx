@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListProps,
-  Stack,
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -40,7 +39,6 @@ export function SidebarContent({
   pathname,
   contentRef,
 }: SidebarContentProps) {
-  const color = useColorModeValue('gray.700', 'inherit')
   return (
     <>
       {routes.map((lvl1, idx) => {
@@ -53,7 +51,8 @@ export function SidebarContent({
                 my='1.25rem'
                 textTransform='uppercase'
                 letterSpacing='wider'
-                color={color}
+                color='gray.700'
+                _dark={{ color: 'inherit' }}
               >
                 {lvl1.title}
               </chakra.h4>
@@ -83,24 +82,22 @@ export function SidebarContent({
                   selected={selected}
                   opened={opened}
                 >
-                  <Stack as='ul'>
-                    {sortedRoutes.map((lvl3) => (
-                      <SidebarLink as='li' key={lvl3.path} href={lvl3.path}>
-                        <span>{convertBackticksToInlineCode(lvl3.title)}</span>
-                        {lvl3.new && (
-                          <Badge
-                            ml='2'
-                            lineHeight='tall'
-                            fontSize='10px'
-                            variant='solid'
-                            colorScheme='purple'
-                          >
-                            New
-                          </Badge>
-                        )}
-                      </SidebarLink>
-                    ))}
-                  </Stack>
+                  {sortedRoutes.map((lvl3) => (
+                    <SidebarLink key={lvl3.path} href={lvl3.path}>
+                      <span>{convertBackticksToInlineCode(lvl3.title)}</span>
+                      {lvl3.new && (
+                        <Badge
+                          ml='2'
+                          lineHeight='tall'
+                          fontSize='10px'
+                          variant='solid'
+                          colorScheme='purple'
+                        >
+                          New
+                        </Badge>
+                      )}
+                    </SidebarLink>
+                  ))}
                 </SidebarCategory>
               )
             })}
@@ -204,8 +201,8 @@ const Sidebar = ({ routes }) => {
   return (
     <Box
       ref={ref}
-      as='nav'
       aria-label='Main Navigation'
+      as='nav'
       pos='sticky'
       overscrollBehavior='contain'
       top='6.5rem'

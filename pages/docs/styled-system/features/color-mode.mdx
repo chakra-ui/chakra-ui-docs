@@ -86,7 +86,7 @@ The current hierarchy how the color mode is defined is as follows:
 - if `useSystemColorMode` is true `system`-color will be used as default -
   `initialColorMode` is the fallback if system color mode can't be resolved
 
-- if `--chakra-ui-color-mode` is defined through e.g. `ColorModeScript` / after
+- if `data-theme` prop is defined through e.g. `ColorModeScript` / after
   modification/initial load of the colorMode this value will be used
 
 - if `colorModeManager` = `localStorage` and a value is defined for
@@ -158,17 +158,17 @@ file.
 // index.js
 
 import { ColorModeScript } from '@chakra-ui/react'
-import ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom/client'
 import App from './App'
 import theme from './theme'
 
-ReactDOM.render(
+const rootElement = document.getElementById('root')
+ReactDOM.createRoot(rootElement).render(
   <>
     {/* 👇 Here's the script */}
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </>,
-  document.getElementById('root'),
 )
 ```
 

@@ -1,4 +1,4 @@
-import { Box, chakra, useColorModeValue } from '@chakra-ui/react'
+import { Box, chakra } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import * as React from 'react'
 interface TweetCardProps {
@@ -28,7 +28,8 @@ function TweetCard(props: TweetCardProps) {
       rounded='lg'
       p='5'
       mb='4'
-      bg={useColorModeValue('white', 'gray.700')}
+      bg='white'
+      _dark={{ bg: 'gray.700' }}
       shadow='base'
     >
       <Box

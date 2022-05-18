@@ -3,7 +3,6 @@ import {
   Flex,
   SystemStyleObject,
   chakra,
-  useColorModeValue,
   useTheme,
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
@@ -15,7 +14,6 @@ export function CarbonAd() {
   const ref = React.useRef(null)
 
   const theme = useTheme()
-  const bg = useColorModeValue('gray.50', 'rgba(36, 70, 93, 0.32)')
 
   const carbonAd: SystemStyleObject = {
     display: 'block',
@@ -24,7 +22,10 @@ export function CarbonAd() {
     maxWidth: '480px',
     minHeight: '132px',
     borderRadius: '4px',
-    bg,
+    bg: 'gray.50',
+    _dark: {
+      bg: 'rgba(36, 70, 93, 0.32)',
+    },
     color: 'inherit',
     '@media (max-width: 480px)': {
       fontSize: '0.875em',
@@ -81,9 +82,10 @@ export function CarbonAd() {
 
 const DocsPageChakraProAd = () => (
   <Flex
-    p='4'
-    bg={useColorModeValue('gray.50', 'rgba(36, 70, 93, 0.32)')}
     as='a'
+    p='4'
+    bg='gray.50'
+    _dark={{ bg: 'rgba(36, 70, 93, 0.32)' }}
     href='https://pro.chakra-ui.com/components?utm_source=chakra-ui.com&utm_medium=docs-ad'
     rel='noopener sponsored'
     target='_blank'

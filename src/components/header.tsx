@@ -131,7 +131,6 @@ function HeaderContent() {
 
 function Header(props: HTMLChakraProps<'header'>) {
   const { maxW = '8xl', maxWidth = '8xl' } = props
-  const bg = useColorModeValue('white', 'gray.800')
   const ref = useRef<HTMLHeadingElement>()
   const [y, setY] = useState(0)
   const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
@@ -149,7 +148,8 @@ function Header(props: HTMLChakraProps<'header'>) {
       pos='sticky'
       top='0'
       zIndex='3'
-      bg={bg}
+      bg='white'
+      _dark={{ bg: 'gray.800' }}
       left='0'
       right='0'
       width='full'
