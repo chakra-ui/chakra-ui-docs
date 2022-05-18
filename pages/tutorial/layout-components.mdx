@@ -321,7 +321,7 @@ export default function App() {
 }
 ```
 
-Now, can you tell the difference between Stack, HStack and VStack?
+Now, can you tell the difference between `Stack`, `HStack` and `VStack`?
 
 ### Wrap
 
@@ -332,4 +332,35 @@ width, the Wrap component wraps or moves this element to a new row.
 Think of it as a smarter flex-wrap with spacing support. It works really well
 with dialog buttons, tags, and chips.
 
-[Insert sample code for Wrap]
+```tsx path=/App.tsx type=tutorial
+import { Wrap, WrapItem, Center, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Wrap>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='red.200'>
+            Box 1
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='green.200'>
+            Box 2
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='tomato'>
+            Box 3
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='blue.200'>
+            Box 4
+          </Center>
+        </WrapItem>
+      </Wrap>
+    </ChakraProvider>
+  )
+}
+```
