@@ -149,7 +149,7 @@ export default function App() {
   );
 }`,
   Index: `import * as React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { withProse } from "@nikolovlazar/chakra-ui-prose";
 
@@ -166,11 +166,11 @@ const theme = extendTheme(
   })
 );
 
-const rootElement = document.getElementById("root");
-render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
   <ChakraProvider theme={theme}>
     <App />
-  </ChakraProvider>,
-  rootElement
+  </ChakraProvider>
 );`,
 }

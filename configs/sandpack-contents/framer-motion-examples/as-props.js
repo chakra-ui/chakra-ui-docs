@@ -14,12 +14,13 @@ const animation = \`${'${animationKeyframes}'} 2s ease-in-out infinite\`;
   
 export default function App() {
   return (
-    <Container h="100vh" d="flex" alignItems="center" justifyContent="center">
+    <Container h="100vh" display="flex" alignItems="center" justifyContent="center">
       <Box
         as={motion.div}
         animation={animation}
         // not work: transition={{ ... }}
         padding="2"
+        // @ts-ignore - "Does not exist" Type Error against Motion
         bgGradient="linear(to-l, #7928CA, #FF0080)"
         width="12"
         height="12"
@@ -29,16 +30,16 @@ export default function App() {
   )
 };`,
   Index: `import * as React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
-  
+
 import App from "./App";
-  
-const rootElement = document.getElementById("root");
-render(
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
   <ChakraProvider>
     <App />
-  </ChakraProvider>,
-  rootElement
+  </ChakraProvider>
 );`,
 }
