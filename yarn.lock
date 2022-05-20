@@ -2191,15 +2191,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  version "17.0.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.31.tgz#a5bb84ecfa27eec5e1c802c6bbf8139bdb163a5d"
-  integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
-
-"@types/node@^16.11.12":
-  version "16.11.33"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.33.tgz#566713b1b626f781c5c58fe3531307283e00720c"
-  integrity sha512-0PJ0vg+JyU0MIan58IOIFRtSvsb7Ri+7Wltx2qAg94eMOrpg4+uuP3aUHCpxXc1i0jCXiC+zIamSZh3l9AbcQA==
+"@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0", "@types/node@^17.0.35":
+  version "17.0.35"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.35.tgz#635b7586086d51fb40de0a2ec9d1014a5283ba4a"
+  integrity sha512-vu1SrqBjbbZ3J6vwY17jBs8Sr/BKA+/a/WtjRG+whKg1iuLFOosq872EXS0eXWILdO36DHQQeku/ZcL6hz2fpg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6592,10 +6587,10 @@ mdurl@^1.0.0:
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
-mdx-bundler@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/mdx-bundler/-/mdx-bundler-9.0.0.tgz#07e6d98d7f6d9d0fd9965c59281eb41263400bea"
-  integrity sha512-ZkP3xU6wPgGaEUNRaiRlwxQdIQyFyoa1q5eMJEAgFmCPSj3LRI0uR6ZvqiNb9794WBiGCafdFmWjQFN6JpBQAQ==
+mdx-bundler@^9.0.0, mdx-bundler@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/mdx-bundler/-/mdx-bundler-9.0.1.tgz#0ccb8ba0aaa1c4a22fbb64225b2d7f7e9c483552"
+  integrity sha512-/ktO4WTwrZszPOISh9qU0Ud/WXlTZHqA9grErUZGc7WGd7mooJiCCxejkkzHy7TQf1PS83jGECLrTeSVUkqEkQ==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@esbuild-plugins/node-resolve" "^0.1.4"
