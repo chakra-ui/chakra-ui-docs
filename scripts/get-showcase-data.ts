@@ -1,14 +1,14 @@
-import puppeteer from 'puppeteer'
+import { launch } from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
-import dotenv from 'dotenv'
+import { config } from 'dotenv'
 import showcaseData from '../configs/showcase.json'
 import fetch from 'node-fetch'
 
-dotenv.config()
+config()
 
 export type ShowcaseKeys =
   | 'projects'
@@ -33,7 +33,7 @@ const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
 async function main() {
-  const browser = await puppeteer.launch({
+  const browser = await launch({
     defaultViewport: {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
@@ -49,7 +49,7 @@ async function main() {
 
   const keys = Object.keys(newData)
 
-  for (let key of keys) {
+  for (const key of keys) {
     const localDirToPreviewImageDir = path.join(
       process.cwd(),
       'public',
@@ -171,9 +171,9 @@ class Item {
 
 // Parse the data into type of `IShowcase`
 const parseRepoData = async (context: string[]): Promise<IShowcase> => {
-  let parsedData: IShowcase = {}
+  const parsedData: IShowcase = {}
 
-  for (let c of context) {
+  for (const c of context) {
     const splitItems = c.split('\n').filter((s) => s !== '')
 
     const category = splitItems
@@ -181,11 +181,11 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       .split(' ')
       .filter((s) => s !== '')[1]
       ?.toLowerCase()
-    let parsedItems = []
+    const parsedItems = []
 
     if (!category) continue
 
-    for (let str of splitItems) {
+    for (const str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
       const parentheses = /\(((https|http).*?)\)/
 
