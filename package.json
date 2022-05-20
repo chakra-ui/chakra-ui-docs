@@ -86,7 +86,7 @@
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "imagemin": "7.0.1",
+    "imagemin": "8.0.1",
     "imagemin-jpegtran": "7.0.0",
     "prettier": "^2.4.1",
     "react-multi-ref": "^1.0.0",
