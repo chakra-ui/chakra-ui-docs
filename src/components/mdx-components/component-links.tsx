@@ -2,18 +2,18 @@ import {
   HStack,
   Icon,
   Link,
-  LinkProps,
-  Text,
-  Wrap,
-  WrapItem,
   useColorModeValue,
+  ButtonGroup,
+  Button,
+  ButtonProps,
+  Text,
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaNpm, FaYoutube } from 'react-icons/fa'
 import StorybookIcon from '../storybook-icon'
 import { t } from 'utils/i18n'
 
-type ComponentLinkProps = LinkProps & {
+type ComponentLinkProps = ButtonProps & {
   icon: React.ElementType
   url: string
   iconSize?: string
@@ -23,7 +23,8 @@ type ComponentLinkProps = LinkProps & {
 function ComponentLink(props: ComponentLinkProps) {
   const { icon, url, children, iconSize, iconColor, ...rest } = props
   return (
-    <Link
+    <Button
+      as={Link}
       href={url}
       isExternal
       px='12px'
@@ -35,8 +36,10 @@ function ComponentLink(props: ComponentLinkProps) {
       color={useColorModeValue('gray.600', 'whiteAlpha.700')}
       _hover={{
         color: useColorModeValue('gray.700', 'whiteAlpha.900'),
+        bg: useColorModeValue('gray.300', 'whiteAlpha.300'),
         boxShadow: 'sm',
         transform: 'translateY(-1px)',
+        textDecor: 'none',
       }}
       {...rest}
     >
@@ -46,7 +49,7 @@ function ComponentLink(props: ComponentLinkProps) {
           {children}
         </Text>
       </HStack>
-    </Link>
+    </Button>
   )
 }
 
@@ -64,74 +67,64 @@ function ComponentLinks(props: ComponentLinksProps) {
   const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui'
 
   const githubLink = (github?.url || github?.package) && (
-    <WrapItem>
-      <ComponentLink
-        url={
-          github.url || `${githubRepoUrl}/tree/main/packages/${github.package}`
-        }
-        icon={FaGithub}
-        iconColor={iconColor}
-        iconSize='1rem'
-      >
-        {t('component.mdx-components.component-links.view-source')}
-      </ComponentLink>
-    </WrapItem>
+    <ComponentLink
+      url={
+        github.url || `${githubRepoUrl}/tree/main/packages/${github.package}`
+      }
+      icon={FaGithub}
+      iconColor={iconColor}
+      iconSize='1rem'
+    >
+      {t('component.mdx-components.component-links.view-source')}
+    </ComponentLink>
   )
 
   const npmLink = npm?.package && (
-    <WrapItem>
-      <ComponentLink
-        url={`https://www.npmjs.com/package/${npm.package}`}
-        icon={FaNpm}
-        iconSize='2rem'
-        iconColor='red.500'
-      >
-        {npm.package}
-      </ComponentLink>
-    </WrapItem>
+    <ComponentLink
+      url={`https://www.npmjs.com/package/${npm.package}`}
+      icon={FaNpm}
+      iconSize='2rem'
+      iconColor='red.500'
+    >
+      {npm.package}
+    </ComponentLink>
   )
 
   const storybookLink = storybook?.url && (
-    <WrapItem>
-      <ComponentLink
-        url={storybook.url}
-        icon={StorybookIcon}
-        iconSize='1.25rem'
-        iconColor='pink.500'
-      >
-        {t('component.mdx-components.component-links.view-storybook')}
-      </ComponentLink>
-    </WrapItem>
+    <ComponentLink
+      url={storybook.url}
+      icon={StorybookIcon}
+      iconSize='1.25rem'
+      iconColor='pink.500'
+    >
+      {t('component.mdx-components.component-links.view-storybook')}
+    </ComponentLink>
   )
 
   const videoLink = video?.url && (
-    <WrapItem>
-      <ComponentLink
-        url={video.url}
-        icon={FaYoutube}
-        iconSize='1.2rem'
-        iconColor='red.500'
-      >
-        {t('component.mdx-components.component-links.view-video')}
-      </ComponentLink>
-    </WrapItem>
+    <ComponentLink
+      url={video.url}
+      icon={FaYoutube}
+      iconSize='1.2rem'
+      iconColor='red.500'
+    >
+      {t('component.mdx-components.component-links.view-video')}
+    </ComponentLink>
   )
 
   const themeComponentLink = theme && (
-    <WrapItem>
-      <ComponentLink
-        url={`${githubRepoUrl}/tree/main/packages/theme/src/components/${theme.componentName}.ts`}
-        icon={FaGithub}
-        iconColor={iconColor}
-        iconSize='1rem'
-      >
-        {t('component.mdx-components.component-links.view-theme-source')}
-      </ComponentLink>
-    </WrapItem>
+    <ComponentLink
+      url={`${githubRepoUrl}/tree/main/packages/theme/src/components/${theme.componentName}.ts`}
+      icon={FaGithub}
+      iconColor={iconColor}
+      iconSize='1rem'
+    >
+      {t('component.mdx-components.component-links.view-theme-source')}
+    </ComponentLink>
   )
 
   return (
-    <Wrap
+    <ButtonGroup
       className='component-links'
       mt='2rem'
       spacing='4'
@@ -143,7 +136,7 @@ function ComponentLinks(props: ComponentLinksProps) {
       {npmLink}
       {storybookLink}
       {videoLink}
-    </Wrap>
+    </ButtonGroup>
   )
 }
 
