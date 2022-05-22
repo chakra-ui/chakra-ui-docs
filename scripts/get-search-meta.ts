@@ -88,11 +88,19 @@ async function getSearchMeta() {
 
   for (const file of files) {
     let result: any[] = []
-    try {
-      result = await getMDXMeta(file)
-      json.push(...result)
-    } catch (error) {
-      console.log(error)
+    /**
+     * * Ignore "tutorial" file paths with an empty push
+     * * Remove this check when tutorials are live!
+     */
+    if (/[\\/]pages[\\/]tutorial/gi.test(file)) {
+      result.push()
+    } else {
+      try {
+        result = await getMDXMeta(file)
+        json.push(...result)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 
