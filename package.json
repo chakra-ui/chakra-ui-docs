@@ -27,7 +27,7 @@
     "@chakra-ui/utils": "^2.0.0",
     "@codesandbox/sandpack-react": "0.19.6",
     "@docsearch/react": "^1.0.0-alpha.27",
-    "@docusaurus/utils": "2.0.0-alpha.69",
+    "@docusaurus/utils": "2.0.0-beta.20",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@octokit/rest": "^18.12.0",
