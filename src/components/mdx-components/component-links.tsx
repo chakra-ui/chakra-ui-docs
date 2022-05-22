@@ -90,6 +90,7 @@ function ComponentLinks(props: ComponentLinksProps) {
     </ComponentLink>
   )
 
+  // Note: Currently an unused component
   const storybookLink = storybook?.url && (
     <ComponentLink
       url={storybook.url}
@@ -101,6 +102,7 @@ function ComponentLinks(props: ComponentLinksProps) {
     </ComponentLink>
   )
 
+  // Note: Currently an unused component
   const videoLink = video?.url && (
     <ComponentLink
       url={video.url}
