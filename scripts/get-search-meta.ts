@@ -86,21 +86,28 @@ async function getSearchMeta() {
     .map((file) => path.join(process.cwd(), websiteRoot, file))
     .filter((file) => file.endsWith('.mdx'))
 
+  /**
+   * File paths to not be included in the search meta.
+   *
+   * This can be overall page sections (i.e. "/docs", "/tutorial", etc.) or specific files. (i.e. "/guides/first-steps")
+   */
+  const excludedSlugs = ['/tutorial']
+
   for (const file of files) {
     let result: any[] = []
-    /**
-     * * Ignore "tutorial" file paths with an empty push
-     * * Remove this check when tutorials are live!
-     */
-    if (/[\\/]pages[\\/]tutorial/gi.test(file)) {
-      result.push()
-    } else {
-      try {
-        result = await getMDXMeta(file)
-        json.push(...result)
-      } catch (error) {
-        console.log(error)
-      }
+
+    // Windows OS: ensure file paths have forward slashes.
+    const fileToPosixPath = posixPath(file)
+
+    const isExcluded = !!excludedSlugs.find((excludedSlug) =>
+      fileToPosixPath.includes(excludedSlug),
+    )
+
+    try {
+      result = isExcluded ? null : await getMDXMeta(file)
+      json.push(...result)
+    } catch (error) {
+      console.log(error)
     }
   }
 
