@@ -240,11 +240,11 @@ prevent popover from returning focus to `PopoverTrigger`'s children.
 
 ```jsx
 function ControlledUsage() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onToggle, onClose } = useDisclosure()
 
   return (
     <>
-      <Button mr={5} onClick={onOpen}>
+      <Button mr={5} onClick={onToggle}>
         Trigger
       </Button>
       <Popover
