@@ -1,12 +1,9 @@
 import {
-  HStack,
-  Icon,
   Link,
   useColorModeValue,
   ButtonGroup,
   Button,
   ButtonProps,
-  Text,
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaNpm, FaYoutube } from 'react-icons/fa'
