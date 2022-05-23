@@ -27,6 +27,7 @@ function ComponentLink(props: ComponentLinkProps) {
       as={Link}
       href={url}
       isExternal
+      bg='inherit'
       px='12px'
       display='flex'
       fontSize='sm'
@@ -38,9 +39,8 @@ function ComponentLink(props: ComponentLinkProps) {
       color={useColorModeValue('gray.600', 'whiteAlpha.700')}
       _hover={{
         color: useColorModeValue('gray.700', 'whiteAlpha.900'),
-        bg: useColorModeValue('gray.300', 'whiteAlpha.300'),
         boxShadow: 'sm',
-        transform: 'translateY(-1px)',
+        transform: 'translateY(-2px)',
         textDecor: 'none',
       }}
       leftIcon={<BtnIcon />}
@@ -137,7 +137,8 @@ function ComponentLinks(props: ComponentLinksProps) {
     <ButtonGroup
       className='component-links'
       mt='2rem'
-      spacing='4'
+      gap='4'
+      flexWrap='wrap'
       overflow='unset'
       {...rest}
     >
