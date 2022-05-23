@@ -21,7 +21,7 @@ type ComponentLinkProps = ButtonProps & {
 }
 
 function ComponentLink(props: ComponentLinkProps) {
-  const { icon, url, children, iconSize, iconColor, ...rest } = props
+  const { icon: BtnIcon, url, children, iconSize, iconColor, ...rest } = props
   return (
     <Button
       as={Link}
@@ -29,10 +29,12 @@ function ComponentLink(props: ComponentLinkProps) {
       isExternal
       px='12px'
       display='flex'
+      fontSize='sm'
       alignItems='center'
       minH='32px'
       borderWidth='1px'
       borderRadius='md'
+      marginInlineStart='0 !important'
       color={useColorModeValue('gray.600', 'whiteAlpha.700')}
       _hover={{
         color: useColorModeValue('gray.700', 'whiteAlpha.900'),
@@ -41,14 +43,20 @@ function ComponentLink(props: ComponentLinkProps) {
         transform: 'translateY(-1px)',
         textDecor: 'none',
       }}
+      leftIcon={<BtnIcon />}
+      sx={{
+        '& span': {
+          width: iconSize,
+        },
+        '& svg': {
+          color: iconColor,
+          width: 'full',
+          height: 'auto',
+        },
+      }}
       {...rest}
     >
-      <HStack>
-        <Icon fontSize={iconSize} as={icon} color={iconColor} />
-        <Text fontSize='sm' lineHeight='short'>
-          {children}
-        </Text>
-      </HStack>
+      {children}
     </Button>
   )
 }
