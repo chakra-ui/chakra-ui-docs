@@ -1,0 +1,54 @@
+---
+title: Theme Tools
+description: Tools to help create your dynamic custom theme
+---
+
+The Theme Tools from ChakraUI are a collection of utilities that are for public
+use to simplify your custom theme file with functions to make it more dynamic.
+
+<ComponentLinks
+  github={{ package: 'theme-tools' }}
+  npm={{ package: '@chakra-ui/theme-tools' }}
+/>
+
+With any of these tools, you will need to install the `theme-tools` package
+separately as they are not a part of `@chakra-ui/react`.
+
+```js
+import { ... } from '@chakra-ui/theme-tools'
+```
+
+## Usage
+
+All of the tools are used in various places within your theme file. Each example
+below comes from the default component themes from ChakraUI. In most cases, they
+leverage style props that are passed into a given component to be able to
+function correctly.
+
+Take for example a new `Button` variant. We need to access the props by giving a
+variant an anonymous function. And then destructure what you need.
+
+Typically, the props you might need are the `theme` object itself and the
+`colorScheme` which you pass in the an active color token names (not including
+the range values) (see the [default theme colors](../theming/theme#colors))
+
+```js
+const theme = extendTheme({
+  components: {
+    Button: {
+      variants: {
+        variantCustom: (props) => {
+          const { theme, colorScheme: c } = props
+          // Some setup logic here
+          return {
+            // Apply styles here
+          }
+        },
+      },
+    },
+  },
+})
+```
+
+> Note: This is where it's best to split up your theme file to
+> [scale out your project](../theming/customize-theme#scaling-out-your-project)
