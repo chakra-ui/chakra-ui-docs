@@ -74,8 +74,12 @@ effectively.
 ### Customizing single components
 
 As we mentioned earlier, a component style consists of `baseStyle`, `sizes`,
-`variants` and an optional `defaultProps` to denote the default `size` or
-`variant`.
+`variants` and an optional `defaultProps` to denote the default `size`,
+`variant` or `colorScheme`.
+
+> Not every component has all three `defaultProps`, to figure out which prop can
+> be set just have a short look on the theme source by using the
+> `View theme source` button on the top of every components page.
 
 Here's what the component style object looks like:
 
@@ -89,10 +93,11 @@ const ComponentStyle: ComponentStyleConfig = {
   sizes: {},
   // styles for different visual variants ("outline", "solid")
   variants: {},
-  // default values for `size` and `variant`
+  // default values for 'size', 'variant' and 'colorScheme'
   defaultProps: {
     size: '',
     variant: '',
+    colorScheme: '',
   },
 }
 ```
@@ -129,6 +134,17 @@ const theme = extendTheme({
         solid: (props: StyleFunctionProps) => ({
           bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
         }),
+        // 5. We can add responsive variants
+        sm: {
+          bg: 'teal.500',
+          fontSize: 'md',
+        },
+      },
+      // 6. We can overwrite defaultProps
+      defaultProps: {
+        size: 'lg', // default is md
+        variant: 'sm', // default is solid
+        colorScheme: 'green', // default is gray
       },
     },
   },
