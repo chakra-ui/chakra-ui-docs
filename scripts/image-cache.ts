@@ -1,8 +1,5 @@
-import { promises as fs } from 'fs'
 import fetch from 'node-fetch'
 import sharp from 'sharp'
-import imagemin from 'imagemin'
-import imageminJpegtran from 'imagemin-jpegtran'
 
 /**
  * This module was inspired by Zach Leatherman's `avatar-local-cache` library.
@@ -15,23 +12,15 @@ export interface AvatarCacheOptions {
   outputDirectory: string
   /** The max width of the avatars. */
   width?: number
-  /** If images should be compressed in addition to being resized. */
-  compress?: boolean
 }
 
 export class AvatarCache {
   outputDirectory: string
   width: number
-  compress: boolean
 
-  constructor({
-    outputDirectory,
-    width = 120,
-    compress = false,
-  }: AvatarCacheOptions) {
+  constructor({ outputDirectory, width = 120 }: AvatarCacheOptions) {
     this.outputDirectory = outputDirectory
     this.width = width
-    this.compress = compress
   }
 
   async urlToFile(url: string, outputFileSlug: string) {
@@ -69,11 +58,6 @@ export class AvatarCache {
   ) {
     const jpeg = metadata.format !== 'jpeg' ? img.jpeg() : img
     await jpeg.toFile(slug)
-
-    if (this.compress) {
-      const [file] = await imagemin([slug], { plugins: [imageminJpegtran()] })
-      await fs.writeFile(slug, file.data)
-    }
   }
 }
 
