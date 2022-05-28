@@ -79,8 +79,10 @@ As we mentioned earlier, a component style consists of `baseStyle`, `sizes`,
 
 Here's what the component style object looks like:
 
-```jsx live=false
-const ComponentStyle = {
+```tsx live=false
+import { ComponentStyleConfig } from '@chakra-ui/react'
+
+const ComponentStyle: ComponentStyleConfig = {
   // style object for base or default style
   baseStyle: {},
   // styles for different sizes ("sm", "md", "lg")
@@ -97,9 +99,10 @@ const ComponentStyle = {
 
 For example, let's override the component styles for Chakra's Button component.
 
-```jsx live=false
-// theme.js
+```tsx live=false
+// theme.ts (tsx file with usage of StyleFunctions, see 4.)
 import { extendTheme } from '@chakra-ui/react'
+import { StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 const theme = extendTheme({
   components: {
@@ -123,7 +126,7 @@ const theme = extendTheme({
           boxShadow: '0 0 2px 2px #efdfde',
         },
         // 4. We can override existing variants
-        solid: (props) => ({
+        solid: (props: StyleFunctionProps) => ({
           bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
         }),
       },
@@ -159,10 +162,10 @@ Global styles are theme-aware styles you can apply to any html element globally.
 To add global styles, update the `theme.styles.global` key in the theme. Global
 styles can be a style object or a function that returns a style object.
 
-```jsx live=false
-// theme.js
+```tsx live=false
+// theme.ts (Version 2 needs to be a tsx file, due to usage of StyleFunctions)
 import { extendTheme } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 // Version 1: Using objects
 const theme = extendTheme({
@@ -187,7 +190,7 @@ const theme = extendTheme({
 // Version 2: Using functions
 const overrides = extendTheme({
   styles: {
-    global: (props) => ({
+    global: (props: StyleFunctionProps) => ({
       body: {
         fontFamily: 'body',
         color: mode('gray.800', 'whiteAlpha.900')(props),
