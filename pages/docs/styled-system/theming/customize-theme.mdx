@@ -218,6 +218,80 @@ const overrides = extendTheme({
 })
 ```
 
+### Responsive variants
+
+Responsive variants can be used to have different styles for components
+depending on the current active breakpoint. The properties in `sizes` of the
+component will be overwritten if passed in the responsive variant.
+
+> With responsive variants, prop override might not work as expected since we
+> use regular CSS media queries. That's why we also came up with the notion of
+> `!important` as an escape hatch.
+
+To declare the responsive variants you can simply add them to the variants of
+the component:
+
+```ts live=false
+const theme = extendTheme({
+  components: {
+    Button: {
+      ...
+      sizes: {
+        sm: {
+          fontSize: 'md'
+        }
+      },
+      variants: {
+        ...
+        base: {
+          bg: 'yellow.500',
+          fontSize: 'md'
+         },
+        sm: {
+          bg: 'teal.500',
+          fontSize: 'lg'
+         },
+        md: {
+          bg: 'orange.500',
+          fontSize: 'xl'
+         },
+      }
+    },
+  },
+});
+```
+
+Just pass them either with the `Array syntax` or the `Object syntax` to the
+component. The array syntax may not be work as expected, since it ignores the
+naming of the variant and uses them straight in the order on which they are
+passed into the array.
+
+```tsx live=false
+<>
+  <Button variant={{ base: 'base', md: 'md' }}>Object syntax</Button>
+  // the button will be orange after the `sm` breakpoint due to the array syntax
+  <Button variant={['base', 'md']}>Array syntax</Button>
+</>
+```
+
+It is required to use `!important` within a components style prop if this prop
+is set in the responsive variant as shown in the example below based on the
+theme above.
+
+```tsx live=false
+<>
+  <Button variant={{ sm: 'sm' }}>fontSize lg after breakpoint sm</Button>
+  // without declaration of fontSize in the sm variant the fontSize would be xl as
+  expected
+  <Button variant={{ sm: 'sm' }} fonzSize='xl'>
+    still fontSize lg after breakpoint sm
+  </Button>
+  <Button variant={{ sm: 'sm' }} fonzSize='xl !important'>
+    fontSize xl due to the !important
+  </Button>
+</>
+```
+
 ## Scaling out your project
 
 As your project grows in size, it is best to keep things organized. We highly
