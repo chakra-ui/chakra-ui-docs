@@ -261,6 +261,9 @@ const theme = extendTheme({
 });
 ```
 
+> Based on how the responsive variants are designed, there's no support for
+> responsive `colorScheme` since it is technically not a variant.
+
 Just pass them either with the `Array syntax` or the `Object syntax` to the
 component. The array syntax may not be work as expected, since it ignores the
 naming of the variant and uses them straight in the order on which they are
@@ -290,6 +293,16 @@ theme above.
     fontSize xl due to the !important
   </Button>
 </>
+```
+
+Combined usage with `size` in the theme is only possible by covering breakpoints
+below the responsive variant or by using `!important`, which overrides
+everything.
+
+```tsx live=false
+<Button size='sm' variant={{ md: 'md' }}>
+  fontSize md from 'sizes' until breakpoint md where the variant takes over
+</Button>
 ```
 
 ## Scaling out your project
