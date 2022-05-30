@@ -59,6 +59,14 @@ jobs:
           git add .all-membersrc
           git diff --staged --quiet || git commit -m "chore(.all-membersrc): $GITHUB_SHA"
 
+      - name: Generate all-former-membersrc
+        run: yarn former-members:gen
+
+      - name: Commit all-former-membersrc
+        run: |
+          git add .all-former-membersrc
+          git diff --staged --quiet || git commit -m "chore(.all-former-membersrc): $GITHUB_SHA"
+
       - name: Generate showcase.json
         run: yarn showcase-data:gen
 
