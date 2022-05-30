@@ -75,6 +75,38 @@ start or end at the `nth` grid position.
 </Grid>
 ```
 
+## Template areas
+
+The `templateAreas` prop specifies areas within the grid layout. Use template
+literals to name the area. Now you can reference the area by passing `area` prop
+in the `<GridItem />` component.
+
+```jsx
+<Grid
+  templateAreas={`"header header"
+                  "nav main"
+                  "nav footer"`}
+  gridTemplateRows={'50px 1fr 30px'}
+  gridTemplateColumns={'150px 1fr'}
+  h='200px'
+  gap={1}
+  color='white'
+>
+  <GridItem bg='orange.900' area={'header'}>
+    Header
+  </GridItem>
+  <GridItem bg='blue.900' area={'nav'}>
+    Nav
+  </GridItem>
+  <GridItem bg='green.900' area={'main'}>
+    Main
+  </GridItem>
+  <GridItem bg='yellow.900' area={'footer'}>
+    Footer
+  </GridItem>
+</Grid>
+```
+
 ## Props
 
 ### Grid Props
