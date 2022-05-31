@@ -41,32 +41,14 @@ To increase the font size of the text, you can pass the `fontSize` prop.
 
 ### Truncate text
 
-Pass the `noOfLines={0}` prop to render an ellipsis when the text exceeds the
-width of the viewport or `maxWidth` prop.
+If you'd like to truncate the text after a specific number of lines, pass the
+`noOfLines` prop. This will render an ellipsis when the text exceeds the width
+of the viewport or `maxWidth` prop.
 
 ```jsx
 <Text color='gray.500' noOfLines={1}>
   Lorem ipsum is placeholder text commonly used in the graphic, print, and
   publishing industries for previewing layouts and visual mockups.
-</Text>
-```
-
-Likewise, if you'd like to truncate the text after a specific number of lines,
-pass the `noOfLines` prop and set it to the desired no of lines.
-
-```jsx live=false
-// Basic version
-<Text noOfLines={2}>
-  "The quick brown fox jumps over the lazy dog" is an English-language pangram—a
-  sentence that contains all of the letters of the English alphabet. Owing to
-  its existence, Chakra was created.
-</Text>
-
-// Responsive version
-<Text noOfLines={[1, 2, 3]}>
-   "The quick brown fox jumps over the lazy dog" is an English-language pangram—a
-  sentence that contains all of the letters of the English alphabet. Owing to
-  its existence, Chakra was created.
 </Text>
 ```
 
