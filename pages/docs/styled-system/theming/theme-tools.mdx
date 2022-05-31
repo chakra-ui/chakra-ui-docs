@@ -29,7 +29,7 @@ Take for example a new `Button` variant. We need to access the props by giving a
 variant an anonymous function. And then destructure what you need.
 
 Typically, the props you might need are the `theme` object itself and the
-`colorScheme` which you pass in the an active color token names (not including
+`colorScheme` which you pass in as an active color token names (not including
 the range values) (see the [default theme colors](../theming/theme#colors))
 
 ```js
@@ -52,3 +52,70 @@ const theme = extendTheme({
 
 > Note: This is where it's best to split up your theme file to
 > [scale out your project](../theming/customize-theme#scaling-out-your-project)
+
+## Style Function Props
+
+When creating a variant or base style with dynamic styles, it's value can be a
+function instead of an object to use props that are passed to the component. The
+following props can be used as part of the signature:
+
+| Prop          | Type / Value                                                               |
+| ------------- | -------------------------------------------------------------------------- |
+| `colorScheme` | string value of a theme token (ie. `blue` or `green`)                      |
+| `theme`       | The theme object                                                           |
+| `colorMode`   | `Dark` or `Light` depending on the current value in the ColorMode Provider |
+| `orientation` | `horizontal` or `vertical` i8n value                                       |
+
+And any other props passed to the component you want to access!
+
+## Colors
+
+Below are the methods that can be used to access and alter the colors from the
+theme.
+
+| Name                 | Description                                                                                                                                                                                                                                                                                          | Function shape                                                        |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `getColor`           | Retrieves a color hex value. Needs the theme and color name, and can take a fallback hex if the color name does not return a valid hex from the theme.                                                                                                                                               | `getColor(theme, color, fallback)`                                    |
+| `tone`               | Determines if the given color is relatively "light" or "dark". Requires the theme and a color                                                                                                                                                                                                        | `tone(color)(theme)`                                                  |
+| `isDark` / `isLight` | Utilizes the `tone` method to return a boolean whether a color is "Dark" or "Light".                                                                                                                                                                                                                 | `isDark(color)(theme)`                                                |
+| `transparentize`     | Returns the given color with an alpha value as an rgba string. Requires the color, opacity in decimals (0 - 1) and the theme object.                                                                                                                                                                 | `transparentize(color, opacity)(theme)`                               |
+| `whiten`             | Returns a hex value with a whiter shade of the given color. Requires the color, the amount of white (0 - 100) and the theme object.                                                                                                                                                                  | `whiten(color, amount)(theme)`                                        |
+| `blacken`            | The opposite of `whiten`. Requires the color, the amount of black (0 - 100), and the theme object.                                                                                                                                                                                                   | `blacken(color, amount)(theme)`                                       |
+| `darken`             | Similar to `blacken`, but darkens the shade of the given color.                                                                                                                                                                                                                                      | `darken(color, amount)(theme)`                                        |
+| `lighten`            | Similar to `whiten`, but lightens the shade of the given color.                                                                                                                                                                                                                                      | `lighten(color, amount)(theme)`                                       |
+| `contrast`           | Returns the contrast ratio of two provided colors. The first param is the foreground color, and the second the background color. Also requires the theme object.                                                                                                                                     | `contrast(fg, bg)(theme)`                                             |
+| `isAccessible`       | Determines if the two given colors meet contrast ratio guidelines. Requires the theme object, the text color as the first param, the background color as the second param, and an optional object of WCAG params (See the [API Docs](https://tinycolor.vercel.app/docs/interfaces/WCAG2Parms.html)). | `isAccessible(textColor, bgColor, options?)(theme)`                   |
+| `complementary`      | Provide the complementary color to the provided color. Requires a color and the theme object.                                                                                                                                                                                                        | `complementary(color)(theme)`                                         |
+| `generateStripe`     | Creates a set of styles for a gradient background image to use as a divider. Optionally can take a new unit size (height/width) and color.                                                                                                                                                           | `generateStripe(size = "1rem", color = "rgba(255, 255, 255, 0.15)" )` |
+| `randomColor`        | Generates a random color. Can optionally take an object with either any string to convert to a hex, or an array of colors to randomly pick                                                                                                                                                           | `randomColor(opts?)`                                                  |
+
+### Examples
+
+Below showcases a mix of the methods in action from Chakra's default component
+theme.
+
+We can find a prime use case of `getColor()` in the `Alert` themes, where a
+function is created with `mode()` and `transparentize()` theme tool method for
+the background color to determine which color to return based on the color mode.
+
+> Mode is discussed later in the [Component Theme Tools](#).
+
+```js
+function getBg(props: StyleFunctionProps): string {
+  const { theme, colorScheme: c } = props
+  const lightBg = getColor(theme, `${c}.100`, c)
+  const darkBg = transparentize(`${c}.200`, 0.16)(theme)
+  return mode(lightBg, darkBg)(props)
+}
+
+const variantSubtle: PartsStyleFunction<typeof parts> = (props) => {
+  const { colorScheme: c } = props
+  return {
+    container: { bg: getBg(props) },
+    icon: { color: mode(`${c}.500`, `${c}.200`)(props) },
+    spinner: {
+      color: mode(`${c}.500`, `${c}.200`)(props),
+    },
+  }
+}
+```
