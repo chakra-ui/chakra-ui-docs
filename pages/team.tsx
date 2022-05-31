@@ -1,25 +1,27 @@
-import fs from 'fs'
 import {
   Avatar,
   Box,
+  chakra,
   Heading,
   Icon,
   Link,
   SimpleGrid,
   Stack,
   Text,
+  VStack,
   Wrap,
   WrapItem,
-  chakra,
 } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import * as React from 'react'
-import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
 import Container from 'components/container'
 import Header from 'components/header'
 import PageTransition from 'components/page-transition'
 import SEO from 'components/seo'
+import fs from 'fs'
+import React from 'react'
+import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
+import { IFormerMember } from 'scripts/get-former-members'
 import { Contributor, Member as IMember } from 'src/types/github'
 import { t } from 'utils/i18n'
 
@@ -55,37 +57,52 @@ function Member({ member }: { member: IMember }) {
   } = member
 
   return (
-    <Box>
-      <Stack direction='row' spacing={6}>
-        <Avatar size='xl' src={avatarUrl} />
-        <Stack spacing={3} maxW='320px'>
-          <Text fontWeight='bold' fontSize='md'>
-            {name}
-          </Text>
+    <Stack direction='row' spacing={6}>
+      <Avatar size='xl' src={avatarUrl} />
+      <Stack spacing={3} maxW='320px'>
+        <Text fontWeight='bold' fontSize='md'>
+          {name}
+        </Text>
 
-          <Stack isInline align='center' spacing={2}>
-            <SocialLink href={url} icon={IoLogoGithub} />
-            {twitterUsername && (
-              <SocialLink
-                href={`https://twitter.com/${twitterUsername}`}
-                icon={IoLogoTwitter}
-              />
-            )}
-            {websiteUrl && <SocialLink href={websiteUrl} icon={IoIosGlobe} />}
-          </Stack>
-          <Text>{bio}</Text>
+        <Stack isInline align='center' spacing={2}>
+          <SocialLink href={url} icon={IoLogoGithub} />
+          {twitterUsername && (
+            <SocialLink
+              href={`https://twitter.com/${twitterUsername}`}
+              icon={IoLogoTwitter}
+            />
+          )}
+          {websiteUrl && <SocialLink href={websiteUrl} icon={IoIosGlobe} />}
         </Stack>
+        <Text>{bio}</Text>
       </Stack>
-    </Box>
+    </Stack>
+  )
+}
+
+function FormerMember({ formerMember }: { formerMember: IFormerMember }) {
+  return (
+    <VStack spacing={2}>
+      <Avatar
+        as='a'
+        size='lg'
+        href={`https://github.com/${formerMember.githubName}`}
+        src={`https://github.com/${formerMember.githubName}.png`}
+      />
+      <Text fontSize='md' textAlign='center'>
+        {formerMember.name}
+      </Text>
+    </VStack>
   )
 }
 
 interface TeamProps {
   members: IMember[]
+  formerMembers: IFormerMember[]
   contributors: Contributor[]
 }
 
-function Team({ members, contributors }: TeamProps) {
+function Team({ members, formerMembers, contributors }: TeamProps) {
   const memberLogins = members.map(({ login }) => login)
   const contributorsWithoutTeam = contributors.filter(
     ({ login }) => !memberLogins.includes(login),
@@ -126,6 +143,30 @@ function Team({ members, contributors }: TeamProps) {
                   <Member key={member.login} member={member} />
                 ))}
               </SimpleGrid>
+
+              {formerMembers && (
+                <Stack spacing='8' pt='4'>
+                  <Text
+                    textStyle='caps'
+                    textTransform='uppercase'
+                    opacity='0.7'
+                  >
+                    {t('team.former-members')}
+                  </Text>
+                  <SimpleGrid columns={[2, 2, 6]} spacing='40px'>
+                    {formerMembers.map(
+                      (member) =>
+                        member.name &&
+                        member.githubName && (
+                          <FormerMember
+                            key={member.githubName}
+                            formerMember={member}
+                          />
+                        ),
+                    )}
+                  </SimpleGrid>
+                </Stack>
+              )}
             </Stack>
 
             <Stack py='48px' spacing={8}>
@@ -200,6 +241,14 @@ export async function getStaticProps() {
   const { members } = JSON.parse(fs.readFileSync('.all-membersrc', 'utf-8'))
 
   /**
+   * Read former members from `.all-former-membersrc` file
+   * to avoid overfetching from Github
+   */
+  const formerMembers = JSON.parse(
+    fs.readFileSync('.all-former-membersrc', 'utf-8'),
+  )
+
+  /**
    * Read contributors from `.all-contributorsrc` file
    * to avoid overfetching from Github
    */
@@ -210,6 +259,7 @@ export async function getStaticProps() {
   return {
     props: {
       members,
+      formerMembers,
       contributors,
     },
   }

@@ -61,14 +61,14 @@ async function main() {
       fs.mkdirSync(localDirToPreviewImageDir)
     }
 
-    const target = newData[key]
+    const targets = newData[key]
 
     if (!polishedCurrentData[key]) {
       polishedCurrentData[key] = []
     }
 
-    for (let i = 0; i < target.length; i++) {
-      const { url, name } = target[i]
+    for (const target of targets) {
+      const { url, name } = target
       const currentDataTarget = polishedCurrentData[key]
 
       const showcaseDataTargetItem = currentDataTarget.filter(
@@ -82,12 +82,12 @@ async function main() {
 
       // If it's youtube's url, use a thumbnail instead of a screenshot
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
-        target[i].image = getYouTubeThumbnail(url)
+        target.image = getYouTubeThumbnail(url)
         continue
       }
 
       if (isGitHubImageUrl(url)) {
-        target[i].image = await getGitHubSocialImage(
+        target.image = await getGitHubSocialImage(
           url,
           name,
           localDirToPreviewImageDir,
@@ -109,10 +109,10 @@ async function main() {
 
       const fileName = `${escapedName.split(' ').join('-')}.png`
       const imagePath = path.join(localDirToPreviewImageDir, fileName)
-      target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
+      target.image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
       const buffer = await page.screenshot()
 
-      currentDataTarget.push(target[i])
+      currentDataTarget.push(target)
 
       sharp(buffer)
         .resize(850)
@@ -148,9 +148,7 @@ async function generateShowcaseData() {
   // Remove the first two sections and the last section (for contributors)
   const categories = splitContent.slice(2, len - 1)
 
-  const parsedDataFromRepo = await parseRepoData(categories)
-
-  return parsedDataFromRepo
+  return await parseRepoData(categories)
 }
 
 class Item {
@@ -221,7 +219,7 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
 
       const { owner, repo } = parsedUrl
 
-      let url = link
+      let url: string
 
       try {
         url = (await getHomePage({ owner, repo })) ?? link
@@ -282,8 +280,8 @@ const isGitHubImageUrl = (url: string) => githubUrlPrefix.test(url)
 
 const getYoutubeVideoId = (youtubeUrl: string) =>
   isYoutubeVideoUrl(youtubeUrl)
-    ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/\&.*/, '')
-    : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/\&.*/, '')
+    ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/&.*/, '')
+    : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/&.*/, '')
 
 const getYouTubeThumbnail = (youtubeUrl: string) => {
   const youtubeId = getYoutubeVideoId(youtubeUrl)
