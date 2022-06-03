@@ -650,7 +650,7 @@ const HomePage = ({
           bgImage='url(/audio-bar.svg)'
           bgPos='bottom center'
           bgSize='120px'
-          bgRepeat='repeat no-repeat'
+          bgRepeat='space no-repeat'
         >
           <Container
             pt='7.5rem'
