@@ -279,6 +279,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/aiji42"><img src="https://avatars.githubusercontent.com/u/6711766?v=4?s=64" width="64px;" alt=""/><br /><sub><b>AijiUejima</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=aiji42" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/angie"><img src="https://avatars.githubusercontent.com/u/6738119?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Angie Merryweather</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Aangie" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://linkedin.com/in/rezamajidi"><img src="https://avatars.githubusercontent.com/u/7690415?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Reza</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=rezamajidi" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://mottox2.com"><img src="https://avatars.githubusercontent.com/u/7007253?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Yuki Takemoto</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Amottox2" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
