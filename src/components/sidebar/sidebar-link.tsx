@@ -40,7 +40,7 @@ type SidebarLinkProps = PropsOf<typeof chakra.div> & {
 const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
   const { asPath, query } = useRouter()
 
-  const isActive = asPath.split('?')[0] === href
+  const isActive = asPath.split('?')[0].split('#')[0] === href
 
   const link = useRef<HTMLAnchorElement>()
 
