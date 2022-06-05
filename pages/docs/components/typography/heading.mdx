@@ -33,7 +33,8 @@ import { Heading } from '@chakra-ui/react'
 
 To increase the size of the heading, you can use the `fontSize` or `size` props.
 If you use the `size` prop, the font size of the heading will automatically
-decrease in size for smaller screens.
+decrease in size for smaller screens, but only by using size `lg` or above with
+the default theme. This can be seen in the [theme source](https://github.com/chakra-ui/chakra-ui/blob/main/packages/theme/src/components/heading.ts) for the component.
 
 ```jsx
 <Stack spacing={6}>

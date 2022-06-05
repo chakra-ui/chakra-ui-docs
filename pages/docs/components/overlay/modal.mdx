@@ -89,7 +89,7 @@ closes.
 ```jsx
 function ReturnFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const finalRef = React.useRef()
+  const finalRef = React.useRef(null)
 
   return (
     <>
@@ -181,8 +181,8 @@ Chakra provides 2 props for this use case:
 function InitialFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const initialRef = React.useRef()
-  const finalRef = React.useRef()
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
 
   return (
     <>
@@ -348,7 +348,7 @@ function ScrollingExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
-  const btnRef = React.useRef()
+  const btnRef = React.useRef(null)
   return (
     <>
       <RadioGroup value={scrollBehavior} onChange={setScrollBehavior}>

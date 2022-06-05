@@ -74,32 +74,40 @@ effectively.
 ### Customizing single components
 
 As we mentioned earlier, a component style consists of `baseStyle`, `sizes`,
-`variants` and an optional `defaultProps` to denote the default `size` or
-`variant`.
+`variants` and an optional `defaultProps` to denote the default `size`,
+`variant` or `colorScheme`.
+
+> Not every component has all three `defaultProps`, to figure out which prop can
+> be set just have a short look on the theme source by using the
+> `View theme source` button on the top of every components page.
 
 Here's what the component style object looks like:
 
-```jsx live=false
-const ComponentStyle = {
+```tsx live=false
+import { ComponentStyleConfig } from '@chakra-ui/react'
+
+const ComponentStyle: ComponentStyleConfig = {
   // style object for base or default style
   baseStyle: {},
   // styles for different sizes ("sm", "md", "lg")
   sizes: {},
   // styles for different visual variants ("outline", "solid")
   variants: {},
-  // default values for `size` and `variant`
+  // default values for 'size', 'variant' and 'colorScheme'
   defaultProps: {
     size: '',
     variant: '',
+    colorScheme: '',
   },
 }
 ```
 
 For example, let's override the component styles for Chakra's Button component.
 
-```jsx live=false
-// theme.js
+```tsx live=false
+// theme.ts (tsx file with usage of StyleFunctions, see 4.)
 import { extendTheme } from '@chakra-ui/react'
+import { StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 const theme = extendTheme({
   components: {
@@ -123,9 +131,20 @@ const theme = extendTheme({
           boxShadow: '0 0 2px 2px #efdfde',
         },
         // 4. We can override existing variants
-        solid: (props) => ({
+        solid: (props: StyleFunctionProps) => ({
           bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
         }),
+        // 5. We can add responsive variants
+        sm: {
+          bg: 'teal.500',
+          fontSize: 'md',
+        },
+      },
+      // 6. We can overwrite defaultProps
+      defaultProps: {
+        size: 'lg', // default is md
+        variant: 'sm', // default is solid
+        colorScheme: 'green', // default is gray
       },
     },
   },
@@ -159,10 +178,10 @@ Global styles are theme-aware styles you can apply to any html element globally.
 To add global styles, update the `theme.styles.global` key in the theme. Global
 styles can be a style object or a function that returns a style object.
 
-```jsx live=false
-// theme.js
+```tsx live=false
+// theme.ts (Version 2 needs to be a tsx file, due to usage of StyleFunctions)
 import { extendTheme } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 // Version 1: Using objects
 const theme = extendTheme({
@@ -187,7 +206,7 @@ const theme = extendTheme({
 // Version 2: Using functions
 const overrides = extendTheme({
   styles: {
-    global: (props) => ({
+    global: (props: StyleFunctionProps) => ({
       body: {
         fontFamily: 'body',
         color: mode('gray.800', 'whiteAlpha.900')(props),
@@ -197,6 +216,93 @@ const overrides = extendTheme({
     }),
   },
 })
+```
+
+### Responsive variants
+
+Responsive variants can be used to have different styles for components
+depending on the current active breakpoint. The properties in `sizes` of the
+component will be overwritten if passed in the responsive variant.
+
+> With responsive variants, prop override might not work as expected since we
+> use regular CSS media queries. That's why we also came up with the notion of
+> `!important` as an escape hatch.
+
+To declare the responsive variants you can simply add them to the variants of
+the component:
+
+```ts live=false
+const theme = extendTheme({
+  components: {
+    Button: {
+      ...
+      sizes: {
+        sm: {
+          fontSize: 'md'
+        }
+      },
+      variants: {
+        ...
+        base: {
+          bg: 'yellow.500',
+          fontSize: 'md'
+         },
+        sm: {
+          bg: 'teal.500',
+          fontSize: 'lg'
+         },
+        md: {
+          bg: 'orange.500',
+          fontSize: 'xl'
+         },
+      }
+    },
+  },
+});
+```
+
+> Based on how the responsive variants are designed, there's no support for
+> responsive `colorScheme` since it is technically not a variant.
+
+Just pass them either with the `Array syntax` or the `Object syntax` to the
+component. The array syntax may not be work as expected, since it ignores the
+naming of the variant and uses them straight in the order on which they are
+passed into the array.
+
+```tsx live=false
+<>
+  <Button variant={{ base: 'base', md: 'md' }}>Object syntax</Button>
+  // the button will be orange after the `sm` breakpoint due to the array syntax
+  <Button variant={['base', 'md']}>Array syntax</Button>
+</>
+```
+
+It is required to use `!important` within a components style prop if this prop
+is set in the responsive variant as shown in the example below based on the
+theme above.
+
+```tsx live=false
+<>
+  <Button variant={{ sm: 'sm' }}>fontSize lg after breakpoint sm</Button>
+  // without declaration of fontSize in the sm variant the fontSize would be xl as
+  expected
+  <Button variant={{ sm: 'sm' }} fontSize='xl'>
+    still fontSize lg after breakpoint sm
+  </Button>
+  <Button variant={{ sm: 'sm' }} fontSize='xl !important'>
+    fontSize xl due to the !important
+  </Button>
+</>
+```
+
+Combined usage with `size` in the theme is only possible by covering breakpoints
+below the responsive variant or by using `!important`, which overrides
+everything.
+
+```tsx live=false
+<Button size='sm' variant={{ md: 'md' }}>
+  fontSize md from 'sizes' until breakpoint md where the variant takes over
+</Button>
 ```
 
 ## Scaling out your project

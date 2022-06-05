@@ -54,6 +54,8 @@ cd chakra-ui-docs
 
 **`yarn members:gen`**: regenerates the members
 
+**`yarn former-members:gen`**: regenerates the former members
+
 **`yarn search-meta:gen`**: regenerates the search meta
 
 **`yarn showcase-data:gen`**: regenerates the showcase data
@@ -63,6 +65,8 @@ cd chakra-ui-docs
 **`yarn cache:clean`**: deletes the `.contentlayer` folder
 
 **`yarn clean`**: deletes the `yarn.lock` file and `node_modules`
+
+**`yarn reinstall`**: reinstalls the dependency packages
 
 ## Updating the docs for new release
 
@@ -111,9 +115,9 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` to make sure
-   everything works as expected. Please note that you might have to run `yarn`
-   first in order to install all dependencies.
+   As you develop, you can run `yarn lint` to make sure everything works as
+   expected. Please note that you might have to run `yarn` first in order to
+   install all dependencies.
 
 ## Want to write a blog post or tutorial
 

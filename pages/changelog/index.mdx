@@ -10,6 +10,232 @@ experience.
 
 
 
+## 24-05-2022
+
+`@chakra-ui/react@2.1.2`
+
+**Toast** `v2.0.5`
+
+- Fix SSR errors with toast and `use-sync-external-store` due to lack of
+  `getServerSnapshot`
+
+## 24-05-2022
+
+`@chakra-ui/react@2.1.1`
+
+- Refactor toast provider to not wrap entire app to prevent unneeded re-renders
+
+**Utils** `v2.0.1`
+
+- Expose `toMediaQuery` internal function for use in the styled system package
+
+**Cra Template Typescript** `v2.0.1`
+
+- Update version of react packages and fix ts error
+
+**Cra Template** `v2.0.1`
+
+- Update version of react packages and fix ts error
+
+**Toast** `v2.0.4`
+
+- Refactor toast internal architecture to fix issues with toast instance methods
+  and `createStandaloneToast`
+
+**Alert** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Avatar** `v2.0.2`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Breadcrumb** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Image** `v2.0.2`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Modal** `v2.0.2`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Popover** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Popper** `v3.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Portal** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Progress** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Slider** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Spinner** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Tabs** `v2.0.2`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Tooltip** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Transition** `v2.0.1`
+
+- Improve TS doc comments to include the `@default`value for prop types
+
+**Theme** `v2.0.3`
+
+- Tab: Add visual feedback for disabled state in all variants.
+
+**System** `v2.1.1`
+
+- Revert type updates for use-style-config
+- Fix media query calculations for responsive variants and sizes
+- Fix issue where values with `!important` can resolve to a double `!important`
+  being added
+
+**Styled System** `v2.1.1`
+
+- Fix media query calculations for responsive variants and sizes
+- Fix issue where values with `!important` can resolve to a double `!important`
+  being added
+
+## 21-05-2022
+
+`@chakra-ui/react@2.1.0`
+
+- Ensure types used by other chakra packages are properly exported and imported
+  so that `src` directory is not referenced in the emitted type declarations.
+- Add support for responsive variants and sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]}>Click me</Button>
+```
+
+Add support for `!important` in token values as an escape hatch for overriding
+properties in responsive variants/sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]} fontSize="lg !important">
+  Click me
+</Button>
+```
+
+**Notes**
+
+- Based on how this is designed, there's no support for responsive `colorScheme`
+  since it is technically not a variant
+- When using responsive sizes and variants, overriding properties via props
+  might not work as expected. We use native CSS media queries to enable this
+  feature so there's no "magic" under the hood. If you really want to override
+  properties, you can consider using the important syntax
+
+**Descendant** `v3.0.1`
+
+- Ensure types used by other chakra packages are properly exported and imported
+  so that `src` directory is not referenced in the emitted type declarations.
+
+**Theme** `v2.0.2`
+
+- Ensure types used by other chakra packages are properly exported and imported
+  so that `src` directory is not referenced in the emitted type declarations.
+- Tag component variants borderRadius was overwriting baseStyle eventhough
+  borderRadius was same for all variants. borderRadius is now part of the
+  baseStyle
+
+**Styled System** `v2.1.0`
+
+- Add support for responsive variants and sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]}>Click me</Button>
+```
+
+Add support for `!important` in token values as an escape hatch for overriding
+properties in responsive variants/sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]} fontSize="lg !important">
+  Click me
+</Button>
+```
+
+**Notes**
+
+- Based on how this is designed, there's no support for responsive `colorScheme`
+  since it is technically not a variant
+- When using responsive sizes and variants, overriding properties via props
+  might not work as expected. We use native CSS media queries to enable this
+  feature so there's no "magic" under the hood. If you really want to override
+  properties, you can consider using the important syntax
+
+**System** `v2.1.0`
+
+- Add support for responsive variants and sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]}>Click me</Button>
+```
+
+Add support for `!important` in token values as an escape hatch for overriding
+properties in responsive variants/sizes.
+
+```jsx live=false
+<Button variant={["sm", "lg"]} fontSize="lg !important">
+  Click me
+</Button>
+```
+
+**Notes**
+
+- Based on how this is designed, there's no support for responsive `colorScheme`
+  since it is technically not a variant
+- When using responsive sizes and variants, overriding properties via props
+  might not work as expected. We use native CSS media queries to enable this
+  feature so there's no "magic" under the hood. If you really want to override
+  properties, you can consider using the important syntax
+
+**Textarea** `v2.0.1`
+
+- Fix ESLint warnings and errors
+
+**Avatar** `v2.0.1`
+
+- Add referrerPolicy prop to Avatar & Image Components
+
+**Image** `v2.0.1`
+
+- Add referrerPolicy prop to Avatar & Image Components
+
+**Media Query** `v3.0.1`
+
+- Fix regression in use-media-query hook in SSR envrionments where it throws
+  hydration mismatch
+
+**Toast** `v2.0.3`
+
+- Fix regression with the default toast position. It now defaults to `bottom` as
+  described in docs
+
+**Focus Lock** `v2.0.1`
+
+- Upgrade dependency `react-focus-lock` to be compatible with React 18
+
 ## 17-05-2022
 
 `@chakra-ui/react@2.0.2`
@@ -37,7 +263,7 @@ experience.
 - Expose `cookieStorageManagerSSR` for users who prefer to manage color mode
   server-side. If you use this, there's no need for the `ColorModeScript`
 
-````jsx live=false
+```jsx live=false
 function App({ Component, pageProps }) {
   // get the `cookie` from each page `getServerSideProps` return value
   // Note: the implementation is up to you
@@ -48,7 +274,9 @@ function App({ Component, pageProps }) {
     </ChakraProvider>
   )
 }
-```- We now provide a way to customize the localStorage / cookie storage key
+```
+
+- We now provide a way to customize the localStorage / cookie storage key
 
 ```jsx live=false
 import { createLocalStorageManager } from "@chakra-ui/react"
@@ -64,7 +292,7 @@ function App() {
 function Document() {
   return <ColorModeScript storageKey="my-key" />
 }
-````
+```
 
 - Fix inconsistent handling across provider and script
 
@@ -101,7 +329,7 @@ function Document() {
 
 - The `AlertIcon` component accepts custom icons as React children
 
-```jsx
+```jsx live=false
 <AlertIcon>
   <MyCustomIcon />
 </AlertIcon>
@@ -312,7 +540,7 @@ return (
 Allow user configure the storage key for the provider and script. We now export
 a `createLocalStorageManager` and `createCookieStorageManager` functions.
 
-```jsx
+```jsx live=false
 const manager = createLocalStorageManager("{storageKey}")
 
 function App({ Component, pageProps }) {
@@ -329,7 +557,7 @@ cookie script, you can set `type=cookie`.
 
 > Pro tip: You can also configure the `storageKey` from script as well
 
-```jsx
+```jsx live=false
 import { ColorModeScript } from "@chakra-ui/react"
 function Document() {
   return (
