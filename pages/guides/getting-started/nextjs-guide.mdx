@@ -43,6 +43,7 @@ Go to `pages/_app.js` or `pages/_app.tsx` (create it if it doesn't exist) and
 wrap the `Component` with the `ChakraProvider`:
 
 ```jsx live=false
+// pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react'
 
 function MyApp({ Component, pageProps }) {
@@ -65,7 +66,9 @@ Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
 ```jsx live=false
+// pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react'
+
 // 1. Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react'
 
