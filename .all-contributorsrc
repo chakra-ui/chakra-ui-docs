@@ -1296,6 +1296,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mottox2",
+      "name": "Yuki Takemoto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7007253?v=4",
+      "profile": "https://mottox2.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
