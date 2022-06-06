@@ -89,7 +89,7 @@ theme.
 | `generateStripe`     | Creates a set of styles for a gradient background image to use as a divider. Optionally can take a new unit size (height/width) and color.                                                                                                                                                           | `generateStripe(size = "1rem", color = "rgba(255, 255, 255, 0.15)" )` |
 | `randomColor`        | Generates a random color. Can optionally take an object with either any string to convert to a hex, or an array of colors to randomly pick                                                                                                                                                           | `randomColor(opts?)`                                                  |
 
-### Examples
+### Color Tool Examples
 
 Below showcases a mix of the methods in action from Chakra's default component
 theme.
@@ -98,9 +98,9 @@ We can find a prime use case of `getColor()` in the `Alert` themes, where a
 function is created with `mode()` and `transparentize()` theme tool method for
 the background color to determine which color to return based on the color mode.
 
-> Mode is discussed later in the [Component Theme Tools](#).
+> Mode is discussed later in the [Component Theme Tools](#component-tools).
 
-```js
+```ts
 function getBg(props: StyleFunctionProps): string {
   const { theme, colorScheme: c } = props
   const lightBg = getColor(theme, `${c}.100`, c)
@@ -117,5 +117,50 @@ const variantSubtle: PartsStyleFunction<typeof parts> = (props) => {
       color: mode(`${c}.500`, `${c}.200`)(props),
     },
   }
+}
+```
+
+## Component Tools
+
+There are mny times where you need the theme to be reliant on the color mode
+and/or the direction a componet is rendered (horizontally or vertically).
+
+### `mode()`
+
+A function that accepts two values and requires the props object from the
+component theme (variant or base style) to check for color mode. Then returns
+either the first value if in "light" mode or the second if in "dark" mode.
+
+> You can [see the example above](#color-tool-examples) with the `getBg`
+> function which returns this method and applied to any instance of a
+> `background` prop.
+
+### `orient`
+
+A function that returns an object of declared styles depending on orientation
+value ("horizontal" or "vertical").
+
+It is used both in themes and in components or component hooks to obtain
+orientation state for the most dynamic styling possible.
+
+The example below spreads the `orient` return into a
+[`markerStyle` object](https://github.com/chakra-ui/chakra-ui/blob/main/packages/slider/src/use-slider.ts#L470-L484)
+that is used for the marker of the `Slider` component. So if the `orientation`
+value provided is "vertical", then the styling declared in the "vertical" object
+is returned.
+
+```ts
+const markerStyle: React.CSSProperties = {
+  position: 'absolute',
+  pointerEvents: 'none',
+  ...orient({
+    orientation,
+    vertical: {
+      bottom: isReversed ? `${100 - markerPercent}%` : `${markerPercent}%`,
+    },
+    horizontal: {
+      left: isReversed ? `${100 - markerPercent}%` : `${markerPercent}%`,
+    },
+  }),
 }
 ```
