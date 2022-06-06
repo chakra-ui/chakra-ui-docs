@@ -59,12 +59,12 @@ When creating a variant or base style with dynamic styles, it's value can be a
 function instead of an object to use props that are passed to the component. The
 following props can be used as part of the signature:
 
-| Prop          | Type / Value                                                               |
-| ------------- | -------------------------------------------------------------------------- |
-| `colorScheme` | string value of a theme token (ie. `blue` or `green`)                      |
-| `theme`       | The theme object                                                           |
-| `colorMode`   | `Dark` or `Light` depending on the current value in the ColorMode Provider |
-| `orientation` | `horizontal` or `vertical` i8n value                                       |
+| Prop          | Type / Value                                                                                                   |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| `colorScheme` | string value of a theme token (ie. `blue` or `green`)                                                          |
+| `theme`       | The theme object                                                                                               |
+| `colorMode`   | `Dark` or `Light` depending on the current value in the ColorMode Provider                                     |
+| `orientation` | `horizontal` or `vertical`, defined as the direction the component is laid out. (Like setting `flexDirection`) |
 
 And any other props passed to the component you want to access!
 
