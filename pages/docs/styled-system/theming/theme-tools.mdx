@@ -164,3 +164,69 @@ const markerStyle: React.CSSProperties = {
   }),
 }
 ```
+
+## CSS tools
+
+### `cssCalc`
+
+This is a collection of methods used to create the CSS `cacl()` function based
+on number value passed in. The collection is imported as `calc` followed by the
+method name.
+
+For example: `calc.add(10, 20)` will return `calc(10 + 20)`
+
+In addition to methods that create `calc()`, there is also the `negate` method
+which return the value multiplied by -1. If a string is passed in such as
+`"5 + 8"`, then the value returned is `-5 + 8`. If it's an actual operation and
+not a string, such as `calc.negate(5 + 8)`, then the value returned is `-13`.
+
+### `cssVar`
+
+Method to generate a prefixed CSS variable and reference `var()` function.
+
+```js
+cssVar('custom-component', 'blue', 'chakra')
+
+/*
+ * Returns the object
+ * {
+ *   variable: `--chakra-custom-component`,
+ *   reference: `var(--chakra-custom-component, blue)`
+ * }
+ */
+```
+
+> In the `reference` object property, since the second argument `fallback` is
+> provided, then the `var()` function is called with the fallback value as its
+> second argument, in this case "blue".
+
+The example below comes from the `Switch` component default theme, which
+utilizes both tools to help create the initial setup of the base styles.
+
+> Note that `negate()` is extended with a `toString` to make the value valid in
+> the object because the argument of `$diff` is supplied to `calc` which passes
+> it down to the method.
+
+```ts
+const $width = cssVar('switch-track-width')
+const $height = cssVar('switch-track-height')
+
+const $diff = cssVar('switch-track-diff')
+const diffValue = calc.subtract($width, $height)
+
+const $translateX = cssVar('switch-thumb-x')
+
+// Later in the file...
+
+const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
+  container: {
+    [$diff.variable]: diffValue,
+    [$translateX.variable]: $diff.reference,
+    _rtl: {
+      [$translateX.variable]: calc($diff).negate().toString(),
+    },
+  },
+  track: baseStyleTrack(props),
+  thumb: baseStyleThumb,
+})
+```
