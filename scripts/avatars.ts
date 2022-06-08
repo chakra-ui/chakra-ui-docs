@@ -1,7 +1,7 @@
-import path from 'path'
 import { promises as fs } from 'fs'
 import mkdirp from 'mkdirp'
 import fetch from 'node-fetch'
+import path from 'path'
 import tweetsJson from '../configs/tweets.json'
 import ImageCache from './image-cache'
 
@@ -11,25 +11,25 @@ const publicDir = path.join(process.cwd(), 'public')
 const avatarsDir = path.join(publicDir, 'avatars')
 
 interface Sponsor {
-  MemberId: number;
-  createdAt: string;
-  type: string;
-  role: string;
-  tier: string;
-  isActive: boolean;
-  totalAmountDonated: number;
-  currency: string;
-  lastTransactionAt: string;
-  lastTransactionAmount: number;
-  profile: string;
-  name: string;
-  company: string | null;
-  description: string | null;
-  image: string;
-  email: string | null;
-  twitter: string | null;
-  github: string | null;
-  website: string | null;
+  MemberId: number
+  createdAt: string
+  type: string
+  role: string
+  tier: string
+  isActive: boolean
+  totalAmountDonated: number
+  currency: string
+  lastTransactionAt: string
+  lastTransactionAmount: number
+  profile: string
+  name: string
+  company: string | null
+  description: string | null
+  image: string
+  email: string | null
+  twitter: string | null
+  github: string | null
+  website: string | null
 }
 
 /**
@@ -43,16 +43,18 @@ async function getSponsors() {
   const unfilteredSponsors: Sponsor[] = await response.json()
 
   // filter the sponsors by opencollectice profile link to avoid double entries
-  const sponsors = unfilteredSponsors.filter((currentSponsor, index, allSponsors) =>
-    index === allSponsors.findIndex((s) => (
-      s.profile === currentSponsor.profile
-    ))
+  const sponsors = unfilteredSponsors.filter(
+    (currentSponsor, index, allSponsors) =>
+      index ===
+      allSponsors.findIndex((s) => s.profile === currentSponsor.profile),
   )
-  
+
   const individuals = sponsors.filter(
     (sponsor) => sponsor.type === 'USER' && sponsor.image != null,
   )
-  const companies = sponsors.filter((sponsor) => sponsor.type === 'ORGANIZATION')
+  const companies = sponsors.filter(
+    (sponsor) => sponsor.type === 'ORGANIZATION',
+  )
 
   return { individuals, companies }
 }

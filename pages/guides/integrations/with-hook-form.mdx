@@ -64,12 +64,11 @@ Wiring up to the rest of your app:
 import React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import HookForm from './HookForm'
-import { ChakraProvider, CSSReset, Box } from '@chakra-ui/react'
+import { ChakraProvider, Box } from '@chakra-ui/react'
 
 function App() {
   return (
     <ChakraProvider>
-      <CSSReset />
       <Box p={4}>
         <HookForm />
       </Box>

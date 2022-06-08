@@ -240,18 +240,17 @@ prevent popover from returning focus to `PopoverTrigger`'s children.
 
 ```jsx
 function ControlledUsage() {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const open = () => setIsOpen(!isOpen)
-  const close = () => setIsOpen(false)
+  const { isOpen, onToggle, onClose } = useDisclosure()
+
   return (
     <>
-      <Button mr={5} onClick={open}>
+      <Button mr={5} onClick={onToggle}>
         Trigger
       </Button>
       <Popover
         returnFocusOnClose={false}
         isOpen={isOpen}
-        onClose={close}
+        onClose={onClose}
         placement='right'
         closeOnBlur={false}
       >

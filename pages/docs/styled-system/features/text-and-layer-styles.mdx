@@ -12,7 +12,7 @@ This can be painful as your project grows in size.
 Using `textStyle` and `layerStyle` props can help you keep things organized and
 consistent.
 
-## Layer Style
+## Layer Styles
 
 Layer Styles allow you to save a combination of styling attributes to re-use in
 other components. Once created, pass the `layerStyle` prop to any component and
@@ -57,6 +57,8 @@ function Example({ isSelected }) {
   return <Box layerStyle={layerStyle}>This is a box</Box>
 }
 ```
+
+> Layer Styles will not override variant styling.
 
 ## Text Styles
 

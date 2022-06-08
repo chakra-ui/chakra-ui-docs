@@ -1,14 +1,14 @@
-import puppeteer from 'puppeteer'
+import { launch } from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 import sharp from 'sharp'
 import _ from 'lodash'
 import { Octokit } from 'octokit'
-import dotenv from 'dotenv'
+import { config } from 'dotenv'
 import showcaseData from '../configs/showcase.json'
 import fetch from 'node-fetch'
 
-dotenv.config()
+config()
 
 export type ShowcaseKeys =
   | 'projects'
@@ -33,7 +33,7 @@ const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
 async function main() {
-  const browser = await puppeteer.launch({
+  const browser = await launch({
     defaultViewport: {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
@@ -49,7 +49,7 @@ async function main() {
 
   const keys = Object.keys(newData)
 
-  for (let key of keys) {
+  for (const key of keys) {
     const localDirToPreviewImageDir = path.join(
       process.cwd(),
       'public',
@@ -61,14 +61,14 @@ async function main() {
       fs.mkdirSync(localDirToPreviewImageDir)
     }
 
-    const target = newData[key]
+    const targets = newData[key]
 
     if (!polishedCurrentData[key]) {
       polishedCurrentData[key] = []
     }
 
-    for (let i = 0; i < target.length; i++) {
-      const { url, name } = target[i]
+    for (const target of targets) {
+      const { url, name } = target
       const currentDataTarget = polishedCurrentData[key]
 
       const showcaseDataTargetItem = currentDataTarget.filter(
@@ -82,12 +82,12 @@ async function main() {
 
       // If it's youtube's url, use a thumbnail instead of a screenshot
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
-        target[i].image = getYouTubeThumbnail(url)
+        target.image = getYouTubeThumbnail(url)
         continue
       }
 
       if (isGitHubImageUrl(url)) {
-        target[i].image = await getGitHubSocialImage(
+        target.image = await getGitHubSocialImage(
           url,
           name,
           localDirToPreviewImageDir,
@@ -109,10 +109,10 @@ async function main() {
 
       const fileName = `${escapedName.split(' ').join('-')}.png`
       const imagePath = path.join(localDirToPreviewImageDir, fileName)
-      target[i].image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
+      target.image = path.join(DIR_FOR_STORING_PREVIEW_IMAGE, key, fileName)
       const buffer = await page.screenshot()
 
-      currentDataTarget.push(target[i])
+      currentDataTarget.push(target)
 
       sharp(buffer)
         .resize(850)
@@ -148,9 +148,7 @@ async function generateShowcaseData() {
   // Remove the first two sections and the last section (for contributors)
   const categories = splitContent.slice(2, len - 1)
 
-  const parsedDataFromRepo = await parseRepoData(categories)
-
-  return parsedDataFromRepo
+  return await parseRepoData(categories)
 }
 
 class Item {
@@ -171,9 +169,9 @@ class Item {
 
 // Parse the data into type of `IShowcase`
 const parseRepoData = async (context: string[]): Promise<IShowcase> => {
-  let parsedData: IShowcase = {}
+  const parsedData: IShowcase = {}
 
-  for (let c of context) {
+  for (const c of context) {
     const splitItems = c.split('\n').filter((s) => s !== '')
 
     const category = splitItems
@@ -181,11 +179,11 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
       .split(' ')
       .filter((s) => s !== '')[1]
       ?.toLowerCase()
-    let parsedItems = []
+    const parsedItems = []
 
     if (!category) continue
 
-    for (let str of splitItems) {
+    for (const str of splitItems) {
       const curlyBraces = /\[(.*?)\]/
       const parentheses = /\(((https|http).*?)\)/
 
@@ -221,7 +219,7 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
 
       const { owner, repo } = parsedUrl
 
-      let url = link
+      let url: string
 
       try {
         url = (await getHomePage({ owner, repo })) ?? link
@@ -282,8 +280,8 @@ const isGitHubImageUrl = (url: string) => githubUrlPrefix.test(url)
 
 const getYoutubeVideoId = (youtubeUrl: string) =>
   isYoutubeVideoUrl(youtubeUrl)
-    ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/\&.*/, '')
-    : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/\&.*/, '')
+    ? youtubeUrl.replace(youtubeVideoUrlPrefix, '').replace(/&.*/, '')
+    : youtubeUrl.replace(youtubeShortUrlPrefix, '').replace(/&.*/, '')
 
 const getYouTubeThumbnail = (youtubeUrl: string) => {
   const youtubeId = getYoutubeVideoId(youtubeUrl)
