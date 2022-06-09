@@ -86,6 +86,51 @@ You can prevent the skeleton from rendering using the `isLoaded` prop.
 </Skeleton>
 ```
 
+### `fadeDuration` with `isLoaded`
+
+With the `fadeDuration` prop, you can control the duration of the content fading
+into view. The value in this prop is a number representing seconds which is part
+of the `animation` style prop that is rendered to the component. Default value
+is `0.4` seconds.
+
+This requires the `isLoaded` prop, and the animation best visible when the
+`isLoaded` prop is toggled to `true`.
+
+```jsx
+function Example() {
+  const [isLoaded, setIsLoaded] = React.useState(false)
+  return (
+    <Stack padding={4} spacing={1}>
+      <Skeleton height='40px' isLoaded={isLoaded}>
+        <Box>Hello World!</Box>
+      </Skeleton>
+      <Skeleton
+        height='40px'
+        isLoaded={isLoaded}
+        bg='green.500'
+        color='white'
+        fadeDuration={1}
+      >
+        <Box>Hello React!</Box>
+      </Skeleton>
+      <Skeleton
+        height='40px'
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg='blue.500'
+        color='white'
+      >
+        <Box>Hello ChakraUI!</Box>
+      </Skeleton>
+
+      <Box textAlign='center'>
+        <Button onClick={() => setIsLoaded((v) => !v)}>toggle</Button>
+      </Box>
+    </Stack>
+  )
+}
+```
+
 ## Props
 
 <PropsTable of='Skeleton' />
