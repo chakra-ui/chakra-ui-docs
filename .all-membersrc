@@ -109,6 +109,16 @@
       "bio": "DevOps Engineer at DB Systel | maintainer @chakra-ui |\r\n[React, nodeJS, GraphQL, ...❤️]",
       "twitter_username": "TimKolberger",
       "location": "Darmstadt, Germany"
+    },
+    {
+      "login": "TylerAPfledderer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65234762?v=4",
+      "url": "https://github.com/TylerAPfledderer",
+      "blog": "https://tylerpweb.dev",
+      "name": "Tyler Pfledderer",
+      "bio": "UI/UX Junior Web Developer | Collaborater at @chakra-ui ",
+      "twitter_username": "t_pfledderer",
+      "location": "North Carolina, USA"
     }
   ]
 }
