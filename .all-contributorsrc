@@ -1305,6 +1305,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "samuliasmala",
+      "name": "Samuli Asmala",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14218719?v=4",
+      "profile": "https://github.com/samuliasmala",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
