@@ -15,10 +15,6 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
-  editUrl: {
-    type: 'string',
-    resolve: (doc) => `${siteConfig.repo.editUrl}/${doc._id}`,
-  },
 }
 
 const Guides = defineDocumentType(() => ({
@@ -41,6 +37,7 @@ const Guides = defineDocumentType(() => ({
         tags: doc.tags,
         author: doc.author,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),
     },
@@ -71,6 +68,7 @@ const Blogs = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
       }),
     },
   },
@@ -99,6 +97,7 @@ const Doc = defineDocumentType(() => ({
         image: doc.image,
         version: doc.version,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),
     },
@@ -121,6 +120,7 @@ const Tutorial = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),
     },
@@ -143,6 +143,7 @@ const FAQ = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),
     },

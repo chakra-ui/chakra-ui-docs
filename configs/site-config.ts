@@ -1,4 +1,5 @@
 const baseUrl = 'https://github.com/chakra-ui/chakra-ui'
+const docBaseUrl = 'https://github.com/chakra-ui/chakra-ui-docs'
 
 const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Segun Adebayo. All Rights Reserved.`,
@@ -16,7 +17,7 @@ const siteConfig = {
   },
   repo: {
     url: baseUrl,
-    editUrl: `${baseUrl}/edit/main/website/pages`,
+    editUrl: `${docBaseUrl}/tree/main/pages`,
     blobUrl: `${baseUrl}/blob/main`,
   },
   openCollective: {
