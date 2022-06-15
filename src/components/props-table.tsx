@@ -35,13 +35,7 @@ export type PropsTableProps = {
 
 const PropsTable = ({
   of,
-  omit = [
-    'layerStyle',
-    'noOfLines',
-    'textStyle',
-    'orientation',
-    'styleConfig',
-  ],
+  omit = ['layerStyle', 'noOfLines', 'textStyle', 'orientation', 'styleConfig'],
   only,
 }: PropsTableProps) => {
   const propList = React.useMemo(
@@ -58,7 +52,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
   }
 
   return (
-    <Stack overflowX='auto' spacing='10' my='10'>
+    <Stack overflowX='auto' spacing='16' my='10'>
       {propList.map((prop) => (
         <chakra.div
           key={prop.name}
@@ -86,7 +80,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
             <chakra.h3
               css={{
                 fontSize: '0.8em',
-                paddingBottom: 16,
+                paddingBottom: 4,
                 marginBottom: 16,
                 borderBottomWidth: 1,
               }}
