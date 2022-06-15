@@ -80,6 +80,10 @@
             {
               "title": "Advanced",
               "path": "/docs/styled-system/theming/advanced"
+            },
+            {
+              "title": "Theme Tools",
+              "path": "/docs/styled-system/theming/theme-tools"
             }
           ]
         },
