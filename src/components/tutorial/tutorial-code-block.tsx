@@ -12,6 +12,7 @@ import {
   useSandpack,
   useSandpackTheme,
 } from '@codesandbox/sandpack-react'
+import { nightOwl } from '@codesandbox/sandpack-themes'
 import * as React from 'react'
 import { RiFileEditLine, RiFileTransferLine } from 'react-icons/ri'
 import { formatFilePath, SandpackLanguageSupport } from './utils'
@@ -28,7 +29,7 @@ const CodeBlock = ({ path, code, showLineNumbers = false }: CodeBlockProps) => {
   const { sandpack } = useSandpack()
 
   return (
-    <Stack bg={theme.palette.defaultBackground} rounded='md' my={4}>
+    <Stack bg={theme.colors.surface1} rounded='md' my={4}>
       {path && (
         <HStack px={4} pt={2} justifyContent='space-between'>
           <Text color='purple.300'>{formatFilePath(path)}</Text>
@@ -72,7 +73,7 @@ export const TutorialCodeBlock = (props: CodeBlockProps) => {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - sandpack has not yet fully provided React 18 support
-    <SandpackThemeProvider theme='night-owl'>
+    <SandpackThemeProvider theme={nightOwl}>
       <CodeBlock {...props} />
     </SandpackThemeProvider>
   )

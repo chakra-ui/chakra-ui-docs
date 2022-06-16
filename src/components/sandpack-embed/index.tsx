@@ -1,6 +1,5 @@
 import { Box, BoxProps } from '@chakra-ui/react'
 import { Sandpack, SandpackProps } from '@codesandbox/sandpack-react'
-import '@codesandbox/sandpack-react/dist/index.css'
 
 type Props = BoxProps &
   SandpackProps & {
