@@ -1,4 +1,4 @@
-import { launch } from 'puppeteer'
+import Puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 import sharp from 'sharp'
@@ -33,7 +33,8 @@ const DEFAULT_VIEWPORT_WIDTH = 1920
 const DEFAULT_VIEWPORT_HEIGHT = 1080
 
 async function main() {
-  const browser = await launch({
+  // eslint-disable-next-line import/no-named-as-default-member
+  const browser = await Puppeteer.launch({
     defaultViewport: {
       width: DEFAULT_VIEWPORT_WIDTH,
       height: DEFAULT_VIEWPORT_HEIGHT,
