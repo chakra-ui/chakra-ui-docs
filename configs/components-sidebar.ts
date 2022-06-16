@@ -314,8 +314,8 @@ const sidebar: Routes = {
           summarize: true,
           routes: [
             {
-              title: 'Transitions',
-              path: '/docs/components/other/transitions',
+              title: 'Close Button',
+              path: '/docs/components/other/close-button',
             },
             {
               title: 'Portal',
@@ -326,8 +326,8 @@ const sidebar: Routes = {
               path: '/docs/components/other/show-hide',
             },
             {
-              title: 'Close Button',
-              path: '/docs/components/other/close-button',
+              title: 'Transitions',
+              path: '/docs/components/other/transitions',
             },
           ],
         },
