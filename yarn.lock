@@ -1017,6 +1017,11 @@
     react-devtools-inline "4.4.0"
     react-is "^17.0.2"
 
+"@codesandbox/sandpack-themes@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-themes/-/sandpack-themes-1.0.0.tgz#9792edfd41076448674e79fda42bcc9cadc6d8c9"
+  integrity sha512-t0T6b0jIA46u9MtPmTR7nQye3CJgpzauK70NslxSuRUH7W2J39gDMbcw0GuCgjmRqiM/4bBa401OKRRKDzUPpQ==
+
 "@contentlayer/cli@0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.2.4.tgz#e47d331b8de1ce97a8ca8fec1081c31c99a9f889"
