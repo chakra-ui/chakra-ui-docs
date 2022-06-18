@@ -15,39 +15,39 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Aspect Ratio',
-              path: '/docs/components/layout/aspect-ratio',
+              path: '/docs/components/aspect-ratio',
             },
             {
               title: 'Box',
-              path: '/docs/components/layout/box',
+              path: '/docs/components/box',
             },
             {
               title: 'Center',
-              path: '/docs/components/layout/center',
+              path: '/docs/components/center',
             },
             {
               title: 'Container',
-              path: '/docs/components/layout/container',
+              path: '/docs/components/container',
             },
             {
               title: 'Flex',
-              path: '/docs/components/layout/flex',
+              path: '/docs/components/flex',
             },
             {
               title: 'Grid',
-              path: '/docs/components/layout/grid',
+              path: '/docs/components/grid',
             },
             {
               title: 'SimpleGrid',
-              path: '/docs/components/layout/simple-grid',
+              path: '/docs/components/simple-grid',
             },
             {
               title: 'Stack',
-              path: '/docs/components/layout/stack',
+              path: '/docs/components/stack',
             },
             {
               title: 'Wrap',
-              path: '/docs/components/layout/wrap',
+              path: '/docs/components/wrap',
             },
           ],
         },
@@ -60,59 +60,59 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Button',
-              path: '/docs/components/form/button',
+              path: '/docs/components/button',
             },
             {
               title: 'Checkbox',
-              path: '/docs/components/form/checkbox',
+              path: '/docs/components/checkbox',
             },
             {
               title: 'Editable',
-              path: '/docs/components/form/editable',
+              path: '/docs/components/editable',
             },
             {
               title: 'Form Control',
-              path: '/docs/components/form/form-control',
+              path: '/docs/components/form-control',
             },
             {
               title: 'Icon Button',
-              path: '/docs/components/form/icon-button',
+              path: '/docs/components/icon-button',
             },
             {
               title: 'Input',
-              path: '/docs/components/form/input',
+              path: '/docs/components/input',
             },
             {
               title: 'Number Input',
-              path: '/docs/components/form/number-input',
+              path: '/docs/components/number-input',
             },
             {
               title: 'Pin Input',
-              path: '/docs/components/form/pin-input',
+              path: '/docs/components/pin-input',
             },
             {
               title: 'Radio',
-              path: '/docs/components/form/radio',
+              path: '/docs/components/radio',
             },
             {
               title: 'Range Slider',
-              path: '/docs/components/form/range-slider',
+              path: '/docs/components/range-slider',
             },
             {
               title: 'Select',
-              path: '/docs/components/form/select',
+              path: '/docs/components/select',
             },
             {
               title: 'Slider',
-              path: '/docs/components/form/slider',
+              path: '/docs/components/slider',
             },
             {
               title: 'Switch',
-              path: '/docs/components/form/switch',
+              path: '/docs/components/switch',
             },
             {
               title: 'Textarea',
-              path: '/docs/components/form/textarea',
+              path: '/docs/components/textarea',
             },
           ],
         },
@@ -125,35 +125,35 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Badge',
-              path: '/docs/components/data-display/badge',
+              path: '/docs/components/badge',
             },
             {
               title: 'Code',
-              path: '/docs/components/data-display/code',
+              path: '/docs/components/code',
             },
             {
               title: 'Divider',
-              path: '/docs/components/data-display/divider',
+              path: '/docs/components/divider',
             },
             {
               title: 'Kbd',
-              path: '/docs/components/data-display/kbd',
+              path: '/docs/components/kbd',
             },
             {
               title: 'List',
-              path: '/docs/components/data-display/list',
+              path: '/docs/components/list',
             },
             {
               title: 'Stat',
-              path: '/docs/components/data-display/stat',
+              path: '/docs/components/stat',
             },
             {
               title: 'Table',
-              path: '/docs/components/data-display/table',
+              path: '/docs/components/table',
             },
             {
               title: 'Tag',
-              path: '/docs/components/data-display/tag',
+              path: '/docs/components/tag',
             },
           ],
         },
@@ -166,27 +166,27 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Alert',
-              path: '/docs/components/feedback/alert',
+              path: '/docs/components/alert',
             },
             {
               title: 'Circular Progress',
-              path: '/docs/components/feedback/circular-progress',
+              path: '/docs/components/circular-progress',
             },
             {
               title: 'Progress',
-              path: '/docs/components/feedback/progress',
+              path: '/docs/components/progress',
             },
             {
               title: 'Skeleton',
-              path: '/docs/components/feedback/skeleton',
+              path: '/docs/components/skeleton',
             },
             {
               title: 'Spinner',
-              path: '/docs/components/feedback/spinner',
+              path: '/docs/components/spinner',
             },
             {
               title: 'Toast',
-              path: '/docs/components/feedback/toast',
+              path: '/docs/components/toast',
             },
           ],
         },
@@ -198,11 +198,11 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Text',
-              path: '/docs/components/typography/text',
+              path: '/docs/components/text',
             },
             {
               title: 'Heading',
-              path: '/docs/components/typography/heading',
+              path: '/docs/components/heading',
             },
           ],
         },
@@ -215,27 +215,27 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Alert Dialog',
-              path: '/docs/components/overlay/alert-dialog',
+              path: '/docs/components/alert-dialog',
             },
             {
               title: 'Drawer',
-              path: '/docs/components/overlay/drawer',
+              path: '/docs/components/drawer',
             },
             {
               title: 'Menu',
-              path: '/docs/components/overlay/menu',
+              path: '/docs/components/menu',
             },
             {
               title: 'Modal',
-              path: '/docs/components/overlay/modal',
+              path: '/docs/components/modal',
             },
             {
               title: 'Popover',
-              path: '/docs/components/overlay/popover',
+              path: '/docs/components/popover',
             },
             {
               title: 'Tooltip',
-              path: '/docs/components/overlay/tooltip',
+              path: '/docs/components/tooltip',
             },
           ],
         },
@@ -248,15 +248,15 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Accordion',
-              path: '/docs/components/disclosure/accordion',
+              path: '/docs/components/accordion',
             },
             {
               title: 'Tabs',
-              path: '/docs/components/disclosure/tabs',
+              path: '/docs/components/tabs',
             },
             {
               title: 'Visually Hidden',
-              path: '/docs/components/disclosure/visually-hidden',
+              path: '/docs/components/visually-hidden',
             },
           ],
         },
@@ -269,19 +269,19 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Breadcrumb',
-              path: '/docs/components/navigation/breadcrumb',
+              path: '/docs/components/breadcrumb',
             },
             {
               title: 'Link',
-              path: '/docs/components/navigation/link',
+              path: '/docs/components/link',
             },
             {
               title: 'LinkOverlay',
-              path: '/docs/components/navigation/link-overlay',
+              path: '/docs/components/link-overlay',
             },
             {
               title: 'SkipNav',
-              path: '/docs/components/navigation/skip-nav',
+              path: '/docs/components/skip-nav',
             },
           ],
         },
@@ -294,15 +294,15 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Avatar',
-              path: '/docs/components/media-and-icons/avatar',
+              path: '/docs/components/avatar',
             },
             {
               title: 'Icon',
-              path: '/docs/components/media-and-icons/icon',
+              path: '/docs/components/icon',
             },
             {
               title: 'Image',
-              path: '/docs/components/media-and-icons/image',
+              path: '/docs/components/image',
             },
           ],
         },
@@ -315,19 +315,19 @@ const sidebar: Routes = {
           routes: [
             {
               title: 'Close Button',
-              path: '/docs/components/other/close-button',
+              path: '/docs/components/close-button',
             },
             {
               title: 'Portal',
-              path: '/docs/components/other/portal',
+              path: '/docs/components/portal',
             },
             {
               title: 'Show / Hide',
-              path: '/docs/components/other/show-hide',
+              path: '/docs/components/show-hide',
             },
             {
               title: 'Transitions',
-              path: '/docs/components/other/transitions',
+              path: '/docs/components/transitions',
             },
           ],
         },

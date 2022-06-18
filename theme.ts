@@ -3,6 +3,14 @@ import { mode } from '@chakra-ui/theme-tools'
 
 const customTheme = extendTheme({
   config: {},
+  semanticTokens: {
+    colors: {
+      brand: {
+        default: 'teal.500',
+        _dark: 'teal.200',
+      },
+    },
+  },
   fonts: {
     heading: 'Inter, sans-serif',
     body: 'Inter, sans-serif',

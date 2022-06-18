@@ -133,7 +133,7 @@ const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
         color={active ? linkColor : 'gray.500'}
         _hover={{ color: linkColor }}
       >
-        <Center w='6' h='6' bg='teal.400' rounded='base' mr='3'>
+        <Center w='6' h='6' bg='teal.500' rounded='base' mr='3'>
           {icon}
         </Center>
         {children}

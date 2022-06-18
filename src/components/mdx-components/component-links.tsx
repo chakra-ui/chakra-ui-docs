@@ -1,14 +1,14 @@
 import {
-  Link,
-  useColorModeValue,
-  ButtonGroup,
   Button,
   ButtonProps,
+  Link,
+  useColorModeValue,
+  Wrap,
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaNpm, FaYoutube } from 'react-icons/fa'
-import StorybookIcon from '../storybook-icon'
 import { t } from 'utils/i18n'
+import StorybookIcon from '../storybook-icon'
 
 type ComponentLinkProps = ButtonProps & {
   icon: React.ElementType
@@ -24,15 +24,9 @@ function ComponentLink(props: ComponentLinkProps) {
       as={Link}
       href={url}
       isExternal
-      bg='inherit'
-      px='12px'
-      display='flex'
-      fontSize='sm'
-      alignItems='center'
-      minH='32px'
-      borderWidth='1px'
-      borderRadius='md'
-      marginInlineStart='0 !important'
+      size='sm'
+      fontWeight='normal'
+      variant='outline'
       color={useColorModeValue('gray.600', 'whiteAlpha.700')}
       _hover={{
         color: useColorModeValue('gray.700', 'whiteAlpha.900'),
@@ -131,20 +125,13 @@ function ComponentLinks(props: ComponentLinksProps) {
   )
 
   return (
-    <ButtonGroup
-      className='component-links'
-      mt='2rem'
-      gap='4'
-      flexWrap='wrap'
-      overflow='unset'
-      {...rest}
-    >
+    <Wrap spacing='3' flexWrap='wrap' overflow='visible' {...rest}>
       {githubLink}
       {themeComponentLink}
       {npmLink}
       {storybookLink}
       {videoLink}
-    </ButtonGroup>
+    </Wrap>
   )
 }
 

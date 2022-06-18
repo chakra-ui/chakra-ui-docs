@@ -3,9 +3,10 @@ import * as React from 'react'
 
 import PageContainer from 'components/page-container'
 
-const BlogLayout = dynamic(() => import('layouts/blog'))
-const MDXLayout = dynamic(() => import('layouts/mdx'))
-const TutorialLayout = dynamic(() => import('layouts/tutorial'))
+const BlogLayout = dynamic(() => import('./blog'))
+export const MDXLayout = dynamic(() => import('./mdx'))
+const TutorialLayout = dynamic(() => import('./tutorial'))
+const ComponentLayout = dynamic(() => import('./component'))
 
 export default function DefaultLayout({ children, frontMatter }) {
   const slug = frontMatter?.slug
@@ -13,6 +14,9 @@ export default function DefaultLayout({ children, frontMatter }) {
   const layoutMap = {
     blog: <BlogLayout frontmatter={frontMatter}>{children}</BlogLayout>,
     guides: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
+    'docs/components': (
+      <ComponentLayout frontmatter={frontMatter}>{children}</ComponentLayout>
+    ),
     docs: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     changelog: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     faq: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,

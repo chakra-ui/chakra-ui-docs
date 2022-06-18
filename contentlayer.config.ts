@@ -7,7 +7,7 @@ import remarkEmoji from 'remark-emoji'
 import remarkGfm from 'remark-gfm'
 import remarkSlug from 'remark-slug'
 import siteConfig from './configs/site-config'
-import { getTableOfContents } from './src/utils/mdx-utils'
+import { getTableOfContents } from './src/utils/get-table-of-contents'
 import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta'
 
 const computedFields: ComputedFields = {
@@ -79,12 +79,20 @@ const Doc = defineDocumentType(() => ({
   filePathPattern: 'docs/**/*.mdx',
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
+    title: { type: 'string' },
     package: { type: 'string' },
-    description: { type: 'string', required: true },
-    image: { type: 'string' },
+    description: { type: 'string' },
+    id: { type: 'string' },
+    scope: {
+      type: 'enum',
+      options: ['usage', 'theming', 'props'],
+      default: 'usage',
+    },
     version: { type: 'string' },
     author: { type: 'string' },
+    video: { type: 'string' },
+    category: { type: 'string' },
+    aria: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
@@ -94,7 +102,6 @@ const Doc = defineDocumentType(() => ({
         title: doc.title,
         package: doc.package,
         description: doc.description,
-        image: doc.image,
         version: doc.version,
         slug: `/${doc._raw.flattenedPath}`,
         editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
@@ -172,7 +179,7 @@ const Changelog = defineDocumentType(() => ({
 }))
 
 const contentLayerConfig = makeSource({
-  contentDirPath: 'pages',
+  contentDirPath: 'content',
   documentTypes: [Doc, Guides, FAQ, Changelog, Blogs, Tutorial],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
