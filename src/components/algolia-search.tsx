@@ -7,6 +7,7 @@ import {
   Text,
   VisuallyHidden,
   chakra,
+  Icon,
 } from '@chakra-ui/react'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 import type {
@@ -31,7 +32,12 @@ interface HitProps {
 function Hit({ hit, children }: HitProps) {
   return (
     <Link href={hit.url} passHref>
+      {/* <HStack> */}
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      {/* {hit.__is_parent?.() && <DocIcon opacity={0.4} />} */}
       <a>{children}</a>
+      {/* </HStack> */}
     </Link>
   )
 }
@@ -152,21 +158,41 @@ function AlgoliaSearch() {
             indexName='chakra-ui'
             apiKey='df1dcc41f7b8e5d68e73dd56d1e19701'
             appId='BH4D9OD16A'
-            //@ts-expect-error we allow this error because we don't need what is missing here.
             navigator={{
-              navigate: ({ suggestionUrl }) => {
+              navigate: ({ itemUrl }) => {
                 setIsOpen(false)
-                router.push(suggestionUrl)
+                router.push(itemUrl)
               },
             }}
             hitComponent={Hit}
             transformItems={(items) => {
-              return items.map((item) => {
+              console.log(items)
+              return items.map((item, index) => {
                 const a = document.createElement('a')
                 a.href = item.url
-                const hash = a.hash === '#content-wrapper' ? '' : a.hash
-                item.url = `${a.pathname}${hash}`
-                return item
+                // const hash = a.hash === '#content-wrapper' ? '' : a.hash
+                // item.url = `${a.pathname}${hash}`
+                // return item
+
+                const hash =
+                  a.hash === '#content-wrapper' || a.hash === '#header'
+                    ? ''
+                    : a.hash
+
+                return {
+                  ...item,
+                  url: `${a.pathname}${hash}`,
+                  __is_result: () => true,
+                  __is_parent: () =>
+                    item.type === 'lvl1' && items.length > 1 && index === 0,
+                  __is_child: () =>
+                    item.type !== 'lvl1' &&
+                    items.length > 1 &&
+                    items[0].type === 'lvl1' &&
+                    index !== 0,
+                  __is_first: () => index === 1,
+                  __is_last: () => index === items.length - 1 && index !== 0,
+                }
               })
             }}
           />

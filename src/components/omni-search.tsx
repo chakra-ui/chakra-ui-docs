@@ -51,7 +51,7 @@ function OptionText({ searchWords, textToHighlight }: OptionTextProps) {
   return highlightedText
 }
 
-function DocIcon(props) {
+export function DocIcon(props) {
   return (
     <chakra.svg
       strokeWidth='2px'
@@ -71,7 +71,7 @@ function DocIcon(props) {
   )
 }
 
-function EnterIcon(props) {
+export function EnterIcon(props) {
   return (
     <chakra.svg
       strokeWidth='2px'
@@ -94,7 +94,7 @@ function EnterIcon(props) {
   )
 }
 
-function HashIcon(props) {
+export function HashIcon(props) {
   return (
     <chakra.svg
       strokeWidth='2px'

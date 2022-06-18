@@ -111,7 +111,7 @@ const OverviewItem = ({ url, title, description, slug }: Props) => {
         </AspectRatio>
         <NextLink href={url} passHref>
           <LinkOverlay>
-            <Heading as='h3' size='sm'>
+            <Heading as='h2' size='sm'>
               {title}
             </Heading>
           </LinkOverlay>
