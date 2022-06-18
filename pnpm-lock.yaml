@@ -10,8 +10,7 @@ specifiers:
   '@chakra-ui/utils': 2.0.10
   '@codesandbox/sandpack-react': ^1.2.2
   '@codesandbox/sandpack-themes': ^1.0.0
-  '@docsearch/react': ^1.0.0-alpha.27
-  '@docusaurus/utils': 2.0.0-alpha.69
+  '@docsearch/react': ^3.1.0
   '@emotion/react': ^11.10.0
   '@emotion/styled': ^11.9.3
   '@octokit/rest': ^18.12.0
@@ -91,8 +90,7 @@ dependencies:
   '@chakra-ui/utils': 2.0.10
   '@codesandbox/sandpack-react': 1.5.4_biqbaboplfbrettd7655fr4n2y
   '@codesandbox/sandpack-themes': 1.5.0
-  '@docsearch/react': 1.0.0-alpha.28_biqbaboplfbrettd7655fr4n2y
-  '@docusaurus/utils': 2.0.0-alpha.69
+  '@docsearch/react': 3.2.1_zxljzmqdrxwnuenbkrz77w74uy
   '@emotion/react': 11.10.0_ug65io7jkbhmo4fihdmbrh3ina
   '@emotion/styled': 11.10.0_lzabd6uj4wst47copsenr4b56q
   '@octokit/rest': 18.12.0
@@ -165,6 +163,26 @@ devDependencies:
   unist-util-visit: 4.1.1
 
 packages:
+
+  /@algolia/autocomplete-core/1.7.1:
+    resolution: {integrity: sha512-eiZw+fxMzNQn01S8dA/hcCpoWCOCwcIIEUtHHdzN5TGB3IpzLbuhqFeTfh2OUhhgkE8Uo17+wH+QJ/wYyQmmzg==}
+    dependencies:
+      '@algolia/autocomplete-shared': 1.7.1
+    dev: false
+
+  /@algolia/autocomplete-preset-algolia/1.7.1_algoliasearch@4.14.2:
+    resolution: {integrity: sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg==}
+    peerDependencies:
+      '@algolia/client-search': ^4.9.1
+      algoliasearch: ^4.9.1
+    dependencies:
+      '@algolia/autocomplete-shared': 1.7.1
+      algoliasearch: 4.14.2
+    dev: false
+
+  /@algolia/autocomplete-shared/1.7.1:
+    resolution: {integrity: sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg==}
+    dev: false
 
   /@algolia/cache-browser-local-storage/4.14.2:
     resolution: {integrity: sha512-FRweBkK/ywO+GKYfAWbrepewQsPTIEirhi1BdykX9mxvBPtGNKccYAxvGdDCumU1jL4r3cayio4psfzKMejBlA==}
@@ -1851,45 +1869,33 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /@docsearch/css/1.0.0-alpha.28:
-    resolution: {integrity: sha512-1AhRzVdAkrWwhaxTX6/R7SnFHz8yLz1W8I/AldlTrfbNvZs9INk1FZiEFTJdgHaP68nhgQNWSGlQiDiI3y2RYg==}
+  /@docsearch/css/3.2.1:
+    resolution: {integrity: sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g==}
     dev: false
 
-  /@docsearch/react/1.0.0-alpha.28_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-XjJOnCBXn+UZmtuDmgzlVIHnnvh6yHVwG4aFq8AXN6xJEIX3f180FvGaowFWAxgdtHplJxFGux0Xx4piHqBzIw==}
+  /@docsearch/react/3.2.1_zxljzmqdrxwnuenbkrz77w74uy:
+    resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
     peerDependencies:
-      react: ^16.8.0
-      react-dom: ^16.8.0
+      '@types/react': '>= 16.8.0 < 19.0.0'
+      react: '>= 16.8.0 < 19.0.0'
+      react-dom: '>= 16.8.0 < 19.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dependencies:
-      '@docsearch/css': 1.0.0-alpha.28
-      '@francoischalifour/autocomplete-core': 1.0.0-alpha.28
-      '@francoischalifour/autocomplete-preset-algolia': 1.0.0-alpha.28
+      '@algolia/autocomplete-core': 1.7.1
+      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.2
+      '@docsearch/css': 3.2.1
+      '@types/react': 18.0.17
       algoliasearch: 4.14.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /@docusaurus/types/2.0.0-alpha.69:
-    resolution: {integrity: sha512-8TgHmUMH5q+5D93nyugk/dtUeGPblRE++gxxrwjNYnJucRUNDKRC8kJhEozODGcSfXddTeMalPvbRKSz9Pxj2g==}
-    dependencies:
-      '@types/webpack': 4.41.32
-      commander: 4.1.1
-      querystring: 0.2.0
-      webpack-merge: 4.2.2
-    dev: false
-
-  /@docusaurus/utils/2.0.0-alpha.69:
-    resolution: {integrity: sha512-RpxqcjPT0L+MxLyS/4QOHp/2hlKPcPoDyvfqtTJiS9DPtUzkH573a5/yMbfzz8IbPeYWRCPL2qxWtmN7XCZ/sQ==}
-    engines: {node: '>=10.15.1'}
-    dependencies:
-      '@docusaurus/types': 2.0.0-alpha.69
-      chalk: 3.0.0
-      escape-string-regexp: 2.0.0
-      fs-extra: 9.1.0
-      gray-matter: 4.0.3
-      lodash.camelcase: 4.3.0
-      lodash.kebabcase: 4.1.1
-      resolve-pathname: 3.0.0
+    transitivePeerDependencies:
+      - '@algolia/client-search'
     dev: false
 
   /@effect-ts/core/0.58.1:
@@ -2163,14 +2169,6 @@ packages:
 
   /@fal-works/esbuild-plugin-global-externals/2.1.2:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
-    dev: false
-
-  /@francoischalifour/autocomplete-core/1.0.0-alpha.28:
-    resolution: {integrity: sha512-rL9x+72btViw+9icfBKUJjZj87FgjFrD2esuTUqtj4RAX3s4AuVZiN8XEsfjQBSc6qJk31cxlvqZHC/BIyYXgg==}
-    dev: false
-
-  /@francoischalifour/autocomplete-preset-algolia/1.0.0-alpha.28:
-    resolution: {integrity: sha512-bprfNmYt1opFUFEtD2XfY/kEsm13bzHQgU80uMjhuK0DJ914IjolT1GytpkdM6tJ4MBvyiJPP+bTtWO+BZ7c7w==}
     dev: false
 
   /@grpc/grpc-js/1.6.10:
@@ -3616,41 +3614,8 @@ packages:
       '@types/node': 18.7.11
     dev: true
 
-  /@types/source-list-map/0.1.2:
-    resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
-    dev: false
-
-  /@types/tapable/1.0.8:
-    resolution: {integrity: sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==}
-    dev: false
-
-  /@types/uglify-js/3.17.0:
-    resolution: {integrity: sha512-3HO6rm0y+/cqvOyA8xcYLweF0TKXlAxmQASjbOi49Co51A1N4nR4bEwBgRoD9kNM+rqFGArjKr654SLp2CoGmQ==}
-    dependencies:
-      source-map: 0.6.1
-    dev: false
-
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
-
-  /@types/webpack-sources/3.2.0:
-    resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
-    dependencies:
-      '@types/node': 18.7.11
-      '@types/source-list-map': 0.1.2
-      source-map: 0.7.4
-    dev: false
-
-  /@types/webpack/4.41.32:
-    resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
-    dependencies:
-      '@types/node': 18.7.11
-      '@types/tapable': 1.0.8
-      '@types/uglify-js': 3.17.0
-      '@types/webpack-sources': 3.2.0
-      anymatch: 3.1.2
-      source-map: 0.6.1
-    dev: false
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
@@ -4048,11 +4013,6 @@ packages:
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
-    dev: false
-
-  /at-least-node/1.0.0:
-    resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
-    engines: {node: '>= 4.0.0'}
     dev: false
 
   /autocomplete.js/0.36.0:
@@ -4500,11 +4460,6 @@ packages:
     resolution: {integrity: sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==}
     dev: false
     optional: true
-
-  /commander/4.1.1:
-    resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
-    engines: {node: '>= 6'}
-    dev: false
 
   /commander/9.4.0:
     resolution: {integrity: sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==}
@@ -6224,16 +6179,6 @@ packages:
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
 
-  /fs-extra/9.1.0:
-    resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      at-least-node: 1.0.0
-      graceful-fs: 4.2.10
-      jsonfile: 6.1.0
-      universalify: 2.0.0
-    dev: false
-
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -7121,14 +7066,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  /jsonfile/6.1.0:
-    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
-    dependencies:
-      universalify: 2.0.0
-    optionalDependencies:
-      graceful-fs: 4.2.10
-    dev: false
-
   /jsonwebtoken/8.5.1:
     resolution: {integrity: sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==}
     engines: {node: '>=4', npm: '>=1.4.28'}
@@ -7303,10 +7240,6 @@ packages:
 
   /lodash.isstring/4.0.1:
     resolution: {integrity: sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==}
-    dev: false
-
-  /lodash.kebabcase/4.1.1:
-    resolution: {integrity: sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g==}
     dev: false
 
   /lodash.merge/4.6.2:
@@ -8798,6 +8731,7 @@ packages:
     engines: {node: '>=0.4.x'}
     deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: false
+    optional: true
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -9321,10 +9255,6 @@ packages:
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
-
-  /resolve-pathname/3.0.0:
-    resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
-    dev: false
 
   /resolve/1.22.1:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
@@ -10142,11 +10072,6 @@ packages:
     resolution: {integrity: sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w==}
     dev: false
 
-  /universalify/2.0.0:
-    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
-    engines: {node: '>= 10.0.0'}
-    dev: false
-
   /update-notifier/5.1.0:
     resolution: {integrity: sha512-ItnICHbeMh9GqUy31hFPrD1kcuZ3rpxDZbf4KUDavXwS0bW5m7SLbDQpGX3UYr072cbrF5hFUs3r5tUsPwjfHw==}
     engines: {node: '>=10'}
@@ -10336,12 +10261,6 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: false
-
-  /webpack-merge/4.2.2:
-    resolution: {integrity: sha512-TUE1UGoTX2Cd42j3krGYqObZbOD+xF7u28WB7tfUordytSjbWTIjK/8V0amkBfTYN4/pB/GIDlJZZ657BGG19g==}
-    dependencies:
-      lodash: 4.17.21
     dev: false
 
   /whatwg-url/5.0.0:

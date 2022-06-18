@@ -20,8 +20,11 @@ import * as React from 'react'
 import MultiRef from 'react-multi-ref'
 import scrollIntoView from 'scroll-into-view-if-needed'
 import { SearchButton } from './algolia-search'
-import searchData from 'configs/search-meta.json'
+// import searchData from 'configs/search-meta.json'
 
+// placeholder for search data
+// if real data is needed again run script and uncomment import
+const searchData = []
 interface OptionTextProps {
   searchWords: string[]
   textToHighlight: string
@@ -153,7 +156,7 @@ function OmniSearch() {
   const results = React.useMemo(
     function getResults() {
       if (query.length < 2) return []
-      return matchSorter(searchData, query, {
+      return matchSorter<any>(searchData, query, {
         keys: ['hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3', 'content'],
       }).slice(0, 20)
     },
