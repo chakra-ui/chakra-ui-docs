@@ -3,7 +3,6 @@ import { useColorModeValue } from '@chakra-ui/color-mode'
 import { Box, Grid, Heading, Link, Text, VStack } from '@chakra-ui/layout'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/tabs'
-import _ from 'lodash'
 import { useCallback, useMemo, useState } from 'react'
 import showcaseData from '../configs/showcase.json'
 import type { IShowcase, ShowcaseItem } from '../scripts/get-showcase-data'
@@ -23,6 +22,8 @@ const categoriesWithAll = ['all', ...categories]
 const allItems: ShowcaseItem[] = categories.reduce((acc, cur) => {
   return [...acc, ...showcaseData[cur]]
 }, [])
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
 const Showcase = () => {
   const [index, setIndex] = useState<number>(0)
@@ -148,7 +149,7 @@ const Showcase = () => {
           >
             <TabList w='100%' maxW='calc(100% - 3rem)' flexWrap='wrap'>
               {categoriesWithAll.map((c) => (
-                <Tab key={c}>{_.capitalize(c)}</Tab>
+                <Tab key={c}>{capitalize(c)}</Tab>
               ))}
             </TabList>
             <TabPanels mt='10'>{showcaseItems}</TabPanels>

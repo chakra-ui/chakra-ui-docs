@@ -1,5 +1,4 @@
 import { allDocs, Doc } from 'contentlayer/generated'
-import { memoize } from 'lodash'
 
 function uniq<T>(c: T[]) {
   return [...new Set(c)]
@@ -48,11 +47,11 @@ export function getDocPaths() {
   }))
 }
 
-const getUsageDoc = memoize((id: string) => {
+const getUsageDoc = (id: string) => {
   return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'usage')
-})
+}
 
-export const getDocDoc = memoize((slug: string | string[]): Doc | undefined => {
+export const getDocDoc = (slug: string | string[]): Doc | undefined => {
   const params = Array.isArray(slug) ? slug : [slug]
   const _slug = params.join('/')
   const doc = allDocs.find(
@@ -64,7 +63,7 @@ export const getDocDoc = memoize((slug: string | string[]): Doc | undefined => {
     ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
   }
   return doc
-})
+}
 
 export function getComponentTabsData(slug: string | string[]) {
   const params = Array.isArray(slug) ? slug : [slug]
