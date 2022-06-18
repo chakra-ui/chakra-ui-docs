@@ -68,7 +68,7 @@
     "scroll-into-view-if-needed": "^2.2.29",
     "shelljs": "^0.8.5",
     "superjson": "^1.8.1",
-    "typescript": "^4.6.3",
+    "typescript": "^4.7.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -87,7 +87,7 @@
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.7.1",
     "react-multi-ref": "^1.0.0",
     "sharp": "^0.30.5",
     "ts-node": "10.7.0",
