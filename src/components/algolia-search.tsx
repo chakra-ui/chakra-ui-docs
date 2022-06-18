@@ -154,7 +154,7 @@ function AlgoliaSearch() {
             appId='BH4D9OD16A'
             //@ts-expect-error we allow this error because we don't need what is missing here.
             navigator={{
-              navigate({ suggestionUrl }) {
+              navigate: ({ suggestionUrl }) => {
                 setIsOpen(false)
                 router.push(suggestionUrl)
               },
