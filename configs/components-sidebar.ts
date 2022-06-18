@@ -333,26 +333,26 @@ const sidebar: Routes = {
         },
         {
           title: 'Recipes',
-          path: '/docs/components/recipes',
+          path: '/docs/recipes',
           open: true,
           sort: true,
           summarize: true,
           routes: [
             {
               title: 'Floating Labels',
-              path: '/docs/components/recipes/floating-labels',
+              path: '/docs/recipes/floating-labels',
             },
             {
               title: 'Horizontal Collapse',
-              path: '/docs/components/recipes/horizontal-collapse',
+              path: '/docs/recipes/horizontal-collapse',
             },
             {
               title: 'Portals and z-Index',
-              path: '/docs/components/recipes/z-index',
+              path: '/docs/recipes/z-index',
             },
             {
               title: 'The as prop',
-              path: '/docs/components/recipes/as-prop',
+              path: '/docs/recipes/as-prop',
             },
           ],
         },

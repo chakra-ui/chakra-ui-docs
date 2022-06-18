@@ -1,4 +1,3 @@
-import { allDocs } from 'contentlayer/generated'
 import {
   GridItem,
   Heading,
@@ -11,8 +10,8 @@ import {
 import { GetStaticProps } from 'next'
 
 import OverviewItem from 'components/overview/item'
-import componentsSidebar from 'configs/components-sidebar'
 import Layout from 'layouts'
+import { getGroupedComponents } from 'utils/contentlayer-utils'
 
 type Component = {
   title: string
@@ -35,7 +34,7 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
     <Layout
       frontMatter={{
         title: 'Components',
-        slug: '/docs/components/overview',
+        slug: '/docs/components',
         headings,
       }}
     >
@@ -57,7 +56,7 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
                 <Heading as='h2' size='md' id={slug} scrollMarginTop={24}>
                   {title}
                 </Heading>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
                   {components.map(
                     ({ title: componentTitle, description, url }) => {
                       const componentSlug = componentTitle
@@ -86,38 +85,32 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = componentsSidebar.routes[0].routes
-    .splice(1)
-    .filter(({ path }) => path !== '/docs/components/recipes')
-  const categories: Category[] = await Promise.all(
-    data.map(async ({ title, routes }) => {
-      const components = await Promise.all(
-        routes.map(async ({ title: routeTitle, path: url }) => {
-          const { description } = allDocs.find((doc) => doc.slug === url)
-          const component: Component = {
-            title: routeTitle,
-            url,
-            description,
-          }
+  const group = getGroupedComponents()
 
-          return component
-        }),
-      )
-
-      const category: Category = {
+  const categories = Object.entries(group).reduce((acc, item) => {
+    const [key, items] = item
+    if (key === 'Layout') return acc
+    const category = {
+      title: key,
+      components: items.map(({ title, description, slug }) => ({
         title,
-        components,
-      }
+        description,
+        url: slug,
+      })),
+    }
+    return acc.concat(category)
+  }, [] as any[])
 
-      return category
-    }),
-  )
-
-  const headings = categories.map(({ title }) => ({
-    id: title.toLowerCase().replace(/ /g, '-'),
-    text: title,
-    level: 1,
-  }))
+  const headings = Object.entries(group).reduce((acc, item) => {
+    const [key] = item
+    if (key === 'Layout') return acc
+    const heading = {
+      id: key.toLowerCase().replace(/ /g, '-'),
+      text: key,
+      level: 2,
+    }
+    return acc.concat(heading)
+  }, [] as any[])
 
   return {
     props: {

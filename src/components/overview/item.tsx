@@ -29,7 +29,7 @@ const componentIllustrations = {
   badge: <Illustrations.BadgeIllustration />,
   code: <Illustrations.CodeIllustration />,
   divider: <Illustrations.DividerIllustration />,
-  kbd: <Illustrations.KbdIllustration />,
+  'keyboard-key': <Illustrations.KbdIllustration />,
   list: <Illustrations.ListIllustration />,
   stat: <Illustrations.StatIllustration />,
   table: <Illustrations.TableIllustration />,
@@ -53,7 +53,7 @@ const componentIllustrations = {
   'visually-hidden': <Illustrations.VisuallyHiddenIllustration />,
   breadcrumb: <Illustrations.BreadcrumbIllustration />,
   link: <Illustrations.LinkIllustration />,
-  linkoverlay: <Illustrations.LinkOverlayIllustration />,
+  'link-overlay': <Illustrations.LinkOverlayIllustration />,
   avatar: <Illustrations.AvatarIllustration />,
   icon: <Illustrations.IconIllustration />,
   image: <Illustrations.ImageIllustration />,
@@ -61,7 +61,7 @@ const componentIllustrations = {
   portal: <Illustrations.PortalIllustration />,
   'show-/-hide': <Illustrations.ShowHideIllustration />,
   'close-button': <Illustrations.CloseButtonIllustration />,
-  skipnav: <Illustrations.SkipNavIllustration />,
+  'skip-nav': <Illustrations.SkipNavIllustration />,
 }
 
 type Props = {
@@ -72,6 +72,7 @@ type Props = {
 }
 
 const OverviewItem = ({ url, title, description, slug }: Props) => {
+  console.log(slug, title)
   return (
     <LinkBox
       as='article'

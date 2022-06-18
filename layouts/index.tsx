@@ -28,6 +28,8 @@ export default function DefaultLayout({ children, frontMatter }) {
     ),
   }
 
+  if (slug === '/docs/components') return layoutMap.docs
+
   const layout = Object.entries(layoutMap).find(([path]) => {
     return slug?.startsWith(`/${path}`)
   })

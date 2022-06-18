@@ -18,15 +18,20 @@ function getComponentSlugs() {
   )
 }
 
-export function getGroupedComponents<T extends { category: string }>(
-  docs: T[],
-) {
-  return docs.reduce((acc, doc) => {
+function toCapitalized(str: string) {
+  const result = str.charAt(0).toUpperCase() + str.slice(1)
+  return result.replace(/-/g, ' ')
+}
+
+export function getGroupedComponents() {
+  return getDocByType('components').reduce((acc, doc) => {
     const category = doc.category
-    if (!acc[category]) acc[category] = []
-    acc[category].push(doc)
+    if (!category) return acc
+    acc[toCapitalized(category)] ??= []
+    acc[toCapitalized(category)].push(doc)
     return acc
-  }, {} as Record<T['category'], T>)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }, {} as { [key: string]: any[] })
 }
 
 function getDocSlugs() {
