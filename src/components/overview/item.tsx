@@ -71,8 +71,8 @@ type Props = {
   slug: string
 }
 
-const OverviewItem = ({ url, title, description, slug }: Props) => {
-  console.log(slug, title)
+function OverviewItem(props: Props) {
+  const { url, title, description, slug } = props
   return (
     <LinkBox
       as='article'
