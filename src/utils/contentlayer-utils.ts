@@ -1,4 +1,4 @@
-import { allDocs } from 'contentlayer/generated'
+import { allDocs, Doc } from 'contentlayer/generated'
 import { memoize } from 'lodash'
 
 function uniq<T>(c: T[]) {
@@ -30,7 +30,6 @@ export function getGroupedComponents() {
     acc[toCapitalized(category)] ??= []
     acc[toCapitalized(category)].push(doc)
     return acc
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }, {} as { [key: string]: any[] })
 }
 
@@ -53,12 +52,13 @@ const getUsageDoc = memoize((id: string) => {
   return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'usage')
 })
 
-export const getDocDoc = memoize((slug: string | string[]) => {
+export const getDocDoc = memoize((slug: string | string[]): Doc | undefined => {
   const params = Array.isArray(slug) ? slug : [slug]
   const _slug = params.join('/')
   const doc = allDocs.find(
     (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`),
   )
+  if (!doc) return
   doc.frontMatter = {
     ...doc.frontMatter,
     ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
@@ -80,7 +80,7 @@ export function getComponentTabsData(slug: string | string[]) {
   const propsSlug = getSlug('props')
   const themingSlug = getSlug('theming')
 
-  return [
+  const data = [
     {
       id: 'usage',
       match: _slug.endsWith('/usage') || params.length === 2,
@@ -103,4 +103,5 @@ export function getComponentTabsData(slug: string | string[]) {
       doc: getDocDoc(getSlug('theming')),
     },
   ]
+  return data.filter((item) => item.doc)
 }

@@ -5,7 +5,6 @@ import { forwardRef, Ref, useEffect, useRef } from 'react'
 
 const StyledLink = forwardRef(function StyledLink(
   props: PropsOf<typeof chakra.a> & { isActive?: boolean },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: Ref<any>,
 ) {
   const { isActive, ...rest } = props
@@ -37,18 +36,24 @@ type SidebarLinkProps = PropsOf<typeof chakra.div> & {
   icon?: React.ReactElement
 }
 
-const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
-  const { asPath, query } = useRouter()
+function checkHref(href: string, slug: string | string[]) {
+  const _slug = Array.isArray(slug) ? slug : [slug]
+  const path = href.split('/')
+  const pathSlug = path[path.length - 1]
+  return _slug.includes(pathSlug)
+}
 
-  const isActive = asPath.split('?')[0].split('#')[0] === href
+const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
+  const router = useRouter()
+  const isActive = checkHref(href, router.query.slug)
 
   const link = useRef<HTMLAnchorElement>()
 
   useEffect(() => {
-    if (isActive && query.scroll === 'true') {
+    if (isActive && router.query.scroll === 'true') {
       link.current.scrollIntoView({ block: 'center' })
     }
-  }, [isActive, query])
+  }, [isActive, router.query])
 
   return (
     <chakra.div
