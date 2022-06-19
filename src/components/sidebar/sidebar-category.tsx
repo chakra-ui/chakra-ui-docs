@@ -61,7 +61,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
         alignItems='center'
         justifyContent='space-between'
         userSelect='none'
-        color='brand'
+        color='accent'
       >
         {title}
       </chakra.p>

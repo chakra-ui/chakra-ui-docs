@@ -1,14 +1,21 @@
 import { extendTheme } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
 
 const customTheme = extendTheme({
   config: {},
   semanticTokens: {
     colors: {
-      brand: {
-        default: 'teal.500',
-        _dark: 'teal.200',
-      },
+      // accent semantic tokens
+      accent: { default: 'teal.500', _dark: 'teal.300' },
+      'accent-emphasis': { default: 'teal.700', _dark: 'teal.200' },
+      'accent-static': 'teal.500',
+      'accent-muted': { default: 'teal.300', _dark: 'teal.200' },
+      'accent-subtle': { default: 'teal.50', _dark: 'teal.800' },
+      // foreground semantic tokens
+      fg: { default: 'gray.700', _dark: 'gray.100' },
+      'fg-emphasis': { default: 'gray.900', _dark: 'gray.200' },
+      'fg-muted': { default: 'gray.600', _dark: 'gray.400' },
+      'fg-subtle': { default: 'gray.500', _dark: 'gray.300' },
+      'fg-on-accent': { default: 'white', _dark: 'inherit' },
     },
   },
   fonts: {
@@ -16,9 +23,11 @@ const customTheme = extendTheme({
     body: 'Inter, sans-serif',
   },
   styles: {
-    global: (props) => ({
+    global: {
       body: {
-        color: mode('gray.700', 'whiteAlpha.900')(props),
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+        color: 'fg',
         '.deleted': {
           color: '#ff8383 !important',
           fontStyle: 'normal !important',
@@ -28,7 +37,7 @@ const customTheme = extendTheme({
           fontStyle: 'normal !important',
         },
       },
-    }),
+    },
   },
   textStyles: {
     heading: {
@@ -89,7 +98,7 @@ const customTheme = extendTheme({
       fontSize: '1.125rem',
     },
     a: {
-      color: 'teal.500',
+      color: 'accent',
       fontWeight: 'semibold',
       transition: 'color 0.15s',
       transitionTimingFunction: 'ease-out',

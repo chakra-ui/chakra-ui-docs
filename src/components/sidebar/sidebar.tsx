@@ -7,7 +7,6 @@ import {
   ListItem,
   ListProps,
   chakra,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import sortBy from 'lodash/sortBy'
 import NextLink from 'next/link'
@@ -23,7 +22,6 @@ import { Routes } from 'utils/get-route-context'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: any
 }
 
@@ -48,11 +46,9 @@ export function SidebarContent({
               <chakra.h4
                 fontSize='sm'
                 fontWeight='bold'
-                my='1.25rem'
+                my='4'
                 textTransform='uppercase'
                 letterSpacing='wider'
-                color='gray.700'
-                _dark={{ color: 'inherit' }}
               >
                 {lvl1.title}
               </chakra.h4>
@@ -119,7 +115,6 @@ export const isMainNavLinkActive = (href: string, path: string) => {
 const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
   const { asPath } = useRouter()
   const active = isMainNavLinkActive(href, asPath)
-  const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')
 
   return (
     <NextLink href={href} passHref>
@@ -127,13 +122,11 @@ const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
         as='a'
         align='center'
         fontSize='sm'
-        fontWeight='semibold'
-        transitionProperty='colors'
-        transitionDuration='200ms'
-        color={active ? linkColor : 'gray.500'}
-        _hover={{ color: linkColor }}
+        fontWeight={active ? 'semibold' : 'medium'}
+        color={active ? 'accent' : 'fg-muted'}
+        _hover={{ color: active ? undefined : 'fg' }}
       >
-        <Center w='6' h='6' bg='teal.500' rounded='base' mr='3'>
+        <Center w='6' h='6' bg='accent-static' rounded='base' mr='3'>
           {icon}
         </Center>
         {children}
@@ -155,7 +148,7 @@ export const mainNavLinks = [
   },
   {
     icon: <DocsIcon />,
-    href: '/docs/components/overview',
+    href: '/docs/components',
     label: 'Components',
   },
   {

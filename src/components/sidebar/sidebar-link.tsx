@@ -1,4 +1,4 @@
-import { PropsOf, chakra, useColorModeValue } from '@chakra-ui/react'
+import { PropsOf, chakra, useColorModeValue, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { forwardRef, Ref, useEffect, useRef } from 'react'
@@ -23,7 +23,7 @@ const StyledLink = forwardRef(function StyledLink(
       transition='all 0.2s'
       _activeLink={{
         bg: useColorModeValue('teal.50', 'rgba(48, 140, 122, 0.3)'),
-        color: useColorModeValue('teal.700', 'teal.200'),
+        color: 'accent-emphasis',
         fontWeight: '600',
       }}
       {...rest}
@@ -56,19 +56,13 @@ const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
   }, [isActive, router.query])
 
   return (
-    <chakra.div
-      userSelect='none'
-      display='flex'
-      alignItems='center'
-      lineHeight='1.5rem'
-      {...rest}
-    >
+    <Flex align='center' userSelect='none' lineHeight='tall' {...rest}>
       <NextLink href={href} passHref>
         <StyledLink isActive={isActive} ref={link}>
           {children}
         </StyledLink>
       </NextLink>
-    </chakra.div>
+    </Flex>
   )
 }
 

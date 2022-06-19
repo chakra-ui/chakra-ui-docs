@@ -51,7 +51,7 @@ export default function ComponentDocsLayout({ children, frontmatter }) {
                     borderBottom='2px solid transparent'
                     data-selected={item.match ? '' : undefined}
                     _selected={{
-                      color: 'brand',
+                      color: 'accent',
                       borderColor: 'currentColor',
                     }}
                   >
