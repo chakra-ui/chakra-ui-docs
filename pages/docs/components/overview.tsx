@@ -54,7 +54,7 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
                 flexDirection='column'
                 rowGap={6}
               >
-                <Heading as='h2' size='md' id={slug} scrollMarginTop={24}>
+                <Heading as='h1' size='md' id={slug} scrollMarginTop={24}>
                   {title}
                 </Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
