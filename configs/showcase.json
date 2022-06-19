@@ -195,6 +195,34 @@
       "url": "https://templateskart.com/",
       "image": "showcases/projects/TemplatesKart.png",
       "type": "projects"
+    },
+    {
+      "name": "nextarter-chakra",
+      "description": "battery packed template to initialize Next.js app with Chakra UI & Typescript setup",
+      "url": "https://nextarter-chakra.sznm.dev",
+      "image": "showcases/projects/nextarter-chakra.png",
+      "type": "projects"
+    },
+    {
+      "name": "olamonde",
+      "description": "One link to rule them all. Easily place your links in a beautiful single page.",
+      "url": "https://olamonde.me",
+      "image": "showcases/projects/olamonde.png",
+      "type": "projects"
+    },
+    {
+      "name": "spoker",
+      "description": "Real-time multiparticipant scrum poker app. Estimate with your team.",
+      "url": "https://spoker.sznm.dev/intro",
+      "image": "showcases/projects/spoker.png",
+      "type": "projects"
+    },
+    {
+      "name": "Public APIs",
+      "description": "Find public APIs for your next project.",
+      "url": "https://publicapis.sznm.dev",
+      "image": "showcases/projects/Public-APIs.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -371,6 +399,27 @@
       "description": "MockME - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!.",
       "url": "https://mockme.in/",
       "image": "showcases/websites/MockMe.png",
+      "type": "websites"
+    },
+    {
+      "name": "Avana Wallet",
+      "description": "Solana blockchain non-custodial wallet that connects you to Web3 dapps, DeFi, GameFi and NFTs. Powered by Chakra UI and Next.js.",
+      "url": "https://www.avanawallet.com/",
+      "image": "showcases/websites/Avana-Wallet.png",
+      "type": "websites"
+    },
+    {
+      "name": "Supa Palette Website",
+      "description": "fficial website of Supa Palette plugin for Figma.",
+      "url": "https://supa-palette.com",
+      "image": "showcases/websites/Supa-Palette-Website.png",
+      "type": "websites"
+    },
+    {
+      "name": "CodeNanshu",
+      "description": "ersonal portfolio website built with Nextjs, advanced Techs and Chakra UI",
+      "url": "https://codenanshu.in",
+      "image": "showcases/websites/CodeNanshu.png",
       "type": "websites"
     }
   ],
@@ -550,6 +599,13 @@
       "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
       "url": "https://ugnissoftware.github.io/react-spreadsheet-import/iframe.html?id=react-spreadsheet-import--basic&args=&viewMode=story",
       "image": "showcases/tools/react-spreadsheet-import.png",
+      "type": "tools"
+    },
+    {
+      "name": "Supa Palette Plugin",
+      "description": "ll-in-one palettes generator, editor and manager for Figma.",
+      "url": "https://www.figma.com/community/plugin/1103648664059257410/Supa-Palette",
+      "image": "showcases/tools/Supa-Palette-Plugin.png",
       "type": "tools"
     }
   ],
