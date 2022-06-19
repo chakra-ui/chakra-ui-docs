@@ -5,10 +5,6 @@
       "heading": true,
       "routes": [
         {
-          "title": "Overview",
-          "path": "/docs/styled-system/overview"
-        },
-        {
           "title": "Features",
           "path": "/docs/styled-system/features",
           "open": true,

@@ -143,7 +143,7 @@ export const mainNavLinks = [
   },
   {
     icon: <FaTools color='white' />,
-    href: '/docs/styled-system/overview',
+    href: '/docs/styled-system',
     label: 'Styled System',
   },
   {

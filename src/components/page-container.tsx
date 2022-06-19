@@ -3,7 +3,6 @@ import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import { AdBanner } from './chakra-pro/ad-banner'
-import PageTransition from './page-transition'
 import EditPageLink from 'components/edit-page-button'
 import Footer from 'components/footer'
 import Header from 'components/header'
@@ -76,7 +75,7 @@ function PageContainer(props: PageContainerProps) {
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <PageTransition style={{ maxWidth: '48rem' }}>
+                  <Box maxW='48rem'>
                     <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
                       {convertBackticksToInlineCode(title)}
                     </chakra.h1>
@@ -93,7 +92,7 @@ function PageContainer(props: PageContainerProps) {
                     <Box pb='20'>
                       <Footer />
                     </Box>
-                  </PageTransition>
+                  </Box>
                 </Box>
                 <TableOfContent
                   visibility={headings.length === 0 ? 'hidden' : 'initial'}

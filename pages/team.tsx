@@ -16,7 +16,6 @@ import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
 import Container from 'components/container'
 import Header from 'components/header'
-import PageTransition from 'components/page-transition'
 import SEO from 'components/seo'
 import fs from 'fs'
 import React from 'react'
@@ -120,114 +119,109 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
 
       <Box mt='3rem' mb='60px'>
         <SkipNavContent />
-        <PageTransition>
-          <Container py='80px' textAlign='center'>
-            <chakra.h1
-              color='teal.500'
-              textStyle='heading'
-              mb='5'
-              fontWeight='bold'
-            >
-              {t('team.title')}
-            </chakra.h1>
-            <Text maxW='56ch' mx='auto' fontSize='lg'>
-              {t('team.message')}
-            </Text>
-          </Container>
 
-          <Container>
-            <Stack spacing={8}>
-              <Heading size='lg'>{t('team.core-team')}</Heading>
-              <SimpleGrid columns={[1, 1, 2]} spacing='40px' pt='3'>
-                {members.map((member) => (
-                  <Member key={member.login} member={member} />
-                ))}
-              </SimpleGrid>
+        <Container py='80px' textAlign='center'>
+          <chakra.h1
+            color='teal.500'
+            textStyle='heading'
+            mb='5'
+            fontWeight='bold'
+          >
+            {t('team.title')}
+          </chakra.h1>
+          <Text maxW='56ch' mx='auto' fontSize='lg'>
+            {t('team.message')}
+          </Text>
+        </Container>
 
-              {formerMembers && (
-                <Stack spacing='8' pt='4'>
-                  <Text
-                    textStyle='caps'
-                    textTransform='uppercase'
-                    opacity='0.7'
-                  >
-                    {t('team.former-members')}
-                  </Text>
-                  <SimpleGrid columns={[2, 2, 6]} spacing='40px'>
-                    {formerMembers.map(
-                      (member) =>
-                        member.name &&
-                        member.githubName && (
-                          <FormerMember
-                            key={member.githubName}
-                            formerMember={member}
-                          />
-                        ),
-                    )}
-                  </SimpleGrid>
-                </Stack>
-              )}
-            </Stack>
+        <Container>
+          <Stack spacing={8}>
+            <Heading size='lg'>{t('team.core-team')}</Heading>
+            <SimpleGrid columns={[1, 1, 2]} spacing='40px' pt='3'>
+              {members.map((member) => (
+                <Member key={member.login} member={member} />
+              ))}
+            </SimpleGrid>
 
-            <Stack py='48px' spacing={8}>
-              <Heading size='lg'>{t('team.our-sponsors')}</Heading>
-
-              <Box>
-                <Text
-                  textStyle='caps'
-                  mb='4'
-                  textTransform='uppercase'
-                  opacity='0.7'
-                >
-                  {t('team.organizations')}
+            {formerMembers && (
+              <Stack spacing='8' pt='4'>
+                <Text textStyle='caps' textTransform='uppercase' opacity='0.7'>
+                  {t('team.former-members')}
                 </Text>
-                <Wrap>
-                  {new Array(9).fill('').map((_, idx) => (
-                    <WrapItem
-                      as='a'
-                      key={idx}
-                      href={`https://opencollective.com/chakra-ui/organization/${idx}/website`}
-                    >
-                      <img
-                        alt='OpenCollective Organization Avatar'
-                        src={`https://opencollective.com/chakra-ui/organization/${idx}/avatar.svg?avatarHeight=130`}
-                      />
-                    </WrapItem>
-                  ))}
-                </Wrap>
-              </Box>
-              <Box>
-                <Text
-                  textStyle='caps'
-                  mb='4'
-                  textTransform='uppercase'
-                  opacity='0.7'
-                >
-                  {t('team.individuals')}
-                </Text>
-                <a href='https://opencollective.com/chakra-ui'>
-                  <img
-                    alt='OpenCollective Individual Avatar'
-                    src='https://opencollective.com/chakra-ui/individuals.svg?width=890'
-                  />
-                </a>
-              </Box>
-            </Stack>
+                <SimpleGrid columns={[2, 2, 6]} spacing='40px'>
+                  {formerMembers.map(
+                    (member) =>
+                      member.name &&
+                      member.githubName && (
+                        <FormerMember
+                          key={member.githubName}
+                          formerMember={member}
+                        />
+                      ),
+                  )}
+                </SimpleGrid>
+              </Stack>
+            )}
+          </Stack>
 
-            <Stack spacing={8} mt={{ base: '40px', md: '100px' }}>
-              <Heading size='lg'>{t('team.project-contributors')}</Heading>
-              <Wrap spacing='3'>
-                {contributorsWithoutTeam.map((contributor) => (
+          <Stack py='48px' spacing={8}>
+            <Heading size='lg'>{t('team.our-sponsors')}</Heading>
+
+            <Box>
+              <Text
+                textStyle='caps'
+                mb='4'
+                textTransform='uppercase'
+                opacity='0.7'
+              >
+                {t('team.organizations')}
+              </Text>
+              <Wrap>
+                {new Array(9).fill('').map((_, idx) => (
                   <WrapItem
-                    as={Avatar}
-                    key={contributor.login}
-                    src={contributor.avatar_url}
-                  />
+                    as='a'
+                    key={idx}
+                    href={`https://opencollective.com/chakra-ui/organization/${idx}/website`}
+                  >
+                    <img
+                      alt='OpenCollective Organization Avatar'
+                      src={`https://opencollective.com/chakra-ui/organization/${idx}/avatar.svg?avatarHeight=130`}
+                    />
+                  </WrapItem>
                 ))}
               </Wrap>
-            </Stack>
-          </Container>
-        </PageTransition>
+            </Box>
+            <Box>
+              <Text
+                textStyle='caps'
+                mb='4'
+                textTransform='uppercase'
+                opacity='0.7'
+              >
+                {t('team.individuals')}
+              </Text>
+              <a href='https://opencollective.com/chakra-ui'>
+                <img
+                  alt='OpenCollective Individual Avatar'
+                  src='https://opencollective.com/chakra-ui/individuals.svg?width=890'
+                />
+              </a>
+            </Box>
+          </Stack>
+
+          <Stack spacing={8} mt={{ base: '40px', md: '100px' }}>
+            <Heading size='lg'>{t('team.project-contributors')}</Heading>
+            <Wrap spacing='3'>
+              {contributorsWithoutTeam.map((contributor) => (
+                <WrapItem
+                  as={Avatar}
+                  key={contributor.login}
+                  src={contributor.avatar_url}
+                />
+              ))}
+            </Wrap>
+          </Stack>
+        </Container>
       </Box>
     </>
   )
