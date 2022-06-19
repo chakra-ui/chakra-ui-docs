@@ -7,3 +7,6 @@ export function toArray(slug: MixedArray) {
 export function uniq<T>(c: T[]) {
   return [...new Set(c)]
 }
+
+export const capitalize = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1)

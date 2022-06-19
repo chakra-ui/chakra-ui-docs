@@ -1,32 +1,29 @@
-import { Button } from '@chakra-ui/button'
-import { useColorModeValue } from '@chakra-ui/color-mode'
-import { Box, Grid, Heading, Link, Text, VStack } from '@chakra-ui/layout'
-import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/tabs'
-import { useCallback, useMemo, useState } from 'react'
-import showcaseData from '../configs/showcase.json'
-import type { IShowcase, ShowcaseItem } from '../scripts/get-showcase-data'
+import {
+  Box,
+  Button,
+  Link,
+  SimpleGrid,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from '@chakra-ui/react'
 import ChakraNextImage from 'components/chakra-next-image'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
-import DiscordStrip from 'components/discord-strip'
-import Footer from 'components/footer'
-import Header from 'components/header'
-import SEO from 'components/seo'
-import Mask from 'components/showcase/mask'
-import ShowcaseGridItem from 'components/showcase/showcase-grid-item'
+
+import Layout from 'layouts'
+import { useCallback, useMemo, useState } from 'react'
 import { t } from 'utils/i18n'
+import { capitalize } from 'utils/js-utils'
+import showcaseData from '../configs/showcase.json'
+import type { IShowcase } from '../scripts/get-showcase-data'
 
 const categories = Object.keys(showcaseData as IShowcase)
-const categoriesWithAll = ['all', ...categories]
-
-const allItems: ShowcaseItem[] = categories.reduce((acc, cur) => {
-  return [...acc, ...showcaseData[cur]]
-}, [])
-
-const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
 const Showcase = () => {
-  const [index, setIndex] = useState<number>(0)
+  const [index, setIndex] = useState(0)
 
   const handleTabsChange = useCallback((index: number) => {
     if (index < 0 || index >= categories.length) setIndex(0)
@@ -35,66 +32,54 @@ const Showcase = () => {
 
   const showcaseItems = useMemo(
     () =>
-      categoriesWithAll.map((c) => {
-        const items: ShowcaseItem[] = c === 'all' ? allItems : showcaseData[c]
+      categories.map((category) => {
+        const items = showcaseData[category]
         return (
-          <TabPanel key={c}>
-            <Grid
-              marginX='auto'
-              paddingX='1rem'
-              templateColumns={[
-                'repeat(1, 1fr)',
-                'repeat(1, 1fr)',
-                'repeat(2, 1fr)',
-                'repeat(12, 1fr)',
-              ]}
-              templateRows={[
-                'repeat(1, 1fr)',
-                'repeat(1, 1fr)',
-                'repeat(2, 1fr)',
-              ]}
-              rowGap={12}
-              columnGap={8}
+          <TabPanel key={category} padding='0'>
+            <SimpleGrid
+              columns={{ base: 1, sm: 2, lg: 3 }}
+              spacing={{ base: '3', md: '10' }}
             >
-              {items.map(({ name, image, url }, i) => {
-                const colSpan = [1, 2, 1, i % 3 === 0 ? 6 : 3]
-                const rowSpan = [1, 2, 2, i % 3 === 0 ? 2 : 1]
-
-                if (image === null)
-                  return (
-                    <ShowcaseGridItem
-                      key={name}
-                      colSpan={colSpan}
-                      rowSpan={rowSpan}
-                    >
-                      <Mask name={name} url={url} showMask />
-                      <ChakraNextImage
-                        height={478}
-                        width={850}
-                        rounded='md'
-                        layout='responsive'
-                        src={`/og-image.png`}
-                      />
-                    </ShowcaseGridItem>
-                  )
+              {items.map(({ name, image, url }) => {
                 return (
-                  <ShowcaseGridItem
+                  <Box
+                    as='a'
+                    href={url}
                     key={name}
-                    colSpan={colSpan}
-                    rowSpan={rowSpan}
+                    borderWidth='1px'
+                    transform='auto'
+                    _dark={{ bg: 'whiteAlpha.50' }}
+                    _hover={{ boxShadow: 'md', translateY: '-2px' }}
+                    rounded='md'
+                    overflow='hidden'
+                    transition='all 0.1s ease-out'
                   >
-                    <Mask name={name} url={url} />
                     <ChakraNextImage
+                      alt={name}
                       height={478}
                       width={850}
-                      rounded='md'
                       layout='responsive'
-                      src={/^(https|http)/.test(image) ? image : `/${image}`}
+                      src={
+                        image
+                          ? /^(https|http)/.test(image)
+                            ? image
+                            : `/${image}`
+                          : '/og-image.png'
+                      }
                     />
-                  </ShowcaseGridItem>
+                    <Box px='4' py='3'>
+                      <Text
+                        fontWeight='semibold'
+                        textAlign='start'
+                        fontSize={{ base: 'sm', md: 'md' }}
+                      >
+                        {name}
+                      </Text>
+                    </Box>
+                  </Box>
                 )
               })}
-            </Grid>
+            </SimpleGrid>
           </TabPanel>
         )
       }),
@@ -102,63 +87,46 @@ const Showcase = () => {
   )
 
   return (
-    <>
-      <SEO
-        title={t('showcase.seo.title')}
-        description={t('showcase.seo.description')}
-      />
-      <SkipNavLink zIndex={20}>Skip to Content</SkipNavLink>
-      <AdBanner />
-      <Header />
-      <Box mt={20} mb={10}>
-        <SkipNavContent />
-        <VStack mx='auto' spacing='3' alignItems='center'>
-          <Heading fontSize={{ base: '2xl', lg: '4xl' }} lineHeight='1.2'>
-            {t('showcase.title')}
-          </Heading>
-          <Text
-            maxW='560px'
-            mx='auto'
-            color={useColorModeValue('gray.500', 'gray.400')}
-            fontSize={{ base: 'lg', lg: 'xl' }}
-          >
-            {t('showcase.message')}
-          </Text>
-          <Link
-            isExternal
-            href='https://github.com/chakra-ui/awesome-chakra-ui'
-          >
-            <Button
-              fontSize={{ base: 'lg', lg: 'xl' }}
-              variant='link'
-              colorScheme='teal'
-            >
-              {t('showcase.submit-project-button-title')}
-            </Button>
-          </Link>
-        </VStack>
-        <Box mt='10' mb='20' mx='auto' maxWidth={1440}>
-          <Tabs
-            size='md'
-            variant='soft-rounded'
-            colorScheme='teal'
-            align={'center'}
-            isLazy
-            index={index}
-            onChange={handleTabsChange}
-          >
-            <TabList w='100%' maxW='calc(100% - 3rem)' flexWrap='wrap'>
-              {categoriesWithAll.map((c) => (
-                <Tab key={c}>{capitalize(c)}</Tab>
-              ))}
-            </TabList>
-            <TabPanels mt='10'>{showcaseItems}</TabPanels>
-          </Tabs>
-        </Box>
-        <DiscordStrip />
-        <Footer />
-      </Box>
-    </>
+    <Layout
+      hideToc
+      maxWidth='unset'
+      frontMatter={{
+        title: t('showcase.seo.title'),
+        description: t('showcase.seo.description'),
+      }}
+    >
+      <Stack align='flex-start' mt='5' spacing='8'>
+        <Text color='fg-subtle' fontSize={{ base: 'lg', lg: 'xl' }}>
+          {t('showcase.message')}
+        </Text>
+        <Button
+          as={Link}
+          isExternal
+          href='https://github.com/chakra-ui/awesome-chakra-ui'
+          variant='outline'
+          color='accent'
+        >
+          {t('showcase.submit-project-button-title')}
+        </Button>
+      </Stack>
+
+      <Tabs
+        mt='10'
+        mb='20'
+        variant='line'
+        colorScheme='teal'
+        isLazy
+        index={index}
+        onChange={handleTabsChange}
+      >
+        <TabList>
+          {categories.map((c) => (
+            <Tab key={c}>{capitalize(c)}</Tab>
+          ))}
+        </TabList>
+        <TabPanels mt='10'>{showcaseItems}</TabPanels>
+      </Tabs>
+    </Layout>
   )
 }
 

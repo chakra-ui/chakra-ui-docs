@@ -41,13 +41,23 @@ interface PageContainerProps {
     version?: string
     headings?: Heading[]
   }
+  hideToc?: boolean
+  maxWidth?: string
   children: React.ReactNode
   sidebar?: React.ReactElement
   pagination?: React.ReactElement
 }
 
 function PageContainer(props: PageContainerProps) {
-  const { frontmatter, children, sidebar, pagination } = props
+  const {
+    frontmatter,
+    children,
+    sidebar,
+    pagination,
+    hideToc,
+    maxWidth = '48rem',
+  } = props
+
   useHeadingFocusOnRouteChange()
 
   if (!frontmatter) return <></>
@@ -75,7 +85,7 @@ function PageContainer(props: PageContainerProps) {
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <Box maxW='48rem'>
+                  <Box maxW={maxWidth}>
                     <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
                       {convertBackticksToInlineCode(title)}
                     </chakra.h1>
@@ -94,10 +104,12 @@ function PageContainer(props: PageContainerProps) {
                     </Box>
                   </Box>
                 </Box>
-                <TableOfContent
-                  visibility={headings.length === 0 ? 'hidden' : 'initial'}
-                  headings={headings}
-                />
+                {!hideToc && (
+                  <TableOfContent
+                    visibility={headings.length === 0 ? 'hidden' : 'initial'}
+                    headings={headings}
+                  />
+                )}
               </Flex>
             </Box>
           </Box>

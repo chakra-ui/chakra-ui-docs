@@ -8,7 +8,13 @@ export const MDXLayout = dynamic(() => import('./mdx'))
 const TutorialLayout = dynamic(() => import('./tutorial'))
 const ComponentLayout = dynamic(() => import('./component'))
 
-export default function DefaultLayout({ children, frontMatter }) {
+export default function Layout(props: {
+  children: React.ReactNode
+  frontMatter: any
+  hideToc?: boolean
+  maxWidth?: string
+}) {
+  const { children, frontMatter, hideToc, maxWidth } = props
   const slug = frontMatter?.slug
 
   const layoutMap = {
@@ -24,7 +30,13 @@ export default function DefaultLayout({ children, frontMatter }) {
       <TutorialLayout frontmatter={frontMatter}>{children}</TutorialLayout>
     ),
     default: (
-      <PageContainer frontmatter={frontMatter}>{children}</PageContainer>
+      <PageContainer
+        frontmatter={frontMatter}
+        hideToc={hideToc}
+        maxWidth={maxWidth}
+      >
+        {children}
+      </PageContainer>
     ),
   }
 
