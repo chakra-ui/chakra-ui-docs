@@ -7,7 +7,7 @@ module.exports = withContentlayer({
     modern: true,
   },
   images: {
-    domains: ['img.youtube.com', 'avatars.githubusercontent.com'],
+    domains: ['img.youtube.com', 'avatars.githubusercontent.com', 'github.com'],
   },
   productionBrowserSourceMaps: true,
   redirects: require('./next-redirect'),

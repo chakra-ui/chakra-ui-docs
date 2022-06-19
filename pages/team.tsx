@@ -1,30 +1,32 @@
 import {
   Avatar,
   Box,
-  chakra,
+  Circle,
   Heading,
   Icon,
   Link,
   SimpleGrid,
   Stack,
   Text,
+  VisuallyHidden,
   VStack,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
-import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
-import Container from 'components/container'
-import Header from 'components/header'
-import SEO from 'components/seo'
 import fs from 'fs'
-import React from 'react'
+import Layout from 'layouts'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { IFormerMember } from 'scripts/get-former-members'
 import { Contributor, Member as IMember } from 'src/types/github'
 import { t } from 'utils/i18n'
+import NextImage from 'next/image'
 
-function SocialLink({ icon, href }) {
+function SocialLink(props: {
+  icon: React.ElementType
+  href: string
+  label: string
+}) {
+  const { icon, href, label } = props
   return (
     <Link
       display='inline-flex'
@@ -34,18 +36,13 @@ function SocialLink({ icon, href }) {
       href={href}
       isExternal
     >
-      <Icon
-        as={icon}
-        transition='all 0.2s'
-        _hover={{ color: 'teal.600' }}
-        fontSize='xl'
-        color='teal.500'
-      />
+      <VisuallyHidden>{label}</VisuallyHidden>
+      <Icon as={icon} fontSize='xl' color='accent' />
     </Link>
   )
 }
 
-function Member({ member }: { member: IMember }) {
+function Member(props: { member: IMember }) {
   const {
     avatar_url: avatarUrl,
     bio,
@@ -53,27 +50,40 @@ function Member({ member }: { member: IMember }) {
     twitter_username: twitterUsername,
     blog: websiteUrl,
     url,
-  } = member
+  } = props.member
 
   return (
-    <Stack direction='row' spacing={6}>
-      <Avatar size='xl' src={avatarUrl} />
+    <Stack direction='row' spacing={6} align='flex-start'>
+      <Circle overflow='hidden' bg='gray.50'>
+        <NextImage src={avatarUrl} width='96' height='96' alt={name} />
+      </Circle>
       <Stack spacing={3} maxW='320px'>
-        <Text fontWeight='bold' fontSize='md'>
-          {name}
-        </Text>
+        <Text fontWeight='bold'>{name}</Text>
 
         <Stack isInline align='center' spacing={2}>
-          <SocialLink href={url} icon={IoLogoGithub} />
+          <SocialLink
+            href={url}
+            icon={IoLogoGithub}
+            label={`View ${name}'s Github`}
+          />
           {twitterUsername && (
             <SocialLink
               href={`https://twitter.com/${twitterUsername}`}
               icon={IoLogoTwitter}
+              label={`View ${name}'s Twitter`}
             />
           )}
-          {websiteUrl && <SocialLink href={websiteUrl} icon={IoIosGlobe} />}
+          {websiteUrl && (
+            <SocialLink
+              href={websiteUrl}
+              icon={IoIosGlobe}
+              label={`View ${name}'s website`}
+            />
+          )}
         </Stack>
-        <Text>{bio}</Text>
+        <Text fontSize='sm' color='fg-muted'>
+          {bio}
+        </Text>
       </Stack>
     </Stack>
   )
@@ -82,13 +92,20 @@ function Member({ member }: { member: IMember }) {
 function FormerMember({ formerMember }: { formerMember: IFormerMember }) {
   return (
     <VStack spacing={2}>
-      <Avatar
+      <Circle overflow='hidden' bg='gray.50'>
+        <NextImage
+          src={`https://github.com/${formerMember.githubName}.png`}
+          width='96'
+          height='96'
+          alt={formerMember.name}
+        />
+      </Circle>
+      <Text
         as='a'
-        size='lg'
         href={`https://github.com/${formerMember.githubName}`}
-        src={`https://github.com/${formerMember.githubName}.png`}
-      />
-      <Text fontSize='md' textAlign='center'>
+        fontSize='md'
+        textAlign='center'
+      >
         {formerMember.name}
       </Text>
     </VStack>
@@ -108,122 +125,94 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
   )
 
   return (
-    <>
-      <SEO
-        title={t('team.seo.title')}
-        description={t('team.seo.description')}
-      />
-      <SkipNavLink zIndex={20}>Skip to Content</SkipNavLink>
-      <AdBanner />
-      <Header />
+    <Layout
+      frontMatter={{
+        title: t('team.seo.title'),
+        description: t('team.seo.description'),
+        slug: '/team',
+      }}
+    >
+      <Text lineHeight='tall' mt='5'>
+        {t('team.message')}
+      </Text>
 
-      <Box mt='3rem' mb='60px'>
-        <SkipNavContent />
+      <Stack spacing={8} mt='20'>
+        <Heading size='lg'>{t('team.core-team')}</Heading>
+        <SimpleGrid columns={[1, 1, 2]} spacing='40px' pt='3'>
+          {members.map((member) => (
+            <Member key={member.login} member={member} />
+          ))}
+        </SimpleGrid>
 
-        <Container py='80px' textAlign='center'>
-          <chakra.h1
-            color='teal.500'
-            textStyle='heading'
-            mb='5'
-            fontWeight='bold'
-          >
-            {t('team.title')}
-          </chakra.h1>
-          <Text maxW='56ch' mx='auto' fontSize='lg'>
-            {t('team.message')}
-          </Text>
-        </Container>
-
-        <Container>
-          <Stack spacing={8}>
-            <Heading size='lg'>{t('team.core-team')}</Heading>
-            <SimpleGrid columns={[1, 1, 2]} spacing='40px' pt='3'>
-              {members.map((member) => (
-                <Member key={member.login} member={member} />
-              ))}
-            </SimpleGrid>
-
-            {formerMembers && (
-              <Stack spacing='8' pt='4'>
-                <Text textStyle='caps' textTransform='uppercase' opacity='0.7'>
-                  {t('team.former-members')}
-                </Text>
-                <SimpleGrid columns={[2, 2, 6]} spacing='40px'>
-                  {formerMembers.map(
-                    (member) =>
-                      member.name &&
-                      member.githubName && (
-                        <FormerMember
-                          key={member.githubName}
-                          formerMember={member}
-                        />
-                      ),
-                  )}
-                </SimpleGrid>
-              </Stack>
-            )}
-          </Stack>
-
-          <Stack py='48px' spacing={8}>
-            <Heading size='lg'>{t('team.our-sponsors')}</Heading>
-
-            <Box>
-              <Text
-                textStyle='caps'
-                mb='4'
-                textTransform='uppercase'
-                opacity='0.7'
-              >
-                {t('team.organizations')}
-              </Text>
-              <Wrap>
-                {new Array(9).fill('').map((_, idx) => (
-                  <WrapItem
-                    as='a'
-                    key={idx}
-                    href={`https://opencollective.com/chakra-ui/organization/${idx}/website`}
-                  >
-                    <img
-                      alt='OpenCollective Organization Avatar'
-                      src={`https://opencollective.com/chakra-ui/organization/${idx}/avatar.svg?avatarHeight=130`}
+        {formerMembers && (
+          <Stack spacing='8' pt='4'>
+            <Text textStyle='caps' textTransform='uppercase' opacity='0.7'>
+              {t('team.former-members')}
+            </Text>
+            <SimpleGrid columns={[2, 2, 6]} spacing='40px'>
+              {formerMembers.map(
+                (member) =>
+                  member.name &&
+                  member.githubName && (
+                    <FormerMember
+                      key={member.githubName}
+                      formerMember={member}
                     />
-                  </WrapItem>
-                ))}
-              </Wrap>
-            </Box>
-            <Box>
-              <Text
-                textStyle='caps'
-                mb='4'
-                textTransform='uppercase'
-                opacity='0.7'
-              >
-                {t('team.individuals')}
-              </Text>
-              <a href='https://opencollective.com/chakra-ui'>
-                <img
-                  alt='OpenCollective Individual Avatar'
-                  src='https://opencollective.com/chakra-ui/individuals.svg?width=890'
-                />
-              </a>
-            </Box>
+                  ),
+              )}
+            </SimpleGrid>
           </Stack>
+        )}
+      </Stack>
 
-          <Stack spacing={8} mt={{ base: '40px', md: '100px' }}>
-            <Heading size='lg'>{t('team.project-contributors')}</Heading>
-            <Wrap spacing='3'>
-              {contributorsWithoutTeam.map((contributor) => (
-                <WrapItem
-                  as={Avatar}
-                  key={contributor.login}
-                  src={contributor.avatar_url}
+      <Stack py='48px' spacing={8}>
+        <Heading size='lg'>{t('team.our-sponsors')}</Heading>
+
+        <Box>
+          <Text textStyle='caps' mb='4' textTransform='uppercase' opacity='0.7'>
+            {t('team.organizations')}
+          </Text>
+          <Wrap>
+            {new Array(9).fill('').map((_, idx) => (
+              <WrapItem
+                as='a'
+                key={idx}
+                href={`https://opencollective.com/chakra-ui/organization/${idx}/website`}
+              >
+                <img
+                  alt='Open collective Organizations'
+                  src={`https://opencollective.com/chakra-ui/organization/${idx}/avatar.svg?avatarHeight=130`}
                 />
-              ))}
-            </Wrap>
-          </Stack>
-        </Container>
-      </Box>
-    </>
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
+        <Box>
+          <Text textStyle='caps' mb='4' textTransform='uppercase' opacity='0.7'>
+            {t('team.individuals')}
+          </Text>
+          <a href='https://opencollective.com/chakra-ui'>
+            <img
+              alt='Open collective Individuals'
+              src='https://opencollective.com/chakra-ui/individuals.svg?width=890'
+            />
+          </a>
+        </Box>
+      </Stack>
+
+      <Stack spacing={8} mt={{ base: '40px', md: '100px' }}>
+        <Heading size='lg'>{t('team.project-contributors')}</Heading>
+        <Wrap spacing='3'>
+          {contributorsWithoutTeam.map((contributor) => (
+            <WrapItem
+              as={Avatar}
+              key={contributor.login}
+              src={contributor.avatar_url}
+            />
+          ))}
+        </Wrap>
+      </Stack>
+    </Layout>
   )
 }
 
