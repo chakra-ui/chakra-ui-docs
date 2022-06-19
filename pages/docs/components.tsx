@@ -15,7 +15,6 @@ import { getGroupedComponents } from 'utils/contentlayer-utils'
 
 type Component = {
   title: string
-  description: string
   url: string
   id: string
 }
@@ -63,18 +62,15 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
                 {title}
               </Heading>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
-                {components.map(
-                  ({ title: componentTitle, description, url, id }) => (
-                    <GridItem key={id}>
-                      <ComponentOverviewItem
-                        url={url}
-                        title={componentTitle}
-                        description={description}
-                        slug={id}
-                      />
-                    </GridItem>
-                  ),
-                )}
+                {components.map(({ title: componentTitle, url, id }) => (
+                  <GridItem key={id}>
+                    <ComponentOverviewItem
+                      url={url}
+                      title={componentTitle}
+                      slug={id}
+                    />
+                  </GridItem>
+                ))}
               </SimpleGrid>
             </ListItem>
           ))}
@@ -94,10 +90,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const category: Category = {
       id: title.toLowerCase().replace(/ /g, '-'),
       title,
-      components: items.map(({ title, description, slug, id }) => ({
+      components: items.map(({ title, slug, id }) => ({
         id,
         title,
-        description,
         url: slug,
       })),
     }

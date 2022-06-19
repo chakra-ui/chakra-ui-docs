@@ -1,5 +1,5 @@
 <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#EDF2F7"/>
+ 
 <path d="M53 0H400V247H65C58.3726 247 53 241.627 53 235V0Z" fill="white"/>
 <g filter="url(#filter0_d_3_460)">
 <rect x="106" y="148" width="279" height="46" rx="5" fill="#38B2AC" shape-rendering="crispEdges"/>
