@@ -1,55 +1,38 @@
-import { Box, BoxProps, useTheme } from '@chakra-ui/react'
+import { Box, BoxProps } from '@chakra-ui/react'
 import {
-  Sandpack,
-  SandpackProps,
-  SandpackThemeProp,
+  CodeEditorProps,
+  PreviewProps,
+  SandpackCodeEditor,
+  SandpackLayout,
+  SandpackLayoutProps,
+  SandpackPreview,
+  SandpackProvider,
 } from '@codesandbox/sandpack-react'
+import { nightOwl } from '@codesandbox/sandpack-themes'
 
-type Props = BoxProps &
-  SandpackProps & {
-    dependencies?: Record<string, string>
-    devDependencies?: Record<string, string>
+type Props = BoxProps & {
+  dependencies?: Record<string, string>
+  devDependencies?: Record<string, string>
+  layoutOptions?: BoxProps & SandpackLayoutProps
+  editorOptions?: CodeEditorProps
+  previewOptions?: PreviewProps
+  files: {
+    [x: string]: string
   }
+}
 
-const SandpackEmbed = ({ dependencies, devDependencies, ...props }: Props) => {
-  const { colors: c } = useTheme()
-
-  const themeConfig: SandpackThemeProp = {
-    colors: {
-      accent: c.gray[100],
-      surface1: c.gray[900],
-      surface2: c.gray[700],
-      surface3: c.gray[700],
-      error: c.red[600],
-      errorSurface: c.red[100],
-      clickable: c.green[500],
-      hover: c.green[100],
-    },
-    syntax: {
-      comment: {
-        color: c.gray[600],
-        fontStyle: 'italic',
-      },
-      definition: c.teal[300],
-      keyword: c.blue[400],
-      plain: c.white,
-      property: c.blue[400],
-      punctuation: c.white,
-      static: c.red[500],
-      string: c.purple[400],
-      tag: c.orange[300],
-    },
-  }
-
+const SandpackEmbed = ({
+  dependencies,
+  devDependencies,
+  layoutOptions,
+  editorOptions,
+  previewOptions,
+  files,
+}: Props) => {
   return (
-    <Box
-      as={Sandpack}
-      {...props}
-      options={{
-        ...props.options,
-        showLineNumbers: true,
-      }}
-      theme={themeConfig}
+    <SandpackProvider
+      files={files}
+      theme={nightOwl}
       template='react-ts'
       customSetup={{
         dependencies: {
@@ -71,7 +54,23 @@ const SandpackEmbed = ({ dependencies, devDependencies, ...props }: Props) => {
           ...devDependencies,
         },
       }}
-    />
+    >
+      <Box
+        as={SandpackLayout}
+        sx={{ '& > *': { height: '600px !important' } }}
+        {...layoutOptions}
+      >
+        <SandpackCodeEditor
+          showLineNumbers
+          style={{ flexBasis: '20%' }}
+          {...editorOptions}
+        />
+        <SandpackPreview
+          style={{ width: '100%', zIndex: 0 }}
+          {...previewOptions}
+        />
+      </Box>
+    </SandpackProvider>
   )
 }
 
