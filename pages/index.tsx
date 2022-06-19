@@ -183,7 +183,7 @@ const HomePage = ({
                 justify='center'
                 direction={{ base: 'column', sm: 'row' }}
               >
-                <NextLink href='/guides/first-steps' passHref>
+                <NextLink href='/getting-started' passHref>
                   <Button
                     h='4rem'
                     px='40px'

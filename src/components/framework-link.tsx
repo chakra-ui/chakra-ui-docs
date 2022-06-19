@@ -46,7 +46,7 @@ export const FrameworkLinks = () => {
   return (
     <SimpleGrid mt='12' minChildWidth='160px' spacing='40px' fontSize='6xl'>
       <FrameworkLink
-        href='/guides/getting-started/cra-guide'
+        href='/getting-started/cra-guide'
         accentColor='#0AC09D'
         name='Create React App'
       >
@@ -54,7 +54,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/nextjs-guide'
+        href='/getting-started/nextjs-guide'
         accentColor='black'
         name='Next.js'
       >
@@ -62,7 +62,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/gatsby-guide'
+        href='/getting-started/gatsby-guide'
         accentColor='#663399'
         name='Gatsby'
       >
@@ -70,7 +70,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/blitzjs-guide'
+        href='/getting-started/blitzjs-guide'
         accentColor='#6700EB'
         name='BlitzJS'
       >
@@ -78,7 +78,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/redwoodjs-guide'
+        href='/getting-started/redwoodjs-guide'
         accentColor='#BF4722'
         name='RedwoodJS'
       >
@@ -86,7 +86,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/remix-guide'
+        href='/getting-started/remix-guide'
         accentColor='#121212'
         name='Remix'
       >
@@ -94,7 +94,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/vite-guide'
+        href='/getting-started/vite-guide'
         accentColor='#C07600'
         name='Vite'
       >

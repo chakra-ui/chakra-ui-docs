@@ -11,11 +11,11 @@ async function redirect() {
       destination: '/docs/getting-started',
       permanent: true,
     },
-    {
-      source: '/getting-started',
-      destination: '/docs/getting-started',
-      permanent: true,
-    },
+    // {
+    //   source: '/getting-started',
+    //   destination: '/docs/getting-started',
+    //   permanent: true,
+    // },
     {
       source: '/principles',
       destination: '/docs/principles',
@@ -325,11 +325,11 @@ async function redirect() {
       permanent: true,
     },
     // DOCS STRUCTURE REWORK REDIRECTS
-    {
-      source: '/docs/getting-started',
-      destination: '/guides/first-steps',
-      permanent: true,
-    },
+    // {
+    //   source: '/docs/getting-started',
+    //   destination: '/guides/first-steps',
+    //   permanent: true,
+    // },
     {
       source: '/docs/migration',
       destination: '/guides/migration',

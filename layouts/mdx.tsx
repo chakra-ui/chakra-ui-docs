@@ -3,7 +3,7 @@ import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
 import { Frontmatter } from 'components/tutorial/tutorial-container'
 import componentsSidebar from 'configs/components.sidebar.json'
-import guidesSidebar from 'configs/guides.sidebar.json'
+import gettingStartedSidebar from 'configs/getting-started.sidebar.json'
 import hooksSidebar from 'configs/hooks.sidebar.json'
 import styledSystemSidebar from 'configs/styled-system.sidebar.json'
 import tutorialSidebar from 'configs/tutorial.sidebar.json'
@@ -14,10 +14,10 @@ import { getRouteContext } from 'utils/get-route-context'
 
 export function getRoutes(slug: string) {
   // for home page, use docs sidebar
-  if (slug === '/') return guidesSidebar.routes
+  if (slug === '/') return gettingStartedSidebar.routes
 
   const configMap = {
-    '/guides': guidesSidebar,
+    '/getting-started': gettingStartedSidebar,
     '/docs/styled-system': styledSystemSidebar,
     '/docs/hooks': hooksSidebar,
     '/docs/components': componentsSidebar,

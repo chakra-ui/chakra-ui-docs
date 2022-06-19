@@ -137,7 +137,7 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
 export const mainNavLinks = [
   {
     icon: <FaCompass />,
-    href: '/guides/first-steps',
+    href: '/getting-started',
     label: 'Getting Started',
   },
   {

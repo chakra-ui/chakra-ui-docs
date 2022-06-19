@@ -19,7 +19,7 @@ export default function Layout(props: {
 
   const layoutMap = {
     blog: <BlogLayout frontmatter={frontMatter} {...rest} />,
-    guides: <MDXLayout frontmatter={frontMatter} {...rest} />,
+    'getting-started': <MDXLayout frontmatter={frontMatter} {...rest} />,
     'docs/components': <ComponentLayout frontmatter={frontMatter} {...rest} />,
     docs: <MDXLayout frontmatter={frontMatter} {...rest} />,
     changelog: <MDXLayout frontmatter={frontMatter} {...rest} />,

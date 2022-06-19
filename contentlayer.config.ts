@@ -19,13 +19,14 @@ const computedFields: ComputedFields = {
 
 const Guides = defineDocumentType(() => ({
   name: 'Guide',
-  filePathPattern: 'guides/**/*.mdx',
+  filePathPattern: 'getting-started/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' } },
     author: { type: 'string' },
+    category: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
