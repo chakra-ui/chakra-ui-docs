@@ -316,16 +316,10 @@ const HomePage = ({
               position='relative'
             >
               <SandpackEmbed
-                options={{
-                  editorHeight: 600,
-                  editorWidthPercentage: 60,
-                }}
                 files={{
                   '/App.tsx': App,
                   '/index.tsx': Index,
                 }}
-                zIndex={0}
-                tabIndex={-1}
               />
             </Box>
           </Container>
