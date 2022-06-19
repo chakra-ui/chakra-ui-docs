@@ -2,34 +2,26 @@ import {
   Badge,
   Box,
   Center,
-  Flex,
+  chakra,
+  HStack,
   List,
   ListItem,
   ListProps,
-  chakra,
 } from '@chakra-ui/react'
 import sortBy from 'lodash/sortBy'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import * as React from 'react'
-import { Fragment, useRef, ReactElement, ReactNode } from 'react'
-import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
-import SidebarCategory from './sidebar-category'
-import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from './sidebar-icons'
-import SidebarLink from './sidebar-link'
+import { Fragment, ReactElement, ReactNode, useRef } from 'react'
+import { FaFileAlt, FaPalette, FaTools } from 'react-icons/fa'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { Routes } from 'utils/get-route-context'
+import SidebarCategory from './sidebar-category'
+import { DocsIcon, GuidesIcon, ResourcesIcon, TeamIcon } from './sidebar-icons'
+import SidebarLink from './sidebar-link'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
   contentRef?: any
-}
-
-type MainNavLinkProps = {
-  href: string
-  icon: ReactElement
-  children: ReactNode
-  label?: string
 }
 
 export function SidebarContent({
@@ -104,33 +96,34 @@ export function SidebarContent({
   )
 }
 
-export const isMainNavLinkActive = (href: string, path: string) => {
-  const [, group, category] = href.split('/')
-
-  return path.includes(
-    href.split('/').length > 3 ? `${group}/${category}` : group,
-  )
+type MainNavLinkProps = {
+  href: string
+  icon: ReactElement
+  children: ReactNode
+  label?: string
+  isActive?: boolean
 }
 
-const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
-  const { asPath } = useRouter()
-  const active = isMainNavLinkActive(href, asPath)
+const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
+  const router = useRouter()
+
+  const active = router.asPath.startsWith(href) || !!isActive
 
   return (
     <NextLink href={href} passHref>
-      <Flex
+      <HStack
         as='a'
-        align='center'
+        spacing='3'
         fontSize='sm'
         fontWeight={active ? 'semibold' : 'medium'}
         color={active ? 'accent' : 'fg-muted'}
         _hover={{ color: active ? undefined : 'fg' }}
       >
-        <Center w='6' h='6' bg='accent-static' rounded='base' mr='3'>
+        <Center w='6' h='6' bg='accent-static' rounded='base'>
           {icon}
         </Center>
-        {children}
-      </Flex>
+        <span>{children}</span>
+      </HStack>
     </NextLink>
   )
 }
@@ -142,9 +135,12 @@ export const mainNavLinks = [
     label: 'Getting Started',
   },
   {
-    icon: <FaTools color='white' />,
-    href: '/docs/styled-system',
+    icon: <FaPalette color='white' />,
+    href: '/docs/styled-system/style-props',
     label: 'Styled System',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/docs/styled-system') &&
+      asPath.startsWith('/docs/styled-system'),
   },
   {
     icon: <DocsIcon />,
@@ -152,14 +148,16 @@ export const mainNavLinks = [
     label: 'Components',
   },
   {
+    icon: <FaTools color='white' />,
+    href: '/docs/hooks/use-boolean',
+    label: 'Hooks',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/docs/hooks') && asPath.startsWith('/docs/hooks'),
+  },
+  {
     icon: <ResourcesIcon />,
     href: '/resources',
     label: 'Resources',
-  },
-  {
-    icon: <FaQuestionCircle color='white' />,
-    href: '/faq',
-    label: 'FAQ',
   },
   {
     icon: <FaFileAlt color='white' />,
@@ -174,11 +172,17 @@ export const mainNavLinks = [
 ]
 
 export const MainNavLinkGroup = (props: ListProps) => {
+  const router = useRouter()
   return (
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
         <ListItem key={item.label}>
-          <MainNavLink icon={item.icon} href={item.href} label={item.label}>
+          <MainNavLink
+            icon={item.icon}
+            href={item.href}
+            label={item.label}
+            isActive={item.match?.(router.asPath, item.href)}
+          >
             {item.label}
           </MainNavLink>
         </ListItem>

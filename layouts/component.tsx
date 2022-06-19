@@ -13,13 +13,10 @@ function MDXContent({ doc }: { doc: Doc | undefined }) {
 }
 
 export default function ComponentDocsLayout({ children, frontmatter }) {
-  const { slug = [] } = frontmatter ?? {}
-
-  const isComponent = slug.includes('/components')
   const id = frontmatter.package?.split('/').pop()
 
   const router = useRouter()
-  const data = getComponentTabsData(router.query.slug)
+  const data = getComponentTabsData(['components', router.query.slug])
 
   return (
     <MDXLayout frontmatter={frontmatter}>
@@ -34,35 +31,33 @@ export default function ComponentDocsLayout({ children, frontmatter }) {
         </Stack>
       )}
 
-      {isComponent && (
-        <Box as='nav' aria-label='Component navigation' mt='8'>
-          <HStack as='ul' listStyleType='none' borderBottomWidth='1px'>
-            {data.map((item) => (
-              <Box as='li' key={item.id}>
-                <NextLink href={item.href} passHref replace>
-                  <Box
-                    mb='-1px'
-                    as='a'
-                    display='block'
-                    fontSize='sm'
-                    px='5'
-                    py='3'
-                    fontWeight='medium'
-                    borderBottom='2px solid transparent'
-                    data-selected={item.match ? '' : undefined}
-                    _selected={{
-                      color: 'accent',
-                      borderColor: 'currentColor',
-                    }}
-                  >
-                    {item.label}
-                  </Box>
-                </NextLink>
-              </Box>
-            ))}
-          </HStack>
-        </Box>
-      )}
+      <Box as='nav' aria-label='Component navigation' mt='8'>
+        <HStack as='ul' listStyleType='none' borderBottomWidth='1px'>
+          {data.map((item) => (
+            <Box as='li' key={item.id}>
+              <NextLink href={item.href} passHref replace>
+                <Box
+                  mb='-1px'
+                  as='a'
+                  display='block'
+                  fontSize='sm'
+                  px='5'
+                  py='3'
+                  fontWeight='medium'
+                  borderBottom='2px solid transparent'
+                  data-selected={item.match ? '' : undefined}
+                  _selected={{
+                    color: 'accent',
+                    borderColor: 'currentColor',
+                  }}
+                >
+                  {item.label}
+                </Box>
+              </NextLink>
+            </Box>
+          ))}
+        </HStack>
+      </Box>
 
       {data.map((item, index) => (
         <Box key={index} id={item.id} hidden={!data[index].match}>

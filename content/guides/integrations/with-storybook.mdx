@@ -51,3 +51,29 @@ export const parameters = {
 ```
 
 <PropsTable of='ChakraProvider' omit={['children']} />
+
+## Troubleshooting Storybook
+
+If you're facing an issue where Storybook isn't working with Chakra UI, here's a
+work around 👇
+
+In your `.storybook/main.js` file, you'll need to config the `features` and
+`webpackFinal` properties like so:
+
+```jsx live=false
+module.exports = {
+  stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  framework: '@storybook/react',
+  features: { emotionAlias: false },
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: 'javascript/auto',
+    })
+
+    return config
+  },
+}
+```

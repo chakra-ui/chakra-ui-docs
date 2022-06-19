@@ -2,7 +2,7 @@ import { MDXComponents } from 'components/mdx-components'
 import Layout from 'layouts'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { getDocDoc, getDocPaths } from 'utils/contentlayer-utils'
+import { getDocByType, getDocDoc } from 'utils/contentlayer-utils'
 
 export default function Page({
   doc,
@@ -16,9 +16,12 @@ export default function Page({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: getDocPaths(), fallback: false }
+  const paths = getDocByType('hooks').map((doc) => ({
+    params: { slug: doc.slug.split('/').slice(3) },
+  }))
+  return { paths: paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  return { props: { doc: getDocDoc(ctx.params.slug) } }
+  return { props: { doc: getDocDoc(['hooks', ctx.params.slug]) } }
 }

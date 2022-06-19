@@ -1,20 +1,8 @@
 import { allDocs, Doc } from 'contentlayer/generated'
+import { MixedArray, toArray, uniq } from './js-utils'
 
-function uniq<T>(c: T[]) {
-  return [...new Set(c)]
-}
-
-function getDocByType(id: string) {
+export function getDocByType(id: string) {
   return allDocs.filter((doc) => doc.slug.startsWith(`/docs/${id}`))
-}
-
-function getComponentSlugs() {
-  return uniq(
-    getDocByType('components').flatMap((doc) => [
-      doc.slug,
-      `/${doc._raw.sourceFileDir}`,
-    ]),
-  )
 }
 
 function toCapitalized(str: string) {
@@ -32,41 +20,32 @@ export function getGroupedComponents() {
   }, {} as { [key: string]: any[] })
 }
 
-function getDocSlugs() {
-  return [
-    ...getComponentSlugs(),
-    ...allDocs
-      .filter((doc) => !doc._id.startsWith(`/docs/components`))
-      .map((doc) => doc.slug),
-  ]
-}
-
-export function getDocPaths() {
-  return getDocSlugs().map((doc) => ({
-    params: { slug: doc.split('/').slice(2) },
-  }))
-}
-
 const getUsageDoc = (id: string) => {
   return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'usage')
 }
 
-export const getDocDoc = (slug: string | string[]): Doc | undefined => {
-  const params = Array.isArray(slug) ? slug : [slug]
+export const getDocDoc = (slug: MixedArray): Doc | undefined => {
+  const params = toArray(slug)
   const _slug = params.join('/')
   const doc = allDocs.find(
     (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`),
-  )
+  ) as Doc | undefined
+
   if (!doc) return
-  doc.frontMatter = {
-    ...doc.frontMatter,
-    ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
+
+  // the presence of scope, means its a component documentation
+  if (doc.scope && doc.scope !== 'usage') {
+    doc.frontMatter = {
+      ...doc.frontMatter,
+      ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
+    }
   }
+
   return doc
 }
 
-export function getComponentTabsData(slug: string | string[]) {
-  const params = Array.isArray(slug) ? slug : [slug]
+export function getComponentTabsData(slug: MixedArray) {
+  const params = toArray(slug)
   const _slug = params.join('/')
 
   const getSlug = (id: string) => {
@@ -83,14 +62,14 @@ export function getComponentTabsData(slug: string | string[]) {
     {
       id: 'usage',
       match: _slug.endsWith('/usage') || params.length === 2,
-      href: { query: { slug: usageSlug } },
+      href: { query: { slug: usageSlug.slice(1) } },
       label: 'Usage',
       doc: getDocDoc(getSlug('usage')),
     },
     {
       id: 'props',
       match: _slug.endsWith('/props'),
-      href: { query: { slug: propsSlug } },
+      href: { query: { slug: propsSlug.slice(1) } },
       label: 'Props',
       doc: getDocDoc(getSlug('props')),
     },
@@ -98,7 +77,7 @@ export function getComponentTabsData(slug: string | string[]) {
       id: 'theming',
       match: _slug.endsWith('/theming'),
       label: 'Theming',
-      href: { query: { slug: themingSlug } },
+      href: { query: { slug: themingSlug.slice(1) } },
       doc: getDocDoc(getSlug('theming')),
     },
   ]

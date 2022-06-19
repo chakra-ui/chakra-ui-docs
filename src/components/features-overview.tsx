@@ -17,8 +17,8 @@ import {
   RiPictureInPictureExitFill,
   RiRepeat2Fill,
 } from 'react-icons/ri'
-import componentsSidebar from 'configs/components-sidebar'
-import styledSystemSidebar from 'configs/styled-system-sidebar.json'
+import componentsSidebar from 'configs/components.sidebar.json'
+import styledSystemSidebar from 'configs/styled-system.sidebar.json'
 
 const featureSidebar = {
   '/docs/styled-system': styledSystemSidebar,
