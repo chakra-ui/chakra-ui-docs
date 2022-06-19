@@ -143,6 +143,9 @@ function TutorialContainer({
               }}
               template='react-ts'
               theme={nightOwl}
+              style={{
+                color: 'inherit',
+              }}
             >
               <PageTransition>
                 <HStack spacing={0}>
@@ -150,7 +153,6 @@ function TutorialContainer({
                     overflowY={'auto'}
                     minW={{ base: '40%', xl: '35%' }}
                     h='calc(100vh - 4.5rem)'
-                    color='whiteAlpha.900'
                   >
                     <HStack
                       bg='white'
