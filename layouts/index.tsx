@@ -19,7 +19,6 @@ export default function DefaultLayout({ children, frontMatter }) {
     ),
     docs: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     changelog: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
-    faq: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     team: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
     tutorial: (
       <TutorialLayout frontmatter={frontMatter}>{children}</TutorialLayout>

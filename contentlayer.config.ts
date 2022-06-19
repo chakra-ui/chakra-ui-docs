@@ -134,29 +134,6 @@ const Tutorial = defineDocumentType(() => ({
   },
 }))
 
-const FAQ = defineDocumentType(() => ({
-  name: 'FAQ',
-  filePathPattern: 'faq/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-  },
-  computedFields: {
-    ...computedFields,
-    frontMatter: {
-      type: 'json',
-      resolve: (doc) => ({
-        title: doc.title,
-        description: doc.description,
-        slug: `/${doc._raw.flattenedPath}`,
-        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
-        headings: getTableOfContents(doc.body.raw),
-      }),
-    },
-  },
-}))
-
 const Changelog = defineDocumentType(() => ({
   name: 'Changelog',
   filePathPattern: 'changelog/*.mdx',
@@ -180,7 +157,7 @@ const Changelog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'content',
-  documentTypes: [Doc, Guides, FAQ, Changelog, Blogs, Tutorial],
+  documentTypes: [Doc, Guides, Changelog, Blogs, Tutorial],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
