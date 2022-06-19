@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Circle,
   Heading,
@@ -15,11 +14,11 @@ import {
 } from '@chakra-ui/react'
 import fs from 'fs'
 import Layout from 'layouts'
+import NextImage from 'next/image'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { IFormerMember } from 'scripts/get-former-members'
 import { Contributor, Member as IMember } from 'src/types/github'
 import { t } from 'utils/i18n'
-import NextImage from 'next/image'
 
 function SocialLink(props: {
   icon: React.ElementType
@@ -129,7 +128,7 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
       frontMatter={{
         title: t('team.seo.title'),
         description: t('team.seo.description'),
-        slug: '/team',
+        slug: '/community/team',
       }}
     >
       <Text lineHeight='tall' mt='5'>
@@ -165,7 +164,7 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
         )}
       </Stack>
 
-      <Stack py='48px' spacing={8}>
+      <Stack py='12' spacing={8}>
         <Heading size='lg'>{t('team.our-sponsors')}</Heading>
 
         <Box>
@@ -200,15 +199,18 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
         </Box>
       </Stack>
 
-      <Stack spacing={8} mt={{ base: '40px', md: '100px' }}>
+      <Stack spacing={8} mt={{ base: '10', md: '24' }}>
         <Heading size='lg'>{t('team.project-contributors')}</Heading>
         <Wrap spacing='3'>
           {contributorsWithoutTeam.map((contributor) => (
-            <WrapItem
-              as={Avatar}
-              key={contributor.login}
-              src={contributor.avatar_url}
-            />
+            <Circle overflow='hidden' key={contributor.login}>
+              <NextImage
+                width={48}
+                height={48}
+                src={contributor.avatar_url}
+                alt={contributor.name}
+              />
+            </Circle>
           ))}
         </Wrap>
       </Stack>

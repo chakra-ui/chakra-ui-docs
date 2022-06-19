@@ -328,31 +328,6 @@
               "path": "/docs/components/transitions"
             }
           ]
-        },
-        {
-          "title": "Recipes",
-          "path": "/docs/recipes",
-          "open": true,
-          "sort": true,
-          "summarize": true,
-          "routes": [
-            {
-              "title": "Floating Labels",
-              "path": "/docs/recipes/floating-labels"
-            },
-            {
-              "title": "Horizontal Collapse",
-              "path": "/docs/recipes/horizontal-collapse"
-            },
-            {
-              "title": "Portals and z-Index",
-              "path": "/docs/recipes/z-index"
-            },
-            {
-              "title": "The as prop",
-              "path": "/docs/recipes/as-prop"
-            }
-          ]
         }
       ]
     }

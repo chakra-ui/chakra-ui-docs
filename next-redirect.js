@@ -825,6 +825,16 @@ async function redirect() {
       destination: '/docs/hooks/use-token',
       permanent: true,
     },
+    {
+      source: '/showcase',
+      destination: '/community/showcase',
+      permanent: true,
+    },
+    {
+      source: '/team',
+      destination: '/community/team',
+      permanent: true,
+    },
   ]
 }
 

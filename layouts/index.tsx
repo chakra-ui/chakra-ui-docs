@@ -14,30 +14,18 @@ export default function Layout(props: {
   hideToc?: boolean
   maxWidth?: string
 }) {
-  const { children, frontMatter, hideToc, maxWidth } = props
+  const { frontMatter, ...rest } = props
   const slug = frontMatter?.slug
 
   const layoutMap = {
-    blog: <BlogLayout frontmatter={frontMatter}>{children}</BlogLayout>,
-    guides: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
-    'docs/components': (
-      <ComponentLayout frontmatter={frontMatter}>{children}</ComponentLayout>
-    ),
-    docs: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
-    changelog: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
-    team: <MDXLayout frontmatter={frontMatter}>{children}</MDXLayout>,
-    tutorial: (
-      <TutorialLayout frontmatter={frontMatter}>{children}</TutorialLayout>
-    ),
-    default: (
-      <PageContainer
-        frontmatter={frontMatter}
-        hideToc={hideToc}
-        maxWidth={maxWidth}
-      >
-        {children}
-      </PageContainer>
-    ),
+    blog: <BlogLayout frontmatter={frontMatter} {...rest} />,
+    guides: <MDXLayout frontmatter={frontMatter} {...rest} />,
+    'docs/components': <ComponentLayout frontmatter={frontMatter} {...rest} />,
+    docs: <MDXLayout frontmatter={frontMatter} {...rest} />,
+    changelog: <MDXLayout frontmatter={frontMatter} {...rest} />,
+    community: <MDXLayout frontmatter={frontMatter} {...rest} />,
+    tutorial: <TutorialLayout frontmatter={frontMatter} {...rest} />,
+    default: <PageContainer frontmatter={frontMatter} {...rest} />,
   }
 
   if (slug === '/docs/components') return layoutMap.docs

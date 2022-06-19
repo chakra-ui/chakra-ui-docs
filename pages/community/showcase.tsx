@@ -17,8 +17,8 @@ import Layout from 'layouts'
 import { useCallback, useMemo, useState } from 'react'
 import { t } from 'utils/i18n'
 import { capitalize } from 'utils/js-utils'
-import showcaseData from '../configs/showcase.json'
-import type { IShowcase } from '../scripts/get-showcase-data'
+import showcaseData from 'configs/showcase.json'
+import type { IShowcase } from 'scripts/get-showcase-data'
 
 const categories = Object.keys(showcaseData as IShowcase)
 
@@ -45,7 +45,7 @@ const Showcase = () => {
                   <Box
                     as='a'
                     href={url}
-                    key={name}
+                    key={url}
                     borderWidth='1px'
                     transform='auto'
                     _dark={{ bg: 'whiteAlpha.50' }}
@@ -93,6 +93,7 @@ const Showcase = () => {
       frontMatter={{
         title: t('showcase.seo.title'),
         description: t('showcase.seo.description'),
+        slug: '/community/showcase',
       }}
     >
       <Stack align='flex-start' mt='5' spacing='8'>

@@ -1,8 +1,9 @@
-import { allGuides } from 'contentlayer/generated'
-import { GetStaticPaths, InferGetStaticPropsType } from 'next'
-import {  useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'
+import { allGuides } from 'contentlayer/generated'
 import Layout from 'layouts'
+import { GetStaticPaths, InferGetStaticPropsType } from 'next'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import { toArray } from 'utils/js-utils'
 
 export default function Page({
   guide,
@@ -23,9 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async (ctx) => {
-  const params = Array.isArray(ctx.params.slug)
-    ? ctx.params.slug
-    : [ctx.params.slug]
+  const params = toArray(ctx.params.slug)
   const guide = allGuides.find((guide) =>
     guide._id.endsWith(`${params.join('/')}.mdx`),
   )

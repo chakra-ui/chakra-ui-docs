@@ -19,7 +19,7 @@ const StyledLink = forwardRef(function StyledLink(
       ref={ref}
       fontSize='sm'
       fontWeight='500'
-      color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+      color='fg'
       transition='all 0.2s'
       _activeLink={{
         bg: useColorModeValue('teal.50', 'rgba(48, 140, 122, 0.3)'),
@@ -45,7 +45,7 @@ function checkHref(href: string, slug: string | string[]) {
 
 const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
   const router = useRouter()
-  const isActive = checkHref(href, router.query.slug)
+  const isActive = checkHref(href, router.query.slug) || href === router.asPath
 
   const link = useRef<HTMLAnchorElement>()
 

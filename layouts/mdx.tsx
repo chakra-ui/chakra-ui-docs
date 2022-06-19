@@ -7,6 +7,7 @@ import guidesSidebar from 'configs/guides.sidebar.json'
 import hooksSidebar from 'configs/hooks.sidebar.json'
 import styledSystemSidebar from 'configs/styled-system.sidebar.json'
 import tutorialSidebar from 'configs/tutorial.sidebar.json'
+import communitySidebar from 'configs/community.sidebar.json'
 import { ReactNode } from 'react'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext } from 'utils/get-route-context'
@@ -21,6 +22,7 @@ export function getRoutes(slug: string) {
     '/docs/hooks': hooksSidebar,
     '/docs/components': componentsSidebar,
     '/tutorial': tutorialSidebar,
+    '/community': communitySidebar,
   }
 
   const [, sidebar] =
@@ -32,10 +34,12 @@ export function getRoutes(slug: string) {
 interface MDXLayoutProps {
   frontmatter: Frontmatter
   children: ReactNode
+  hideToc?: boolean
+  maxWidth?: string
 }
 
 export default function MDXLayout(props: MDXLayoutProps) {
-  const { frontmatter, children } = props
+  const { frontmatter, children, hideToc, maxWidth } = props
 
   const routes = getRoutes(frontmatter.slug)
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
@@ -43,6 +47,8 @@ export default function MDXLayout(props: MDXLayoutProps) {
 
   return (
     <PageContainer
+      hideToc={hideToc}
+      maxWidth={maxWidth}
       frontmatter={frontmatter}
       sidebar={<Sidebar routes={routes} />}
       pagination={

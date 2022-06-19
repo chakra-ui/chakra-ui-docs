@@ -12,11 +12,17 @@ import sortBy from 'lodash/sortBy'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, ReactElement, ReactNode, useRef } from 'react'
-import { FaFileAlt, FaPalette, FaTools } from 'react-icons/fa'
+import {
+  FaFileAlt,
+  FaPalette,
+  FaTools,
+  FaGlobe,
+  FaCompass,
+} from 'react-icons/fa'
+import { BsFillGridFill } from 'react-icons/bs'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { Routes } from 'utils/get-route-context'
 import SidebarCategory from './sidebar-category'
-import { DocsIcon, GuidesIcon, ResourcesIcon, TeamIcon } from './sidebar-icons'
 import SidebarLink from './sidebar-link'
 
 export type SidebarContentProps = Routes & {
@@ -119,7 +125,7 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
         color={active ? 'accent' : 'fg-muted'}
         _hover={{ color: active ? undefined : 'fg' }}
       >
-        <Center w='6' h='6' bg='accent-static' rounded='base'>
+        <Center w='6' h='6' bg='accent-static' rounded='base' color='white'>
           {icon}
         </Center>
         <span>{children}</span>
@@ -130,12 +136,12 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
 
 export const mainNavLinks = [
   {
-    icon: <GuidesIcon />,
+    icon: <FaCompass />,
     href: '/guides/first-steps',
     label: 'Getting Started',
   },
   {
-    icon: <FaPalette color='white' />,
+    icon: <FaPalette />,
     href: '/docs/styled-system/style-props',
     label: 'Styled System',
     match: (asPath: string, href: string) =>
@@ -143,31 +149,28 @@ export const mainNavLinks = [
       asPath.startsWith('/docs/styled-system'),
   },
   {
-    icon: <DocsIcon />,
+    icon: <BsFillGridFill />,
     href: '/docs/components',
     label: 'Components',
   },
   {
-    icon: <FaTools color='white' />,
+    icon: <FaTools />,
     href: '/docs/hooks/use-boolean',
     label: 'Hooks',
     match: (asPath: string, href: string) =>
       href.startsWith('/docs/hooks') && asPath.startsWith('/docs/hooks'),
   },
   {
-    icon: <ResourcesIcon />,
-    href: '/resources',
-    label: 'Resources',
+    icon: <FaGlobe />,
+    href: '/community/team',
+    label: 'Community',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/community') && asPath.startsWith('/community'),
   },
   {
-    icon: <FaFileAlt color='white' />,
+    icon: <FaFileAlt />,
     href: '/changelog',
     label: 'Changelog',
-  },
-  {
-    icon: <TeamIcon />,
-    href: '/team',
-    label: 'Team',
   },
 ]
 
