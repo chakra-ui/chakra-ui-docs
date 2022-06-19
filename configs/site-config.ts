@@ -17,7 +17,7 @@ const siteConfig = {
   },
   repo: {
     url: baseUrl,
-    editUrl: `${docBaseUrl}/tree/main/pages`,
+    editUrl: `${docBaseUrl}/tree/main/content`,
     blobUrl: `${baseUrl}/blob/main`,
   },
   openCollective: {
