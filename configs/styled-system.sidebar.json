@@ -77,23 +77,6 @@
               "path": "/docs/styled-system/advanced"
             }
           ]
-        },
-        {
-          "title": "Recipes",
-          "path": "/docs/styled-system/recipes",
-          "open": true,
-          "sort": true,
-          "summarize": true,
-          "routes": [
-            {
-              "title": "Page Specific Color Mode",
-              "path": "/docs/styled-system/recipes/page-specific-color-mode"
-            },
-            {
-              "title": "Using Fonts",
-              "path": "/docs/styled-system/recipes/using-fonts"
-            }
-          ]
         }
       ]
     }
