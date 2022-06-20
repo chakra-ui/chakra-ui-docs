@@ -3,4 +3,367 @@ title: 'Layout Components'
 description: 'TBD'
 ---
 
-## How to layout
+## Introduction
+
+Chakra UI provides components that help you easily layout sections and elements
+of your web page or app. We call these components the Layout components.
+
+Let's explore these components and see how they work👇🏽
+
+### AspectRatio
+
+The AspectRatio helps you dynamically modify the height of an element to match a
+pre-defined width-to-height ratio.
+
+For example, a 4:3 ratio would enforce a width of 400px and a height of 300px to
+an element. **Use AspectRatio when you want to keep the same width-to-height
+ratio across all screen sizes** e.g to embed responsive videos and maps.
+
+> A rule of thumb is to avoid using fixed width and heights on elements when
+> using the Aspect ratio.
+
+```tsx path=/App.tsx type=tutorial
+import { AspectRatio, ChakraProvider, Image } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <AspectRatio maxW='400px' ratio={4 / 3}>
+        <Image
+          src='https://bit.ly/naruto-sage'
+          alt='naruto'
+          objectFit='cover'
+        />
+      </AspectRatio>
+    </ChakraProvider>
+  )
+}
+```
+
+### Box
+
+Box is the fundamental component on which all other Chakra UI components are
+built. Think of Box like the CSS `div`. **It helps you create responsive layouts
+with ease.**
+
+Whenever you use Box, you can pass in any style props such as `backgroundColor,`
+`padding,` `margin,` and more.
+
+You can also compose new components with the Box by using the `as` prop to
+override the underlying HTML element.
+
+```tsx path=/App.tsx type=tutorial
+import { Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Box bg='tomato' w='100%' p={4} color='white'>
+        This is a Box
+      </Box>
+    </ChakraProvider>
+  )
+}
+```
+
+### Center
+
+When you need to center an element, use the `Center` component. Center
+automatically centers elements placed within it.
+
+```tsx path=/App.tsx type=tutorial
+import { Center, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Center bg='tomato' h='100px' color='white'>
+        This text is at the Center
+      </Center>
+    </ChakraProvider>
+  )
+}
+```
+
+In some cases, **you may also want to create circle or square frames around
+elements like numbers or icons.** The `Circle` and `Square` components come in
+handy here.
+
+```tsx path=/App.tsx type=tutorial
+import { Circle, Square, HStack, ChakraProvider } from '@chakra-ui/react'
+import { PhoneIcon } from '@chakra-ui/icons'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <HStack p='8'>
+        <Circle size='40px' bg='tomato' color='white'>
+          1
+        </Circle>
+        <Square size='40px' bg='purple.700' color='white'>
+          <PhoneIcon />
+        </Square>
+      </HStack>
+    </ChakraProvider>
+  )
+}
+```
+
+### Container
+
+Container allows you to restrict the width of a content so it doesn't flow past
+a specific breakpoint. When you use the Container, it automatically sets the
+**`maxWidth` of the content to 60 characters (60ch).**
+
+However, you can customize the `maxWidth` by passing custom maxWidth values or
+by changing the size tokens defined in
+[theme.sizes.Container](https://chakra-ui.com/docs/styled-system/theming/theme#sizes).
+
+```tsx path=/App.tsx type=tutorial
+import { Container, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Container bg='blue.800' centerContent>
+        <Box padding='4' bg='blue.400' color='black' maxW='md'>
+          There are many benefits to a joint design and development system. Not
+          only does it bring benefits to the design team, but it also brings
+          benefits to engineering teams. It makes sure that our experiences have
+          a consistent look and feel, not just in our design specs, but in
+          production.
+        </Box>
+      </Container>
+    </ChakraProvider>
+  )
+}
+```
+
+### Flex
+
+Flex is just like the CSS flexbox. **It is a one-dimensional layout pattern that
+makes it easy to layout elements on a page.** Unlike the traditional flexbox,
+the Flex component allows you to pass shorthand CSS props that save you time and
+make 'Flexing' delightful.
+
+Examples of shorthand props are, `direction` for `flexDirection`, `basis` for
+`flexBasis` and `shrink` for `flexShrink`.
+
+Check [here](https://chakra-ui.com/docs/components/layout/flex) for a full list
+of Flex shorthand props.
+
+```tsx path=/App.tsx type=tutorial
+import {
+  Flex,
+  Center,
+  Square,
+  Text,
+  Box,
+  ChakraProvider,
+} from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Flex justify='space-around' align='center' color='white'>
+        <Center w='100px' h='40px' bg='green.500'>
+          <Text>Box 1</Text>
+        </Center>
+        <Square bg='blue.500' size='120px'>
+          <Text>Box 2</Text>
+        </Square>
+        <Box bg='tomato' p='8'>
+          <Text>Box 3</Text>
+        </Box>
+      </Flex>
+    </ChakraProvider>
+  )
+}
+```
+
+### Grid
+
+Use Grid when you need to create two-dimensional layouts of rows and columns.
+
+But first, you'll need to wrap each child within it with a GridItem and pass the
+required props like `gap` `templateColumns` and/or `templateRows`.
+
+```tsx path=/App.tsx type=tutorial
+import { Grid, GridItem, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Grid
+        h='200px'
+        templateRows='repeat(2, 1fr)'
+        templateColumns='repeat(5, 1fr)'
+        gap={4}
+      >
+        <GridItem rowSpan={2} colSpan={1} bg='tomato' />
+        <GridItem colSpan={2} bg='papayawhip' />
+        <GridItem colSpan={2} bg='papayawhip' />
+        <GridItem colSpan={4} bg='tomato' />
+      </Grid>
+    </ChakraProvider>
+  )
+}
+```
+
+### SimpleGrid
+
+If you ever struggle with the Grid, the SimpleGrid was made for you. It is a
+much easier way of laying out elements in a two-dimensional pattern.
+
+SimpleGrid provides you with two main props, amongst others. The first is
+**`spacing`** is used to define the spacing between each grid item while the second
+prop, **`columns`** specifies the number of columns the Grid should have.
+
+```tsx path=/App.tsx type=tutorial
+import { SimpleGrid, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <SimpleGrid columns={3} spacing={10}>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+        <Box bg='tomato' height='80px'></Box>
+      </SimpleGrid>
+    </ChakraProvider>
+  )
+}
+```
+
+### Stack
+
+Stack is the easiest way to achieve one-dimensional layout models with a uniform
+space between elements. Using the `direction` prop, you can decide to layout
+components in the row (horizontal) or column (vertical) direction.
+
+By default, Stack lays out elements vertically, except you set the `direction`
+to `row`. Go ahead and try it out.
+
+```tsx path=/App.tsx type=tutorial
+import { Stack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Stack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </Stack>
+    </ChakraProvider>
+  )
+}
+```
+
+Stack also provides two custom components:
+
+- HStack and
+- VStack.
+
+VStack allows you to layout elements in the vertical direction and center its
+elements
+
+```tsx path=/App.tsx type=tutorial
+import { VStack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <VStack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </VStack>
+    </ChakraProvider>
+  )
+}
+```
+
+HStack allows you to layout elements in the horizontal direction and center its
+elements.
+
+```tsx path=/App.tsx type=tutorial
+import { HStack, Box, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <HStack spacing='24px'>
+        <Box w='60px' h='80px' bg='green.300'>
+          1
+        </Box>
+        <Box w='80px' h='76px' bg='tomato'>
+          2
+        </Box>
+        <Box w='70px' h='100px' bg='cyan.200'>
+          3
+        </Box>
+      </HStack>
+    </ChakraProvider>
+  )
+}
+```
+
+Now, can you tell the difference between `Stack`, `HStack` and `VStack`?
+
+### Wrap
+
+There are scenarios where there isn't enough space for an element to fit in a
+row because of its width. When the width of a component extends the screen
+width, the Wrap component wraps or moves this element to a new row.
+
+Think of it as a smarter flex-wrap with spacing support. It works really well
+with dialog buttons, tags, and chips.
+
+```tsx path=/App.tsx type=tutorial
+import { Wrap, WrapItem, Center, ChakraProvider } from '@chakra-ui/react'
+
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Wrap>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='red.200'>
+            Box 1
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='green.200'>
+            Box 2
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='tomato'>
+            Box 3
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w='180px' h='80px' bg='blue.200'>
+            Box 4
+          </Center>
+        </WrapItem>
+      </Wrap>
+    </ChakraProvider>
+  )
+}
+```
