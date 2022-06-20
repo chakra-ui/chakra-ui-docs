@@ -10,11 +10,13 @@ import tutorialSidebar from 'configs/tutorial.sidebar.json'
 import communitySidebar from 'configs/community.sidebar.json'
 import { ReactNode } from 'react'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
-import { getRouteContext } from 'utils/get-route-context'
+import { getRouteContext, RouteItem } from 'utils/get-route-context'
 
-export function getRoutes(slug: string) {
+export function getRoutes(slug: string): RouteItem[] {
   // for home page, use docs sidebar
-  if (slug === '/') return gettingStartedSidebar.routes
+  if (slug === '/') {
+    return gettingStartedSidebar.routes as RouteItem[]
+  }
 
   const configMap = {
     '/getting-started': gettingStartedSidebar,
@@ -28,7 +30,8 @@ export function getRoutes(slug: string) {
   const [, sidebar] =
     Object.entries(configMap).find(([path]) => slug.startsWith(path)) ?? []
 
-  return sidebar?.routes ?? []
+  const routes = sidebar?.routes ?? []
+  return routes as RouteItem[]
 }
 
 interface MDXLayoutProps {
