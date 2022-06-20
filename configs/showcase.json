@@ -609,6 +609,99 @@
       "type": "tools"
     }
   ],
+  "articles": [
+    {
+      "name": "How ChakraUI complements your existing web development skills",
+      "description": null,
+      "url": "https://dominik.sumer.dev/blog/chakra-complements-webdevs",
+      "image": "showcases/articles/How-ChakraUI-complements-your-existing-web-development-skills.png",
+      "type": "articles"
+    },
+    {
+      "name": "Accessibility on-demand with Chakra-ui and focus-visible",
+      "description": null,
+      "url": "https://medium.com/@keeganfamouss/accessibility-on-demand-with-chakra-ui-and-focus-visible-19413b1bc6f9",
+      "image": "showcases/articles/Accessibility-on-demand-with-Chakra-ui-and-focus-visible.png",
+      "type": "articles"
+    },
+    {
+      "name": "Build a Landing Page with Chakra UI",
+      "description": null,
+      "url": "https://raptis.wtf/blog/build-a-landing-page-with-chakra-ui-part-1/",
+      "image": "showcases/articles/Build-a-Landing-Page-with-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "Customisations with Chakra UI",
+      "description": null,
+      "url": "https://www.easyreact.com/articles/chakra-ui-customisations",
+      "image": "showcases/articles/Customisations-with-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "Chakra UI and React-Hook-Form – How to Build Beautiful Forms",
+      "description": null,
+      "url": "https://www.freecodecamp.org/news/how-to-use-react-hook-form-with-chakra-ui/",
+      "image": "showcases/articles/Chakra-UI-and-React-Hook-Form-–-How-to-Build-Beautiful-Forms.png",
+      "type": "articles"
+    },
+    {
+      "name": "Truncating Text using Chakra UI",
+      "description": null,
+      "url": "https://dev.to/estheragbaje/how-to-truncate-text-using-chakra-ui-4mpj",
+      "image": "showcases/articles/Truncating-Text-using-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "How to Set Up Chakra UI with Next JS by creating a Hero component",
+      "description": "",
+      "url": "https://creativedesignsguru.com/chakra-ui-next-js/",
+      "image": "showcases/articles/How-to-Set-Up-Chakra-UI-with-Next-JS-by-creating-a-Hero-component.png",
+      "type": "articles"
+    },
+    {
+      "name": "Choosing the right component library for your design system: MUI vs Chakra",
+      "description": "",
+      "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
+      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system-MUI-vs-Chakra.png",
+      "type": "articles"
+    },
+    {
+      "name": "I have created Web Gallery app using Reactjs , WebRTC and Chakra UI",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/i-have-created-web-gallery-app-using-reactjs-webrtc-and-chakra-ui-5cfn",
+      "image": "showcases/articles/I-have-created-Web-Gallery-app-using-Reactjs-,-WebRTC-and-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "Track user location coordinates realtime using geolocation api, nextjs , nodejs and socket.io",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/track-user-location-coordinates-realtime-using-geolocation-api-nextjs-nodejs-and-socket-io-2nf3",
+      "image": "showcases/articles/Track-user-location-coordinates-realtime-using-geolocation-api,-nextjs-,-nodejs-and-socket.io.png",
+      "type": "articles"
+    },
+    {
+      "name": "Setup Nextjs , Apollo client and Chakra UI for your upcomming projects",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/setup-nextjs-apollo-client-and-chakra-ui-for-your-upcomming-projects-10ja",
+      "image": "showcases/articles/Setup-Nextjs-,-Apollo-client-and-Chakra-UI-for-your-upcomming-projects.png",
+      "type": "articles"
+    },
+    {
+      "name": "Image Uploading using golang and react",
+      "description": "",
+      "url": "https://dev.to/harshmangalam/image-upload-using-golang-and-react-29n1",
+      "image": "showcases/articles/Image-Uploading-using-golang-and-react.png",
+      "type": "articles"
+    },
+    {
+      "name": "How To Build an Advanced Multipart Component with Chakra UI",
+      "description": "",
+      "url": "https://www.lekoarts.de/react/how-to-build-an-advanced-multipart-component-with-chakra-ui",
+      "image": "showcases/articles/How-To-Build-an-Advanced-Multipart-Component-with-Chakra-UI.png",
+      "type": "articles"
+    }
+  ],
   "videos": [
     {
       "name": "Getting Started with Chakra UI",
@@ -657,6 +750,13 @@
       "description": null,
       "url": "https://youtu.be/Gm7qHn9Y_Ro",
       "image": "https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra UI for Beginners",
+      "description": "",
+      "url": "https://www.chakrauiforbeginners.com/",
+      "image": "showcases/videos/Chakra-UI-for-Beginners.png",
       "type": "videos"
     }
   ]
