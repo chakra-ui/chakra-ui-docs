@@ -1,11 +1,10 @@
-import { Box, LinkBox, LinkOverlay, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, SimpleGrid, Text } from '@chakra-ui/react'
 import NextImage from 'next/image'
 
 const CourseBanner = ({
   href,
   image,
   title,
-  description,
 }: {
   image: string
   title: string
@@ -13,33 +12,40 @@ const CourseBanner = ({
   href: string
 }) => {
   return (
-    <LinkBox role='group' mt='10'>
-      <Box mb='4' rounded='lg' overflow='hidden'>
-        <NextImage
-          src={image}
-          alt='Egghead Logo'
-          layout='responsive'
-          width='400'
-          height='200'
-        />
-      </Box>
-
-      <LinkOverlay href={href} target='_blank'>
+    <Box
+      display='block'
+      as='a'
+      borderWidth='1px'
+      target='_blank'
+      transition='box-shadow 0.1s ease-out'
+      href={href}
+      rounded='lg'
+      overflow='hidden'
+      _hover={{ shadow: 'md' }}
+    >
+      <NextImage
+        src={image}
+        alt='Egghead Logo'
+        layout='responsive'
+        width='400'
+        height='200'
+      />
+      <Box py='3' px='4'>
         <Text as='h3' fontWeight='semibold'>
           {title}
         </Text>
-      </LinkOverlay>
-
-      <Text mt='2' mb='4' fontSize='sm' color='fg-muted'>
-        {description}
-      </Text>
-    </LinkBox>
+      </Box>
+    </Box>
   )
 }
 
 export const FeaturesCourses = () => {
   return (
-    <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: '4', md: '8' }}>
+    <SimpleGrid
+      mt='10'
+      columns={{ base: 1, lg: 2 }}
+      spacing={{ base: '4', md: '8' }}
+    >
       <CourseBanner
         image='/course-banners/egghead-course.png'
         title='Egghead Course'

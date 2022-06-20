@@ -22,6 +22,7 @@ import { VideoPlayer } from 'components/mdx-components/video-player'
 import SandpackEmbed from 'components/sandpack-embed'
 import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
+import { JoinCommunityCards } from 'components/community-card'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -90,6 +91,7 @@ export const MDXComponents = {
   ColorPalettes,
   ColorWrapper,
   FeaturesCourses,
+  JoinCommunityCards,
   SandpackEmbed: (props) => (
     <Box my={6}>
       <SandpackEmbed {...props} />
