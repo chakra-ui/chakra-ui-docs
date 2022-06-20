@@ -13,7 +13,7 @@
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
     "@next/next/no-img-element": "off",
-    "no-console": "warn",
+    "no-console": "off",
     "import/no-named-as-default": "off",
     "import/namespace": [
       "error",
