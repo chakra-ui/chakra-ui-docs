@@ -4,7 +4,7 @@ import PropsTable from '../props-table'
 import CarbonAd from './carbon-ad'
 import CodeBlock from './codeblock/codeblock'
 import ComponentLinks from './component-links'
-import EggheadCourseBanner from './egghead-course-banner'
+import { FeaturesCourses } from './course-banner'
 import IconsList from './icons-list'
 import {
   ColorPalette,
@@ -89,7 +89,7 @@ export const MDXComponents = {
   ColorPalette,
   ColorPalettes,
   ColorWrapper,
-  EggheadCourseBanner,
+  FeaturesCourses,
   SandpackEmbed: (props) => (
     <Box my={6}>
       <SandpackEmbed {...props} />

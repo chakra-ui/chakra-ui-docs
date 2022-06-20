@@ -125,7 +125,15 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
         color={active ? 'accent' : 'fg-muted'}
         _hover={{ color: active ? undefined : 'fg' }}
       >
-        <Center w='6' h='6' bg='accent-static' rounded='base' color='white'>
+        <Center
+          w='6'
+          h='6'
+          borderWidth='1px'
+          bg={active ? 'accent-static' : 'transparent'}
+          borderColor={active ? 'accent-static' : undefined}
+          rounded='base'
+          color={active ? 'white' : 'accent'}
+        >
           {icon}
         </Center>
         <span>{children}</span>

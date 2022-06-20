@@ -1,12 +1,5 @@
-import {
-  Box,
-  Center,
-  Link as ChakraLink,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Link as ChakraLink, SimpleGrid, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import React from 'react'
 import {
   BlitzSvg,
   CreateReactAppSvg,
@@ -21,21 +14,24 @@ const FrameworkLink = (props) => {
   const { accentColor, href, children, name } = props
   return (
     <Link passHref href={href}>
-      <ChakraLink textDecoration='none' _hover={{ textDecoration: 'none' }}>
-        <Box boxShadow='md' bg='white' borderRadius='xl' pt='4'>
+      <ChakraLink
+        bg='white'
+        display='block'
+        shadow='md'
+        textDecoration='none'
+        borderRadius='xl'
+        overflow='hidden'
+        transform='auto'
+        transition='all 0.1s ease-in-out'
+        _hover={{ textDecoration: 'none', translateY: '-2px', shadow: 'md' }}
+      >
+        <Box pt='4'>
           {children}
-
-          <Center
-            bg={accentColor}
-            borderBottomStartRadius='lg'
-            borderBottomEndRadius='lg'
-            height='30px'
-            mt='4'
-          >
-            <Text color='white' fontSize='sm' fontWeight='bold'>
+          <Box bg={accentColor} mt='4' py='1' color='white'>
+            <Text textAlign='center' fontSize='sm' fontWeight='bold'>
               {name}
             </Text>
-          </Center>
+          </Box>
         </Box>
       </ChakraLink>
     </Link>
