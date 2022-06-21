@@ -376,6 +376,36 @@ async function redirect() {
       permanent: true,
     },
     {
+      source: '/guides/integrations/with-capsize',
+      destination: '/getting-started/with-capsize',
+      permanent: true,
+    },
+    {
+      source: '/guides/integrations/with-formik',
+      destination: '/getting-started/with-formik',
+      permanent: true,
+    },
+    {
+      source: '/guides/integrations/with-framer',
+      destination: '/getting-started/with-framer',
+      permanent: true,
+    },
+    {
+      source: '/guides/integrations/with-hook-form',
+      destination: '/getting-started/with-hook-form',
+      permanent: true,
+    },
+    {
+      source: '/guides/integrations/with-react-table',
+      destination: '/getting-started/with-react-table',
+      permanent: true,
+    },
+    {
+      source: '/guides/integrations/with-storybook',
+      destination: '/getting-started/with-storybook',
+      permanent: true,
+    },
+    {
       source: '/guides/recipes/using-fonts',
       destination: '/docs/styled-system/recipes/using-fonts',
       permanent: true,
