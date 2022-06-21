@@ -19,7 +19,6 @@ import {
 } from '@codesandbox/sandpack-react'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import PageTransition from '../page-transition'
 import EditPageLink from 'components/edit-page-button'
 import Header from 'components/header'
 import SEO from 'components/seo'
@@ -142,7 +141,7 @@ function TutorialContainer({
               }}
               template='react-ts'
             >
-              <PageTransition>
+              <div>
                 <HStack spacing={0}>
                   <Box
                     overflowY={'auto'}
@@ -194,7 +193,7 @@ function TutorialContainer({
                     </SandpackLayout>
                   </Box>
                 </HStack>
-              </PageTransition>
+              </div>
             </SandpackProvider>
           </ErrorBoundary>
         </Box>

@@ -54,7 +54,7 @@ function Resources() {
     >
       <Text mt='2'>{t('resources.message')}</Text>
       <ShowcaseBanner />
-      <Tabs colorScheme='teal' variant='enclosed' mt='6'>
+      <Tabs colorScheme='teal' variant='line' mt='6'>
         <TabList>
           <Tab>
             <ResourcesTabContent icon={FaMicrophone} text={TALKS} />

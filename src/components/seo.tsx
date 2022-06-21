@@ -1,6 +1,6 @@
 import { NextSeo, NextSeoProps } from 'next-seo'
 import React from 'react'
-import siteConfig from 'configs/site-config'
+import siteConfig from 'configs/site-config.json'
 
 export type SEOProps = Pick<NextSeoProps, 'title' | 'description'>
 

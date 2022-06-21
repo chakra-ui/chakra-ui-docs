@@ -162,10 +162,10 @@
         "ads-via-chakra-ui": "Ads via Chakra UI"
       },
       "component-links": {
-        "view-source": "View source",
-        "view-storybook": "View storybook",
-        "view-theme-source": "View theme source",
-        "view-video": "Watch video"
+        "view-source": "Source",
+        "view-storybook": "Storybook",
+        "view-theme-source": "Theme source",
+        "view-video": "Video"
       }
     },
     "algolia-search": {
@@ -212,11 +212,11 @@
   },
   "showcase": {
     "seo": {
-      "title": "Chakra UI Showcase",
-      "description": "A showcase for sharing beautiful websites that are built in Chakra-UI"
+      "title": "Showcase",
+      "description": "A collection of beautiful websites that are built in Chakra UI"
     },
     "title": "Showcase",
-    "message": "Meet Websites Built with Chakra UI",
+    "message": "A collection of beautiful websites that are built in Chakra UI",
     "submit-project-button-title": "Submit your project"
   }
 }

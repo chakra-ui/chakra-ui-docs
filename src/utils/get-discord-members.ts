@@ -10,7 +10,7 @@ export async function getDiscordMembers() {
 
     count = data.approximate_member_count
   } catch (error) {
-    console.log('Failed to get discord members count: ', error.toString())
+    //
   }
 
   return {
