@@ -372,7 +372,37 @@ async function redirect() {
     },
     {
       source: '/guides/integrations/with-cra',
-      destination: '/guides/getting-started/cra-guide',
+      destination: '/getting-started/cra-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/nextjs-guide',
+      destination: '/getting-started/nextjs-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/gatsby-guide',
+      destination: '/getting-started/gatsby-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/blitzjs-guide',
+      destination: '/getting-started/blitzjs-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/redwoodjs-guide',
+      destination: '/getting-started/redwoodjs-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/remix-guide',
+      destination: '/getting-started/remix-guide',
+      permanent: true,
+    },
+    {
+      source: '/guides/getting-started/vite-guide',
+      destination: '/getting-started/vite-guide',
       permanent: true,
     },
     {
