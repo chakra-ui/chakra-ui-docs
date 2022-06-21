@@ -43,6 +43,14 @@
             {
               "title": "Chakra UI Prose",
               "path": "/community/recipes/prose"
+            },
+            {
+              "title": "Page Specific Color Mode",
+              "path": "/community/recipes/page-specific-color-mode"
+            },
+            {
+              "title": "Using Fonts",
+              "path": "/community/recipes/using-fonts"
             }
           ]
         }
