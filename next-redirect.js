@@ -394,6 +394,7 @@ async function redirect() {
     {
       source: '/docs/components/recipes/:slug',
       destination: '/community/recipes/:slug',
+      permanent: true,
     },
   ]
 }
