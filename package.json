@@ -55,7 +55,7 @@
     "react-dom": "^18.1.0",
     "react-error-boundary": "^3.1.4",
     "react-focus-lock": "^2.6.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.4.0",
     "react-live": "^2.3.0",
     "react-lorem-component": "^0.13.0",
     "react-player": "^2.10.1",
@@ -92,7 +92,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.7.1",
     "react-multi-ref": "^1.0.0",
-    "sharp": "^0.30.5",
+    "sharp": "^0.30.6",
     "ts-node": "10.7.0",
     "yarn-deduplicate": "^5.0.0"
   }
