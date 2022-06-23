@@ -2,36 +2,32 @@ import {
   Badge,
   Box,
   Center,
-  Flex,
+  chakra,
+  HStack,
   List,
   ListItem,
   ListProps,
-  chakra,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import sortBy from 'lodash/sortBy'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import * as React from 'react'
-import { Fragment, useRef, ReactElement, ReactNode } from 'react'
-import { FaFileAlt, FaQuestionCircle, FaTools } from 'react-icons/fa'
-import SidebarCategory from './sidebar-category'
-import { DocsIcon, GuidesIcon, TeamIcon, ResourcesIcon } from './sidebar-icons'
-import SidebarLink from './sidebar-link'
+import { Fragment, ReactElement, ReactNode, useRef } from 'react'
+import {
+  FaFileAlt,
+  FaPalette,
+  FaTools,
+  FaGlobe,
+  FaCompass,
+} from 'react-icons/fa'
+import { BsFillGridFill } from 'react-icons/bs'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { Routes } from 'utils/get-route-context'
+import SidebarCategory from './sidebar-category'
+import SidebarLink from './sidebar-link'
 
 export type SidebarContentProps = Routes & {
   pathname?: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: any
-}
-
-type MainNavLinkProps = {
-  href: string
-  icon: ReactElement
-  children: ReactNode
-  label?: string
 }
 
 export function SidebarContent({
@@ -48,11 +44,9 @@ export function SidebarContent({
               <chakra.h4
                 fontSize='sm'
                 fontWeight='bold'
-                my='1.25rem'
+                my='4'
                 textTransform='uppercase'
                 letterSpacing='wider'
-                color='gray.700'
-                _dark={{ color: 'inherit' }}
               >
                 {lvl1.title}
               </chakra.h4>
@@ -108,84 +102,98 @@ export function SidebarContent({
   )
 }
 
-export const isMainNavLinkActive = (href: string, path: string) => {
-  const [, group, category] = href.split('/')
-
-  return path.includes(
-    href.split('/').length > 3 ? `${group}/${category}` : group,
-  )
+type MainNavLinkProps = {
+  href: string
+  icon: ReactElement
+  children: ReactNode
+  label?: string
+  isActive?: boolean
 }
 
-const MainNavLink = ({ href, icon, children }: MainNavLinkProps) => {
-  const { asPath } = useRouter()
-  const active = isMainNavLinkActive(href, asPath)
-  const linkColor = useColorModeValue('gray.900', 'whiteAlpha.900')
+const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
+  const router = useRouter()
+
+  const active = router.asPath.startsWith(href) || !!isActive
 
   return (
     <NextLink href={href} passHref>
-      <Flex
+      <HStack
         as='a'
-        align='center'
+        spacing='3'
         fontSize='sm'
-        fontWeight='semibold'
-        transitionProperty='colors'
-        transitionDuration='200ms'
-        color={active ? linkColor : 'gray.500'}
-        _hover={{ color: linkColor }}
+        fontWeight={active ? 'semibold' : 'medium'}
+        color={active ? 'accent' : 'fg-muted'}
+        _hover={{ color: active ? undefined : 'fg' }}
       >
-        <Center w='6' h='6' bg='teal.400' rounded='base' mr='3'>
+        <Center
+          w='6'
+          h='6'
+          borderWidth='1px'
+          bg={active ? 'accent-static' : 'transparent'}
+          borderColor={active ? 'accent-static' : undefined}
+          rounded='base'
+          color={active ? 'white' : 'accent'}
+        >
           {icon}
         </Center>
-        {children}
-      </Flex>
+        <span>{children}</span>
+      </HStack>
     </NextLink>
   )
 }
 
 export const mainNavLinks = [
   {
-    icon: <GuidesIcon />,
-    href: '/guides/first-steps',
+    icon: <FaCompass />,
+    href: '/getting-started',
     label: 'Getting Started',
   },
   {
-    icon: <FaTools color='white' />,
-    href: '/docs/styled-system/overview',
+    icon: <FaPalette />,
+    href: '/docs/styled-system/style-props',
     label: 'Styled System',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/docs/styled-system') &&
+      asPath.startsWith('/docs/styled-system'),
   },
   {
-    icon: <DocsIcon />,
-    href: '/docs/components/overview',
+    icon: <BsFillGridFill />,
+    href: '/docs/components',
     label: 'Components',
   },
   {
-    icon: <ResourcesIcon />,
-    href: '/resources',
-    label: 'Resources',
+    icon: <FaTools />,
+    href: '/docs/hooks/use-boolean',
+    label: 'Hooks',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/docs/hooks') && asPath.startsWith('/docs/hooks'),
   },
   {
-    icon: <FaQuestionCircle color='white' />,
-    href: '/faq',
-    label: 'FAQ',
+    icon: <FaGlobe />,
+    href: '/community/team',
+    label: 'Community',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/community') && asPath.startsWith('/community'),
   },
   {
-    icon: <FaFileAlt color='white' />,
+    icon: <FaFileAlt />,
     href: '/changelog',
     label: 'Changelog',
-  },
-  {
-    icon: <TeamIcon />,
-    href: '/team',
-    label: 'Team',
   },
 ]
 
 export const MainNavLinkGroup = (props: ListProps) => {
+  const router = useRouter()
   return (
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
         <ListItem key={item.label}>
-          <MainNavLink icon={item.icon} href={item.href} label={item.label}>
+          <MainNavLink
+            icon={item.icon}
+            href={item.href}
+            label={item.label}
+            isActive={item.match?.(router.asPath, item.href)}
+          >
             {item.label}
           </MainNavLink>
         </ListItem>

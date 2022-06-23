@@ -5,7 +5,6 @@ import {
   removePrefix,
 } from '@docusaurus/utils'
 import fs from 'fs'
-//@ts-ignore
 import toc from 'markdown-toc'
 import path from 'path'
 import prettier from 'prettier'
@@ -32,7 +31,7 @@ interface TOCResultItem {
   seen: number
 }
 
-const websiteRoot = 'pages'
+const websiteRoot = 'content'
 
 async function getMDXMeta(file: string) {
   // For Windows: convert backslashes to forwards slashes with `posixPath()` for consistency
@@ -104,7 +103,7 @@ async function getSearchMeta() {
     )
 
     try {
-      result = isExcluded ? null : await getMDXMeta(file)
+      result = isExcluded ? [] : await getMDXMeta(file)
       json.push(...result)
     } catch (error) {
       console.log(error)

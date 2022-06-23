@@ -32,7 +32,7 @@ export const ColorPalette = (props: ColorPaletteProps) => {
         boxSize='3rem'
         boxShadow='inner'
         mr={3}
-        bg={color}
+        bgColor={color}
       />
       <Box fontSize='sm'>
         <Box fontWeight='semibold' textTransform='capitalize'>

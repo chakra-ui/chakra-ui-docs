@@ -14,7 +14,6 @@ export async function getGithubStars() {
     })
     count = repo.data.stargazers_count
   } catch (error) {
-    console.log(error.toString())
     count = 19_700
   }
 

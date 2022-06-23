@@ -1,39 +1,48 @@
-import { ReactNode } from 'react'
 import PageContainer from 'components/page-container'
 import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
-import componentsSidebar from 'configs/components-sidebar'
-import guidesSidebar from 'configs/guides-sidebar.json'
-import styledSystemSidebar from 'configs/styled-system-sidebar.json'
-import { tutorialSidebar } from 'configs/tutorial-sidebar'
-import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
-import { getRouteContext } from 'utils/get-route-context'
 import { Frontmatter } from 'components/tutorial/tutorial-container'
+import componentsSidebar from 'configs/components.sidebar.json'
+import gettingStartedSidebar from 'configs/getting-started.sidebar.json'
+import hooksSidebar from 'configs/hooks.sidebar.json'
+import styledSystemSidebar from 'configs/styled-system.sidebar.json'
+import tutorialSidebar from 'configs/tutorial.sidebar.json'
+import communitySidebar from 'configs/community.sidebar.json'
+import { ReactNode } from 'react'
+import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
+import { getRouteContext, RouteItem } from 'utils/get-route-context'
 
-export function getRoutes(slug: string) {
+export function getRoutes(slug: string): RouteItem[] {
   // for home page, use docs sidebar
-  if (slug === '/') return guidesSidebar.routes
+  if (slug === '/') {
+    return gettingStartedSidebar.routes as RouteItem[]
+  }
 
   const configMap = {
-    '/guides': guidesSidebar,
+    '/getting-started': gettingStartedSidebar,
     '/docs/styled-system': styledSystemSidebar,
+    '/docs/hooks': hooksSidebar,
     '/docs/components': componentsSidebar,
     '/tutorial': tutorialSidebar,
+    '/community': communitySidebar,
   }
 
   const [, sidebar] =
     Object.entries(configMap).find(([path]) => slug.startsWith(path)) ?? []
 
-  return sidebar?.routes ?? []
+  const routes = sidebar?.routes ?? []
+  return routes as RouteItem[]
 }
 
 interface MDXLayoutProps {
   frontmatter: Frontmatter
   children: ReactNode
+  hideToc?: boolean
+  maxWidth?: string
 }
 
 export default function MDXLayout(props: MDXLayoutProps) {
-  const { frontmatter, children } = props
+  const { frontmatter, children, hideToc, maxWidth } = props
 
   const routes = getRoutes(frontmatter.slug)
   const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
@@ -41,6 +50,8 @@ export default function MDXLayout(props: MDXLayoutProps) {
 
   return (
     <PageContainer
+      hideToc={hideToc}
+      maxWidth={maxWidth}
       frontmatter={frontmatter}
       sidebar={<Sidebar routes={routes} />}
       pagination={

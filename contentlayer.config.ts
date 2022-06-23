@@ -6,8 +6,8 @@ import {
 import remarkEmoji from 'remark-emoji'
 import remarkGfm from 'remark-gfm'
 import remarkSlug from 'remark-slug'
-import siteConfig from './configs/site-config'
-import { getTableOfContents } from './src/utils/mdx-utils'
+import siteConfig from './configs/site-config.json'
+import { getTableOfContents } from './src/utils/get-table-of-contents'
 import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta'
 
 const computedFields: ComputedFields = {
@@ -19,13 +19,14 @@ const computedFields: ComputedFields = {
 
 const Guides = defineDocumentType(() => ({
   name: 'Guide',
-  filePathPattern: 'guides/**/*.mdx',
+  filePathPattern: 'getting-started/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' } },
     author: { type: 'string' },
+    category: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
@@ -79,12 +80,20 @@ const Doc = defineDocumentType(() => ({
   filePathPattern: 'docs/**/*.mdx',
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
+    title: { type: 'string' },
     package: { type: 'string' },
-    description: { type: 'string', required: true },
-    image: { type: 'string' },
+    description: { type: 'string' },
+    id: { type: 'string' },
+    scope: {
+      type: 'enum',
+      options: ['usage', 'theming', 'props'],
+      default: 'usage',
+    },
     version: { type: 'string' },
     author: { type: 'string' },
+    video: { type: 'string' },
+    category: { type: 'string' },
+    aria: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
@@ -94,9 +103,35 @@ const Doc = defineDocumentType(() => ({
         title: doc.title,
         package: doc.package,
         description: doc.description,
-        image: doc.image,
         version: doc.version,
         slug: `/${doc._raw.flattenedPath}`,
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
+        headings: getTableOfContents(doc.body.raw),
+      }),
+    },
+  },
+}))
+
+const Recipe = defineDocumentType(() => ({
+  name: 'Recipe',
+  filePathPattern: 'community/recipes/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    tags: { type: 'list', of: { type: 'string' } },
+    author: { type: 'string' },
+  },
+  computedFields: {
+    ...computedFields,
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        title: doc.title,
+        description: doc.description,
+        tags: doc.tags,
+        author: doc.author,
+        slug: `/community/${doc._raw.flattenedPath}`,
         editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),
@@ -107,29 +142,6 @@ const Doc = defineDocumentType(() => ({
 const Tutorial = defineDocumentType(() => ({
   name: 'Tutorial',
   filePathPattern: 'tutorial/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-  },
-  computedFields: {
-    ...computedFields,
-    frontMatter: {
-      type: 'json',
-      resolve: (doc) => ({
-        title: doc.title,
-        description: doc.description,
-        slug: `/${doc._raw.flattenedPath}`,
-        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
-        headings: getTableOfContents(doc.body.raw),
-      }),
-    },
-  },
-}))
-
-const FAQ = defineDocumentType(() => ({
-  name: 'FAQ',
-  filePathPattern: 'faq/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -172,8 +184,8 @@ const Changelog = defineDocumentType(() => ({
 }))
 
 const contentLayerConfig = makeSource({
-  contentDirPath: 'pages',
-  documentTypes: [Doc, Guides, FAQ, Changelog, Blogs, Tutorial],
+  contentDirPath: 'content',
+  documentTypes: [Doc, Guides, Recipe, Changelog, Blogs, Tutorial],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],

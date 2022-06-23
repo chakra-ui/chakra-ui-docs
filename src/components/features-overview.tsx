@@ -17,12 +17,12 @@ import {
   RiPictureInPictureExitFill,
   RiRepeat2Fill,
 } from 'react-icons/ri'
-import componentsSidebar from 'configs/components-sidebar'
-import styledSystemSidebar from 'configs/styled-system-sidebar.json'
+import componentsSidebar from 'configs/components.sidebar.json'
+import styledSystemSidebar from 'configs/styled-system.sidebar.json'
 
 const featureSidebar = {
-  '/docs/styled-system/overview': styledSystemSidebar,
-  '/docs/components/overview': componentsSidebar,
+  '/docs/styled-system': styledSystemSidebar,
+  '/docs/components': componentsSidebar,
 }
 
 const Feature = ({ title, icon, children, ...props }) => {
@@ -63,7 +63,7 @@ const Feature = ({ title, icon, children, ...props }) => {
 export const FeaturesOverview = () => {
   const { asPath } = useRouter()
 
-  const features = featureSidebar[asPath].routes[0].routes.filter(
+  const features = featureSidebar[asPath].routes?.[0].routes.filter(
     (feature) => feature.path !== asPath,
   )
 
@@ -102,7 +102,7 @@ export const FeaturesOverview = () => {
         <Link
           key={feature.title}
           passHref
-          href={`${feature.routes[0].path}?scroll=true`}
+          href={`${feature.routes?.[0].path}?scroll=true`}
         >
           <Feature icon={icons[feature.title] ?? null} title={feature.title}>
             {feature.summarize

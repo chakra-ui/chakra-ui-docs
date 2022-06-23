@@ -4,7 +4,7 @@ import PropsTable from '../props-table'
 import CarbonAd from './carbon-ad'
 import CodeBlock from './codeblock/codeblock'
 import ComponentLinks from './component-links'
-import EggheadCourseBanner from './egghead-course-banner'
+import { FeaturesCourses } from './course-banner'
 import IconsList from './icons-list'
 import {
   ColorPalette,
@@ -22,6 +22,7 @@ import { VideoPlayer } from 'components/mdx-components/video-player'
 import SandpackEmbed from 'components/sandpack-embed'
 import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
+import { JoinCommunityCards } from 'components/community-card'
 
 const { Alert, AspectRatio, Box, chakra, Kbd } = Chakra
 
@@ -89,7 +90,8 @@ export const MDXComponents = {
   ColorPalette,
   ColorPalettes,
   ColorWrapper,
-  EggheadCourseBanner,
+  FeaturesCourses,
+  JoinCommunityCards,
   SandpackEmbed: (props) => (
     <Box my={6}>
       <SandpackEmbed {...props} />
