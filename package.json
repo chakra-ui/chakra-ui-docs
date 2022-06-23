@@ -29,7 +29,7 @@
     "@codesandbox/sandpack-react": "0.19.6",
     "@docsearch/react": "^1.0.0-alpha.27",
     "@docusaurus/utils": "2.0.0-alpha.69",
-    "@emotion/react": "^11.8.2",
+    "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.8.1",
     "@octokit/rest": "^18.12.0",
     "contentlayer": "^0.2.4",
@@ -69,7 +69,7 @@
     "scroll-into-view-if-needed": "^2.2.29",
     "shelljs": "^0.8.5",
     "superjson": "^1.8.1",
-    "typescript": "^4.6.3",
+    "typescript": "^4.7.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -92,7 +92,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.7.1",
     "react-multi-ref": "^1.0.0",
-    "sharp": "^0.30.6",
+    "sharp": "^0.30.7",
     "ts-node": "10.7.0",
     "yarn-deduplicate": "^5.0.0"
   }
