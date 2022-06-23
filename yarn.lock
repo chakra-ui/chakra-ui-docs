@@ -981,18 +981,18 @@
     style-mod "^4.0.0"
     w3c-keyname "^2.2.4"
 
-"@codesandbox/sandpack-client@^0.19.1":
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-client/-/sandpack-client-0.19.1.tgz#5ccfd37c9b37b483f3636fa5ed3a7f153752f7c6"
-  integrity sha512-qXzp6HkoXVubl0/z9+65T8O1zjWU4BjxRvr6uyl9IACKZPMr8QGXfULdLNzJZBbHzo7mJcVwEYDO2Gzz375EZw==
+"@codesandbox/sandpack-client@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-client/-/sandpack-client-1.1.6.tgz#7435bc6598763ac9679247f027687fe5d6e3c73a"
+  integrity sha512-EXViTZ6gB5sqICn7DMwCplolbDr6oVZE1bwjOKr36sZWoRu2v8Vf46sL8pjRUkScoypiU3ffVMS53bg5qypmhQ==
   dependencies:
     codesandbox-import-utils "^1.2.3"
     lodash.isequal "^4.5.0"
 
-"@codesandbox/sandpack-react@0.19.6":
-  version "0.19.6"
-  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-react/-/sandpack-react-0.19.6.tgz#e6d690953933c60e9f33d5480a8ac2cf7d22bc02"
-  integrity sha512-8moUywJ4v+x/lt3GlBDBA8FsD/nnxoUaLi2J/Gvz/d5OMhhwGynhgpjRmfdrHL1qgr9SR/TZ76d31uAYl10Blw==
+"@codesandbox/sandpack-react@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-react/-/sandpack-react-1.2.0.tgz#38e01bb36c2f7297247ac0341c38c3cbfe9dcfe8"
+  integrity sha512-vdDlPOCsYDb61DhaVyaRTqLdvnM+sUbvvCfssiMKCb95iB/8eHS0R+YbIg8EEjdlSqbE1hKDRJf64/hoz9fCPQ==
   dependencies:
     "@code-hike/classer" "^0.0.0-aa6efee"
     "@codemirror/closebrackets" "^0.19.0"
@@ -1008,8 +1008,9 @@
     "@codemirror/matchbrackets" "^0.19.3"
     "@codemirror/state" "^0.19.6"
     "@codemirror/view" "^0.19.32"
-    "@codesandbox/sandpack-client" "^0.19.1"
+    "@codesandbox/sandpack-client" "^1.1.6"
     "@react-hook/intersection-observer" "^3.1.1"
+    "@stitches/core" "^1.2.6"
     codesandbox-import-util-types "^2.2.3"
     lodash.isequal "^4.5.0"
     lz-string "^1.4.4"
@@ -1959,6 +1960,11 @@
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
+
+"@stitches/core@^1.2.6":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.8.tgz#dce3b8fdc764fbc6dbea30c83b73bfb52cf96173"
+  integrity sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==
 
 "@swc/core-android-arm-eabi@1.2.182":
   version "1.2.182"
