@@ -18,7 +18,7 @@ export default function Page({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = allRecipes
-    .map((t) => t._id.replace('recipes/', '').replace('.mdx', ''))
+    .map((t) => t._id.replace('community/recipes/', '').replace('.mdx', ''))
     .map((id) => ({ params: { slug: id.split('/') } }))
   return { paths, fallback: false }
 }
