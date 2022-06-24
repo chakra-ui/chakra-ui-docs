@@ -360,6 +360,16 @@ async function redirect() {
       permanent: true,
     },
     {
+      source: '/docs/styled-system/features/:slug',
+      destination: '/docs/styled-system/:slug',
+      permanent: true,
+    },
+    {
+      source: '/docs/styled-system/theming/:slug',
+      destination: '/docs/styled-system/:slug',
+      permanent: true,
+    },
+    {
       source: '/docs/theming/:slug',
       destination: '/docs/styled-system/:slug',
       permanent: true,
