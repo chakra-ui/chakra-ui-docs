@@ -114,7 +114,7 @@ const Doc = defineDocumentType(() => ({
 
 const Recipe = defineDocumentType(() => ({
   name: 'Recipe',
-  filePathPattern: 'recipes/**/*.mdx',
+  filePathPattern: 'community/recipes/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
