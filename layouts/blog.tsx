@@ -44,7 +44,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <Box maxW='48rem'>
+                  <Box maxW='48rem' mx='auto'>
                     <chakra.h1
                       tabIndex={-1}
                       outline={0}
