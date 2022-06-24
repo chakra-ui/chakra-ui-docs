@@ -421,6 +421,13 @@
       "url": "https://codenanshu.in",
       "image": "showcases/websites/CodeNanshu.png",
       "type": "websites"
+    },
+    {
+      "name": "Júlio Werner",
+      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliowerner.com",
+      "image": "showcases/websites/Júlio-Werner.png",
+      "type": "websites"
     }
   ],
   "libraries": [
