@@ -15,7 +15,7 @@ the CSS property used. Also, it allows a simple way of defining responsive
 values that correspond to the breakpoints defined in the theme.
 
 To find out which properties are theme-aware, see the
-[Style Props](/docs/styled-system/features/style-props).
+[Style Props](/docs/styled-system/style-props).
 
 ## Use cases
 
@@ -25,7 +25,7 @@ it is needed.
 ### Defining Any Standard CSS Property
 
 In case you need to set a CSS property that is not listed in the
-[Style Props](/docs/styled-system/features/style-props) list, you can use the
+[Style Props](/docs/styled-system/style-props) list, you can use the
 `sx` prop and pass it whatever CSS property you desire.
 
 One such example is the `filter` property:
@@ -57,7 +57,7 @@ To create complex, nested selectors, you can use utilize the `&` operator. The
 component you put `sx` on.
 
 > For the following example you could also use the
-> [`_groupHover` shorthand prop](/docs/styled-system/features/style-props#pseudo).
+> [`_groupHover` shorthand prop](/docs/styled-system/style-props#pseudo).
 
 ```jsx
 <Box borderWidth={2} borderColor='purple.500' p={5} className='my-box'>
