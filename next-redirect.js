@@ -41,6 +41,11 @@ async function redirect() {
       destination: '/community/recipes/using-fonts',
       permanent: true,
     },
+    {
+      source: '/recipes/:slug',
+      destination: '/community/recipes/:slug',
+      permanent: true,
+    },
     // COMPONENTS
     {
       source: '/accordion',
@@ -315,6 +320,16 @@ async function redirect() {
       permanent: true,
     },
     {
+      source: '/docs',
+      destination: '/getting-started',
+      permanent: true,
+    },
+    {
+      source: '/docs/getting-started',
+      destination: '/getting-started',
+      permanent: true,
+    },
+    {
       source: '/docs/migration',
       destination: '/getting-started/migration',
       permanent: true,
@@ -330,13 +345,23 @@ async function redirect() {
       permanent: true,
     },
     {
+      source: '/guides/advanced/contributing',
+      destination: '/getting-started/contributing',
+      permanent: true,
+    },
+    {
       source: '/docs/contributing',
       destination: '/getting-started/contributing',
       permanent: true,
     },
     {
       source: '/guides/as-prop',
-      destination: '/docs/community/recipes/as-prop',
+      destination: '/community/recipes/as-prop',
+      permanent: true,
+    },
+    {
+      source: '/guides/principles',
+      destination: '/getting-started/principles',
       permanent: true,
     },
     {
@@ -346,7 +371,7 @@ async function redirect() {
     },
     {
       source: '/guides/recipes/:slug',
-      destination: '/docs/community/recipes/:slug',
+      destination: '/community/recipes/:slug',
       permanent: true,
     },
     {
