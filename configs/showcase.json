@@ -421,6 +421,13 @@
       "url": "https://codenanshu.in",
       "image": "showcases/websites/CodeNanshu.png",
       "type": "websites"
+    },
+    {
+      "name": "Júlio Werner",
+      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliowerner.com",
+      "image": "showcases/websites/Júlio-Werner.png",
+      "type": "websites"
     }
   ],
   "libraries": [
@@ -693,6 +700,13 @@
       "url": "https://dev.to/harshmangalam/image-upload-using-golang-and-react-29n1",
       "image": "showcases/articles/Image-Uploading-using-golang-and-react.png",
       "type": "articles"
+    },
+    {
+      "name": "How To Build an Advanced Multipart Component with Chakra UI",
+      "description": "",
+      "url": "https://www.lekoarts.de/react/how-to-build-an-advanced-multipart-component-with-chakra-ui",
+      "image": "showcases/articles/How-To-Build-an-Advanced-Multipart-Component-with-Chakra-UI.png",
+      "type": "articles"
     }
   ],
   "videos": [
@@ -743,6 +757,13 @@
       "description": null,
       "url": "https://youtu.be/Gm7qHn9Y_Ro",
       "image": "https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra UI for Beginners",
+      "description": "",
+      "url": "https://www.chakrauiforbeginners.com/",
+      "image": "showcases/videos/Chakra-UI-for-Beginners.png",
       "type": "videos"
     }
   ]

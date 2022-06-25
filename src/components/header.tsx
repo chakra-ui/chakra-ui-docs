@@ -22,7 +22,7 @@ import Search from './omni-search'
 import SponsorButton from './sponsor-button'
 import VersionSwitcher from './version-switcher'
 import { DiscordIcon, GithubIcon } from 'components/icons'
-import siteConfig from 'configs/site-config'
+import siteConfig from 'configs/site-config.json'
 
 function HeaderContent() {
   const mobileNav = useDisclosure()

@@ -32,12 +32,12 @@ import ChakraNextImage from 'components/chakra-next-image'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
 import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
 import Container from 'components/container'
-import DiscordStrip from 'components/discord-strip'
+import { DiscordStrip } from 'components/discord-strip'
 import { Footer } from 'components/footer'
 import Header from 'components/header'
 import SandpackEmbed from 'components/sandpack-embed'
 import SEO from 'components/seo'
-import ShowcaseSection from 'components/showcase/showcase-section'
+import ShowcaseSection from 'components/showcase-section'
 import TweetCard from 'components/tweet-card'
 import { App, Index } from 'configs/sandpack-contents/homepage/files'
 import tweets from 'configs/tweets.json'
@@ -183,7 +183,7 @@ const HomePage = ({
                 justify='center'
                 direction={{ base: 'column', sm: 'row' }}
               >
-                <NextLink href='/guides/first-steps' passHref>
+                <NextLink href='/getting-started' passHref>
                   <Button
                     h='4rem'
                     px='40px'

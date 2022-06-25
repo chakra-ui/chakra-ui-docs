@@ -2,7 +2,7 @@ import Puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 import sharp from 'sharp'
-import _ from 'lodash'
+import cloneDeep from 'lodash.clonedeep'
 import { Octokit } from 'octokit'
 import { config } from 'dotenv'
 import showcaseData from '../configs/showcase.json'
@@ -245,7 +245,7 @@ const parseRepoData = async (context: string[]): Promise<IShowcase> => {
 }
 
 const removeDeletedData = (newData: IShowcase) => {
-  const duplicatedData = _.cloneDeep(showcaseData)
+  const duplicatedData = cloneDeep(showcaseData)
 
   for (const [key, value] of Object.entries(duplicatedData as IShowcase)) {
     const categoryInNewData: ShowcaseItem[] = newData[key]

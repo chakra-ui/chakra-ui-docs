@@ -20,11 +20,7 @@ import { forwardRef, ReactNode, Ref, useEffect, useRef, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
 import Logo from './logo'
-import {
-  isMainNavLinkActive,
-  mainNavLinks,
-  SidebarContent,
-} from './sidebar/sidebar'
+import { mainNavLinks, SidebarContent } from './sidebar/sidebar'
 import SponsorButton from './sponsor-button'
 import useRouteChanged from 'hooks/use-route-changed'
 import { getRoutes } from 'layouts/mdx'
@@ -35,10 +31,10 @@ type NavLinkProps = {
 }
 
 function NavLink({ href, children }: NavLinkProps) {
-  const { asPath } = useRouter()
+  const router = useRouter()
   const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
-  const isActive = isMainNavLinkActive(href, asPath)
+  const isActive = router.asPath.startsWith(href)
 
   return (
     <GridItem as={NextLink} href={href}>

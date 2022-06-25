@@ -5,7 +5,6 @@ import { AdBanner } from 'components/chakra-pro/ad-banner'
 import EditPageLink from 'components/edit-page-button'
 import Footer from 'components/footer'
 import Header from 'components/header'
-import PageTransition from 'components/page-transition'
 import SEO from 'components/seo'
 import { t } from 'utils/i18n'
 
@@ -45,7 +44,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
                   px={{ base: '4', sm: '6', xl: '8' }}
                   pt='10'
                 >
-                  <PageTransition style={{ maxWidth: '48rem', margin: 'auto' }}>
+                  <Box maxW='48rem' mx='auto'>
                     <chakra.h1
                       tabIndex={-1}
                       outline={0}
@@ -84,7 +83,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
                     <Box pb='20'>
                       <Footer />
                     </Box>
-                  </PageTransition>
+                  </Box>
                 </Box>
               </Flex>
             </Box>

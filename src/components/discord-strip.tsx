@@ -4,7 +4,7 @@ import Container from './container'
 import DiscordIcon from './docs/discord-logo'
 import { t } from 'utils/i18n'
 
-function DiscordStrip(props: BoxProps) {
+export function DiscordStrip(props: BoxProps) {
   return (
     <Box bg='#5865F2' {...props}>
       <Container py='8'>
@@ -57,5 +57,3 @@ function DiscordStrip(props: BoxProps) {
     </Box>
   )
 }
-
-export default DiscordStrip

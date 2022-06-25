@@ -1,12 +1,5 @@
-import {
-  Box,
-  Center,
-  Link as ChakraLink,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Link as ChakraLink, SimpleGrid, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import React from 'react'
 import {
   BlitzSvg,
   CreateReactAppSvg,
@@ -21,21 +14,24 @@ const FrameworkLink = (props) => {
   const { accentColor, href, children, name } = props
   return (
     <Link passHref href={href}>
-      <ChakraLink textDecoration='none' _hover={{ textDecoration: 'none' }}>
-        <Box boxShadow='md' bg='white' borderRadius='xl' pt='4'>
+      <ChakraLink
+        bg='white'
+        display='block'
+        shadow='md'
+        textDecoration='none'
+        borderRadius='xl'
+        overflow='hidden'
+        transform='auto'
+        transition='all 0.1s ease-in-out'
+        _hover={{ textDecoration: 'none', translateY: '-2px', shadow: 'md' }}
+      >
+        <Box pt='4'>
           {children}
-
-          <Center
-            bg={accentColor}
-            borderBottomStartRadius='lg'
-            borderBottomEndRadius='lg'
-            height='30px'
-            mt='4'
-          >
-            <Text color='white' fontSize='sm' fontWeight='bold'>
+          <Box bg={accentColor} mt='4' py='1' color='white'>
+            <Text textAlign='center' fontSize='sm' fontWeight='bold'>
               {name}
             </Text>
-          </Center>
+          </Box>
         </Box>
       </ChakraLink>
     </Link>
@@ -46,7 +42,7 @@ export const FrameworkLinks = () => {
   return (
     <SimpleGrid mt='12' minChildWidth='160px' spacing='40px' fontSize='6xl'>
       <FrameworkLink
-        href='/guides/getting-started/cra-guide'
+        href='/getting-started/cra-guide'
         accentColor='#0AC09D'
         name='Create React App'
       >
@@ -54,7 +50,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/nextjs-guide'
+        href='/getting-started/nextjs-guide'
         accentColor='black'
         name='Next.js'
       >
@@ -62,7 +58,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/gatsby-guide'
+        href='/getting-started/gatsby-guide'
         accentColor='#663399'
         name='Gatsby'
       >
@@ -70,7 +66,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/blitzjs-guide'
+        href='/getting-started/blitzjs-guide'
         accentColor='#6700EB'
         name='BlitzJS'
       >
@@ -78,7 +74,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/redwoodjs-guide'
+        href='/getting-started/redwoodjs-guide'
         accentColor='#BF4722'
         name='RedwoodJS'
       >
@@ -86,7 +82,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/remix-guide'
+        href='/getting-started/remix-guide'
         accentColor='#121212'
         name='Remix'
       >
@@ -94,7 +90,7 @@ export const FrameworkLinks = () => {
       </FrameworkLink>
 
       <FrameworkLink
-        href='/guides/getting-started/vite-guide'
+        href='/getting-started/vite-guide'
         accentColor='#C07600'
         name='Vite'
       >

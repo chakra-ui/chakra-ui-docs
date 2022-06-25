@@ -7,7 +7,6 @@ interface SidebarCategoryProps extends BoxProps {
   opened?: boolean
   selected?: boolean
   children: ReactNode
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   contentRef?: RefObject<any>
 }
 
@@ -61,8 +60,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
         alignItems='center'
         justifyContent='space-between'
         userSelect='none'
-        color='teal.500'
-        _dark={{ color: 'teal.300' }}
+        color='accent'
       >
         {title}
       </chakra.p>
