@@ -24,7 +24,7 @@ export default function ComponentDocsLayout({ children, frontmatter }) {
         <Stack spacing='5'>
           <MDXComponents.p>{frontmatter.description}</MDXComponents.p>
           <MDXComponents.ComponentLinks
-            theme={{ componentName: id }}
+            theme={id !== 'layout' && { componentName: id }}
             github={{ package: id }}
             npm={{ package: frontmatter.package }}
           />
