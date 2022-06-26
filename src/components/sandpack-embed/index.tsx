@@ -19,6 +19,7 @@ type Props = BoxProps & {
   files: {
     [x: string]: string
   }
+  isHorizontal?: boolean
 }
 
 const SandpackEmbed = ({
@@ -28,6 +29,7 @@ const SandpackEmbed = ({
   editorOptions,
   previewOptions,
   files,
+  isHorizontal = false,
 }: Props) => {
   return (
     <SandpackProvider
@@ -60,12 +62,15 @@ const SandpackEmbed = ({
         sx={{
           '--sp-layout-height': 'auto',
         }}
-        style={{ flexDirection: 'column-reverse' }}
+        style={{ flexDirection: isHorizontal ? 'row' : 'column-reverse' }}
         {...layoutOptions}
       >
         <SandpackCodeEditor
           showLineNumbers
-          style={{ maxHeight: '500px' }}
+          style={{
+            maxHeight: isHorizontal ? '600px' : '500px',
+            minWidth: '400px',
+          }}
           {...editorOptions}
         />
         <Box

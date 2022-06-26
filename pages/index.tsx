@@ -320,6 +320,7 @@ const HomePage = ({
                   '/App.tsx': App,
                   '/index.tsx': Index,
                 }}
+                isHorizontal
               />
             </Box>
           </Container>
