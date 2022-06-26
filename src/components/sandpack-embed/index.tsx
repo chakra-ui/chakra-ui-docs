@@ -13,7 +13,7 @@ import { nightOwl } from '@codesandbox/sandpack-themes'
 type Props = BoxProps & {
   dependencies?: Record<string, string>
   devDependencies?: Record<string, string>
-  layoutOptions?: BoxProps & SandpackLayoutProps
+  layoutOptions?: SandpackLayoutProps
   editorOptions?: CodeEditorProps
   previewOptions?: PreviewProps
   files: {
@@ -57,16 +57,21 @@ const SandpackEmbed = ({
     >
       <Box
         as={SandpackLayout}
-        sx={{ '& > *': { height: '600px !important' } }}
+        sx={{
+          '--sp-layout-height': 'auto',
+        }}
+        style={{ flexDirection: 'column-reverse' }}
         {...layoutOptions}
       >
         <SandpackCodeEditor
           showLineNumbers
-          style={{ flexBasis: '20%' }}
+          style={{ maxHeight: '500px' }}
           {...editorOptions}
         />
-        <SandpackPreview
-          style={{ width: '100%', zIndex: 0 }}
+        <Box
+          as={SandpackPreview}
+          minHeight='350px'
+          sx={{ '& iframe': { flex: 'initial', flexGrow: 1 } }}
           {...previewOptions}
         />
       </Box>
