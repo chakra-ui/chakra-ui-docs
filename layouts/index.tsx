@@ -28,7 +28,7 @@ export default function Layout(props: {
     default: <PageContainer frontmatter={frontMatter} {...rest} />,
   }
 
-  if (slug === '/docs/components') return layoutMap.docs
+  if (slug === '/docs/components' || slug === '/blog') return layoutMap.docs
 
   const layout = Object.entries(layoutMap).find(([path]) => {
     return slug?.startsWith(`/${path}`)

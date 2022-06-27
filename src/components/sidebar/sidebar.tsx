@@ -18,6 +18,7 @@ import {
   FaTools,
   FaGlobe,
   FaCompass,
+  FaReadme,
 } from 'react-icons/fa'
 import { BsFillGridFill } from 'react-icons/bs'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
@@ -179,6 +180,11 @@ export const mainNavLinks = [
     icon: <FaFileAlt />,
     href: '/changelog',
     label: 'Changelog',
+  },
+  {
+    icon: <FaReadme />,
+    href: '/blog',
+    label: 'Blog',
   },
 ]
 
