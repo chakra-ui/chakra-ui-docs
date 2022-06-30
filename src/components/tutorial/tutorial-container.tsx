@@ -25,6 +25,7 @@ import SEO from 'components/seo'
 import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
 import { ErrorBoundary } from 'react-error-boundary'
+import { nightOwl } from '@codesandbox/sandpack-themes'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -135,11 +136,15 @@ function TutorialContainer({
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/* @ts-ignore - sandpack has not yet fully provided React 18 support */}
             <SandpackProvider
+              files={files}
               customSetup={{
-                files,
                 dependencies,
               }}
               template='react-ts'
+              theme={nightOwl}
+              style={{
+                color: 'inherit',
+              }}
             >
               <div>
                 <HStack spacing={0}>
@@ -174,7 +179,6 @@ function TutorialContainer({
                   </Box>
                   <Box minW={{ base: '60%', xl: '65%' }}>
                     <SandpackLayout
-                      theme={'night-owl'}
                       style={{
                         borderRadius: 0,
                         borderTop: 'none',
@@ -184,11 +188,11 @@ function TutorialContainer({
                       <Stack h='calc(100vh - 4.5rem)' w={'full'}>
                         <SandpackCodeEditor
                           showLineNumbers
-                          customStyle={{
+                          style={{
                             height: '50%',
                           }}
                         />
-                        <SandpackPreview customStyle={{ minHeight: '50%' }} />
+                        <SandpackPreview style={{ minHeight: '50%' }} />
                       </Stack>
                     </SandpackLayout>
                   </Box>

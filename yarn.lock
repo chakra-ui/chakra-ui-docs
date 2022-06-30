@@ -981,18 +981,18 @@
     style-mod "^4.0.0"
     w3c-keyname "^2.2.4"
 
-"@codesandbox/sandpack-client@^0.19.1":
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-client/-/sandpack-client-0.19.1.tgz#5ccfd37c9b37b483f3636fa5ed3a7f153752f7c6"
-  integrity sha512-qXzp6HkoXVubl0/z9+65T8O1zjWU4BjxRvr6uyl9IACKZPMr8QGXfULdLNzJZBbHzo7mJcVwEYDO2Gzz375EZw==
+"@codesandbox/sandpack-client@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-client/-/sandpack-client-1.2.2.tgz#e0b79c52dcbc0b622f93527dc9ff3b163467e14a"
+  integrity sha512-sTPQVS7mzpEm2ttpHFFSqkGd1A1tBZn7UTZwIjBNCXKHywrt9o7MyrdhUuS03J7MyXN+HSJ55Vz+OGD1Wv4ejQ==
   dependencies:
     codesandbox-import-utils "^1.2.3"
     lodash.isequal "^4.5.0"
 
-"@codesandbox/sandpack-react@0.19.6":
-  version "0.19.6"
-  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-react/-/sandpack-react-0.19.6.tgz#e6d690953933c60e9f33d5480a8ac2cf7d22bc02"
-  integrity sha512-8moUywJ4v+x/lt3GlBDBA8FsD/nnxoUaLi2J/Gvz/d5OMhhwGynhgpjRmfdrHL1qgr9SR/TZ76d31uAYl10Blw==
+"@codesandbox/sandpack-react@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-react/-/sandpack-react-1.2.2.tgz#4799c2e2e8d42387173fa70ce47026267a9fd6dd"
+  integrity sha512-XeKmZWeIAx/jGoviTNRzBBEqfx/6UQC/hdFfiA0SoWq/KHvpe3NlOcN4vGzumU9Rygk08K0veuqh+P6GenwWjg==
   dependencies:
     "@code-hike/classer" "^0.0.0-aa6efee"
     "@codemirror/closebrackets" "^0.19.0"
@@ -1008,13 +1008,19 @@
     "@codemirror/matchbrackets" "^0.19.3"
     "@codemirror/state" "^0.19.6"
     "@codemirror/view" "^0.19.32"
-    "@codesandbox/sandpack-client" "^0.19.1"
+    "@codesandbox/sandpack-client" "^1.2.2"
     "@react-hook/intersection-observer" "^3.1.1"
+    "@stitches/core" "^1.2.6"
     codesandbox-import-util-types "^2.2.3"
     lodash.isequal "^4.5.0"
     lz-string "^1.4.4"
     react-devtools-inline "4.4.0"
     react-is "^17.0.2"
+
+"@codesandbox/sandpack-themes@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-themes/-/sandpack-themes-1.0.0.tgz#9792edfd41076448674e79fda42bcc9cadc6d8c9"
+  integrity sha512-t0T6b0jIA46u9MtPmTR7nQye3CJgpzauK70NslxSuRUH7W2J39gDMbcw0GuCgjmRqiM/4bBa401OKRRKDzUPpQ==
 
 "@contentlayer/cli@0.2.4":
   version "0.2.4"
@@ -1972,6 +1978,11 @@
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
+
+"@stitches/core@^1.2.6":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.8.tgz#dce3b8fdc764fbc6dbea30c83b73bfb52cf96173"
+  integrity sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==
 
 "@swc/core-android-arm-eabi@1.2.182":
   version "1.2.182"
@@ -3680,7 +3691,7 @@ es5-ext@^0.10.35, es5-ext@^0.10.50:
 es6-iterator@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.3.tgz#a7de889141a05a94b0854403b2d0a0fbfa98f3b7"
-  integrity sha1-p96IkUGgWpSwhUQDstCg+/qY87c=
+  integrity sha512-zw4SRzoUkd+cl+ZoE15A9o1oQd920Bb0iOJMQkQhl3jNc03YqVjAhG7scf9C5KWRU/R13Orf588uCC6525o02g==
   dependencies:
     d "1"
     es5-ext "^0.10.35"
@@ -5464,7 +5475,7 @@ lodash.isboolean@^3.0.3:
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
 
 lodash.isinteger@^4.0.4:
   version "4.0.4"
@@ -5592,7 +5603,7 @@ lru-cache@^6.0.0:
 lz-string@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
-  integrity sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=
+  integrity sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==
 
 magic-string@^0.25.0, magic-string@^0.25.1:
   version "0.25.9"
