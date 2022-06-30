@@ -26,7 +26,7 @@
     "@chakra-ui/skip-nav": "^2.0.2",
     "@chakra-ui/theme-tools": "^2.0.2",
     "@chakra-ui/utils": "^2.0.2",
-    "@codesandbox/sandpack-react": "1.1.5",
+    "@codesandbox/sandpack-react": "^1.2.2",
     "@codesandbox/sandpack-themes": "^1.0.0",
     "@docsearch/react": "^1.0.0-alpha.27",
     "@docusaurus/utils": "2.0.0-alpha.69",
