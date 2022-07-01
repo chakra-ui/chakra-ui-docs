@@ -22,9 +22,18 @@ root.render(
   </ChakraProvider>
 );`
 
-function CodeBlock(props) {
+function CodeBlock({ isHomePage }: { isHomePage: boolean }) {
   const { theme } = useSandpackTheme()
   const { isOpen, getButtonProps } = useDisclosure()
+
+  const isVisibleEditor = isHomePage || isOpen
+
+  const defaultLayoutStyles = {
+    editorAndPreview: {
+      flex: '1 1 50%',
+      minWidth: '400px',
+    },
+  }
 
   return (
     <Box
@@ -32,42 +41,44 @@ function CodeBlock(props) {
       sx={{
         '--sp-layout-height': 'auto',
       }}
-      style={{ flexDirection: 'column' }}
+      style={{ flexDirection: isHomePage ? 'row-reverse' : 'column' }}
     >
       <Box
         as={SandpackPreview}
         actionsChildren={
-          <Button
-            bg='teal.200'
-            color='gray.800'
-            fontWeight={'bold'}
-            size='xs'
-            alignSelf={'center'}
-            variant={'solid'}
-            _hover={{
-              bg: 'teal.300',
-            }}
-            {...getButtonProps()}
-          >
-            {isOpen ? 'Hide' : 'Show'} Code
-          </Button>
+          !isHomePage && (
+            <Button
+              bg='teal.200'
+              color='gray.800'
+              fontWeight={'bold'}
+              size='xs'
+              alignSelf={'center'}
+              variant={'solid'}
+              _hover={{
+                bg: 'teal.300',
+              }}
+              {...getButtonProps()}
+            >
+              {isOpen ? 'Hide' : 'Show'} Code
+            </Button>
+          )
         }
         sx={{
           '& iframe': { flex: 'initial', flexGrow: 1 },
           '& > .sp-preview-container': {
-            paddingBottom: '12',
+            paddingBottom: !isHomePage && '12',
             bg: theme.colors.surface1,
           },
         }}
-        style={{ flex: 'initial' }}
+        style={{ ...defaultLayoutStyles.editorAndPreview }}
       />
 
       <SandpackCodeEditor
         showLineNumbers
         style={{
-          maxHeight: isOpen ? '500px' : '0px',
-          border: !isOpen && '0',
-          minWidth: '400px',
+          maxHeight: isVisibleEditor ? '500px' : '0px',
+          border: !isVisibleEditor && '0',
+          ...defaultLayoutStyles.editorAndPreview,
         }}
       />
     </Box>
@@ -75,9 +86,13 @@ function CodeBlock(props) {
 }
 
 export default function SandpackCodeBlock(props) {
-  const { children } = props.children.props
+  const { children, homeAppFile, ...rest } = props
 
-  const rawCode = children.trim()
+  const MDXcode = children ? children.props.children : homeAppFile
+
+  const isHomePageEmbed = !!homeAppFile
+
+  const rawCode = MDXcode.trim()
   return (
     <SandpackProvider
       theme={nightOwl}
@@ -105,7 +120,7 @@ export default function SandpackCodeBlock(props) {
         },
       }}
     >
-      <CodeBlock {...props} />
+      <CodeBlock isHomePage={isHomePageEmbed} {...rest} />
     </SandpackProvider>
   )
 }
