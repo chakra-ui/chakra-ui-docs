@@ -24,6 +24,7 @@ import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
 import { JoinCommunityCards } from 'components/community-card'
 import NextImage from 'next/image'
+import SandpackCodeBlock from './sandpack-codeblock'
 
 const { Alert, AspectRatio, Box, chakra, Kbd, Link } = Chakra
 
@@ -67,6 +68,13 @@ export const MDXComponents = {
         />
       )
     }
+
+    // TODO: Remove this check and the type value in production
+    if (props.children.props.type === 'sp-test') {
+      return <SandpackCodeBlock {...props} />
+    }
+
+    // TODO: Replace this return with `return <SandpackCodeBlock {...props} />` in production
     return <CodeBlock {...props} />
   },
   kbd: Kbd,
