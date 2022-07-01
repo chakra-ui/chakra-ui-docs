@@ -22,11 +22,16 @@ root.render(
   </ChakraProvider>
 );`
 
-function CodeBlock({ isHomePage }: { isHomePage: boolean }) {
+function CodeBlock(props) {
+  const { children, homeAppFile } = props
+
   const { theme } = useSandpackTheme()
   const { isOpen, getButtonProps } = useDisclosure()
 
-  const isVisibleEditor = isHomePage || isOpen
+  const isHomePage = !!homeAppFile
+  const isLivePreview = children.props.live !== 'false'
+
+  const isVisibleEditor = isHomePage || !isLivePreview || isOpen
 
   const defaultLayoutStyles = {
     editorAndPreview: {
@@ -43,38 +48,41 @@ function CodeBlock({ isHomePage }: { isHomePage: boolean }) {
       }}
       style={{ flexDirection: isHomePage ? 'row-reverse' : 'column' }}
     >
-      <Box
-        as={SandpackPreview}
-        actionsChildren={
-          !isHomePage && (
-            <Button
-              bg='teal.200'
-              color='gray.800'
-              fontWeight={'bold'}
-              size='xs'
-              alignSelf={'center'}
-              variant={'solid'}
-              _hover={{
-                bg: 'teal.300',
-              }}
-              {...getButtonProps()}
-            >
-              {isOpen ? 'Hide' : 'Show'} Code
-            </Button>
-          )
-        }
-        sx={{
-          '& iframe': { flex: 'initial', flexGrow: 1 },
-          '& > .sp-preview-container': {
-            paddingBottom: !isHomePage && '12',
-            bg: theme.colors.surface1,
-          },
-        }}
-        style={{ ...defaultLayoutStyles.editorAndPreview }}
-      />
+      {isLivePreview && (
+        <Box
+          as={SandpackPreview}
+          actionsChildren={
+            !isHomePage && (
+              <Button
+                bg='teal.200'
+                color='gray.800'
+                fontWeight={'bold'}
+                size='xs'
+                alignSelf={'center'}
+                variant={'solid'}
+                _hover={{
+                  bg: 'teal.300',
+                }}
+                {...getButtonProps()}
+              >
+                {isOpen ? 'Hide' : 'Show'} Code
+              </Button>
+            )
+          }
+          sx={{
+            '& iframe': { flex: 'initial', flexGrow: 1 },
+            '& > .sp-preview-container': {
+              paddingBottom: !isHomePage && '12',
+              bg: theme.colors.surface1,
+            },
+          }}
+          style={{ ...defaultLayoutStyles.editorAndPreview }}
+        />
+      )}
 
       <SandpackCodeEditor
         showLineNumbers
+        readOnly={!isLivePreview}
         style={{
           maxHeight: isVisibleEditor ? '500px' : '0px',
           border: !isVisibleEditor && '0',
@@ -86,11 +94,9 @@ function CodeBlock({ isHomePage }: { isHomePage: boolean }) {
 }
 
 export default function SandpackCodeBlock(props) {
-  const { children, homeAppFile, ...rest } = props
+  const { homeAppFile, ...rest } = props
 
-  const MDXcode = children ? children.props.children : homeAppFile
-
-  const isHomePageEmbed = !!homeAppFile
+  const MDXcode = props.children ? props.children.props.children : homeAppFile
 
   const rawCode = MDXcode.trim()
   return (
@@ -120,7 +126,7 @@ export default function SandpackCodeBlock(props) {
         },
       }}
     >
-      <CodeBlock isHomePage={isHomePageEmbed} {...rest} />
+      <CodeBlock {...rest} />
     </SandpackProvider>
   )
 }
