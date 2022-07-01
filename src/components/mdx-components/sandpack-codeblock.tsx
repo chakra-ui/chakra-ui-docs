@@ -8,7 +8,7 @@ import {
 } from '@codesandbox/sandpack-react'
 import { nightOwl } from '@codesandbox/sandpack-themes'
 
-const INDEX_CODE = `import * as React from "react";
+export const DEFAULT_INDEX_CODE = `import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -82,7 +82,7 @@ export default function SandpackCodeBlock(props) {
     <SandpackProvider
       theme={nightOwl}
       template='react-ts'
-      files={{ '/index.tsx': INDEX_CODE, '/App.tsx': rawCode }}
+      files={{ '/index.tsx': DEFAULT_INDEX_CODE, '/App.tsx': rawCode }}
       options={{
         visibleFiles: ['/App.tsx'],
       }}
