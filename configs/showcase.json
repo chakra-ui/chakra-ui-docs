@@ -428,6 +428,13 @@
       "url": "https://juliowerner.com",
       "image": "showcases/websites/Júlio-Werner.png",
       "type": "websites"
+    },
+    {
+      "name": "itsrakesh - blog",
+      "description": "log website built with Chakra UI and NextJs.",
+      "url": "https://blog.itsrakesh.co/",
+      "image": "showcases/websites/itsrakesh---blog.png",
+      "type": "websites"
     }
   ],
   "libraries": [
