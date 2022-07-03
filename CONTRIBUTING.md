@@ -137,12 +137,14 @@ https://github.com/settings/tokens/new?description=Chakra+website+development to
 create a new personal access token. After creating the token, be sure to copy
 the token string to your clipboard.
 
-You'll then run the following command in the terminal that you'll start the docs
-from:
+You'll then run the following command in the terminal at the root of the
+project:
 
 ```sh
-export GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>
+echo "GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>" >> .env
 ```
+
+> The `.env` file is already ignored by git.
 
 ## License
 
