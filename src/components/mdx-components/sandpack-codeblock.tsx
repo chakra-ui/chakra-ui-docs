@@ -29,7 +29,7 @@ function CodeBlock(props) {
   const { isOpen, getButtonProps } = useDisclosure()
 
   const isHomePage = !!homeAppFile
-  const isLivePreview = children.props.live !== 'false'
+  const isLivePreview = isHomePage || children.props.live !== 'false'
 
   const isVisibleEditor = isHomePage || !isLivePreview || isOpen
 
