@@ -46,7 +46,10 @@ function CodeBlock(props) {
       sx={{
         '--sp-layout-height': 'auto',
       }}
-      style={{ flexDirection: isHomePage ? 'row-reverse' : 'column' }}
+      style={{
+        flexDirection: isHomePage ? 'row-reverse' : 'column',
+        fontWeight: 'bold',
+      }}
     >
       {isLivePreview && (
         <Box
