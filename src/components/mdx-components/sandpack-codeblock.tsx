@@ -94,9 +94,9 @@ function CodeBlock(props) {
 }
 
 export default function SandpackCodeBlock(props) {
-  const { homeAppFile, ...rest } = props
-
-  const MDXcode = props.children ? props.children.props.children : homeAppFile
+  const MDXcode = props.children
+    ? props.children.props.children
+    : props.homeAppFile
 
   const rawCode = MDXcode.trim()
   return (
@@ -126,7 +126,7 @@ export default function SandpackCodeBlock(props) {
         },
       }}
     >
-      <CodeBlock {...rest} />
+      <CodeBlock {...props} />
     </SandpackProvider>
   )
 }
