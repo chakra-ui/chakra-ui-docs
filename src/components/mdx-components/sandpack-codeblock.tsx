@@ -72,6 +72,7 @@ function CodeBlock(props) {
             )
           }
           sx={{
+            '--sp-zIndices-top': '2',
             '& iframe': { flex: 'initial', flexGrow: 1 },
             '& > .sp-preview-container': {
               paddingBottom: !isHomePage && '12',
