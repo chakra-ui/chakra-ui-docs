@@ -33,11 +33,9 @@ function CodeBlock(props) {
 
   const isVisibleEditor = isHomePage || !isLivePreview || isOpen
 
-  const defaultLayoutStyles = {
-    editorAndPreview: {
-      flex: '1 1 50%',
-      minWidth: '400px',
-    },
+  const editorAndPreviewStyles = {
+    flex: '1 1 50%',
+    minWidth: '400px',
   }
 
   return (
@@ -79,7 +77,7 @@ function CodeBlock(props) {
               bg: theme.colors.surface1,
             },
           }}
-          style={{ ...defaultLayoutStyles.editorAndPreview }}
+          style={{ ...editorAndPreviewStyles }}
         />
       )}
 
@@ -89,7 +87,7 @@ function CodeBlock(props) {
         style={{
           maxHeight: isVisibleEditor ? '500px' : '0px',
           border: !isVisibleEditor && '0',
-          ...defaultLayoutStyles.editorAndPreview,
+          ...editorAndPreviewStyles,
         }}
       />
     </Box>
