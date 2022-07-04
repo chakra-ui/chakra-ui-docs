@@ -83,14 +83,13 @@ function CodeBlock(props) {
           style={{ ...editorAndPreviewStyles }}
         />
       )}
-      <Box position='relative'>
+      <Box position='relative' {...editorAndPreviewStyles}>
         <SandpackCodeEditor
           showLineNumbers
           readOnly={!isLivePreview}
           style={{
             maxHeight: isVisibleEditor ? '500px' : '0px',
             border: !isVisibleEditor && '0',
-            ...editorAndPreviewStyles,
           }}
         />
         {!isHomePage && <CopyButton top='13px' fontWeight='bold' code={code} />}
