@@ -44,6 +44,7 @@ function CodeBlock(props) {
       as={SandpackLayout}
       sx={{
         '--sp-layout-height': 'auto',
+        marginY: !isHomePage && 8,
       }}
       style={{
         flexDirection: isHomePage ? 'row-reverse' : 'column',
