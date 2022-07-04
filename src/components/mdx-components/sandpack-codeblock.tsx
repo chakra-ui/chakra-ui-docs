@@ -4,6 +4,7 @@ import {
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
+  useActiveCode,
   useSandpackTheme,
 } from '@codesandbox/sandpack-react'
 import { nightOwl } from '@codesandbox/sandpack-themes'
@@ -24,10 +25,12 @@ root.render(
 );`
 
 function CodeBlock(props) {
-  const { children, homeAppFile, code } = props
+  const { children, homeAppFile } = props
 
   const { theme } = useSandpackTheme()
   const { isOpen, getButtonProps } = useDisclosure()
+
+  const { code } = useActiveCode()
 
   const isHomePage = !!homeAppFile
   const isLivePreview = isHomePage || children.props.live !== 'false'
@@ -131,7 +134,7 @@ export default function SandpackCodeBlock(props) {
         },
       }}
     >
-      <CodeBlock code={MDXcode} {...props} />
+      <CodeBlock {...props} />
     </SandpackProvider>
   )
 }
