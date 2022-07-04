@@ -7,6 +7,7 @@ import {
   useSandpackTheme,
 } from '@codesandbox/sandpack-react'
 import { nightOwl } from '@codesandbox/sandpack-themes'
+import CopyButton from './codeblock/copy-button'
 
 export const DEFAULT_INDEX_CODE = `import * as React from "react";
 import { createRoot } from "react-dom/client";
@@ -23,7 +24,7 @@ root.render(
 );`
 
 function CodeBlock(props) {
-  const { children, homeAppFile } = props
+  const { children, homeAppFile, code } = props
 
   const { theme } = useSandpackTheme()
   const { isOpen, getButtonProps } = useDisclosure()
@@ -80,16 +81,18 @@ function CodeBlock(props) {
           style={{ ...editorAndPreviewStyles }}
         />
       )}
-
-      <SandpackCodeEditor
-        showLineNumbers
-        readOnly={!isLivePreview}
-        style={{
-          maxHeight: isVisibleEditor ? '500px' : '0px',
-          border: !isVisibleEditor && '0',
-          ...editorAndPreviewStyles,
-        }}
-      />
+      <Box position='relative'>
+        <SandpackCodeEditor
+          showLineNumbers
+          readOnly={!isLivePreview}
+          style={{
+            maxHeight: isVisibleEditor ? '500px' : '0px',
+            border: !isVisibleEditor && '0',
+            ...editorAndPreviewStyles,
+          }}
+        />
+        {!isHomePage && <CopyButton top='13px' fontWeight='bold' code={code} />}
+      </Box>
     </Box>
   )
 }
@@ -127,7 +130,7 @@ export default function SandpackCodeBlock(props) {
         },
       }}
     >
-      <CodeBlock {...props} />
+      <CodeBlock code={MDXcode} {...props} />
     </SandpackProvider>
   )
 }
