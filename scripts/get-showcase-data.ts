@@ -84,6 +84,7 @@ async function main() {
       // If it's youtube's url, use a thumbnail instead of a screenshot
       if (isYoutubeVideoUrl(url) || isYoutubeShortUrl(url)) {
         target.image = getYouTubeThumbnail(url)
+        currentDataTarget.push(target)
         continue
       }
 
@@ -94,6 +95,7 @@ async function main() {
           localDirToPreviewImageDir,
           key,
         )
+        currentDataTarget.push(target)
         continue
       }
 
