@@ -5,7 +5,6 @@ import {
   SandpackPreview,
   SandpackProvider,
   useActiveCode,
-  useSandpackTheme,
 } from '@codesandbox/sandpack-react'
 import { nightOwl } from '@codesandbox/sandpack-themes'
 import CopyButton from './codeblock/copy-button'
@@ -52,6 +51,8 @@ function CodeBlock(props) {
       style={{
         flexDirection: isHomePage ? 'row-reverse' : 'column',
         fontWeight: 'bold',
+        borderColor: 'transparent',
+        borderRadius: '8px',
       }}
     >
       {isLivePreview && (
@@ -80,7 +81,6 @@ function CodeBlock(props) {
             '& iframe': { flex: 'initial', flexGrow: 1 },
             '& > .sp-preview-container': {
               paddingBottom: !isHomePage && '12',
-              bg: theme.colors.surface1,
             },
           }}
           style={{ ...editorAndPreviewStyles }}
