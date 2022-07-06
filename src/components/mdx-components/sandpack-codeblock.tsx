@@ -95,7 +95,7 @@ function CodeBlock(props) {
             border: !isVisibleEditor && '0',
           }}
         />
-        {!isHomePage && <CopyButton top='13px' fontWeight='bold' code={code} />}
+        {!isHomePage && <CopyButton top='14px' fontWeight='bold' code={code} />}
       </Box>
     </Box>
   )
