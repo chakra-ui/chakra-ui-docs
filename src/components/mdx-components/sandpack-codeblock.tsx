@@ -90,6 +90,7 @@ function CodeBlock(props) {
         <SandpackCodeEditor
           showLineNumbers
           readOnly={!isLivePreview}
+          showReadOnly={false}
           style={{
             maxHeight: isVisibleEditor ? '500px' : '0px',
             border: !isVisibleEditor && '0',
