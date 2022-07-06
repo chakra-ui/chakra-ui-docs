@@ -223,6 +223,13 @@
       "url": "https://publicapis.sznm.dev",
       "image": "showcases/projects/Public-APIs.png",
       "type": "projects"
+    },
+    {
+      "name": "Dokz",
+      "description": "Effortless documentation with Next.js and MDX.",
+      "url": "https://github.com/remorses/dokz",
+      "image": "showcases/projects/Dokz.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -621,6 +628,20 @@
       "url": "https://www.figma.com/community/plugin/1103648664059257410/Supa-Palette",
       "image": "showcases/tools/Supa-Palette-Plugin.png",
       "type": "tools"
+    },
+    {
+      "name": "eslint-plugin-chakra-ui",
+      "description": "SLint rules for Chakra UI, such as enforcing the order of props to be semantic",
+      "url": "https://github.com/Monchi/eslint-plugin-chakra-ui",
+      "image": "showcases/tools/eslint-plugin-chakra-ui.png",
+      "type": "tools"
+    },
+    {
+      "name": "Chakra UI Prose",
+      "description": " custom Chakra UI component that adds ready-made styles for rendering remote HTML content.",
+      "url": "https://github.com/nikolovlazar/chakra-ui-prose",
+      "image": "showcases/tools/Chakra-UI-Prose.png",
+      "type": "tools"
     }
   ],
   "articles": [
@@ -771,6 +792,55 @@
       "description": "",
       "url": "https://www.chakrauiforbeginners.com/",
       "image": "showcases/videos/Chakra-UI-for-Beginners.png",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra UI crash course",
+      "description": "",
+      "url": "https://youtu.be/hJ873mLhmFQ",
+      "image": "https://img.youtube.com/vi/hJ873mLhmFQ/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra Shorts #1 - Dynamic Shadow Image",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=HMTyQjASff4",
+      "image": "https://img.youtube.com/vi/HMTyQjASff4/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra Shorts #2 - Custom Ring Colors",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=7p16X1JkEE0",
+      "image": "https://img.youtube.com/vi/7p16X1JkEE0/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Maintaining Chakra UI",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=0TLxtE_GCbM",
+      "image": "https://img.youtube.com/vi/0TLxtE_GCbM/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "How to use Chakra UI's Default Theme",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=KOCAnM7HJ4U",
+      "image": "https://img.youtube.com/vi/KOCAnM7HJ4U/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Chakra UI and Gatsby - Getting Started",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=hXM9Ju_NIpU",
+      "image": "https://img.youtube.com/vi/hXM9Ju_NIpU/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "How to enable Right-to-Left (RTL) support using Chakra UI",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=PzEHoqLj4OM",
+      "image": "https://img.youtube.com/vi/PzEHoqLj4OM/maxresdefault.jpg",
       "type": "videos"
     }
   ]
