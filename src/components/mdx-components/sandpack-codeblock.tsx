@@ -72,7 +72,7 @@ function CodeBlock(props) {
                 }}
                 {...getButtonProps()}
               >
-                {isOpen ? 'Hide' : 'Show'} Code
+                {isVisibleEditor ? 'Hide' : 'Show'} Code
               </Button>
             )
           }
