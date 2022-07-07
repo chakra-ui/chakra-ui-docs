@@ -26,7 +26,6 @@ root.render(
 function CodeBlock(props) {
   const { children, homeAppFile } = props
 
-  const { theme } = useSandpackTheme()
   const { isOpen, getButtonProps } = useDisclosure()
 
   const { code } = useActiveCode()
