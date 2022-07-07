@@ -43,7 +43,8 @@ const EditableNotice = (props: BoxProps) => {
 }
 
 function ReactLiveBlock({ editable, rawCode, ...rest }) {
-  const [editorCode, setEditorCode] = useState(rawCode.trim())
+  const code = rawCode.trim().replace('// prettier-ignore', '')
+  const [editorCode, setEditorCode] = useState(code.trim())
   const onChange = (newCode) => setEditorCode(newCode.trim())
   const liveProviderProps = {
     code: editorCode,
