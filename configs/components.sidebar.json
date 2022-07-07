@@ -201,6 +201,10 @@
             {
               "title": "Heading",
               "path": "/docs/components/heading"
+            },
+            {
+              "title": "Highlight",
+              "path": "/docs/components/highlight"
             }
           ]
         },
