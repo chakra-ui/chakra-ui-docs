@@ -1,4 +1,4 @@
-import { Box, Button, useDisclosure } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import {
   SandpackCodeEditor,
   SandpackLayout,
@@ -26,14 +26,10 @@ root.render(
 function CodeBlock(props) {
   const { children, homeAppFile } = props
 
-  const { isOpen, getButtonProps } = useDisclosure()
-
   const { code } = useActiveCode()
 
   const isHomePage = !!homeAppFile
   const isLivePreview = isHomePage || children.props.live !== 'false'
-
-  const isVisibleEditor = isHomePage || !isLivePreview || isOpen
 
   const editorAndPreviewStyles = {
     flex: '1 1 50%',
@@ -57,30 +53,9 @@ function CodeBlock(props) {
       {isLivePreview && (
         <Box
           as={SandpackPreview}
-          actionsChildren={
-            !isHomePage && (
-              <Button
-                bg='teal.200'
-                color='gray.800'
-                fontWeight={'bold'}
-                size='xs'
-                alignSelf={'center'}
-                variant={'solid'}
-                _hover={{
-                  bg: 'teal.300',
-                }}
-                {...getButtonProps()}
-              >
-                {isVisibleEditor ? 'Hide' : 'Show'} Code
-              </Button>
-            )
-          }
           sx={{
             '--sp-zIndices-top': '2',
             '& iframe': { flex: 'initial', flexGrow: 1 },
-            '& > .sp-preview-container': {
-              paddingBottom: !isHomePage && '12',
-            },
           }}
           style={{ ...editorAndPreviewStyles }}
         />
@@ -92,8 +67,7 @@ function CodeBlock(props) {
           showReadOnly={false}
           style={{
             // maxHeight should only be set if there is a preview
-            maxHeight: isLivePreview && (isVisibleEditor ? '500px' : '0px'),
-            border: !isVisibleEditor && '0',
+            maxHeight: isLivePreview && '500px',
           }}
         />
         {!isHomePage && <CopyButton top='14px' fontWeight='bold' code={code} />}
