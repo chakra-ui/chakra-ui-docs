@@ -92,7 +92,8 @@ function CodeBlock(props) {
           readOnly={!isLivePreview}
           showReadOnly={false}
           style={{
-            maxHeight: isVisibleEditor ? '500px' : '0px',
+            // maxHeight should only be set if there is a preview
+            maxHeight: isLivePreview && (isVisibleEditor ? '500px' : '0px'),
             border: !isVisibleEditor && '0',
           }}
         />
