@@ -16,6 +16,7 @@ Chakra UI exports 4 components for Form Control:
   children.
 - **`FormLabel`**: The label of a form section. The usage is similar to
   [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+  `htmlFor` is set by default for children input.
 - **`FormHelperText`**: The message that tells users more details about the form
   section.
 - **`FormErrorMessage`**: The message that shows up when an error occurs.
@@ -33,8 +34,8 @@ import {
 
 ```jsx
 <FormControl>
-  <FormLabel htmlFor='email'>Email address</FormLabel>
-  <Input id='email' type='email' />
+  <FormLabel>Email address</FormLabel>
+  <Input type='email' />
   <FormHelperText>We'll never share your email.</FormHelperText>
 </FormControl>
 ```
@@ -71,9 +72,8 @@ function errorMessageExample() {
 
   return (
     <FormControl isInvalid={isError}>
-      <FormLabel htmlFor='email'>Email</FormLabel>
+      <FormLabel>Email</FormLabel>
       <Input
-        id='email'
         type='email'
         value={input}
         onChange={handleInputChange}
@@ -100,8 +100,8 @@ indicate that a field is optional you can add `optionalIndicator` to the
 
 ```jsx
 <FormControl isRequired>
-  <FormLabel htmlFor='first-name'>First name</FormLabel>
-  <Input id='first-name' placeholder='First name' />
+  <FormLabel>First name</FormLabel>
+  <Input placeholder='First name' />
 </FormControl>
 ```
 
@@ -109,8 +109,8 @@ indicate that a field is optional you can add `optionalIndicator` to the
 
 ```jsx
 <FormControl>
-  <FormLabel htmlFor='country'>Country</FormLabel>
-  <Select id='country' placeholder='Select country'>
+  <FormLabel>Country</FormLabel>
+  <Select placeholder='Select country'>
     <option>United Arab Emirates</option>
     <option>Nigeria</option>
   </Select>
@@ -164,8 +164,8 @@ function FormikExample() {
           <Field name='name' validate={validateName}>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
-                <FormLabel htmlFor='name'>First name</FormLabel>
-                <Input {...field} id='name' placeholder='name' />
+                <FormLabel>First name</FormLabel>
+                <Input {...field} placeholder='name' />
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
             )}
