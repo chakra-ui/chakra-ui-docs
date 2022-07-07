@@ -442,6 +442,13 @@
       "url": "https://blog.itsrakesh.co/",
       "image": "showcases/websites/itsrakesh---blog.png",
       "type": "websites"
+    },
+    {
+      "name": "eduo Instrukcije",
+      "description": "latform for searching database of more than 6K questions and answers on school related questions for Croatian market. With over 200K+ monthly visits it is the biggest educational platform in Croatia.",
+      "url": "https://instrukcije.eduo.help/",
+      "image": "showcases/websites/eduo-Instrukcije.png",
+      "type": "websites"
     }
   ],
   "libraries": [
