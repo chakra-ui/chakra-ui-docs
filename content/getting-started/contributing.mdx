@@ -17,8 +17,6 @@ Here's the table of contents:
 - [Setup the Project](#setup-the-project)
   - [Commands](#commands)
 - [Updating the docs for new release](#updating-the-docs-for-new-release)
-- [Proposing new or changed API?](#proposing-new-or-changed-api)
-- [Making a Pull Request?](#making-a-pull-request)
   - [Commit Convention](#commit-convention)
   - [Steps to PR](#steps-to-pr)
 - [Want to write a blog post or tutorial](#want-to-write-a-blog-post-or-tutorial)
@@ -105,8 +103,6 @@ the following categories:
   usage of a lib or cli usage)
 - `build`: all changes regarding the build of the software, changes to
   dependencies or the addition of new dependencies
-- `test`: all changes regarding tests (adding new tests or changing existing
-  ones)
 - `ci`: all changes regarding the configuration of continuous integration (i.e.
   github actions, ci system)
 - `chore`: all changes to the repository that do not fit into any of the above
@@ -127,9 +123,9 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` and `yarn lint` to make sure
-   everything works as expected. Please note that you might have to run `yarn`
-   first in order to install all dependencies.
+   As you develop, you can run `yarn lint` to make sure everything works as
+   expected. Please note that you might have to run `yarn` first in order to
+   install all dependencies.
 
 ## Want to write a blog post or tutorial
 
@@ -149,12 +145,14 @@ https://github.com/settings/tokens/new?description=Chakra+website+development to
 create a new personal access token. After creating the token, be sure to copy
 the token string to your clipboard.
 
-You'll then run the following command in the terminal that you'll start the docs
-from:
+You'll then run the following command in the terminal at the root of the
+project:
 
 ```sh
-export GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>
+echo "GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>" >> .env
 ```
+
+> The `.env` file is already ignored by git.
 
 ## License
 
