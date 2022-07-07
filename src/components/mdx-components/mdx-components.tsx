@@ -69,12 +69,11 @@ export const MDXComponents = {
       )
     }
 
-    // TODO: Remove this check and the type value in production
-    if (props.children.props.type === 'sp-test') {
-      return <SandpackCodeBlock {...props} />
-    }
+    const language = props.children.props.className.replace(/language-/, '')
 
-    // TODO: Replace this return with `return <SandpackCodeBlock {...props} />` in production
+    if (['jsx', 'tsx'].includes(language))
+      return <SandpackCodeBlock {...props} />
+
     return <CodeBlock {...props} />
   },
   kbd: Kbd,
