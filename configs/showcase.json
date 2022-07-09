@@ -649,6 +649,13 @@
       "url": "https://github.com/nikolovlazar/chakra-ui-prose",
       "image": "showcases/tools/Chakra-UI-Prose.png",
       "type": "tools"
+    },
+    {
+      "name": "withTypeScale",
+      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
+      "image": "showcases/tools/withTypeScale.png",
+      "type": "tools"
     }
   ],
   "articles": [
