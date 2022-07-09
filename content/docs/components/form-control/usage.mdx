@@ -205,3 +205,7 @@ function FormikExample() {
 - If you render `FormErrorMessage` and `isInvalid` is `false` or `undefined`,
   `FormErrorMessage` won't be visible. The only way to make it visible is by
   passing `isInvalid` and setting it to `true`.
+  
+- You can still supply an `id` prop to `FormControl` that will override the randomly generated `id` and attach to the `for` attribute of the label and the `id` of the form element. (It also affects the `id` attribute of the label)
+
+- The combination of `htmlFor` and `id` are optional in which adding both will also override the generated `id` sent to the provider.
