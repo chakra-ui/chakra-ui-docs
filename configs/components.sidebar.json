@@ -204,7 +204,8 @@
             },
             {
               "title": "Highlight",
-              "path": "/docs/components/highlight"
+              "path": "/docs/components/highlight",
+              "new": true
             }
           ]
         },
