@@ -75,8 +75,8 @@ TypeScript version of `4.1.0` is required.
 ### Customize Theme
 
 If you intend to
-[customize the default theme](/docs/styled-system/customize-theme), you
-will need to pass your extended theme object as a prop to `ChakraProvider` as
+[customize the default theme](/docs/styled-system/customize-theme), you will
+need to pass your extended theme object as a prop to `ChakraProvider` as
 follows:
 
 ```jsx live=false
@@ -126,7 +126,7 @@ below.
    ```
 2. Add the addon to your configuration in `web/config/storybook.config.js`:
 
-   ```jsx live=false
+   ```js
    module.exports = {
      addons: [
        // ...
@@ -140,7 +140,7 @@ below.
    you will want to see them applied in Storybook as well. Enable them in `web/config/storybook.preview.js`
    like this:
 
-   ```jsx live=false
+   ```js
    const theme = require('../path/to/your/theme')
 
    export const parameters = {

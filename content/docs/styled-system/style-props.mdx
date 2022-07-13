@@ -17,7 +17,7 @@ each group.
 
 ### Margin and padding
 
-```jsx live=false
+```js
 import { Box } from "@chakra-ui/react"
 
 // m={2} refers to the value of `theme.space[2]`
@@ -56,7 +56,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Color and background color
 
-```jsx live=false
+```js
 import { Box } from "@chakra-ui/react"
 
 // picks up a nested color value using dot notation
@@ -82,7 +82,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Gradient
 
-```jsx live=false
+```js
 import { Box, Text } from "@chakra-ui/react"
 
 // adding linear gradient and color transitions
@@ -110,7 +110,7 @@ import { Box, Text } from "@chakra-ui/react"
 
 ### Typography
 
-```jsx live=false
+```js
 import { Text } from "@chakra-ui/react"
 
 // font-size of `theme.fontSizes.md`
@@ -140,7 +140,7 @@ import { Text } from "@chakra-ui/react"
 
 ### Layout, width and height
 
-```jsx live=false
+```js
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -177,7 +177,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Flexbox
 
-```jsx live=false
+```js
 import { Box, Flex } from "@chakra-ui/react"
 
 // verbose
@@ -214,7 +214,7 @@ import { Box, Flex } from "@chakra-ui/react"
 
 ### Grid Layout
 
-```jsx live=false
+```js
 import { Box, Grid } from "@chakra-ui/react"
 
 // verbose
@@ -247,7 +247,7 @@ import { Box, Grid } from "@chakra-ui/react"
 
 ### Background
 
-```jsx live=false
+```js
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -276,7 +276,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Borders
 
-```jsx live=false
+```js
 <Box border='1px' borderColor='gray.200'>
   Card
 </Box>
@@ -317,7 +317,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Border Radius
 
-```jsx live=false
+```js
 import { Button } from "@chakra-ui/react"
 
 // This button will have no right borderRadius
@@ -350,7 +350,7 @@ import { Button } from "@chakra-ui/react"
 
 ### Position
 
-```jsx live=false
+```js
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -378,52 +378,64 @@ import { Box } from "@chakra-ui/react"
 ### Shadow
 
 ```jsx
-<SimpleGrid
-  bg='gray.50'
-  columns={{ sm: 2, md: 4 }}
-  spacing='8'
-  p='10'
-  textAlign='center'
-  rounded='lg'
-  color='gray.400'
->
-  <Box boxShadow='xs' p='6' rounded='md' bg='white'>
-    xs
-  </Box>
-  <Box boxShadow='sm' p='6' rounded='md' bg='white'>
-    sm
-  </Box>
-  <Box boxShadow='base' p='6' rounded='md' bg='white'>
-    Base
-  </Box>
-  <Box boxShadow='md' p='6' rounded='md' bg='white'>
-    md
-  </Box>
-  <Box boxShadow='lg' p='6' rounded='md' bg='white'>
-    lg
-  </Box>
-  <Box boxShadow='xl' p='6' rounded='md' bg='white'>
-    xl
-  </Box>
-  <Box boxShadow='2xl' p='6' rounded='md' bg='white'>
-    2xl
-  </Box>
-  <Box boxShadow='dark-lg' p='6' rounded='md' bg='white'>
-    Dark lg
-  </Box>
-  <Box boxShadow='outline' p='6' rounded='md' bg='white'>
-    Outline
-  </Box>
-  <Box boxShadow='inner' p='6' rounded='md' bg='white'>
-    Inner
-  </Box>
-</SimpleGrid>
+import { SimpleGrid, Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <SimpleGrid
+      bg='gray.50'
+      columns={{ sm: 2, md: 4 }}
+      spacing='8'
+      p='10'
+      textAlign='center'
+      rounded='lg'
+      color='gray.400'
+    >
+      <Box boxShadow='xs' p='6' rounded='md' bg='white'>
+        xs
+      </Box>
+      <Box boxShadow='sm' p='6' rounded='md' bg='white'>
+        sm
+      </Box>
+      <Box boxShadow='base' p='6' rounded='md' bg='white'>
+        Base
+      </Box>
+      <Box boxShadow='md' p='6' rounded='md' bg='white'>
+        md
+      </Box>
+      <Box boxShadow='lg' p='6' rounded='md' bg='white'>
+        lg
+      </Box>
+      <Box boxShadow='xl' p='6' rounded='md' bg='white'>
+        xl
+      </Box>
+      <Box boxShadow='2xl' p='6' rounded='md' bg='white'>
+        2xl
+      </Box>
+      <Box boxShadow='dark-lg' p='6' rounded='md' bg='white'>
+        Dark lg
+      </Box>
+      <Box boxShadow='outline' p='6' rounded='md' bg='white'>
+        Outline
+      </Box>
+      <Box boxShadow='inner' p='6' rounded='md' bg='white'>
+        Inner
+      </Box>
+    </SimpleGrid>
+  )
+}
 ```
 
 ```jsx
-<Text textShadow='1px 1px #ff0000' m='6'>
-  Text with shadows
-</Text>
+import { Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Text textShadow='1px 1px #ff0000' m='6'>
+      Text with shadows
+    </Text>
+  )
+}
 ```
 
 | Prop                  | CSS Property  | Theme Field |
@@ -434,7 +446,9 @@ import { Box } from "@chakra-ui/react"
 ### Filter
 
 ```jsx
-function Filters() {
+import { Box, Flex } from '@chakra-ui/react'
+
+export default function Filters() {
   const basicBoxStyles = {
     display: 'flex',
     alignItems: 'center',
@@ -477,7 +491,9 @@ function Filters() {
 > `saturate` props on the element, set `filter` prop value to "auto".
 
 ```jsx
-function BackdropFilters() {
+import { Box, Flex } from '@chakra-ui/react'
+
+export default function BackdropFilters() {
   const outerBoxStyles = {
     boxSize: '250px',
     p: '10',
@@ -554,7 +570,7 @@ function BackdropFilters() {
 
 ### Pseudo
 
-```jsx live=false
+```js
 import { Button } from "@chakra-ui/react"
 
 // :hover style
@@ -688,7 +704,7 @@ HTML tag or component to be rendered.
 For example, say you are using a `Button` component, and you need to make it a
 link instead. You can compose `a` and `Button` like this:
 
-```jsx
+```js
 <Button as='a' target='_blank' variant='outline' href='https://chakra-ui.com'>
   Hello
 </Button>

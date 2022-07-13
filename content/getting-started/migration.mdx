@@ -64,7 +64,8 @@ allows you have only one React root in your application.
 
 Here is an example on how to update your code:
 
-```tsx
+```tsx live=false
+// index.tsx
 import * as ReactDOM from 'react-dom/client'
 import { createStandaloneToast } from '@chakra-ui/toast'
 
@@ -72,7 +73,7 @@ const { ToastContainer, toast } = createStandaloneToast()
 
 // render the ToastContainer in your React root
 const rootElement = document.getElementById('root')
-ReactDOM.createRoot(yourRootElement).render(
+ReactDOM.createRoot(yourRootElement!).render(
   <>
     <App />
     <ToastContainer />
@@ -102,9 +103,13 @@ Allow user configure the storage key for the provider and script. We now export
 a `createLocalStorageManager` and `createCookieStorageManager` functions.
 
 ```jsx live=false
+// _app.tsx in NextJS
+
+import { AppProps } from 'next/app'
+
 const manager = createLocalStorageManager('my-key')
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider colorModeManager={manager}>
       <Component {...pageProps} />

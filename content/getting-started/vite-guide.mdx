@@ -84,18 +84,19 @@ ReactDOM.createRoot(rootElement).render(
 > sure you're using the latest version of Vite. If hot reload issue persists,
 > use this workaround in your `vite.config.js` or `vite.config.ts` file:
 
-```jsx live=false
+```js
 
 server: {
-    watch: {
-      usePolling: true,
-    },
+  watch: {
+    usePolling: true,
+  },
+}
 
 ```
 
 Now, your `vite.config.js` or `vite.config.ts` should now look like this:
 
-```jsx live=false
+```js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 

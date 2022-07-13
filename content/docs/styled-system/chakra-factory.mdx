@@ -20,15 +20,21 @@ notation. For example, if you want a plain html button with ability to pass
 chakra styles, you can write `<chakra.button />`.
 
 ```jsx
-<chakra.button
-  px='3'
-  py='2'
-  bg='green.200'
-  rounded='md'
-  _hover={{ bg: 'green.300' }}
->
-  Click me
-</chakra.button>
+import { chakra } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <chakra.button
+      px='3'
+      py='2'
+      bg='green.200'
+      rounded='md'
+      _hover={{ bg: 'green.300' }}
+    >
+      Click me
+    </chakra.button>
+  )
+}
 ```
 
 This reduces the need to create custom component wrappers and name them. This
