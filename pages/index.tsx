@@ -35,11 +35,10 @@ import Container from 'components/container'
 import { DiscordStrip } from 'components/discord-strip'
 import { Footer } from 'components/footer'
 import Header from 'components/header'
-import SandpackEmbed from 'components/sandpack-embed'
 import SEO from 'components/seo'
 import ShowcaseSection from 'components/showcase-section'
 import TweetCard from 'components/tweet-card'
-import { App, Index } from 'configs/sandpack-contents/homepage/files'
+import { App } from 'configs/sandpack-contents/homepage/files'
 import tweets from 'configs/tweets.json'
 import type { Member, Sponsor } from 'src/types/github'
 import { getAllContributors } from 'utils/get-all-contributors'
@@ -49,6 +48,7 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
+import SandpackCodeBlock from 'components/mdx-components/sandpack-codeblock'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -315,13 +315,7 @@ const HomePage = ({
               px={{ base: '4', md: 0 }}
               position='relative'
             >
-              <SandpackEmbed
-                files={{
-                  '/App.tsx': App,
-                  '/index.tsx': Index,
-                }}
-                isHorizontal
-              />
+              <SandpackCodeBlock homeAppFile={App} />
             </Box>
           </Container>
         </Box>

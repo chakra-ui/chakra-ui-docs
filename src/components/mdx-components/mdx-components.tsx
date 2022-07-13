@@ -24,6 +24,7 @@ import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
 import { JoinCommunityCards } from 'components/community-card'
 import NextImage from 'next/image'
+import SandpackCodeBlock from './sandpack-codeblock'
 
 const { Alert, AspectRatio, Box, chakra, Kbd, Link } = Chakra
 
@@ -67,6 +68,12 @@ export const MDXComponents = {
         />
       )
     }
+
+    const language = props.children.props.className.replace(/language-/, '')
+
+    if (['jsx', 'tsx'].includes(language))
+      return <SandpackCodeBlock {...props} />
+
     return <CodeBlock {...props} />
   },
   kbd: Kbd,
