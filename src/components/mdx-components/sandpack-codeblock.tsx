@@ -19,7 +19,7 @@ const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
   <ChakraProvider>
-    <Center height='100vh'>
+    <Center height='100vh' flexDirection='column'>
       <App />
     </Center>
   </ChakraProvider>
