@@ -449,6 +449,13 @@
       "url": "https://instrukcije.eduo.help/",
       "image": "showcases/websites/eduo-Instrukcije.png",
       "type": "websites"
+    },
+    {
+      "name": "Plan Harmony",
+      "description": "Collabortive trip planning.",
+      "url": "https://planharmony.com",
+      "image": "showcases/websites/Plan-Harmony.png",
+      "type": "websites"
     }
   ],
   "libraries": [
