@@ -404,8 +404,47 @@ popover. You can change the background, arrow size, box shadow and so on.
 ## Popover Placements
 
 Since popover is powered by PopperJS, you can change the placement of the
-popover by passing the `placement` prop. See the [props](#props) for the
-possible placement values.
+popover by passing the `placement` prop.
+
+The possible values are:
+
+<table>
+  <tr>
+    <td>`bottom-start`</td>
+    <td> | </td>
+    <td>`bottom` _(default)_</td>
+    <td> | </td>
+    <td>`bottom-end`</td>
+  </tr>
+  <tr>
+    <td>`auto-start`</td>
+    <td> | </td>
+    <td>`auto`</td>
+    <td> | </td>
+    <td>`auto-end`</td>
+  </tr>
+  <tr>
+    <td>`top-start`</td>
+    <td> | </td>
+    <td>`top`</td>
+    <td> | </td>
+    <td>`top-end`</td>
+  </tr>
+  <tr>
+    <td>`left-start`</td>
+    <td> | </td>
+    <td>`left`</td>
+    <td> | </td>
+    <td>`left-end`</td>
+  </tr>
+  <tr>
+    <td>`right-start`</td>
+    <td> | </td>
+    <td>`right`</td>
+    <td> | </td>
+    <td>`right-end`</td>
+  </tr>
+</table>
 
 > Even though you specified the placement, Popover will try to reposition itself
 > in the event that available space at the specified placement isn't enough.
