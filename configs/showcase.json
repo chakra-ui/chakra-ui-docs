@@ -456,6 +456,13 @@
       "url": "https://planharmony.com",
       "image": "showcases/websites/Plan-Harmony.png",
       "type": "websites"
+    },
+    {
+      "name": "Amine Elbarry",
+      "description": "Personal portfolio website built using Chakra⚡UI, Nextjs, Typescript and Graphql 💖",
+      "url": "https://elbarryamine.com",
+      "image": "showcases/websites/Amine-Elbarry.png",
+      "type": "websites"
     }
   ],
   "libraries": [
