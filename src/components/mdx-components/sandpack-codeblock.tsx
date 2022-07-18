@@ -11,7 +11,7 @@ import CopyButton from './codeblock/copy-button'
 
 export const DEFAULT_INDEX_CODE = `import * as React from "react";
 import { createRoot } from "react-dom/client";
-import { ChakraProvider, Center } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 
 import App from "./App";
 
@@ -19,9 +19,7 @@ const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
   <ChakraProvider>
-    <Center height='100vh' flexDirection='column'>
-      <App />
-    </Center>
+    <App />
   </ChakraProvider>
 );`
 
@@ -58,6 +56,9 @@ function CodeBlock(props) {
           sx={{
             '--sp-zIndices-top': '2',
             '& iframe': { flex: 'initial', flexGrow: 1 },
+            '& > .sp-preview-container': {
+              padding: 4,
+            },
           }}
           style={{ ...editorAndPreviewStyles }}
         />

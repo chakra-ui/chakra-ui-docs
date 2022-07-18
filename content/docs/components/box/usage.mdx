@@ -24,15 +24,24 @@ The Box component is useful because it helps with three common use cases:
 - Compose new component and allow for override using the `as` prop.
 
 ```jsx
-<Box bg='tomato' w='100%' p={4} color='white'>
-  This is the Box
-</Box>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box bg='tomato' w='100%' p={4} color='white'>
+      This is the Box
+    </Box>
+  )
+}
 ```
 
 ### Airbnb example
 
 ```jsx
-function AirbnbCard() {
+import { Badge, Box, Image } from '@chakra-ui/react'
+import { StarIcon } from '@chakra-ui/icons'
+
+export default function AirbnbCard() {
   const property = {
     imageUrl: 'https://bit.ly/2Z4KKcF',
     imageAlt: 'Rear view of modern home with pool',
@@ -45,7 +54,7 @@ function AirbnbCard() {
   }
 
   return (
-    <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+    <Box maxW='sm' borderWidth='1px' borderRadius='lg'>
       <Image src={property.imageUrl} alt={property.imageAlt} />
 
       <Box p='6'>
@@ -107,7 +116,13 @@ You can use the `as` prop to change the element render, just like
 styled-components.
 
 ```jsx
-<Box as='button' borderRadius='md' bg='tomato' color='white' px={4} h={8}>
-  Button
-</Box>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box as='button' borderRadius='md' bg='tomato' color='white' px={4} h={8}>
+      Button
+    </Box>
+  )
+}
 ```
