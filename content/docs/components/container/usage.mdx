@@ -19,12 +19,18 @@ import { Container } from '@chakra-ui/react'
 To contain any piece of content, wrap it in the `Container` component.
 
 ```jsx
-<Container>
-  There are many benefits to a joint design and development system. Not only
-  does it bring benefits to the design team, but it also brings benefits to
-  engineering teams. It makes sure that our experiences have a consistent look
-  and feel, not just in our design specs, but in production
-</Container>
+import { Container } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Container>
+      There are many benefits to a joint design and development system. Not only
+      does it bring benefits to the design team, but it also brings benefits to
+      engineering teams. It makes sure that our experiences have a consistent
+      look and feel, not just in our design specs, but in production
+    </Container>
+  )
+}
 ```
 
 ## Container Size
@@ -43,17 +49,23 @@ values or changing the size tokens defined in
 >   from Better Web Type.
 
 ```jsx
-<VStack>
-  <Container maxW='md' bg='blue.600' color='white'>
-    "md" Container
-  </Container>
-  <Container maxW='550px' bg='purple.600' color='white'>
-    "550px" Container
-  </Container>
-  <Container maxW='container.sm' bg='green.400' color='#262626'>
-    "container.sm" Container
-  </Container>
-</VStack>
+import { Container, VStack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <VStack>
+      <Container maxW='md' bg='blue.600' color='white'>
+        "md" Container
+      </Container>
+      <Container maxW='550px' bg='purple.600' color='white'>
+        "550px" Container
+      </Container>
+      <Container maxW='container.sm' bg='green.400' color='#262626'>
+        "container.sm" Container
+      </Container>
+    </VStack>
+  )
+}
 ```
 
 ## Centering the children
@@ -63,12 +75,19 @@ width. You can use the `centerContent` prop to center the content. It renders a
 flexbox with `flexDirection` set to `column` and `alignItems` set to `center`.
 
 ```jsx
-<Container maxW='2xl' bg='blue.600' centerContent>
-  <Box padding='4' bg='blue.400' color='black' maxW='md'>
-    There are many benefits to a joint design and development system. Not only
-    does it bring benefits to the design team, but it also brings benefits to
-    engineering teams. It makes sure that our experiences have a consistent look
-    and feel, not just in our design specs, but in production.
-  </Box>
-</Container>
+import { Box, Container } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Container maxW='2xl' bg='blue.600' centerContent>
+      <Box padding='4' bg='blue.400' color='black' maxW='md'>
+        There are many benefits to a joint design and development system. Not
+        only does it bring benefits to the design team, but it also brings
+        benefits to engineering teams. It makes sure that our experiences have a
+        consistent look and feel, not just in our design specs, but in
+        production.
+      </Box>
+    </Container>
+  )
+}
 ```
