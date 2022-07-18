@@ -449,6 +449,20 @@
       "url": "https://instrukcije.eduo.help/",
       "image": "showcases/websites/eduo-Instrukcije.png",
       "type": "websites"
+    },
+    {
+      "name": "Plan Harmony",
+      "description": "Collabortive trip planning.",
+      "url": "https://planharmony.com",
+      "image": "showcases/websites/Plan-Harmony.png",
+      "type": "websites"
+    },
+    {
+      "name": "Amine Elbarry",
+      "description": "Personal portfolio website built using Chakra⚡UI, Nextjs, Typescript and Graphql 💖",
+      "url": "https://elbarryamine.com",
+      "image": "showcases/websites/Amine-Elbarry.png",
+      "type": "websites"
     }
   ],
   "libraries": [
@@ -648,6 +662,13 @@
       "description": " custom Chakra UI component that adds ready-made styles for rendering remote HTML content.",
       "url": "https://github.com/nikolovlazar/chakra-ui-prose",
       "image": "showcases/tools/Chakra-UI-Prose.png",
+      "type": "tools"
+    },
+    {
+      "name": "withTypeScale",
+      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
+      "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
     }
   ],

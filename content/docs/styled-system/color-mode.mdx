@@ -292,7 +292,7 @@ Here's how to do this in Next.js 9.3 or newer:
 // a) import `ChakraProvider` component as well as the storageManagers
 import {
   ChakraProvider,
-  cookieStorageManager,
+  cookieStorageManagerSSR,
   localStorageManager,
 } from '@chakra-ui/react'
 
@@ -300,7 +300,7 @@ export function Chakra({ cookies, children }) {
   // b) Pass `colorModeManager` prop
   const colorModeManager =
     typeof cookies === 'string'
-      ? cookieStorageManager(cookies)
+      ? cookieStorageManagerSSR(cookies)
       : localStorageManager
 
   return (
@@ -357,7 +357,7 @@ export { getServerSideProps } from "./Chakra";
 // pages/_app.js
 import {
   ChakraProvider,
-  cookieStorageManager,
+  cookieStorageManagerSSR,
   localStorageManager,
 } from '@chakra-ui/react'
 
@@ -367,7 +367,7 @@ export default function App({ cookies }) {
     <ChakraProvider
       colorModeManager={
         typeof cookies === 'string'
-          ? cookieStorageManager(cookies)
+          ? cookieStorageManagerSSR(cookies)
           : localStorageManager
       }
     >

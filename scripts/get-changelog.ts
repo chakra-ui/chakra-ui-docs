@@ -1,6 +1,9 @@
 import { Octokit } from '@octokit/rest'
 import fs from 'fs'
 import path from 'path'
+import { config } from 'dotenv'
+
+config()
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
 
@@ -18,7 +21,7 @@ export async function main() {
   content = content.replace('<!-- CHANGELOG:INSERT -->', '')
 
   fs.writeFileSync(
-    path.join(process.cwd(), 'pages', 'changelog', 'index.mdx'),
+    path.join(process.cwd(), 'content', 'changelog', 'index.mdx'),
     content,
   )
 }
