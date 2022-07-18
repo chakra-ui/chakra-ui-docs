@@ -66,6 +66,7 @@ function CodeBlock(props) {
       <Box position='relative' {...editorAndPreviewStyles}>
         <SandpackCodeEditor
           showLineNumbers
+          wrapContent
           readOnly={!isLivePreview}
           showReadOnly={false}
           style={{
