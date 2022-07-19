@@ -463,6 +463,13 @@
       "url": "https://elbarryamine.com",
       "image": "showcases/websites/Amine-Elbarry.png",
       "type": "websites"
+    },
+    {
+      "name": "Yash Kapure",
+      "description": "Personal Portfolio website built using Chakra❤UI, ReactJS, TypeScript and some of  my CSS Skills.",
+      "url": "https://yashkapure.netlify.app/",
+      "image": "showcases/websites/Yash-Kapure.png",
+      "type": "websites"
     }
   ],
   "libraries": [
