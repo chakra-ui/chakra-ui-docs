@@ -284,6 +284,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://mottox2.com"><img src="https://avatars.githubusercontent.com/u/7007253?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Yuki Takemoto</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Amottox2" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/samuliasmala"><img src="https://avatars.githubusercontent.com/u/14218719?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Samuli Asmala</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=samuliasmala" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://kolbysisk.com"><img src="https://avatars.githubusercontent.com/u/1395078?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Kolby Sisk</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3AKolbySisk" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
