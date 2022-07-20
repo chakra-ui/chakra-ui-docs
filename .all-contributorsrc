@@ -1322,6 +1322,14 @@
       "profile": "https://www.linkedin.com/in/lucasferronato",
       "contributions": [
         "doc"
+    },
+    {
+      "login": "KolbySisk",
+      "name": "Kolby Sisk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1395078?v=4",
+      "profile": "http://kolbysisk.com",
+      "contributions": [
+        "bug"
       ]
     }
   ],
