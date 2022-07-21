@@ -19,7 +19,12 @@ Since `IconButton` only renders an icon, you must pass the `aria-label` prop, so
 screen readers can give meaning to the button.
 
 ```jsx
-<IconButton aria-label='Search database' icon={<SearchIcon />} />
+import { IconButton } from '@chakra-ui/react'
+import { SearchIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return <IconButton aria-label='Search database' icon={<SearchIcon />} />
+}
 ```
 
 ### Button Colors
@@ -28,11 +33,18 @@ The `IconButton` component accepts most of the props from the `Button`
 component, so we can use `colorScheme` prop to change the color of the button.
 
 ```jsx
-<IconButton
-  colorScheme='blue'
-  aria-label='Search database'
-  icon={<SearchIcon />}
-/>
+import { IconButton } from '@chakra-ui/react'
+import { SearchIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <IconButton
+      colorScheme='blue'
+      aria-label='Search database'
+      icon={<SearchIcon />}
+    />
+  )
+}
 ```
 
 ### Button Sizes
@@ -41,12 +53,19 @@ Like the `Button component`, pass the `size` prop to change the size of the
 button.
 
 ```jsx
-<IconButton
-  colorScheme='teal'
-  aria-label='Call Segun'
-  size='lg'
-  icon={<PhoneIcon />}
-/>
+import { IconButton } from '@chakra-ui/react'
+import { PhoneIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <IconButton
+      colorScheme='teal'
+      aria-label='Call Segun'
+      size='lg'
+      icon={<PhoneIcon />}
+    />
+  )
+}
 ```
 
 ### Button Variants
@@ -55,12 +74,19 @@ Like the `Button` component, pass the `variant` prop to change the style of the
 button.
 
 ```jsx
-<IconButton
-  variant='outline'
-  colorScheme='teal'
-  aria-label='Send email'
-  icon={<EmailIcon />}
-/>
+import { IconButton } from '@chakra-ui/react'
+import { EmailIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <IconButton
+      variant='outline'
+      colorScheme='teal'
+      aria-label='Send email'
+      icon={<EmailIcon />}
+    />
+  )
+}
 ```
 
 ### With custom icon
@@ -70,11 +96,18 @@ You can also use icons from popular libraries like
 the button.
 
 ```jsx
-<IconButton
-  variant='outline'
-  colorScheme='teal'
-  aria-label='Call Sage'
-  fontSize='20px'
-  icon={<MdPhone />}
-/>
+import { IconButton } from '@chakra-ui/react'
+import { MdPhone } from 'react-icons/md'
+
+export default function Example() {
+  return (
+    <IconButton
+      variant='outline'
+      colorScheme='teal'
+      aria-label='Call Sage'
+      fontSize='20px'
+      icon={<MdPhone />}
+    />
+  )
+}
 ```

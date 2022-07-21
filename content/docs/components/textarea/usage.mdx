@@ -18,13 +18,20 @@ import { Textarea } from '@chakra-ui/react'
 ### Usage
 
 ```jsx
-<Textarea placeholder='Here is a sample placeholder' />
+import { Textarea } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Textarea placeholder='Here is a sample placeholder' />
+}
 ```
 
 ### Controlled Textarea
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Textarea, Text } from '@chakra-ui/react'
+
+export default function Example() {
   let [value, setValue] = React.useState('')
 
   let handleInputChange = (e) => {
@@ -50,7 +57,10 @@ function Example() {
 You can add `resize` prop to change the `Textarea` resize behavior.
 
 ```jsx
-function ResizeExample() {
+import React from 'react'
+import { Textarea, Radio, RadioGroup, Stack } from '@chakra-ui/react'
+
+export default function ResizeExample() {
   const [resize, setResize] = React.useState('horizontal')
 
   return (
@@ -76,12 +86,19 @@ function ResizeExample() {
 ### Disabled Textarea
 
 ```jsx
-<Textarea isDisabled placeholder='Here is a sample placeholder' />
+import { Textarea } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Textarea isDisabled placeholder='Here is a sample placeholder' />
+}
 ```
 
 ### Invalid Textarea
 
 ```jsx
-<Textarea isInvalid placeholder='Here is a sample placeholder' />
-```
+import { Textarea } from '@chakra-ui/react'
 
+export default function Example() {
+  return <Textarea isInvalid placeholder='Here is a sample placeholder' />
+}
+```

@@ -17,18 +17,28 @@ import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Checkbox defaultChecked>Checkbox</Checkbox>
+import { Checkbox } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Checkbox defaultChecked>Checkbox</Checkbox>
+}
 ```
 
 ### Disabled Checkbox
 
 ```jsx
-<Stack spacing={5} direction='row'>
-  <Checkbox isDisabled>Checkbox</Checkbox>
-  <Checkbox isDisabled defaultChecked>
-    Checkbox
-  </Checkbox>
-</Stack>
+import { Checkbox, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack spacing={5} direction='row'>
+      <Checkbox isDisabled>Checkbox</Checkbox>
+      <Checkbox isDisabled defaultChecked>
+        Checkbox
+      </Checkbox>
+    </Stack>
+  )
+}
 ```
 
 ### Checkbox with custom color
@@ -37,14 +47,20 @@ You can override the color scheme of the `Checkbox` to any color key specified
 in `theme.colors`.
 
 ```jsx
-<Stack spacing={5} direction='row'>
-  <Checkbox colorScheme='red' defaultChecked>
-    Checkbox
-  </Checkbox>
-  <Checkbox colorScheme='green' defaultChecked>
-    Checkbox
-  </Checkbox>
-</Stack>
+import { Checkbox, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack spacing={5} direction='row'>
+      <Checkbox colorScheme='red' defaultChecked>
+        Checkbox
+      </Checkbox>
+      <Checkbox colorScheme='green' defaultChecked>
+        Checkbox
+      </Checkbox>
+    </Stack>
+  )
+}
 ```
 
 ### Checkbox sizes
@@ -53,23 +69,33 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 `sm`, `md` or `lg`.
 
 ```jsx
-<Stack spacing={[1, 5]} direction={['column', 'row']}>
-  <Checkbox size='sm' colorScheme='red'>
-    Checkbox
-  </Checkbox>
-  <Checkbox size='md' colorScheme='green' defaultChecked>
-    Checkbox
-  </Checkbox>
-  <Checkbox size='lg' colorScheme='orange' defaultChecked>
-    Checkbox
-  </Checkbox>
-</Stack>
+import { Checkbox, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack spacing={[1, 5]} direction={['column', 'row']}>
+      <Checkbox size='sm' colorScheme='red'>
+        Checkbox
+      </Checkbox>
+      <Checkbox size='md' colorScheme='green' defaultChecked>
+        Checkbox
+      </Checkbox>
+      <Checkbox size='lg' colorScheme='orange' defaultChecked>
+        Checkbox
+      </Checkbox>
+    </Stack>
+  )
+}
 ```
 
 ### Invalid Checkbox
 
 ```jsx
-<Checkbox isInvalid>Checkbox</Checkbox>
+import { Checkbox } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Checkbox isInvalid>Checkbox</Checkbox>
+}
 ```
 
 ### Changing the spacing
@@ -78,7 +104,11 @@ We added the `spacing` prop to customize the spacing between the `Checkbox` and
 label text.
 
 ```jsx live=false
-<Checkbox spacing='1rem'>Option</Checkbox>
+import { Checkbox } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Checkbox spacing='1rem'>Option</Checkbox>
+}
 ```
 
 ### Changing the icon color and size
@@ -95,7 +125,10 @@ You can customize the color and size of the check icon by passing the
 ### Indeterminate
 
 ```jsx
-function IndeterminateExample() {
+import React from 'react'
+import { Checkbox, Stack } from '@chakra-ui/react'
+
+export default function IndeterminateExample() {
   const [checkedItems, setCheckedItems] = React.useState([false, false])
 
   const allChecked = checkedItems.every(Boolean)
@@ -131,7 +164,8 @@ function IndeterminateExample() {
 
 ### Icon
 
-```jsx manual=true
+```jsx
+import { Checkbox, Icon } from '@chakra-ui/react'
 /**
  * 1. Create a custom icon that accepts 2 props: `isIndeterminate` and `isChecked`
  */
@@ -149,15 +183,13 @@ function CustomIcon(props) {
   )
 }
 
-function CustomCheckbox() {
+export default function CustomCheckbox() {
   return (
     <Checkbox icon={<CustomIcon />} colorScheme='cyan'>
       Hello world
     </Checkbox>
   )
 }
-
-render(<CustomCheckbox />)
 ```
 
 ### CheckboxGroup
@@ -168,13 +200,19 @@ props to each. See the props table at the bottom of this page for a list of the
 shared styling props.
 
 ```jsx
-<CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
-  <Stack spacing={[1, 5]} direction={['column', 'row']}>
-    <Checkbox value='naruto'>Naruto</Checkbox>
-    <Checkbox value='sasuke'>Sasuke</Checkbox>
-    <Checkbox value='kakashi'>Kakashi</Checkbox>
-  </Stack>
-</CheckboxGroup>
+import { Checkbox, CheckboxGroup, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
+      <Stack spacing={[1, 5]} direction={['column', 'row']}>
+        <Checkbox value='naruto'>Naruto</Checkbox>
+        <Checkbox value='sasuke'>Sasuke</Checkbox>
+        <Checkbox value='kakashi'>Kakashi</Checkbox>
+      </Stack>
+    </CheckboxGroup>
+  )
+}
 ```
 
 ### Hooks

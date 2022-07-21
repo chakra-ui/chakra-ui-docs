@@ -39,39 +39,84 @@ or applying image filters.
 > provide an accessible label for the Slider.
 
 ```jsx
-<Slider aria-label='slider-ex-1' defaultValue={30}>
-  <SliderTrack>
-    <SliderFilledTrack />
-  </SliderTrack>
-  <SliderThumb />
-</Slider>
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box width='90%' mx='auto'>
+      <Slider aria-label='slider-ex-1' defaultValue={30}>
+        <SliderTrack>
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+      </Slider>
+    </Box>
+  )
+}
 ```
 
 ### Changing the slider color scheme
 
 ```jsx
-<Slider aria-label='slider-ex-2' colorScheme='pink' defaultValue={30}>
-  <SliderTrack>
-    <SliderFilledTrack />
-  </SliderTrack>
-  <SliderThumb />
-</Slider>
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box width='90%' mx='auto'>
+      <Slider aria-label='slider-ex-2' colorScheme='pink' defaultValue={30}>
+        <SliderTrack>
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+      </Slider>
+    </Box>
+  )
+}
 ```
 
 ### Changing the slider orientation
 
 ```jsx
-<Slider
-  aria-label='slider-ex-3'
-  defaultValue={30}
-  orientation='vertical'
-  minH='32'
->
-  <SliderTrack>
-    <SliderFilledTrack />
-  </SliderTrack>
-  <SliderThumb />
-</Slider>
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box width='90%' mx='auto'>
+      <Slider
+        aria-label='slider-ex-3'
+        defaultValue={30}
+        orientation='vertical'
+        minH='32'
+      >
+        <SliderTrack>
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+      </Slider>
+    </Box>
+  )
+}
 ```
 
 ### Customizing the Slider
@@ -80,14 +125,30 @@ or applying image filters.
 customize its styles.
 
 ```jsx
-<Slider aria-label='slider-ex-4' defaultValue={30}>
-  <SliderTrack bg='red.100'>
-    <SliderFilledTrack bg='tomato' />
-  </SliderTrack>
-  <SliderThumb boxSize={6}>
-    <Box color='tomato' as={MdGraphicEq} />
-  </SliderThumb>
-</Slider>
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+import { MdGraphicEq } from 'react-icons/md'
+
+export default function Example() {
+  return (
+    <Box width='90%' mx='auto'>
+      <Slider aria-label='slider-ex-4' defaultValue={30}>
+        <SliderTrack bg='red.100'>
+          <SliderFilledTrack bg='tomato' />
+        </SliderTrack>
+        <SliderThumb boxSize={6}>
+          <Box color='tomato' as={MdGraphicEq} />
+        </SliderThumb>
+      </Slider>
+    </Box>
+  )
+}
 ```
 
 ### Discrete Sliders
@@ -96,13 +157,28 @@ Discrete sliders allow you to snap to predefined sets of values. This can be
 accomplished using the `step` prop.
 
 ```jsx
-<Slider defaultValue={60} min={0} max={300} step={30}>
-  <SliderTrack bg='red.100'>
-    <Box position='relative' right={10} />
-    <SliderFilledTrack bg='tomato' />
-  </SliderTrack>
-  <SliderThumb boxSize={6} />
-</Slider>
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box width='90%' mx='auto'>
+      <Slider defaultValue={60} min={0} max={300} step={30}>
+        <SliderTrack bg='red.100'>
+          <Box position='relative' right={10} />
+          <SliderFilledTrack bg='tomato' />
+        </SliderTrack>
+        <SliderThumb boxSize={6} />
+      </Slider>
+    </Box>
+  )
+}
 ```
 
 ### Slider with custom labels and marks
@@ -110,7 +186,17 @@ accomplished using the `step` prop.
 You can have custom labels and marks by using `SliderMark` component
 
 ```jsx
-function SliderMarkExample() {
+import { useState } from 'react'
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from '@chakra-ui/react'
+
+export default function SliderMarkExample() {
   const [sliderValue, setSliderValue] = useState(50)
 
   const labelStyles = {
@@ -155,7 +241,18 @@ function SliderMarkExample() {
 And you can also use `Tooltip` with `SliderThumb`
 
 ```jsx
-function SliderThumbWithTooltip() {
+import React from 'react'
+import {
+  Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+  Tooltip,
+} from '@chakra-ui/react'
+
+export default function SliderThumbWithTooltip() {
   const [sliderValue, setSliderValue] = React.useState(5)
   const [showTooltip, setShowTooltip] = React.useState(false)
   return (

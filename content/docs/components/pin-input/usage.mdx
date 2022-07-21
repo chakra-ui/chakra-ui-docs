@@ -26,14 +26,20 @@ Each input collects one character at a time. When a value is entered, focus is
 moved automatically to the next input, until all fields are filled.
 
 ```jsx
-<HStack>
-  <PinInput>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### Allowing Alphanumeric values
@@ -43,14 +49,20 @@ alphanumeric values, pass the `type` prop and set its value to either
 `alphanumeric` or `number`.
 
 ```jsx
-<HStack>
-  <PinInput type='alphanumeric'>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput type='alphanumeric'>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### Using fields as a one time password (OTP)
@@ -59,12 +71,18 @@ Use the `otp` prop on `PinInput` to set `autocomplete="one-time-code"` for all
 children `PinInputField` components.
 
 ```jsx
-<PinInput otp>
-  <PinInputField />
-  <PinInputField />
-  <PinInputField />
-  <PinInputField />
-</PinInput>
+import { PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <PinInput otp>
+      <PinInputField />
+      <PinInputField />
+      <PinInputField />
+      <PinInputField />
+    </PinInput>
+  )
+}
 ```
 
 ### Masking the pin input's value
@@ -75,14 +93,20 @@ need to mask the value entered, similar to `<input type="password"/>`.
 Pass the `mask` prop to `PinInput` to achieve this.
 
 ```jsx
-<HStack>
-  <PinInput type='alphanumeric' mask>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput type='alphanumeric' mask>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### Changing the size of the PinInput
@@ -95,39 +119,45 @@ The `PinInput` component comes in four sizes. The default is `md`.
 - `lg` (`48px`)
 
 ```jsx
-<Stack>
-  <HStack>
-    <PinInput size='xs'>
-      <PinInputField />
-      <PinInputField />
-      <PinInputField />
-    </PinInput>
-  </HStack>
+import { HStack, PinInput, PinInputField, Stack } from '@chakra-ui/react'
 
-  <HStack>
-    <PinInput size='sm'>
-      <PinInputField />
-      <PinInputField />
-      <PinInputField />
-    </PinInput>
-  </HStack>
+export default function Example() {
+  return (
+    <Stack>
+      <HStack>
+        <PinInput size='xs'>
+          <PinInputField />
+          <PinInputField />
+          <PinInputField />
+        </PinInput>
+      </HStack>
 
-  <HStack>
-    <PinInput size='md'>
-      <PinInputField />
-      <PinInputField />
-      <PinInputField />
-    </PinInput>
-  </HStack>
+      <HStack>
+        <PinInput size='sm'>
+          <PinInputField />
+          <PinInputField />
+          <PinInputField />
+        </PinInput>
+      </HStack>
 
-  <HStack>
-    <PinInput size='lg'>
-      <PinInputField />
-      <PinInputField />
-      <PinInputField />
-    </PinInput>
-  </HStack>
-</Stack>
+      <HStack>
+        <PinInput size='md'>
+          <PinInputField />
+          <PinInputField />
+          <PinInputField />
+        </PinInput>
+      </HStack>
+
+      <HStack>
+        <PinInput size='lg'>
+          <PinInputField />
+          <PinInputField />
+          <PinInputField />
+        </PinInput>
+      </HStack>
+    </Stack>
+  )
+}
 ```
 
 ### Adding a defaultValue
@@ -135,25 +165,37 @@ The `PinInput` component comes in four sizes. The default is `md`.
 You can set the `defaultValue` of the PinInput if you wish:
 
 ```jsx
-<HStack>
-  <PinInput defaultValue='234'>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput defaultValue='234'>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 Or even a partial defaultValue:
 
 ```jsx
-<HStack>
-  <PinInput defaultValue='23'>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput defaultValue='23'>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### Changing the placeholder
@@ -162,13 +204,19 @@ To customize the default input placeholder (`○`), pass the `placeholder` prop
 and set it to your desired placeholder.
 
 ```jsx
-<HStack>
-  <PinInput placeholder='🥳'>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput placeholder='🥳'>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### Disable focus management
@@ -180,13 +228,19 @@ pressed with focus on an empty input.
 To disable this behavior, set `manageFocus` to `false`
 
 ```jsx
-<HStack>
-  <PinInput manageFocus={false}>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput manageFocus={false}>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```
 
 ### AutoFill and Copy + Paste
@@ -198,11 +252,17 @@ field receives a longer string by pasting into it, `PinInput` attempts to
 validate the string and fill the other inputs.
 
 ```jsx
-<HStack>
-  <PinInput>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-  </PinInput>
-</HStack>
+import { HStack, PinInput, PinInputField } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack>
+      <PinInput>
+        <PinInputField />
+        <PinInputField />
+        <PinInputField />
+      </PinInput>
+    </HStack>
+  )
+}
 ```

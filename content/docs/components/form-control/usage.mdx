@@ -32,28 +32,47 @@ import {
 ## Usage
 
 ```jsx
-<FormControl>
-  <FormLabel htmlFor='email'>Email address</FormLabel>
-  <Input id='email' type='email' />
-  <FormHelperText>We'll never share your email.</FormHelperText>
-</FormControl>
+import { FormControl, FormLabel, FormHelperText, Input } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl>
+      <FormLabel htmlFor='email'>Email address</FormLabel>
+      <Input id='email' type='email' />
+      <FormHelperText>We'll never share your email.</FormHelperText>
+    </FormControl>
+  )
+}
 ```
 
 ### Sample usage for a radio or checkbox group
 
 ```jsx
-<FormControl as='fieldset'>
-  <FormLabel as='legend'>Favorite Naruto Character</FormLabel>
-  <RadioGroup defaultValue='Itachi'>
-    <HStack spacing='24px'>
-      <Radio value='Sasuke'>Sasuke</Radio>
-      <Radio value='Nagato'>Nagato</Radio>
-      <Radio value='Itachi'>Itachi</Radio>
-      <Radio value='Sage of the six Paths'>Sage of the six Paths</Radio>
-    </HStack>
-  </RadioGroup>
-  <FormHelperText>Select only if you're a fan.</FormHelperText>
-</FormControl>
+import {
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  HStack,
+  Radio,
+  RadioGroup,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl as='fieldset'>
+      <FormLabel as='legend'>Favorite Naruto Character</FormLabel>
+      <RadioGroup defaultValue='Itachi'>
+        <HStack spacing='24px'>
+          <Radio value='Sasuke'>Sasuke</Radio>
+          <Radio value='Nagato'>Nagato</Radio>
+          <Radio value='Itachi'>Itachi</Radio>
+          <Radio value='Sage of the six Paths'>Sage of the six Paths</Radio>
+        </HStack>
+      </RadioGroup>
+      <FormHelperText>Select only if you're a fan.</FormHelperText>
+    </FormControl>
+  )
+}
 ```
 
 ### Error message
@@ -62,7 +81,16 @@ import {
 `FormControl` is true.
 
 ```jsx
-function errorMessageExample() {
+import { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+} from '@chakra-ui/react'
+
+export default function errorMessageExample() {
   const [input, setInput] = useState('')
 
   const handleInputChange = (e) => setInput(e.target.value)
@@ -99,37 +127,63 @@ indicate that a field is optional you can add `optionalIndicator` to the
 `FormLabel`
 
 ```jsx
-<FormControl isRequired>
-  <FormLabel htmlFor='first-name'>First name</FormLabel>
-  <Input id='first-name' placeholder='First name' />
-</FormControl>
+import { FormControl, FormLabel, Input } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl isRequired>
+      <FormLabel htmlFor='first-name'>First name</FormLabel>
+      <Input id='first-name' placeholder='First name' />
+    </FormControl>
+  )
+}
 ```
 
 ### Select Example
 
 ```jsx
-<FormControl>
-  <FormLabel htmlFor='country'>Country</FormLabel>
-  <Select id='country' placeholder='Select country'>
-    <option>United Arab Emirates</option>
-    <option>Nigeria</option>
-  </Select>
-</FormControl>
+import { FormControl, FormLabel, Select } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl>
+      <FormLabel htmlFor='country'>Country</FormLabel>
+      <Select id='country' placeholder='Select country'>
+        <option>United Arab Emirates</option>
+        <option>Nigeria</option>
+      </Select>
+    </FormControl>
+  )
+}
 ```
 
 ### Number Input Example
 
 ```jsx
-<FormControl>
-  <FormLabel htmlFor='amount'>Amount</FormLabel>
-  <NumberInput max={50} min={10}>
-    <NumberInputField id='amount' />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
-</FormControl>
+import {
+  FormControl,
+  FormLabel,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl>
+      <FormLabel htmlFor='amount'>Amount</FormLabel>
+      <NumberInput max={50} min={10}>
+        <NumberInputField id='amount' />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
+    </FormControl>
+  )
+}
 ```
 
 ### Usage with Form Libraries
@@ -137,8 +191,17 @@ indicate that a field is optional you can add `optionalIndicator` to the
 Form Libraries like [Formik](https://jaredpalmer.com/formik/) make it soooo easy
 to manage form state and validation. I 💖 Formik
 
-```jsx
-function FormikExample() {
+```jsx deps=[formik]
+import { Form, Formik, Field } from 'formik'
+import {
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+} from '@chakra-ui/react'
+
+export default function FormikExample() {
   function validateName(value) {
     let error
     if (!value) {
