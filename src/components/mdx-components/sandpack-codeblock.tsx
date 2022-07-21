@@ -85,6 +85,18 @@ export default function SandpackCodeBlock(props) {
     ? props.children.props.children
     : props.homeAppFile
 
+  const additionalDeps = props.children.props.deps
+
+  const parsedAddDeps =
+    additionalDeps &&
+    additionalDeps
+      .replace('[', '')
+      .replace(']', '')
+      .split(',')
+      .reduce((acc, dep) => {
+        return { ...acc, [dep]: 'latest' }
+      }, {})
+
   const rawCode = MDXcode.trim()
   return (
     <SandpackProvider
@@ -102,6 +114,7 @@ export default function SandpackCodeBlock(props) {
           '@emotion/react': '^11.7.0',
           '@emotion/styled': '^11.6.0',
           'framer-motion': '^4.1.17',
+          ...parsedAddDeps,
         },
       }}
     >
