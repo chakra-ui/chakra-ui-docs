@@ -71,8 +71,12 @@ export const MDXComponents = {
 
     const language = props.children.props.className.replace(/language-/, '')
 
-    if (['jsx', 'tsx'].includes(language))
+    if (
+      ['jsx', 'tsx'].includes(language) &&
+      props.children.props.live !== 'false'
+    ) {
       return <SandpackCodeBlock {...props} />
+    }
 
     return <CodeBlock {...props} />
   },
