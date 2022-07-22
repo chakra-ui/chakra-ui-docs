@@ -30,75 +30,111 @@ import {
 ## Usage
 
 ```jsx
-<Tag>Sample Tag</Tag>
+import { Tag } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Tag>Sample Tag</Tag>
+}
 ```
 
 ```jsx
-<HStack spacing={4}>
-  {['sm', 'md', 'lg'].map((size) => (
-    <Tag size={size} key={size} variant='solid' colorScheme='teal'>
-      Teal
-    </Tag>
-  ))}
-</HStack>
+import { HStack, Tag } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack spacing={4}>
+      {['sm', 'md', 'lg'].map((size) => (
+        <Tag size={size} key={size} variant='solid' colorScheme='teal'>
+          Teal
+        </Tag>
+      ))}
+    </HStack>
+  )
+}
 ```
 
 ## With left icon
 
 ```jsx
-<HStack spacing={4}>
-  {['sm', 'md', 'lg'].map((size) => (
-    <Tag size={size} key={size} variant='subtle' colorScheme='cyan'>
-      <TagLeftIcon boxSize='12px' as={AddIcon} />
-      <TagLabel>Cyan</TagLabel>
-    </Tag>
-  ))}
-</HStack>
+import { HStack, Tag, TagLeftIcon } from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <HStack spacing={4}>
+      {['sm', 'md', 'lg'].map((size) => (
+        <Tag size={size} key={size} variant='subtle' colorScheme='cyan'>
+          <TagLeftIcon boxSize='12px' as={AddIcon} />
+          <TagLabel>Cyan</TagLabel>
+        </Tag>
+      ))}
+    </HStack>
+  )
+}
 ```
 
 ## With right icon
 
 ```jsx
-<HStack spacing={4}>
-  {['sm', 'md', 'lg'].map((size) => (
-    <Tag size={size} key={size} variant='outline' colorScheme='blue'>
-      <TagLabel>Blue</TagLabel>
-      <TagRightIcon as={MdSettings} />
-    </Tag>
-  ))}
-</HStack>
+import { HStack, Tag, TagLabel, TagRightIcon } from '@chakra-ui/react'
+import { MdSettings } from 'react-icons/md'
+
+export default function Example() {
+  return (
+    <HStack spacing={4}>
+      {['sm', 'md', 'lg'].map((size) => (
+        <Tag size={size} key={size} variant='outline' colorScheme='blue'>
+          <TagLabel>Blue</TagLabel>
+          <TagRightIcon as={MdSettings} />
+        </Tag>
+      ))}
+    </HStack>
+  )
+}
 ```
 
 ## With close button
 
 ```jsx
-<HStack spacing={4}>
-  {['sm', 'md', 'lg'].map((size) => (
-    <Tag
-      size={size}
-      key={size}
-      borderRadius='full'
-      variant='solid'
-      colorScheme='green'
-    >
-      <TagLabel>Green</TagLabel>
-      <TagCloseButton />
-    </Tag>
-  ))}
-</HStack>
+import { HStack, Tag, TagLabel, TagCloseButton } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <HStack spacing={4}>
+      {['sm', 'md', 'lg'].map((size) => (
+        <Tag
+          size={size}
+          key={size}
+          borderRadius='full'
+          variant='solid'
+          colorScheme='green'
+        >
+          <TagLabel>Green</TagLabel>
+          <TagCloseButton />
+        </Tag>
+      ))}
+    </HStack>
+  )
+}
 ```
 
 ## With custom element
 
 ```jsx
-<Tag size='lg' colorScheme='red' borderRadius='full'>
-  <Avatar
-    src='https://bit.ly/sage-adebayo'
-    size='xs'
-    name='Segun Adebayo'
-    ml={-1}
-    mr={2}
-  />
-  <TagLabel>Segun</TagLabel>
-</Tag>
+import { Avatar, Tag, TagLabel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tag size='lg' colorScheme='red' borderRadius='full'>
+      <Avatar
+        src='https://bit.ly/sage-adebayo'
+        size='xs'
+        name='Segun Adebayo'
+        ml={-1}
+        mr={2}
+      />
+      <TagLabel>Segun</TagLabel>
+    </Tag>
+  )
+}
 ```

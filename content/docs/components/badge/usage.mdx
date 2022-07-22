@@ -16,7 +16,11 @@ import { Badge } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Badge>Default</Badge>
+import { Badge } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Badge>Default</Badge>
+}
 ```
 
 ### Badge Color
@@ -26,12 +30,18 @@ can be any **color key** that exists in `theme.colors`.
 [Learn more about theming](/docs/styled-system/theme).
 
 ```jsx
-<Stack direction='row'>
-  <Badge>Default</Badge>
-  <Badge colorScheme='green'>Success</Badge>
-  <Badge colorScheme='red'>Removed</Badge>
-  <Badge colorScheme='purple'>New</Badge>
-</Stack>
+import { Badge, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row'>
+      <Badge>Default</Badge>
+      <Badge colorScheme='green'>Success</Badge>
+      <Badge colorScheme='red'>Removed</Badge>
+      <Badge colorScheme='purple'>New</Badge>
+    </Stack>
+  )
+}
 ```
 
 ### Badge Variants
@@ -40,43 +50,61 @@ Pass the `variant` prop and set it to either `subtle`, `solid`, or `outline` to
 get a different style.
 
 ```jsx
-<Stack direction='row'>
-  <Badge variant='outline' colorScheme='green'>
-    Default
-  </Badge>
-  <Badge variant='solid' colorScheme='green'>
-    Success
-  </Badge>
-  <Badge variant='subtle' colorScheme='green'>
-    Removed
-  </Badge>
-</Stack>
+import { Badge, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row'>
+      <Badge variant='outline' colorScheme='green'>
+        Default
+      </Badge>
+      <Badge variant='solid' colorScheme='green'>
+        Success
+      </Badge>
+      <Badge variant='subtle' colorScheme='green'>
+        Removed
+      </Badge>
+    </Stack>
+  )
+}
 ```
 
 ## Composition
 
 ```jsx
-<Flex>
-  <Avatar src='https://bit.ly/sage-adebayo' />
-  <Box ml='3'>
-    <Text fontWeight='bold'>
-      Segun Adebayo
-      <Badge ml='1' colorScheme='green'>
-        New
-      </Badge>
-    </Text>
-    <Text fontSize='sm'>UI Engineer</Text>
-  </Box>
-</Flex>
+import { Avatar, Badge, Box, Flex, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Flex>
+      <Avatar src='https://bit.ly/sage-adebayo' />
+      <Box ml='3'>
+        <Text fontWeight='bold'>
+          Segun Adebayo
+          <Badge ml='1' colorScheme='green'>
+            New
+          </Badge>
+        </Text>
+        <Text fontSize='sm'>UI Engineer</Text>
+      </Box>
+    </Flex>
+  )
+}
 ```
 
 You can also change the size of the badge by passing the `fontSize` prop.
 
 ```jsx
-<Text fontSize='xl' fontWeight='bold'>
-  Segun Adebayo
-  <Badge ml='1' fontSize='0.8em' colorScheme='green'>
-    New
-  </Badge>
-</Text>
+import { Badge, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Text fontSize='xl' fontWeight='bold'>
+      Segun Adebayo
+      <Badge ml='1' fontSize='0.8em' colorScheme='green'>
+        New
+      </Badge>
+    </Text>
+  )
+}
 ```
