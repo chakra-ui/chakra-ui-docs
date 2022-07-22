@@ -81,11 +81,11 @@ function CodeBlock(props) {
 }
 
 export default function SandpackCodeBlock(props) {
-  const MDXcode = props.children
-    ? props.children.props.children
-    : props.homeAppFile
+  const isMDXCode = !!props.children
 
-  const additionalDeps = props.children.props.deps
+  const rawCode = isMDXCode ? props.children.props.children : props.homeAppFile
+
+  const additionalDeps = isMDXCode && props.children.props.deps
 
   const parsedAddDeps =
     additionalDeps &&
@@ -97,12 +97,13 @@ export default function SandpackCodeBlock(props) {
         return { ...acc, [dep]: 'latest' }
       }, {})
 
-  const rawCode = MDXcode.trim()
+  const trimmedCode = rawCode.trim()
+
   return (
     <SandpackProvider
       theme={nightOwl}
       template='react-ts'
-      files={{ '/index.tsx': DEFAULT_INDEX_CODE, '/App.tsx': rawCode }}
+      files={{ '/index.tsx': DEFAULT_INDEX_CODE, '/App.tsx': trimmedCode }}
       options={{
         visibleFiles: ['/App.tsx'],
       }}
