@@ -449,6 +449,27 @@
       "url": "https://instrukcije.eduo.help/",
       "image": "showcases/websites/eduo-Instrukcije.png",
       "type": "websites"
+    },
+    {
+      "name": "Plan Harmony",
+      "description": "Collabortive trip planning.",
+      "url": "https://planharmony.com",
+      "image": "showcases/websites/Plan-Harmony.png",
+      "type": "websites"
+    },
+    {
+      "name": "Amine Elbarry",
+      "description": "Personal portfolio website built using Chakra⚡UI, Nextjs, Typescript and Graphql 💖",
+      "url": "https://elbarryamine.com",
+      "image": "showcases/websites/Amine-Elbarry.png",
+      "type": "websites"
+    },
+    {
+      "name": "Yash Kapure",
+      "description": "Personal Portfolio website built using Chakra❤UI, ReactJS, TypeScript and some of  my CSS Skills.",
+      "url": "https://yashkapure.netlify.app/",
+      "image": "showcases/websites/Yash-Kapure.png",
+      "type": "websites"
     }
   ],
   "libraries": [

@@ -16,6 +16,7 @@ Chakra UI exports 4 components for Form Control:
   children.
 - **`FormLabel`**: The label of a form section. The usage is similar to
   [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+  `htmlFor` is set by default for children input.
 - **`FormHelperText`**: The message that tells users more details about the form
   section.
 - **`FormErrorMessage`**: The message that shows up when an error occurs.
@@ -37,8 +38,8 @@ import { FormControl, FormLabel, FormHelperText, Input } from '@chakra-ui/react'
 export default function Example() {
   return (
     <FormControl>
-      <FormLabel htmlFor='email'>Email address</FormLabel>
-      <Input id='email' type='email' />
+      <FormLabel>Email address</FormLabel>
+      <Input type='email' />
       <FormHelperText>We'll never share your email.</FormHelperText>
     </FormControl>
   )
@@ -99,9 +100,8 @@ export default function errorMessageExample() {
 
   return (
     <FormControl isInvalid={isError}>
-      <FormLabel htmlFor='email'>Email</FormLabel>
+      <FormLabel>Email</FormLabel>
       <Input
-        id='email'
         type='email'
         value={input}
         onChange={handleInputChange}
@@ -132,8 +132,8 @@ import { FormControl, FormLabel, Input } from '@chakra-ui/react'
 export default function Example() {
   return (
     <FormControl isRequired>
-      <FormLabel htmlFor='first-name'>First name</FormLabel>
-      <Input id='first-name' placeholder='First name' />
+      <FormLabel>First name</FormLabel>
+      <Input placeholder='First name' />
     </FormControl>
   )
 }
@@ -147,8 +147,8 @@ import { FormControl, FormLabel, Select } from '@chakra-ui/react'
 export default function Example() {
   return (
     <FormControl>
-      <FormLabel htmlFor='country'>Country</FormLabel>
-      <Select id='country' placeholder='Select country'>
+      <FormLabel>Country</FormLabel>
+      <Select placeholder='Select country'>
         <option>United Arab Emirates</option>
         <option>Nigeria</option>
       </Select>
@@ -173,9 +173,9 @@ import {
 export default function Example() {
   return (
     <FormControl>
-      <FormLabel htmlFor='amount'>Amount</FormLabel>
+      <FormLabel>Amount</FormLabel>
       <NumberInput max={50} min={10}>
-        <NumberInputField id='amount' />
+        <NumberInputField />
         <NumberInputStepper>
           <NumberIncrementStepper />
           <NumberDecrementStepper />
@@ -227,8 +227,8 @@ export default function FormikExample() {
           <Field name='name' validate={validateName}>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
-                <FormLabel htmlFor='name'>First name</FormLabel>
-                <Input {...field} id='name' placeholder='name' />
+                <FormLabel>First name</FormLabel>
+                <Input {...field} placeholder='name' />
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
             )}
@@ -268,3 +268,7 @@ export default function FormikExample() {
 - If you render `FormErrorMessage` and `isInvalid` is `false` or `undefined`,
   `FormErrorMessage` won't be visible. The only way to make it visible is by
   passing `isInvalid` and setting it to `true`.
+  
+- You can still supply an `id` prop to `FormControl` that will override the randomly generated `id` and attach to the `for` attribute of the label and the `id` of the form element. (It also affects the `id` attribute of the label)
+
+- The combination of `htmlFor` and `id` are optional in which adding both will also override the generated `id` sent to the provider.
