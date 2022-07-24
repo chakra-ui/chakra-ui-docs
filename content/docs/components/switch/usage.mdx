@@ -25,12 +25,18 @@ import { Switch } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<FormControl display='flex' alignItems='center'>
-  <FormLabel htmlFor='email-alerts' mb='0'>
-    Enable email alerts?
-  </FormLabel>
-  <Switch id='email-alerts' />
-</FormControl>
+import { FormControl, FormLabel, Switch } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <FormControl display='flex' alignItems='center'>
+      <FormLabel htmlFor='email-alerts' mb='0'>
+        Enable email alerts?
+      </FormLabel>
+      <Switch id='email-alerts' />
+    </FormControl>
+  )
+}
 ```
 
 ## Sizes
@@ -38,11 +44,17 @@ import { Switch } from '@chakra-ui/react'
 Pass the `size` prop to change the size of the `Switch`.
 
 ```jsx
-<Stack align='center' direction='row'>
-  <Switch size='sm' />
-  <Switch size='md' />
-  <Switch size='lg' />
-</Stack>
+import { Stack, Switch } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack align='center' direction='row'>
+      <Switch size='sm' />
+      <Switch size='md' />
+      <Switch size='lg' />
+    </Stack>
+  )
+}
 ```
 
 ## Switch background color
@@ -51,10 +63,16 @@ You can change the checked background color of the `Switch` by passing the
 `colorScheme` prop.
 
 ```jsx
-<Stack direction='row'>
-  <Switch colorScheme='red' />
-  <Switch colorScheme='teal' size='lg' />
-</Stack>
+import { Stack, Switch } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row'>
+      <Switch colorScheme='red' />
+      <Switch colorScheme='teal' size='lg' />
+    </Stack>
+  )
+}
 ```
 
 ## State depending behavior
@@ -63,24 +81,29 @@ States like `isDisabled` have an impact on the usability of a `Switch` and on
 the styles, except for the `isInvalid` and the `isRequired` prop.
 
 ```jsx
-<FormControl as={SimpleGrid} columns={{ base: 2, lg: 4 }}>
-  <FormLabel htmlFor='isChecked'>isChecked:</FormLabel>
-  <Switch id='isChecked' isChecked />
+import { FormControl, FormLabel, SimpleGrid, Switch } from '@chakra-ui/react'
 
-  <FormLabel htmlFor='isDisabled'>isDisabled:</FormLabel>
-  <Switch id='isDisabled' isDisabled defaultChecked />
+export default function Example() {
+  return (
+    <FormControl as={SimpleGrid} columns={{ base: 2, lg: 4 }}>
+      <FormLabel htmlFor='isChecked'>isChecked:</FormLabel>
+      <Switch id='isChecked' isChecked />
 
-  <FormLabel htmlFor='isFocusable'>isFocusable:</FormLabel>
-  <Switch id='isFocusable' isFocusable isDisabled />
+      <FormLabel htmlFor='isDisabled'>isDisabled:</FormLabel>
+      <Switch id='isDisabled' isDisabled defaultChecked />
 
-  <FormLabel htmlFor='isInvalid'>isInvalid:</FormLabel>
-  <Switch id='isInvalid' isInvalid />
+      <FormLabel htmlFor='isFocusable'>isFocusable:</FormLabel>
+      <Switch id='isFocusable' isFocusable isDisabled />
 
-  <FormLabel htmlFor='isReadOnly'>isReadOnly:</FormLabel>
-  <Switch id='isReadOnly' isReadOnly />
+      <FormLabel htmlFor='isInvalid'>isInvalid:</FormLabel>
+      <Switch id='isInvalid' isInvalid />
 
-  <FormLabel htmlFor='isRequired'>isRequired:</FormLabel>
-  <Switch id='isRequired' isRequired />
-</FormControl>
+      <FormLabel htmlFor='isReadOnly'>isReadOnly:</FormLabel>
+      <Switch id='isReadOnly' isReadOnly />
+
+      <FormLabel htmlFor='isRequired'>isRequired:</FormLabel>
+      <Switch id='isRequired' isRequired />
+    </FormControl>
+  )
+}
 ```
-

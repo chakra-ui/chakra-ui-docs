@@ -24,7 +24,9 @@ application window, and it is possible to have more than one toast onscreen at a
 time.
 
 ```jsx
-function ToastExample() {
+import { Button, useToast } from '@chakra-ui/react'
+
+export default function ToastExample() {
   const toast = useToast()
   return (
     <Button
@@ -52,7 +54,9 @@ function ToastExample() {
 Display a custom component instead of the default Toast UI.
 
 ```jsx
-function CustomToastExample() {
+import { Box, Button, useToast } from '@chakra-ui/react'
+
+export default function CustomToastExample() {
   const toast = useToast()
   return (
     <Button
@@ -79,24 +83,27 @@ Toasts can be closed imperatively, individually (via the `close` instance
 method) or all together (via the `closeAll` instance method).
 
 ```jsx
-function ClosingToastExample() {
+import React from 'react'
+import { Button, useToast, Wrap } from '@chakra-ui/react'
+
+export default function ClosingToastExample() {
   const toast = useToast()
   const toastIdRef = React.useRef()
 
-  function close() {
+  const close = () => {
     if (toastIdRef.current) {
       toast.close(toastIdRef.current)
     }
   }
 
-  function closeAll() {
+  const closeAll = () => {
     // you may optionally pass an object of positions to exclusively close
     // keeping other positions opened
     // e.g. `{ positions: ['bottom'] }`
     toast.closeAll()
   }
 
-  function addToast() {
+  const addToast = () => {
     toastIdRef.current = toast({ description: 'some text' })
   }
 
@@ -124,17 +131,20 @@ Toasts' options can be updated, by passing an `id` and the new `options` to the
 `update` instance method.
 
 ```jsx
-function UpdatingToastExample() {
+import React from 'react'
+import { Button, Stack, useToast } from '@chakra-ui/react'
+
+export default function UpdatingToastExample() {
   const toast = useToast()
   const toastIdRef = React.useRef()
 
-  function update() {
+  const update = () => {
     if (toastIdRef.current) {
       toast.update(toastIdRef.current, { description: 'new text' })
     }
   }
 
-  function addToast() {
+  const addToast = () => {
     toastIdRef.current = toast({ description: 'some text' })
   }
 
@@ -157,7 +167,9 @@ function UpdatingToastExample() {
 You can use `status` to change the color of your toasts.
 
 ```jsx
-function ToastStatusExample() {
+import { Button, useToast, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function ToastStatusExample() {
   const toast = useToast()
   const statuses = ['success', 'error', 'warning', 'info']
 
@@ -189,7 +201,9 @@ function ToastStatusExample() {
 [`Alert`](https://chakra-ui.com/docs/components/feedback/alert) component.
 
 ```jsx
-function ToastVariantsExample() {
+import { Button, useToast, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function ToastVariantsExample() {
   const toast = useToast()
   const variants = ['solid', 'subtle', 'left-accent', 'top-accent']
 
@@ -221,7 +235,9 @@ The `toast` function now exposes a `containerStyle` property you can use to
 override the default styles for the toast container.
 
 ```jsx
-function Example() {
+import { Button, useToast } from '@chakra-ui/react'
+
+export default function Example() {
   // Via instantiation
   const toast = useToast({
     position: 'top',
@@ -254,7 +270,10 @@ function Example() {
 Using the `position` prop you can adjust where your toast will be popup from.
 
 ```jsx
-function PositionExample() {
+import React from 'react'
+import { Button, useToast, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function PositionExample() {
   const toast = useToast()
   const positions = [
     'top',
@@ -323,7 +342,7 @@ Components.
 > `createStandaloneToast`. If you don't, the default theme will be applied,
 > causing the font size of your page to shift when the toast is open.
 
-```tsx
+```tsx live=false
 import * as ReactDOM from 'react-dom/client'
 import { createStandaloneToast } from '@chakra-ui/toast'
 

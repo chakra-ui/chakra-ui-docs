@@ -25,17 +25,23 @@ it is needed.
 ### Defining Any Standard CSS Property
 
 In case you need to set a CSS property that is not listed in the
-[Style Props](/docs/styled-system/style-props) list, you can use the
-`sx` prop and pass it whatever CSS property you desire.
+[Style Props](/docs/styled-system/style-props) list, you can use the `sx` prop
+and pass it whatever CSS property you desire.
 
 One such example is the `filter` property:
 
 ```jsx
-<Image
-  src='http://placekitten.com/200/300'
-  alt='a kitten'
-  sx={{ filter: 'blur(8px)' }}
-/>
+import { Image } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Image
+      src='http://placekitten.com/200/300'
+      alt='a kitten'
+      sx={{ filter: 'blur(8px)' }}
+    />
+  )
+}
 ```
 
 ### Defining CSS Custom Properties
@@ -43,11 +49,17 @@ One such example is the `filter` property:
 Custom CSS properties can be defined via the `sx` prop as well:
 
 ```jsx
-<Box sx={{ '--my-color': '#53c8c4' }}>
-  <Heading color='var(--my-color)' size='lg'>
-    This uses CSS Custom Properties!
-  </Heading>
-</Box>
+import { Box, Heading } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box sx={{ '--my-color': '#53c8c4' }}>
+      <Heading color='var(--my-color)' size='lg'>
+        This uses CSS Custom Properties!
+      </Heading>
+    </Box>
+  )
+}
 ```
 
 ### Creating Nested Selectors
@@ -60,34 +72,46 @@ component you put `sx` on.
 > [`_groupHover` shorthand prop](/docs/styled-system/style-props#pseudo).
 
 ```jsx
-<Box borderWidth={2} borderColor='purple.500' p={5} className='my-box'>
-  <Heading size='lg'>
-    Hover the box...
-    <Box
-      as='span'
-      color='red.500'
-      sx={{
-        '.my-box:hover &': {
-          color: 'green.500',
-        },
-      }}
-    >
-      And I will turn green!
+import { Box, Heading } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box borderWidth={2} borderColor='purple.500' p={5} className='my-box'>
+      <Heading size='lg'>
+        Hover the box...
+        <Box
+          as='span'
+          color='red.500'
+          sx={{
+            '.my-box:hover &': {
+              color: 'green.500',
+            },
+          }}
+        >
+          And I will turn green!
+        </Box>
+      </Heading>
     </Box>
-  </Heading>
-</Box>
+  )
+}
 ```
 
 ### Custom Media queries
 
 ```jsx
-<Box
-  sx={{
-    '@media print': {
-      display: 'none',
-    },
-  }}
->
-  This text won't be shown when printing this page.
-</Box>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box
+      sx={{
+        '@media print': {
+          display: 'none',
+        },
+      }}
+    >
+      This text won't be shown when printing this page.
+    </Box>
+  )
+}
 ```

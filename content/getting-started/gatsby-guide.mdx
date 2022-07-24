@@ -28,7 +28,7 @@ yarn add @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/style
 After installation, you'll need to add `@chakra-ui/gatsby-plugin` to the
 `gatsby-config.js` file.
 
-```jsx live=false
+```js
 // gatsby-config.js
 
 module.exports = {
@@ -56,7 +56,7 @@ To use a custom theme, you can
 [shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
 this plugin’s `theme.js` file with your own theme:
 
-```jsx live=false
+```js
 // src/@chakra-ui/gatsby-plugin/theme.js
 import { extendTheme } from '@chakra-ui/react'
 const theme = {
@@ -68,8 +68,8 @@ const theme = {
 export default extendTheme(theme)
 ```
 
-If you want to use the [default theme](/docs/styled-system/theme)
-there's no need to shadow the file.
+If you want to use the [default theme](/docs/styled-system/theme) there's no
+need to shadow the file.
 
 ## Migration Notes
 

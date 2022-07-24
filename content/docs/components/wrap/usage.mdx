@@ -26,28 +26,34 @@ support. It works really well with things like dialog buttons, tags, and chips.
 In the example below, you see that the last `Box` wrapped to the next line.
 
 ```jsx
-<Wrap>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='red.200'>
-      Box 1
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='green.200'>
-      Box 2
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='tomato'>
-      Box 3
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blue.200'>
-      Box 4
-    </Center>
-  </WrapItem>
-</Wrap>
+import { Center, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Wrap>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='red.200'>
+          Box 1
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='green.200'>
+          Box 2
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='tomato'>
+          Box 3
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blue.200'>
+          Box 4
+        </Center>
+      </WrapItem>
+    </Wrap>
+  )
+}
 ```
 
 ### Change the spacing
@@ -58,33 +64,39 @@ it wraps.
 > Pro Tip: You can pass responsive values for the spacing.
 
 ```jsx
-<Wrap spacing='30px'>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='red.200'>
-      Box 1
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='green.200'>
-      Box 2
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='tomato'>
-      Box 3
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blue.200'>
-      Box 4
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blackAlpha.500'>
-      Box 5
-    </Center>
-  </WrapItem>
-</Wrap>
+import { Center, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Wrap spacing='30px'>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='red.200'>
+          Box 1
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='green.200'>
+          Box 2
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='tomato'>
+          Box 3
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blue.200'>
+          Box 4
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blackAlpha.500'>
+          Box 5
+        </Center>
+      </WrapItem>
+    </Wrap>
+  )
+}
 ```
 
 ### Change the alignment
@@ -92,64 +104,76 @@ it wraps.
 Pass the `align` prop to change the alignment of the child along the cross axis.
 
 ```jsx
-<Wrap spacing='30px' align='center'>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='red.200'>
-      Box 1
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='40px' bg='green.200'>
-      Box 2
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='120px' h='80px' bg='tomato'>
-      Box 3
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='40px' bg='blue.200'>
-      Box 4
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blackAlpha.500'>
-      Box 5
-    </Center>
-  </WrapItem>
-</Wrap>
+import { Center, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Wrap spacing='30px' align='center'>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='red.200'>
+          Box 1
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='40px' bg='green.200'>
+          Box 2
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='120px' h='80px' bg='tomato'>
+          Box 3
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='40px' bg='blue.200'>
+          Box 4
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blackAlpha.500'>
+          Box 5
+        </Center>
+      </WrapItem>
+    </Wrap>
+  )
+}
 ```
 
 Pass the `justify` prop to change the alignment of the child along the main
 axis.
 
 ```jsx
-<Wrap spacing='30px' justify='center'>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='red.200'>
-      Box 1
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='green.200'>
-      Box 2
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='120px' h='80px' bg='tomato'>
-      Box 3
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blue.200'>
-      Box 4
-    </Center>
-  </WrapItem>
-  <WrapItem>
-    <Center w='180px' h='80px' bg='blackAlpha.500'>
-      Box 5
-    </Center>
-  </WrapItem>
-</Wrap>
+import { Center, Wrap, WrapItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Wrap spacing='30px' justify='center'>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='red.200'>
+          Box 1
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='green.200'>
+          Box 2
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='120px' h='80px' bg='tomato'>
+          Box 3
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blue.200'>
+          Box 4
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w='180px' h='80px' bg='blackAlpha.500'>
+          Box 5
+        </Center>
+      </WrapItem>
+    </Wrap>
+  )
+}
 ```

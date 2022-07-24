@@ -59,7 +59,7 @@ export default theme
 For typescript, you need to explicitly describe the theme config type as
 `ThemeConfig` object.
 
-```tsx live=false
+```ts
 // theme.ts
 
 // 1. import `extendTheme` function
@@ -189,7 +189,9 @@ To manage color mode in your application, chakra exposes the `useColorMode` or
 and a function to toggle the color mode.
 
 ```jsx
-function Example() {
+import { useColorMode, Button } from '@chakra-ui/react'
+
+export default function Example() {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <header>
@@ -210,7 +212,7 @@ Calling `toggleColorMode` anywhere in your app tree toggles the color mode from
 the color mode. It takes 2 arguments: the value in light mode, and the value in
 dark mode.
 
-```jsx live=false
+```js live=false
 // Here's the signature
 const value = useColorModeValue(lightModeValue, darkModeValue)
 ```
@@ -221,7 +223,9 @@ Here's an example that changes the `background-color` and `color` using the
 > Click the **Toggle Mode** button to see it in action.
 
 ```jsx
-function StyleColorMode() {
+import { useColorModeValue, useColorMode, Box, Button } from '@chakra-ui/react'
+
+export default function StyleColorMode() {
   const { toggleColorMode } = useColorMode()
 
   const bg = useColorModeValue('red.500', 'red.200')
@@ -249,7 +253,15 @@ light and dark modes. To achieve this, wrap the component in a `LightMode` or
 > Click the **"Toggle Mode"** button to see it in action.
 
 ```jsx
-function Example() {
+import {
+  LightMode,
+  DarkMode,
+  useColorMode,
+  Button,
+  HStack,
+} from '@chakra-ui/react'
+
+export default function Example() {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (

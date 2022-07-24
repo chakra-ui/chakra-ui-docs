@@ -41,7 +41,19 @@ focus should be placed on the least destructive element when the dialog opens,
 to prevent users from accidentally confirming the destructive action.
 
 ```jsx
-function AlertDialogExample() {
+import React from 'react'
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  Button,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function AlertDialogExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = React.useRef()
 
@@ -89,7 +101,20 @@ passing a `motionPreset` prop, and set its value to either `slideInBottom`,
 `slideInRight`, or `scale`.
 
 ```jsx
-function TransitionExample() {
+import React from 'react'
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogCloseButton,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  Button,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function TransitionExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = React.useRef()
 
@@ -136,4 +161,4 @@ function TransitionExample() {
   `AlertDialogBody` are announced by screen readers via `aria-labelledby` and
   `aria-describedby` attributes.
 - Clicking on the overlay closes the `AlertDialog`.
-- Pressing <kbd>esc</kbd> closes the dialog.
+- Pressing `esc` closes the dialog.

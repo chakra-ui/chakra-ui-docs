@@ -22,9 +22,15 @@ Put any child element inside it, give it any `width` or/and `height`, it'll
 ensure the child is centered.
 
 ```jsx
-<Center bg='tomato' h='100px' color='white'>
-  This is the Center
-</Center>
+import { Center } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Center bg='tomato' h='100px' color='white'>
+      This is the Center
+    </Center>
+  )
+}
 ```
 
 ### With icons
@@ -32,16 +38,23 @@ ensure the child is centered.
 Center can be used to create frames around icons or numbers.
 
 ```jsx
-<HStack>
-  <Center w='40px' h='40px' bg='tomato' color='white'>
-    <PhoneIcon />
-  </Center>
-  <Center w='40px' h='40px' bg='tomato' color='white'>
-    <Box as='span' fontWeight='bold' fontSize='lg'>
-      1
-    </Box>
-  </Center>
-</HStack>
+import { Box, Center, HStack } from '@chakra-ui/react'
+import { PhoneIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <HStack>
+      <Center w='40px' h='40px' bg='tomato' color='white'>
+        <PhoneIcon />
+      </Center>
+      <Center w='40px' h='40px' bg='tomato' color='white'>
+        <Box as='span' fontWeight='bold' fontSize='lg'>
+          1
+        </Box>
+      </Center>
+    </HStack>
+  )
+}
 ```
 
 ### Square and Circle
@@ -50,12 +63,19 @@ To reduce boilerplate, we've exported `Square` and `Circle` components that
 automatically centers its children given the `size`.
 
 ```jsx
-<HStack>
-  <Circle size='40px' bg='tomato' color='white'>
-    <PhoneIcon />
-  </Circle>
-  <Square size='40px' bg='purple.700' color='white'>
-    <PhoneIcon />
-  </Square>
-</HStack>
+import { Circle, HStack, Square } from '@chakra-ui/react'
+import { PhoneIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <HStack>
+      <Circle size='40px' bg='tomato' color='white'>
+        <PhoneIcon />
+      </Circle>
+      <Square size='40px' bg='purple.700' color='white'>
+        <PhoneIcon />
+      </Square>
+    </HStack>
+  )
+}
 ```

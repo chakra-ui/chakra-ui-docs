@@ -36,21 +36,48 @@ The editable's text input and preview inherits all font styling from the root
 seamless.
 
 ```jsx
-// Click the text to edit
-<Editable defaultValue='Take some chakra'>
-  <EditablePreview />
-  <EditableInput />
-</Editable>
+import {
+  Box,
+  Editable,
+  EditableInput,
+  EditableTextarea,
+  EditablePreview,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  // Click the text to edit
+  return (
+    <Box p='4'>
+      <Editable defaultValue='Take some chakra'>
+        <EditablePreview />
+        <EditableInput />
+      </Editable>
+    </Box>
+  )
+}
 ```
 
 ### Usage with textarea
 
 ```jsx
-// Click the text to edit
-<Editable defaultValue='Take some chakra'>
-  <EditablePreview />
-  <EditableTextarea />
-</Editable>
+import {
+  Box,
+  Editable,
+  EditableTextarea,
+  EditablePreview,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  // Click the text to edit
+  return (
+    <Box p='4'>
+      <Editable defaultValue='Take some chakra'>
+        <EditablePreview />
+        <EditableTextarea />
+      </Editable>
+    </Box>
+  )
+}
 ```
 
 ### With custom input and controls
@@ -61,27 +88,39 @@ the component. You may want to customize the `EditableInput` as well. This can
 be achieved by using a custom `Input` component in the `as` prop.
 
 ```jsx
-function CustomControlsExample() {
-  /* Here's a custom control */
-  function EditableControls() {
-    const {
-      isEditing,
-      getSubmitButtonProps,
-      getCancelButtonProps,
-      getEditButtonProps,
-    } = useEditableControls()
+import {
+  ButtonGroup,
+  Editable,
+  EditableInput,
+  EditablePreview,
+  Flex,
+  Input,
+  IconButton,
+  useEditableControls,
+} from '@chakra-ui/react'
+import { CheckIcon, CloseIcon, EditIcon } from '@chakra-ui/icons'
 
-    return isEditing ? (
-      <ButtonGroup justifyContent='center' size='sm'>
-        <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} />
-        <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} />
-      </ButtonGroup>
-    ) : (
-      <Flex justifyContent='center'>
-        <IconButton size='sm' icon={<EditIcon />} {...getEditButtonProps()} />
-      </Flex>
-    )
-  }
+function EditableControls() {
+  const {
+    isEditing,
+    getSubmitButtonProps,
+    getCancelButtonProps,
+    getEditButtonProps,
+  } = useEditableControls()
+
+  return isEditing ? (
+    <ButtonGroup justifyContent='center' size='sm'>
+      <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} />
+      <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} />
+    </ButtonGroup>
+  ) : (
+    <Flex justifyContent='center'>
+      <IconButton size='sm' icon={<EditIcon />} {...getEditButtonProps()} />
+    </Flex>
+  )
+}
+export default function CustomControlsExample() {
+  /* Here's a custom control */
 
   return (
     <Editable

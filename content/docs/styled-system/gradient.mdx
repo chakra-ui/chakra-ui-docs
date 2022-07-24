@@ -49,7 +49,13 @@ Here's the list of supported direction shorthands and their respective values:
 Let's create a simple gradient from `green.200` to `pink.500`
 
 ```jsx
-<Box w='100%' h='200px' bgGradient='linear(to-r, green.200, pink.500)' />
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box w='100%' h='200px' bgGradient='linear(to-r, green.200, pink.500)' />
+  )
+}
 ```
 
 ### Customizing Colors
@@ -57,7 +63,11 @@ Let's create a simple gradient from `green.200` to `pink.500`
 You can use both theme-aware color tokens or raw CSS color values.
 
 ```jsx
-<Box w='100%' h='200px' bgGradient='linear(to-l, #7928CA, #FF0080)' />
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Box w='100%' h='200px' bgGradient='linear(to-l, #7928CA, #FF0080)' />
+}
 ```
 
 ### Multiple Color Stops
@@ -66,22 +76,34 @@ By adding more color-stop points on the gradient line, you can create a highly
 customized transition between multiple colors.
 
 ```jsx
-<Box
-  w='100%'
-  h='200px'
-  bgGradient='linear(to-r, gray.300, yellow.400, pink.200)'
-/>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box
+      w='100%'
+      h='200px'
+      bgGradient='linear(to-r, gray.300, yellow.400, pink.200)'
+    />
+  )
+}
 ```
 
 Following the CSS gradient specification, you can also define the distribution
 of the color stops
 
 ```jsx
-<Box
-  w='100%'
-  h='200px'
-  bgGradient='linear(red.100 0%, orange.100 25%, yellow.100 50%)'
-/>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box
+      w='100%'
+      h='200px'
+      bgGradient='linear(red.100 0%, orange.100 25%, yellow.100 50%)'
+    />
+  )
+}
 ```
 
 ## Text Gradient API
@@ -90,14 +112,20 @@ To add a text gradient, pass the `bgGradient` following the API and `bgClip`
 prop to `text`.
 
 ```jsx
-<Text
-  bgGradient='linear(to-l, #7928CA, #FF0080)'
-  bgClip='text'
-  fontSize='6xl'
-  fontWeight='extrabold'
->
-  Welcome to Chakra UI
-</Text>
+import { Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Text
+      bgGradient='linear(to-l, #7928CA, #FF0080)'
+      bgClip='text'
+      fontSize='6xl'
+      fontWeight='extrabold'
+    >
+      Welcome to Chakra UI
+    </Text>
+  )
+}
 ```
 
 ## Responsive Gradients
@@ -106,15 +134,21 @@ You can control the responsiveness of gradients by specifying the gradients at
 the different breakpoints.
 
 ```jsx
-<Box
-  w='100%'
-  h='200px'
-  bgGradient={[
-    'linear(to-tr, teal.300, yellow.400)',
-    'linear(to-t, blue.200, teal.500)',
-    'linear(to-b, orange.100, purple.300)',
-  ]}
-/>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box
+      w='100%'
+      h='200px'
+      bgGradient={[
+        'linear(to-tr, teal.300, yellow.400)',
+        'linear(to-t, blue.200, teal.500)',
+        'linear(to-b, orange.100, purple.300)',
+      ]}
+    />
+  )
+}
 ```
 
 ## Changing gradient with pseudo props
@@ -125,17 +159,23 @@ You can change the gradient of an element based on common CSS pseudo attributes
 For example, on hover, add the gradient you wish to have.
 
 ```jsx
-<Box
-  as='button'
-  p={4}
-  color='white'
-  fontWeight='bold'
-  borderRadius='md'
-  bgGradient='linear(to-r, teal.500, green.500)'
-  _hover={{
-    bgGradient: 'linear(to-r, red.500, yellow.500)',
-  }}
->
-  Click here
-</Box>
+import { Box } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box
+      as='button'
+      p={4}
+      color='white'
+      fontWeight='bold'
+      borderRadius='md'
+      bgGradient='linear(to-r, teal.500, green.500)'
+      _hover={{
+        bgGradient: 'linear(to-r, red.500, yellow.500)',
+      }}
+    >
+      Click here
+    </Box>
+  )
+}
 ```

@@ -28,11 +28,17 @@ pick from, otherwise consider using a radio group instead.
 Here is a basic usage of the `Select` component.
 
 ```jsx
-<Select placeholder='Select option'>
-  <option value='option1'>Option 1</option>
-  <option value='option2'>Option 2</option>
-  <option value='option3'>Option 3</option>
-</Select>
+import { Select } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Select placeholder='Select option'>
+      <option value='option1'>Option 1</option>
+      <option value='option2'>Option 2</option>
+      <option value='option3'>Option 3</option>
+    </Select>
+  )
+}
 ```
 
 ### Changing the size
@@ -45,12 +51,18 @@ The `Select` component comes in four sizes. The default is `md`.
 - `lg` (`48px`)
 
 ```jsx
-<Stack spacing={3}>
-  <Select placeholder='extra small size' size='xs' />
-  <Select placeholder='small size' size='sm' />
-  <Select placeholder='medium size' size='md' />
-  <Select placeholder='large size' size='lg' />
-</Stack>
+import { Select, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack spacing={3}>
+      <Select placeholder='extra small size' size='xs' />
+      <Select placeholder='small size' size='sm' />
+      <Select placeholder='medium size' size='md' />
+      <Select placeholder='large size' size='lg' />
+    </Stack>
+  )
+}
 ```
 
 ### Changing the appearance
@@ -60,12 +72,18 @@ Just like the input component, `Select` comes in 4 variants, `outline`,
 either of these values.
 
 ```jsx
-<Stack spacing={3}>
-  <Select variant='outline' placeholder='Outline' />
-  <Select variant='filled' placeholder='Filled' />
-  <Select variant='flushed' placeholder='Flushed' />
-  <Select variant='unstyled' placeholder='Unstyled' />
-</Stack>
+import { Select, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack spacing={3}>
+      <Select variant='outline' placeholder='Outline' />
+      <Select variant='filled' placeholder='Filled' />
+      <Select variant='flushed' placeholder='Flushed' />
+      <Select variant='unstyled' placeholder='Unstyled' />
+    </Stack>
+  )
+}
 ```
 
 ### Changing the icon
@@ -77,7 +95,12 @@ In case the custom icon size doesn't look right, you can pass the `iconSize`
 prop to change it.
 
 ```jsx
-<Select icon={<MdArrowDropDown />} placeholder='Woohoo! A new icon' />
+import { Select } from '@chakra-ui/react'
+import { MdArrowDropDown } from 'react-icons/md'
+
+export default function Example() {
+  return <Select icon={<MdArrowDropDown />} placeholder='Woohoo! A new icon' />
+}
 ```
 
 ### Overriding the styles
@@ -86,10 +109,16 @@ Even though the select comes with predefined styles, you can override pretty
 much any property. Here we'll override the background color.
 
 ```jsx
-<Select
-  bg='tomato'
-  borderColor='tomato'
-  color='white'
-  placeholder='Woohoo! A new background color!'
-/>
+import { Select } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Select
+      bg='tomato'
+      borderColor='tomato'
+      color='white'
+      placeholder='Woohoo! A new background color!'
+    />
+  )
+}
 ```

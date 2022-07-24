@@ -17,20 +17,32 @@ import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 You can use it as a standalone component.
 
 ```jsx
-<Stack>
-  <Skeleton height='20px' />
-  <Skeleton height='20px' />
-  <Skeleton height='20px' />
-</Stack>
+import { Skeleton, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack>
+      <Skeleton height='20px' />
+      <Skeleton height='20px' />
+      <Skeleton height='20px' />
+    </Stack>
+  )
+}
 ```
 
 Or to wrap another component to take the same height and width.
 
 ```jsx
-<Skeleton>
-  <div>contents wrapped</div>
-  <div>won't be visible</div>
-</Skeleton>
+import { Skeleton } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Skeleton>
+      <div>contents wrapped</div>
+      <div>won't be visible</div>
+    </Skeleton>
+  )
+}
 ```
 
 Useful when fetching remote data.
@@ -54,10 +66,16 @@ function Card() {
 ### Circle and Text Skeleton
 
 ```jsx
-<Box padding='6' boxShadow='lg' bg='white'>
-  <SkeletonCircle size='10' />
-  <SkeletonText mt='4' noOfLines={4} spacing='4' />
-</Box>
+import { Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box padding='6' boxShadow='lg' bg='white'>
+      <SkeletonCircle size='10' />
+      <SkeletonText mt='4' noOfLines={4} spacing='4' />
+    </Box>
+  )
+}
 ```
 
 ### Skeleton color
@@ -65,7 +83,11 @@ function Card() {
 You can change the animation color with `startColor` and `endColor`.
 
 ```jsx
-<Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
+import { Skeleton } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
+}
 ```
 
 ### Skipping the skeleton when content is loaded
@@ -73,9 +95,15 @@ You can change the animation color with `startColor` and `endColor`.
 You can prevent the skeleton from rendering using the `isLoaded` prop.
 
 ```jsx
-<Skeleton isLoaded>
-  <span>Chakra ui is cool</span>
-</Skeleton>
+import { Skeleton } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Skeleton isLoaded>
+      <span>Chakra ui is cool</span>
+    </Skeleton>
+  )
+}
 ```
 
 ### `fadeDuration` with `isLoaded`
@@ -89,7 +117,10 @@ This requires the `isLoaded` prop, and the animation is best visible when the
 `isLoaded` prop is toggled to `true`.
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Box, Button, Skeleton, Stack } from '@chakra-ui/react'
+
+export default function Example() {
   const [isLoaded, setIsLoaded] = React.useState(false)
   return (
     <Stack padding={4} spacing={1}>

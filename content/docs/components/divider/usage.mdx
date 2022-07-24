@@ -18,7 +18,11 @@ The `Divider` displays a thin horizontal or vertical line, and renders a `hr`
 tag.
 
 ```jsx
-<Divider />
+import { Divider } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Divider />
+}
 ```
 
 ### Divider Orientation
@@ -26,23 +30,39 @@ tag.
 Pass the `orientation` prop and set it to either `horizontal` or `vertical`.
 
 ```jsx
-<Divider orientation='horizontal' />
+import { Divider } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Divider orientation='horizontal' />
+}
 ```
 
 If the vertical orientation is used, make sure that the parent element is
 assigned a height.
 
 ```jsx
-<Center height='50px'>
-  <Divider orientation='vertical' />
-</Center>
+import { Center, Divider } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Center height='50px'>
+      <Divider orientation='vertical' />
+    </Center>
+  )
+}
 ```
 
 ## Composition
 
 ```jsx
-<Stack direction='row' h='100px' p={4}>
-  <Divider orientation='vertical' />
-  <Text>Chakra UI</Text>
-</Stack>
+import { Divider, Stack, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row' h='100px' p={4}>
+      <Divider orientation='vertical' />
+      <Text>Chakra UI</Text>
+    </Stack>
+  )
+}
 ```

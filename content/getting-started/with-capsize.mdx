@@ -23,7 +23,7 @@ yarn add @ceteio/chakra-capsize
 The package exports a theme extension called `withCappedText` that you need to
 use in your theme:
 
-```typescript ln={19-23}
+```ts ln={19-23}
 import { withCappedText } from '@ceteio/chakra-capsize/theme'
 import { extendTheme } from '@chakra-ui/react'
 import robotoFontMetrics from '@capsizecss/metrics/roboto'
@@ -53,7 +53,7 @@ const theme = extendTheme(
 To utilize Capsize in your app, you can use the `CappedHeading` and `CappedText`
 components exported from `chakra-capsize`:
 
-```typescript
+```tsx live=false
 import { CappedText, CappedHeading } from '@ceteio/chakra-capsize'
 
 export const ExampleComponent = () => {

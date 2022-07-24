@@ -17,35 +17,55 @@ import { Spinner } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Spinner />
+import { Spinner } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Spinner />
+}
 ```
 
 ### Spinner with Color
 
 ```jsx
-<Spinner color='red.500' />
+import { Spinner } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Spinner color='red.500' />
+}
 ```
 
 ### Spinner with different size
 
 ```jsx
-<Stack direction='row' spacing={4}>
-  <Spinner size='xs' />
-  <Spinner size='sm' />
-  <Spinner size='md' />
-  <Spinner size='lg' />
-  <Spinner size='xl' />
-</Stack>
+import { Stack, Spinner } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row' spacing={4}>
+      <Spinner size='xs' />
+      <Spinner size='sm' />
+      <Spinner size='md' />
+      <Spinner size='lg' />
+      <Spinner size='xl' />
+    </Stack>
+  )
+}
 ```
 
 ### Spinner with empty area color
 
 ```jsx
-<Spinner
-  thickness='4px'
-  speed='0.65s'
-  emptyColor='gray.200'
-  color='blue.500'
-  size='xl'
-/>
+import { Spinner } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Spinner
+      thickness='4px'
+      speed='0.65s'
+      emptyColor='gray.200'
+      color='blue.500'
+      size='xl'
+    />
+  )
+}
 ```

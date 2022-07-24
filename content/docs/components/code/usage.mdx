@@ -17,7 +17,11 @@ import { Code } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Code>Hello world</Code>
+import { Code } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Code>Hello world</Code>
+}
 ```
 
 ### Colors
@@ -26,9 +30,15 @@ You can change the color scheme of the component by passing the `colorScheme`
 prop.
 
 ```jsx
-<Stack direction='row'>
-  <Code children='console.log(welcome)' />
-  <Code colorScheme='red' children="var chakra = 'awesome!'" />
-  <Code colorScheme='yellow' children='npm install chakra' />
-</Stack>
+import { Code, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row'>
+      <Code children='console.log(welcome)' />
+      <Code colorScheme='red' children="var chakra = 'awesome!'" />
+      <Code colorScheme='yellow' children='npm install chakra' />
+    </Stack>
+  )
+}
 ```

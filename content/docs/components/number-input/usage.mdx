@@ -36,13 +36,25 @@ for the spin button widget. It is composed of smaller components to give you
 control of the styling of each part.
 
 ```jsx
-<NumberInput>
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Setting a minimum and maximum value
@@ -52,13 +64,25 @@ By default, the input will restrict the value to stay within the specified
 range.
 
 ```jsx
-<NumberInput defaultValue={15} min={10} max={20}>
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput defaultValue={15} min={10} max={20}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Setting the step size
@@ -68,13 +92,25 @@ value. By default, the value is rounded to match the number of decimals in the
 `step`.
 
 ```jsx
-<NumberInput step={5} defaultValue={15} min={10} max={30}>
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput step={5} defaultValue={15} min={10} max={30}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Adjusting the precision of the value
@@ -84,13 +120,25 @@ points. Simply pass the `precision` prop and set it to the number of decimal
 points.
 
 ```jsx
-<NumberInput defaultValue={15} precision={2} step={0.2}>
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput defaultValue={15} precision={2} step={0.2}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Clamp value when user blurs the input
@@ -105,13 +153,25 @@ To disable this behavior, pass `clampValueOnBlur` and set to `false`.
 > value on blur.
 
 ```jsx
-<NumberInput defaultValue={15} max={30} clampValueOnBlur={false}>
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput defaultValue={15} max={30} clampValueOnBlur={false}>
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Allowing out of range values
@@ -125,24 +185,45 @@ support this use case.
 > than `min`.
 
 ```jsx
-<NumberInput
-  defaultValue={15}
-  max={10}
-  keepWithinRange={false}
-  clampValueOnBlur={false}
->
-  <NumberInputField />
-  <NumberInputStepper>
-    <NumberIncrementStepper />
-    <NumberDecrementStepper />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput
+      defaultValue={15}
+      max={10}
+      keepWithinRange={false}
+      clampValueOnBlur={false}
+    >
+      <NumberInputField />
+      <NumberInputStepper>
+        <NumberIncrementStepper />
+        <NumberDecrementStepper />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Formatting and Parsing the value
 
 ```jsx
-function Example() {
+import React from 'react'
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
   const format = (val) => `$` + val
   const parse = (val) => val.replace(/^\$/, '')
 
@@ -170,39 +251,52 @@ Like the `Input` component, you can pass the `size` prop to change the size of
 the input.
 
 ```jsx
-<Stack shouldWrapChildren direction='row'>
-  <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Stack,
+} from '@chakra-ui/react'
 
-  <NumberInput size='sm' maxW={20} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+export default function Example() {
+  return (
+    <Stack shouldWrapChildren direction='row'>
+      <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
 
-  <NumberInput size='md' maxW={24} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
+      <NumberInput size='sm' maxW={20} defaultValue={15} min={10}>
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
 
-  <NumberInput size='lg' maxW={32} defaultValue={15} min={10}>
-    <NumberInputField />
-    <NumberInputStepper>
-      <NumberIncrementStepper />
-      <NumberDecrementStepper />
-    </NumberInputStepper>
-  </NumberInput>
-</Stack>
+      <NumberInput size='md' maxW={24} defaultValue={15} min={10}>
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
+
+      <NumberInput size='lg' maxW={32} defaultValue={15} min={10}>
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
+    </Stack>
+  )
+}
 ```
 
 ### Changing the styles
@@ -211,21 +305,33 @@ You can change the style of any part of the components using style props. You
 can also change the icons used in the steppers.
 
 ```jsx
-<NumberInput size='sm' defaultValue={15} min={10}>
-  <NumberInputField focusBorderColor='red.200' />
-  <NumberInputStepper>
-    <NumberIncrementStepper
-      bg='green.200'
-      _active={{ bg: 'green.300' }}
-      children='+'
-    />
-    <NumberDecrementStepper
-      bg='pink.200'
-      _active={{ bg: 'pink.300' }}
-      children='-'
-    />
-  </NumberInputStepper>
-</NumberInput>
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <NumberInput size='sm' defaultValue={15} min={10}>
+      <NumberInputField focusBorderColor='red.200' />
+      <NumberInputStepper>
+        <NumberIncrementStepper
+          bg='green.200'
+          _active={{ bg: 'green.300' }}
+          children='+'
+        />
+        <NumberDecrementStepper
+          bg='pink.200'
+          _active={{ bg: 'pink.300' }}
+          children='-'
+        />
+      </NumberInputStepper>
+    </NumberInput>
+  )
+}
 ```
 
 ### Combining it with a Slider
@@ -238,7 +344,21 @@ We recommend disabling `focusThumbOnChange` on the `Slider`, so the
 Here's an example of how to do that:
 
 ```jsx
-function SliderInput() {
+import React from 'react'
+import {
+  Flex,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+} from '@chakra-ui/react'
+
+export default function SliderInput() {
   const [value, setValue] = React.useState(0)
   const handleChange = (value) => setValue(value)
 
@@ -273,7 +393,9 @@ Sometimes, you might need to create a mobile version of the number input. Here's
 how you can leverage the `useNumberInput` hook to build one.
 
 ```jsx
-function HookUsage() {
+import { useNumberInput, Button, Input, HStack } from '@chakra-ui/react'
+
+export default function HookUsage() {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 0.01,
@@ -304,7 +426,15 @@ values using the mouse wheel events. To activate this, pass the
 `allowMouseWheel` prop.
 
 ```jsx
-function MouseWheelExample() {
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
+export default function MouseWheelExample() {
   return (
     <NumberInput allowMouseWheel>
       <NumberInputField />

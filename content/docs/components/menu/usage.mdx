@@ -39,18 +39,24 @@ import {
 ## Usage
 
 ```jsx
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Actions
-  </MenuButton>
-  <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
-  </MenuList>
-</Menu>
+import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+        Actions
+      </MenuButton>
+      <MenuList>
+        <MenuItem>Download</MenuItem>
+        <MenuItem>Create a Copy</MenuItem>
+        <MenuItem>Mark as Draft</MenuItem>
+        <MenuItem>Delete</MenuItem>
+        <MenuItem>Attend a Workshop</MenuItem>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ### Accessing the internal state
@@ -60,19 +66,32 @@ To access the internal state of the `Menu`, use a function as `children`
 `isOpen` and method `onClose`.
 
 ```jsx
-<Menu>
-  {({ isOpen }) => (
-    <>
-      <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />}>
-        {isOpen ? 'Close' : 'Open'}
-      </MenuButton>
-      <MenuList>
-        <MenuItem>Download</MenuItem>
-        <MenuItem onClick={() => alert('Kagebunshin')}>Create a Copy</MenuItem>
-      </MenuList>
-    </>
-  )}
-</Menu>
+import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <Menu>
+      {({ isOpen }) => (
+        <>
+          <MenuButton
+            isActive={isOpen}
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+          >
+            {isOpen ? 'Close' : 'Open'}
+          </MenuButton>
+          <MenuList>
+            <MenuItem>Download</MenuItem>
+            <MenuItem onClick={() => alert('Kagebunshin')}>
+              Create a Copy
+            </MenuItem>
+          </MenuList>
+        </>
+      )}
+    </Menu>
+  )
+}
 ```
 
 ### Customizing the button
@@ -102,59 +121,86 @@ the letter you typed.
 > Open the menu, try and type any letter, (say "S") to see the focus movement.
 
 ```jsx
-<Menu>
-  <MenuButton
-    px={4}
-    py={2}
-    transition='all 0.2s'
-    borderRadius='md'
-    borderWidth='1px'
-    _hover={{ bg: 'gray.400' }}
-    _expanded={{ bg: 'blue.400' }}
-    _focus={{ boxShadow: 'outline' }}
-  >
-    File <ChevronDownIcon />
-  </MenuButton>
-  <MenuList>
-    <MenuItem>New File</MenuItem>
-    <MenuItem>New Window</MenuItem>
-    <MenuDivider />
-    <MenuItem>Open...</MenuItem>
-    <MenuItem>Save File</MenuItem>
-  </MenuList>
-</Menu>
+import {
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton
+        px={4}
+        py={2}
+        transition='all 0.2s'
+        borderRadius='md'
+        borderWidth='1px'
+        _hover={{ bg: 'gray.400' }}
+        _expanded={{ bg: 'blue.400' }}
+        _focus={{ boxShadow: 'outline' }}
+      >
+        File <ChevronDownIcon />
+      </MenuButton>
+      <MenuList>
+        <MenuItem>New File</MenuItem>
+        <MenuItem>New Window</MenuItem>
+        <MenuDivider />
+        <MenuItem>Open...</MenuItem>
+        <MenuItem>Save File</MenuItem>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ### Just another example
 
 ```jsx
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
+import {
+  Button,
+  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+        Your Cats
+      </MenuButton>
+      <MenuList>
+        <MenuItem minH='48px'>
+          <Image
+            boxSize='2rem'
+            borderRadius='full'
+            src='https://placekitten.com/100/100'
+            alt='Fluffybuns the destroyer'
+            mr='12px'
+          />
+          <span>Fluffybuns the Destroyer</span>
+        </MenuItem>
+        <MenuItem minH='40px'>
+          <Image
+            boxSize='2rem'
+            borderRadius='full'
+            src='https://placekitten.com/120/120'
+            alt='Simon the pensive'
+            mr='12px'
+          />
+          <span>Simon the pensive</span>
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ### Adding icons and commands
@@ -163,28 +209,47 @@ You can add icon to each `MenuItem` by passing the `icon` prop. To add a
 commands (or hotkeys) to menu items, you can use the `command` prop.
 
 ```jsx
-<Menu>
-  <MenuButton
-    as={IconButton}
-    aria-label='Options'
-    icon={<HamburgerIcon />}
-    variant='outline'
-  />
-  <MenuList>
-    <MenuItem icon={<AddIcon />} command='⌘T'>
-      New Tab
-    </MenuItem>
-    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-      New Window
-    </MenuItem>
-    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
-      Open Closed Tab
-    </MenuItem>
-    <MenuItem icon={<EditIcon />} command='⌘O'>
-      Open File...
-    </MenuItem>
-  </MenuList>
-</Menu>
+import {
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import {
+  AddIcon,
+  EditIcon,
+  ExternalLinkIcon,
+  HamburgerIcon,
+  RepeatIcon,
+} from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton
+        as={IconButton}
+        aria-label='Options'
+        icon={<HamburgerIcon />}
+        variant='outline'
+      />
+      <MenuList>
+        <MenuItem icon={<AddIcon />} command='⌘T'>
+          New Tab
+        </MenuItem>
+        <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
+          New Window
+        </MenuItem>
+        <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
+          Open Closed Tab
+        </MenuItem>
+        <MenuItem icon={<EditIcon />} command='⌘O'>
+          Open File...
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ### Lazily mounting MenuItem
@@ -198,15 +263,21 @@ extra performant, or make network calls on mount that should only happen when
 the component is displayed.
 
 ```jsx
-<Menu isLazy>
-  <MenuButton>Open menu</MenuButton>
-  <MenuList>
-    {/* MenuItems are not rendered unless Menu is open */}
-    <MenuItem>New Window</MenuItem>
-    <MenuItem>Open Closed Tab</MenuItem>
-    <MenuItem>Open File</MenuItem>
-  </MenuList>
-</Menu>
+import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Menu isLazy>
+      <MenuButton>Open menu</MenuButton>
+      <MenuList>
+        {/* MenuItems are not rendered unless Menu is open */}
+        <MenuItem>New Window</MenuItem>
+        <MenuItem>Open Closed Tab</MenuItem>
+        <MenuItem>Open File</MenuItem>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ### Rendering menu in a portal
@@ -215,17 +286,23 @@ To render menus in a portal, import the `Portal` component and wrap the
 `MenuList` within the `Portal`.
 
 ```jsx
-<Menu>
-  <MenuButton>Open menu</MenuButton>
-  <Portal>
-    <MenuList>
-      <MenuItem>Menu 1</MenuItem>
-      <MenuItem>New Window</MenuItem>
-      <MenuItem>Open Closed Tab</MenuItem>
-      <MenuItem>Open File</MenuItem>
-    </MenuList>
-  </Portal>
-</Menu>
+import { Menu, MenuButton, MenuList, MenuItem, Portal } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton>Open menu</MenuButton>
+      <Portal>
+        <MenuList>
+          <MenuItem>Menu 1</MenuItem>
+          <MenuItem>New Window</MenuItem>
+          <MenuItem>Open Closed Tab</MenuItem>
+          <MenuItem>Open File</MenuItem>
+        </MenuList>
+      </Portal>
+    </Menu>
+  )
+}
 ```
 
 ### MenuGroup
@@ -234,22 +311,36 @@ To group related `MenuItem`s, use the `MenuGroup` component and pass it a
 `title` for the group name.
 
 ```jsx
-<Menu>
-  <MenuButton as={Button} colorScheme='pink'>
-    Profile
-  </MenuButton>
-  <MenuList>
-    <MenuGroup title='Profile'>
-      <MenuItem>My Account</MenuItem>
-      <MenuItem>Payments </MenuItem>
-    </MenuGroup>
-    <MenuDivider />
-    <MenuGroup title='Help'>
-      <MenuItem>Docs</MenuItem>
-      <MenuItem>FAQ</MenuItem>
-    </MenuGroup>
-  </MenuList>
-</Menu>
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuGroup,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuButton as={Button} colorScheme='pink'>
+        Profile
+      </MenuButton>
+      <MenuList>
+        <MenuGroup title='Profile'>
+          <MenuItem>My Account</MenuItem>
+          <MenuItem>Payments </MenuItem>
+        </MenuGroup>
+        <MenuDivider />
+        <MenuGroup title='Help'>
+          <MenuItem>Docs</MenuItem>
+          <MenuItem>FAQ</MenuItem>
+        </MenuGroup>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ## Menu option groups
@@ -258,23 +349,38 @@ You can compose a menu for table headers to help with sorting and filtering
 options. Use the `MenuOptionGroup` and `MenuItemOption` components.
 
 ```jsx
-<Menu closeOnSelect={false}>
-  <MenuButton as={Button} colorScheme='blue'>
-    MenuItem
-  </MenuButton>
-  <MenuList minWidth='240px'>
-    <MenuOptionGroup defaultValue='asc' title='Order' type='radio'>
-      <MenuItemOption value='asc'>Ascending</MenuItemOption>
-      <MenuItemOption value='desc'>Descending</MenuItemOption>
-    </MenuOptionGroup>
-    <MenuDivider />
-    <MenuOptionGroup title='Country' type='checkbox'>
-      <MenuItemOption value='email'>Email</MenuItemOption>
-      <MenuItemOption value='phone'>Phone</MenuItemOption>
-      <MenuItemOption value='country'>Country</MenuItemOption>
-    </MenuOptionGroup>
-  </MenuList>
-</Menu>
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuOptionGroup,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Menu closeOnSelect={false}>
+      <MenuButton as={Button} colorScheme='blue'>
+        MenuItem
+      </MenuButton>
+      <MenuList minWidth='240px'>
+        <MenuOptionGroup defaultValue='asc' title='Order' type='radio'>
+          <MenuItemOption value='asc'>Ascending</MenuItemOption>
+          <MenuItemOption value='desc'>Descending</MenuItemOption>
+        </MenuOptionGroup>
+        <MenuDivider />
+        <MenuOptionGroup title='Country' type='checkbox'>
+          <MenuItemOption value='email'>Email</MenuItemOption>
+          <MenuItemOption value='phone'>Phone</MenuItemOption>
+          <MenuItemOption value='country'>Country</MenuItemOption>
+        </MenuOptionGroup>
+      </MenuList>
+    </Menu>
+  )
+}
 ```
 
 ## Accessibility
