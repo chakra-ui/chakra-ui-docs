@@ -59,6 +59,7 @@ function CodeBlock(props) {
             '& > .sp-preview-container': {
               padding: 4,
             },
+            minH: '300px',
           }}
           style={{ ...editorAndPreviewStyles }}
         />
