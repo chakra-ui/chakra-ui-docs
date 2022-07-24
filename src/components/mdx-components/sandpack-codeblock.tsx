@@ -106,6 +106,7 @@ export default function SandpackCodeBlock(props) {
       files={{ '/index.tsx': DEFAULT_INDEX_CODE, '/App.tsx': trimmedCode }}
       options={{
         visibleFiles: ['/App.tsx'],
+        initMode: 'immediate',
       }}
       customSetup={{
         dependencies: {
