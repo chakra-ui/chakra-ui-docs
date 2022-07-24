@@ -46,17 +46,32 @@ returned to the trigger.
 > is focusable and has a forwarded `ref`.
 
 ```jsx
-<Popover>
-  <PopoverTrigger>
-    <Button>Trigger</Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverHeader>Confirmation!</PopoverHeader>
-    <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
-  </PopoverContent>
-</Popover>
+import {
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverTrigger>
+        <Button>Trigger</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverHeader>Confirmation!</PopoverHeader>
+        <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
+      </PopoverContent>
+    </Popover>
+  )
+}
 ```
 
 ## Rendering the Popover in a Portal
@@ -68,22 +83,39 @@ portal, wrap the `PopoverContent` in a `Portal`
 > `PopoverContent` is rendered as a child of `<body>`
 
 ```jsx
-<Popover>
-  <PopoverTrigger>
-    <Button>Trigger</Button>
-  </PopoverTrigger>
-  <Portal>
-    <PopoverContent>
-      <PopoverArrow />
-      <PopoverHeader>Header</PopoverHeader>
-      <PopoverCloseButton />
-      <PopoverBody>
-        <Button colorScheme='blue'>Button</Button>
-      </PopoverBody>
-      <PopoverFooter>This is the footer</PopoverFooter>
-    </PopoverContent>
-  </Portal>
-</Popover>
+import {
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverFooter,
+  PopoverCloseButton,
+  Portal,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverTrigger>
+        <Button>Trigger</Button>
+      </PopoverTrigger>
+      <Portal>
+        <PopoverContent>
+          <PopoverArrow />
+          <PopoverHeader>Header</PopoverHeader>
+          <PopoverCloseButton />
+          <PopoverBody>
+            <Button colorScheme='blue'>Button</Button>
+          </PopoverBody>
+          <PopoverFooter>This is the footer</PopoverFooter>
+        </PopoverContent>
+      </Portal>
+    </Popover>
+  )
+}
 ```
 
 ## Focus an element when Popover opens
@@ -95,7 +127,22 @@ By default, focus is to sent to `PopoverContent` when it opens. Pass the
 > `hover`.
 
 ```jsx
-function WalkthroughPopover() {
+import React from 'react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverFooter,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
+export default function WalkthroughPopover() {
   const initialFocusRef = React.useRef()
   return (
     <Popover
@@ -146,8 +193,27 @@ You can leverage
 [react-focus-lock](https://github.com/theKashey/react-focus-lock) to trap focus
 within the `PopoverContent`.
 
-```jsx manual=true
-// import  FocusLock from "react-focus-lock"
+```jsx deps=[react-focus-lock]
+import React from 'react'
+import FocusLock from 'react-focus-lock'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  IconButton,
+  FormControl,
+  FormLabel,
+  Input,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverFooter,
+  PopoverCloseButton,
+  Stack,
+  useDisclosure,
+} from '@chakra-ui/react'
+import { EditIcon } from '@chakra-ui/icons'
 
 // 1. Create a text input component
 const TextInput = React.forwardRef((props, ref) => {
@@ -184,7 +250,7 @@ const Form = ({ firstFieldRef, onCancel }) => {
 
 // 3. Create the Popover
 // Ensure you set `closeOnBlur` prop to false so it doesn't close on outside click
-const PopoverForm = () => {
+export default function PopoverForm() {
   const { onOpen, onClose, isOpen } = useDisclosure()
   const firstFieldRef = React.useRef(null)
 
@@ -215,8 +281,6 @@ const PopoverForm = () => {
     </>
   )
 }
-
-render(<PopoverForm />)
 ```
 
 ## Controlled Usage
@@ -228,7 +292,21 @@ Sometimes you might need to set the `returnFocusOnClose` prop to `false` to
 prevent popover from returning focus to `PopoverTrigger`'s children.
 
 ```jsx
-function ControlledUsage() {
+import {
+  Button,
+  ButtonGroup,
+  Popover,
+  PopoverTrigger,
+  PopoverBody,
+  PopoverHeader,
+  PopoverContent,
+  PopoverArrow,
+  PopoverFooter,
+  PopoverCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function ControlledUsage() {
   const { isOpen, onToggle, onClose } = useDisclosure()
 
   return (
@@ -282,7 +360,24 @@ action about popover.
 > so the popover is triggered successfully.
 
 ```jsx
-function WithPopoverAnchor() {
+import React from 'react'
+import {
+  Button,
+  HStack,
+  Input,
+  Popover,
+  PopoverAnchor,
+  PopoverTrigger,
+  PopoverBody,
+  PopoverHeader,
+  PopoverContent,
+  PopoverCloseButton,
+  Radio,
+  RadioGroup,
+  useBoolean,
+} from '@chakra-ui/react'
+
+export default function WithPopoverAnchor() {
   const [isEditing, setIsEditing] = useBoolean()
   const [color, setColor] = React.useState('red')
 
@@ -335,7 +430,23 @@ Chakra provides access to two internal details: `isOpen` and `onClose`. Use the
 render prop pattern to gain access to them.
 
 ```jsx
-function InternalStateEx() {
+import React from 'react'
+import {
+  Box,
+  Button,
+  Popover,
+  PopoverAnchor,
+  PopoverTrigger,
+  PopoverBody,
+  PopoverHeader,
+  PopoverContent,
+  PopoverCloseButton,
+  PopoverFooter,
+  Portal,
+  useBoolean,
+} from '@chakra-ui/react'
+
+export default function InternalStateEx() {
   const initRef = React.useRef()
   return (
     <Popover closeOnBlur={false} placement='left' initialFocusRef={initRef}>
@@ -377,28 +488,44 @@ Chakra exports all the components you need to customize the look and feel of the
 popover. You can change the background, arrow size, box shadow and so on.
 
 ```jsx
-<Popover>
-  <PopoverTrigger>
-    <Box
-      tabIndex='0'
-      role='button'
-      aria-label='Some box'
-      p={5}
-      w='120px'
-      bg='gray.300'
-      children='Click'
-    />
-  </PopoverTrigger>
-  <PopoverContent bg='tomato' color='white'>
-    <PopoverHeader fontWeight='semibold'>Customization</PopoverHeader>
-    <PopoverArrow bg='pink.500' />
-    <PopoverCloseButton bg='purple.500' />
-    <PopoverBody>
-      Tadaa!! The arrow color and background color is customized. Check the
-      props for each component.
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
+import React from 'react'
+import {
+  Box,
+  Popover,
+  PopoverArrow,
+  PopoverTrigger,
+  PopoverBody,
+  PopoverHeader,
+  PopoverContent,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverTrigger>
+        <Box
+          tabIndex='0'
+          role='button'
+          aria-label='Some box'
+          p={5}
+          w='120px'
+          bg='gray.300'
+          children='Click'
+        />
+      </PopoverTrigger>
+      <PopoverContent bg='tomato' color='white'>
+        <PopoverHeader fontWeight='semibold'>Customization</PopoverHeader>
+        <PopoverArrow bg='pink.500' />
+        <PopoverCloseButton bg='purple.500' />
+        <PopoverBody>
+          Tadaa!! The arrow color and background color is customized. Check the
+          props for each component.
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
+  )
+}
 ```
 
 ## Popover Placements
@@ -450,20 +577,35 @@ The possible values are:
 > in the event that available space at the specified placement isn't enough.
 
 ```jsx
-<Popover placement='top-start'>
-  <PopoverTrigger>
-    <Button>Click me</Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverBody>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore.
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
+import {
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverArrow,
+  PopoverContent,
+  PopoverBody,
+  PopoverHeader,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Popover placement='top-start'>
+      <PopoverTrigger>
+        <Button>Click me</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverBody>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
+  )
+}
 ```
 
 ### Lazily mounting Popover
@@ -478,20 +620,35 @@ needs to be extra performant, or make network calls on mount that should only
 happen when the component is displayed.
 
 ```jsx
-<Popover isLazy>
-  <PopoverTrigger>
-    <Button>Click me</Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverBody>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore.
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
+import {
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverArrow,
+  PopoverContent,
+  PopoverBody,
+  PopoverHeader,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Popover isLazy>
+      <PopoverTrigger>
+        <Button>Click me</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverBody>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
+  )
+}
 ```
 
 ## Accessibility

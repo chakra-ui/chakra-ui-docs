@@ -41,7 +41,19 @@ When the modal opens:
   with it.
 
 ```jsx
-function BasicUsage() {
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function BasicUsage() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -76,7 +88,21 @@ When the dialog closes, it returns focus to the element that triggered it. Set
 closes.
 
 ```jsx
-function ReturnFocus() {
+import React from 'react'
+import {
+  Box,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function ReturnFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const finalRef = React.useRef(null)
 
@@ -118,7 +144,20 @@ behind the modal. Chakra does this by default but you can set
 `blockScrollOnMount` to `false` to allow scrolling behind the modal.
 
 ```jsx
-function BasicUsage() {
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function BasicUsage() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -167,7 +206,23 @@ Chakra provides 2 props for this use case:
 > so it doesn't return focus to the element that triggered it.
 
 ```jsx
-function InitialFocus() {
+import React from 'react'
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function InitialFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const initialRef = React.useRef(null)
@@ -220,8 +275,21 @@ function InitialFocus() {
 By default, the modal closes when you click its overlay. You can set
 `closeOnOverlayClick` to `false` if you want the modal to stay visible.
 
-```jsx
-function ManualClose() {
+```jsx deps=[react-lorem-component]
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function ManualClose() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -259,8 +327,21 @@ pass the `isCentered` prop.
 > If the content within the modal overflows beyond the viewport, don't use this
 > prop. Try setting the [overflow behavior](#modal-overflow-behavior) instead.
 
-```jsx
-function VerticallyCenter() {
+```jsx deps=[react-lorem-component]
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function VerticallyCenter() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -291,8 +372,21 @@ The `Modal` comes with a scale transition by default but you can change it by
 passing a `motionPreset` prop, and set its value to either `slideInBottom`,
 `slideInRight`, `scale` or `none`.
 
-```jsx
-function TransitionExample() {
+```jsx deps=[react-lorem-component]
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function TransitionExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -332,8 +426,25 @@ If the content within the modal overflows beyond the viewport, you can use the
 - If set to `outside`, the entire `ModalContent` will scroll within the
   viewport.
 
-```jsx
-function ScrollingExample() {
+```jsx deps=[react-lorem-component]
+import React from 'react'
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Radio,
+  RadioGroup,
+  Stack,
+  useDisclosure,
+} from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function ScrollingExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
@@ -379,8 +490,22 @@ function ScrollingExample() {
 Pass the `size` prop if you need to adjust the size of the modal. Values can be
 `xs`, `sm`, `md`, `lg`, `xl`, or `full`.
 
-```jsx
-function SizeExample() {
+```jsx deps=[react-lorem-component]
+import React from 'react'
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function SizeExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [size, setSize] = React.useState('md')
 
@@ -452,7 +577,21 @@ rendered within a `Portal`. This mean you can only style components within the
 Modal by using this property.
 
 ```jsx
-function BackdropExample() {
+import React from 'react'
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Text
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function BackdropExample() {
   const OverlayOne = () => (
     <ModalOverlay
       bg='blackAlpha.300'
@@ -519,7 +658,7 @@ function BackdropExample() {
 - When the modal closes, focus returns to the element that was focused before
   the modal activated, or the element from `finalFocusRef`.
 - Clicking on the overlay closes the Modal.
-- Pressing <kbd>Esc</kbd> closes the Modal.
+- Pressing `Esc` closes the Modal.
 - Scrolling is blocked on the elements behind the modal.
 - The modal is rendered in a portal attached to the end of `document.body` to
   break it out of the source order and make it easy to add `aria-hidden` to its

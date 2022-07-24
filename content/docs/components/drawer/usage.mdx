@@ -28,7 +28,21 @@ import {
 ### Basic Drawer
 
 ```jsx
-function DrawerExample() {
+import React from 'react'
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Input,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 
@@ -71,7 +85,21 @@ The Drawer can appear from any edge of the screen. Pass the `placement` prop and
 set it to `top`, `right`, `bottom`, or `left`.
 
 ```jsx
-function PlacementExample() {
+import React from 'react'
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  Radio,
+  RadioGroup,
+  Stack,
+  useDisclosure,
+} from '@chakra-ui/react'
+
+export default function PlacementExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [placement, setPlacement] = React.useState('right')
 
@@ -113,7 +141,30 @@ when the drawer opens. Pass the `initialFocusRef` prop.
 > focusable element** when it opens.
 
 ```jsx
-function DrawerExample() {
+import React from 'react'
+import {
+  Box,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerFooter,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+  Stack,
+  Select,
+  Textarea,
+  useDisclosure,
+} from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
+
+export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = React.useRef()
 
@@ -193,7 +244,20 @@ Pass the `size` prop if you need to adjust the size of the drawer. Values can be
 `xs`, `sm`, `md`, `lg`, `xl`, or `full`.
 
 ```jsx
-function SizeExample() {
+import React from 'react'
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  useDisclosure,
+} from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
+
+export default function SizeExample() {
   const [size, setSize] = React.useState('')
   const { isOpen, onOpen, onClose } = useDisclosure()
 
