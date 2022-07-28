@@ -26,7 +26,10 @@ It is used to visually hide an element but to make it accessible for
 screen-readers. It renders html `<span>` as a proxy.
 
 ```jsx
-function Example() {
+import { Button, VisuallyHidden } from '@chakra-ui/react'
+import { CheckIcon } from '@chakra-ui/icons'
+
+export default function Example() {
   return (
     <Button>
       <VisuallyHidden>Checkmark</VisuallyHidden>
@@ -39,7 +42,9 @@ function Example() {
 Here is another example:
 
 ```jsx
-function Example() {
+import { Button, Heading, VisuallyHidden } from '@chakra-ui/react'
+
+export default function Example() {
   return (
     <Box>
       <Heading>Title and description</Heading>
@@ -54,7 +59,9 @@ function Example() {
 It renders html `<input>` as a proxy.
 
 ```jsx
-function Example() {
+import { VisuallyHiddenInput } from '@chakra-ui/react'
+
+export default function Example() {
   return (
     <VisuallyHiddenInput
       defaultChecked

@@ -32,25 +32,31 @@ Tabs expects `TabList` and `TabPanels` as children. The order doesn't matter,
 you can have `TabList` at the top, at the bottom, or both.
 
 ```jsx
-<Tabs>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-    <Tab>Three</Tab>
-  </TabList>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>three!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+export default function Example() {
+  return (
+    <Tabs>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+        <Tab>Three</Tab>
+      </TabList>
+
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>three!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Tab variants and color
@@ -59,20 +65,26 @@ Tabs come in 6 different variants to style the tabs: `line`,`enclosed`,
 `enclosed-colored`, `soft-rounded`, `solid-rounded`
 
 ```jsx
-<Tabs variant='enclosed'>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs variant='enclosed'>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 You can also change the color scheme for any specific variant by passing the
@@ -82,20 +94,26 @@ You can also change the color scheme for any specific variant by passing the
 > in `theme.colors` that has the `50` - `900` color values.
 
 ```jsx
-<Tabs variant='soft-rounded' colorScheme='green'>
-  <TabList>
-    <Tab>Tab 1</Tab>
-    <Tab>Tab 2</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs variant='soft-rounded' colorScheme='green'>
+      <TabList>
+        <Tab>Tab 1</Tab>
+        <Tab>Tab 2</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Tab sizes
@@ -104,20 +122,26 @@ You can change the size of the tab by passing `size` prop. We support 3 sizes
 `sm`, `md`, `lg`
 
 ```jsx
-<Tabs size='md' variant='enclosed'>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs size='md' variant='enclosed'>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Changing the tabs alignment
@@ -126,20 +150,26 @@ You can change the alignment of the `TabList` by passing `align` prop. We
 support 3 sizes `start`, `center`, `end`.
 
 ```jsx
-<Tabs align='end' variant='enclosed'>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs align='end' variant='enclosed'>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Fitted Tabs
@@ -147,20 +177,26 @@ support 3 sizes `start`, `center`, `end`.
 Stretch the tab list to fit the container by passing `isFitted` prop.
 
 ```jsx
-<Tabs isFitted variant='enclosed'>
-  <TabList mb='1em'>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs isFitted variant='enclosed'>
+      <TabList mb='1em'>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Styling the tab states via props
@@ -169,20 +205,26 @@ In event you need to create custom styles for the tabs. Simply set the variant
 to `unstyled`, and use the `_selected`, `_hover`, `_active` style props.
 
 ```jsx
-<Tabs variant='unstyled'>
-  <TabList>
-    <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
-    <Tab _selected={{ color: 'white', bg: 'green.400' }}>Tab 2</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs variant='unstyled'>
+      <TabList>
+        <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
+        <Tab _selected={{ color: 'white', bg: 'green.400' }}>Tab 2</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Tabs onChange
@@ -192,7 +234,17 @@ tabs. If you intend to control the tabs programmatically, use this with the
 `index` prop.
 
 ```jsx
-function Example() {
+import React from 'react'
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  useColorModeValue,
+} from '@chakra-ui/react'
+
+export default function Example() {
   const colors = useColorModeValue(
     ['red.50', 'teal.50', 'blue.50'],
     ['red.900', 'teal.900', 'blue.900'],
@@ -222,28 +274,41 @@ If you want a tab to be initially active, simply pass the `defaultIndex` prop
 and set it to the index of that tab.
 
 ```jsx
-<Tabs defaultIndex={1}>
-  <TabPanels>
-    <TabPanel>
-      <Image
-        boxSize='200px'
-        fit='cover'
-        src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
-      />
-    </TabPanel>
-    <TabPanel>
-      <Image
-        boxSize='200px'
-        fit='cover'
-        src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
-      />
-    </TabPanel>
-  </TabPanels>
-  <TabList>
-    <Tab>Naruto</Tab>
-    <Tab>Sasuke</Tab>
-  </TabList>
-</Tabs>
+import {
+  Image,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+} from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs defaultIndex={1}>
+      <TabPanels>
+        <TabPanel>
+          <Image
+            boxSize='200px'
+            fit='cover'
+            src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
+          />
+        </TabPanel>
+        <TabPanel>
+          <Image
+            boxSize='200px'
+            fit='cover'
+            src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
+          />
+        </TabPanel>
+      </TabPanels>
+      <TabList>
+        <Tab>Naruto</Tab>
+        <Tab>Sasuke</Tab>
+      </TabList>
+    </Tabs>
+  )
+}
 ```
 
 ### Make a Tab disabled
@@ -252,7 +317,9 @@ When a `Tab` is disabled, it is skipped during keyboard navigation and it is not
 clickable.
 
 ```jsx
-function Example() {
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
   return (
     <Tabs>
       <TabList>
@@ -285,20 +352,26 @@ without activating the tabs. With focus on a specific tab, users can activate a
 tab by pressing <kbd>Space</kbd> or <kbd>Enter</kbd>.
 
 ```jsx
-<Tabs isManual variant='enclosed'>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs isManual variant='enclosed'>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Lazily mounting tab panels
@@ -312,22 +385,28 @@ make network calls on mount that should only happen when the component is
 displayed.
 
 ```jsx
-<Tabs isLazy>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    {/* initially mounted */}
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    {/* initially not mounted */}
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Tabs isLazy>
+      <TabList>
+        <Tab>One</Tab>
+        <Tab>Two</Tab>
+      </TabList>
+      <TabPanels>
+        {/* initially mounted */}
+        <TabPanel>
+          <p>one!</p>
+        </TabPanel>
+        {/* initially not mounted */}
+        <TabPanel>
+          <p>two!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
 ```
 
 ### Controlled Tabs
@@ -336,7 +415,10 @@ Like form inputs, a tab's state can be controlled. Make sure to include an
 onChange as well, or else the tabs will not be interactive.
 
 ```jsx
-function ControlledExample() {
+import React from 'react'
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+export default function ControlledExample() {
   const [tabIndex, setTabIndex] = React.useState(0)
 
   const handleSliderChange = (event) => {
@@ -387,7 +469,18 @@ to pass state internally. Your custom `Tab` component must use
 `React.forwardRef`.
 
 ```jsx
-function CustomTabs() {
+import React from 'react'
+import {
+  Box,
+  Button,
+  Tabs,
+  TabList,
+  TabPanels,
+  TabPanel,
+  useMultiStyleConfig,
+  useTab,
+} from '@chakra-ui/react'
+export default function CustomTabs() {
   const CustomTab = React.forwardRef((props, ref) => {
     // 1. Reuse the `useTab` hook
     const tabProps = useTab({ ...props, ref })
@@ -427,27 +520,29 @@ If you'd like to drive your tabs with an array instead of using the granular
 components, you can create your own DataTabs component.
 
 ```jsx
-function Example() {
-  // 1. Create the component
-  function DataTabs({ data }) {
-    return (
-      <Tabs>
-        <TabList>
-          {data.map((tab, index) => (
-            <Tab key={index}>{tab.label}</Tab>
-          ))}
-        </TabList>
-        <TabPanels>
-          {data.map((tab, index) => (
-            <TabPanel p={4} key={index}>
-              {tab.content}
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </Tabs>
-    )
-  }
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
+// 1. Create the component
+function DataTabs({ data }) {
+  return (
+    <Tabs>
+      <TabList>
+        {data.map((tab, index) => (
+          <Tab key={index}>{tab.label}</Tab>
+        ))}
+      </TabList>
+      <TabPanels>
+        {data.map((tab, index) => (
+          <TabPanel p={4} key={index}>
+            {tab.content}
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </Tabs>
+  )
+}
+
+export default function Example() {
   // 2. Create an array of data
   const tabData = [
     {
@@ -491,4 +586,3 @@ function Example() {
 |           | `role="tablist"`   | Indicates that it is a tablist                                             |
 | TabPanel  | `role="tabpanel"`  | Indicates that it is a tabpanel                                            |
 |           | `aria-labelledby`  | Set to the `id` of the `Tab` that labels the `TabPanel`                    |
-
