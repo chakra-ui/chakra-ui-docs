@@ -31,20 +31,26 @@ Wrap the container within a `LinkBox` and use the `LinkOverlay` as a child of it
 or around the title's content.
 
 ```jsx
-<LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
-  <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
-    13 days ago
-  </Box>
-  <Heading size='md' my='2'>
-    <LinkOverlay href='#'>
-      New Year, New Beginnings: Smashing Workshops & Audits
-    </LinkOverlay>
-  </Heading>
-  <Text>
-    Catch up on what’s been cookin’ at Smashing and explore some of the most
-    popular community resources.
-  </Text>
-</LinkBox>
+import { Box, Heading, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+      <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
+        13 days ago
+      </Box>
+      <Heading size='md' my='2'>
+        <LinkOverlay href='#'>
+          New Year, New Beginnings: Smashing Workshops & Audits
+        </LinkOverlay>
+      </Heading>
+      <Text>
+        Catch up on what’s been cookin’ at Smashing and explore some of the most
+        popular community resources.
+      </Text>
+    </LinkBox>
+  )
+}
 ```
 
 ### Nested Links
@@ -55,23 +61,29 @@ keyboard navigation between links.
 > Use the keyboard to test how focus ring moves within the article
 
 ```jsx
-<LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
-  <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
-    13 days ago
-  </Box>
-  <Heading size='md' my='2'>
-    <LinkOverlay href='#'>
-      New Year, New Beginnings: Smashing Workshops & Audits
-    </LinkOverlay>
-  </Heading>
-  <Text mb='3'>
-    Catch up on what’s been cookin’ at Smashing and explore some of the most
-    popular community resources.
-  </Text>
-  <Box as='a' color='teal.400' href='#' fontWeight='bold'>
-    Some inner link
-  </Box>
-</LinkBox>
+import { Box, Heading, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+      <Box as='time' dateTime='2021-01-15 15:30:00 +0000 UTC'>
+        13 days ago
+      </Box>
+      <Heading size='md' my='2'>
+        <LinkOverlay href='#'>
+          New Year, New Beginnings: Smashing Workshops & Audits
+        </LinkOverlay>
+      </Heading>
+      <Text mb='3'>
+        Catch up on what’s been cookin’ at Smashing and explore some of the most
+        popular community resources.
+      </Text>
+      <Box as='a' color='teal.400' href='#' fontWeight='bold'>
+        Some inner link
+      </Box>
+    </LinkBox>
+  )
+}
 ```
 
 ## Usage with Routing Library

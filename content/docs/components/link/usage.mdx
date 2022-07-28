@@ -16,26 +16,43 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 ## Usage
 
 ```jsx
-<Link>Chakra UI</Link>
+import { Link } from '@chakra-ui/react'
+
+export default function Example() {
+  return <Link>Chakra UI</Link>
+}
 ```
 
 ### External Link
 
 ```jsx
-<Link href='https://chakra-ui.com' isExternal>
-  Chakra Design system <ExternalLinkIcon mx='2px' />
-</Link>
+import { Link } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+
+export default function Example() {
+  return (
+    <Link href='https://chakra-ui.com' isExternal>
+      Chakra Design system <ExternalLinkIcon mx='2px' />
+    </Link>
+  )
+}
 ```
 
 ### Link inline with text
 
 ```jsx
-<Text>
-  Did you know that{' '}
-  <Link color='teal.500' href='#'>
-    links can live inline with text
-  </Link>
-</Text>
+import { Link, Text } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Text>
+      Did you know that{' '}
+      <Link color='teal.500' href='#'>
+        links can live inline with text
+      </Link>
+    </Text>
+  )
+}
 ```
 
 ## Usage with Routing Library
