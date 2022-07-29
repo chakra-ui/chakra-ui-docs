@@ -24,9 +24,15 @@ import { Show, Hide } from '@chakra-ui/react'
 Use the `breakpoint` prop to pass in a custom query.
 
 ```jsx
-<Show breakpoint='(max-width: 400px)'>
-  <Box>This text appears only on screens 400px and smaller.</Box>
-</Show>
+import { Box, Show } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Show breakpoint='(max-width: 400px)'>
+      <Box>This text appears only on screens 400px and smaller.</Box>
+    </Show>
+  )
+}
 ```
 
 ### Above / Below
@@ -37,15 +43,20 @@ The `above` and `below` props receive the Chakra theme's breakpoint keys.
 - `below` is similar to "max-width"
 
 ```jsx
-<>
-  <Show above='sm'>
-    <Box>This text appears at the "sm" value screen width or greater.</Box>
-  </Show>
-  <Hide below='md'>
-    <Box>This text hides at the "md" value screen width and smaller.</Box>
-  </Hide>
-</>
+import { Box, Hide, Show } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <>
+      <Show above='sm'>
+        <Box>This text appears at the "sm" value screen width or greater.</Box>
+      </Show>
+      <Hide below='md'>
+        <Box>This text hides at the "md" value screen width and smaller.</Box>
+      </Hide>
+    </>
+  )
+}
 ```
 
 > Note: You can not combine `above` and `below` props
-
