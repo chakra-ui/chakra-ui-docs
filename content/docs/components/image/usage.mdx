@@ -16,9 +16,15 @@ import { Image } from '@chakra-ui/react'
 ## Usage
 
 ```jsx
-<Box boxSize='sm'>
-  <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-</Box>
+import { Box, Image } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Box boxSize='sm'>
+      <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+    </Box>
+  )
+}
 ```
 
 ## Size
@@ -26,32 +32,48 @@ import { Image } from '@chakra-ui/react'
 The size of the image can be adjusted using the `boxSize` prop.
 
 ```jsx
-<Stack direction='row'>
-  <Image
-    boxSize='100px'
-    objectFit='cover'
-    src='https://bit.ly/dan-abramov'
-    alt='Dan Abramov'
-  />
-  <Image
-    boxSize='150px'
-    objectFit='cover'
-    src='https://bit.ly/dan-abramov'
-    alt='Dan Abramov'
-  />
-  <Image boxSize='200px' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-</Stack>
+import { Image, Stack } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Stack direction='row'>
+      <Image
+        boxSize='100px'
+        objectFit='cover'
+        src='https://bit.ly/dan-abramov'
+        alt='Dan Abramov'
+      />
+      <Image
+        boxSize='150px'
+        objectFit='cover'
+        src='https://bit.ly/dan-abramov'
+        alt='Dan Abramov'
+      />
+      <Image
+        boxSize='200px'
+        src='https://bit.ly/dan-abramov'
+        alt='Dan Abramov'
+      />
+    </Stack>
+  )
+}
 ```
 
 ## Image with border radius
 
 ```jsx
-<Image
-  borderRadius='full'
-  boxSize='150px'
-  src='https://bit.ly/dan-abramov'
-  alt='Dan Abramov'
-/>
+import { Image } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Image
+      borderRadius='full'
+      boxSize='150px'
+      src='https://bit.ly/dan-abramov'
+      alt='Dan Abramov'
+    />
+  )
+}
 ```
 
 ## Fallback support
@@ -67,7 +89,13 @@ is displayed when:
 You can also opt out of this behavior by passing the `ignoreFallback` prop.
 
 ```jsx
-<Image src='gibbresh.png' fallbackSrc='https://via.placeholder.com/150' />
+import { Image } from '@chakra-ui/react'
+
+export default function Example() {
+  return (
+    <Image src='gibbresh.png' fallbackSrc='https://via.placeholder.com/150' />
+  )
+}
 ```
 
 ### Improvements from v1
@@ -88,4 +116,3 @@ import { Img } from '@chakra-ui/react'
 
 The `Img` Component provides a fallback for SSR applications which uses the
 image directly without client side checks.
-
