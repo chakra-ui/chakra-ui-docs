@@ -1332,6 +1332,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "aashutoshrathi",
+      "name": "Aashutosh Rathi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21199234?v=4",
+      "profile": "http://aashutosh.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
