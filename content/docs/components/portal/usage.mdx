@@ -22,7 +22,9 @@ hierarchy to prevent parent styles from clipping or hiding content (for
 popovers, dropdowns, and modals). It supports nested portals
 
 ```jsx
-function Example() {
+import { Box, Portal } from '@chakra-ui/react'
+
+export default function Example() {
   return (
     <Box bg='red.400' color='white'>
       I'm here,
@@ -39,7 +41,10 @@ the default `document.body`. Pass the `containerRef` prop and set its value to
 the `ref` of the container you'd like to use.
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Box, Portal } from '@chakra-ui/react'
+
+export default function Example() {
   const ref = React.useRef()
   return (
     <Box bg='red.400' color='white'>
@@ -61,7 +66,10 @@ You can also nest multiple portals within themselves, this will create a nested
 DOM hierarchy to make it easy to create nested modals, popovers, etc.
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Box, Portal } from '@chakra-ui/react'
+
+export default function Example() {
   const ref = React.useRef()
   return (
     <div>
@@ -83,7 +91,10 @@ In some cases, you might not want portal nodes to be nested to their parent
 portals. To opt out of this, pass `appendToParentPortal` and set it to `false`
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Box, Portal } from '@chakra-ui/react'
+
+export default function Example() {
   const ref = React.useRef()
   return (
     <div>
@@ -100,4 +111,3 @@ function Example() {
   )
 }
 ```
-
