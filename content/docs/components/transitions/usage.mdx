@@ -29,7 +29,9 @@ provide simple transitions.
 ### Fade transition
 
 ```jsx
-function FadeEx() {
+import { Box, Button, Fade, useDisclosure } from '@chakra-ui/react'
+
+export default function FadeEx() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -55,7 +57,9 @@ function FadeEx() {
 ### ScaleFade transition
 
 ```jsx
-function ScaleFadeEx() {
+import { Box, Button, ScaleFade, useDisclosure } from '@chakra-ui/react'
+
+export default function ScaleFadeEx() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -70,7 +74,7 @@ function ScaleFadeEx() {
           rounded='md'
           shadow='md'
         >
-          Fade
+          Scaling Fade
         </Box>
       </ScaleFade>
     </>
@@ -80,8 +84,11 @@ function ScaleFadeEx() {
 
 ### Slide transition
 
-```jsx
-function SlideEx() {
+```jsx deps=[react-lorem-component]
+import { Box, Button, Slide, useDisclosure } from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function SlideEx() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -106,8 +113,11 @@ function SlideEx() {
 
 ### Slide Fade transition
 
-```jsx
-function SlideFadeEx() {
+```jsx deps=[react-lorem-component]
+import { Box, Button, SlideFade, useDisclosure } from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function SlideFadeEx() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -136,8 +146,11 @@ The Collapse component is used to create regions of content that can
 expand/collapse with a simple animation. It helps to hide content that's not
 immediately relevant to the user.
 
-```jsx
-function CollapseEx() {
+```jsx deps=[react-lorem-component]
+import { Box, Button, Collapse, useDisclosure } from '@chakra-ui/react'
+import Lorem from 'react-lorem-component'
+
+export default function CollapseEx() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -163,7 +176,10 @@ function CollapseEx() {
 #### Changing the startingHeight
 
 ```jsx
-function Example() {
+import React from 'react'
+import { Button, Collapse } from '@chakra-ui/react'
+
+export default function Example() {
   const [show, setShow] = React.useState(false)
 
   const handleToggle = () => setShow(!show)
@@ -182,4 +198,3 @@ function Example() {
   )
 }
 ```
-
