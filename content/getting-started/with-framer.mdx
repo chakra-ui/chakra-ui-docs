@@ -30,17 +30,53 @@ const ChakraBox = chakra(motion.div, {
 
 Let's see an example using the chakra factory function!
 
-import {
-  App as AppFactory,
-  Index as IndexFactory,
-} from 'configs/sandpack-contents/framer-motion-examples/chakra-factory'
+```tsx
+import { Container, chakra } from '@chakra-ui/react'
+import { motion, isValidMotionProp } from 'framer-motion'
 
-<SandpackEmbed
-  files={{
-    '/App.tsx': AppFactory,
-    '/index.tsx': IndexFactory,
-  }}
-/>
+const ChakraBox = chakra(motion.div, {
+  /**
+   * Allow motion props and the children prop to be forwarded.
+   * All other chakra props not matching the motion props will still be forwarded.
+   */
+  shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
+})
+
+export default function App() {
+  return (
+    <Container
+      h='100vh'
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+    >
+      <ChakraBox
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+        }}
+        // @ts-ignore no problem in operation, although type error appears.
+        transition={{
+          duration: 3,
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatType: 'loop',
+        }}
+        padding='2'
+        bgGradient='linear(to-l, #7928CA, #FF0080)'
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        width='100px'
+        height='100px'
+      >
+        I'm Dizzy!
+      </ChakraBox>
+    </Container>
+  )
+}
+```
 
 > `shouldForwardProp` is needed to allow framer props to be used instead of the
 > matching props from Chakra. If you do not include "children", then you will
@@ -80,14 +116,40 @@ function Example() {
 
 Let's look at an example of `as` prop!
 
-import {
-  App as AppAsProps,
-  Index as IndexAsProps,
-} from 'configs/sandpack-contents/framer-motion-examples/as-props'
+```tsx
+import { Box, Container, keyframes } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
-<SandpackEmbed
-  files={{
-    '/App.tsx': AppAsProps,
-    '/index.tsx': IndexAsProps,
-  }}
-/>
+const animationKeyframes = keyframes`
+  0% { transform: scale(1) rotate(0); border-radius: 20%; }
+  25% { transform: scale(2) rotate(0); border-radius: 20%; }
+  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
+  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
+  100% { transform: scale(1) rotate(0); border-radius: 20%; }
+`
+
+const animation = `${animationKeyframes} 2s ease-in-out infinite`
+
+export default function App() {
+  return (
+    <Container
+      h='100vh'
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+    >
+      <Box
+        as={motion.div}
+        animation={animation}
+        // not work: transition={{ ... }}
+        padding='2'
+        // @ts-ignore - "Does not exist" Type Error against Motion
+        bgGradient='linear(to-l, #7928CA, #FF0080)'
+        width='12'
+        height='12'
+        display='flex'
+      />
+    </Container>
+  )
+}
+```
