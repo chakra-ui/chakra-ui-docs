@@ -11,20 +11,36 @@ its `useFormik` hook that returns us the formik instance. That Formik instance
 contains pretty much everything we need to connect our form's UI elements and
 submit handler. Let's see a pure React + Formik example:
 
-import {
-  App as AppPlain,
-  Index as IndexPlain,
-} from 'configs/sandpack-contents/formik-examples/plain-formik'
+```tsx live=false
+import { useFormik } from 'formik'
 
-<SandpackEmbed
-  dependencies={{
-    formik: '2.2.9',
-  }}
-  files={{
-    '/App.tsx': AppPlain,
-    '/index.tsx': IndexPlain,
-  }}
-/>
+export default function App() {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor='email'>Email Address</label>
+      <input
+        id='email'
+        name='email'
+        type='email'
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+
+      <button type='submit'>Submit</button>
+    </form>
+  )
+}
+```
 
 As you can see from the example above, our `formik` instance contains the
 `handleSubmit`, `handleChange`, and `values`, and we use them to handle the
@@ -35,57 +51,195 @@ Introducing Chakra UI into the mix is very straightforward! If we were to
 replace the `input` element in the example above with a Chakra UI `Input`
 component, everything will work the same!
 
-import {
-  App as AppSimple,
-  Index as IndexSimple,
-} from 'configs/sandpack-contents/formik-examples/simple'
+```tsx deps=[formik]
+import { useFormik } from 'formik'
+import { Input, Button } from '@chakra-ui/react'
 
-<SandpackEmbed
-  dependencies={{
-    formik: '2.2.9',
-  }}
-  files={{
-    '/App.tsx': AppSimple,
-    '/index.tsx': IndexSimple,
-  }}
-/>
+export default function App() {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor='email'>Email Address</label>
+      <Input
+        id='email'
+        name='email'
+        type='email'
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+
+      <Button type='submit'>Submit</Button>
+    </form>
+  )
+}
+```
 
 Awesome! This means we can continue building our form UI, and just connect
 Formik's and Chakra UI's events! Let's try to build a bit more complex Login UI:
 
+```tsx deps=[formik]
+import { useFormik } from 'formik'
 import {
-  App as AppLogin,
-  Index as IndexLogin,
-} from 'configs/sandpack-contents/formik-examples/login-form'
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  FormControl,
+  FormLabel,
+  Input,
+  VStack,
+} from '@chakra-ui/react'
 
-<SandpackEmbed
-  dependencies={{
-    formik: '2.2.9',
-  }}
-  files={{
-    '/App.tsx': AppLogin,
-    '/index.tsx': IndexLogin,
-  }}
-/>
+export default function App() {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      rememberMe: false,
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+  return (
+    <Flex bg='gray.100' align='center' justify='center' h='400px'>
+      <Box bg='white' p={6} rounded='md'>
+        <form onSubmit={formik.handleSubmit}>
+          <VStack spacing={4} align='flex-start'>
+            <FormControl>
+              <FormLabel htmlFor='email'>Email Address</FormLabel>
+              <Input
+                id='email'
+                name='email'
+                type='email'
+                variant='filled'
+                onChange={formik.handleChange}
+                value={formik.values.email}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor='password'>Password</FormLabel>
+              <Input
+                id='password'
+                name='password'
+                type='password'
+                variant='filled'
+                onChange={formik.handleChange}
+                value={formik.values.password}
+              />
+            </FormControl>
+            <Checkbox
+              id='rememberMe'
+              name='rememberMe'
+              onChange={formik.handleChange}
+              isChecked={formik.values.rememberMe}
+              colorScheme='purple'
+            >
+              Remember me?
+            </Checkbox>
+            <Button type='submit' colorScheme='purple' width='full'>
+              Login
+            </Button>
+          </VStack>
+        </form>
+      </Box>
+    </Flex>
+  )
+}
+```
 
 What about validation? And what about using the `Formik` component instead of
 the `useFormik` hook? Here's a modified example of the Login UI that uses the
 `Formik` component with password validation implemented:
 
+```tsx deps=[formik]
+import { Formik, Field } from 'formik'
 import {
-  App as AppValidation,
-  Index as IndexValidation,
-} from 'configs/sandpack-contents/formik-examples/validation'
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+  VStack,
+} from '@chakra-ui/react'
 
-<SandpackEmbed
-  dependencies={{
-    formik: '2.2.9',
-  }}
-  files={{
-    '/App.tsx': AppValidation,
-    '/index.tsx': IndexValidation,
-  }}
-/>
+export default function App() {
+  return (
+    <Flex bg='gray.100' align='center' justify='center' h='400px'>
+      <Box bg='white' p={6} rounded='md' w={64}>
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+            rememberMe: false,
+          }}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values, null, 2))
+          }}
+        >
+          {({ handleSubmit, errors, touched }) => (
+            <form onSubmit={handleSubmit}>
+              <VStack spacing={4} align='flex-start'>
+                <FormControl>
+                  <FormLabel htmlFor='email'>Email Address</FormLabel>
+                  <Field
+                    as={Input}
+                    id='email'
+                    name='email'
+                    type='email'
+                    variant='filled'
+                  />
+                </FormControl>
+                <FormControl isInvalid={!!errors.password && touched.password}>
+                  <FormLabel htmlFor='password'>Password</FormLabel>
+                  <Field
+                    as={Input}
+                    id='password'
+                    name='password'
+                    type='password'
+                    variant='filled'
+                    validate={(value) => {
+                      let error
+
+                      if (value.length < 5) {
+                        error = 'Password must contain at least 6 characters'
+                      }
+
+                      return error
+                    }}
+                  />
+                  <FormErrorMessage>{errors.password}</FormErrorMessage>
+                </FormControl>
+                <Field
+                  as={Checkbox}
+                  id='rememberMe'
+                  name='rememberMe'
+                  colorScheme='purple'
+                >
+                  Remember me?
+                </Field>
+                <Button type='submit' colorScheme='purple' width='full'>
+                  Login
+                </Button>
+              </VStack>
+            </form>
+          )}
+        </Formik>
+      </Box>
+    </Flex>
+  )
+}
+```
 
 These examples should help you understand how to integrate Chakra UI with
 Formik.
