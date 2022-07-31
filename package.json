@@ -30,7 +30,7 @@
     "@codesandbox/sandpack-react": "^1.2.2",
     "@codesandbox/sandpack-themes": "^1.0.0",
     "@docsearch/react": "^1.0.0-alpha.27",
-    "@docusaurus/utils": "2.0.0-alpha.69",
+    "@docusaurus/utils": "2.0.0-rc.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@octokit/rest": "^18.12.0",
