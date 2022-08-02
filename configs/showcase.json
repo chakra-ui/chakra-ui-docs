@@ -477,6 +477,13 @@
       "url": "https://www.vizima.in",
       "image": "showcases/websites/Vizima.png",
       "type": "websites"
+    },
+    {
+      "name": "Devkind",
+      "description": "A full-fledge web development agency based in Melbourne. Powered by Chakra UI, Framer Motion, Next.js and Strapi.",
+      "url": "https://devkind.com.au/",
+      "image": "showcases/websites/Devkind.png",
+      "type": "websites"
     }
   ],
   "libraries": [
