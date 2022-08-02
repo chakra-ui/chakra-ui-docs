@@ -23,7 +23,14 @@ root.render(
   </ChakraProvider>
 );`
 
-function CodeBlock(props) {
+type SandpackCodeBlockProps = {
+  children?: {
+    props: { children?: string; deps?: string; live?: string | boolean }
+  }
+  homeAppFile?: string
+}
+
+function CodeBlock(props: SandpackCodeBlockProps) {
   const { children, homeAppFile } = props
 
   const { code } = useActiveCode()
@@ -81,7 +88,7 @@ function CodeBlock(props) {
   )
 }
 
-export default function SandpackCodeBlock(props) {
+export default function SandpackCodeBlock(props: SandpackCodeBlockProps) {
   const isMDXCode = !!props.children
 
   const rawCode = isMDXCode ? props.children.props.children : props.homeAppFile
