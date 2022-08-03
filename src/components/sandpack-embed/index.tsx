@@ -20,8 +20,8 @@ const SandpackEmbed = ({ dependencies, ...props }: Props) => (
     customSetup={{
       dependencies: {
         'react-icons': '3.11.0',
-        '@chakra-ui/react': 'latest',
-        '@chakra-ui/icons': 'latest',
+        '@chakra-ui/react': '1.8.8',
+        '@chakra-ui/icons': '1.1.7',
         '@emotion/react': '^11.7.0',
         '@emotion/styled': '^11.6.0',
         'framer-motion': '^4.1.17',
