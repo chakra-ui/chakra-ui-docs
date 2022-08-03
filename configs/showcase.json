@@ -470,6 +470,20 @@
       "url": "https://yashkapure.netlify.app/",
       "image": "showcases/websites/Yash-Kapure.png",
       "type": "websites"
+    },
+    {
+      "name": "Vizima",
+      "description": " Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
+      "url": "https://www.vizima.in",
+      "image": "showcases/websites/Vizima.png",
+      "type": "websites"
+    },
+    {
+      "name": "Devkind",
+      "description": "A full-fledge web development agency based in Melbourne. Powered by Chakra UI, Framer Motion, Next.js and Strapi.",
+      "url": "https://devkind.com.au/",
+      "image": "showcases/websites/Devkind.png",
+      "type": "websites"
     }
   ],
   "libraries": [
