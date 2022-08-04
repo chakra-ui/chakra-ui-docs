@@ -1,0 +1,28 @@
+name: Update Contributing page
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, ready_for_review]
+    paths:
+      - 'CONTRIBUTING.md'
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Contributing page
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout workspace
+        uses: actions/checkout@v2
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run Script
+        run: yarn contributing:gen
