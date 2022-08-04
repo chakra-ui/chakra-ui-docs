@@ -13,6 +13,7 @@
     "search-meta:gen": "ts-node scripts/get-search-meta.ts",
     "showcase-data:gen": "ts-node scripts/get-showcase-data.ts",
     "changelog:gen": "ts-node scripts/get-changelog.ts",
+    "contributing:gen": "ts-node scripts/build-contributing-page.ts",
     "start": "next start",
     "cache:clean": "rm -rf .next .contentlayer",
     "clean": "rm -rf yarn.lock node_modules",
