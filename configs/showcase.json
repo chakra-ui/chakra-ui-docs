@@ -691,6 +691,20 @@
       "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
       "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
+    },
+    {
+      "name": "react-spreadsheet-import",
+      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "url": "https://github.com/UgnisSoftware/react-spreadsheet-import",
+      "image": "showcases/tools/react-spreadsheet-import.png",
+      "type": "tools"
+    },
+    {
+      "name": "withTypeScale",
+      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "url": "https://github.com/TylerAPfledderer/chakra-ui-typescale",
+      "image": "showcases/tools/withTypeScale.png",
+      "type": "tools"
     }
   ],
   "articles": [
