@@ -45,7 +45,7 @@ const users: User[] = [
   {
     name: 'Shoot Proof',
     image: '/logos/shootproof-logo.png',
-    url: 'https://www.shootproof.com/hp',
+    url: 'https://www.shootproof.com/',
     type: 'company',
   },
   {
