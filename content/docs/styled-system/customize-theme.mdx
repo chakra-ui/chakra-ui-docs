@@ -108,7 +108,7 @@ For example, let's override the component styles for Chakra's Button component.
 ```tsx live=false
 // theme.ts (tsx file with usage of StyleFunctions, see 4.)
 import { extendTheme } from '@chakra-ui/react'
-import { StyleFunctionProps } from '@chakra-ui/theme-tools'
+import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 const theme = extendTheme({
   components: {
@@ -182,7 +182,8 @@ styles can be a style object or a function that returns a style object.
 ```tsx live=false
 // theme.ts (Version 2 needs to be a tsx file, due to usage of StyleFunctions)
 import { extendTheme } from '@chakra-ui/react'
-import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+import { mode } from '@chakra-ui/theme-tools'
+import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 // Version 1: Using objects
 const theme = extendTheme({

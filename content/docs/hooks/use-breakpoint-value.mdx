@@ -31,7 +31,14 @@ The `useBreakpointValue` hook returns the value for the current breakpoint.
 
 ```jsx
 function Example() {
-  const variant = useBreakpointValue({ base: 'outline', md: 'solid' })
+  const variant = useBreakpointValue({ 
+    base: 'outline', 
+    md: 'solid' 
+  }, {
+    // Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
+    // (Defaults to 'base')
+    fallback: 'md'
+  })
 
   return (
     <VStack align='flex-start'>
@@ -42,4 +49,17 @@ function Example() {
     </VStack>
   )
 }
+```
+
+This hook is built to work in server-side rendering (SSR) applications by default. You might notice a quick flash of incorrect media query values when you use them.
+
+If you're creating a client-side rendered app, you can leverage the ssr argument to get the correct value on the first render.
+
+```jsx
+const buttonSize = useBreakpointValue(
+  { base: "sm", lg: "md" },
+  { ssr: false },
+)
+
+const breakpoint = useBreakpoint({ ssr: false })
 ```

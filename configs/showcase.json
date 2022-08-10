@@ -477,6 +477,13 @@
       "url": "https://www.vizima.in",
       "image": "showcases/websites/Vizima.png",
       "type": "websites"
+    },
+    {
+      "name": "Devkind",
+      "description": "A full-fledge web development agency based in Melbourne. Powered by Chakra UI, Framer Motion, Next.js and Strapi.",
+      "url": "https://devkind.com.au/",
+      "image": "showcases/websites/Devkind.png",
+      "type": "websites"
     }
   ],
   "libraries": [
@@ -682,6 +689,20 @@
       "name": "withTypeScale",
       "description": "heme extension for Chakra UI, which generates theming for font type scales.",
       "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
+      "image": "showcases/tools/withTypeScale.png",
+      "type": "tools"
+    },
+    {
+      "name": "react-spreadsheet-import",
+      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "url": "https://github.com/UgnisSoftware/react-spreadsheet-import",
+      "image": "showcases/tools/react-spreadsheet-import.png",
+      "type": "tools"
+    },
+    {
+      "name": "withTypeScale",
+      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "url": "https://github.com/TylerAPfledderer/chakra-ui-typescale",
       "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
     }

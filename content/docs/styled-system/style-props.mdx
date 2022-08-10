@@ -464,12 +464,7 @@ export default function Filters() {
       'url(https://picsum.photos/id/1080/200/300) center/cover no-repeat',
   }
   return (
-    <Flex
-      flexWrap='wrap'
-      spacing='24px'
-      gap='16px'
-      justifyContent='space-evenly'
-    >
+    <Flex flexWrap='wrap' gap='24px' justifyContent='space-evenly'>
       {/* adding filter property to the element */}
       <Box sx={basicBoxStyles} filter='grayscale(80%)'>
         Box with Filter
@@ -513,12 +508,7 @@ export default function BackdropFilters() {
     fontSize: '20px',
   }
   return (
-    <Flex
-      flexWrap='wrap'
-      spacing='24px'
-      gap='16px'
-      justifyContent='space-evenly'
-    >
+    <Flex flexWrap='wrap' gap='24px' justifyContent='space-evenly'>
       {/* adding backdrop-filter property to the element */}
       <Box sx={outerBoxStyles}>
         <Box sx={innerBoxStyles} backdropFilter='invert(100%)'>
