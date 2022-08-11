@@ -23,7 +23,7 @@ export const theme = extendTheme({
                 ...activeLabelStyles
               }
             },
-            "input:not(:placeholder-shown) + label, .chakra-select__wrapper + label": {
+            "input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label": {
               ...activeLabelStyles
             },
             label: {
