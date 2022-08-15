@@ -51,6 +51,13 @@ Pass the `min` prop or `max` prop to set an upper and lower limit for the input.
 By default, the input will restrict the value to stay within the specified
 range.
 
+> These props defaults to
+> [Number.MIN_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER)
+> and
+> [Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+> . If they do not match your requirements you can use other `Number` properties
+> as `min` or `max`.
+
 ```jsx
 <NumberInput defaultValue={15} min={10} max={20}>
   <NumberInputField />
