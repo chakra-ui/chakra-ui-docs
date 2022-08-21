@@ -288,6 +288,48 @@ export default function App() {
 }
 ```
 
+- Add colorModeManager
+
+Remix is server-side rendered, so there will be color mode `flashing`, because chakra stores color mode in `localstorage` by default.
+
+ We will store color mode value in `cookie` to tell our app to render it in user color mode.
+
+Here's how to fix it:
+
+1. Create loader in your `root.tsx`
+
+```tsx live=false
+// Typescript
+// This will return cookies 
+export const loader: LoaderFunction = async ({ request }) => {
+// first time users will not have any cookies and you may not return undefined here, hence ?? is necessary
+  return request.headers.get("cookie") ?? ''
+};
+```
+
+2. Give `ChakraProvider` cookies from loader
+
+```jsx live=false
+// root.tsx
+// In your App function
+const cookies = useLoaderData()
+[...]
+// Add colorModeManager to ChakraProvider
+return (
+    <Document>
+      <ChakraProvider theme={theme}
+        colorModeManager={typeof cookies === 'string'
+          ? cookieStorageManagerSSR(cookies)
+          : localStorageManager
+        }>
+        [...]
+      </ChakraProvider>
+    </Document>
+  )
+```
+
+That's it!
+
 #### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
