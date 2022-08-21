@@ -302,7 +302,8 @@ Here's how to fix it:
 // Typescript
 // This will return cookies 
 export const loader: LoaderFunction = async ({ request }) => {
-// first time users will not have any cookies and you may not return undefined here, hence ?? is necessary
+// first time users will not have any cookies and you may not return
+// undefined here, hence ?? is necessary
   return request.headers.get("cookie") ?? ''
 };
 ```
