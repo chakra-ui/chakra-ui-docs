@@ -5,7 +5,7 @@
     "dev": "next",
     "build": "next build",
     "lint": "next lint",
-    "postinstall": "yarn-deduplicate yarn.lock --strategy highest",
+    "postinstall": "pnpm-deduplicate",
     "gen:theme-typings": "chakra-cli tokens theme.ts",
     "avatars:gen": "ts-node scripts/avatars.ts",
     "members:gen": "ts-node scripts/all-members.ts",
@@ -16,9 +16,9 @@
     "contributing:gen": "ts-node scripts/build-contributing-page.ts",
     "start": "next start",
     "cache:clean": "rm -rf .next .contentlayer",
-    "clean": "rm -rf yarn.lock node_modules",
-    "reinstall": "yarn clean && yarn",
-    "deps": "yarn upgrade --scope @chakra-ui --latest"
+    "clean": "rm -rf pnpm-lock.yaml node_modules",
+    "reinstall": "pnpm clean && pnpm i",
+    "deps": "pnpm up '@chakra-ui/*' --latest"
   },
   "dependencies": {
     "@chakra-ui/cli": "2.1.2",
@@ -91,10 +91,10 @@
     "eslint-import-resolver-typescript": "^3.1.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
+    "pnpm-deduplicate": "^0.3.1",
     "prettier": "^2.7.1",
     "react-multi-ref": "^1.0.0",
     "sharp": "^0.30.7",
-    "ts-node": "10.9.1",
-    "yarn-deduplicate": "^5.0.0"
+    "ts-node": "10.9.1"
   }
 }

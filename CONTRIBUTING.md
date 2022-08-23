@@ -30,11 +30,11 @@ git clone https://github.com/<your_github_username>/chakra-ui-docs.git
 cd chakra-ui-docs
 ```
 
-3. Setup all the dependencies and packages by running `yarn`.
+3. Setup all the dependencies and packages by running `pnpm`.
 
-4. Execute `yarn dev` to spin up a local development server. If you're running
+4. Execute `pnpm dev` to spin up a local development server. If you're running
    Windows, contentlayer might not work as expected, so you'd need to do
-   `npx contentlayer build` before running `yarn dev` in order to generate the
+   `npx contentlayer build` before running `pnpm dev` in order to generate the
    docsite content.
 
 > If you run into any issues, kindly reach out to the Chakra UI React team here:
@@ -42,31 +42,31 @@ cd chakra-ui-docs
 
 ### Commands
 
-**`yarn`**: installs the dependency packages.
+**`pnpm`**: installs the dependency packages.
 
-**`yarn dev`**: starts the local development server.
+**`pnpm dev`**: starts the local development server.
 
-**`yarn build`**: builds the docsite for production.
+**`pnpm build`**: builds the docsite for production.
 
-**`yarn lint`**: runs the nextjs linter which checks for code issues.
+**`pnpm lint`**: runs the nextjs linter which checks for code issues.
 
-**`yarn avatars:gen`**: regenerates the avatars
+**`pnpm avatars:gen`**: regenerates the avatars
 
-**`yarn members:gen`**: regenerates the members
+**`pnpm members:gen`**: regenerates the members
 
-**`yarn former-members:gen`**: regenerates the former members
+**`pnpm former-members:gen`**: regenerates the former members
 
-**`yarn search-meta:gen`**: regenerates the search meta
+**`pnpm search-meta:gen`**: regenerates the search meta
 
-**`yarn showcase-data:gen`**: regenerates the showcase data
+**`pnpm showcase-data:gen`**: regenerates the showcase data
 
-**`yarn changelog:gen`**: regenerates the Changelog
+**`pnpm changelog:gen`**: regenerates the Changelog
 
-**`yarn cache:clean`**: deletes the `.contentlayer` folder
+**`pnpm cache:clean`**: deletes the `.contentlayer` folder
 
-**`yarn clean`**: deletes the `yarn.lock` file and `node_modules`
+**`pnpm clean`**: deletes the `pnpm.lock` file and `node_modules`
 
-**`yarn reinstall`**: reinstalls the dependency packages
+**`pnpm reinstall`**: reinstalls the dependency packages
 
 ## Updating the docs for new release
 
@@ -74,7 +74,7 @@ When a new version of `@chakra-ui/react` has been released, here's what you need
 to do to get it reflected in the docs:
 
 - Bump the version of `@chakra-ui/react`
-- Run `yarn changelog:gen` to fetch the most recent changelog from the
+- Run `pnpm changelog:gen` to fetch the most recent changelog from the
   [main repository](https://github.com/chakra-ui/chakra-ui)
 - Open a Pull Request titled `docs: updates for new release`
 
@@ -115,8 +115,8 @@ https://www.conventionalcommits.org/ or check out the
 
 3. Make and commit your changes following the
    [commit convention](https://github.com/chakra-ui/chakra-ui-docs/blob/main/CONTRIBUTING.md#commit-convention).
-   As you develop, you can run `yarn lint` to make sure everything works as
-   expected. Please note that you might have to run `yarn` first in order to
+   As you develop, you can run `pnpm lint` to make sure everything works as
+   expected. Please note that you might have to run `pnpm` first in order to
    install all dependencies.
 
 ## Want to write a blog post or tutorial
