@@ -3,6 +3,34 @@ id: input
 scope: theming
 ---
 
-The Input component is a multipart component. Read more about how to style multipart components in the [style system docs]([url](https://chakra-ui.com/docs/styled-system/component-style#styling-multipart-components)).
+The Input component is a multipart component. Read more about how to style
+multipart components in the
+[style system docs](/docs/styled-system/component-style#styling-multipart-components).
 
-You can see the default theme source [here]([url](https://github.com/chakra-ui/chakra-ui/blob/main/packages/theme/src/components/input.ts)) to find out the parts and how to update them.
+This component has three parts: `field`, `addon`, and `element`. You can find
+more information in the source for the styles
+[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/theme/src/components/input.ts).
+
+## Example
+
+The following theme would add a background with the value `red.200` to the
+field, and remove the border of the `addon`.
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+  components: {
+    Input: {
+      baseStyle: {
+        field: {
+          bg: 'red.200',
+        },
+        addon: {
+          border: 'none',
+        },
+      },
+    },
+  },
+})
+```
