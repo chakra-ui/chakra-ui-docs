@@ -705,6 +705,27 @@
       "url": "https://github.com/TylerAPfledderer/chakra-ui-typescale",
       "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
+    },
+    {
+      "name": "Choc Autocomplete",
+      "description": "🏇 Autocomplete Component Package for Chakra UI",
+      "url": "https://github.com/anubra266/choc-autocomplete",
+      "image": "showcases/tools/Choc-Autocomplete.png",
+      "type": "tools"
+    },
+    {
+      "name": "Chakra Datepicker",
+      "description": " simple datepicker with Chakra-UI and date-fns",
+      "url": "https://github.com/uselessdev/datepicker",
+      "image": "showcases/tools/Chakra-Datepicker.png",
+      "type": "tools"
+    },
+    {
+      "name": "Chakra Capsize",
+      "description": "he power of Capsize inside Chakra UI",
+      "url": "https://github.com/ceteio/chakra-capsize",
+      "image": "showcases/tools/Chakra-Capsize.png",
+      "type": "tools"
     }
   ],
   "articles": [
