@@ -28,7 +28,7 @@ const REPO_CONFIG = {
   },
   owner: 'chakra-ui',
   repo: 'chakra-ui',
-  path: 'HALL_OF_MAINTAINERS.md',
+  path: '.notes/previous-maintainers.md',
 }
 
 async function generateFormerMemberData() {
