@@ -1,7 +1,6 @@
 import PageContainer from 'components/page-container'
 import Pagination from 'components/pagination'
 import Sidebar from 'components/sidebar/sidebar'
-import { Frontmatter } from 'components/tutorial/tutorial-container'
 import componentsSidebar from 'configs/components.sidebar.json'
 import gettingStartedSidebar from 'configs/getting-started.sidebar.json'
 import hooksSidebar from 'configs/hooks.sidebar.json'
@@ -11,6 +10,7 @@ import communitySidebar from 'configs/community.sidebar.json'
 import { ReactNode } from 'react'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
 import { getRouteContext, RouteItem } from 'utils/get-route-context'
+import { Frontmatter } from 'src/types/frontmatter'
 
 export function getRoutes(slug: string): RouteItem[] {
   // for home page, use docs sidebar

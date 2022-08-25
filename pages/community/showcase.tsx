@@ -13,12 +13,12 @@ import {
 } from '@chakra-ui/react'
 import ChakraNextImage from 'components/chakra-next-image'
 
-import Layout from 'layouts'
 import { useCallback, useMemo, useState } from 'react'
 import { t } from 'utils/i18n'
 import { capitalize } from 'utils/js-utils'
 import showcaseData from 'configs/showcase.json'
 import type { IShowcase } from 'scripts/get-showcase-data'
+import MDXLayout from 'layouts/mdx'
 
 const categories = Object.keys(showcaseData as IShowcase)
 
@@ -87,10 +87,10 @@ const Showcase = () => {
   )
 
   return (
-    <Layout
+    <MDXLayout
       hideToc
       maxWidth='unset'
-      frontMatter={{
+      frontmatter={{
         title: t('showcase.seo.title'),
         description: t('showcase.seo.description'),
         slug: '/community/showcase',
@@ -127,7 +127,7 @@ const Showcase = () => {
         </TabList>
         <TabPanels mt='10'>{showcaseItems}</TabPanels>
       </Tabs>
-    </Layout>
+    </MDXLayout>
   )
 }
 

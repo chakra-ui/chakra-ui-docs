@@ -13,7 +13,7 @@ import {
   WrapItem,
 } from '@chakra-ui/react'
 import fs from 'fs'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 import NextImage from 'next/image'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { IFormerMember } from 'scripts/get-former-members'
@@ -124,8 +124,8 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
   )
 
   return (
-    <Layout
-      frontMatter={{
+    <MDXLayout
+      frontmatter={{
         title: t('team.seo.title'),
         description: t('team.seo.description'),
         slug: '/community/team',
@@ -214,7 +214,7 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
           ))}
         </Wrap>
       </Stack>
-    </Layout>
+    </MDXLayout>
   )
 }
 

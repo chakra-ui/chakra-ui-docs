@@ -1,18 +1,23 @@
 import { MDXComponents } from 'components/mdx-components'
-import Layout from 'layouts'
+import ComponentDocsLayout from 'layouts/component'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { getDocByType, getDocDoc } from 'utils/contentlayer-utils'
+import {
+  getComponentTabsData,
+  getDocByType,
+  getDocDoc,
+} from 'utils/contentlayer-utils'
 import { uniq } from 'utils/js-utils'
 
 export default function Page({
   doc,
+  tabsData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc?.body?.code)
   return (
-    <Layout frontMatter={doc?.frontMatter}>
+    <ComponentDocsLayout frontmatter={doc?.frontMatter} tabsData={tabsData}>
       <Component components={MDXComponents} />
-    </Layout>
+    </ComponentDocsLayout>
   )
 }
 
@@ -27,5 +32,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  return { props: { doc: getDocDoc(['components', ctx.params.slug]) } }
+  const tabsData = getComponentTabsData(['components', ctx.params.slug])
+  return {
+    props: {
+      doc: getDocDoc(['components', ctx.params.slug]),
+      tabsData,
+    },
+  }
 }

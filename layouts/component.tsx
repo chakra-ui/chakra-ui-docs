@@ -3,20 +3,25 @@ import { MDXComponents } from 'components/mdx-components'
 import { Doc } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import NextLink from 'next/link'
-import { useRouter } from 'next/router'
-import { getComponentTabsData } from 'utils/contentlayer-utils'
-import { MDXLayout } from './index'
+import { ReactNode } from 'react'
+import { TabsData } from 'utils/contentlayer-utils'
+import MDXLayout from './mdx'
 
 function MDXContent({ doc }: { doc: Doc | undefined }) {
   const Component = useMDXComponent(doc?.body?.code ?? '')
   return <Component components={MDXComponents} />
 }
 
-export default function ComponentDocsLayout({ children, frontmatter }) {
+export default function ComponentDocsLayout({
+  children,
+  frontmatter,
+  tabsData,
+}: {
+  children: ReactNode
+  frontmatter: any
+  tabsData?: TabsData
+}) {
   const id = frontmatter.package?.split('/').pop()
-
-  const router = useRouter()
-  const data = getComponentTabsData(['components', router.query.slug])
 
   return (
     <MDXLayout frontmatter={frontmatter}>
@@ -33,7 +38,7 @@ export default function ComponentDocsLayout({ children, frontmatter }) {
 
       <Box as='nav' aria-label='Component navigation' mt='8'>
         <HStack as='ul' listStyleType='none' borderBottomWidth='1px'>
-          {data.map((item) => (
+          {tabsData.map((item) => (
             <Box as='li' key={item.id}>
               <NextLink href={item.href} passHref replace>
                 <Box
@@ -59,8 +64,8 @@ export default function ComponentDocsLayout({ children, frontmatter }) {
         </HStack>
       </Box>
 
-      {data.map((item, index) => (
-        <Box key={index} id={item.id} hidden={!data[index].match}>
+      {tabsData.map((item, index) => (
+        <Box key={index} id={item.id} hidden={!tabsData[index].match}>
           {index === 0 ? children : <MDXContent doc={item.doc} />}
         </Box>
       ))}

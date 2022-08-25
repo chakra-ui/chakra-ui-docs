@@ -1,5 +1,5 @@
 import { MDXComponents } from 'components/mdx-components'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { getDocByType, getDocDoc } from 'utils/contentlayer-utils'
@@ -9,9 +9,9 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc?.body?.code)
   return (
-    <Layout frontMatter={doc?.frontMatter}>
+    <MDXLayout frontmatter={doc?.frontMatter}>
       <Component components={MDXComponents} />
-    </Layout>
+    </MDXLayout>
   )
 }
 
