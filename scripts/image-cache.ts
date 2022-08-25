@@ -33,18 +33,21 @@ export class AvatarCache {
         )
       }
 
-      const body = await response.buffer()
+      const body = await response.arrayBuffer()
       return this.processImage(body, outputFileSlug)
     } catch (error) {
       console.error(`Error processing ${url}\nError: ${error}`)
     }
   }
 
-  private async processImage(body: Buffer, outputFileSlug: string) {
+  private async processImage(body: ArrayBuffer, outputFileSlug: string) {
     const { width, outputDirectory } = this
     const output = `${outputDirectory}/${outputFileSlug}`
 
-    const img = sharp(body).resize({ width: width, withoutEnlargement: true })
+    const img = sharp(Buffer.from(body)).resize({
+      width: width,
+      withoutEnlargement: true,
+    })
     const metadata = await img.metadata()
 
     await this.toJpeg(img, metadata, `${output}.jpg`)

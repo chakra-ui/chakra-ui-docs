@@ -40,7 +40,7 @@ async function getSponsors() {
   const response = await fetch(
     'https://opencollective.com/chakra-ui/members/all.json',
   )
-  const unfilteredSponsors: Sponsor[] = await response.json()
+  const unfilteredSponsors = (await response.json()) as Sponsor[]
 
   // filter the sponsors by opencollectice profile link to avoid double entries
   const sponsors = unfilteredSponsors.filter(
