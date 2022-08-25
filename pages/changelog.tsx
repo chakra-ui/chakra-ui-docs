@@ -3,16 +3,16 @@ import { InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import React from 'react'
 import { MDXComponents } from 'components/mdx-components'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 
 export default function Page({
   doc,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc.body.code)
   return (
-    <Layout frontMatter={doc.frontMatter}>
+    <MDXLayout frontmatter={doc.frontMatter}>
       <Component components={MDXComponents} />
-    </Layout>
+    </MDXLayout>
   )
 }
 

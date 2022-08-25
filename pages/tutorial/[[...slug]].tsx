@@ -1,6 +1,6 @@
 import { MDXComponents } from 'components/mdx-components'
 import { allTutorials } from 'contentlayer/generated'
-import Layout from 'layouts'
+import TutorialLayout from 'layouts/tutorial'
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { toArray } from 'utils/js-utils'
@@ -10,9 +10,9 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(tutorial.body.code)
   return (
-    <Layout frontMatter={tutorial.frontMatter}>
+    <TutorialLayout frontmatter={tutorial.frontMatter}>
       <Component components={MDXComponents} />
-    </Layout>
+    </TutorialLayout>
   )
 }
 

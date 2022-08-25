@@ -8,13 +8,13 @@ import {
   Text
 } from '@chakra-ui/react'
 import { allBlogs } from 'contentlayer/generated'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 import NextLink from 'next/link'
 
 function Blog() {
   return (
-    <Layout
-      frontMatter={{
+    <MDXLayout
+      frontmatter={{
         title: 'Blog',
         description: 'Get the latest articles and news from Chakra UI',
         slug: '/blog',
@@ -55,7 +55,7 @@ function Blog() {
           </Box>
         ))}
       </Stack>
-    </Layout>
+    </MDXLayout>
   )
 }
 

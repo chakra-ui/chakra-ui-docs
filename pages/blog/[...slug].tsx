@@ -2,17 +2,17 @@ import { allBlogs } from 'contentlayer/generated'
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'
-import Layout from 'layouts'
 import { getMember } from 'utils/get-all-members'
+import BlogLayout from 'layouts/blog'
 
 export default function Page({
   blog,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(blog.body.code)
   return (
-    <Layout frontMatter={blog.frontMatter}>
+    <BlogLayout frontmatter={blog.frontMatter}>
       <Component components={MDXComponents} />
-    </Layout>
+    </BlogLayout>
   )
 }
 

@@ -8,12 +8,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
-import { Heading } from 'components/page-container'
 import { useScrollSpy } from 'hooks/use-scrollspy'
 import { t } from 'utils/i18n'
+import type { FrontmatterHeading } from 'src/types/frontmatter'
 
 interface TableOfContentProps extends BoxProps {
-  headings: Heading[]
+  headings: FrontmatterHeading[]
 }
 
 function TableOfContent(props: TableOfContentProps) {

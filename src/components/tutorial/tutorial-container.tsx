@@ -26,6 +26,7 @@ import mainPackageJson from 'package.json'
 import { t } from 'utils/i18n'
 import { ErrorBoundary } from 'react-error-boundary'
 import { nightOwl } from '@codesandbox/sandpack-themes'
+import { Frontmatter } from 'src/types/frontmatter'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -40,23 +41,6 @@ function useHeadingFocusOnRouteChange() {
       router.events.off('routeChangeComplete', onRouteChange)
     }
   }, [router.events])
-}
-
-export interface Heading {
-  level: 'h2' | 'h3'
-  text: string
-  id: string
-}
-
-export interface Frontmatter {
-  slug?: string
-  title: string
-  description?: string
-  editUrl?: string
-  version?: string
-  headings?: Heading[]
-  publishedDate: Date
-  authorData: any
 }
 
 interface PageContainerProps {

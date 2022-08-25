@@ -10,6 +10,7 @@ import SEO from 'components/seo'
 import TableOfContent from 'components/table-of-content'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { t } from 'utils/i18n'
+import { FrontmatterHeading } from 'src/types/frontmatter'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -26,12 +27,6 @@ function useHeadingFocusOnRouteChange() {
   }, [router.events])
 }
 
-export interface Heading {
-  level: 'h2' | 'h3'
-  text: string
-  id: string
-}
-
 interface PageContainerProps {
   frontmatter: {
     slug?: string
@@ -39,7 +34,7 @@ interface PageContainerProps {
     description?: string
     editUrl?: string
     version?: string
-    headings?: Heading[]
+    headings?: FrontmatterHeading[]
   }
   hideToc?: boolean
   maxWidth?: string

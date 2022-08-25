@@ -2,7 +2,7 @@ import { allRecipes } from 'contentlayer/generated'
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MDXComponents } from 'components/mdx-components'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 import { toArray } from 'utils/js-utils'
 
 export default function Page({
@@ -10,9 +10,9 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc.body.code)
   return (
-    <Layout frontMatter={doc.frontMatter}>
+    <MDXLayout frontmatter={doc.frontMatter}>
       <Component components={MDXComponents} />
-    </Layout>
+    </MDXLayout>
   )
 }
 

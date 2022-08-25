@@ -44,6 +44,8 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
   return doc
 }
 
+export type TabsData = ReturnType<typeof getComponentTabsData>
+
 export function getComponentTabsData(slug: MixedArray) {
   const params = toArray(slug)
   const _slug = params.join('/')

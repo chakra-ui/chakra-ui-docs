@@ -7,11 +7,12 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 
 import { ComponentOverviewItem } from 'components/component-overview-item'
-import Layout from 'layouts'
+import MDXLayout from 'layouts/mdx'
 import { getGroupedComponents } from 'utils/contentlayer-utils'
+import type { FrontmatterHeading } from 'src/types/frontmatter'
 
 type Component = {
   title: string
@@ -25,21 +26,15 @@ type Category = {
   components: Component[]
 }
 
-type Heading = {
-  id: string
-  text: string
-  level: number
-}
-
 type Props = {
   categories: Category[]
-  headings: Heading[]
+  headings: FrontmatterHeading[]
 }
 
 export const ComponentsOverview = ({ categories, headings }: Props) => {
   return (
-    <Layout
-      frontMatter={{
+    <MDXLayout
+      frontmatter={{
         title: 'Components',
         slug: '/docs/components',
         headings,
@@ -77,7 +72,7 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
           )
         </List>
       </VStack>
-    </Layout>
+    </MDXLayout>
   )
 }
 
@@ -102,13 +97,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const headings = Object.entries(group).reduce((acc, item) => {
     const [title] = item
     if (title === 'Layout') return acc
-    const heading: Heading = {
+    const heading: FrontmatterHeading = {
       id: title.toLowerCase().replace(/ /g, '-'),
       text: title,
       level: 2,
     }
     return acc.concat(heading)
-  }, [] as Heading[])
+  }, [] as FrontmatterHeading[])
 
   return {
     props: {
