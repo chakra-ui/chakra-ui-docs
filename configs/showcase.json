@@ -230,6 +230,13 @@
       "url": "https://github.com/remorses/dokz",
       "image": "showcases/projects/Dokz.png",
       "type": "projects"
+    },
+    {
+      "name": "FeedHive",
+      "description": "Social Media content creation platform.",
+      "url": "https://feedhive.io",
+      "image": "showcases/projects/FeedHive.png",
+      "type": "projects"
     }
   ],
   "websites": [
