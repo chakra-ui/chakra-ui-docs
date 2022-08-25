@@ -1,6 +1,4 @@
-import { Flex } from '@chakra-ui/layout'
-import type { FlexProps } from '@chakra-ui/layout'
-import { chakra } from '@chakra-ui/system'
+import { chakra, Flex, type FlexProps } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import type { ImageLoaderProps, ImageProps } from 'next/image'
 
