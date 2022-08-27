@@ -82,7 +82,7 @@ export default theme
 
 #### Behavior of ColorMode
 
-The current hierarchy how the color mode is defined is as follows:
+The current hierarchy of how the color mode is defined is as follows:
 
 - if `useSystemColorMode` is true `system`-color will be used as default -
   `initialColorMode` is the fallback if system color mode can't be resolved
@@ -104,11 +104,11 @@ We currently accept 3 different values for `initialColorMode`:
 #### Difference between `initialColorMode='system'` and `useSystemColorMode`
 
 if `useSystemColorMode=true` we will always try to match the users
-`system`-color and fallback to `initialColorMode` With this behavior the
+`system`-color and fallback to `initialColorMode`. With this behavior, the
 colorMode toggle won't have any effect.
 
 if `initialColorMode='system'` we will as well always try to match the users
-`system`-color and fallback to `light`. after the user has toggled the value,
+`system`-color and fallback to `light`. After the user has toggled the value,
 this value will be used.
 
 ### Adding the `ColorModeScript`
@@ -175,7 +175,7 @@ ReactDOM.createRoot(rootElement).render(
 
 #### For Gatsby
 
-Install `@chakra-ui/gatsby-plugin` into your project. You can read more in the
+Install `@chakra-ui/gatsby-plugin` in your project. You can read more in the
 [Chakra UI + Gatsby guide](/getting-started/gatsby-guide).
 
 ## Changing Color Mode
@@ -215,7 +215,7 @@ dark mode.
 const value = useColorModeValue(lightModeValue, darkModeValue)
 ```
 
-Here's an example that changes the `background-color` and `color` using the
+Here's an example that changes the `background-color` and `color` uses the
 `useColorModeValue` hook.
 
 > Click the **Toggle Mode** button to see it in action.
