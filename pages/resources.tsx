@@ -18,7 +18,6 @@ import {
   chakra,
 } from '@chakra-ui/react'
 import { useFormik } from 'formik'
-import groupBy from 'lodash/groupBy'
 import NextLink from 'next/link'
 import * as React from 'react'
 import { FaMicrophone, FaPenSquare, FaVideo } from 'react-icons/fa'
@@ -30,6 +29,7 @@ import resources from 'configs/resources.json'
 import { getRoutes } from 'layouts/mdx'
 import { filterResources } from 'utils/filter-resources'
 import { t } from 'utils/i18n'
+import { groupBy } from 'utils/js-utils'
 
 function Resources() {
   /**

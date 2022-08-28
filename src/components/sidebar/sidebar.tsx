@@ -8,7 +8,6 @@ import {
   ListItem,
   ListProps,
 } from '@chakra-ui/react'
-import sortBy from 'lodash/sortBy'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, ReactElement, ReactNode, useRef } from 'react'
@@ -22,9 +21,19 @@ import {
 } from 'react-icons/fa'
 import { BsFillGridFill } from 'react-icons/bs'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
-import { Routes } from 'utils/get-route-context'
+import { RouteItem, Routes } from 'utils/get-route-context'
 import SidebarCategory from './sidebar-category'
 import SidebarLink from './sidebar-link'
+
+const sortRoutes = (routes: RouteItem[]) => {
+  return routes.sort(({ title: titleA }, { title: titleB }) => {
+    if (titleA < titleB)
+      return -1;
+    if (titleA > titleB)
+      return 1;
+    return 0;
+  });
+}
 
 export type SidebarContentProps = Routes & {
   pathname?: string
@@ -66,7 +75,7 @@ export function SidebarContent({
               const opened = selected || lvl2.open
 
               const sortedRoutes = lvl2.sort
-                ? sortBy(lvl2.routes, (i) => i.title)
+                ? sortRoutes(lvl2.routes)
                 : lvl2.routes
 
               return (
