@@ -409,13 +409,6 @@
       "type": "websites"
     },
     {
-      "name": "MockMe",
-      "description": "MockME - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!.",
-      "url": "https://mockme.in/",
-      "image": "showcases/websites/MockMe.png",
-      "type": "websites"
-    },
-    {
       "name": "Avana Wallet",
       "description": "Solana blockchain non-custodial wallet that connects you to Web3 dapps, DeFi, GameFi and NFTs. Powered by Chakra UI and Next.js.",
       "url": "https://www.avanawallet.com/",
@@ -497,6 +490,13 @@
       "description": "A design and development agency based in Montreal. Powered by Chakra UI, Framer Motion, Next.js, and Sanity.",
       "url": "https://boringordinary.com",
       "image": "showcases/websites/Boring+Ordinary.png",
+      "type": "websites"
+    },
+    {
+      "name": "MockZilla",
+      "description": "MockZilla - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!.",
+      "url": "https://mockzilla.com/",
+      "image": "showcases/websites/MockZilla.png",
       "type": "websites"
     }
   ],
