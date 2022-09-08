@@ -7,7 +7,7 @@ import type {
 import { useRouter } from 'next/router'
 import semverMaxSatisfying from 'semver/ranges/max-satisfying'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import React from 'react'
+import { useEffect } from 'react'
 import { MDXComponents } from 'components/mdx-components'
 import ChangelogLayout from 'layouts/changelog'
 
@@ -17,9 +17,11 @@ export default function Page({
   const Component = useMDXComponent(doc.body.code)
   const router = useRouter()
 
-  if (router.query.version === 'latest') {
-    router.replace(`/changelog/${doc.version}`)
-  }
+  useEffect(() => {
+    if (router.query.version === 'latest') {
+      router.replace(`/changelog/${doc.version}`)
+    }
+  }, [router, doc])
 
   return (
     <ChangelogLayout hideToc frontmatter={doc.frontMatter}>
