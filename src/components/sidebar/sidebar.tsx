@@ -27,12 +27,10 @@ import SidebarLink from './sidebar-link'
 
 const sortRoutes = (routes: RouteItem[]) => {
   return routes.sort(({ title: titleA }, { title: titleB }) => {
-    if (titleA < titleB)
-      return -1;
-    if (titleA > titleB)
-      return 1;
-    return 0;
-  });
+    if (titleA < titleB) return -1
+    if (titleA > titleB) return 1
+    return 0
+  })
 }
 
 export type SidebarContentProps = Routes & {

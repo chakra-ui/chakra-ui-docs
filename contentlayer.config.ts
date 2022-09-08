@@ -171,6 +171,8 @@ const Changelog = defineDocumentType(() => ({
     description: { type: 'string', required: true },
     slug: { type: 'string' },
     version: { type: 'string' },
+    releaseUrl: { type: 'string' },
+    releaseDate: { type: 'string' },
   },
   computedFields: {
     frontMatter: {

@@ -204,7 +204,8 @@
       "sponsor": "Sponsor"
     },
     "table-of-content": {
-      "on-this-page": "On this page"
+      "on-this-page": "On this page",
+      "versions": "Versions"
     },
     "vercel-callout": {
       "deployed-by": "Deployed by"

@@ -4,16 +4,16 @@ import semverMaxSatisfying from 'semver/ranges/max-satisfying'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import React from 'react'
 import { MDXComponents } from 'components/mdx-components'
-import MDXLayout from 'layouts/mdx'
+import ChangelogLayout from 'layouts/changelog'
 
 export default function Page({
   doc,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc.body.code)
   return (
-    <MDXLayout frontmatter={doc.frontMatter}>
+    <ChangelogLayout hideToc frontmatter={doc.frontMatter}>
       <Component components={MDXComponents} />
-    </MDXLayout>
+    </ChangelogLayout>
   )
 }
 
@@ -39,6 +39,13 @@ export const getStaticProps = async (ctx) => {
       allChangelogs.map(({ version }) => version),
       '*',
     )
+
+    return {
+      redirect: {
+        destination: `/changelog/${versionParam}`,
+        permanent: true,
+      },
+    }
   }
 
   const doc = allChangelogs.find(({ version }) => version === versionParam)
