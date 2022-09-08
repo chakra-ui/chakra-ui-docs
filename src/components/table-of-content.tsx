@@ -1,9 +1,7 @@
 import {
-  Box,
   BoxProps,
   ListItem,
   OrderedList,
-  Text,
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react'

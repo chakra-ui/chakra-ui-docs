@@ -1,5 +1,10 @@
 import { allChangelogs } from 'contentlayer/generated'
-import { InferGetStaticPropsType } from 'next'
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next'
+import { useRouter } from 'next/router'
 import semverMaxSatisfying from 'semver/ranges/max-satisfying'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import React from 'react'
@@ -10,6 +15,12 @@ export default function Page({
   doc,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(doc.body.code)
+  const router = useRouter()
+
+  if (router.query.version === 'latest') {
+    router.replace(`/changelog/${doc.version}`)
+  }
+
   return (
     <ChangelogLayout hideToc frontmatter={doc.frontMatter}>
       <Component components={MDXComponents} />
@@ -17,7 +28,7 @@ export default function Page({
   )
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: [
       ...allChangelogs.map((doc) => ({
@@ -31,7 +42,7 @@ export const getStaticPaths = () => {
   }
 }
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   let versionParam = ctx.params.version
 
   if (versionParam === 'latest') {
@@ -39,13 +50,6 @@ export const getStaticProps = async (ctx) => {
       allChangelogs.map(({ version }) => version),
       '*',
     )
-
-    return {
-      redirect: {
-        destination: `/changelog/${versionParam}`,
-        permanent: true,
-      },
-    }
   }
 
   const doc = allChangelogs.find(({ version }) => version === versionParam)
