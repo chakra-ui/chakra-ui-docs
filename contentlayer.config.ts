@@ -170,6 +170,7 @@ const Changelog = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     slug: { type: 'string' },
+    version: { type: 'string' },
   },
   computedFields: {
     frontMatter: {
@@ -178,6 +179,7 @@ const Changelog = defineDocumentType(() => ({
         title: doc.title,
         description: doc.description,
         slug: '/changelog',
+        version: doc.version,
       }),
     },
   },

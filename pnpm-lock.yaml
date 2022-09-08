@@ -72,6 +72,7 @@ specifiers:
   remark-gfm: ^3.0.1
   remark-slug: ^7.0.1
   scroll-into-view-if-needed: ^2.2.29
+  semver: ^7.3.7
   sharp: ^0.30.7
   shelljs: ^0.8.5
   tsx: ^3.8.2
@@ -157,6 +158,7 @@ devDependencies:
   pnpm-deduplicate: 0.3.1
   prettier: 2.7.1
   react-multi-ref: 1.0.0
+  semver: 7.3.7
   sharp: 0.30.7
   tsx: 3.8.2
   unified: 10.1.2
