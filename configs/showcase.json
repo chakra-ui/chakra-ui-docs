@@ -498,6 +498,13 @@
       "url": "https://mockzilla.com/",
       "image": "showcases/websites/MockZilla.png",
       "type": "websites"
+    },
+    {
+      "name": "Newton Mbugua Portfolio",
+      "description": "My personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
+      "url": "https://mbuguanewton.dev",
+      "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
+      "type": "websites"
     }
   ],
   "libraries": [
