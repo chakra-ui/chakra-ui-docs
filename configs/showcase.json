@@ -430,13 +430,6 @@
       "type": "websites"
     },
     {
-      "name": "Júlio Werner",
-      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
-      "url": "https://juliowerner.com",
-      "image": "showcases/websites/Júlio-Werner.png",
-      "type": "websites"
-    },
-    {
       "name": "itsrakesh - blog",
       "description": "log website built with Chakra UI and NextJs.",
       "url": "https://blog.itsrakesh.co/",
@@ -504,6 +497,13 @@
       "description": "My personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
       "url": "https://mbuguanewton.dev",
       "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
+      "type": "websites"
+    },
+    {
+      "name": "Júlio Mühlbauer",
+      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliomuhlbauer.com",
+      "image": "showcases/websites/Júlio-Mühlbauer.png",
       "type": "websites"
     }
   ],
