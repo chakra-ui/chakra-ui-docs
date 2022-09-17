@@ -505,6 +505,13 @@
       "url": "https://juliomuhlbauer.com",
       "image": "showcases/websites/Júlio-Mühlbauer.png",
       "type": "websites"
+    },
+    {
+      "name": "Life Pro Tips",
+      "description": "Tips to improve your life. From the creator of /r/lifeprotips.",
+      "url": "https://lifeprotips.com/",
+      "image": "showcases/websites/Life-Pro-Tips.png",
+      "type": "websites"
     }
   ],
   "libraries": [
