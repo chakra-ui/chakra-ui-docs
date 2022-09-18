@@ -39,7 +39,8 @@ interface PageContainerProps {
   hideToc?: boolean
   maxWidth?: string
   children: React.ReactNode
-  sidebar?: React.ReactElement
+  leftSidebar?: React.ReactElement
+  rightSidebar?: React.ReactElement
   pagination?: React.ReactElement
 }
 
@@ -47,7 +48,8 @@ function PageContainer(props: PageContainerProps) {
   const {
     frontmatter,
     children,
-    sidebar,
+    leftSidebar,
+    rightSidebar,
     pagination,
     hideToc,
     maxWidth = '48rem',
@@ -69,7 +71,7 @@ function PageContainer(props: PageContainerProps) {
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
         <Box display={{ md: 'flex' }}>
-          {sidebar || null}
+          {leftSidebar || null}
           <Box flex='1' minW='0'>
             <SkipNavContent />
             <Box id='content' px={5} mx='auto' minH='76vh'>
@@ -105,6 +107,7 @@ function PageContainer(props: PageContainerProps) {
                     headings={headings}
                   />
                 )}
+                {rightSidebar}
               </Flex>
             </Box>
           </Box>

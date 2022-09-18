@@ -431,6 +431,11 @@ async function redirect() {
       destination: '/community/recipes/:slug',
       permanent: true,
     },
+    {
+      source: '/changelog',
+      destination: '/changelog/latest',
+      permanent: true,
+    },
   ]
 }
 
