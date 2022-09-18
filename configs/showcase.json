@@ -237,6 +237,13 @@
       "url": "https://feedhive.io",
       "image": "showcases/projects/FeedHive.png",
       "type": "projects"
+    },
+    {
+      "name": "Chakra UI Time Scroller",
+      "description": "This is a clean time picker/scroller built for javascript and typescript with chakra-ui",
+      "url": "https://www.npmjs.com/package/chakra-ui-time-scroller",
+      "image": "showcases/projects/Chakra-UI-Time-Scroller.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -511,6 +518,13 @@
       "description": "Tips to improve your life. From the creator of /r/lifeprotips.",
       "url": "https://lifeprotips.com/",
       "image": "showcases/websites/Life-Pro-Tips.png",
+      "type": "websites"
+    },
+    {
+      "name": "Schext",
+      "description": "A powerful text schedule tool, that allows your clients to set appointments without you.",
+      "url": "https://schext.com",
+      "image": "showcases/websites/Schext.png",
       "type": "websites"
     }
   ],
