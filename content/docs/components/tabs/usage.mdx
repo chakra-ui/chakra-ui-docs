@@ -337,7 +337,7 @@ onChange as well, or else the tabs will not be interactive.
 
 ```jsx
 function ControlledExample() {
-  const [tabIndex, setTabIndex] = React.useState(0)
+  const [tabIndex, setTabIndex] = useState(0)
 
   const handleSliderChange = (event) => {
     setTabIndex(parseInt(event.target.value, 10))
