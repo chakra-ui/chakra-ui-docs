@@ -197,7 +197,7 @@ function Example() {
     ['red.50', 'teal.50', 'blue.50'],
     ['red.900', 'teal.900', 'blue.900'],
   )
-  const [tabIndex, setTabIndex] = React.useState(0)
+  const [tabIndex, setTabIndex] = useState(0)
   const bg = colors[tabIndex]
   return (
     <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
@@ -337,7 +337,7 @@ onChange as well, or else the tabs will not be interactive.
 
 ```jsx
 function ControlledExample() {
-  const [tabIndex, setTabIndex] = React.useState(0)
+  const [tabIndex, setTabIndex] = useState(0)
 
   const handleSliderChange = (event) => {
     setTabIndex(parseInt(event.target.value, 10))

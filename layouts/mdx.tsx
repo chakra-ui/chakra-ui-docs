@@ -53,7 +53,7 @@ export default function MDXLayout(props: MDXLayoutProps) {
       hideToc={hideToc}
       maxWidth={maxWidth}
       frontmatter={frontmatter}
-      sidebar={<Sidebar routes={routes} />}
+      leftSidebar={<Sidebar routes={routes} />}
       pagination={
         <Pagination
           next={routeContext.nextRoute}
