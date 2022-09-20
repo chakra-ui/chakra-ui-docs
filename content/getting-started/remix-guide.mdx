@@ -301,6 +301,7 @@ Here's how to fix it:
 ```tsx live=false
 // Typescript
 // This will return cookies 
+
 export const loader: LoaderFunction = async ({ request }) => {
 // first time users will not have any cookies and you may not return
 // undefined here, hence ?? is necessary
@@ -313,23 +314,90 @@ export const loader: LoaderFunction = async ({ request }) => {
 ```jsx live=false
 // root.tsx
 // In your App function
-const cookies = useLoaderData()
+
+function getColorMode (cookies: string) {
+  const match = cookie.match(new RegExp(`(^| )${CHAKRA_COOKIE_COLOR_KEY}=([^;]+)`));
+  return match == null ? void 0 : match[2];
+}
+
+// here we can set the default color mode. If we set it to null,
+// there's no way for us to know what is the the user's preferred theme
+// so the cient will have to figure out and maybe there'll be a flash the first time the user visits us.
+const DEFAULT_COLOR_MODE: "dark" | "light" | null = 'dark';
+
+const CHAKRA_COOKIE_COLOR_KEY = "chakra-ui-color-mode";
+
+let cookies = useLoaderData()
+
+// the client get the cookies from the document 
+// because when we do a client routing, the loader can have stored an outdated value
+if (typeof document !== "undefined") {
+  cookies = document.cookie;
+}
+
+// get and store the color mode from the cookies.
+// It'll update the cookies if there isn't any and we have set a default value
+let colorMode = useMemo(() => {
+  let color = getColorMode(cookies)
+  
+  if (!color && DEFAULT_COLOR_MODE) {
+    cookies += ` ${CHAKRA_COOKIE_COLOR_KEY}=${DEFAULT_COLOR_MODE}`;
+    color = DEFAULT_COLOR_MODE;
+  }
+  
+  return color
+}, [cookies]);
+
 [...]
-// Add colorModeManager to ChakraProvider
+
+// Add classes to html and body and add colorModeManager to ChakraProvider
+
 return (
-    <Document>
-      <ChakraProvider theme={theme}
-        colorModeManager={typeof cookies === 'string'
-          ? cookieStorageManagerSSR(cookies)
-          : localStorageManager
-        }>
-        [...]
+  <html
+    lang="en"
+    {...(colorMode
+      ? {
+          "data-theme": colorMode,
+          "style": { colorScheme: colorMode },
+        }
+      : null)}
+  >
+    <head>
+      <Meta />
+      <Links />
+      {serverStyleData?.map(({ key, ids, css }) => (
+        <style
+          key={key}
+          data-emotion={`${key} ${ids.join(" ")}`}
+          dangerouslySetInnerHTML={{ __html: css }}
+        />
+      ))}
+    </head>
+    <body  
+      { ...(colorMode ? {
+        className: `chakra-ui-${colorMode}`
+      } : null )}
+    >
+      <ChakraProvider
+        colorModeManager={cookieStorageManagerSSR(cookies)}
+        theme={theme}
+      >
+        {children}
       </ChakraProvider>
-    </Document>
-  )
+
+      <ScrollRestoration />
+
+      <Scripts />
+
+      <LiveReload />
+    </body>
+  </html>
+)
 ```
 
 That's it!
+Now the theme is correctly server side rendered.
+You can test it deleting the cookies and disabling JavaScript in the browser.
 
 #### Notes on TypeScript 🚨
 
