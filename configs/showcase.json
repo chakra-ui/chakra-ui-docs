@@ -526,6 +526,13 @@
       "url": "https://schext.com",
       "image": "showcases/websites/Schext.png",
       "type": "websites"
+    },
+    {
+      "name": "Pie Chart Creator",
+      "description": "Quickly create sophisticated Pie Charts!. Powered By Chakra UI and React JS.",
+      "url": "https://www.piechartcreator.site",
+      "image": "showcases/websites/Pie-Chart-Creator.png",
+      "type": "websites"
     }
   ],
   "libraries": [
