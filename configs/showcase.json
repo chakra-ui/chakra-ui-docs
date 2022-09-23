@@ -79,35 +79,35 @@
     },
     {
       "name": "Markdown Notes",
-      "description": " fully responsive note-taking application in markdown language, built with Chakra UI, react-markdown and codemirror.",
+      "description": "Fully responsive note-taking application in markdown language, built with Chakra UI, react-markdown and codemirror.",
       "url": "https://markdown-notes.netlify.app/",
       "image": "showcases/projects/Markdown-Notes.png",
       "type": "projects"
     },
     {
       "name": "thirdweb",
-      "description": " web3 platform that offers contracts, intuitive SDKs, a dashboard and widgets for developers.",
+      "description": "web3 platform that offers contracts, intuitive SDKs, a dashboard and widgets for developers.",
       "url": "https://thirdweb.com/",
       "image": "showcases/projects/Third-Web.png",
       "type": "projects"
     },
     {
       "name": "Top.gg",
-      "description": "he Best Discord Bots and Servers.",
+      "description": "The Best Discord Bots and Servers.",
       "url": "https://top.gg/",
       "image": "showcases/projects/Top.gg.png",
       "type": "projects"
     },
     {
       "name": "Octoclairvoyant",
-      "description": " webapp to compare GitHub changelogs across multiple releases. Made with Next.js and Chakra UI.",
+      "description": "Webapp to compare GitHub changelogs across multiple releases. Made with Next.js and Chakra UI.",
       "url": "https://octoclairvoyant.vercel.app/",
       "image": "showcases/projects/Octoclairvoyant.png",
       "type": "projects"
     },
     {
       "name": "Roadster",
-      "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
+      "description": "Website of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
       "url": "https://r0adster.live",
       "image": "showcases/projects/Roadster.png",
       "type": "projects"
@@ -121,63 +121,63 @@
     },
     {
       "name": "Snappify",
-      "description": " code snippet creator",
+      "description": "Code snippet creator",
       "url": "https://snappify.io/",
       "image": "showcases/projects/Snappify.png",
       "type": "projects"
     },
     {
       "name": "MockRocket",
-      "description": "how off your app with jaw-dropping 3D mockups and product videos, right in your browser",
+      "description": "Show off your app with jaw-dropping 3D mockups and product videos, right in your browser",
       "url": "https://mockrocket.io/",
       "image": "showcases/projects/MockRocket.png",
       "type": "projects"
     },
     {
       "name": "Saas UI",
-      "description": "n advanced component library build for SaaS products.",
+      "description": "An advanced component library build for SaaS products.",
       "url": "https://saas-ui.dev",
       "image": "showcases/projects/Saas-UI.png",
       "type": "projects"
     },
     {
       "name": "Dev Resources",
-      "description": " collaborative list of resources for developers.",
+      "description": "Collaborative list of resources for developers.",
       "url": "https://devresourc.es",
       "image": "showcases/projects/Dev-Resources.png",
       "type": "projects"
     },
     {
       "name": "Horizon UI",
-      "description": "rendiest Open Source Admin Template based on Chakra UI!",
+      "description": "Open Source Admin Template based on Chakra UI!",
       "url": "https://horizon-ui.com/horizon-ui-chakra/",
       "image": "showcases/projects/Horizon-UI.png",
       "type": "projects"
     },
     {
       "name": "Pesabooks",
-      "description": " digital platform to save and invest together, with Crypto.",
+      "description": "Digital platform to save and invest together, with Crypto.",
       "url": "https://pesabooks.com/",
       "image": "showcases/projects/Pesabooks.png",
       "type": "projects"
     },
     {
       "name": "Portion Monitor",
-      "description": "ecord Daily Portion Intake, Set Limits, and View Reports.",
+      "description": "Record Daily Portion Intake, Set Limits, and View Reports.",
       "url": "https://portionmonitor.com/",
       "image": "showcases/projects/Portion-Monitor.png",
       "type": "projects"
     },
     {
       "name": "TemplatesKart",
-      "description": "roduction-ready hand crafted beautiful Projects and Components list built on top of Chakra UI.",
+      "description": "Production-ready hand crafted beautiful Projects and Components list built on top of Chakra UI.",
       "url": "https://templateskart.com/",
       "image": "showcases/projects/TemplatesKart.png",
       "type": "projects"
     },
     {
       "name": "nextarter-chakra",
-      "description": "battery packed template to initialize Next.js app with Chakra UI & Typescript setup",
+      "description": "Battery packed template to initialize Next.js app with Chakra UI & Typescript setup",
       "url": "https://nextarter-chakra.sznm.dev",
       "image": "showcases/projects/nextarter-chakra.png",
       "type": "projects"
@@ -277,7 +277,7 @@
     },
     {
       "name": "Bloomberg Global Coal Countdown",
-      "description": "A Rich data vizualitation website built with Next.JS, Chakra UI, and Nivo as the go-to online resource to track the world’s progress towards a coal-free future, by Zero One Group.",
+      "description": "A Rich data visualization website built with Next.JS, Chakra UI, and Nivo as the go-to online resource to track the world’s progress towards a coal-free future, by Zero One Group.",
       "url": "https://bloombergcoalcountdown.com/",
       "image": "showcases/websites/Bloomberg-Global-Coal-Countdown.png",
       "type": "websites"
@@ -403,28 +403,28 @@
     },
     {
       "name": "Supa Palette Website",
-      "description": "fficial website of Supa Palette plugin for Figma.",
+      "description": "Official website of Supa Palette plugin for Figma.",
       "url": "https://supa-palette.com",
       "image": "showcases/websites/Supa-Palette-Website.png",
       "type": "websites"
     },
     {
       "name": "CodeNanshu",
-      "description": "ersonal portfolio website built with Nextjs, advanced Techs and Chakra UI",
+      "description": "Personal portfolio website built with Nextjs, advanced Techs and Chakra UI",
       "url": "https://codenanshu.in",
       "image": "showcases/websites/CodeNanshu.png",
       "type": "websites"
     },
     {
       "name": "itsrakesh - blog",
-      "description": "log website built with Chakra UI and NextJs.",
+      "description": "Blog website built with Chakra UI and NextJs.",
       "url": "https://blog.itsrakesh.co/",
       "image": "showcases/websites/itsrakesh---blog.png",
       "type": "websites"
     },
     {
       "name": "eduo Instrukcije",
-      "description": "latform for searching database of more than 6K questions and answers on school related questions for Croatian market. With over 200K+ monthly visits it is the biggest educational platform in Croatia.",
+      "description": "Platform for searching database of more than 6K questions and answers on school related questions for Croatian market. With over 200K+ monthly visits it is the biggest educational platform in Croatia.",
       "url": "https://instrukcije.eduo.help/",
       "image": "showcases/websites/eduo-Instrukcije.png",
       "type": "websites"
@@ -452,7 +452,7 @@
     },
     {
       "name": "Vizima",
-      "description": " Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
+      "description": "Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
       "url": "https://www.vizima.in",
       "image": "showcases/websites/Vizima.png",
       "type": "websites"
@@ -480,14 +480,14 @@
     },
     {
       "name": "Newton Mbugua Portfolio",
-      "description": "My personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
+      "description": "Personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
       "url": "https://mbuguanewton.dev",
       "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
       "type": "websites"
     },
     {
       "name": "Júlio Mühlbauer",
-      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "description": "Personal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
       "url": "https://juliomuhlbauer.com",
       "image": "showcases/websites/Júlio-Mühlbauer.png",
       "type": "websites"
@@ -589,7 +589,7 @@
     },
     {
       "name": "Nextchakra-starter",
-      "description": "template to initialize PWA ready Next.js app with Chakra UI & Typescript setup ✨.",
+      "description": "Template to initialize PWA ready Next.js app with Chakra UI & Typescript setup ✨.",
       "url": "https://nextarter-chakra.sznm.dev/",
       "image": "showcases/tools/Nextchakra-starter.png",
       "type": "tools"
@@ -617,7 +617,7 @@
     },
     {
       "name": "Chakra-ui-markdown-renderer",
-      "description": "react-markdown renderer for people who using Chakra-UI's CSSReset component.",
+      "description": "React-markdown renderer for people who using Chakra-UI's CSSReset component.",
       "url": "https://github.com/mustaphaturhan/chakra-ui-markdown-renderer",
       "image": "showcases/tools/Chakra-ui-markdown-renderer.png",
       "type": "tools"
@@ -666,70 +666,70 @@
     },
     {
       "name": "HyperTheme Editor",
-      "description": "n advanced live theme editor for your Chakra UI projects",
+      "description": "Advanced live theme editor for your Chakra UI projects",
       "url": "https://www.hyperthe.me/",
       "image": "showcases/tools/HyperTheme-Editor.png",
       "type": "tools"
     },
     {
       "name": "Chakra Capsize",
-      "description": "he power of Capsize inside Chakra UI",
+      "description": "The power of Capsize inside Chakra UI",
       "url": "https://githubbox.com/ceteio/chakra-capsize/tree/main/example",
       "image": "showcases/tools/Chakra-Capsize.png",
       "type": "tools"
     },
     {
       "name": "create-chakra-icons",
-      "description": "ransform SVG to React Chakra UI <Icon /> ✨",
+      "description": "Transform SVG to React Chakra UI <Icon /> ✨",
       "url": "https://chakra-icons.com",
       "image": "showcases/tools/create-chakra-icons.png",
       "type": "tools"
     },
     {
       "name": "react-spreadsheet-import",
-      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "description": "Import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
       "url": "https://ugnissoftware.github.io/react-spreadsheet-import/iframe.html?id=react-spreadsheet-import--basic&args=&viewMode=story",
       "image": "showcases/tools/react-spreadsheet-import.png",
       "type": "tools"
     },
     {
       "name": "Supa Palette Plugin",
-      "description": "ll-in-one palettes generator, editor and manager for Figma.",
+      "description": "All-in-one palettes generator, editor and manager for Figma.",
       "url": "https://www.figma.com/community/plugin/1103648664059257410/Supa-Palette",
       "image": "showcases/tools/Supa-Palette-Plugin.png",
       "type": "tools"
     },
     {
       "name": "eslint-plugin-chakra-ui",
-      "description": "SLint rules for Chakra UI, such as enforcing the order of props to be semantic",
+      "description": "ESLint rules for Chakra UI, such as enforcing the order of props to be semantic",
       "url": "https://github.com/Monchi/eslint-plugin-chakra-ui",
       "image": "showcases/tools/eslint-plugin-chakra-ui.png",
       "type": "tools"
     },
     {
       "name": "Chakra UI Prose",
-      "description": " custom Chakra UI component that adds ready-made styles for rendering remote HTML content.",
+      "description": "Custom Chakra UI component that adds ready-made styles for rendering remote HTML content.",
       "url": "https://github.com/nikolovlazar/chakra-ui-prose",
       "image": "showcases/tools/Chakra-UI-Prose.png",
       "type": "tools"
     },
     {
       "name": "withTypeScale",
-      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "description": "Theme extension for Chakra UI, which generates theming for font type scales.",
       "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
       "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
     },
     {
       "name": "react-spreadsheet-import",
-      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
+      "description": "Import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
       "url": "https://github.com/UgnisSoftware/react-spreadsheet-import",
       "image": "showcases/tools/react-spreadsheet-import.png",
       "type": "tools"
     },
     {
       "name": "withTypeScale",
-      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
+      "description": "Theme extension for Chakra UI, which generates theming for font type scales.",
       "url": "https://github.com/TylerAPfledderer/chakra-ui-typescale",
       "image": "showcases/tools/withTypeScale.png",
       "type": "tools"
@@ -743,14 +743,14 @@
     },
     {
       "name": "Chakra Datepicker",
-      "description": " simple datepicker with Chakra-UI and date-fns",
+      "description": "Simple datepicker with Chakra-UI and date-fns",
       "url": "https://github.com/uselessdev/datepicker",
       "image": "showcases/tools/Chakra-Datepicker.png",
       "type": "tools"
     },
     {
       "name": "Chakra Capsize",
-      "description": "he power of Capsize inside Chakra UI",
+      "description": "The power of Capsize inside Chakra UI",
       "url": "https://github.com/ceteio/chakra-capsize",
       "image": "showcases/tools/Chakra-Capsize.png",
       "type": "tools"
