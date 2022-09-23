@@ -57,13 +57,6 @@
       "type": "projects"
     },
     {
-      "name": "Polygon",
-      "description": null,
-      "url": "https://polygon.am",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
       "name": "UI Foundations",
       "description": null,
       "url": "https://www.uifoundations.com/",
@@ -145,20 +138,6 @@
       "description": "n advanced component library build for SaaS products.",
       "url": "https://saas-ui.dev",
       "image": "showcases/projects/Saas-UI.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://pre-alpha.polygon.am/",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://polygon.am/",
-      "image": "showcases/projects/Polygon.png",
       "type": "projects"
     },
     {
