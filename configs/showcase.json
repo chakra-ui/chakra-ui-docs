@@ -72,7 +72,7 @@
     },
     {
       "name": "React Python IDE",
-      "description": " =Python IDE run in browser, built with ReactJS, 🔥 Chakra UI, skulpt and Xterm.js. ",
+      "description": " =Python IDE run in browser, built with ReactJS, 🔥 Chakra UI, skulpt and Xterm.js.",
       "url": "https://react-python-ide.vercel.app/",
       "image": "showcases/projects/React-Python-IDE.png",
       "type": "projects"
@@ -103,13 +103,6 @@
       "description": "Webapp to compare GitHub changelogs across multiple releases. Made with Next.js and Chakra UI.",
       "url": "https://octoclairvoyant.vercel.app/",
       "image": "showcases/projects/Octoclairvoyant.png",
-      "type": "projects"
-    },
-    {
-      "name": "Roadster",
-      "description": "Website of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
-      "url": "https://r0adster.live",
-      "image": "showcases/projects/Roadster.png",
       "type": "projects"
     },
     {
@@ -368,7 +361,7 @@
     },
     {
       "name": "CeloPunk Auction",
-      "description": "CeloPunk is a NFT marketplace on celo testnet chain. Made using Next.js, Chakra UI, MDX icon, and it's deployed on Vercel. ",
+      "description": "CeloPunk is a NFT marketplace on celo testnet chain. Made using Next.js, Chakra UI, MDX icon, and it's deployed on Vercel.",
       "url": "https://celopunk-auction.vercel.app/",
       "image": "showcases/websites/CeloPunk-Auction.png",
       "type": "websites"
@@ -480,7 +473,7 @@
     },
     {
       "name": "Newton Mbugua Portfolio",
-      "description": "Personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
+      "description": "Personal porfolio build suing Next JS, Chakra UI and Notion as a CMS.",
       "url": "https://mbuguanewton.dev",
       "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
       "type": "websites"
