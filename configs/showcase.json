@@ -72,7 +72,7 @@
     },
     {
       "name": "React Python IDE",
-      "description": " Python IDE run in browser,  built with ReactJS,  🔥 Chakra UI, skulpt and Xterm.js. ",
+      "description": " =Python IDE run in browser, built with ReactJS, 🔥 Chakra UI, skulpt and Xterm.js. ",
       "url": "https://react-python-ide.vercel.app/",
       "image": "showcases/projects/React-Python-IDE.png",
       "type": "projects"
@@ -445,7 +445,7 @@
     },
     {
       "name": "Yash Kapure",
-      "description": "Personal Portfolio website built using Chakra❤UI, ReactJS, TypeScript and some of  my CSS Skills.",
+      "description": "Personal Portfolio website built using Chakra❤UI, ReactJS, TypeScript and some of my CSS Skills.",
       "url": "https://yashkapure.netlify.app/",
       "image": "showcases/websites/Yash-Kapure.png",
       "type": "websites"
