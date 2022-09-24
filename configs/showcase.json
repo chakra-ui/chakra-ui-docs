@@ -106,13 +106,6 @@
       "type": "projects"
     },
     {
-      "name": "Roadster",
-      "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
-      "url": "https://r0adster.live",
-      "image": "showcases/projects/Roadster.png",
-      "type": "projects"
-    },
-    {
       "name": "Chakra UI Pro",
       "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
       "url": "https://pro.chakra-ui.com",
@@ -236,13 +229,6 @@
       "description": "A growing collection of hand-crafted & responsive Chakra UI templates ready to drop into your React project.",
       "url": "https://chakra-templates.dev/",
       "image": "showcases/projects/Chakra-Templates.png",
-      "type": "projects"
-    },
-    {
-      "name": "Roadster",
-      "description": "Website of Roadster - fresh and new discord bot. Made with Next.js and Chakra.",
-      "url": "https://r0adster.live/",
-      "image": "showcases/projects/Roadster.png",
       "type": "projects"
     },
     {
@@ -689,24 +675,10 @@
       "type": "websites"
     },
     {
-      "name": "Júlio Werner",
-      "description": "Personal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
-      "url": "https://juliowerner.com/",
-      "image": "showcases/websites/Júlio-Werner.png",
-      "type": "websites"
-    },
-    {
       "name": "Vizima",
       "description": "- Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
       "url": "https://www.vizima.in/",
       "image": "showcases/websites/Vizima.png",
-      "type": "websites"
-    },
-    {
-      "name": "Júlio Werner",
-      "description": "Personal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
-      "url": "https://juliowerner.com",
-      "image": "showcases/websites/Júlio-Werner.png",
       "type": "websites"
     }
   ],
@@ -1072,13 +1044,6 @@
       "description": null,
       "url": "https://youtube.com/watch?v=1J8dUyeUWO4&feature=share",
       "image": "https://img.youtube.com/vi/1J8dUyeUWO4/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Learn Chakra UI by building a Todo Application with Local Storage, Dark Mode enabled.",
-      "description": null,
-      "url": "https://youtube.com/watch?v=QVnkGqEsbK0&feature=share",
-      "image": "https://img.youtube.com/vi/QVnkGqEsbK0/maxresdefault.jpg",
       "type": "videos"
     },
     {
