@@ -57,13 +57,6 @@
       "type": "projects"
     },
     {
-      "name": "Polygon",
-      "description": null,
-      "url": "https://polygon.am",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
       "name": "UI Foundations",
       "description": null,
       "url": "https://www.uifoundations.com/",
@@ -148,20 +141,6 @@
       "type": "projects"
     },
     {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://pre-alpha.polygon.am/",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://polygon.am/",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
       "name": "Dev Resources",
       "description": " collaborative list of resources for developers.",
       "url": "https://devresourc.es",
@@ -243,6 +222,69 @@
       "description": "This is a clean time picker/scroller built for javascript and typescript with chakra-ui",
       "url": "https://www.npmjs.com/package/chakra-ui-time-scroller",
       "image": "showcases/projects/Chakra-UI-Time-Scroller.png",
+      "type": "projects"
+    },
+    {
+      "name": "Chakra UI Pro",
+      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
+      "url": "https://pro.chakra-ui.com/",
+      "image": "showcases/projects/Chakra-UI-Pro.png",
+      "type": "projects"
+    },
+    {
+      "name": "Chakra Templates",
+      "description": "A growing collection of hand-crafted & responsive Chakra UI templates ready to drop into your React project.",
+      "url": "https://chakra-templates.dev/",
+      "image": "showcases/projects/Chakra-Templates.png",
+      "type": "projects"
+    },
+    {
+      "name": "Roadster",
+      "description": "Website of Roadster - fresh and new discord bot. Made with Next.js and Chakra.",
+      "url": "https://r0adster.live/",
+      "image": "showcases/projects/Roadster.png",
+      "type": "projects"
+    },
+    {
+      "name": "Saas UI",
+      "description": "An advanced component library build for SaaS products.",
+      "url": "https://saas-ui.dev/",
+      "image": "showcases/projects/Saas-UI.png",
+      "type": "projects"
+    },
+    {
+      "name": "Dev Resources",
+      "description": "A collaborative list of resources for developers.",
+      "url": "https://devresourc.es/",
+      "image": "showcases/projects/Dev-Resources.png",
+      "type": "projects"
+    },
+    {
+      "name": "nextarter-chakra",
+      "description": "battery packed template to initialize Next.js app with Chakra UI & Typescript setup.",
+      "url": "https://nextarter-chakra.sznm.dev/",
+      "image": "showcases/projects/nextarter-chakra.png",
+      "type": "projects"
+    },
+    {
+      "name": "olamonde",
+      "description": "One link to rule them all. Easily place your links in a beautiful single page.",
+      "url": "https://olamonde.me/",
+      "image": "showcases/projects/olamonde.png",
+      "type": "projects"
+    },
+    {
+      "name": "Public APIs",
+      "description": "Find public APIs for your next project.",
+      "url": "https://publicapis.sznm.dev/",
+      "image": "showcases/projects/Public-APIs.png",
+      "type": "projects"
+    },
+    {
+      "name": "FeedHive",
+      "description": "Social Media content creation platform.",
+      "url": "https://feedhive.io/",
+      "image": "showcases/projects/FeedHive.png",
       "type": "projects"
     }
   ],
@@ -329,13 +371,6 @@
       "description": "Personal portfolio website built with React.js, React-Router and Chakra UI.",
       "url": "https://harikotha.netlify.app/",
       "image": "showcases/websites/Hari-Kotha's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Beema Finance",
-      "description": "Earn ultra-high, stable yields on dollars. Powered by DeFi. Built with Chakra UI 🌿.",
-      "url": "https://beema.finance",
-      "image": "showcases/websites/Beema-Finance.png",
       "type": "websites"
     },
     {
@@ -533,6 +568,146 @@
       "url": "https://www.piechartcreator.site",
       "image": "showcases/websites/Pie-Chart-Creator.png",
       "type": "websites"
+    },
+    {
+      "name": "Pie Chart Creator",
+      "description": "Quickly create sophisticated Pie Charts!. Powered By Chakra UI and React JS.",
+      "url": "https://www.piechartcreator.site/",
+      "image": "showcases/websites/Pie-Chart-Creator.png",
+      "type": "websites"
+    },
+    {
+      "name": "Schext",
+      "description": "A powerful text schedule tool, that allows your clients to set appointments without you.",
+      "url": "https://schext.com/",
+      "image": "showcases/websites/Schext.png",
+      "type": "websites"
+    },
+    {
+      "name": "Boring+Ordinary",
+      "description": "A design and development agency based in Montreal. Powered by Chakra UI, Framer Motion, Next.js, and Sanity.",
+      "url": "https://boringordinary.com/",
+      "image": "showcases/websites/Boring+Ordinary.png",
+      "type": "websites"
+    },
+    {
+      "name": "MockMe",
+      "description": "MockME - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!",
+      "url": "https://mockme.in/",
+      "image": "showcases/websites/MockMe.png",
+      "type": "websites"
+    },
+    {
+      "name": "Confused's Site",
+      "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
+      "url": "https://confused.studio/",
+      "image": "showcases/websites/Confused's-Site.png",
+      "type": "websites"
+    },
+    {
+      "name": "TRIGO's Site",
+      "description": "Company Website. We are a software development company specializing in business software. Our Website and all of our apps are powered by Chakra UI & co.",
+      "url": "https://trigodev.com/",
+      "image": "showcases/websites/TRIGO's-Site.png",
+      "type": "websites"
+    },
+    {
+      "name": "Rakhi Boxes",
+      "description": "A beautiful gift delivered straight to your loved ones door.",
+      "url": "https://rakhiboxes.com/",
+      "image": "showcases/websites/Rakhi-Boxes.png",
+      "type": "websites"
+    },
+    {
+      "name": "inspektre",
+      "description": "SAAS Platform for Application Security Posture Management",
+      "url": "https://inspektre.io/",
+      "image": "showcases/websites/inspektre.png",
+      "type": "websites"
+    },
+    {
+      "name": "Sharehouse",
+      "description": "Australian Sharehouse/Housemate finder, built with Chakra UI, Next.js & Prisma 🏡💗",
+      "url": "https://sharehouse.app/",
+      "image": "showcases/websites/Sharehouse.png",
+      "type": "websites"
+    },
+    {
+      "name": "Muhammad Ahmad's Site",
+      "description": "My personal portfolio website to show my skills, experience, and articles I published. This site built by using Next.js, Chakra Ui, Typescript and Dev.to api.",
+      "url": "https://mahmad.me/",
+      "image": "showcases/websites/Muhammad-Ahmad's-Site.png",
+      "type": "websites"
+    },
+    {
+      "name": "Supa Palette Website",
+      "description": "fficial website of Supa Palette plugin for Figma.",
+      "url": "https://supa-palette.com/",
+      "image": "showcases/websites/Supa-Palette-Website.png",
+      "type": "websites"
+    },
+    {
+      "name": "CodeNanshu",
+      "description": "ersonal portfolio website built with Nextjs, advanced Techs and Chakra UI",
+      "url": "https://codenanshu.in/",
+      "image": "showcases/websites/CodeNanshu.png",
+      "type": "websites"
+    },
+    {
+      "name": "Júlio Mühlbauer",
+      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliomuhlbauer.com/",
+      "image": "showcases/websites/Júlio-Mühlbauer.png",
+      "type": "websites"
+    },
+    {
+      "name": "Plan Harmony",
+      "description": "Collabortive trip planning.",
+      "url": "https://planharmony.com/",
+      "image": "showcases/websites/Plan-Harmony.png",
+      "type": "websites"
+    },
+    {
+      "name": "Amine Elbarry",
+      "description": "Personal portfolio website built using Chakra⚡UI, Nextjs, Typescript and Graphql 💖",
+      "url": "https://elbarryamine.com/",
+      "image": "showcases/websites/Amine-Elbarry.png",
+      "type": "websites"
+    },
+    {
+      "name": "Vizima",
+      "description": " Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
+      "url": "https://www.vizima.i/n",
+      "image": "showcases/websites/Vizima.png",
+      "type": "websites"
+    },
+    {
+      "name": "Newton Mbugua Portfolio",
+      "description": "My personal porfolio build suing Next JS, Chakra UI and Notion as a CMS.",
+      "url": "https://mbuguanewton.dev/",
+      "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
+      "type": "websites"
+    },
+    {
+      "name": "Júlio Werner",
+      "description": "Personal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliowerner.com/",
+      "image": "showcases/websites/Júlio-Werner.png",
+      "type": "websites"
+    },
+    {
+      "name": "Vizima",
+      "description": "- Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
+      "url": "https://www.vizima.in/",
+      "image": "showcases/websites/Vizima.png",
+      "type": "websites"
+    },
+    {
+      "name": "Júlio Werner",
+      "description": "Personal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
+      "url": "https://juliowerner.com",
+      "image": "showcases/websites/Júlio-Werner.png",
+      "type": "websites"
     }
   ],
   "libraries": [
@@ -585,13 +760,6 @@
       "description": "Chakra UI's official Figma components library.",
       "url": "https://www.figma.com/community/file/971408767069651759",
       "image": "showcases/tools/Chakra-Figma-UI-Kit.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Play",
-      "description": "An advanced online playground for Chakra UI.",
-      "url": "https://chakra-play.tk/",
-      "image": "showcases/tools/Chakra-Play.png",
       "type": "tools"
     },
     {
@@ -807,13 +975,6 @@
       "type": "articles"
     },
     {
-      "name": "Chakra UI and React-Hook-Form – How to Build Beautiful Forms",
-      "description": null,
-      "url": "https://www.freecodecamp.org/news/how-to-use-react-hook-form-with-chakra-ui/",
-      "image": "showcases/articles/Chakra-UI-and-React-Hook-Form-–-How-to-Build-Beautiful-Forms.png",
-      "type": "articles"
-    },
-    {
       "name": "Truncating Text using Chakra UI",
       "description": null,
       "url": "https://dev.to/estheragbaje/how-to-truncate-text-using-chakra-ui-4mpj",
@@ -867,6 +1028,13 @@
       "description": "",
       "url": "https://www.lekoarts.de/react/how-to-build-an-advanced-multipart-component-with-chakra-ui",
       "image": "showcases/articles/How-To-Build-an-Advanced-Multipart-Component-with-Chakra-UI.png",
+      "type": "articles"
+    },
+    {
+      "name": "Chakra UI and React-Hook-Form - How to Build Beautiful Forms",
+      "description": "",
+      "url": "https://www.freecodecamp.org/news/how-to-use-react-hook-form-with-chakra-ui/",
+      "image": "showcases/articles/Chakra-UI-and-React-Hook-Form---How-to-Build-Beautiful-Forms.png",
       "type": "articles"
     }
   ],
@@ -974,6 +1142,27 @@
       "description": "",
       "url": "https://www.youtube.com/watch?v=PzEHoqLj4OM",
       "image": "https://img.youtube.com/vi/PzEHoqLj4OM/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "How to use Chakra UI with Next.js and React",
+      "description": "",
+      "url": "https://youtube.com/watch?v=ubB5l-HVPgY",
+      "image": "https://img.youtube.com/vi/ubB5l-HVPgY/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Customise your theme and components",
+      "description": "",
+      "url": "https://youtube.com/watch?v=1J8dUyeUWO4",
+      "image": "https://img.youtube.com/vi/1J8dUyeUWO4/maxresdefault.jpg",
+      "type": "videos"
+    },
+    {
+      "name": "Learn Chakra UI by building a Todo Application with Local Storage, Dark Mode enabled",
+      "description": "",
+      "url": "https://youtube.com/watch?v=QVnkGqEsbK0",
+      "image": "https://img.youtube.com/vi/QVnkGqEsbK0/maxresdefault.jpg",
       "type": "videos"
     }
   ]
