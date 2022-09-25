@@ -37,12 +37,12 @@ function OptionText({ searchWords, textToHighlight }: OptionTextProps) {
     autoEscape: true,
   })
 
-  const highlightedText = chunks.map((chunk) => {
+  const highlightedText = chunks.map((chunk, index) => {
     const { end, highlight, start } = chunk
     const text = textToHighlight.substr(start, end - start)
     if (highlight) {
       return (
-        <Box as='mark' bg='transparent' color='teal.500'>
+        <Box key={index} as='mark' bg='transparent' color='teal.500'>
           {text}
         </Box>
       )
