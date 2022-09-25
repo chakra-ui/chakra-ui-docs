@@ -8,18 +8,20 @@ description:
   `isRequired` to form elements
 ---
 
-## Import
+## Usage
 
 Chakra UI exports 4 components for Form Control:
 
-- **`FormControl`**: The wrapper that provides context and functionality for all
+- `FormControl`: The wrapper that provides context and functionality for all
   children.
-- **`FormLabel`**: The label of a form section. The usage is similar to
+- `FormLabel`: The label of a form section. The usage is similar to
   [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
   `htmlFor` is set by default for children input.
-- **`FormHelperText`**: The message that tells users more details about the form
+- `FormHelperText`: The message that tells users more details about the form
   section.
-- **`FormErrorMessage`**: The message that shows up when an error occurs.
+- `FormErrorMessage`: The message that shows up when an error occurs.
+
+### Import
 
 ```js
 import {
@@ -30,7 +32,7 @@ import {
 } from '@chakra-ui/react'
 ```
 
-## Usage
+### Basic
 
 ```jsx
 <FormControl>
@@ -73,11 +75,7 @@ function errorMessageExample() {
   return (
     <FormControl isInvalid={isError}>
       <FormLabel>Email</FormLabel>
-      <Input
-        type='email'
-        value={input}
-        onChange={handleInputChange}
-      />
+      <Input type='email' value={input} onChange={handleInputChange} />
       {!isError ? (
         <FormHelperText>
           Enter the email you'd like to receive the newsletter on.
@@ -205,7 +203,9 @@ function FormikExample() {
 - If you render `FormErrorMessage` and `isInvalid` is `false` or `undefined`,
   `FormErrorMessage` won't be visible. The only way to make it visible is by
   passing `isInvalid` and setting it to `true`.
-  
-- You can still supply an `id` prop to `FormControl` that will override the randomly generated `id` and attach to the `for` attribute of the label and the `id` of the form element. (It also affects the `id` attribute of the label)
+- You can still supply an `id` prop to `FormControl` that will override the
+  randomly generated `id` and attach to the `for` attribute of the label and the
+  `id` of the form element. (It also affects the `id` attribute of the label)
 
-- The combination of `htmlFor` and `id` are optional in which adding both will also override the generated `id` sent to the provider.
+- The combination of `htmlFor` and `id` are optional in which adding both will
+  also override the generated `id` sent to the provider.

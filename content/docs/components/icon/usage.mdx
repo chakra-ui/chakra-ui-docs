@@ -17,7 +17,9 @@ These icons are published into a separate package that is not part of
 
 ```bash
 npm i @chakra-ui/icons
-# or
+```
+
+```bash
 yarn add @chakra-ui/icons
 ```
 
@@ -55,7 +57,7 @@ component names:
   <IconsList />
 </Box>
 
-## Using a third-party icon library
+### Using a third-party icon library
 
 To use third-party icon libraries like
 [`react-icons`](https://react-icons.github.io/react-icons/), here are the steps:
@@ -89,7 +91,7 @@ function Example() {
 </HStack>
 ```
 
-## Creating your custom icons
+### Creating your custom icons
 
 Chakra provides two methods for creating your custom icons:
 
@@ -183,11 +185,10 @@ export const UpDownIcon = createIcon({
 - Use a tool like [SvgOmg](https://jakearchibald.github.io/svgomg/) to reduce
   the size and minify the markup.
 
-## Fallback Icon
+### Fallback Icon
 
 When `children` is not provided, the `Icon` component renders a fallback icon.
 
 ```jsx
 <Icon />
 ```
-

@@ -6,9 +6,11 @@ package: '@chakra-ui/popover'
 description: Popover is a non-modal dialog that floats around a trigger.
 ---
 
-`Popover` is built on top of the [Popper.js](https://popper.js.org/) library.
+> `Popover` is built on top of the [Popper.js](https://popper.js.org/) library.
 
 ## Import
+
+Chakra exports 8 Popover related components:
 
 - `Popover`: The wrapper that provides props, state, and context to its
   children.
@@ -34,7 +36,7 @@ import {
 } from '@chakra-ui/react'
 ```
 
-## Basic Usage
+## Usage
 
 It is used to display contextual information to the user, and should be paired
 with a clickable trigger element.
@@ -59,7 +61,7 @@ returned to the trigger.
 </Popover>
 ```
 
-## Rendering the Popover in a Portal
+### Rendering the Popover in a Portal
 
 By default, the Popover doesn't render in a Portal. To make them display in a
 portal, wrap the `PopoverContent` in a `Portal`
@@ -86,7 +88,7 @@ portal, wrap the `PopoverContent` in a `Portal`
 </Popover>
 ```
 
-## Focus an element when Popover opens
+### Focus an element when Popover opens
 
 By default, focus is to sent to `PopoverContent` when it opens. Pass the
 `initialFocusRef` prop to send focus to a specific element instead.
@@ -137,7 +139,7 @@ function WalkthroughPopover() {
 }
 ```
 
-## Trapping Focus within Popover
+### Trapping Focus within Popover
 
 If the popover contains a form, you might need to trap focus within the popover
 and close it when the user fills the form and hits "save".
@@ -219,7 +221,7 @@ const PopoverForm = () => {
 render(<PopoverForm />)
 ```
 
-## Controlled Usage
+### Controlled Usage
 
 You can control the opening and closing of the popover by passing the `isOpen`,
 and `onClose` props.
@@ -266,7 +268,7 @@ function ControlledUsage() {
 }
 ```
 
-## Popover Anchor
+### Popover Anchor
 
 You can wrap your component with `PopoverAnchor` to prevent trigger any action.
 The wrapped component will become a position reference. Actions will only be
@@ -329,7 +331,7 @@ function WithPopoverAnchor() {
 }
 ```
 
-## Accessing Internal state
+### Accessing Internal state
 
 Chakra provides access to two internal details: `isOpen` and `onClose`. Use the
 render prop pattern to gain access to them.
@@ -371,7 +373,7 @@ function InternalStateEx() {
 }
 ```
 
-## Customizing the Popover
+### Customizing the Popover
 
 Chakra exports all the components you need to customize the look and feel of the
 popover. You can change the background, arrow size, box shadow and so on.

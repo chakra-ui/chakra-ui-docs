@@ -65,6 +65,17 @@ customizations and Storybook integration) below.
 > take it a step further, check out the additional steps
 > [outlined below](#additional-setup).
 
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                                                                                                                                                                       |
+| ---------------- | ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| colorModeManager | `StorageManager` | `localStorageManager` | Manager to persist a user's color mode preference in                                                                                                                                              |
+| cssVarsRoot      | `string`         | `:root`               | The root element that Chakra attaches the CSS variables to                                                                                                                                        |
+| environment      | `Environment`    | Depends on context    | The environment (`window` and `document`) to be used by all components and hooks. By default, we smartly determine the ownerDocument and defaultView based on where `ChakraProvider` is rendered. |
+| portalZIndex     | `number`         | `undefined`           | Common z-index to use for `Portal`                                                                                                                                                                |
+| resetCSS         | `boolean`        | `true`                | Automatically includes `<CSSReset />`                                                                                                                                                             |
+| theme            | `Theme`          | `@chakra-ui/theme`    | Optional custom theme                                                                                                                                                                             |
+
 ### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
@@ -75,8 +86,8 @@ TypeScript version of `4.1.0` is required.
 ### Customize Theme
 
 If you intend to
-[customize the default theme](/docs/styled-system/customize-theme), you
-will need to pass your extended theme object as a prop to `ChakraProvider` as
+[customize the default theme](/docs/styled-system/customize-theme), you will
+need to pass your extended theme object as a prop to `ChakraProvider` as
 follows:
 
 ```jsx live=false
@@ -153,14 +164,3 @@ below.
 
    The `chakra` object accepts the same [props](#chakraprovider-props) as
    `ChakraProvider` (without `children`).
-
-## ChakraProvider Props
-
-| Name             | Type             | Default               | Description                                                                                                                                                                                       |
-| ---------------- | ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| colorModeManager | `StorageManager` | `localStorageManager` | Manager to persist a user's color mode preference in                                                                                                                                              |
-| cssVarsRoot      | `string`         | `:root`               | The root element that Chakra attaches the CSS variables to                                                                                                                                        |
-| environment      | `Environment`    | Depends on context    | The environment (`window` and `document`) to be used by all components and hooks. By default, we smartly determine the ownerDocument and defaultView based on where `ChakraProvider` is rendered. |
-| portalZIndex     | `number`         | `undefined`           | Common z-index to use for `Portal`                                                                                                                                                                |
-| resetCSS         | `boolean`        | `true`                | Automatically includes `<CSSReset />`                                                                                                                                                             |
-| theme            | `Theme`          | `@chakra-ui/theme`    | Optional custom theme                                                                                                                                                                             |

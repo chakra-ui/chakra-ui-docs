@@ -47,7 +47,7 @@ function ToastExample() {
 > Make sure to call `useToast` at least one component level below the
 > `<ChakraProvider>` because it needs access to the current theme.
 
-## Custom component
+### Custom component
 
 Display a custom component instead of the default Toast UI.
 
@@ -73,7 +73,7 @@ function CustomToastExample() {
 }
 ```
 
-## Closing Toasts
+### Closing Toasts
 
 Toasts can be closed imperatively, individually (via the `close` instance
 method) or all together (via the `closeAll` instance method).
@@ -118,7 +118,7 @@ function ClosingToastExample() {
 }
 ```
 
-## Updating Toasts
+### Updating Toasts
 
 Toasts' options can be updated, by passing an `id` and the new `options` to the
 `update` instance method.
@@ -152,7 +152,7 @@ function UpdatingToastExample() {
 }
 ```
 
-## Status
+### Status
 
 You can use `status` to change the color of your toasts.
 
@@ -183,7 +183,7 @@ function ToastStatusExample() {
 }
 ```
 
-## Variants
+### Variants
 
 `Toast` uses the same variants as the
 [`Alert`](https://chakra-ui.com/docs/components/feedback/alert) component.
@@ -215,7 +215,7 @@ function ToastVariantsExample() {
 }
 ```
 
-## Custom container styles
+### Custom container styles
 
 The `toast` function now exposes a `containerStyle` property you can use to
 override the default styles for the toast container.
@@ -249,7 +249,7 @@ function Example() {
 }
 ```
 
-## Changing the toast position
+### Changing the toast position
 
 Using the `position` prop you can adjust where your toast will be popup from.
 
@@ -287,7 +287,7 @@ function PositionExample() {
 }
 ```
 
-## Preventing Duplicate Toast
+### Preventing Duplicate Toast
 
 In some cases you might need to prevent duplicate of specific toasts. To achieve
 you need to pass an `id` and use the `toast.isActive` method to determine when
@@ -314,7 +314,7 @@ function PreventDuplicateExample() {
 }
 ```
 
-## Standalone Toasts
+### Standalone Toasts
 
 Use `createStandaloneToast` to create toasts from outside of your React
 Components.

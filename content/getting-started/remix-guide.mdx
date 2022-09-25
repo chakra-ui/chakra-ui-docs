@@ -6,7 +6,7 @@ author: noobinthisgame
 category: frameworks
 ---
 
-### 1. Installation
+## 1. Installation
 
 Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
@@ -19,7 +19,7 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
 ```
 
-### 2. Provider Setup
+## 2. Provider Setup
 
 To prevent loss of styles we need to do some changes on the server-side and
 client-side.
@@ -242,7 +242,7 @@ export default function App() {
 }
 ```
 
-#### ChakraProvider Props
+### ChakraProvider Props
 
 | Name             | Type             | Default               | Description                                         |
 | ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
@@ -254,7 +254,7 @@ export default function App() {
 > Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
 > take it a step further, check out step 3.
 
-### 3. Optional Setup
+## 3. Optional Setup
 
 - Customizing Theme
 
@@ -290,9 +290,11 @@ export default function App() {
 
 - Add colorModeManager
 
-Remix is server-side rendered, so there will be color mode `flashing`, because chakra stores color mode in `localstorage` by default.
+Remix is server-side rendered, so there will be color mode `flashing`, because
+chakra stores color mode in `localstorage` by default.
 
- We will store color mode value in `cookie` to tell our app to render it in user color mode.
+We will store color mode value in `cookie` to tell our app to render it in user
+color mode.
 
 Here's how to fix it:
 
@@ -300,12 +302,12 @@ Here's how to fix it:
 
 ```tsx live=false
 // Typescript
-// This will return cookies 
+// This will return cookies
 export const loader: LoaderFunction = async ({ request }) => {
-// first time users will not have any cookies and you may not return
-// undefined here, hence ?? is necessary
-  return request.headers.get("cookie") ?? ''
-};
+  // first time users will not have any cookies and you may not return
+  // undefined here, hence ?? is necessary
+  return request.headers.get('cookie') ?? ''
+}
 ```
 
 2. Give `ChakraProvider` cookies from loader
@@ -331,12 +333,12 @@ return (
 
 That's it!
 
-#### Notes on TypeScript 🚨
+### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
 
-### 4. Community boilerplates
+## 4. Community boilerplates
 
 If you're starting a new project and would like to cut down on configuration
 time, you can use some of these community boilerplates. 👇

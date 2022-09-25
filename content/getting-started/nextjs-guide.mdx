@@ -23,7 +23,7 @@ category: frameworks
   </AspectRatio>
 </Box>
 
-### Installation
+## Installation
 
 In your Next.js project, install Chakra UI by running either of the following:
 
@@ -35,7 +35,7 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 ```
 
-### Provider Setup
+## Provider Setup
 
 After installing Chakra UI, you need to set up the `ChakraProvider` at the root
 of your application.
@@ -58,7 +58,16 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-### Customizing theme
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+
+## Customizing theme
 
 If you intend to customise the default theme object to match your design
 requirements, you need to extend the `theme`.
@@ -93,13 +102,13 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp;
+export default MyApp
 ```
 
 > To further customize components or build your own design system, the
 > `theme-tools` package includes useful utilities.
 
-### Color Mode Script
+## Color Mode Script
 
 The color mode script needs to be added before the content inside the `body` tag
 for local storage syncing to work correctly.
@@ -134,16 +143,7 @@ export default class Document extends NextDocument {
 }
 ```
 
-#### Notes on TypeScript 🚨
+### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
-
-### ChakraProvider Props
-
-| Name             | Type             | Default               | Description                                         |
-| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |

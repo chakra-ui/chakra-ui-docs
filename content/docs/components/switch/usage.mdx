@@ -7,15 +7,6 @@ description:
   'The Switch component is used as an alternative for the checkbox component.'
 ---
 
-The `Switch` component is used as an alternative for the
-[Checkbox](/docs/components/form/checkbox) component. You can switch between
-enabled or disabled states.
-
-<carbon-ad></carbon-ad>
-
-`Switch` must always be accompanied by a label, and follows the same keyboard
-workflow as a `Checkbox`.
-
 ## Import
 
 ```js
@@ -23,6 +14,13 @@ import { Switch } from '@chakra-ui/react'
 ```
 
 ## Usage
+
+The `Switch` component is used as an alternative for the
+[Checkbox](/docs/components/form/checkbox) component. You can switch between
+enabled or disabled states.
+
+`Switch` must always be accompanied by a label, and follows the same keyboard
+workflow as a `Checkbox`.
 
 ```jsx
 <FormControl display='flex' alignItems='center'>
@@ -33,7 +31,7 @@ import { Switch } from '@chakra-ui/react'
 </FormControl>
 ```
 
-## Sizes
+### Sizes
 
 Pass the `size` prop to change the size of the `Switch`.
 
@@ -45,7 +43,7 @@ Pass the `size` prop to change the size of the `Switch`.
 </Stack>
 ```
 
-## Switch background color
+### Switch background color
 
 You can change the checked background color of the `Switch` by passing the
 `colorScheme` prop.
@@ -57,7 +55,7 @@ You can change the checked background color of the `Switch` by passing the
 </Stack>
 ```
 
-## State depending behavior
+### State depending behavior
 
 States like `isDisabled` have an impact on the usability of a `Switch` and on
 the styles, except for the `isInvalid` and the `isRequired` prop.
@@ -83,4 +81,3 @@ the styles, except for the `isInvalid` and the `isRequired` prop.
   <Switch id='isRequired' isRequired />
 </FormControl>
 ```
-

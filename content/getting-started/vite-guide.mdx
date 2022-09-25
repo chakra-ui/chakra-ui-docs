@@ -6,7 +6,7 @@ author: estheragbaje
 category: frameworks
 ---
 
-### 1. Installation
+## 1. Installation
 
 In your Vite React project, install Chakra UI by running either of the
 following:
@@ -19,7 +19,7 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 ```
 
-### 2. Provider Setup
+## 2. Provider Setup
 
 After installing Chakra UI, you need to set up the `ChakraProvider` at the root
 of your application.
@@ -44,7 +44,16 @@ ReactDOM.createRoot(rootElement).render(
 > Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
 > take it a step further, check out step 3.
 
-### 3. Customizing theme (Optional)
+### ChakraProvider Props
+
+| Name             | Type             | Default               | Description                                         |
+| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
+| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
+| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
+| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
+| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+
+## 3. Customizing theme (Optional)
 
 If you intend to customise the default theme object to match your design
 requirements, you need to extend the `theme`.
@@ -110,16 +119,7 @@ export default defineConfig({
 })
 ```
 
-#### Notes on TypeScript 🚨
+### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
-
-### ChakraProvider Props
-
-| Name             | Type             | Default               | Description                                         |
-| ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
-| resetCSS         | `boolean`        | `true`                | automatically includes `<CSSReset />`               |
-| theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
-| colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
-| portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |

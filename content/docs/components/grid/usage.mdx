@@ -8,15 +8,19 @@ description: Grid is a layout for managing grid layouts
 
 ## Import
 
+Chakra UI exports 2 grid-related components:
+
+- `Grid`: The main wrapper with `display: grid`.
+- `GridItem`: Used as a child of `Grid` to control the span, and start positions
+  within the grid.
+
 ```js
 import { Grid, GridItem } from '@chakra-ui/react'
 ```
 
-- **Grid:** The main wrapper with `display: grid`.
-- **GridItem:** Used as a child of `Grid` to control the span, and start
-  positions within the grid.
+## Usage
 
-## Template columns
+### Template columns
 
 Here's an example of using grid template columns with the `grid` component, and
 applying a `gap` or space between the grid items.
@@ -31,7 +35,7 @@ applying a `gap` or space between the grid items.
 </Grid>
 ```
 
-## Spanning columns
+### Spanning columns
 
 In some layouts, you may need certain grid items to span specific amount of
 columns or rows instead of an even distribution. To achieve this, you need to
@@ -53,7 +57,7 @@ the `templateColumns` and `templateRows`.
 </Grid>
 ```
 
-## Starting and ending lines
+### Starting and ending lines
 
 Pass the `colStart` and `colEnd` prop to `GridItem` component to make an element
 start or end at the `nth` grid position.
@@ -65,7 +69,7 @@ start or end at the `nth` grid position.
 </Grid>
 ```
 
-## Template areas
+### Template areas
 
 The `templateAreas` prop specifies areas within the grid layout. Use template
 literals to name the area. Now you can reference the area by passing `area` prop
