@@ -272,6 +272,13 @@
       "url": "https://feedhive.io/",
       "image": "showcases/projects/FeedHive.png",
       "type": "projects"
+    },
+    {
+      "name": "Volca",
+      "description": "A SaaS boilerplate project with Node.js and React",
+      "url": "https://volca.io",
+      "image": "showcases/projects/Volca.png",
+      "type": "projects"
     }
   ],
   "websites": [
@@ -679,6 +686,13 @@
       "description": "- Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
       "url": "https://www.vizima.in/",
       "image": "showcases/websites/Vizima.png",
+      "type": "websites"
+    },
+    {
+      "name": "Arkar's Website ",
+      "description": "rkar's personal website, Built with Chakra UI , GraphCMS, Next.js,",
+      "url": "https://arkardev.space/",
+      "image": "showcases/websites/Arkar's-Website-.png",
       "type": "websites"
     }
   ],
