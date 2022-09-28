@@ -5,9 +5,9 @@ import {
   useColorModeValue,
   Wrap,
 } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
 import { FaGithub, FaNpm, FaYoutube } from 'react-icons/fa'
-import { t } from 'utils/i18n'
 import StorybookIcon from '../storybook-icon'
 
 type ComponentLinkProps = ButtonProps & {
@@ -61,6 +61,7 @@ export type ComponentLinksProps = {
 }
 function ComponentLinks(props: ComponentLinksProps) {
   const { theme, github, npm, storybook, video, ...rest } = props
+  const { t } = useTranslation()
   const iconColor = useColorModeValue('gray.600', 'inherit')
 
   const githubRepoUrl = 'https://github.com/chakra-ui/chakra-ui'
@@ -68,7 +69,8 @@ function ComponentLinks(props: ComponentLinksProps) {
   const githubLink = (github?.url || github?.package) && (
     <ComponentLink
       url={
-        github.url || `${githubRepoUrl}/tree/main/packages/components/${github.package}`
+        github.url ||
+        `${githubRepoUrl}/tree/main/packages/components/${github.package}`
       }
       icon={FaGithub}
       iconColor={iconColor}

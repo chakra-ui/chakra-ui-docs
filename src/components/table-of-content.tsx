@@ -11,6 +11,7 @@ import type { FrontmatterHeading } from 'src/types/frontmatter'
 import { t } from 'utils/i18n'
 import { FigmaPluginAd } from './figma-plugin-ad'
 import TocNav from './toc-nav'
+import useTranslation from 'next-translate/useTranslation'
 
 interface TableOfContentProps extends BoxProps {
   headings: FrontmatterHeading[]
@@ -18,6 +19,8 @@ interface TableOfContentProps extends BoxProps {
 
 function TableOfContent(props: TableOfContentProps) {
   const { headings, ...rest } = props
+
+  const { t } = useTranslation()
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),
     {

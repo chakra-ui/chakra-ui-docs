@@ -17,11 +17,13 @@ export default function Page({
   const Component = useMDXComponent(doc.body.code)
   const router = useRouter()
 
+  const { pathname, query, asPath, defaultLocale } = router
+
   useEffect(() => {
     if (router.query.version === 'latest') {
       router.replace(`/changelog/${doc.version}`)
     }
-  }, [router, doc])
+  }, [router, doc, pathname, query, asPath, defaultLocale])
 
   return (
     <ChangelogLayout hideToc frontmatter={doc.frontMatter}>

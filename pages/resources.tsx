@@ -28,8 +28,8 @@ import Sidebar from 'components/sidebar/sidebar'
 import resources from 'configs/resources.json'
 import { getRoutes } from 'layouts/mdx'
 import { filterResources } from 'utils/filter-resources'
-import { t } from 'utils/i18n'
 import { groupBy } from 'utils/js-utils'
+import useTranslation from 'next-translate/useTranslation'
 
 function Resources() {
   /**
@@ -39,6 +39,8 @@ function Resources() {
   const routes = getRoutes('/docs/')
   const data = resources.data as Resource[]
   const groups = groupBy(data, 'type')
+
+  const { t } = useTranslation()
 
   const BLOGS = t('resources.blogs.title')
   const TALKS = t('resources.talks.title')
@@ -92,6 +94,9 @@ interface ResourceSectionProps {
 function ResourceSection(props: ResourceSectionProps) {
   const { title, resources } = props
   const filterInputId = `resources-filter-${title.toLowerCase()}`
+
+  const { t } = useTranslation()
+
   const formik = useFormik({
     initialValues: { [filterInputId]: '' },
     onSubmit: undefined,
@@ -169,20 +174,28 @@ const ShowcaseIcon = (props: HTMLChakraProps<'svg'>) => (
   </chakra.svg>
 )
 
-const ShowcaseBanner = () => (
-  <LinkBox role='group' mt='6'>
-    <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
-      <Box>
-        <NextLink href='/showcase' passHref>
-          <LinkOverlay color='white'>
-            <Flex align='center' mb='4'>
-              <Heading size='md'>{t('resources.showcaseBannerTitle')}</Heading>
-              <ShowcaseIcon w='8' h='8' ml='1' />
-            </Flex>
-          </LinkOverlay>
-        </NextLink>
-        <Text color='gray.400'>{t('resources.showcaseBannerDescription')}</Text>
-      </Box>
-    </Flex>
-  </LinkBox>
-)
+const ShowcaseBanner = () => {
+  const { t } = useTranslation()
+
+  return (
+    <LinkBox role='group' mt='6'>
+      <Flex align='center' rounded='3xl' bg='gray.900' padding='8'>
+        <Box>
+          <NextLink href='/showcase' passHref>
+            <LinkOverlay color='white'>
+              <Flex align='center' mb='4'>
+                <Heading size='md'>
+                  {t('resources.showcaseBannerTitle')}
+                </Heading>
+                <ShowcaseIcon w='8' h='8' ml='1' />
+              </Flex>
+            </LinkOverlay>
+          </NextLink>
+          <Text color='gray.400'>
+            {t('resources.showcaseBannerDescription')}
+          </Text>
+        </Box>
+      </Flex>
+    </LinkBox>
+  )
+}

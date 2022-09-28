@@ -1,8 +1,10 @@
 import { chakra, Icon, Link, Stack } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import { MdEdit } from 'react-icons/md'
-import { t } from 'utils/i18n'
 
 const EditPageLink = ({ href }: { href?: string }) => {
+  const { t } = useTranslation()
+
   return (
     <Link href={href} isExternal>
       <Stack

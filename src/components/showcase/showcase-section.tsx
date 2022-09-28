@@ -10,12 +10,14 @@ import NextLink from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 
 import showcaseData from 'configs/showcase.json'
-import { t } from 'utils/i18n'
 import { ShowcaseItem } from './showcase-item'
+import useTranslation from 'next-translate/useTranslation'
 
 const websites = showcaseData.slice(0, 8)
 
 const ShowcaseSection = () => {
+  const { t } = useTranslation()
+
   return (
     <Container py='7.5rem' maxW='1280px' as='section' mb={12}>
       <VStack w='full' spacing='7.5rem'>

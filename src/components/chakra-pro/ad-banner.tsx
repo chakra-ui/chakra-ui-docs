@@ -1,8 +1,9 @@
 import { Center, Flex, Text, chakra } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import { getUrl } from './get-url'
-import { t } from 'utils/i18n'
 
 export const AdBanner = () => {
+  const { t } = useTranslation()
   return (
     <Center
       py='2'

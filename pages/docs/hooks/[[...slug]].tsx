@@ -15,13 +15,20 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getDocByType('hooks').map((doc) => ({
-    params: { slug: doc.slug.split('/').slice(3) },
-  }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = locales.flatMap((locale) =>
+    getDocByType('hooks').map((doc) => ({
+      params: { slug: doc.slug.split('/').slice(4) },
+      locale,
+    })),
+  )
   return { paths: paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  return { props: { doc: getDocDoc(['hooks', ctx.params.slug]) } }
+  return {
+    props: {
+      doc: getDocDoc(['hooks', ctx.params.slug], ctx.locale, ctx.defaultLocale),
+    },
+  }
 }

@@ -16,10 +16,14 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const tutorials = allTutorials
-    .map((t) => t._id.replace('tutorial/', '').replace('.mdx', ''))
-    .map((id) => ({ params: { slug: id.split('/') } }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const tutorials = locales.flatMap((locale) =>
+    allTutorials
+      .map((t) => t._id.replace(`${locale}/tutorial/`, '').replace('.mdx', ''))
+      .map((id) => ({
+        params: { slug: id.split('/') },
+      })),
+  )
   return { paths: tutorials, fallback: false }
 }
 

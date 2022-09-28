@@ -18,7 +18,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import SearchStyle from './search.styles'
-import { t } from 'utils/i18n'
+import useTranslation from 'next-translate/useTranslation'
 
 const ACTION_KEY_DEFAULT = ['Ctrl', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
@@ -48,6 +48,8 @@ export const SearchButton = React.forwardRef(function SearchButton(
       setActionKey(ACTION_KEY_DEFAULT)
     }
   }, [])
+
+  const { t } = useTranslation('common')
 
   return (
     <chakra.button

@@ -1,11 +1,12 @@
 import { SimpleGrid, Stack, Text } from '@chakra-ui/react'
-
-import { t } from 'utils/i18n'
 import showcaseData from 'configs/showcase.json'
 import MDXLayout from 'layouts/mdx'
 import { ShowcaseItem } from 'components/showcase/showcase-item'
+import useTranslation from 'next-translate/useTranslation'
 
 const Showcase = () => {
+  const { t } = useTranslation()
+
   return (
     <MDXLayout
       hideToc

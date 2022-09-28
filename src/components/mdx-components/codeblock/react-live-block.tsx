@@ -1,11 +1,11 @@
 import { Box, BoxProps, chakra } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import React, { useState } from 'react'
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
 import CodeContainer from './code-container'
 import CopyButton from './copy-button'
 import scope from './react-live-scope'
 import { liveEditorStyle, liveErrorStyle } from './styles'
-import { t } from 'utils/i18n'
 
 const LiveCodePreview = chakra(LivePreview, {
   baseStyle: {
@@ -19,6 +19,7 @@ const LiveCodePreview = chakra(LivePreview, {
 })
 
 const EditableNotice = (props: BoxProps) => {
+  const { t } = useTranslation()
   return (
     <Box
       position='absolute'

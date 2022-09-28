@@ -23,6 +23,7 @@ import SponsorButton from './sponsor-button'
 import VersionSwitcher from './version-switcher'
 import { DiscordIcon, GithubIcon } from 'components/icons'
 import siteConfig from 'configs/site-config.json'
+import { LanguageSwitcher } from './language-switcher'
 
 function HeaderContent() {
   const mobileNav = useDisclosure()
@@ -60,6 +61,11 @@ function HeaderContent() {
         >
           <Search />
           <VersionSwitcher
+            width='auto'
+            flexShrink={0}
+            display={{ base: 'none', md: 'flex' }}
+          />
+          <LanguageSwitcher
             width='auto'
             flexShrink={0}
             display={{ base: 'none', md: 'flex' }}

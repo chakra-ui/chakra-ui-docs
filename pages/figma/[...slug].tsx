@@ -15,12 +15,14 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const figmas = allFigmas
-    .map((t) =>
-      t._id.replace('figma/', '').replace('.mdx', '').replace('index', ''),
-    )
-    .map((id) => ({ params: { slug: [id.replace('figma/', '')] } }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const figmas = locales.flatMap((locale) =>
+    allFigmas
+      .map((t) =>
+        t._id.replace('figma/', '').replace('.mdx', '').replace('index', ''),
+      )
+      .map((id) => ({ params: { slug: [id.replace('figma/', '')] }, locale })),
+  )
 
   return { paths: figmas, fallback: false }
 }
@@ -30,5 +32,7 @@ export const getStaticProps = async (ctx) => {
     ? ctx.params.slug
     : [ctx.params.slug]
   const figma = allFigmas.find((figma) => figma._id.includes(params.join('/')))
+
+  console.log(figma)
   return { props: { figma } }
 }

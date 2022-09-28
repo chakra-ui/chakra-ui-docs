@@ -2,7 +2,7 @@ import { allDocs, Doc } from 'contentlayer/generated'
 import { MixedArray, toArray, uniq } from './js-utils'
 
 export function getDocByType(id: string) {
-  return allDocs.filter((doc) => doc.slug.startsWith(`/docs/${id}`))
+  return allDocs.filter((doc) => doc.slug.includes(`/docs/${id}`))
 }
 
 function toCapitalized(str: string) {
@@ -32,14 +32,33 @@ const getPropsDoc = (id: string) => {
   return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'props')
 }
 
-export const getDocDoc = (slug: MixedArray): Doc | undefined => {
+export const getDocDoc = (
+  slug: MixedArray,
+  locale: string,
+  defaultLocale: string,
+): Doc | undefined => {
   const params = toArray(slug)
   const _slug = params.join('/')
-  const doc = allDocs.find(
-    (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`),
+
+  // Find a doc for the current locale
+  let doc = allDocs.find(
+    (doc) =>
+      doc.slug.startsWith(`/${locale}`) &&
+      (doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`)),
   ) as Doc | undefined
 
-  if (!doc) return
+  if (!doc) {
+    // Find a doc for the default locale to use as fallback instead of 404 redirect
+    const fallbackDoc = allDocs.find(
+      (doc) =>
+        doc.slug.startsWith(`/${defaultLocale}`) &&
+        (doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`)),
+    ) as Doc | undefined
+
+    if (!fallbackDoc) return
+
+    doc = fallbackDoc
+  }
 
   const isThemingTab = doc.scope === 'theming'
   const isPropsTab = doc.scope === 'props'
@@ -52,7 +71,7 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
     }
   }
 
-  if(isPropsTab) {
+  if (isPropsTab) {
     doc.frontMatter = {
       ...doc.frontMatter,
       ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
@@ -65,7 +84,11 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
 
 export type TabsData = ReturnType<typeof getComponentTabsData>
 
-export function getComponentTabsData(slug: MixedArray) {
+export function getComponentTabsData(
+  slug: MixedArray,
+  locale: string,
+  defaultLocale: string,
+) {
   const params = toArray(slug)
   const _slug = params.join('/')
 
@@ -85,21 +108,21 @@ export function getComponentTabsData(slug: MixedArray) {
       match: _slug.endsWith('/usage') || params.length === 2,
       href: { query: { slug: usageSlug.slice(1) } },
       label: 'Usage',
-      doc: getDocDoc(getSlug('usage')),
+      doc: getDocDoc(getSlug('usage'), locale, defaultLocale),
     },
     {
       id: 'props',
       match: _slug.endsWith('/props'),
       href: { query: { slug: propsSlug.slice(1) } },
       label: 'Props',
-      doc: getDocDoc(getSlug('props')),
+      doc: getDocDoc(getSlug('props'), locale, defaultLocale),
     },
     {
       id: 'theming',
       match: _slug.endsWith('/theming'),
       label: 'Theming',
       href: { query: { slug: themingSlug.slice(1) } },
-      doc: getDocDoc(getSlug('theming')),
+      doc: getDocDoc(getSlug('theming'), locale, defaultLocale),
     },
   ]
   return data.filter((item) => item.doc)

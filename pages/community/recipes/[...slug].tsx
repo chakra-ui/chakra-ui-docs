@@ -16,10 +16,12 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = allRecipes
-    .map((t) => t._id.replace('community/recipes/', '').replace('.mdx', ''))
-    .map((id) => ({ params: { slug: id.split('/') } }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = locales.flatMap((locale) =>
+    allRecipes
+      .map((t) => t._id.replace(`community/recipes/`, '').replace('.mdx', ''))
+      .map((id) => ({ params: { slug: id.split('/') }, locale })),
+  )
   return { paths, fallback: false }
 }
 

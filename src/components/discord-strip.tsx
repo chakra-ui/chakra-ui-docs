@@ -1,10 +1,12 @@
 import { Box, BoxProps, Flex, Heading, Text, chakra } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import * as React from 'react'
 import Container from './container'
 import DiscordIcon from './docs/discord-logo'
-import { t } from 'utils/i18n'
 
 export function DiscordStrip(props: BoxProps) {
+  const { t } = useTranslation()
+
   return (
     <Box bg='#5865F2' {...props}>
       <Container py='8'>

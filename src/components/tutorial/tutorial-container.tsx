@@ -23,10 +23,10 @@ import EditPageLink from 'components/edit-page-button'
 import Header from 'components/header'
 import SEO from 'components/seo'
 import mainPackageJson from 'package.json'
-import { t } from 'utils/i18n'
 import { ErrorBoundary } from 'react-error-boundary'
 import { nightOwl } from '@codesandbox/sandpack-themes'
 import { Frontmatter } from 'src/types/frontmatter'
+import useTranslation from 'next-translate/useTranslation'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -61,6 +61,8 @@ function TutorialContainer({
   files,
 }: PageContainerProps) {
   useHeadingFocusOnRouteChange()
+
+  const { t } = useTranslation()
 
   if (!frontmatter) return <></>
 

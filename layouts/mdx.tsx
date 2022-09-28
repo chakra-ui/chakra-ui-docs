@@ -46,8 +46,9 @@ interface MDXLayoutProps {
 export default function MDXLayout(props: MDXLayoutProps) {
   const { frontmatter, children, hideToc, maxWidth } = props
 
-  const routes = getRoutes(frontmatter.slug)
-  const route = findRouteByPath(removeFromLast(frontmatter.slug, '#'), routes)
+  const slug = frontmatter.slug.slice(3) // remove locale prefix
+  const routes = getRoutes(slug)
+  const route = findRouteByPath(removeFromLast(slug, '#'), routes)
   const routeContext = getRouteContext(route, routes)
 
   return (

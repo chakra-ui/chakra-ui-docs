@@ -16,10 +16,15 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = allGuides
-    .map((t) => t._id.replace('getting-started/', '').replace('.mdx', ''))
-    .map((id) => ({ params: { slug: id === 'index' ? [] : id.split('/') } }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = locales.flatMap((locale) =>
+    allGuides
+      .map((t) => t._id.replace(`getting-started/`, '').replace('.mdx', ''))
+      .map((id) => ({
+        params: { slug: id === 'index' ? [] : id.split('/') },
+        locale,
+      })),
+  )
   return { paths, fallback: false }
 }
 
@@ -27,7 +32,9 @@ export const getStaticProps = async (ctx) => {
   const params = toArray(ctx.params.slug)
   let doc: Guide
   if (params.length === 0) {
-    doc = allGuides.find((t) => t._id === 'getting-started/index.mdx')
+    doc = allGuides.find(
+      (t) => t._id === `${ctx.locale}/getting-started/index.mdx`,
+    )
   } else {
     doc = allGuides.find((guide) =>
       guide._id.endsWith(`${params.join('/')}.mdx`),

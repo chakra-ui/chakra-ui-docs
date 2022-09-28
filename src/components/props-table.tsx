@@ -3,7 +3,7 @@ import { chakra, Code, Flex, HStack, Stack } from '@chakra-ui/react'
 import { InlineCode } from 'components/mdx-components/inline-code'
 import * as React from 'react'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
-import { t } from 'utils/i18n'
+import useTranslation from 'next-translate/useTranslation'
 
 export type PropsTableProps = {
   /**
@@ -26,6 +26,8 @@ const PropsTable = ({
   omit = ['layerStyle', 'noOfLines', 'textStyle', 'orientation', 'styleConfig'],
   only,
 }: PropsTableProps) => {
+  const { t } = useTranslation()
+
   const propList = React.useMemo(
     () => makePropsTable({ of, omit, only }),
     [of, omit, only],
@@ -147,5 +149,5 @@ function cleanType(value: any) {
 }
 
 function cleanDefaultValue(value: any) {
-  return typeof value === 'boolean' ? value.toString() : value;
+  return typeof value === 'boolean' ? value.toString() : value
 }

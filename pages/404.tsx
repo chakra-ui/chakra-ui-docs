@@ -4,10 +4,12 @@ import * as React from 'react'
 import { FaHome } from 'react-icons/fa'
 import Header from 'components/header'
 import SEO from 'components/seo'
-import { t } from 'utils/i18n'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
+import useTranslation from 'next-translate/useTranslation'
 
 const NotFoundPage = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO

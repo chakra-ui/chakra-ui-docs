@@ -8,9 +8,9 @@ import Header from 'components/header'
 import SEO from 'components/seo'
 import TableOfContent from 'components/table-of-content'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
-import { t } from 'utils/i18n'
 import { FrontmatterHeading } from 'src/types/frontmatter'
 import { AdBanner } from './chakra-pro/ad-banner'
+import useTranslation from 'next-translate/useTranslation'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -54,7 +54,7 @@ function PageContainer(props: PageContainerProps) {
     hideToc,
     maxWidth = '48rem',
   } = props
-
+  const { t } = useTranslation()
   useHeadingFocusOnRouteChange()
 
   if (!frontmatter) return <></>

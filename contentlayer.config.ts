@@ -19,7 +19,7 @@ const computedFields: ComputedFields = {
 
 const Guides = defineDocumentType(() => ({
   name: 'Guide',
-  filePathPattern: 'getting-started/**/*.mdx',
+  filePathPattern: '**/getting-started/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -47,7 +47,7 @@ const Guides = defineDocumentType(() => ({
 
 const Blogs = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blog/**/*.mdx',
+  filePathPattern: '**/blog/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -77,7 +77,7 @@ const Blogs = defineDocumentType(() => ({
 
 const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: 'docs/**/*.mdx',
+  filePathPattern: '**/docs/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string' },
@@ -114,7 +114,7 @@ const Doc = defineDocumentType(() => ({
 
 const Recipe = defineDocumentType(() => ({
   name: 'Recipe',
-  filePathPattern: 'community/recipes/**/*.mdx',
+  filePathPattern: '**/community/recipes/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -141,7 +141,7 @@ const Recipe = defineDocumentType(() => ({
 
 const Tutorial = defineDocumentType(() => ({
   name: 'Tutorial',
-  filePathPattern: 'tutorial/**/*.mdx',
+  filePathPattern: '**/tutorial/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -164,7 +164,7 @@ const Tutorial = defineDocumentType(() => ({
 
 const Changelog = defineDocumentType(() => ({
   name: 'Changelog',
-  filePathPattern: 'changelog/*.mdx',
+  filePathPattern: '**/changelog/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },

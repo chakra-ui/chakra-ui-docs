@@ -1,0 +1,74 @@
+{
+  "title": {
+    "main": "Erstelle barierrefreie Webseiten",
+    "highlighted": "mit Geschwindigkeit"
+  },
+  "message": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+  "get-started": "Get Started",
+  "supported-and-backed-by": "Supported and Backed by",
+  "your-company": "Your company",
+  "less-code-more-speed": "Less code. More speed",
+  "less-code-description": "Spend less time writing UI code and more time building a great experience for your customers.",
+  "feature-section": {
+    "title": "An experience you'd expect from a design system",
+    "description": "Opinionated and designed for daily use.",
+    "accessible": {
+      "title": "Accessible",
+      "description": "Chakra UI strictly follows WAI-ARIA standards for all components."
+    },
+    "themeable": {
+      "title": "Themeable",
+      "description": "Customize any part of our components to match your design needs."
+    },
+    "composable": {
+      "title": "Composable",
+      "description": "Designed with composition in mind. Compose new components with ease."
+    },
+    "light-and-dark-ui": {
+      "title": "Light and Dark UI",
+      "description": "Optimized for multiple color modes. Use light or dark, your choice."
+    },
+    "developer-experience": {
+      "title": "Developer Experience",
+      "description": "Guaranteed to boost your productivity when building your app or website."
+    },
+    "active-community": {
+      "title": "Active Community",
+      "description": "We're a team of active maintainers ready to help you whenever you need."
+    }
+  },
+  "built-with-chakra-section": {
+    "title": "Built with Chakra UI ⚡️",
+    "description": "A collection of websites and projects built with Chakra UI",
+    "see-showcase": "See showcase"
+  },
+  "growing-section": {
+    "title": "Chakra is growing quickly",
+    "description": "We're dedicated to improving the experience and performance of Chakra UI.",
+    "downloads-per-month": "Downloads per month",
+    "github-stars": "Github stars",
+    "core-contributors": "Core contributors",
+    "discord-members": "Discord members",
+    "chakra-heroes": "Chakra Heroes 🥇"
+  },
+  "loved-by-product-people-section": {
+    "title": "Loved by product people like you"
+  },
+  "support-chakra-ui-section": {
+    "title": "Support Chakra UI 💖",
+    "description": "Our maintainers devote their time, effort, and heart to ensure Chakra UI keeps getting better. Support us by donating to our collective 🙏",
+    "sponsor-the-chakra-ui-maintainers": "Sponsor the Chakra UI maintainers",
+    "sponsor-the-creator": "Sponsor the creator, Segun Adebayo",
+    "organization-sponsors": "Organization Sponsors 🏦",
+    "individual-sponsors": "Individual Sponsors 🥇"
+  },
+  "event-section": {
+    "title": "Invite us to speak at your next event",
+    "description": "Want a Chakra UI core team member to speak at your next event? Invite us to create a memorable and engaging experience for your attendees.",
+    "invite-us-to-speak": "Invite us to speak"
+  },
+  "seo": {
+    "title": "Chakra UI - A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+    "description": "Simple, Modular and Accessible UI Components for your React Applications. Built with Styled System"
+  }
+}

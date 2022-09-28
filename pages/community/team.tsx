@@ -14,11 +14,11 @@ import {
 } from '@chakra-ui/react'
 import fs from 'fs'
 import MDXLayout from 'layouts/mdx'
+import useTranslation from 'next-translate/useTranslation'
 import NextImage from 'next/image'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { IFormerMember } from 'scripts/get-former-members'
 import { Contributor, Member as IMember } from 'src/types/github'
-import { t } from 'utils/i18n'
 
 function SocialLink(props: {
   icon: React.ElementType
@@ -122,6 +122,8 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
   const contributorsWithoutTeam = contributors.filter(
     ({ login }) => !memberLogins.includes(login),
   )
+
+  const { t } = useTranslation()
 
   return (
     <MDXLayout

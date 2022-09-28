@@ -47,8 +47,9 @@ import { getAllSponsors } from 'utils/get-all-sponsors'
 import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
-import { t } from 'utils/i18n'
 import { AdBanner } from 'components/chakra-pro/ad-banner'
+import { GetStaticProps } from 'next'
+import useTranslation from 'next-translate/useTranslation'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -137,12 +138,11 @@ const HomePage = ({
   npmDownloads,
   discordMembers,
 }: HomePageProps) => {
+  const { t } = useTranslation('index')
+
   return (
     <>
-      <SEO
-        title={t('homepage.seo.title')}
-        description={t('homepage.seo.description')}
-      />
+      <SEO title={t('seo.title')} description={t('seo.description')} />
       <AdBanner />
       <Header />
       <Box mb={20}>
@@ -159,10 +159,10 @@ const HomePage = ({
                 mb='16px'
                 lineHeight='1.2'
               >
-                {t('homepage.title.main')}
+                {t('title.main')}
                 <Box as='span' color='teal.500' _dark={{ color: 'teal.300' }}>
                   {' '}
-                  {t('homepage.title.highlighted')}
+                  {t('title.highlighted')}
                 </Box>
               </chakra.h1>
 
@@ -174,7 +174,7 @@ const HomePage = ({
                 fontSize={{ base: 'lg', lg: 'xl' }}
                 mt='6'
               >
-                {t('homepage.message')}
+                {t('message')}
               </Text>
 
               <Stack
@@ -193,7 +193,7 @@ const HomePage = ({
                     colorScheme='teal'
                     rightIcon={<FaArrowRight fontSize='0.8em' />}
                   >
-                    {t('homepage.get-started')}
+                    {t('get-started')}
                   </Button>
                 </NextLink>
                 <Button
@@ -243,7 +243,7 @@ const HomePage = ({
               _dark={{ color: 'teal.300' }}
               mb='48px'
             >
-              {t('homepage.supported-and-backed-by')}
+              {t('supported-and-backed-by')}
             </chakra.p>
             <Wrap
               maxW='800px'
@@ -291,7 +291,7 @@ const HomePage = ({
                   <Box as='span' mr='1' role='img'>
                     💖
                   </Box>{' '}
-                  {t('homepage.your-company')}
+                  {t('your-company')}
                 </Button>
               </WrapItem>
             </Wrap>
@@ -302,10 +302,10 @@ const HomePage = ({
           <Container py='80px'>
             <Box mb='3em' textAlign='center'>
               <chakra.h2 textStyle='heading'>
-                {t('homepage.less-code-more-speed')}
+                {t('less-code-more-speed')}
               </chakra.h2>
               <Text opacity={0.7} fontSize='lg' mt='3' mx='auto' maxW='600px'>
-                {t('homepage.less-code-description')}
+                {t('less-code-description')}
               </Text>
             </Box>
             <Box
@@ -333,10 +333,10 @@ const HomePage = ({
           <Container py='120px' maxW='1280px'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                {t('homepage.feature-section.title')}
+                {t('feature-section.title')}
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                {t('homepage.feature-section.description')}
+                {t('feature-section.description')}
               </chakra.p>
             </Box>
             <Grid
@@ -346,39 +346,39 @@ const HomePage = ({
             >
               <Feature
                 icon={MdAccessibility}
-                title={t('homepage.feature-section.accessible.title')}
+                title={t('feature-section.accessible.title')}
               >
-                {t('homepage.feature-section.accessible.description')}
+                {t('feature-section.accessible.description')}
               </Feature>
               <Feature
                 icon={MdPalette}
-                title={t('homepage.feature-section.themeable.title')}
+                title={t('feature-section.themeable.title')}
               >
-                {t('homepage.feature-section.themeable.description')}
+                {t('feature-section.themeable.description')}
               </Feature>
               <Feature
                 icon={MdGrain}
-                title={t('homepage.feature-section.composable.title')}
+                title={t('feature-section.composable.title')}
               >
-                {t('homepage.feature-section.composable.description')}
+                {t('feature-section.composable.description')}
               </Feature>
               <Feature
                 icon={IoMdMoon}
-                title={t('homepage.feature-section.light-and-dark-ui.title')}
+                title={t('feature-section.light-and-dark-ui.title')}
               >
-                {t('homepage.feature-section.light-and-dark-ui.description')}
+                {t('feature-section.light-and-dark-ui.description')}
               </Feature>
               <Feature
                 icon={AiFillThunderbolt}
-                title={t('homepage.feature-section.developer-experience.title')}
+                title={t('feature-section.developer-experience.title')}
               >
-                {t('homepage.feature-section.developer-experience.description')}
+                {t('feature-section.developer-experience.description')}
               </Feature>
               <Feature
                 icon={FaDiscord}
-                title={t('homepage.feature-section.active-community.title')}
+                title={t('feature-section.active-community.title')}
               >
-                {t('homepage.feature-section.active-community.description')}
+                {t('feature-section.active-community.description')}
               </Feature>
             </Grid>
           </Container>
@@ -390,10 +390,10 @@ const HomePage = ({
           <Container py='7.5rem' maxW='1280px' color='white'>
             <Box maxW='760px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading' mb='5'>
-                {t('homepage.growing-section.title')}
+                {t('growing-section.title')}
               </chakra.h2>
               <chakra.p opacity={0.7} fontSize='lg'>
-                {t('homepage.growing-section.description')}
+                {t('growing-section.description')}
               </chakra.p>
             </Box>
             <SimpleGrid
@@ -406,28 +406,28 @@ const HomePage = ({
               <StatBox
                 icon={FiDownload}
                 title={npmDownloads}
-                description={t('homepage.growing-section.downloads-per-month')}
+                description={t('growing-section.downloads-per-month')}
               />
               <StatBox
                 icon={FiGithub}
                 title={githubStars}
-                description={t('homepage.growing-section.github-stars')}
+                description={t('growing-section.github-stars')}
               />
               <StatBox
                 icon={FiUsers}
                 title={members.length.toString()}
-                description={t('homepage.growing-section.core-contributors')}
+                description={t('growing-section.core-contributors')}
               />
               <StatBox
                 icon={FaDiscord}
                 title={discordMembers}
-                description={t('homepage.growing-section.discord-members')}
+                description={t('growing-section.discord-members')}
               />
             </SimpleGrid>
 
             <Box mt='5rem' textAlign='center'>
               <chakra.p mb='48px' textStyle='caps'>
-                {t('homepage.growing-section.chakra-heroes')}
+                {t('growing-section.chakra-heroes')}
               </chakra.p>
               <Wrap spacing='4' justify='center' maxW='660px' mx='auto'>
                 {members.map((i) => (
@@ -452,7 +452,7 @@ const HomePage = ({
         <Box>
           <Container py='120px' maxW='1200px' px='32px'>
             <chakra.h2 textStyle='heading-2' mb='48px'>
-              {t('homepage.loved-by-product-people-section.title')}
+              {t('loved-by-product-people-section.title')}
             </chakra.h2>
             <SimpleGrid spacing='32px' columns={{ base: 1, md: 3 }}>
               {chunk(tweets.tweets, 3).map((tweetList, idx) => (
@@ -470,10 +470,10 @@ const HomePage = ({
           <Container py='120px' maxW='1200px' px='32px' color='white'>
             <Box maxW='560px' mx='auto' textAlign='center' mb='56px'>
               <chakra.h2 textStyle='heading-2' mb='4'>
-                {t('homepage.support-chakra-ui-section.title')}
+                {t('support-chakra-ui-section.title')}
               </chakra.h2>
               <Text fontSize='lg' opacity={0.7}>
-                {t('homepage.support-chakra-ui-section.description')}
+                {t('support-chakra-ui-section.description')}
               </Text>
             </Box>
 
@@ -509,7 +509,7 @@ const HomePage = ({
                   </Text>
                   <Text opacity={0.7}>
                     {t(
-                      'homepage.support-chakra-ui-section.sponsor-the-chakra-ui-maintainers',
+                      'support-chakra-ui-section.sponsor-the-chakra-ui-maintainers',
                     )}
                   </Text>
                 </Box>
@@ -564,9 +564,7 @@ const HomePage = ({
                     Patreon
                   </Text>
                   <Text opacity={0.7}>
-                    {t(
-                      'homepage.support-chakra-ui-section.sponsor-the-creator',
-                    )}
+                    {t('support-chakra-ui-section.sponsor-the-creator')}
                   </Text>
                 </Box>
               </Stack>
@@ -588,7 +586,7 @@ const HomePage = ({
 
             <Box maxW='600px' mx='auto' textAlign='center'>
               <chakra.p textStyle='caps' mb='8' mt='4rem'>
-                {t('homepage.support-chakra-ui-section.organization-sponsors')}
+                {t('support-chakra-ui-section.organization-sponsors')}
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.companies.map((i) => (
@@ -620,7 +618,7 @@ const HomePage = ({
               </Wrap>
 
               <chakra.p mb='8' mt='4rem' textStyle='caps'>
-                {t('homepage.support-chakra-ui-section.individual-sponsors')}
+                {t('support-chakra-ui-section.individual-sponsors')}
               </chakra.p>
               <Wrap justify='center'>
                 {sponsors.individuals.map((i) => (
@@ -662,10 +660,10 @@ const HomePage = ({
                 <FaMicrophone size='40px' />
               </Circle>
               <chakra.h2 textStyle='heading' mt='6' mb='6'>
-                {t('homepage.event-section.title')}
+                {t('event-section.title')}
               </chakra.h2>
               <Text mb='40px' fontSize='lg' opacity={0.7}>
-                {t('homepage.event-section.description')}
+                {t('event-section.description')}
               </Text>
             </Flex>
             <Button
@@ -678,7 +676,7 @@ const HomePage = ({
               colorScheme='teal'
               rightIcon={<FaArrowRight fontSize='0.8em' />}
             >
-              {t('homepage.event-section.invite-us-to-speak')}
+              {t('event-section.invite-us-to-speak')}
             </Button>
           </Container>
         </Box>
@@ -691,7 +689,7 @@ const HomePage = ({
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const [
     { prettyCount: githubStars },
     { prettyCount: npmDownloads },

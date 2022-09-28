@@ -1,6 +1,6 @@
 import { Button, ButtonProps, useClipboard } from '@chakra-ui/react'
+import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
-import { t } from 'utils/i18n'
 
 interface CopyButtonProps extends ButtonProps {
   code: string
@@ -8,7 +8,7 @@ interface CopyButtonProps extends ButtonProps {
 
 function CopyButton({ code, ...props }: CopyButtonProps) {
   const { hasCopied, onCopy } = useClipboard(code)
-
+  const { t } = useTranslation()
   return (
     <Button
       size='sm'

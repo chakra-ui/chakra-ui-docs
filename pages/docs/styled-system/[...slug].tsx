@@ -15,15 +15,24 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getDocByType('styled-system').map((doc) => ({
-    params: { slug: doc.slug.split('/').slice(3) },
-  }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = locales.flatMap((locale) =>
+    getDocByType('styled-system').map((doc) => ({
+      params: { slug: doc.slug.split('/').slice(4) },
+      locale,
+    })),
+  )
   return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
-    props: { doc: getDocDoc(['styled-system', ctx.params.slug]) },
+    props: {
+      doc: getDocDoc(
+        ['styled-system', ctx.params.slug],
+        ctx.locale,
+        ctx.defaultLocale,
+      ),
+    },
   }
 }
