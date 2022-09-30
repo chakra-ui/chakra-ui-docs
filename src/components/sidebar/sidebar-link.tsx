@@ -56,7 +56,7 @@ const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
   }, [isActive, router.query])
 
   return (
-    <Flex align='center' userSelect='none' lineHeight='tall' {...rest}>
+    <Flex as='li' align='center' userSelect='none' lineHeight='tall' {...rest}>
       <NextLink href={href} passHref>
         <StyledLink isActive={isActive} ref={link}>
           {children}

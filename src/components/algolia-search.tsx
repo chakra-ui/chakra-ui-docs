@@ -152,6 +152,9 @@ function AlgoliaSearch() {
             indexName='chakra-ui'
             apiKey='df1dcc41f7b8e5d68e73dd56d1e19701'
             appId='BH4D9OD16A'
+            searchParameters={{
+              distinct: 1,
+            }}
             navigator={{
               navigate: ({ itemUrl }) => {
                 setIsOpen(false)
@@ -160,12 +163,16 @@ function AlgoliaSearch() {
             }}
             hitComponent={Hit}
             transformItems={(items) => {
+              console.log(items)
               return items.map((item) => {
                 const a = document.createElement('a')
                 a.href = item.url
                 const hash = a.hash === '#content-wrapper' ? '' : a.hash
-                item.url = `${a.pathname}${hash}`
-                return item
+
+                return {
+                  ...item,
+                  url: `${a.pathname}${hash}`,
+                }
               })
             }}
           />

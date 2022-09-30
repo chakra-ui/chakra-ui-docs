@@ -69,47 +69,51 @@ function PageContainer(props: PageContainerProps) {
       </SkipNavLink>
       <AdBanner />
       <Header />
-      <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
+      <Box
+        as='main'
+        className='main-content DocSearch-content'
+        w='full'
+        maxW='8xl'
+        mx='auto'
+      >
         <Box display={{ md: 'flex' }}>
           {leftSidebar || null}
           <Box flex='1' minW='0'>
             <SkipNavContent />
-            <Box id='content' px={5} mx='auto' minH='76vh'>
-              <Flex>
-                <Box
-                  minW='0'
-                  flex='auto'
-                  px={{ base: '4', sm: '6', xl: '8' }}
-                  pt='10'
-                >
-                  <Box maxW={maxWidth}>
-                    <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
-                      {convertBackticksToInlineCode(title)}
-                    </chakra.h1>
-                    {version && (
-                      <Badge colorScheme='teal' letterSpacing='wider'>
-                        v{version}
-                      </Badge>
-                    )}
-                    {children}
-                    <Box mt='40px'>
-                      <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
-                      {pagination || null}
-                    </Box>
-                    <Box pb='20'>
-                      <Footer />
-                    </Box>
-                  </Box>
-                </Box>
-                {!hideToc && (
-                  <TableOfContent
-                    visibility={headings.length === 0 ? 'hidden' : 'initial'}
-                    headings={headings}
-                  />
+            <Flex id='content' as='article' px={5} mx='auto' minH='76vh'>
+              <Box
+                as='section'
+                maxW={maxWidth}
+                flex='auto'
+                minW='0'
+                px={{ base: '4', sm: '6', xl: '8' }}
+                pt='10'
+              >
+                <chakra.h1 tabIndex={-1} outline={0} apply='mdx.h1'>
+                  {convertBackticksToInlineCode(title)}
+                </chakra.h1>
+                {version && (
+                  <Badge colorScheme='teal' letterSpacing='wider'>
+                    v{version}
+                  </Badge>
                 )}
-                {rightSidebar}
-              </Flex>
-            </Box>
+                {children}
+                <Box mt='40px'>
+                  <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
+                  {pagination || null}
+                </Box>
+                <Box pb='20'>
+                  <Footer />
+                </Box>
+              </Box>
+              {!hideToc && (
+                <TableOfContent
+                  visibility={headings.length === 0 ? 'hidden' : 'initial'}
+                  headings={headings}
+                />
+              )}
+              {rightSidebar}
+            </Flex>
           </Box>
         </Box>
       </Box>

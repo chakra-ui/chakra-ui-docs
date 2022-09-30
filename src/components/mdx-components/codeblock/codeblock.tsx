@@ -57,7 +57,7 @@ function CodeBlock(props) {
   }
 
   return (
-    <Box position='relative' zIndex='0'>
+    <Box as='pre' position='relative' zIndex='0'>
       <CodeContainer px='0' overflow='hidden'>
         <Highlight
           codeString={rawCode}

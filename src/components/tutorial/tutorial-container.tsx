@@ -85,9 +85,9 @@ function TutorialContainer({
         {t('component.page-container.skip-to-content')}
       </SkipNavLink>
       <Header maxWidth={'full'} />
-      <Box as='main' w='full'>
+      <Box as='main' w='full' className='DocSearch-content'>
         <SkipNavContent />
-        <Box id='content'>
+        <Box id='content' as='article'>
           <ErrorBoundary
             FallbackComponent={() => (
               <Center>

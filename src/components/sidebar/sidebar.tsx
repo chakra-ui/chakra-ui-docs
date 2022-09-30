@@ -47,7 +47,7 @@ export function SidebarContent({
     <>
       {routes.map((lvl1, idx) => {
         return (
-          <Fragment key={idx}>
+          <Box as='ul' key={idx} list>
             {lvl1.heading && (
               <chakra.h4
                 fontSize='sm'
@@ -103,7 +103,7 @@ export function SidebarContent({
                 </SidebarCategory>
               )
             })}
-          </Fragment>
+          </Box>
         )
       })}
     </>

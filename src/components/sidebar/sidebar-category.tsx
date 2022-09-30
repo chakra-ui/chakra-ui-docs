@@ -19,7 +19,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
   const { isMobile, title, selected, opened, children, contentRef, ...rest } =
     props
 
-  const ref = useRef<HTMLDivElement | null>(null)
+  const ref = useRef<any | null>(null)
 
   const [{ toggle, shouldScroll = false }, setToggle] = useState<SidebarState>({
     toggle: selected || opened,
@@ -49,7 +49,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
   }, [toggle, shouldScroll, isMobile, contentRef])
 
   return (
-    <chakra.div mt='8' ref={ref} {...rest}>
+    <chakra.div as='li' mt='8' ref={ref} {...rest}>
       <chakra.p
         width='full'
         textTransform='uppercase'
@@ -64,7 +64,7 @@ function SidebarCategory(props: SidebarCategoryProps) {
       >
         {title}
       </chakra.p>
-      <Stack role='group' hidden={!toggle} mt='16px' mx='-3'>
+      <Stack as='ul' role='group' hidden={!toggle} mt='16px' mx='-3'>
         {children}
       </Stack>
     </chakra.div>
