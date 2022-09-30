@@ -22,13 +22,6 @@
       "type": "projects"
     },
     {
-      "name": "TwitterFOMO.dev",
-      "description": "Best WebDev Tweets",
-      "url": "https://twitterfomo.dev",
-      "image": "showcases/projects/TwitterFOMO.dev.png",
-      "type": "projects"
-    },
-    {
       "name": "Dokz",
       "description": "Effortless documentation with Next.js and MDX.",
       "url": "https://dokz.vercel.app/docs",
@@ -346,13 +339,6 @@
       "type": "websites"
     },
     {
-      "name": "Confused's Site",
-      "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
-      "url": "https://confused.studio",
-      "image": "showcases/websites/Confused's-Site.png",
-      "type": "websites"
-    },
-    {
       "name": "TRIGO's Site",
       "description": "Company Website. We are a software development company specializing in business software. Our Website and all of our apps are powered by Chakra UI & co.",
       "url": "https://trigodev.com",
@@ -581,20 +567,6 @@
       "description": "A design and development agency based in Montreal. Powered by Chakra UI, Framer Motion, Next.js, and Sanity.",
       "url": "https://boringordinary.com/",
       "image": "showcases/websites/Boring+Ordinary.png",
-      "type": "websites"
-    },
-    {
-      "name": "MockMe",
-      "description": "MockME - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!",
-      "url": "https://mockme.in/",
-      "image": "showcases/websites/MockMe.png",
-      "type": "websites"
-    },
-    {
-      "name": "Confused's Site",
-      "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
-      "url": "https://confused.studio/",
-      "image": "showcases/websites/Confused's-Site.png",
       "type": "websites"
     },
     {
