@@ -23,7 +23,7 @@ import { ChakraNextUnwrappedImage } from './chakra-next-image'
 
 const MotionBox = motion<Omit<BoxProps, 'style'>>(Box)
 
-const websites = showcaseData.splice(0, 8).map(({ name, image, url }) => ({
+const websites = showcaseData.slice(0, 8).map(({ name, image, url }) => ({
   src: image,
   href: url,
   alt: name,
