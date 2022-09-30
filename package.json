@@ -11,7 +11,6 @@
     "members:gen": "tsx scripts/all-members.ts",
     "former-members:gen": "tsx scripts/get-former-members.ts",
     "search-meta:gen": "tsx scripts/get-search-meta.ts",
-    "showcase-data:gen": "tsx scripts/get-showcase-data.ts",
     "contributing:gen": "tsx scripts/build-contributing-page.ts",
     "start": "next start",
     "cache:clean": "rm -rf .next .contentlayer",

@@ -13,72 +13,21 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { motion, useMotionTemplate, useSpring } from 'framer-motion'
-import { StaticImageData } from 'next/image'
 import NextLink from 'next/link'
 import { FocusEvent, PointerEvent, useCallback, useEffect, useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
-import ChakraNextImage from 'components/chakra-next-image'
-import ChakraTemplates from 'public/showcases/projects/Chakra-Templates.png'
-import ChakraUIPro from 'public/showcases/projects/Chakra-UI-Pro.png'
-import ChocUI from 'public/showcases/projects/Choc-UI.png'
-import Snappify from 'public/showcases/projects/Snappify.png'
-import UIFoundations from 'public/showcases/projects/UI-Foundations.png'
-import thirdweb from 'public/showcases/projects/thirdweb.png'
-import HyperThemeEditor from 'public/showcases/tools/HyperTheme-Editor.png'
-import June from 'public/showcases/websites/June.png'
+import showcaseData from 'configs/showcase.json'
 import { t } from 'utils/i18n'
-
-type Website = {
-  src: StaticImageData
-  href: string
-  alt: string
-}
+import { ChakraNextUnwrappedImage } from './chakra-next-image'
 
 const MotionBox = motion<Omit<BoxProps, 'style'>>(Box)
 
-const websites: Website[] = [
-  {
-    src: thirdweb,
-    href: 'https://thirdweb.com/',
-    alt: 'thirdweb',
-  },
-  {
-    src: Snappify,
-    href: 'https://snappify.io/',
-    alt: 'Snappify',
-  },
-  {
-    src: HyperThemeEditor,
-    href: 'https://www.hyperthe.me/',
-    alt: 'HyperTheme Editor',
-  },
-  {
-    src: UIFoundations,
-    href: 'https://www.uifoundations.com/',
-    alt: 'UI Foundations',
-  },
-  {
-    src: ChakraUIPro,
-    href: 'https://pro.chakra-ui.com',
-    alt: 'Chakra UI Pro',
-  },
-  {
-    src: June,
-    href: 'https://june.so',
-    alt: 'June',
-  },
-  {
-    src: ChakraTemplates,
-    href: 'https://chakra-templates.dev',
-    alt: 'Chakra Templates',
-  },
-  {
-    src: ChocUI,
-    href: 'https://choc-ui.com/',
-    alt: 'Choc UI',
-  },
-]
+const websites = showcaseData.splice(0, 8).map(({ name, image, url }) => ({
+  src: image,
+  href: url,
+  alt: name,
+}))
 
 const ShowcaseSection = () => {
   const itemsRef = useRef<HTMLDivElement>()
@@ -135,7 +84,7 @@ const ShowcaseSection = () => {
     href,
     alt,
   }: {
-    src: StaticImageData
+    src: string
     href: string
     alt: string
   }) => {
@@ -162,12 +111,17 @@ const ShowcaseSection = () => {
       >
         <VStack position='relative' alignItems='flex-start'>
           <AspectRatio ratio={16 / 9} w='full'>
-            <ChakraNextImage
+            <ChakraNextUnwrappedImage
               alt={alt}
-              src={src}
+              src={
+                src
+                  ? /^(https|http)/.test(src)
+                    ? src
+                    : `/${src}`
+                  : '/og-image.png'
+              }
               layout='fill'
               objectFit='cover'
-              placeholder='blur'
               transition='0.25s box-shadow ease-out'
               _groupHover={{ shadow: 'lg' }}
               _groupFocus={{ shadow: 'lg' }}
