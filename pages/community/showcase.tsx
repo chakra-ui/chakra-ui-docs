@@ -1,12 +1,11 @@
 import {
-  Link,
   SimpleGrid,
   Stack,
   Text,
-  Box,
   AspectRatio,
   VStack,
-  Heading,
+  LinkBox,
+  LinkOverlay,
 } from '@chakra-ui/react'
 import { ChakraNextUnwrappedImage } from 'components/chakra-next-image'
 
@@ -34,19 +33,17 @@ const Showcase = () => {
       <SimpleGrid columns={{ base: 1, xl: 2 }} gap={8} mt={10}>
         {showcaseData.map(({ name, image, url }) => (
           <VStack key={url} alignItems='flex-start' spacing={3}>
-            <AspectRatio ratio={16 / 9} w='full'>
-              <Box
-                as={Link}
-                isExternal
-                href={url}
-                borderWidth='1px'
-                transform='auto'
-                _dark={{ bg: 'whiteAlpha.50' }}
-                _hover={{ boxShadow: 'md', translateY: '-2px' }}
-                rounded='md'
-                overflow='hidden'
-                transition='all 0.1s ease-out'
-              >
+            <LinkBox
+              w='full'
+              borderWidth='1px'
+              transform='auto'
+              _dark={{ bg: 'whiteAlpha.50' }}
+              _hover={{ boxShadow: 'md', translateY: '-2px' }}
+              rounded='md'
+              overflow='hidden'
+              transition='all 0.1s ease-out'
+            >
+              <AspectRatio ratio={16 / 9} w='full'>
                 <ChakraNextUnwrappedImage
                   alt={name}
                   layout='fill'
@@ -59,16 +56,19 @@ const Showcase = () => {
                       : '/og-image.png'
                   }
                 />
-              </Box>
-            </AspectRatio>
-            <Heading
-              fontSize='md'
-              _groupHover={{ color: 'teal.500' }}
-              _groupFocus={{ color: 'teal.500' }}
-              transition='0.25s color ease-out'
-            >
-              {name}
-            </Heading>
+              </AspectRatio>
+              <LinkOverlay href={url} isExternal>
+                <Text
+                  px={4}
+                  py={3}
+                  fontWeight='semibold'
+                  textAlign='start'
+                  fontSize={{ base: 'sm', md: 'md' }}
+                >
+                  {name}
+                </Text>
+              </LinkOverlay>
+            </LinkBox>
           </VStack>
         ))}
       </SimpleGrid>
