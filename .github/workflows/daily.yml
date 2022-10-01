@@ -58,5 +58,5 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           delete-branch: true
-          title: update sponsors, members, showcase and avatars
+          title: update sponsors, members, and avatars
           branch: chore/daily-updates
