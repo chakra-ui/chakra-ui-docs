@@ -72,7 +72,7 @@
     "scroll-into-view-if-needed": "^2.2.29",
     "shelljs": "^0.8.5",
     "typescript": "^4.7.4",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/github-slugger": "^1.3.0",
