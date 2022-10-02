@@ -15,6 +15,11 @@
     "image": "showcases/thirdweb.jpg"
   },
   {
+    "name": "yubo",
+    "url": "https://yubo.live/",
+    "image": "showcases/yubo.jpg"
+  },
+  {
     "name": "Saas UI",
     "url": "https://saas-ui.dev",
     "image": "showcases/Saas-UI.jpg"
