@@ -17,10 +17,9 @@ import { useCallback, useMemo, useState } from 'react'
 import { t } from 'utils/i18n'
 import { capitalize } from 'utils/js-utils'
 import showcaseData from 'configs/showcase.json'
-import type { IShowcase } from 'scripts/get-showcase-data'
 import MDXLayout from 'layouts/mdx'
 
-const categories = Object.keys(showcaseData as IShowcase)
+const categories = Object.keys(showcaseData as any)
 
 const Showcase = () => {
   const [index, setIndex] = useState(0)
