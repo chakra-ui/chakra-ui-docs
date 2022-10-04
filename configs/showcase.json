@@ -5,9 +5,19 @@
     "image": "showcases/Chakra-UI-Pro.jpg"
   },
   {
+    "name": "Ethereum",
+    "url": "https://ethereum.org/",
+    "image": "showcases/ethereum.jpg"
+  },
+  {
     "name": "Snappify",
     "url": "https://snappify.io/",
     "image": "showcases/Snappify.jpg"
+  },
+  {
+    "name": "Planet.com",
+    "url": "https://planet.com/",
+    "image": "showcases/planet.jpg"
   },
   {
     "name": "thirdweb",
@@ -30,9 +40,19 @@
     "image": "showcases/Razorpay.jpg"
   },
   {
+    "name": "World Economic Forum",
+    "url": "https://weforum.org/",
+    "image": "showcases/weforum.jpg"
+  },
+  {
     "name": "Supa Palette Website",
     "url": "https://supa-palette.com",
     "image": "showcases/Supa-Palette-Website.jpg"
+  },
+  {
+    "name": "iFixit",
+    "url": "https://ifixit.com/",
+    "image": "showcases/ifixit.jpg"
   },
   {
     "name": "Typebot",
