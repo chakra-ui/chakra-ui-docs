@@ -52,7 +52,6 @@ function CodeBlock(props: SandpackCodeBlockProps) {
       }}
       style={{
         flexDirection: isHomePage ? 'row-reverse' : 'column',
-        fontWeight: 'bold',
         borderColor: 'transparent',
         borderRadius: '8px',
       }}
