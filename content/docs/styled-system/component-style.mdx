@@ -65,7 +65,7 @@ component part.
 The basic API for styling a single part component is:
 
 ```jsx live=false
-import { defineStyleConfig } from "@chakra-ui/react";
+import { defineStyleConfig } from '@chakra-ui/react'
 
 export default defineStyleConfig({
   // Styles for the base style
@@ -79,7 +79,8 @@ export default defineStyleConfig({
 })
 ```
 
-The `defineStyleConfig` function provide us with better type safety out of the box
+> The `defineStyleConfig` function provide us with better type safety out of the
+> box.
 
 Let's say we want to create a custom button component following the design spec
 below.
@@ -236,9 +237,9 @@ function Card(props) {
 ```
 
 > Please note that we are passing the styles to the prop `__css`. It has the
-> same API as [the `sx` prop](/docs/styled-system/the-sx-prop), but has
-> a lower style priority. This means you can override the style properties with
-> chakra style props.
+> same API as [the `sx` prop](/docs/styled-system/the-sx-prop), but has a lower
+> style priority. This means you can override the style properties with chakra
+> style props.
 
 And lastly - the fun part - let's use our custom Card component anywhere in our
 app:
@@ -295,7 +296,8 @@ This is very similar to styling single part components with a few differences
 you need to be aware of.
 
 - Given that multipart refers to a component with multiple parts, you'll need to
-  define the parts, and pass them into the `createMultiStyleConfigHelpers` function
+  define the parts, and pass them into the `createMultiStyleConfigHelpers`
+  function
 - You'll need to provide styles for each `part`, `baseStyle`, `sizes`, and
   `variants`.
 
