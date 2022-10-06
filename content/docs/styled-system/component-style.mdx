@@ -65,7 +65,9 @@ component part.
 The basic API for styling a single part component is:
 
 ```jsx live=false
-export default {
+import { defineStyleConfig } from "@chakra-ui/react";
+
+export default defineStyleConfig({
   // Styles for the base style
   baseStyle: {},
   // Styles for the size variations
@@ -74,8 +76,10 @@ export default {
   variants: {},
   // The default `size` or `variant` values
   defaultProps: {},
-}
+})
 ```
+
+The `defineStyleConfig` function provide us with better type safety out of the box
 
 Let's say we want to create a custom button component following the design spec
 below.
@@ -85,11 +89,9 @@ below.
 Here's a contrived implementation of the design:
 
 ```tsx live=false
-import type { ComponentStyleConfig } from '@chakra-ui/theme'
+import { defineStyleConfig } from '@chakra-ui/theme'
 
-// You can also use the more specific type for
-// a single part component: ComponentSingleStyleConfig
-const Button: ComponentStyleConfig = {
+const Button = defineStyleConfig({
   // The styles all button have in common
   baseStyle: {
     fontWeight: 'bold',
@@ -126,7 +128,7 @@ const Button: ComponentStyleConfig = {
     size: 'md',
     variant: 'outline',
   },
-}
+})
 ```
 
 Makes sense right? Now, let's update the theme to include this new component
@@ -151,7 +153,7 @@ part of Chakra UI? Let's use the following design spec for a Card component:
 Here's a contrived implementation of the design:
 
 ```jsx live=false
-const Card = {
+const Card = defineStyleConfig({
   // The styles all Cards have in common
   baseStyle: {
     display: 'flex',
@@ -177,7 +179,7 @@ const Card = {
   defaultProps: {
     variant: 'smooth',
   },
-}
+})
 ```
 
 As with the Button component, we'll update the theme to include the new Card
@@ -293,7 +295,7 @@ This is very similar to styling single part components with a few differences
 you need to be aware of.
 
 - Given that multipart refers to a component with multiple parts, you'll need to
-  define the parts in a `part` key in the style config.
+  define the parts, and pass them into the `createMultiStyleConfigHelpers` function
 - You'll need to provide styles for each `part`, `baseStyle`, `sizes`, and
   `variants`.
 
@@ -323,14 +325,12 @@ For example, here's what the style configurations for a custom menu component
 looks like:
 
 ```tsx live=false
-import type { ComponentStyleConfig } from '@chakra-ui/theme'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
 
-// You can also use the more specific type for
-// a multipart component: ComponentMultiStyleConfig
-const Menu: ComponentStyleConfig = {
-  // All parts of multipart components can be found in the @chakra-ui/anatomy package,
-  // the menuAnatomy has as well these parts: button, list, groupTitle, command, divider
-  parts: ['menu', 'item'],
+// This function creates a set of function that helps us create multipart component styles.
+const helpers = createMultiStyleConfigHelpers(['menu', 'item'])
+
+const Menu = helpers.defineMultiStyleConfig({
   baseStyle: {
     menu: {
       boxShadow: 'lg',
@@ -381,7 +381,7 @@ const Menu: ComponentStyleConfig = {
   defaultProps: {
     size: 'md',
   },
-}
+})
 ```
 
 Next, we'll update the theme object to include this new component style.
