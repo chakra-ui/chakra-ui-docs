@@ -10,8 +10,23 @@ Chakra UI comes with built-in support for managing color mode in your apps.
 By default, most of Chakra's components are dark mode compatible. In some
 scenarios, you might need to make your component respond to color mode.
 
-> **Tip:** Chakra stores the color mode in `localStorage` and appends a
+> **Tip:** Chakra stores the color mode in `localStorage` or in `cookies` and appends a
 > className to the `body` to ensure the color mode is persistent.
+> In case you need to reset the color mode, you must delete the item from `localStorage` or `cookies`, so on next page load the value is initialized like the first time user visited the page.
+
+## Introduction to Color Mode
+
+In the recent years, operative systems (`system` for this guide) give user the option to choose from Light or Dark color mode.
+Some operative systems include also an automatic option that toggle color mode based on daylight, (day = light, night = dark).
+
+Browser can access this value provided by the operative system, and subscribes to the changes.
+
+With Chakra, you can customize the behavior of color mode.
+
+You can decide:
+ - Where to store the current value, choosing from `localStorage`, `cookies`, or custom.
+ - If a change in the `system` color mode must change the app's color mode.
+ - Whether the initial value (used on the first visit or after memory reset) is decided by the `system` or the developer.
 
 ## Setup
 
@@ -24,19 +39,13 @@ To get dark mode working correctly, you need to do two things:
    your application should start with to either `light`, `dark` or `system`. It
    is `light` by default.
 
-> **Note:** When using `system` as initial color mode, the theme will change
-> with the system preference. However, if another theme is manually selected by
-> the user then that theme will be used on the next page load. To reset it to
-> system preference, simply remove the `chakra-ui-color-mode` entry from
-> localStorage.
-
 ### Updating the theme config
 
 The theme config for color mode has 2 options:
 
-- `initialColorMode`: The initial mode you'd like your app to start with
-- `useSystemColorMode`: If `true`, your app will change color mode based on the
-  user's system preferences.
+- `initialColorMode`: The initial mode you'd like your app to start with when user visit the page for first time (or after storage reset). Can be one of `dark`, `light` or `system`. Default is `light`.
+// TODO: default is undefined or false ???
+- `useSystemColorMode`: If `true`, chakra subscribes to changes in `system` color mode. If set to `false` (or `undefined`), the app's color mode is detached from the `system` color mode. Default is `undefined`.
 
 ```jsx live=false
 // theme.js
@@ -80,36 +89,68 @@ export default theme
 > Remember to pass your custom `theme` to the `ChakraProvider`, otherwise your
 > color mode config won't be taken into consideration.
 
+#### Common Configurations
+
+If you prefer, you can use this [playground](https://codesandbox.io/s/chakra-ui-color-mode-test-f5fcwr?file=/src/uiLayer.chakra/customTheme.ts) to try different values.
+
+- **A.** `system` sets initial value and can update it.
+```tsx live=false
+const config: ThemeConfig = {
+  initialColorMode: 'system',
+  useSystemColorMode: true,
+}
+```
+
+- **B.** `system` sets initial value and can NOT update it.
+```tsx live=false
+const config: ThemeConfig = {
+  initialColorMode: 'system',
+  useSystemColorMode: false,
+}
+```
+
+- **C.** You choose initial value, `system` can NOT update it.
+```tsx live=false
+const config: ThemeConfig = {
+  initialColorMode: 'dark', // 'dark' | 'light'
+  useSystemColorMode: false,
+}
+```
+
+- **D.** You choose initial value, `system` can update it.
+```tsx live=false
+const config: ThemeConfig = {
+  initialColorMode: 'dark', // 'dark' | 'light'
+  useSystemColorMode: true,
+}
+```
+
 #### Behavior of ColorMode
 
-The current hierarchy of how the color mode is defined is as follows:
+The current hierarchy of how chakra resolves the color mode:
 
-- if `useSystemColorMode` is true `system`-color will be used as default -
-  `initialColorMode` is the fallback if system color mode can't be resolved
+- Get the color mode value in the specified storage (localStorage or cookie manager or custom)
 
+- If value doesn't exist, use the `initialColorMode` value specified.
+  - If the initial value is `system`, then we'll compute the color mode using
+    `matchMedia`
+  - Else, we use the initial value as is.
+
+- If user specifies `useSystemColorMode: true`, then we'll subscribe to color
+  mode changes from the operating system. It is no longer used to determine the
+  initial color mode. To achieve that, please use `initialColorMode: "system"`
+
+// TODO : Keep this ??? Is still valid ??
 - if `data-theme` prop is defined through e.g. `ColorModeScript` / after
   modification/initial load of the colorMode this value will be used
 
-- if `colorModeManager` = `localStorage` and a value is defined for
-  `chakra-ui-color-mode` this will be used
-
-- if `initialColorMode` = `system` system-color will be used as default -
-  `initialColorMode` is the fallback if system color mode isn't resolved
-
-- if `initialColorMode` = `'light'|'dark'` the corresponding value will be used
-
-We currently accept 3 different values for `initialColorMode`:
-`light`,`dark`,`system`
-
 #### Difference between `initialColorMode='system'` and `useSystemColorMode`
 
-if `useSystemColorMode=true` we will always try to match the users
-`system`-color and fallback to `initialColorMode`. With this behavior, the
-colorMode toggle won't have any effect.
+`initialColorMode` value is used to determine the value on first visit, or after a storage reset.
 
-if `initialColorMode='system'` we will as well always try to match the users
-`system`-color and fallback to `light`. After the user has toggled the value,
-this value will be used.
+`useSystemColorMode` is a boolean that indicates if chakra must subscribes (and update) to operative system's color mode changes.
+If `useSystemColorMode=true` and operative system changes from `light` to `dark` due to daylight switch, the page automatically changes color mode, without user interaction.
+If `useSystemColorMode=false` color mode can only be changed via the `useColorMode` hook.
 
 ### Adding the `ColorModeScript`
 
