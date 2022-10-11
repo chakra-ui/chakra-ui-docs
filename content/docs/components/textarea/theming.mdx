@@ -2,3 +2,37 @@
 id: textarea
 scope: theming
 ---
+
+## Overview
+
+The `Textarea` component is a single part component, To learn more about
+singlepart components, visit the
+[Component Style](/docs/styled-system/component-style#styling-single-part-components)
+page.
+
+## Defaults
+
+- The default `variant` is `outline`
+- The default `size` is `md`
+
+## Theming
+
+import {
+  App,
+  Index,
+  TextareaTheme,
+} from 'configs/sandpack-contents/component-theming/textarea'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Button.ts': TextareaTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
