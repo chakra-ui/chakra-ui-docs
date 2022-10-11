@@ -2,3 +2,39 @@
 id: button
 scope: theming
 ---
+
+## Overview
+
+The `Button` component is a single part component. It can optionally have a
+`leftIcon` and a `rightIcon`, and can have a loading state. To learn more about
+styling single part components, visit the
+[Component Style](https://chakra-ui.com/docs/styled-system/component-style#styling-single-part-components)
+page.
+
+## Defaults
+
+- The default `variant` is `solid`
+- The default `colorScheme` is `gray`
+- The default `size` is `md`
+
+## Theming
+
+import {
+  App,
+  Index,
+  ButtonTheme,
+} from 'configs/sandpack-contents/component-theming/button'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Button.ts': ButtonTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
