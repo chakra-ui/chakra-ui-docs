@@ -2,3 +2,49 @@
 id: modal
 scope: theming
 ---
+
+## Overview
+
+The Modal component is a multipart component. Read more about how to style
+multipart components in the
+[Component Style](https://chakra-ui.com/docs/styled-system/component-style#styling-multipart-components)
+page.
+
+## Anatomy
+
+- `header`
+- `overlay`
+- `dialogContainer`
+- `dialog`
+- `closeButton`
+- `body`
+- `footer`
+
+You can find more information in the source for the styles
+[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/modal.ts).
+
+## Defaults
+
+The default `size` is `md`
+
+## Theming
+
+import {
+  App,
+  Index,
+  ModalTheme,
+} from 'configs/sandpack-contents/component-theming/modal.js'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/modal.ts': ModalTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: false,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
