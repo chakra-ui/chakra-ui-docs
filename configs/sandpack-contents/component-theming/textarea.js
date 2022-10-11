@@ -128,9 +128,7 @@ const customVariant = defineStyle((props) => {
 })
 const variants = {
   outline: variantOutline,
-  flushed: variantFlushed,
   filled: variantFilled,
-  unstyled: variantUnstyled,
 }
 
 const size = {
