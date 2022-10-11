@@ -3,4 +3,34 @@ id: divider
 scope: theming
 ---
 
-TODO
+## Overview
+
+The `Divider` is a single part component. It can optionally have a
+`orientation`. To learn more about styling single part components, visit the
+[Component Style](/docs/styled-system/component-style#styling-single-part-components) page.
+
+## Defaults
+
+- The default `variant` is `solid`
+
+## Theming
+
+import {
+  App,
+  Index,
+  DividerTheme,
+} from 'configs/sandpack-contents/component-theming/divider'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Divider.ts': DividerTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
