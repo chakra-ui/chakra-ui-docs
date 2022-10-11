@@ -1,0 +1,222 @@
+module.exports = {
+  App: `import { Box, SimpleGrid, GridItem, Icon, IconButton, Input, InputGroup, InputLeftAddon, InputRightElement, useColorMode } from "@chakra-ui/react";
+import { FaMoon, FaSun, FaPhone } from "react-icons/fa";
+
+export default function App() {
+  const { toggleColorMode, colorMode } = useColorMode();
+  return (
+    <Box position="relative" h="100vh">
+      <SimpleGrid gap={12} p={12} columns={2}>
+        <Input placeholder="Themed Outline Input" />
+        <Input placeholder="Themed Filled Input" variant="filled" />
+        <GridItem colSpan={2}>
+          <InputGroup variant="custom" colorScheme="purple">
+            <InputLeftAddon>Phone:</InputLeftAddon>
+            <Input placeholder="Themed Custom Input" />
+            <InputRightElement pointerEvents="none">
+              <Icon as={FaPhone} color="green.400" />
+            </InputRightElement>
+          </InputGroup>
+        </GridItem>
+      </SimpleGrid>
+
+      <IconButton
+        rounded="full"
+        size="xs"
+        position="absolute"
+        bottom={4}
+        left={4}
+        onClick={toggleColorMode} icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+      />
+    </Box>
+  );
+}`,
+  Index: `import * as React from "react";
+import { createRoot } from "react-dom/client";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
+import App from "./App";
+import { inputTheme } from "./theme/components/Input.ts";
+
+const theme = extendTheme({
+  components: {
+    Input: inputTheme,
+  }
+});
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
+  <ChakraProvider theme={theme}>
+    <App />
+  </ChakraProvider>
+);`,
+  InputTheme: `import { inputAnatomy as parts } from "@chakra-ui/anatomy"
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from "@chakra-ui/styled-system"
+import { getColor } from "@chakra-ui/theme-tools"
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const baseStyle = definePartsStyle({
+  field: {
+    width: "100%",
+    minWidth: 0,
+    outline: 0,
+    position: "relative",
+    appearance: "none",
+    transitionProperty: "common",
+    transitionDuration: "normal",
+    _disabled: {
+      opacity: 0.4,
+      cursor: "not-allowed",
+    },
+  },
+})
+
+const variantOutline = definePartsStyle((props) => {
+  const { theme } = props
+
+  return {
+    field: {
+      border: "1px solid",
+      borderColor: "inherit",
+      bg: "inherit",
+      _hover: {
+        borderColor: "gray.300",
+        _dark: {
+          borderColor: "whiteAlpha.400"
+        }
+      },
+    },
+    addon: {
+      border: "1px solid",
+      borderColor: "inherit",
+      bg: "gray.100",
+      _dark: {
+        borderColor: "whiteAlpha.50",
+        bg: "whiteAlpha.300",
+      }
+    },
+  }
+})
+
+const variantFilled = definePartsStyle((props) => {
+  const { theme } = props
+
+  return {
+    field: {
+      border: "2px solid",
+      borderColor: "transparent",
+      bg: "gray.100",
+      _dark: {
+        bg: "whiteAlpha.50"
+      },
+
+      _hover: {
+        bg: "gray.200",
+        _dark: {
+          bg: "whiteAlpha.100"
+        }
+      },
+      _readOnly: {
+        boxShadow: "none !important",
+        userSelect: "all",
+      },
+    },
+    addon: {
+      border: "2px solid",
+      borderColor: "transparent",
+      bg: "gray.100",
+      _dark: {
+        bg: "whiteAlpha.50"
+      }
+    },
+  }
+})
+
+const variantCustom = definePartsStyle((props) => {
+  const { colorScheme: c } = props
+  return {
+    field: {
+      border: "0px solid",
+      bg: "gray.50",
+      borderTopRightRadius: "full",
+      borderBottomRightRadius: "full",
+      _dark: {
+        bg: "whiteAlpha.50"
+      },
+
+      _hover: {
+        bg: "gray.200",
+        _dark: {
+          bg: "whiteAlpha.100"
+        }
+      },
+      _readOnly: {
+        boxShadow: "none !important",
+        userSelect: "all",
+      },
+      _focusVisible: {
+        bg: "gray.200",
+        _dark: {
+          bg: "whiteAlpha.100"
+        }
+      },
+    },
+    addon: {
+      border: "0px solid",
+      borderColor: "transparent",
+      borderTopLeftRadius: "full",
+      borderBottomLeftRadius: "full",
+      bg: \`\${c}.500\`,
+      color: "white",
+      _dark: {
+        bg: \`\${c}.300\`,
+        color: \`\${c}.500\`,
+      }
+    },
+    element: {
+      bg: "white",
+      rounded: "full",
+      border: "1px solid",
+      borderColor: "gray.100",
+    },
+  }
+})
+
+const variants = {
+  outline: variantOutline,
+  filled: variantFilled,
+  custom: variantCustom,
+}
+
+const size = {
+  md: defineStyle({
+    fontSize: "sm",
+    px: "4",
+    h: "10",
+    borderRadius: "none",
+  }),
+}
+
+const sizes = {
+  md: definePartsStyle({
+    field: size.md,
+    addon: size.md,
+  }),
+}
+
+export const inputTheme = defineMultiStyleConfig({
+  baseStyle,
+  variants,
+  sizes,
+  defaultProps: {
+    size: "md",
+    variant: "outline",
+  },
+})`,
+}
