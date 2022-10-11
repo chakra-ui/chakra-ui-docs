@@ -147,7 +147,7 @@ const sizes = {
   }),
 }
 
-export const inputTheme = defineMultiStyleConfig({
+export const textareaTheme = defineMultiStyleConfig({
   baseStyle,
   variants,
   sizes,
