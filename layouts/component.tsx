@@ -22,6 +22,7 @@ export default function ComponentDocsLayout({
   tabsData?: TabsData
 }) {
   const id = frontmatter.package?.split('/').pop()
+  const hasTheme = !['layout', 'image'].includes(id)
 
   return (
     <MDXLayout frontmatter={frontmatter}>
@@ -29,7 +30,7 @@ export default function ComponentDocsLayout({
         <Stack spacing='5'>
           <MDXComponents.p>{frontmatter.description}</MDXComponents.p>
           <MDXComponents.ComponentLinks
-            theme={id !== 'layout' && { componentName: id }}
+            theme={hasTheme && { componentName: id }}
             github={{ package: id }}
             npm={{ package: frontmatter.package }}
           />
