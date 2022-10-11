@@ -8,9 +8,9 @@ export default function App() {
     <Box position="relative" h="100vh">
       <SimpleGrid gap={12} p={12} columns={2}>
         <Textarea placeholder='Themed outline textarea' />
-        <Textarea variant="flushed" placeholder='Themed outline textarea' />
-        <Textarea variant="filled" placeholder='Themed outline textarea' />
-        <Textarea variant="unstyled" placeholder='Themed outline textarea' />
+        <Textarea variant="flushed" placeholder='Themed flushed textarea' />
+        <Textarea variant="filled" placeholder='Themed filled textarea' />
+        <Textarea variant="unstyled" placeholder='Themed unstyled textarea' />
       </SimpleGrid>
 
       <IconButton
@@ -44,19 +44,53 @@ root.render(
     <App />
   </ChakraProvider>
 );`,
-  TextareaTheme: `import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system"
 
-const baseStyle = defineStyle({
-  borderRadius: 0, // disable the border radius
-  fontWeight: "normal", // change the font weight to normal
-  fontFamily: "mono", // change the font family to monospaced
+  TextareaTheme: `import { inputAnatomy as parts } from "@chakra-ui/anatomy"
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from "@chakra-ui/styled-system"
+import { getColor } from "@chakra-ui/theme-tools"
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+// default base style from the Input theme
+const baseStyle = definePartsStyle({
+  field: {
+    width: "100%",
+    minWidth: 0,
+    outline: 0,
+    position: "relative",
+    appearance: "none",
+    transitionProperty: "common",
+    transitionDuration: "normal",
+    _disabled: {
+      opacity: 0.4,
+      cursor: "not-allowed",
+    },
+  },
 })
 
-const sizes = {
-  md: defineStyle({
-    fontSize: "sm", // Change font size to sm (14px)
-  }),
-}
+const variantOutline = definePartsStyle((props) => {
+  const { theme } = props
+
+  return {
+    field: {
+      fontFamily: "mono", // change font family to mono
+    }
+  }
+})
+
+const variantFilled = definePartsStyle((props) => {
+  const { theme } = props
+
+  return {
+    field: {
+      fontWeight: "semibold", // change font weight to semibold
+    },
+  }
+})
 
 // Defining a custom variant
 const customVariant = defineStyle((props) => {
@@ -92,12 +126,36 @@ const customVariant = defineStyle((props) => {
     },
   }
 })
+const variants = {
+  outline: variantOutline,
+  flushed: variantFlushed,
+  filled: variantFilled,
+  unstyled: variantUnstyled,
+}
 
-export const textareaTheme = defineStyleConfig({
+const size = {
+  md: defineStyle({
+    fontSize: "sm",
+    px: "4",
+    h: "10",
+    borderRadius: "none",
+  }),
+}
+
+const sizes = {
+  md: definePartsStyle({
+    field: size.md,
+    addon: size.md,
+  }),
+}
+
+export const inputTheme = defineMultiStyleConfig({
   baseStyle,
+  variants,
   sizes,
-  variants: {
-    custom: customVariant,
+  defaultProps: {
+    size: "md",
+    variant: "outline",
   },
 })`,
 }
