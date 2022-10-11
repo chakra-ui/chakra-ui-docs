@@ -80,12 +80,18 @@ module.exports = {
       <App />
     </ChakraProvider>
   );`,
-  ModalTheme: `import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
-
-  const baseStyle = defineStyle((props) => {
+  ModalTheme: `
+  import { modalAnatomy as parts } from "@chakra-ui/anatomy";
+  import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
+  
+  const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(parts.keys);
+  
+  const baseStyle = definePartsStyle((props) => {
     const { colorScheme: c } = props;
     return {
       dialog: {
+        borderRadius: "md",
         bg: \`\${c}.100\`,
         _dark: {
           bg: \`\${c}.600\`,
@@ -95,12 +101,13 @@ module.exports = {
     };
   });
   
-  export const modalTheme = defineStyleConfig({
+  export const modalTheme = defineMultiStyleConfig({
     baseStyle,
     defaultProps: {
       colorScheme: "purple", //set the default color scheme to purple
       size: "2xl",
     },
   });
+  
   `,
 }
