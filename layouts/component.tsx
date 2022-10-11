@@ -6,6 +6,7 @@ import NextLink from 'next/link'
 import { ReactNode } from 'react'
 import { TabsData } from 'utils/contentlayer-utils'
 import MDXLayout from './mdx'
+import { themes } from 'utils/available-themes'
 
 function MDXContent({ doc }: { doc: Doc | undefined }) {
   const Component = useMDXComponent(doc?.body?.code ?? '')
@@ -22,7 +23,7 @@ export default function ComponentDocsLayout({
   tabsData?: TabsData
 }) {
   const id = frontmatter.package?.split('/').pop()
-  const hasTheme = !['layout', 'image'].includes(id)
+  const hasTheme = themes.includes(id)
 
   return (
     <MDXLayout frontmatter={frontmatter}>
