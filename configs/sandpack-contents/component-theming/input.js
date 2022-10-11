@@ -61,6 +61,7 @@ import { getColor } from "@chakra-ui/theme-tools"
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys)
 
+// default base style from the Input theme
 const baseStyle = definePartsStyle({
   field: {
     width: "100%",
@@ -82,25 +83,8 @@ const variantOutline = definePartsStyle((props) => {
 
   return {
     field: {
-      border: "1px solid",
-      borderColor: "inherit",
-      bg: "inherit",
-      _hover: {
-        borderColor: "gray.300",
-        _dark: {
-          borderColor: "whiteAlpha.400"
-        }
-      },
-    },
-    addon: {
-      border: "1px solid",
-      borderColor: "inherit",
-      bg: "gray.100",
-      _dark: {
-        borderColor: "whiteAlpha.50",
-        bg: "whiteAlpha.300",
-      }
-    },
+      fontFamily: "mono", // change font family to mono
+    }
   }
 })
 
@@ -109,35 +93,12 @@ const variantFilled = definePartsStyle((props) => {
 
   return {
     field: {
-      border: "2px solid",
-      borderColor: "transparent",
-      bg: "gray.100",
-      _dark: {
-        bg: "whiteAlpha.50"
-      },
-
-      _hover: {
-        bg: "gray.200",
-        _dark: {
-          bg: "whiteAlpha.100"
-        }
-      },
-      _readOnly: {
-        boxShadow: "none !important",
-        userSelect: "all",
-      },
-    },
-    addon: {
-      border: "2px solid",
-      borderColor: "transparent",
-      bg: "gray.100",
-      _dark: {
-        bg: "whiteAlpha.50"
-      }
+      fontWeight: "semibold", // change font weight to semibold
     },
   }
 })
 
+// Defining a custom variant
 const variantCustom = definePartsStyle((props) => {
   const { colorScheme: c } = props
   return {
@@ -176,7 +137,7 @@ const variantCustom = definePartsStyle((props) => {
       color: "white",
       _dark: {
         bg: \`\${c}.300\`,
-        color: \`\${c}.500\`,
+        color: \`\${c}.900\`,
       }
     },
     element: {
@@ -184,6 +145,10 @@ const variantCustom = definePartsStyle((props) => {
       rounded: "full",
       border: "1px solid",
       borderColor: "gray.100",
+      _dark: {
+        bg: "whiteAlpha.50",
+        borderColor: "whiteAlpha.100",
+      }
     },
   }
 })
