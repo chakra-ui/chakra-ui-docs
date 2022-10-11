@@ -147,13 +147,15 @@ const sizes = {
   }),
 }
 
-export const textareaTheme = defineMultiStyleConfig({
+export const textareaTheme = defineStyleConfig({
   baseStyle,
-  variants,
   sizes,
+  variants: {
+    custom: customVariant,
+  },
   defaultProps: {
-    size: "md",
     variant: "outline",
+    size:"md" 
   },
 })`,
 }
