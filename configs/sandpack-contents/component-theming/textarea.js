@@ -45,7 +45,7 @@ root.render(
   </ChakraProvider>
 );`,
 
-  TextareaTheme: `import { inputAnatomy as parts } from "@chakra-ui/anatomy"
+  TextareaTheme: `import { textareaAnatomy as parts } from "@chakra-ui/anatomy"
 import {
   createMultiStyleConfigHelpers,
   defineStyle,
@@ -147,7 +147,7 @@ const sizes = {
   }),
 }
 
-export const textareaTheme = defineStyleConfig({
+export const textareaTheme = defineMultiStyleConfig({
   baseStyle,
   sizes,
   variants: {
