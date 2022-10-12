@@ -118,5 +118,10 @@
     "name": "Bitwarden",
     "url": "https://bitwarden.com",
     "image": "showcases/Bitwarden.jpg"
+  },
+  {
+    "name": "Cloodot",
+    "url": "https://www.cloodot.com",
+    "image": "showcases/cloodot.jpg"
   }
 ]
