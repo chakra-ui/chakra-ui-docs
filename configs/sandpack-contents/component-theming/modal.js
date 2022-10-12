@@ -80,9 +80,13 @@ root.render(
   </ChakraProvider>
 );`,
   ModalTheme: `import { modalAnatomy as parts } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from "@chakra-ui/styled-system";
 
-const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(parts.keys);
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys);
 
 const baseStyle = definePartsStyle((props) => {
   const { colorScheme: c } = props;
@@ -98,11 +102,28 @@ const baseStyle = definePartsStyle((props) => {
   };
 });
 
+const xl = defineStyle({
+  px: "6",
+  py: "0",
+  fontSize: "xl",
+});
+
+const sm = defineStyle({
+  fontSize: "sm",
+  py: "2",
+  pt: "8",
+});
+
+const sizes = {
+  xl: definePartsStyle({ header: sm, dialog: xl }),
+};
+
 export const modalTheme = defineMultiStyleConfig({
   baseStyle,
+  sizes,
   defaultProps: {
     colorScheme: "purple", //set the default color scheme to purple
-    size: "2xl",
+    size: "xl",
   },
 });`,
 }

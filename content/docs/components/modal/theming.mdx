@@ -5,10 +5,11 @@ scope: theming
 
 ## Overview
 
-The Modal component is a multipart component. Read more about how to style
-multipart components in the
-[Component Style](https://chakra-ui.com/docs/styled-system/component-style#styling-multipart-components)
-page.
+The `Modal` component is a multipart component.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
 
 ## Anatomy
 
@@ -20,14 +21,166 @@ page.
 - `body`
 - `footer`
 
-You can find more information in the source for the styles
-[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/modal.ts).
+> You can find more information in the source
+> [here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/modal.ts).
 
-## Defaults
+## Theming properties
 
-The default `size` is `md`
+The properties that affect the theming of the `Modal` component are:
 
-## Theming
+- `baseStyle`: The base style of `Modal`.
+- `variant`: The visual variant of the `Modal`. Defaults to baseStyle.
+- `size`: The size of the `Modal`. Defaults to md.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (definePartsStyle and
+  defineMultiStyleConfig).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+## Customizing the default theme
+
+```js
+import { modalAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  overlay: {
+    bg: 'blackAlpha.200', //change the background
+  },
+  dialog: {
+    borderRadius: 'md',
+    bg: `purple.100`,
+  },
+})
+
+export const modalTheme = defineMultiStyleConfig({
+  baseStyle,
+})
+```
+
+After customizing the modal theme, we can import it in our theme file and add it
+in the components property:
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+import { modalTheme } from './components/theme/modal.ts'
+
+export const theme = extendTheme({
+  components: { Modal: modalTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the
+> `Modal` theme are applied.
+
+# Adding a custom size
+
+Let's assume we want to change the font size of both header and dialog.
+
+```js
+import { modalAnatomy as parts } from '@chakra-ui/anatomy'
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from '@chakra-ui/styled-system'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const xl = defineStyle({
+  px: '6',
+  py: '2',
+  fontSize: 'xl',
+})
+
+const sm = defineStyle({
+  fontSize: 'sm',
+  py: '6',
+})
+
+const sizes = {
+  xl: definePartsStyle({ header: sm, dialog: xl }),
+}
+
+export const modalTheme = defineMultiStyleConfig({
+  sizes,
+})
+```
+
+Every time you're adding anything new to the theme, you'd need to run the cli
+command to get proper autocomplete in your IDE.
+
+```bash
+# run it once:
+npx chakra-cli tokens path/to/theme.ts
+
+# or run it in watch mode:
+npx chakra-cli tokens path/to/theme.ts --watch
+```
+
+## Adding a custom variant
+
+Let's assume we want to include a custom variant. Here's how we can do that:
+
+```js
+import { modalAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const purple = definePartsStyle({
+  dialog: {
+    borderRadius: 'md',
+    bg: `purple.100`,
+
+    // Let's also provide dark mode alternatives
+    _dark: {
+      bg: `purple.600`,
+      color: 'white',
+    },
+  },
+})
+
+export const modalTheme = defineMultiStyleConfig({
+  variants: { purple },
+})
+
+// Now we can use the new `purple` variant
+<Modal variant='purple' ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every `Modal` in
+our app.
+
+```js
+import { modalAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(parts.keys)
+
+export const modalTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'purple',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use an Modal:
+<Modal size="xl" variant="purple" ... />
+```
+
+## Showcase
 
 import {
   App,
