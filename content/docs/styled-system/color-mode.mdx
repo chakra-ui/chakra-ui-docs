@@ -11,7 +11,7 @@ By default, most of Chakra's components are dark mode compatible. In some
 scenarios, you might need to make your component respond to color mode.
 
 > **Tip:** Chakra stores the color mode in `localStorage` or in `cookies` and appends a
-> className to the `body` to ensure the color mode is persistent.
+> className to the `body` to ensure the color mode is persistent.  
 > In case you need to reset the color mode, you must delete the item from `localStorage` or `cookies`, so on next page load the value is initialized like the first time user visited the page.
 
 ## Introduction to Color Mode
@@ -25,7 +25,7 @@ With Chakra, you can customize the behavior of color mode.
 
 You can decide:
  - Where to store the current value, choosing from `localStorage`, `cookies`, or custom.
- - If a change in the `system` color mode must change the app's color mode.
+ - If a change in the `system` color mode must change the app's color mode, or not.
  - Whether the initial value (used on the first visit or after memory reset) is decided by the `system` or the developer.
 
 ## Setup
@@ -44,7 +44,8 @@ To get dark mode working correctly, you need to do two things:
 The theme config for color mode has 2 options:
 
 - `initialColorMode`: The initial mode you'd like your app to start with when user visit the page for first time (or after storage reset). Can be one of `dark`, `light` or `system`. Default is `light`.
-// TODO: default is undefined or false ???
+
+// TODO: useSystemColorMode default is undefined or false ???
 - `useSystemColorMode`: If `true`, chakra subscribes to changes in `system` color mode. If set to `false` (or `undefined`), the app's color mode is detached from the `system` color mode. Default is `undefined`.
 
 ```jsx live=false
@@ -91,34 +92,41 @@ export default theme
 
 #### Common Configurations
 
-If you prefer, you can use this [playground](https://codesandbox.io/s/chakra-ui-color-mode-test-f5fcwr?file=/src/uiLayer.chakra/customTheme.ts) to try different values.
+To help you define you desired behavior, here we define all common usage of the theme config :
 
-- **A.** `system` sets initial value and can update it.
+> **Tip** If you prefer, you can use this [playground](https://codesandbox.io/s/chakra-ui-color-mode-test-f5fcwr?file=/src/uiLayer.chakra/customTheme.ts) to try different values.
+
+> **Note** The hook `useColorMode` let you update color mode of your app in every cases. [Learn more](#changing-color-mode)
+
 ```tsx live=false
+// A.
+// System sets initial value.
+// App subscribes to system color mode changes.
 const config: ThemeConfig = {
   initialColorMode: 'system',
   useSystemColorMode: true,
 }
-```
 
-- **B.** `system` sets initial value and can NOT update it.
-```tsx live=false
+// B.
+// System sets initial value.
+// App color mode is detached from system color mode changes.
 const config: ThemeConfig = {
   initialColorMode: 'system',
   useSystemColorMode: false,
 }
-```
 
-- **C.** You choose initial value, `system` can NOT update it.
-```tsx live=false
+// C.
+// You choose initial value.
+// App color mode is detached from system color mode changes.
 const config: ThemeConfig = {
   initialColorMode: 'dark', // 'dark' | 'light'
   useSystemColorMode: false,
 }
-```
 
-- **D.** You choose initial value, `system` can update it.
-```tsx live=false
+
+// D.
+// You choose initial value.
+// App subscribes to system color mode changes.
 const config: ThemeConfig = {
   initialColorMode: 'dark', // 'dark' | 'light'
   useSystemColorMode: true,
