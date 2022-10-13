@@ -43,7 +43,7 @@ The properties that affect the theming of the `Modal` component are:
 
 ## Customizing the default theme
 
-```js
+```jsx live=false
 import { modalAnatomy as parts } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
 
@@ -69,7 +69,7 @@ export const modalTheme = defineMultiStyleConfig({
 After customizing the modal theme, we can import it in our theme file and add it
 in the components property:
 
-```js
+```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
 import { modalTheme } from './components/theme/modal.ts'
 
@@ -85,7 +85,7 @@ export const theme = extendTheme({
 
 Let's assume we want to change the font size of both header and dialog.
 
-```js
+```jsx live=false
 import { modalAnatomy as parts } from '@chakra-ui/anatomy'
 import {
   createMultiStyleConfigHelpers,
@@ -113,6 +113,9 @@ const sizes = {
 export const modalTheme = defineMultiStyleConfig({
   sizes,
 })
+
+// Now we can use the new `xl` size
+<Modal size="xl" ... />
 ```
 
 Every time you're adding anything new to the theme, you'd need to run the cli
@@ -130,7 +133,7 @@ npx chakra-cli tokens path/to/theme.ts --watch
 
 Let's assume we want to include a custom variant. Here's how we can do that:
 
-```js
+```jsx live=false
 import { modalAnatomy as parts } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
 
@@ -163,7 +166,7 @@ export const modalTheme = defineMultiStyleConfig({
 Let's assume we want to change the default size and variant of every `Modal` in
 our app.
 
-```js
+```jsx live=false
 import { modalAnatomy as parts } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system'
 
