@@ -56,7 +56,6 @@ import {
   createMultiStyleConfigHelpers,
   defineStyle,
 } from "@chakra-ui/styled-system"
-import { getColor } from "@chakra-ui/theme-tools"
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys)
@@ -79,8 +78,6 @@ const baseStyle = definePartsStyle({
 })
 
 const variantOutline = definePartsStyle((props) => {
-  const { theme } = props
-
   return {
     field: {
       fontFamily: "mono", // change font family to mono
@@ -89,8 +86,6 @@ const variantOutline = definePartsStyle((props) => {
 })
 
 const variantFilled = definePartsStyle((props) => {
-  const { theme } = props
-
   return {
     field: {
       fontWeight: "semibold", // change font weight to semibold
