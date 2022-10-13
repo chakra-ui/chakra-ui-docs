@@ -3,12 +3,12 @@ id: menu
 scope: theming
 ---
 
-## Overview
+The `Menu` component is a multipart component. The styling needs to be applied
+to each part specifically.
 
-The `Menu` component is a multipart component. To learn more about styling
-multipart components, visit the
-[Component Style](/docs/styled-system/component-style#styling-multipart-components)
-page.
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
 
 ## Anatomy
 
@@ -85,11 +85,225 @@ page.
 
 </AspectRatio>
 
-## Defaults
+## Theming properties
 
-There are no default variants or sizes applied to this component.
+The properties that affect the theming of the `Menu` component are:
 
-## Theming
+- `variant`: The visual variant of the component. There is no default applied.
+- `size`: The size of the component. There is no default applied.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+
+// define the base component styles
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  button: {
+    // this will style the MenuButton component
+    fontWeight: 'medium',
+    bg: 'teal.500',
+    color: 'gray.200',
+    _hover: {
+      bg: 'teal.600',
+      color: 'white',
+    },
+  },
+  list: {
+    // this will style the MenuList component
+    py: '4',
+    borderRadius: 'xl',
+    border: 'none',
+    bg: 'teal.500',
+  },
+  item: {
+    // this will style the MenuItem and MenuItemOption components
+    color: 'gray.200',
+    _hover: {
+      bg: 'teal.600',
+    },
+    _focus: {
+      bg: 'teal.600',
+    },
+  },
+  groupTitle: {
+    // this will style the text defined by the title prop
+    // in the MenuGroup and MenuOptionGroup components
+    textTransform: 'uppercase',
+    color: 'white',
+    textAlign: 'center',
+    letterSpacing: 'wider',
+    opacity: '0.7',
+  },
+  command: {
+    // this will style the text defined by the command
+    // prop in the MenuItem and MenuItemOption components
+    opacity: '0.8',
+    fontFamily: 'mono',
+    fontSize: 'sm',
+    letterSpacing: 'tighter',
+    pl: '4',
+  },
+  divider: {
+    // this will style the MenuDivider component
+    my: '4',
+    borderColor: 'white',
+    borderBottom: '2px dotted',
+  },
+})
+// export the base styles in the component theme
+export const menuTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the input theme, we can import it into our theme file and add
+it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { menuTheme } from './components/Menu'
+
+const theme = extendTheme({
+  components: {
+    Menu: menuTheme,
+  },
+})
+
+export default theme
+```
+
+> This is a crucial step to make sure that any changes we make to the menu theme
+> are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large menu size. Here's how we can do
+that:
+
+```jsx live=false
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+
+// define custom styles
+const lg = defineStyle({
+  fontSize: 'md',
+  my: '1',
+})
+
+const xl = defineStyle({
+  fontSize: 'lg',
+  px: '4',
+  py: '2',
+})
+
+// define custom sizes
+const sizes = {
+  // apply custom styles to parts
+  xl: definePartsStyle({ button: xl, item: xl, groupTitle: lg, command: xl }),
+}
+
+// export the sizes in the component theme
+export const menuTheme = defineMultiStyleConfig({ sizes })
+
+// now we can use the new `xl` size
+<Menu size="xl" ... />
+
+```
+
+Every time you add anything new to the theme, you need to run the cli command to
+get proper autocomplete in your IDE. Here's how you can do that:
+
+```bash
+# run it once:
+npx chakra-cli tokens path/to/theme.ts
+
+# or run it in watch mode:
+npx chakra-cli tokens path/to/theme.ts --watch
+```
+
+## Adding a custom variant
+
+Let's assume we want to include some custom variants to create a pill-shaped
+menu bar. Here's how we can do that:
+
+```jsx live=false
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+
+// define custom variants
+const variants = {
+  roundLeft: {
+    button: {
+      borderLeftRadius: 'full',
+      pl: '6',
+    },
+  },
+  roundRight: {
+    button: {
+      borderRightRadius: 'full',
+      pr: '6',
+    },
+  },
+}
+
+// export the custom variants in the component theme
+export const menuTheme = defineMultiStyleConfig({ variants })
+
+// now we can use the new `roundLeft` and `roundRight` variants
+<Menu variant="roundLeft" ... />
+<Menu variant="roundRight" ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every menu in our
+app. Here's how we can do that:
+
+```jsx live=false
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+
+// define which sizes and variants are applied by default
+const defaultProps = {
+  // in this example, we will only set a default size
+  size: 'xl',
+}
+
+// export the default properties in the component theme
+export const menuTheme = defineMultiStyleConfig({ defaultProps })
+```
+
+## Showcase
 
 import {
   App,
