@@ -12,14 +12,12 @@ to each part specifically.
 
 ## Anatomy
 
-<ol type='A'>
-  <li>`button`</li>
-  <li>`list`</li>
-  <li>`item`</li>
-  <li>`groupTitle`</li>
-  <li>`command`</li>
-  <li>`divider`</li>
-</ol>
+- A: `button`
+- B: `list`
+- C: `item`
+- D: `groupTitle`
+- E: `command`
+- F: `divider`
 
 <AspectRatio>
   <svg width="480" height="640" viewBox="0 0 480 640" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,16 +232,9 @@ export const menuTheme = defineMultiStyleConfig({ sizes })
 
 ```
 
-Every time you add anything new to the theme, you need to run the cli command to
-get proper autocomplete in your IDE. Here's how you can do that:
-
-```bash
-# run it once:
-npx chakra-cli tokens path/to/theme.ts
-
-# or run it in watch mode:
-npx chakra-cli tokens path/to/theme.ts --watch
-```
+Every time you add anything new to the theme, you need to run the CLI command to
+get proper autocomplete in your IDE. You can learn more about the CLI tool
+[here](/docs/styled-system/cli).
 
 ## Adding a custom variant
 
