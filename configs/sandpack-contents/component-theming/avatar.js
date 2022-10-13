@@ -1,5 +1,5 @@
 module.exports = {
-  App: `import { Box, HStack, Icon, IconButton, Avatar, AvatarBadge, AvatarGroup, useColorMode } from "@chakra-ui/react";
+  App: `import { Box, HStack, IconButton, Avatar, AvatarBadge, AvatarGroup, useColorMode } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
       </HStack>
 
       <IconButton
+        aria-label="toggle theme"
         rounded="full"
         size="xs"
         position="absolute"
@@ -40,7 +41,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
-import { avatarTheme } from "./theme/components/Avatar.ts";
+import { avatarTheme } from "./theme/components/Avatar";
 
 const theme = extendTheme({
   components: {

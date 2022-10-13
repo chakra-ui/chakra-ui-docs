@@ -21,6 +21,7 @@ export default function App() {
       </SimpleGrid>
 
       <IconButton
+        aria-label="toggle theme"
         rounded="full"
         size="xs"
         position="absolute"
@@ -36,7 +37,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
-import { inputTheme } from "./theme/components/Input.ts";
+import { inputTheme } from "./theme/components/Input";
 
 const theme = extendTheme({
   components: {
