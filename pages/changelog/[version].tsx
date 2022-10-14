@@ -32,15 +32,19 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = ({ locales }) => {
   return {
     paths: [
-      ...allChangelogs.map((doc) => ({
-        params: { version: doc.version },
-      })),
-      {
+      ...locales.flatMap((locale) =>
+        allChangelogs.map((doc) => ({
+          params: { version: doc.version },
+          locale,
+        })),
+      ),
+      ...locales.map((locale) => ({
         params: { version: 'latest' },
-      },
+        locale,
+      })),
     ],
     fallback: false,
   }
