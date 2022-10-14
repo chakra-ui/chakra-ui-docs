@@ -19,10 +19,11 @@ export default function Page({
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const blogs = locales.flatMap((locale) =>
     allBlogs
-      .map((t) =>
-        t._id.replace(`blog/`, '').replace('.mdx', '').replace('index', ''),
-      )
-      .map((id) => ({ params: { slug: [id.replace(`blog/`, '')] }, locale })),
+      .filter((blog) => blog.slug.includes(`/blog`))
+      .map((blog) => ({
+        params: { slug: blog.slug.split('/').slice(3) },
+        locale,
+      })),
   )
 
   return { paths: blogs, fallback: false }
@@ -33,7 +34,7 @@ export const getStaticProps = async (ctx) => {
     ? ctx.params.slug
     : [ctx.params.slug]
 
-  const blog = allBlogs.find((blog) => blog._id.includes(params.join('/')))
+  const blog = allBlogs.find((blog) => blog.slug.includes(params.join('/')))
   const authorData = getMember(blog.frontMatter.author)
   blog.frontMatter.authorData = authorData
 

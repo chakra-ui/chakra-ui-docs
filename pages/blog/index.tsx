@@ -1,17 +1,21 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import {
   Box,
-  Button, Heading,
+  Button,
+  Heading,
   Link,
   Stack,
   StackDivider,
-  Text
+  Text,
 } from '@chakra-ui/react'
 import { allBlogs } from 'contentlayer/generated'
 import MDXLayout from 'layouts/mdx'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
 function Blog() {
+  const { locale } = useRouter()
+
   return (
     <MDXLayout
       frontmatter={{
@@ -23,7 +27,7 @@ function Blog() {
       <Stack divider={<StackDivider />} my='12' spacing='20'>
         {allBlogs.map((item) => (
           <Box key={item._id}>
-            <NextLink href={item.slug} passHref>
+            <NextLink href={item.slug.slice(3)} passHref locale={locale}>
               <Link _hover={{ textDecor: 'none' }}>
                 <Heading
                   fontWeight='medium'
@@ -40,7 +44,7 @@ function Blog() {
             </Text>
             <Text mt='4'>{item.description}</Text>
 
-            <NextLink href={item.slug} passHref>
+            <NextLink href={item.slug} passHref locale={locale}>
               <Button
                 size='sm'
                 as='a'
