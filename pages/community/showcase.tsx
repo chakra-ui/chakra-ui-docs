@@ -3,8 +3,11 @@ import showcaseData from 'configs/showcase.json'
 import MDXLayout from 'layouts/mdx'
 import { ShowcaseItem } from 'components/showcase/showcase-item'
 import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router'
 
 const Showcase = () => {
+  const { locale } = useRouter()
+
   const { t } = useTranslation()
 
   return (
@@ -14,7 +17,7 @@ const Showcase = () => {
       frontmatter={{
         title: t('showcase.seo.title'),
         description: t('showcase.seo.description'),
-        slug: '/community/showcase',
+        slug: `/${locale}/community/team`,
       }}
     >
       <Stack align='flex-start' mt='5' spacing='8'>

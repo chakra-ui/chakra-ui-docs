@@ -16,6 +16,7 @@ import fs from 'fs'
 import MDXLayout from 'layouts/mdx'
 import useTranslation from 'next-translate/useTranslation'
 import NextImage from 'next/image'
+import { useRouter } from 'next/router'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 import { IFormerMember } from 'scripts/get-former-members'
 import { Contributor, Member as IMember } from 'src/types/github'
@@ -123,6 +124,8 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
     ({ login }) => !memberLogins.includes(login),
   )
 
+  const { locale } = useRouter()
+
   const { t } = useTranslation()
 
   return (
@@ -130,7 +133,7 @@ function Team({ members, formerMembers, contributors }: TeamProps) {
       frontmatter={{
         title: t('team.seo.title'),
         description: t('team.seo.description'),
-        slug: '/community/team',
+        slug: `/${locale}/community/team`,
       }}
     >
       <Text lineHeight='tall' mt='5'>

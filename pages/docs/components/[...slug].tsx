@@ -22,9 +22,7 @@ export default function Page({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async ({
-  locales,
-}) => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = locales.flatMap((locale) =>
     getDocByType('components').flatMap((doc) => {
       return { params: { slug: doc.slug.split('/').slice(4) }, locale }

@@ -1,7 +1,7 @@
 {
   "title": {
-    "main": "Erstelle barierrefreie Webseiten",
-    "highlighted": "mit Geschwindigkeit"
+    "main": "Erstelle barrierefreie Webseiten",
+    "highlighted": "und sei dabei schnell"
   },
   "message": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
   "get-started": "Get Started",
@@ -39,7 +39,7 @@
   },
   "built-with-chakra-section": {
     "title": "Built with Chakra UI ⚡️",
-    "description": "A collection of websites and projects built with Chakra UI",
+    "description": "Your project can look as good as these! Check them out, get inspired!",
     "see-showcase": "See showcase"
   },
   "growing-section": {

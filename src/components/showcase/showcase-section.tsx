@@ -16,17 +16,17 @@ import useTranslation from 'next-translate/useTranslation'
 const websites = showcaseData.slice(0, 8)
 
 const ShowcaseSection = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('index')
 
   return (
     <Container py='7.5rem' maxW='1280px' as='section' mb={12}>
       <VStack w='full' spacing='7.5rem'>
         <Box maxW='760px' mx='auto' textAlign='center'>
           <chakra.h2 textStyle='heading' mb={4}>
-            {t('homepage.built-with-chakra-section.title')}
+            {t('built-with-chakra-section.title')}
           </chakra.h2>
           <chakra.p opacity={0.7} fontSize='lg' mb={8}>
-            {t('homepage.built-with-chakra-section.description')}
+            {t('built-with-chakra-section.description')}
           </chakra.p>
           <NextLink href='/showcase' passHref>
             <Button
@@ -38,7 +38,7 @@ const ShowcaseSection = () => {
               colorScheme='teal'
               rightIcon={<FaArrowRight fontSize='0.8em' />}
             >
-              {t('homepage.built-with-chakra-section.see-showcase')}
+              {t('built-with-chakra-section.see-showcase')}
             </Button>
           </NextLink>
         </Box>

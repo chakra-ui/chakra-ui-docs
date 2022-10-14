@@ -131,7 +131,7 @@ const Recipe = defineDocumentType(() => ({
         description: doc.description,
         tags: doc.tags,
         author: doc.author,
-        slug: `/community/${doc._raw.flattenedPath}`,
+        slug: `/${doc._raw.flattenedPath}`,
         editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
         headings: getTableOfContents(doc.body.raw),
       }),

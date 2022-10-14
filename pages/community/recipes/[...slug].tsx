@@ -19,16 +19,33 @@ export default function Page({
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = locales.flatMap((locale) =>
     allRecipes
-      .map((t) => t._id.replace(`community/recipes/`, '').replace('.mdx', ''))
-      .map((id) => ({ params: { slug: id.split('/') }, locale })),
+      .filter((recipe) => recipe.slug.includes(`/community/recipes`))
+      .map((recipe) => ({
+        // using _id here to prevent index to be cut of from z-index
+        params: { slug: recipe._id.replace('.mdx', '').split('/').slice(3) },
+        locale,
+      })),
   )
+
   return { paths, fallback: false }
 }
 
 export const getStaticProps = async (ctx) => {
   const params = toArray(ctx.params.slug)
-  const doc = allRecipes.find((receipe) =>
-    receipe._id.endsWith(`${params.join('/')}.mdx`),
+
+  let doc = allRecipes.find(
+    (recipe) =>
+      recipe._id.startsWith(`${ctx.locale}/community/recipes`) &&
+      recipe._id.replace('.mdx', '').endsWith(`${params.join('/')}`),
   )
+
+  if (!doc) {
+    doc = allRecipes.find(
+      (recipe) =>
+        recipe._id.startsWith(`${ctx.defaultLocale}/community/recipes`) &&
+        recipe._id.replace('.mdx', '').endsWith(`${params.join('/')}`),
+    )
+  }
+
   return { props: { doc } }
 }
