@@ -10,7 +10,6 @@ module.exports = {
   useDisclosure,
   Button,
   Box,
-  SimpleGrid,
   IconButton,
   useColorMode,
 } from "@chakra-ui/react";
@@ -48,6 +47,7 @@ export default function App() {
         </ModalContent>
       </Modal>
       <IconButton
+        aria-label="change theme"
         rounded="full"
         size="xs"
         position="absolute"
@@ -64,7 +64,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
-import { modalTheme } from "./theme/components/modal.ts";
+import { modalTheme } from "./theme/components/modal";
 
 const theme = extendTheme({
   components: {
