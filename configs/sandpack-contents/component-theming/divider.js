@@ -68,7 +68,7 @@ const xl = defineStyle({
 
 const thick = defineStyle({
     borderWidth: '5px', // change the appearance of the border
-    borderStye: "solid",
+    borderStyle: "solid",
     borderRadius: 10, // set border radius to 10
     borderColor: "orange.500",
     _dark: {
