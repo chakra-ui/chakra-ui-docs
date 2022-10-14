@@ -11,8 +11,6 @@ directly to the `h2` element.
 
 The properties that affect the theming of the `Heading` component are:
 
-- `variant`: The visual variant of the divider.
-- `colorScheme`: The color scheme of the divider.
 - `size`: The size of the divider. Defaults to `xl`.
 
 ## Theming utilities
@@ -31,18 +29,19 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const custom = defineStyle({
     color: "yellow.500",
-    border: "0px",
+    fontFamily: "mono",
+    fontWeight: "semibold"
     // let's also provide dark mode alternatives
     _dark: {
         color: 'yellow.300',
     }
 })
 ```
-After customizing the divider theme, we can import it in our theme file and add it in the components property:
+After customizing the heading theme, we can import it in our theme file and add it in the components property:
 
 ```js
 import { extendTheme } from '@chakra-ui/react'
-import { headingTheme } from './components/divider.ts'
+import { headingTheme } from './components/heading.ts'
 
 export const theme = extendTheme({
     components: { Heading: headingTheme },
@@ -67,57 +66,25 @@ Let's assume we want to include a custom branded variant. Here's how we can do t
 ```js
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
-const thicc = defineStyle({
+const underline = defineStyle({
     color: "orange.500",
-    border: "0px",
-    bg: "blue.200",
-    p: "3",
+    borderBottom: "2px",
     borderRadius: "10",
-    transition: 'transform 0.15s ease-in-out, background 0.15s ease-in-out',
+    fontFamily: "serif"
     // let's also provide dark mode alternatives
     _dark: {
         color: 'orange.400',
-        bg: "blue.200"
     },
     _hover: {
-        bg: "blue.100",
-        color: "purple.300",
-        transform: "scale(1, 1)",
+        borderColor: "red.200",
         _dark: {
-            bg: "blue.100",
-            color: "purple.300",
-            transform: "scale(3, 3)",
+            borderColor: "red.300"
         }
     }
 })
 
-// Now we can use the new `thicc` variant
-<Divider variant="thicc">...</Divider>
-```
-
-## Using a custom color scheme
-
-Let's assume we want to use our own custom color scale based on our brand. We'd need to define the color scale first in the main theme file:
-
-```js
-import { extendTheme } from '@chakra-ui/react'
-export const theme = extendTheme({
-    colors: {
-        brand: {
-            50: '#f7fafc',
-            ...
-            500: '#718096',
-            ...
-            900: '#171923',
-        }
-    }
-})
-```
-
-Then, we can use the custom color scale as the color scheme for the divider:
-
-```jsx
-<Divider colorScheme='brand'>...</Divider>
+// Now we can use the new `underline` variant
+<Heading variant="underline">...</Heading>
 ```
 
 ## Changing the default properties
@@ -125,7 +92,7 @@ Then, we can use the custom color scale as the color scheme for the divider:
 ```js
 import { defineStyleConfig } from '@chakra-ui/react'
 
-export const dividerTheme = defineStyleConfig({
+export const headingheme = defineStyleConfig({
     defaultProps: {
         size: 'xl',
         variant: 'custom',
@@ -134,8 +101,8 @@ export const dividerTheme = defineStyleConfig({
 })
 
 // This saves you time, instead of manually setting the size,
-// variant and color scheme every time you use a divider:
-<Divider size="xl" variant="thicc" colorScheme="brand">...</Divider>
+// variant every time you use a heading:
+<Heading size="xl" variant="underline">...</Heading>
 ```
 
 ## Showcase
