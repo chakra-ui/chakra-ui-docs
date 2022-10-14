@@ -51,7 +51,7 @@ const brandPrimary = defineStyle({
 const custom = defineStyle({
     color: "yellow.500",
     fontFamily: "mono",
-    fontWeight: "semibold"
+    fontWeight: "semibold",
     // let's also provide dark mode alternatives
     _dark: {
         color: 'yellow.300',
@@ -62,7 +62,7 @@ const underline = defineStyle({
     color: "orange.500",
     borderBottom: "2px",
     borderRadius: "10",
-    fontFamily: "serif"
+    fontFamily: "serif",
     // let's also provide dark mode alternatives
     _dark: {
         color: 'orange.400',
@@ -79,7 +79,7 @@ export const headingTheme = defineStyleConfig({
     variants: {
         brand: brandPrimary,
         "custom": custom,
-        "thicc": thicc
+        "underline": underline
     },
 })`,
 }
