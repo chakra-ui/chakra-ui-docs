@@ -6,9 +6,9 @@ export default function App() {
     return (
         <Box position="relative" h="100vh">
             <SimpleGrid gap={12} p={12} columns={2}>
-              <Divider variant="thicc" />
+              <Divider variant="thick" />
               <Center height="50px">
-                <Divider orientation="vertical" variant="thicc" />
+                <Divider orientation="vertical" variant="thick" />
               </Center>
               <Divider variant="brand" />
               <Center height="50px">
@@ -50,40 +50,40 @@ root.render(
     DividerTheme: `import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system"
 
 const brandPrimary = defineStyle({
-    border: '3px dashed',
+    borderWidth: '3px',
+    borderStyle: 'dashed',
     borderColor: 'orange.500',
 
     // let's also provide dark mode alternatives
     _dark: {
-        border: '3px dashed',
         borderColor: 'orange.300',
     }
 })
 
 const xl = defineStyle({
-    border: "10px solid",
+    borderWidth: "10px",
+    borderStyle: "solid",
     borderRadius: 20,
 })
 
-const thicc = defineStyle({
-    border: '5px solid', // change the appearance of the border
+const thick = defineStyle({
+    borderWidth: '5px', // change the appearance of the border
+    borderStye: "solid",
     borderRadius: 10, // set border radius to 10
     borderColor: "orange.500",
     _dark: {
-      border: '5px solid', // change the appearance of the border
-      borderRadius: 10, // set border radius to 10
       borderColor: "orange.300",
     }
 })
 
 export const dividerTheme = defineStyleConfig({
-    thicc,
+    thick,
     sizes: {
         "xl": xl
     },
     variants: {
         brand: brandPrimary,
-        "thicc": thicc
+        "thick": thick
     },
 })`,
 }
