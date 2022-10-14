@@ -19,26 +19,44 @@ export default function Page({
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = locales.flatMap((locale) =>
     allGuides
-      .map((t) => t._id.replace(`getting-started/`, '').replace('.mdx', ''))
-      .map((id) => ({
-        params: { slug: id === 'index' ? [] : id.split('/') },
+      .filter((guide) => guide.slug.includes(`/getting-started`))
+      .map((guide) => ({
+        params: { slug: guide.slug.split('/').slice(3) },
         locale,
       })),
   )
+
   return { paths, fallback: false }
 }
 
 export const getStaticProps = async (ctx) => {
   const params = toArray(ctx.params.slug)
+
   let doc: Guide
   if (params.length === 0) {
     doc = allGuides.find(
-      (t) => t._id === `${ctx.locale}/getting-started/index.mdx`,
+      (guide) => guide.slug === `/${ctx.locale}/getting-started`,
     )
+
+    if (!doc) {
+      doc = allGuides.find(
+        (guide) => guide.slug === `/${ctx.defaultLocale}/getting-started`,
+      )
+    }
   } else {
-    doc = allGuides.find((guide) =>
-      guide._id.endsWith(`${params.join('/')}.mdx`),
+    doc = allGuides.find(
+      (guide) =>
+        guide.slug.startsWith(`/${ctx.locale}/getting-started`) &&
+        guide.slug.endsWith(`${params.join('/')}`),
     )
+
+    if (!doc) {
+      doc = allGuides.find(
+        (guide) =>
+          guide.slug.startsWith(`/${ctx.defaultLocale}/getting-started`) &&
+          guide.slug.endsWith(`${params.join('/')}`),
+      )
+    }
   }
   return { props: { doc } }
 }
