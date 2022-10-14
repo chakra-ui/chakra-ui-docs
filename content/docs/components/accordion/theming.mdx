@@ -2,3 +2,40 @@
 id: accordion
 scope: theming
 ---
+
+The Accordion component is a multipart component. Read more about how to style
+multipart components in the
+[style system docs](/docs/styled-system/component-style#styling-multipart-components).
+
+This component has four parts: `container`, `button`, `panel` and `icon`. You can find
+more information in the source for the styles
+[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/accordion.ts).
+
+## Example
+
+The following theme would change the backgroundColor of the `container` and `panel` to `red.200` and `green.200` respectively, the fontWeight of `button` to `bold`, and the size of `icon` to `3xl`.
+
+```jsx live=false
+import { extendTheme } from "@chakra-ui/react";
+
+export const theme = extendTheme({
+  components: {
+    Accordion: {
+      baseStyle: {
+        container: {
+          bg: "red.200",
+        },
+        button: {
+          fontWeight: "bold",
+        },
+        panel: {
+          bg: "green.200",
+        },
+        icon: {
+          fontSize: "3xl",
+        },
+      },
+    },
+  },
+});
+```
