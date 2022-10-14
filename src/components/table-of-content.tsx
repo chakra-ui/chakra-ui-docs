@@ -10,6 +10,7 @@ import { useScrollSpy } from 'hooks/use-scrollspy'
 import { t } from 'utils/i18n'
 import type { FrontmatterHeading } from 'src/types/frontmatter'
 import TocNav from './toc-nav'
+import {useRouter} from "next/router";
 
 interface TableOfContentProps extends BoxProps {
   headings: FrontmatterHeading[]
@@ -25,6 +26,13 @@ function TableOfContent(props: TableOfContentProps) {
   )
   const linkColor = useColorModeValue('gray.600', 'gray.400')
   const linkHoverColor = useColorModeValue('gray.900', 'gray.600')
+
+  const router = useRouter()
+  const isOnComponentTab =
+      router.asPath.endsWith('/usage') ||
+      router.asPath.endsWith('/props') ||
+      router.asPath.endsWith('/theming')
+
   return (
     <TocNav title={t('component.table-of-content.on-this-page')} {...rest}>
       <OrderedList spacing={1} ml='0' mt='4' styleType='none'>
@@ -34,7 +42,7 @@ function TableOfContent(props: TableOfContentProps) {
               py='1'
               display='block'
               fontWeight={id === activeId ? 'bold' : 'medium'}
-              href={`#${id}`}
+              href={isOnComponentTab ? `./#${id}` : `#${id}`}
               aria-current={id === activeId ? 'location' : undefined}
               color={linkColor}
               _hover={{
