@@ -2,3 +2,135 @@
 id: switch
 scope: theming
 ---
+
+The `Switch` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Anatomy
+
+- A: `container`
+- B: `thumb`
+- C: `track`
+
+## Theming properties
+
+The properties that affect the theming of the `Switch` component are:
+
+- `colorScheme`: The color scheme of the Switch component. Defaults to `blue`.
+- `size`: The size of the Switch component. Defaults to `md`.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { switchAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(switchAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { switchAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(switchAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+      // ...
+  },
+  thumb: {
+      bg: "red.500",
+  },
+  track: {
+      bg: "gray.100",
+      _checked: {
+      bg: "gray.100",
+      }
+  }
+})
+
+export const switchTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the switch theme, we can import it in our theme file and add
+it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { switchTheme } from './components/switch.ts'
+
+export const theme = extendTheme({
+  components: { Switch: switchTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the
+> switch theme are applied.
+
+
+## Using a custom color scheme
+
+Let's assume we want to use our own custom color scale based on our brand. We'd need to define the color scale first in the main theme file:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+
+export const theme = extendTheme({
+  colors: {
+    brand: {
+      50: '#f7fafc',
+      ...
+      500: '#718096',
+      ...
+      900: '#171923',
+    }
+  }
+})
+```
+
+
+Then, we can use the custom color scale as the color scheme for the button:
+
+```jsx live=false
+<Switch colorScheme='brand' />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and color scheme of every switch in
+our app. Here's how we can do that:
+
+```jsx live=false
+import { switchAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  switchAnatomy.keys,
+)
+
+export const switchTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    colorScheme: 'brand',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use an input:
+<Switch size="xl" colorScheme="brand" ... />
+```
