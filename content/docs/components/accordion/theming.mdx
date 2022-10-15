@@ -3,39 +3,187 @@ id: accordion
 scope: theming
 ---
 
-The Accordion component is a multipart component. Read more about how to style
-multipart components in the
-[style system docs](/docs/styled-system/component-style#styling-multipart-components).
+The `Accordion` component is a multipart component. The styling needs to be
+applied to each part specifically.
 
-This component has four parts: `container`, `button`, `panel` and `icon`. You can find
-more information in the source for the styles
-[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/accordion.ts).
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
 
-## Example
+## Theming utilities
 
-The following theme would change the backgroundColor of the `container` and `panel` to `red.200` and `green.200` respectively, the fontWeight of `button` to `bold`, and the size of `icon` to `3xl`.
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
 
 ```jsx live=false
-import { extendTheme } from "@chakra-ui/react";
+import { accordionAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(accordionAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { accordionAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(accordionAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+    bg: 'red.200', // change the backgroundColor of the container
+  },
+})
+
+export const accordionTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the accordion theme, we can import it in our theme file and
+add it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { accordionTheme } from './components/accordion.ts'
 
 export const theme = extendTheme({
-  components: {
-    Accordion: {
-      baseStyle: {
-        container: {
-          bg: "red.200",
-        },
-        button: {
-          fontWeight: "bold",
-        },
-        panel: {
-          bg: "green.200",
-        },
-        icon: {
-          fontSize: "3xl",
-        },
-      },
+  components: { Accordion: accordionTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the
+> accordion theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large accordion icon size. Here's how
+we can do that:
+
+```jsx live=false
+import { accordionAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(accordionAnatomy.keys)
+
+const xl = defineStyle({
+  fontSize: 'lg',
+  px: '4',
+  h: '12',
+})
+
+const sizes = {
+  xl: definePartsStyle({ icon: xl }),
+}
+
+export const accordionTheme = defineMultiStyleConfig({ sizes })
+
+// Now we can use the new `xl` size
+<Accordion size="xl"> ... </Accordion>
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom pill variant. Here's how we can do
+that:
+
+```jsx live=false
+import { accordionAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(accordionAnatomy.keys)
+
+const custom = definePartsStyle({
+  panel: {
+    border: '1px solid',
+    borderColor: 'gray.200',
+    background: 'gray.50',
+    borderRadius: 'full',
+
+    // Let's also provide dark mode alternatives
+    _dark: {
+      borderColor: 'gray.600',
+      background: 'gray.800',
     },
   },
-});
+  icon: {
+    border: '1px solid',
+    borderColor: 'gray.200',
+    background: 'gray.200',
+    borderRadius: 'full',
+    color: 'gray.500',
+
+    _dark: {
+      borderColor: 'gray.600',
+      background: 'gray.600',
+      color: 'gray.400',
+    },
+  },
+})
+
+export const accordionTheme = defineMultiStyleConfig({
+  variants: { custom },
+})
+
+// Now we can use the new `custom` variant
+<Accordion variant="custom"> ... </Accordion>
 ```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every accordion
+in our app. Here's how we can do that:
+
+```jsx live=false
+import { accordionAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  accordionAnatomy.keys,
+)
+
+export const accordionTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'custom',
+  },
+})
+
+// This saves you time, instead of manually setting the size and
+// variant every time you use an accordion:
+<Accordion size="xl" variant="custom"> ... </Accordion>
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  AccordionTheme,
+} from 'configs/sandpack-contents/component-theming/accordion'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Accordion.ts': AccordionTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
