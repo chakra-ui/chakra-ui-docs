@@ -1,24 +1,56 @@
 module.exports = {
-  App: `import { Box, SimpleGrid, GridItem, Icon, IconButton, Input, InputGroup, InputLeftAddon, InputRightElement, useColorMode } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaPhone } from "react-icons/fa";
+  App: `import {
+  Box,
+  useColorMode,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  IconButton,
+} from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
+
   return (
-    <Box position="relative" h="100vh">
-      <SimpleGrid gap={12} p={12} columns={2}>
-        <Input placeholder="Themed Outline Input" />
-        <Input placeholder="Themed Filled Input" variant="filled" />
-        <GridItem colSpan={2}>
-          <InputGroup variant="custom" colorScheme="purple">
-            <InputLeftAddon>Phone:</InputLeftAddon>
-            <Input placeholder="Themed Custom Input" />
-            <InputRightElement pointerEvents="none">
-              <Icon as={FaPhone} color="green.400" />
-            </InputRightElement>
-          </InputGroup>
-        </GridItem>
-      </SimpleGrid>
+    <Box pt={12} position="relative" h="100vh">
+      <Accordion>
+        <AccordionItem m={4}>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Section 1 title
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem m={4}>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Section 2 title
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
 
       <IconButton
         aria-label="toggle theme"
@@ -27,21 +59,23 @@ export default function App() {
         position="absolute"
         bottom={4}
         left={4}
-        onClick={toggleColorMode} icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+        onClick={toggleColorMode}
+        icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
       />
     </Box>
   );
-}`,
+}
+`,
   Index: `import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
-import { inputTheme } from "./theme/components/Accordion";
+import { accordionTheme } from "./theme/components/Accordion";
 
 const theme = extendTheme({
   components: {
-    Input: inputTheme,
+    Accordion: accordionTheme,
   }
 });
 
@@ -52,126 +86,65 @@ root.render(
     <App />
   </ChakraProvider>
 );`,
-  AccordionTheme: `import { inputAnatomy as parts } from "@chakra-ui/anatomy"
+  AccordionTheme: `import { accordionAnatomy as parts } from "@chakra-ui/anatomy";
 import {
   createMultiStyleConfigHelpers,
   defineStyle,
-} from "@chakra-ui/styled-system"
+} from "@chakra-ui/styled-system";
+import { extendTheme } from "@chakra-ui/react";
 
 const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(parts.keys)
+  createMultiStyleConfigHelpers(parts.keys);
 
 // default base style from the Input theme
 const baseStyle = definePartsStyle({
-  field: {
-    width: "100%",
-    minWidth: 0,
-    outline: 0,
-    position: "relative",
-    appearance: "none",
-    transitionProperty: "common",
-    transitionDuration: "normal",
-    _disabled: {
-      opacity: 0.4,
-      cursor: "not-allowed",
+  container: defineStyle({
+    boxShadow: "sm",
+    _focus: {
+      boxShadow: "outline",
     },
-  },
-})
+  }),
+});
 
-const variantOutline = definePartsStyle((props) => {
+// Defining a custom variant called outline
+const outline = definePartsStyle((props) => {
+  const { colorScheme: c } = props;
   return {
-    field: {
-      fontFamily: "mono", // change font family to mono
-    }
-  }
-})
-
-const variantFilled = definePartsStyle((props) => {
-  return {
-    field: {
-      fontWeight: "semibold", // change font weight to semibold
-    },
-  }
-})
-
-// Defining a custom variant
-const variantCustom = definePartsStyle((props) => {
-  const { colorScheme: c } = props
-  return {
-    field: {
-      border: "0px solid",
-      bg: "gray.50",
-      borderTopRightRadius: "full",
-      borderBottomRightRadius: "full",
-      _dark: {
-        bg: "whiteAlpha.50"
-      },
-
-      _hover: {
-        bg: "gray.200",
-        _dark: {
-          bg: "whiteAlpha.100"
-        }
-      },
-      _readOnly: {
-        boxShadow: "none !important",
-        userSelect: "all",
-      },
-      _focusVisible: {
-        bg: "gray.200",
-        _dark: {
-          bg: "whiteAlpha.100"
-        }
-      },
-    },
-    addon: {
-      border: "0px solid",
-      borderColor: "transparent",
-      borderTopLeftRadius: "full",
-      borderBottomLeftRadius: "full",
-      bg: \`\${c}.500\`,
-      color: "white",
-      _dark: {
-        bg: \`\${c}.300\`,
-        color: \`\${c}.900\`,
-      }
-    },
-    element: {
-      bg: "white",
-      rounded: "full",
+    container: {
       border: "1px solid",
       borderColor: "gray.100",
-      _dark: {
-        bg: "whiteAlpha.50",
-        borderColor: "whiteAlpha.100",
-      }
     },
-  }
-})
+    button: {
+      color: "gray.500",
+      _hover: {
+        color: "gray.600",
+      },
+      _focus: {
+        color: "blue.500",
+      },
+      fontFamily: "mono",
+    },
+  };
+});
 
 const variants = {
-  outline: variantOutline,
-  filled: variantFilled,
-  custom: variantCustom,
-}
+  outline,
+};
 
 const size = {
   md: defineStyle({
-    fontSize: "sm",
-    px: "4",
-    h: "10",
-    borderRadius: "none",
+    w: 5,
+    h: 5,
   }),
-}
+};
 
 const sizes = {
   md: definePartsStyle({
-    field: size.md,
-    addon: size.md,
+    icon: size.md,
   }),
-}
+};
 
-export const inputTheme = defineMultiStyleConfig({
+export const accordionTheme = defineMultiStyleConfig({
   baseStyle,
   variants,
   sizes,
@@ -179,5 +152,5 @@ export const inputTheme = defineMultiStyleConfig({
     size: "md",
     variant: "outline",
   },
-})`,
+});`,
 }
