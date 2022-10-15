@@ -134,3 +134,25 @@ export const switchTheme = defineMultiStyleConfig({
 // This saves you time, instead of manually setting the size and variant every time you use an input:
 <Switch size="xl" colorScheme="brand" ... />
 ```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  SwitchTheme,
+} from 'configs/sandpack-contents/component-theming/switch'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Switch.ts': SwitchTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
