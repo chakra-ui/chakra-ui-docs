@@ -37,6 +37,10 @@
               "path": "/docs/styled-system/chakra-factory"
             },
             {
+              "title": "CLI",
+              "path": "/docs/styled-system/cli"
+            },
+            {
               "title": "Global Styles",
               "path": "/docs/styled-system/global-styles"
             },
@@ -54,7 +58,6 @@
             }
           ]
         },
-
         {
           "title": "Theming",
           "path": "/docs/theming",

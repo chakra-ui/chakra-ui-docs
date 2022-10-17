@@ -15,11 +15,6 @@
     "image": "showcases/planet.jpg"
   },
   {
-    "name": "thirdweb",
-    "url": "https://thirdweb.com/",
-    "image": "showcases/thirdweb.jpg"
-  },
-  {
     "name": "yubo",
     "url": "https://yubo.live/",
     "image": "showcases/yubo.jpg"
@@ -35,14 +30,19 @@
     "image": "showcases/Typebot.jpg"
   },
   {
+    "name": "Snappify",
+    "url": "https://snappify.io/",
+    "image": "showcases/Snappify.jpg"
+  },
+  {
     "name": "Supa Palette Website",
     "url": "https://supa-palette.com",
     "image": "showcases/Supa-Palette-Website.jpg"
   },
   {
-    "name": "Snappify",
-    "url": "https://snappify.io/",
-    "image": "showcases/Snappify.jpg"
+    "name": "thirdweb",
+    "url": "https://thirdweb.com/",
+    "image": "showcases/thirdweb.jpg"
   },
   {
     "name": "Razorpay",
