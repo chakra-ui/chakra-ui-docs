@@ -292,6 +292,7 @@ Thanks goes to these wonderful people
       <td align="center"><a href="http://aashutosh.dev"><img src="https://avatars.githubusercontent.com/u/21199234?v=4?s=64" width="64px;" alt="Aashutosh Rathi"/><br /><sub><b>Aashutosh Rathi</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Aaashutoshrathi" title="Bug reports">🐛</a></td>
       <td align="center"><a href="https://github.com/sitogi"><img src="https://avatars.githubusercontent.com/u/20895397?v=4?s=64" width="64px;" alt="sitogi"/><br /><sub><b>sitogi</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/issues?q=author%3Asitogi" title="Bug reports">🐛</a></td>
       <td align="center"><a href="https://github.com/lejara"><img src="https://avatars.githubusercontent.com/u/16671822?v=4?s=64" width="64px;" alt="Leption"/><br /><sub><b>Leption</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=lejara" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://www.heatherwarnke.com/"><img src="https://avatars.githubusercontent.com/u/42837789?v=4?s=64" width="64px;" alt="Heather Warnke"/><br /><sub><b>Heather Warnke</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=hwarnke21" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
