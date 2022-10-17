@@ -2,3 +2,74 @@
 id: accordion
 scope: theming
 ---
+
+# Color
+
+To understand more about this topic, we recommend you read this section on:[color mode](https://chakra-ui.com/docs/styled-system/color-mode) 
+
+## Ligth
+
+| Element | Property | Color token |
+| ------------ | -------- | ----------- |
+| `<Accordion>` | `color` | `--chakra-colors-gray-700` |
+| `<AccordionPanel>` | `color` | `--chakra-colors-gray-700` |
+| `<AccordionButton>` | `color` | `--chakra-colors-gray-700` | 
+| `<AccordionButton _expanded>` | `{ bg: '', color: '' }` |  `{ bg: '', color: '--chakra-colors-gray-700' }` | 
+| `<AccordionIcon>` | `color` | `--chakra-colors-gray-700`| 
+| `<AccordionItem>` | `color` | `--chakra-colors-gray-700` | 
+|  | `borderColor` | `--chakra-colors-gray-200` | 
+
+## Dark
+
+| Element | Property | Color token |
+| ------------ | -------- | ----------- |
+| `<Accordion>` | `color` | `--chakra-colors-gray-100` |
+| `<AccordionPanel>` | `color` | `--chakra-colors-gray-100` |
+| `<AccordionButton>` | `color` | `--chakra-colors-gray-100` | 
+| `<AccordionButton _expanded>` | `{ bg: '', color: '' }` |  `{ bg: '', color: '--chakra-colors-gray-100' }` | 
+| `<AccordionIcon>` | `color` | `--chakra-colors-gray-100`| 
+| `<AccordionItem>` | `color` | `--chakra-colors-gray-100` | 
+|  | `borderColor` | `--chakra-colors-gray-200` | 
+
+# Interactive states
+
+| Element | State | Property | Color token
+| ------------ | -------- | ----------- | ----------- |
+| `<AccordionButton>` | `hover` | `color` | `--chakra-colors-gray-500` |
+| `<AccordionItem>` | `disabled` | `color` | `--chakra-colors-gray-200` | 
+
+
+# Typography
+
+To understand more about this topic, we recommend you read this section on: [text and layer styles](https://chakra-ui.com/docs/styled-system/text-and-layer-styles)  
+
+| Element | Font-size (px/rem) | Font-weight | Type token
+| ------------ | -------- | ----------- | ----------- |
+| `<AccordionButton>` | `16px / 1rem` | `400` | --chakra-fontSizes-md |
+
+# Structure
+
+There is no max-width for an open panel but an accordion
+may scroll if constrained by vertical space. The width of
+an accordion varies based on the content, layout, and page 
+design.
+
+## Default alignment
+
+
+
+| Element | Property | 	px/rem | Spacing token
+| ------------ | -------- | ----------- | ----------- |
+| `<AccordionItem>` | `height` | `40px / 2.5rem` | - |
+| `` | `border-top-width ` | `1px` | - |
+| `<AccordionButton>` | `padding-inline-start ` | `16px / 1rem` | --chakra-space-4 |
+| `` | `padding-inline-end ` | `16px / 1rem` | --chakra-space-4 |
+| `` | `padding-top` | `8px / 0.5rem` | --chakra-space-2 |
+| `` | `padding-bottom` | `8px / 0.5rem` | --chakra-space-2 |
+| `AccordionIcon` | `height` | `20px / 1em` | - |
+| `` | `width` | `20px / 1em` | - |
+| `<AccordionPanel>` | `padding-inline-start ` | `16px / 1rem` | --chakra-space-4 |
+| `` | `padding-inline-end ` | `16px / 1rem` | --chakra-space-4 |
+| `` | `padding-top` | `8px / 0.5rem` | --chakra-space-2 |
+| `` | `padding-bottom` | `20px / 1.25rem` | --chakra-space-5 |
+
