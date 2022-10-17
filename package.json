@@ -21,8 +21,8 @@
   "dependencies": {
     "@chakra-ui/cli": "2.1.8",
     "@chakra-ui/icons": "2.0.11",
-    "@chakra-ui/props-docs": "2.0.21",
-    "@chakra-ui/react": "2.3.5",
+    "@chakra-ui/props-docs": "2.0.22",
+    "@chakra-ui/react": "2.3.6",
     "@chakra-ui/skip-nav": "2.0.11",
     "@chakra-ui/theme-tools": "2.0.12",
     "@chakra-ui/utils": "2.0.11",
