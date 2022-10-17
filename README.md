@@ -294,6 +294,9 @@ Thanks goes to these wonderful people
       <td align="center"><a href="https://github.com/lejara"><img src="https://avatars.githubusercontent.com/u/16671822?v=4?s=64" width="64px;" alt="Leption"/><br /><sub><b>Leption</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=lejara" title="Documentation">📖</a></td>
       <td align="center"><a href="https://www.heatherwarnke.com/"><img src="https://avatars.githubusercontent.com/u/42837789?v=4?s=64" width="64px;" alt="Heather Warnke"/><br /><sub><b>Heather Warnke</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=hwarnke21" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/HariVP03"><img src="https://avatars.githubusercontent.com/u/54934631?v=4?s=64" width="64px;" alt="Hari Vishnu Parashar"/><br /><sub><b>Hari Vishnu Parashar</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=HariVP03" title="Documentation">📖</a></td>
+    </tr>
   </tbody>
 </table>
 
