@@ -34,7 +34,7 @@ export default function App() {
 import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import App from "./App";
-import { dividerTheme } from "./theme/components/Divider.ts";
+import { dividerTheme } from "./theme/components/Divider";
 const theme = extendTheme({
     components: {
         Divider: dividerTheme,

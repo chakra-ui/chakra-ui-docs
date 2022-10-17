@@ -49,7 +49,7 @@ it in the components property:
 
 ```js
 import { extendTheme } from '@chakra-ui/react'
-import { dividerTheme } from './components/divider.ts'
+import { dividerTheme } from './components/divider'
 
 export const theme = extendTheme({
   components: { Divider: dividerTheme },
@@ -81,15 +81,8 @@ export const dividerTheme = defineStyleConfig({
 ```
 
 Every time you're adding anything new to the theme, you'd need to run the cli
-command to get proper autocomplete in your IDE. Here's how you can do that:
-
-```bash
-# run it once:
-npx chakra-cli tokens path/to/theme.ts
-
-# or run it in watch mode:
-npx chakra-cli tokens path/to/theme.ts --watch
-```
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
 
 ## Adding a custom variant
 
