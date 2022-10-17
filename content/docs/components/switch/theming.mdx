@@ -203,6 +203,30 @@ Every time you're adding anything new to the theme, you'd need to run the CLI
 command to get proper autocomplete in your IDE. You can learn more about the CLI
 tool [here](/docs/styled-system/cli).
 
+## Adding a custom variant
+
+Let's assume we want to include a custom boxy variant. Here's how you can do that:
+
+```jsx live=false
+import { switchAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(switchAnatomy.keys)
+
+const boxy = definePartsStyle({
+  track: {
+    borderRadius: 'sm',
+    p: 1,
+  }
+})
+  
+export const switchTheme = defineMultiStyleConfig({ variants: { boxy }})
+
+// Now we can use the new `boxy` variant
+<Switch variant="boxy"/>
+```
+
 ## Changing the default properties
 
 Let's assume we want to change the default size and color scheme of every switch in
