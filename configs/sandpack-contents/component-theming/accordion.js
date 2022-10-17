@@ -8,7 +8,7 @@ module.exports = {
   AccordionItem,
   AccordionPanel,
   IconButton,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
