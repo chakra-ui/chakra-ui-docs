@@ -20,6 +20,7 @@ export default function App() {
               </Center>
             </SimpleGrid>
             <IconButton
+                aria-label="toggle theme"
                 rounded="full"
                 size="xs"
                 position="absolute"
