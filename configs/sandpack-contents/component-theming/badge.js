@@ -33,7 +33,7 @@ module.exports = {
     import { createRoot } from "react-dom/client";
     import { ChakraProvider, extendTheme } from "@chakra-ui/react";
     import App from "./App";
-    import { badgeTheme } from "./theme/components/badge";
+    import { badgeTheme } from "./theme/components/Badge.ts";
     const theme = extendTheme({
       components: {
         Badge: badgeTheme,
