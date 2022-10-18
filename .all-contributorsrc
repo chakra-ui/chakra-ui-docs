@@ -1395,6 +1395,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "pybash1",
+      "name": "PyBash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67195650?v=4",
+      "profile": "https://pybash.xyz",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
