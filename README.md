@@ -296,6 +296,7 @@ Thanks goes to these wonderful people
     </tr>
     <tr>
       <td align="center"><a href="https://github.com/HariVP03"><img src="https://avatars.githubusercontent.com/u/54934631?v=4?s=64" width="64px;" alt="Hari Vishnu Parashar"/><br /><sub><b>Hari Vishnu Parashar</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=HariVP03" title="Documentation">📖</a></td>
+      <td align="center"><a href="http://kelvinwelter.com"><img src="https://avatars.githubusercontent.com/u/37090245?v=4?s=64" width="64px;" alt="Kelvin Welter"/><br /><sub><b>Kelvin Welter</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=kelvinwelter" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
