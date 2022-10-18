@@ -1,5 +1,5 @@
 module.exports = {
-  App: `import { Box, SimpleGrid, IconButton, Center, Heading, useColorMode } from "@chakra-ui/react";
+  App: `import { Box, SimpleGrid, IconButton, Heading, useColorMode } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 export default function App() {
     const { toggleColorMode, colorMode } = useColorMode();
@@ -12,6 +12,7 @@ export default function App() {
               <Heading variant="underline">Underlined heading</Heading>
             </SimpleGrid>
             <IconButton
+                aria-label="toggle theme"
                 rounded="full"
                 size="xs"
                 position="absolute"
@@ -26,7 +27,7 @@ export default function App() {
 import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import App from "./App";
-import { headingTheme } from "./theme/components/Heading.ts";
+import { headingTheme } from "./theme/components/Heading";
 const theme = extendTheme({
     components: {
         Heading: headingTheme,
