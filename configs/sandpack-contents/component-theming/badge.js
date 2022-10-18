@@ -11,11 +11,13 @@ module.exports = {
         return (
           <Box position="relative" h="100vh">
             <HStack spacing={8} p={12}>
-              <Badge >Themed subtle badge</Badge>
-              <Badge variant='solid'>Themed solid badge</Badge>
-              <Badge variant='outline'>Themed outline badge</Badge>
-              <Badge variant='custom'>Themed custom badge</Badge>
-              <Badge size='xl'>XL Badge</Badge>
+                <Badge >Themed subtle badge</Badge>
+                <Badge variant='solid'>Themed solid badge</Badge>
+                <Badge variant='outline'>Themed outline badge</Badge>
+            </HStack>
+            <HStack spacing={8} p={12}>
+                <Badge variant='custom'>Themed custom badge</Badge>
+                <Badge size='xl'>XL Badge</Badge>
             </HStack>
             <IconButton
               aria-label="toggle theme"
