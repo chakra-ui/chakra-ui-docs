@@ -28,20 +28,20 @@ to each part specifically.
     <rect x='172' y='97' width='136' height='76' rx='38' fill='#3182CE' />
     <circle cx='269.64' cy='134.64' r='32.64' fill='white' />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M237.5 90L237.5 69L238.5 69L238.5 90L237.5 90Z'
       fill='#319795'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M295 135L344 135L344 136L295 136L295 135Z'
       fill='#805AD5'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M198 136L149 136L149 135L198 135L198 136Z'
       fill='#D69E2E'
     />
@@ -50,8 +50,8 @@ to each part specifically.
       fill='#B2F5EA'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M238 68C245.18 68 251 62.1797 251 55C251 47.8203 245.18 42 238 42C230.82 42 225 47.8203 225 55C225 62.1797 230.82 68 238 68ZM238 69C245.732 69 252 62.732 252 55C252 47.268 245.732 41 238 41C230.268 41 224 47.268 224 55C224 62.732 230.268 69 238 69Z'
       fill='#319795'
     />
@@ -64,8 +64,8 @@ to each part specifically.
       fill='#E9D8FD'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M358 148C365.18 148 371 142.18 371 135C371 127.82 365.18 122 358 122C350.82 122 345 127.82 345 135C345 142.18 350.82 148 358 148ZM358 149C365.732 149 372 142.732 372 135C372 127.268 365.732 121 358 121C350.268 121 344 127.268 344 135C344 142.732 350.268 149 358 149Z'
       fill='#805AD5'
     />
@@ -78,8 +78,8 @@ to each part specifically.
       fill='#FEFCBF'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M135 148C142.18 148 148 142.18 148 135C148 127.82 142.18 122 135 122C127.82 122 122 127.82 122 135C122 142.18 127.82 148 135 148ZM135 149C142.732 149 149 142.732 149 135C149 127.268 142.732 121 135 121C127.268 121 121 127.268 121 135C121 142.732 127.268 149 135 149Z'
       fill='#D69E2E'
     />
@@ -88,8 +88,8 @@ to each part specifically.
       fill='#D69E2E'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M317 91H158V180H317V91ZM157 90V181H318V90H157Z'
       fill='#319795'
     />
@@ -140,17 +140,17 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   // define the part you're going to style
   container: {
-      // ...
+    // ...
   },
   thumb: {
-      bg: "red.500",
+    bg: 'red.500',
   },
   track: {
-      bg: "gray.100",
-      _checked: {
-        bg: "gray.100",
-      }
-  }
+    bg: 'gray.100',
+    _checked: {
+      bg: 'gray.100',
+    },
+  },
 })
 
 export const switchTheme = defineMultiStyleConfig({ baseStyle })
@@ -171,10 +171,10 @@ export const theme = extendTheme({
 > This is a crucial step to make sure that any changes that we make to the
 > switch theme are applied.
 
-
 ## Using a custom color scheme
 
-Let's assume we want to use our own custom color scale based on our brand. We'd need to define the color scale first in the main theme file:
+Let's assume we want to use our own custom color scale based on our brand. We'd
+need to define the color scale first in the main theme file:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
@@ -192,7 +192,6 @@ export const theme = extendTheme({
 })
 ```
 
-
 Then, we can use the custom color scale as the color scheme for the button:
 
 ```jsx live=false
@@ -205,7 +204,8 @@ tool [here](/docs/styled-system/cli).
 
 ## Adding a custom variant
 
-Let's assume we want to include a custom boxy variant. Here's how you can do that:
+Let's assume we want to include a custom boxy variant. Here's how you can do
+that:
 
 ```jsx live=false
 import { switchAnatomy } from '@chakra-ui/anatomy'
@@ -220,7 +220,7 @@ const boxy = definePartsStyle({
     p: 1,
   }
 })
-  
+
 export const switchTheme = defineMultiStyleConfig({ variants: { boxy }})
 
 // Now we can use the new `boxy` variant
@@ -229,8 +229,8 @@ export const switchTheme = defineMultiStyleConfig({ variants: { boxy }})
 
 ## Changing the default properties
 
-Let's assume we want to change the default size and color scheme of every switch in
-our app. Here's how we can do that:
+Let's assume we want to change the default size and color scheme of every switch
+in our app. Here's how we can do that:
 
 ```jsx live=false
 import { switchAnatomy } from '@chakra-ui/anatomy'
