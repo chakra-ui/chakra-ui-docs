@@ -6,6 +6,7 @@ import NextLink from 'next/link'
 import { ReactNode } from 'react'
 import { TabsData } from 'utils/contentlayer-utils'
 import MDXLayout from './mdx'
+import { themes } from 'utils/available-themes'
 
 function MDXContent({ doc }: { doc: Doc | undefined }) {
   const Component = useMDXComponent(doc?.body?.code ?? '')
@@ -22,6 +23,7 @@ export default function ComponentDocsLayout({
   tabsData?: TabsData
 }) {
   const id = frontmatter.package?.split('/').pop()
+  const hasTheme = themes.includes(id)
 
   return (
     <MDXLayout frontmatter={frontmatter}>
@@ -29,7 +31,7 @@ export default function ComponentDocsLayout({
         <Stack spacing='5'>
           <MDXComponents.p>{frontmatter.description}</MDXComponents.p>
           <MDXComponents.ComponentLinks
-            theme={id !== 'layout' && { componentName: id }}
+            theme={hasTheme && { componentName: id }}
             github={{ package: id }}
             npm={{ package: frontmatter.package }}
           />
@@ -65,7 +67,12 @@ export default function ComponentDocsLayout({
       </Box>
 
       {tabsData.map((item, index) => (
-        <Box key={index} id={item.id} hidden={!tabsData[index].match}>
+        <Box
+          key={index}
+          id={item.id}
+          hidden={!tabsData[index].match}
+          pt={index === 2 ? 12 : 0}
+        >
           {index === 0 ? children : <MDXContent doc={item.doc} />}
         </Box>
       ))}

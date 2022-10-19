@@ -1,973 +1,122 @@
-{
-  "projects": [
-    {
-      "name": "Chakra Templates",
-      "description": "A growing collection of hand-crafted & responsive Chakra UI templates ready to drop into your React project.",
-      "url": "https://chakra-templates.dev",
-      "image": "showcases/projects/Chakra-Templates.png",
-      "type": "projects"
-    },
-    {
-      "name": "Choc UI",
-      "description": "A set of accessible and reusable components that are commonly used in web applications.",
-      "url": "https://choc-ui.com/",
-      "image": "showcases/projects/Choc-UI.png",
-      "type": "projects"
-    },
-    {
-      "name": "OnlySetups",
-      "description": "OnlyFans, but for pictures of desk setups",
-      "url": "https://onlysetups.vercel.app/",
-      "image": "showcases/projects/OnlySetups.png",
-      "type": "projects"
-    },
-    {
-      "name": "TwitterFOMO.dev",
-      "description": "Best WebDev Tweets",
-      "url": "https://twitterfomo.dev",
-      "image": "showcases/projects/TwitterFOMO.dev.png",
-      "type": "projects"
-    },
-    {
-      "name": "Dokz",
-      "description": "Effortless documentation with Next.js and MDX.",
-      "url": "https://dokz.vercel.app/docs",
-      "image": "showcases/projects/Dokz.png",
-      "type": "projects"
-    },
-    {
-      "name": "Opensource.builders",
-      "description": "Opensource.builders is a website to find and request open-source alternatives to popular software you already use.",
-      "url": "https://opensource.builders",
-      "image": "showcases/projects/Opensource.builders.png",
-      "type": "projects"
-    },
-    {
-      "name": "Purity UI Dashboard",
-      "description": null,
-      "url": "https://www.creative-tim.com/product/purity-ui-dashboard",
-      "image": "showcases/projects/Purity-UI-Dashboard.png",
-      "type": "projects"
-    },
-    {
-      "name": "Chakra UI's Design vs Dev Challenges",
-      "description": null,
-      "url": "https://www.youtube.com/playlist?list=PLLh_woCGjyGqed2oBdr7K0r7HcS6X4DCH",
-      "image": "showcases/projects/Chakra-UI's-Design-vs-Dev-Challenges.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": null,
-      "url": "https://polygon.am",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
-      "name": "UI Foundations",
-      "description": null,
-      "url": "https://www.uifoundations.com/",
-      "image": "showcases/projects/UI-Foundations.png",
-      "type": "projects"
-    },
-    {
-      "name": "DevKit",
-      "description": "A PWA that houses a number of developer focussed 🧰 tools. Free and Open Source, built with NextJS, ⚡ Chakra UI and a number of smaller libraries, by @AnishDe12020 and the 🧑‍🤝‍🧑 community.",
-      "url": "https://www.devkit.one/",
-      "image": "showcases/projects/DevKit.png",
-      "type": "projects"
-    },
-    {
-      "name": "React Python IDE",
-      "description": " Python IDE run in browser,  built with ReactJS,  🔥 Chakra UI, skulpt and Xterm.js. ",
-      "url": "https://react-python-ide.vercel.app/",
-      "image": "showcases/projects/React-Python-IDE.png",
-      "type": "projects"
-    },
-    {
-      "name": "Markdown Notes",
-      "description": " fully responsive note-taking application in markdown language, built with Chakra UI, react-markdown and codemirror.",
-      "url": "https://markdown-notes.netlify.app/",
-      "image": "showcases/projects/Markdown-Notes.png",
-      "type": "projects"
-    },
-    {
-      "name": "thirdweb",
-      "description": " web3 platform that offers contracts, intuitive SDKs, a dashboard and widgets for developers.",
-      "url": "https://thirdweb.com/",
-      "image": "showcases/projects/Third-Web.png",
-      "type": "projects"
-    },
-    {
-      "name": "Top.gg",
-      "description": "he Best Discord Bots and Servers.",
-      "url": "https://top.gg/",
-      "image": "showcases/projects/Top.gg.png",
-      "type": "projects"
-    },
-    {
-      "name": "Octoclairvoyant",
-      "description": " webapp to compare GitHub changelogs across multiple releases. Made with Next.js and Chakra UI.",
-      "url": "https://octoclairvoyant.vercel.app/",
-      "image": "showcases/projects/Octoclairvoyant.png",
-      "type": "projects"
-    },
-    {
-      "name": "Roadster",
-      "description": "ebsite of Roadster - fresh and new discord bot. Made with Next.js and Chakra",
-      "url": "https://r0adster.live",
-      "image": "showcases/projects/Roadster.png",
-      "type": "projects"
-    },
-    {
-      "name": "Chakra UI Pro",
-      "description": "Beautiful and responsive React components to build your application or marketing pages quicker. Created by the makers of Chakra UI.",
-      "url": "https://pro.chakra-ui.com",
-      "image": "showcases/projects/Chakra-UI-Pro.png",
-      "type": "projects"
-    },
-    {
-      "name": "Snappify",
-      "description": " code snippet creator",
-      "url": "https://snappify.io/",
-      "image": "showcases/projects/Snappify.png",
-      "type": "projects"
-    },
-    {
-      "name": "MockRocket",
-      "description": "how off your app with jaw-dropping 3D mockups and product videos, right in your browser",
-      "url": "https://mockrocket.io/",
-      "image": "showcases/projects/MockRocket.png",
-      "type": "projects"
-    },
-    {
-      "name": "Saas UI",
-      "description": "n advanced component library build for SaaS products.",
-      "url": "https://saas-ui.dev",
-      "image": "showcases/projects/Saas-UI.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://pre-alpha.polygon.am/",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
-      "name": "Polygon",
-      "description": "olygon is an upcoming open-source and privacy oriented social network. Uses Chakra UI and Next.js for the UI",
-      "url": "https://polygon.am/",
-      "image": "showcases/projects/Polygon.png",
-      "type": "projects"
-    },
-    {
-      "name": "Dev Resources",
-      "description": " collaborative list of resources for developers.",
-      "url": "https://devresourc.es",
-      "image": "showcases/projects/Dev-Resources.png",
-      "type": "projects"
-    },
-    {
-      "name": "Horizon UI",
-      "description": "rendiest Open Source Admin Template based on Chakra UI!",
-      "url": "https://horizon-ui.com/horizon-ui-chakra/",
-      "image": "showcases/projects/Horizon-UI.png",
-      "type": "projects"
-    },
-    {
-      "name": "Pesabooks",
-      "description": " digital platform to save and invest together, with Crypto.",
-      "url": "https://pesabooks.com/",
-      "image": "showcases/projects/Pesabooks.png",
-      "type": "projects"
-    },
-    {
-      "name": "Portion Monitor",
-      "description": "ecord Daily Portion Intake, Set Limits, and View Reports.",
-      "url": "https://portionmonitor.com/",
-      "image": "showcases/projects/Portion-Monitor.png",
-      "type": "projects"
-    },
-    {
-      "name": "TemplatesKart",
-      "description": "roduction-ready hand crafted beautiful Projects and Components list built on top of Chakra UI.",
-      "url": "https://templateskart.com/",
-      "image": "showcases/projects/TemplatesKart.png",
-      "type": "projects"
-    },
-    {
-      "name": "nextarter-chakra",
-      "description": "battery packed template to initialize Next.js app with Chakra UI & Typescript setup",
-      "url": "https://nextarter-chakra.sznm.dev",
-      "image": "showcases/projects/nextarter-chakra.png",
-      "type": "projects"
-    },
-    {
-      "name": "olamonde",
-      "description": "One link to rule them all. Easily place your links in a beautiful single page.",
-      "url": "https://olamonde.me",
-      "image": "showcases/projects/olamonde.png",
-      "type": "projects"
-    },
-    {
-      "name": "spoker",
-      "description": "Real-time multiparticipant scrum poker app. Estimate with your team.",
-      "url": "https://spoker.sznm.dev/intro",
-      "image": "showcases/projects/spoker.png",
-      "type": "projects"
-    },
-    {
-      "name": "Public APIs",
-      "description": "Find public APIs for your next project.",
-      "url": "https://publicapis.sznm.dev",
-      "image": "showcases/projects/Public-APIs.png",
-      "type": "projects"
-    },
-    {
-      "name": "Dokz",
-      "description": "Effortless documentation with Next.js and MDX.",
-      "url": "https://github.com/remorses/dokz",
-      "image": "showcases/projects/Dokz.png",
-      "type": "projects"
-    },
-    {
-      "name": "FeedHive",
-      "description": "Social Media content creation platform.",
-      "url": "https://feedhive.io",
-      "image": "showcases/projects/FeedHive.png",
-      "type": "projects"
-    },
-    {
-      "name": "Chakra UI Time Scroller",
-      "description": "This is a clean time picker/scroller built for javascript and typescript with chakra-ui",
-      "url": "https://www.npmjs.com/package/chakra-ui-time-scroller",
-      "image": "showcases/projects/Chakra-UI-Time-Scroller.png",
-      "type": "projects"
-    }
-  ],
-  "websites": [
-    {
-      "name": "WeWork4Days",
-      "description": "A website for finding 4-day week jobs 🔥.",
-      "url": "https://www.wework4days.com/",
-      "image": "showcases/websites/WeWork4Days.png",
-      "type": "websites"
-    },
-    {
-      "name": "Rich Haines's Website",
-      "description": null,
-      "url": "https://richardhaines.dev/",
-      "image": "showcases/websites/Rich-Haines's-Website.png",
-      "type": "websites"
-    },
-    {
-      "name": "Daniel Wirtz's Personal site",
-      "description": "Personal website build with Chakra UI, NextJS and Airtable ✨.",
-      "url": "https://danielwirtz.com",
-      "image": "showcases/websites/Daniel-Wirtz's-Personal-site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Nirmalya Ghosh's Site",
-      "description": "Personal portfolio built using Next.js, Chakra UI, SEO, MDX and TypeScript.",
-      "url": "https://nirmalyaghosh.com",
-      "image": "showcases/websites/Nirmalya-Ghosh's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Laura Beatris's Site",
-      "description": "My portfolio built with Next.js, Chakra UI and GraphCMS.",
-      "url": "https://laurabeatris.com",
-      "image": "showcases/websites/Laura-Beatris's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "SurabayaJS's Site",
-      "description": "Landing page for SurabayaJS, made using Next.js, Chakra UI, and Contentful 🐊.",
-      "url": "https://surabayajs.org",
-      "image": "showcases/websites/SurabayaJS's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Lazar Nikolov's Site",
-      "description": "Lazar's personal website. Made using Next.JS, Chakra UI, MDX, Prisma, PlanetScale, Airtable, Raindrop, and it’s deployed on Vercel.",
-      "url": "https://nikolovlazar.com",
-      "image": "showcases/websites/Lazar-Nikolov's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Bloomberg Global Coal Countdown",
-      "description": "A Rich data vizualitation website built with Next.JS, Chakra UI, and Nivo as the go-to online resource to track the world’s progress towards a coal-free future, by Zero One Group.",
-      "url": "https://bloombergcoalcountdown.com/",
-      "image": "showcases/websites/Bloomberg-Global-Coal-Countdown.png",
-      "type": "websites"
-    },
-    {
-      "name": "Klerye",
-      "description": "A platform to add and find Ghanaian Youtube and Twitch channels. Created using Next.js, Chakra-UI, Prisma, Railway's postgres, trpc and deployed on Vercel.",
-      "url": "https://www.klerye.com/",
-      "image": "showcases/websites/Klerye.png",
-      "type": "websites"
-    },
-    {
-      "name": "Confused's Site",
-      "description": "Creative engineering studio of digital products and video games. Website powered by NextJS, Typescript, Next-SEO, Chakra UI and Amplify.",
-      "url": "https://confused.studio",
-      "image": "showcases/websites/Confused's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "TRIGO's Site",
-      "description": "Company Website. We are a software development company specializing in business software. Our Website and all of our apps are powered by Chakra UI & co.",
-      "url": "https://trigodev.com",
-      "image": "showcases/websites/TRIGO's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Hari Kotha's Site",
-      "description": "Personal portfolio website built with React.js, React-Router and Chakra UI.",
-      "url": "https://harikotha.netlify.app/",
-      "image": "showcases/websites/Hari-Kotha's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Beema Finance",
-      "description": "Earn ultra-high, stable yields on dollars. Powered by DeFi. Built with Chakra UI 🌿.",
-      "url": "https://beema.finance",
-      "image": "showcases/websites/Beema-Finance.png",
-      "type": "websites"
-    },
-    {
-      "name": "wattanx's Site",
-      "description": "Personal website of wattanx. Made using Next.js, Chakra UI.",
-      "url": "https://wattanx.dev/",
-      "image": "showcases/websites/wattanx's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Gurudutt Perichetla's Website",
-      "description": "Guru's personal website. Built with NextJS and Chakra UI.",
-      "url": "https://www.guruduttperi.com/",
-      "image": "showcases/websites/Gurudutt-Perichetla's-Website.png",
-      "type": "websites"
-    },
-    {
-      "name": "Rakhi Boxes",
-      "description": "A beautiful gift delivered straight to your loved ones door.",
-      "url": "https://rakhiboxes.com",
-      "image": "showcases/websites/Rakhi-Boxes.png",
-      "type": "websites"
-    },
-    {
-      "name": "Bobobox Mandalika Campsite",
-      "description": "A landing page for promoting Mandalika Campsite by Bobobox X Eiger.",
-      "url": "https://bobobox.co.id/campsite/mandalika/",
-      "image": "showcases/websites/Bobobox-Mandalika-Campsite.png",
-      "type": "websites"
-    },
-    {
-      "name": "SURE Trust",
-      "description": " Free e-Learning platform. Build with chakra UI and ReactJs.",
-      "url": "https://suretrustforruralyouth.com/",
-      "image": "showcases/websites/SURE-Trust.png",
-      "type": "websites"
-    },
-    {
-      "name": "June",
-      "description": "An app that generates instant product analytics reports on top of Segment. Made using Next.js and a custom Chakra UI theme.",
-      "url": "https://june.so",
-      "image": "showcases/websites/June.png",
-      "type": "websites"
-    },
-    {
-      "name": "inspektre",
-      "description": "SAAS Platform for Application Security Posture Management",
-      "url": "https://inspektre.io",
-      "image": "showcases/websites/inspektre.png",
-      "type": "websites"
-    },
-    {
-      "name": "CeloPunk Auction",
-      "description": "CeloPunk is a NFT marketplace on celo testnet chain. Made using Next.js, Chakra UI, MDX icon, and it's deployed on Vercel. ",
-      "url": "https://celopunk-auction.vercel.app/",
-      "image": "showcases/websites/CeloPunk-Auction.png",
-      "type": "websites"
-    },
-    {
-      "name": "Gio Gold",
-      "description": "Gio Gold is an e-commerce web app, built with Next.js & Chakra UI. Our goal is to make investing in gold easy, affordable, and profitable for our valued customers.",
-      "url": "https://www.giogold.com/",
-      "image": "showcases/websites/Gio-Gold.png",
-      "type": "websites"
-    },
-    {
-      "name": "Sharehouse",
-      "description": "Australian Sharehouse/Housemate finder, built with Chakra UI, Next.js & Prisma 🏡💗",
-      "url": "https://sharehouse.app",
-      "image": "showcases/websites/Sharehouse.png",
-      "type": "websites"
-    },
-    {
-      "name": "Muhammad Ahmad's Site",
-      "description": "My personal portfolio website to show my skills, experience, and articles I published. This site built by using Next.js, Chakra Ui, Typescript and Dev.to api.",
-      "url": "https://mahmad.me",
-      "image": "showcases/websites/Muhammad-Ahmad's-Site.png",
-      "type": "websites"
-    },
-    {
-      "name": "Avana Wallet",
-      "description": "Solana blockchain non-custodial wallet that connects you to Web3 dapps, DeFi, GameFi and NFTs. Powered by Chakra UI and Next.js.",
-      "url": "https://www.avanawallet.com/",
-      "image": "showcases/websites/Avana-Wallet.png",
-      "type": "websites"
-    },
-    {
-      "name": "Supa Palette Website",
-      "description": "fficial website of Supa Palette plugin for Figma.",
-      "url": "https://supa-palette.com",
-      "image": "showcases/websites/Supa-Palette-Website.png",
-      "type": "websites"
-    },
-    {
-      "name": "CodeNanshu",
-      "description": "ersonal portfolio website built with Nextjs, advanced Techs and Chakra UI",
-      "url": "https://codenanshu.in",
-      "image": "showcases/websites/CodeNanshu.png",
-      "type": "websites"
-    },
-    {
-      "name": "itsrakesh - blog",
-      "description": "log website built with Chakra UI and NextJs.",
-      "url": "https://blog.itsrakesh.co/",
-      "image": "showcases/websites/itsrakesh---blog.png",
-      "type": "websites"
-    },
-    {
-      "name": "eduo Instrukcije",
-      "description": "latform for searching database of more than 6K questions and answers on school related questions for Croatian market. With over 200K+ monthly visits it is the biggest educational platform in Croatia.",
-      "url": "https://instrukcije.eduo.help/",
-      "image": "showcases/websites/eduo-Instrukcije.png",
-      "type": "websites"
-    },
-    {
-      "name": "Plan Harmony",
-      "description": "Collabortive trip planning.",
-      "url": "https://planharmony.com",
-      "image": "showcases/websites/Plan-Harmony.png",
-      "type": "websites"
-    },
-    {
-      "name": "Amine Elbarry",
-      "description": "Personal portfolio website built using Chakra⚡UI, Nextjs, Typescript and Graphql 💖",
-      "url": "https://elbarryamine.com",
-      "image": "showcases/websites/Amine-Elbarry.png",
-      "type": "websites"
-    },
-    {
-      "name": "Yash Kapure",
-      "description": "Personal Portfolio website built using Chakra❤UI, ReactJS, TypeScript and some of  my CSS Skills.",
-      "url": "https://yashkapure.netlify.app/",
-      "image": "showcases/websites/Yash-Kapure.png",
-      "type": "websites"
-    },
-    {
-      "name": "Vizima",
-      "description": " Company Website. We are an Indian hospitality company. Our Website is powered by Chakra UI, NextJS & Typescript.",
-      "url": "https://www.vizima.in",
-      "image": "showcases/websites/Vizima.png",
-      "type": "websites"
-    },
-    {
-      "name": "Devkind",
-      "description": "A full-fledge web development agency based in Melbourne. Powered by Chakra UI, Framer Motion, Next.js and Strapi.",
-      "url": "https://devkind.com.au/",
-      "image": "showcases/websites/Devkind.png",
-      "type": "websites"
-    },
-    {
-      "name": "Boring+Ordinary",
-      "description": "A design and development agency based in Montreal. Powered by Chakra UI, Framer Motion, Next.js, and Sanity.",
-      "url": "https://boringordinary.com",
-      "image": "showcases/websites/Boring+Ordinary.png",
-      "type": "websites"
-    },
-    {
-      "name": "MockZilla",
-      "description": "MockZilla - Create Unlimited Free API Calls for your React/Vue.js/Angular Apps!.",
-      "url": "https://mockzilla.com/",
-      "image": "showcases/websites/MockZilla.png",
-      "type": "websites"
-    },
-    {
-      "name": "Newton Mbugua Portfolio",
-      "description": "My personal porfolio build suing Next JS, Chakra UI and Notion as a CMS. ",
-      "url": "https://mbuguanewton.dev",
-      "image": "showcases/websites/Newton-Mbugua-Portfolio.png",
-      "type": "websites"
-    },
-    {
-      "name": "Júlio Mühlbauer",
-      "description": "ersonal portfolio built with Chakra UI, Nextjs and Typescript ⚡",
-      "url": "https://juliomuhlbauer.com",
-      "image": "showcases/websites/Júlio-Mühlbauer.png",
-      "type": "websites"
-    },
-    {
-      "name": "Life Pro Tips",
-      "description": "Tips to improve your life. From the creator of /r/lifeprotips.",
-      "url": "https://lifeprotips.com/",
-      "image": "showcases/websites/Life-Pro-Tips.png",
-      "type": "websites"
-    },
-    {
-      "name": "Schext",
-      "description": "A powerful text schedule tool, that allows your clients to set appointments without you.",
-      "url": "https://schext.com",
-      "image": "showcases/websites/Schext.png",
-      "type": "websites"
-    }
-  ],
-  "libraries": [
-    {
-      "name": "Chakra+Formik Integration Experiment",
-      "description": "An experiment for tight-knit Chakra+Formik integration with a familiar API",
-      "url": "https://github.com/with-heart/chakra-formik-experiment/",
-      "image": "showcases/libraries/Chakra+Formik-Integration-Experiment.png",
-      "type": "libraries"
-    },
-    {
-      "name": "Next-mdx-boilerplate",
-      "description": "NextJS + MDX starter with examples (Linting, Styled Components, Chakra UI).",
-      "url": "https://github.com/whoisryosuke/next-mdx-boilerplate",
-      "image": "showcases/libraries/Next-mdx-boilerplate.png",
-      "type": "libraries"
-    },
-    {
-      "name": "Start-ui",
-      "description": "Opinionated UI starter with ⚛️ React, ⚡️ Chakra UI, ⚛️ React Query & 🐜 Formiz — From the 🐻 BearStudio Team",
-      "url": "https://start-ui.vercel.app",
-      "image": "showcases/libraries/Start-ui.png",
-      "type": "libraries"
-    },
-    {
-      "name": "React-hook-form-generator",
-      "description": "Generate React forms from schema using Chakra UI and React Hook Form.",
-      "url": "https://github.com/FionnCasey/react-hook-form-generator",
-      "image": "showcases/libraries/React-hook-form-generator.png",
-      "type": "libraries"
-    },
-    {
-      "name": "Bison",
-      "description": "A Full Stack Jamstack in-a-box brought to you by Echobind",
-      "url": "https://github.com/echobind/bisonapp",
-      "image": "showcases/libraries/Bison.png",
-      "type": "libraries"
-    },
-    {
-      "name": "Fire Hydrant Design System",
-      "description": "FireHydrant flavored React component library, built using Chakra UI",
-      "url": "https://firehydrant.github.io/design-system/",
-      "image": "showcases/libraries/Fire-Hydrant-Design-System.png",
-      "type": "libraries"
-    }
-  ],
-  "tools": [
-    {
-      "name": "Chakra Figma UI Kit",
-      "description": "Chakra UI's official Figma components library.",
-      "url": "https://www.figma.com/community/file/971408767069651759",
-      "image": "showcases/tools/Chakra-Figma-UI-Kit.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Play",
-      "description": "An advanced online playground for Chakra UI.",
-      "url": "https://chakra-play.tk/",
-      "image": "showcases/tools/Chakra-Play.png",
-      "type": "tools"
-    },
-    {
-      "name": "Themera",
-      "description": "Create Chakra UI color schemes in seconds ⚡️.",
-      "url": "https://themera.vercel.app/",
-      "image": "showcases/tools/Themera.png",
-      "type": "tools"
-    },
-    {
-      "name": "OpenChakra",
-      "description": "Full-featured visual editor and code generator for React using Chakra UI.",
-      "url": "https://openchakra.app/",
-      "image": "showcases/tools/OpenChakra.png",
-      "type": "tools"
-    },
-    {
-      "name": "Nextchakra-starter",
-      "description": "template to initialize PWA ready Next.js app with Chakra UI & Typescript setup ✨.",
-      "url": "https://nextarter-chakra.sznm.dev/",
-      "image": "showcases/tools/Nextchakra-starter.png",
-      "type": "tools"
-    },
-    {
-      "name": "Frontity-chakra-ui-theme",
-      "description": "A Frontity theme built with Chakra UI.",
-      "url": "https://githubbox.com/chakra-ui/frontity-chakra-ui-theme",
-      "image": "showcases/tools/Frontity-chakra-ui-theme.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra-ui-autocomplete",
-      "description": "An utility autocomplete UI library to use with Chakra UI.",
-      "url": "https://koolamusic.github.io/chakra-ui-autocomplete/",
-      "image": "showcases/tools/Chakra-ui-autocomplete.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra-ui-navbar",
-      "description": "Fully-responsive NavBar component for landing pages built with Chakra-UI.",
-      "url": "https://www.raptis.wtf/blog/create-a-navbar-with-chakra-ui-react/",
-      "image": "showcases/tools/Chakra-ui-navbar.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra-ui-markdown-renderer",
-      "description": "react-markdown renderer for people who using Chakra-UI's CSSReset component.",
-      "url": "https://github.com/mustaphaturhan/chakra-ui-markdown-renderer",
-      "image": "showcases/tools/Chakra-ui-markdown-renderer.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra-next",
-      "description": "Opinionated design system for React, based on Chakra UI + Next.js, written in TypeScript.",
-      "url": "https://github.com/47ng/chakra-next",
-      "image": "showcases/tools/Chakra-next.png",
-      "type": "tools"
-    },
-    {
-      "name": "chakra-ui-steps",
-      "description": "Steps component designed to work seamlessly with Chakra UI.",
-      "url": "https://github.com/jeanverster/chakra-ui-steps",
-      "image": "showcases/tools/chakra-ui-steps.png",
-      "type": "tools"
-    },
-    {
-      "name": "Formik-chakra-ui",
-      "description": "Your Chakra-UI bindings for Formik",
-      "url": "https://github.com/kgnugur/formik-chakra-ui",
-      "image": "showcases/tools/Formik-chakra-ui.png",
-      "type": "tools"
-    },
-    {
-      "name": "Choc Autocomplete",
-      "description": "🏇 Autocomplete Component Package for Chakra UI",
-      "url": "https://githubbox.com/anubra266/choc-autocomplete/tree/main/demo",
-      "image": "showcases/tools/Choc-Autocomplete.png",
-      "type": "tools"
-    },
-    {
-      "name": "create-chakra-icons",
-      "description": null,
-      "url": "https://github.com/kodingdotninja/create-chakra-icons",
-      "image": "showcases/tools/create-chakra-icons.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Datepicker",
-      "description": null,
-      "url": "https://uselessdev-datepicker.netlify.app",
-      "image": "showcases/tools/Chakra-Datepicker.png",
-      "type": "tools"
-    },
-    {
-      "name": "HyperTheme Editor",
-      "description": "n advanced live theme editor for your Chakra UI projects",
-      "url": "https://www.hyperthe.me/",
-      "image": "showcases/tools/HyperTheme-Editor.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Capsize",
-      "description": "he power of Capsize inside Chakra UI",
-      "url": "https://githubbox.com/ceteio/chakra-capsize/tree/main/example",
-      "image": "showcases/tools/Chakra-Capsize.png",
-      "type": "tools"
-    },
-    {
-      "name": "create-chakra-icons",
-      "description": "ransform SVG to React Chakra UI <Icon /> ✨",
-      "url": "https://chakra-icons.com",
-      "image": "showcases/tools/create-chakra-icons.png",
-      "type": "tools"
-    },
-    {
-      "name": "react-spreadsheet-import",
-      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
-      "url": "https://ugnissoftware.github.io/react-spreadsheet-import/iframe.html?id=react-spreadsheet-import--basic&args=&viewMode=story",
-      "image": "showcases/tools/react-spreadsheet-import.png",
-      "type": "tools"
-    },
-    {
-      "name": "Supa Palette Plugin",
-      "description": "ll-in-one palettes generator, editor and manager for Figma.",
-      "url": "https://www.figma.com/community/plugin/1103648664059257410/Supa-Palette",
-      "image": "showcases/tools/Supa-Palette-Plugin.png",
-      "type": "tools"
-    },
-    {
-      "name": "eslint-plugin-chakra-ui",
-      "description": "SLint rules for Chakra UI, such as enforcing the order of props to be semantic",
-      "url": "https://github.com/Monchi/eslint-plugin-chakra-ui",
-      "image": "showcases/tools/eslint-plugin-chakra-ui.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra UI Prose",
-      "description": " custom Chakra UI component that adds ready-made styles for rendering remote HTML content.",
-      "url": "https://github.com/nikolovlazar/chakra-ui-prose",
-      "image": "showcases/tools/Chakra-UI-Prose.png",
-      "type": "tools"
-    },
-    {
-      "name": "withTypeScale",
-      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
-      "url": "https://www.npmjs.com/package/@tylerapfledderer/chakra-ui-typescale",
-      "image": "showcases/tools/withTypeScale.png",
-      "type": "tools"
-    },
-    {
-      "name": "react-spreadsheet-import",
-      "description": "n import flow component for Excel/CSV. Built with Chakra-UI and fully customisable.",
-      "url": "https://github.com/UgnisSoftware/react-spreadsheet-import",
-      "image": "showcases/tools/react-spreadsheet-import.png",
-      "type": "tools"
-    },
-    {
-      "name": "withTypeScale",
-      "description": "heme extension for Chakra UI, which generates theming for font type scales.",
-      "url": "https://github.com/TylerAPfledderer/chakra-ui-typescale",
-      "image": "showcases/tools/withTypeScale.png",
-      "type": "tools"
-    },
-    {
-      "name": "Choc Autocomplete",
-      "description": "🏇 Autocomplete Component Package for Chakra UI",
-      "url": "https://github.com/anubra266/choc-autocomplete",
-      "image": "showcases/tools/Choc-Autocomplete.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Datepicker",
-      "description": " simple datepicker with Chakra-UI and date-fns",
-      "url": "https://github.com/uselessdev/datepicker",
-      "image": "showcases/tools/Chakra-Datepicker.png",
-      "type": "tools"
-    },
-    {
-      "name": "Chakra Capsize",
-      "description": "he power of Capsize inside Chakra UI",
-      "url": "https://github.com/ceteio/chakra-capsize",
-      "image": "showcases/tools/Chakra-Capsize.png",
-      "type": "tools"
-    }
-  ],
-  "articles": [
-    {
-      "name": "How ChakraUI complements your existing web development skills",
-      "description": null,
-      "url": "https://dominik.sumer.dev/blog/chakra-complements-webdevs",
-      "image": "showcases/articles/How-ChakraUI-complements-your-existing-web-development-skills.png",
-      "type": "articles"
-    },
-    {
-      "name": "Accessibility on-demand with Chakra-ui and focus-visible",
-      "description": null,
-      "url": "https://medium.com/@keeganfamouss/accessibility-on-demand-with-chakra-ui-and-focus-visible-19413b1bc6f9",
-      "image": "showcases/articles/Accessibility-on-demand-with-Chakra-ui-and-focus-visible.png",
-      "type": "articles"
-    },
-    {
-      "name": "Build a Landing Page with Chakra UI",
-      "description": null,
-      "url": "https://raptis.wtf/blog/build-a-landing-page-with-chakra-ui-part-1/",
-      "image": "showcases/articles/Build-a-Landing-Page-with-Chakra-UI.png",
-      "type": "articles"
-    },
-    {
-      "name": "Customisations with Chakra UI",
-      "description": null,
-      "url": "https://www.easyreact.com/articles/chakra-ui-customisations",
-      "image": "showcases/articles/Customisations-with-Chakra-UI.png",
-      "type": "articles"
-    },
-    {
-      "name": "Chakra UI and React-Hook-Form – How to Build Beautiful Forms",
-      "description": null,
-      "url": "https://www.freecodecamp.org/news/how-to-use-react-hook-form-with-chakra-ui/",
-      "image": "showcases/articles/Chakra-UI-and-React-Hook-Form-–-How-to-Build-Beautiful-Forms.png",
-      "type": "articles"
-    },
-    {
-      "name": "Truncating Text using Chakra UI",
-      "description": null,
-      "url": "https://dev.to/estheragbaje/how-to-truncate-text-using-chakra-ui-4mpj",
-      "image": "showcases/articles/Truncating-Text-using-Chakra-UI.png",
-      "type": "articles"
-    },
-    {
-      "name": "How to Set Up Chakra UI with Next JS by creating a Hero component",
-      "description": "",
-      "url": "https://creativedesignsguru.com/chakra-ui-next-js/",
-      "image": "showcases/articles/How-to-Set-Up-Chakra-UI-with-Next-JS-by-creating-a-Hero-component.png",
-      "type": "articles"
-    },
-    {
-      "name": "Choosing the right component library for your design system: MUI vs Chakra",
-      "description": "",
-      "url": "https://engineering.udacity.com/choosing-the-right-component-library-for-your-design-system-mui-vs-chakra-45c4c949d150",
-      "image": "showcases/articles/Choosing-the-right-component-library-for-your-design-system-MUI-vs-Chakra.png",
-      "type": "articles"
-    },
-    {
-      "name": "I have created Web Gallery app using Reactjs , WebRTC and Chakra UI",
-      "description": "",
-      "url": "https://dev.to/harshmangalam/i-have-created-web-gallery-app-using-reactjs-webrtc-and-chakra-ui-5cfn",
-      "image": "showcases/articles/I-have-created-Web-Gallery-app-using-Reactjs-,-WebRTC-and-Chakra-UI.png",
-      "type": "articles"
-    },
-    {
-      "name": "Track user location coordinates realtime using geolocation api, nextjs , nodejs and socket.io",
-      "description": "",
-      "url": "https://dev.to/harshmangalam/track-user-location-coordinates-realtime-using-geolocation-api-nextjs-nodejs-and-socket-io-2nf3",
-      "image": "showcases/articles/Track-user-location-coordinates-realtime-using-geolocation-api,-nextjs-,-nodejs-and-socket.io.png",
-      "type": "articles"
-    },
-    {
-      "name": "Setup Nextjs , Apollo client and Chakra UI for your upcomming projects",
-      "description": "",
-      "url": "https://dev.to/harshmangalam/setup-nextjs-apollo-client-and-chakra-ui-for-your-upcomming-projects-10ja",
-      "image": "showcases/articles/Setup-Nextjs-,-Apollo-client-and-Chakra-UI-for-your-upcomming-projects.png",
-      "type": "articles"
-    },
-    {
-      "name": "Image Uploading using golang and react",
-      "description": "",
-      "url": "https://dev.to/harshmangalam/image-upload-using-golang-and-react-29n1",
-      "image": "showcases/articles/Image-Uploading-using-golang-and-react.png",
-      "type": "articles"
-    },
-    {
-      "name": "How To Build an Advanced Multipart Component with Chakra UI",
-      "description": "",
-      "url": "https://www.lekoarts.de/react/how-to-build-an-advanced-multipart-component-with-chakra-ui",
-      "image": "showcases/articles/How-To-Build-an-Advanced-Multipart-Component-with-Chakra-UI.png",
-      "type": "articles"
-    }
-  ],
-  "videos": [
-    {
-      "name": "Getting Started with Chakra UI",
-      "description": null,
-      "url": "https://youtu.be/wI2vqXsjsIo",
-      "image": "https://img.youtube.com/vi/wI2vqXsjsIo/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "The Future of Chakra UI (with Segun Adebayo & Lee Robinson)",
-      "description": null,
-      "url": "https://www.youtube.com/watch?v=I5xEc9t-HZg&t=1182s",
-      "image": "https://img.youtube.com/vi/I5xEc9t-HZg/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Building an Absence Tracker with Blitz JS and Chakra UI (Series)",
-      "description": null,
-      "url": "https://youtu.be/bJmFwle8Ax0",
-      "image": "https://img.youtube.com/vi/bJmFwle8Ax0/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "How to use Chakra UI with Next.js and React",
-      "description": null,
-      "url": "https://youtube.com/watch?v=ubB5l-HVPgY&feature=share",
-      "image": "https://img.youtube.com/vi/ubB5l-HVPgY/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Customise your theme and components",
-      "description": null,
-      "url": "https://youtube.com/watch?v=1J8dUyeUWO4&feature=share",
-      "image": "https://img.youtube.com/vi/1J8dUyeUWO4/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Learn Chakra UI by building a Todo Application with Local Storage, Dark Mode enabled.",
-      "description": null,
-      "url": "https://youtube.com/watch?v=QVnkGqEsbK0&feature=share",
-      "image": "https://img.youtube.com/vi/QVnkGqEsbK0/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Design Workflow with Chakra UI and Figma",
-      "description": null,
-      "url": "https://youtu.be/Gm7qHn9Y_Ro",
-      "image": "https://img.youtube.com/vi/Gm7qHn9Y_Ro/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Chakra UI for Beginners",
-      "description": "",
-      "url": "https://www.chakrauiforbeginners.com/",
-      "image": "showcases/videos/Chakra-UI-for-Beginners.png",
-      "type": "videos"
-    },
-    {
-      "name": "Chakra UI crash course",
-      "description": "",
-      "url": "https://youtu.be/hJ873mLhmFQ",
-      "image": "https://img.youtube.com/vi/hJ873mLhmFQ/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Chakra Shorts #1 - Dynamic Shadow Image",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=HMTyQjASff4",
-      "image": "https://img.youtube.com/vi/HMTyQjASff4/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Chakra Shorts #2 - Custom Ring Colors",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=7p16X1JkEE0",
-      "image": "https://img.youtube.com/vi/7p16X1JkEE0/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Maintaining Chakra UI",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=0TLxtE_GCbM",
-      "image": "https://img.youtube.com/vi/0TLxtE_GCbM/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "How to use Chakra UI's Default Theme",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=KOCAnM7HJ4U",
-      "image": "https://img.youtube.com/vi/KOCAnM7HJ4U/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "Chakra UI and Gatsby - Getting Started",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=hXM9Ju_NIpU",
-      "image": "https://img.youtube.com/vi/hXM9Ju_NIpU/maxresdefault.jpg",
-      "type": "videos"
-    },
-    {
-      "name": "How to enable Right-to-Left (RTL) support using Chakra UI",
-      "description": "",
-      "url": "https://www.youtube.com/watch?v=PzEHoqLj4OM",
-      "image": "https://img.youtube.com/vi/PzEHoqLj4OM/maxresdefault.jpg",
-      "type": "videos"
-    }
-  ]
-}
+[
+  {
+    "name": "Chakra UI Pro",
+    "url": "https://pro.chakra-ui.com",
+    "image": "showcases/Chakra-UI-Pro.jpg"
+  },
+  {
+    "name": "Ethereum",
+    "url": "https://ethereum.org/",
+    "image": "showcases/ethereum.jpg"
+  },
+  {
+    "name": "Planet.com",
+    "url": "https://planet.com/",
+    "image": "showcases/planet.jpg"
+  },
+  {
+    "name": "yubo",
+    "url": "https://yubo.live/",
+    "image": "showcases/yubo.jpg"
+  },
+  {
+    "name": "Saas UI",
+    "url": "https://saas-ui.dev",
+    "image": "showcases/Saas-UI.jpg"
+  },
+  {
+    "name": "Typebot",
+    "url": "https://typebot.io",
+    "image": "showcases/Typebot.jpg"
+  },
+  {
+    "name": "Snappify",
+    "url": "https://snappify.io/",
+    "image": "showcases/Snappify.jpg"
+  },
+  {
+    "name": "Supa Palette Website",
+    "url": "https://supa-palette.com",
+    "image": "showcases/Supa-Palette-Website.jpg"
+  },
+  {
+    "name": "thirdweb",
+    "url": "https://thirdweb.com/",
+    "image": "showcases/thirdweb.jpg"
+  },
+  {
+    "name": "Razorpay",
+    "url": "https://razorpay.com",
+    "image": "showcases/Razorpay.jpg"
+  },
+  {
+    "name": "World Economic Forum",
+    "url": "https://weforum.org/",
+    "image": "showcases/weforum.jpg"
+  },
+  {
+    "name": "iFixit",
+    "url": "https://ifixit.com/",
+    "image": "showcases/ifixit.jpg"
+  },
+  {
+    "name": "BrandBird",
+    "url": "https://brandbird.app",
+    "image": "showcases/BrandBird.jpg"
+  },
+  {
+    "name": "June",
+    "url": "https://june.so",
+    "image": "showcases/June.jpg"
+  },
+  {
+    "name": "Clerk",
+    "url": "https://clerk.dev",
+    "image": "showcases/Clerk.jpg"
+  },
+  {
+    "name": "StockX",
+    "url": "https://stockx.com",
+    "image": "showcases/StockX.jpg"
+  },
+  {
+    "name": "MockRocket",
+    "url": "https://mockrocket.io/",
+    "image": "showcases/MockRocket.jpg"
+  },
+  {
+    "name": "Apollo Odyssey",
+    "url": "https://www.apollographql.com/tutorials/",
+    "image": "showcases/Apollo-Odyssey.jpg"
+  },
+  {
+    "name": "Stately.ai",
+    "url": "https://stately.ai/registry/new",
+    "image": "showcases/Stately.jpg"
+  },
+  {
+    "name": "Horizon UI",
+    "url": "https://horizon-ui.com/horizon-ui-chakra/",
+    "image": "showcases/Horizon-UI.jpg"
+  },
+  {
+    "name": "Life Pro Tips",
+    "url": "https://lifeprotips.com/",
+    "image": "showcases/Life-Pro-Tips.jpg"
+  },
+  {
+    "name": "UI Foundations",
+    "url": "https://www.uifoundations.com/",
+    "image": "showcases/UI-Foundations.jpg"
+  },
+  {
+    "name": "Tweetpik",
+    "url": "https://tweetpik.com",
+    "image": "showcases/Tweetpik.jpg"
+  },
+  {
+    "name": "Bitwarden",
+    "url": "https://bitwarden.com",
+    "image": "showcases/Bitwarden.jpg"
+  }
+]

@@ -73,11 +73,7 @@ function errorMessageExample() {
   return (
     <FormControl isInvalid={isError}>
       <FormLabel>Email</FormLabel>
-      <Input
-        type='email'
-        value={input}
-        onChange={handleInputChange}
-      />
+      <Input type='email' value={input} onChange={handleInputChange} />
       {!isError ? (
         <FormHelperText>
           Enter the email you'd like to receive the newsletter on.
@@ -138,6 +134,9 @@ Form Libraries like [Formik](https://jaredpalmer.com/formik/) make it soooo easy
 to manage form state and validation. I 💖 Formik
 
 ```jsx
+// The below import defines which components come from formik
+// import { Field, Form, Formik } from 'formik';
+
 function FormikExample() {
   function validateName(value) {
     let error
@@ -205,7 +204,9 @@ function FormikExample() {
 - If you render `FormErrorMessage` and `isInvalid` is `false` or `undefined`,
   `FormErrorMessage` won't be visible. The only way to make it visible is by
   passing `isInvalid` and setting it to `true`.
-  
-- You can still supply an `id` prop to `FormControl` that will override the randomly generated `id` and attach to the `for` attribute of the label and the `id` of the form element. (It also affects the `id` attribute of the label)
+- You can still supply an `id` prop to `FormControl` that will override the
+  randomly generated `id` and attach to the `for` attribute of the label and the
+  `id` of the form element. (It also affects the `id` attribute of the label)
 
-- The combination of `htmlFor` and `id` are optional in which adding both will also override the generated `id` sent to the provider.
+- The combination of `htmlFor` and `id` are optional in which adding both will
+  also override the generated `id` sent to the provider.

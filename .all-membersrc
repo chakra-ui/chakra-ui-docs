@@ -86,9 +86,19 @@
       "url": "https://github.com/peoray",
       "blog": "https://peoray.dev",
       "name": "Emmanuel Raymond",
-      "bio": "Full-stack software engineer. I love OSS",
+      "bio": "Software Engineer. Open source, Music & Nature lover.",
       "twitter_username": "peoray_",
       "location": "Remote"
+    },
+    {
+      "login": "Shyrro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10008963?v=4",
+      "url": "https://github.com/Shyrro",
+      "blog": "",
+      "name": "Sahmane Zakaria",
+      "bio": null,
+      "twitter_username": "TheDumbThinker",
+      "location": "France"
     },
     {
       "login": "TimKolberger",
@@ -98,7 +108,7 @@
       "name": "Tim Kolberger",
       "bio": "DevOps Engineer at DB Systel | maintainer @chakra-ui |\r\n[React, nodeJS, GraphQL, ...❤️]",
       "twitter_username": "TimKolberger",
-      "location": "Darmstadt, Germany"
+      "location": "Wiesbaden, Germany"
     }
   ]
 }
