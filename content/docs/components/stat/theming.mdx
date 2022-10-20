@@ -14,8 +14,8 @@ The Stat component is a multipart component. The styling needs to be applied to 
 - A: `container`
 - B: `label`
 - C: `helpText`
-- D: `icon`
-- E: `number`
+- D: `number`
+- E: `icon`
 
 <AspectRatio ratio={16 / 9}>
   <svg
@@ -319,3 +319,41 @@ export const statTheme = defineMultiStyleConfig({
 Every time you're adding anything new to the theme, you'd need to run the CLI
 command to get proper autocomplete in your IDE. You can learn more about the CLI
 tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom pill variant. Here's how we can do
+that:
+
+```jsx live=false
+import { statAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(statAnatomy.keys)
+
+const danger = definePartsStyle({
+  container: {
+    background: "red.100",
+    borderRadius: "lg",
+    padding: "4"
+  },
+  helpText: {
+    fontWeight: "bold"
+  },
+  label: {
+    color: "red.500"
+  },
+  number: {
+    fontStyle: "italic"
+  }
+})
+
+export const statTheme = defineMultiStyleConfig({
+  variants: { danger },
+})
+
+// Now we can use the new `danger` variant
+<Stat variant={"danger"} ...>
+```
+
