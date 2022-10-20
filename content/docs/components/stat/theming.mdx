@@ -354,6 +354,27 @@ export const statTheme = defineMultiStyleConfig({
 })
 
 // Now we can use the new `danger` variant
-<Stat variant={"danger"} ...>
+<Stat variant={"danger"} .../>
 ```
 
+## Showcase
+
+import {
+  App,
+  Index,
+  StatTheme,
+} from 'configs/sandpack-contents/component-theming/stat'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Stat.ts': StatTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
