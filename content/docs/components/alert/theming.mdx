@@ -2,3 +2,186 @@
 id: alert
 scope: theming
 ---
+
+The `Alert` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Theming properties
+
+The properties that affect the theming of the `Alert` component are:
+
+- `variant`: The visual variant of the alert.
+- `colorScheme`: The color combination of the alert.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { alertAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(alertAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { alertAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(alertAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  title: {
+    fontFamily: 'mono', // change the font family
+    color: 'teal.500', // change the input text color
+  },
+})
+
+export const alertTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the alert theme, we can import it in our theme file and add it
+in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { alertTheme } from './components/alert'
+
+export const theme = extendTheme({
+  components: { Alert: alertTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the alert
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large input size. Here's how we can do
+that:
+
+```jsx live=false
+import { alertAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(alertAnatomy.keys)
+
+const xl = defineStyle({
+  fontSize: 'lg',
+  px: '4',
+  h: '12',
+})
+
+const sizes = {
+  xl: definePartsStyle({ title: xl, description: xl }),
+}
+
+export const alertTheme = defineMultiStyleConfig({ sizes })
+
+// Now we can use the new `xl` size
+<Alert size="xl" ... />
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom variant. Here's how we can do that:
+
+```jsx live=false
+import { alertAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(alertAnatomy.keys)
+
+const customVariant = definePartsStyle({
+  container: {
+    border: '1px solid',
+    borderColor: 'gray.200',
+    background: 'gray.50',
+
+    // Let's also provide dark mode alternatives
+    _dark: {
+      borderColor: 'gray.600',
+      background: 'gray.800',
+    },
+  },
+  title: {
+    color: 'teal.500',
+    _dark: {
+      color: 'cyan.400',
+    },
+  },
+})
+
+export const alertTheme = defineMultiStyleConfig({
+  variants: { custom: customVariant },
+})
+
+// Now we can use the new `custom` variant
+<Alert variant="custom" ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every input in
+our app. Here's how we can do that:
+
+```jsx live=false
+import { alertAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  alertAnatomy.keys,
+)
+
+export const alertTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'custom',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use an input:
+<Alert size="xl" variant="custom" ... />
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  AlertTheme,
+} from 'configs/sandpack-contents/component-theming/alert'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Alert.ts': AlertTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
