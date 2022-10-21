@@ -16,14 +16,14 @@ export default function App() {
             <Tag size="ml">XL Tag</Tag>
         </Center>
         <IconButton
-        aria-label="toggle theme"
-        rounded="full"
-        size="xs"
-        position="absolute"
-        bottom={4}
-        left={4}
-        onClick={toggleColorMode}
-        icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+            aria-label="toggle theme"
+            rounded="full"
+            size="xs"
+            position="absolute"
+            bottom={4}
+            left={4}
+            onClick={toggleColorMode}
+            icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
         />
     </Box>
     );
@@ -45,11 +45,25 @@ root.render(
         <App />
     </ChakraProvider>
 );`,
-    TagTheme: `import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
+    TagTheme: `import { tagAnatomy } from "@chakra-ui/anatomy"
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
-const brandPrimary = defineStyle({
-    bg: "orange.400",
-    color: "blackAlpha.700"
+const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(tagAnatomy.keys)
+
+const brandPrimary = definePartsStyle({
+    container: {
+        bg: "orange.400",
+        color: "blackAlpha.700"
+    }
+});
+
+const thick = definePartsStyle({
+    container: {
+        px: "4",
+        py: "2",
+        bg: "blue.400"
+    }
 });
 
 const ml = defineStyle({
@@ -58,16 +72,12 @@ const ml = defineStyle({
     fontSize: "25"
 });
 
-const thick = defineStyle({
-    px: "4",
-    py: "2",
-    bg: "blue.400"
-});
+const sizes = {
+    ml: definePartsStyle({ container: ml, label: ml })
+}
 
-export const tagTheme = defineStyleConfig({
-    sizes: {
-        ml: ml
-    },
+export const tagTheme = defineMultiStyleConfig({
+    sizes,
     variants: {
         brand: brandPrimary,
         thick: thick

@@ -5,12 +5,18 @@ scope: theming
 
 ## Overview
 
-The `Tag` component is a single part component. All of the styling is
-applied directly to the `button` element.
+The `Tag` component is a multipart component. The styling needs to be applied to
+each part specifically.
 
 > To learn more about styling single part components, visit the
-> [Component Style](/docs/styled-system/component-style#styling-single-part-components)
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
 > page
+
+## Anantomy
+
+- A: `container`
+- B: `label`
+- C: `closeButton`
 
 ## Theming properties
 
@@ -22,32 +28,43 @@ The properties that affect the theming of the `Tag` component are:
 
 ## Theming utilities
 
-- `defineStyle`: a function used to create style objects.
-- `defineStyleConfig`: a function used to define the style configuration for a
-  single part component.
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
 
 ```js
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(tagAnatomy.keys)
 ```
 
 ## Customizing the default theme
 
 ```js
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
-const thick = defineStyle({
-    px: "4",
-    py: "2",
-    bg: "blue.400"
-});
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(tagAnatomy.keys)
 
-export const tagTheme = defineStyleConfig({
-    variants: { thick },
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+    bg: "orange.400",
+    color: "blackAlpha.700"
+  },
 })
+
+export const tagTheme = defineMultiStyleConfig({ baseStyle })
 ```
 
-After customizing the tag theme, we can import it in our theme file and add
-it in the components property:
+After customizing the tag theme, we can import it in our theme file and add it
+in the components property:
 
 ```js
 import { extendTheme } from '@chakra-ui/react'
@@ -58,16 +75,17 @@ export const theme = extendTheme({
 })
 ```
 
-> This is a crucial step to make sure that any changes that we make to the
-> tag theme are applied.
+> This is a crucial step to make sure that any changes that we make to the tag
+> theme are applied.
 
 ## Adding a custom size
 
-Let's assume we want to include an extra large tag size. Here's how we can
-do that:
+Let's assume we want to include an extra large tag size. Here's how we can do
+that:
 
 ```js
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { tagAnatomy } from "@chakra-ui/anatomy"
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
 const ml = defineStyle({
     px: "3",
@@ -75,9 +93,11 @@ const ml = defineStyle({
     fontSize: "25"
 });
 
-export const tagTheme = defineStyleConfig({
-    sizes: { ml },
-})
+const sizes = {
+    ml: definePartsStyle({ container: ml, label: ml })
+}
+
+export const tagTheme = defineMultiStyleConfig({ sizes });
 
 // Now we can use the new `xl` size
 <Tag size="ml" />
@@ -93,35 +113,57 @@ Let's assume we want to include a custom branded variant. Here's how we can do
 that:
 
 ```js
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { tagAnatomy } from "@chakra-ui/anatomy"
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
-const brandPrimary = defineStyle({
+const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(tagAnatomy.keys)
+
+const brandPrimary = definePartsStyle({
+  container: {
     bg: "orange.400",
     color: "blackAlpha.700"
+  }
 });
 
-export const tagTheme = defineStyleConfig({
-    variants: { brandPrimary },
-})
+const thick = definePartsStyle({
+  container: {
+    px: "4",
+    py: "2",
+    bg: "blue.400"
+  }
+});
+
+export const tagTheme = defineMultiStyleConfig({
+  variants: {
+    brand: brandPrimary,
+    thick: thick
+  }
+});
 
 // Now we can use the new `brandPrimary` variant
-<Tag variant="brandPrimary" />
+<Tag variant="brand" />
 ```
 
 ## Changing the default properties
 
 ```js
-import { defineStyleConfig } from '@chakra-ui/react'
-export const tagTheme = defineStyleConfig({
-    defaultProps: {
-        size: 'ml',
-        variant: 'thick',
-        colorScheme: 'brand',
-    },
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  tagAnatomy.keys,
+)
+
+export const tagTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'ml',
+    variant: 'brand',
+  },
 })
-// This saves you time, instead of manually setting the size,
-// variant and color scheme every time you use a tag:
-<Tag size="xl" variant="thick" colorScheme="brand" />
+
+// This saves you time, instead of manually setting the size and variant every time you use an input:
+<Input size="ml" variant="brand" ... />
 ```
 
 ## Showcase
