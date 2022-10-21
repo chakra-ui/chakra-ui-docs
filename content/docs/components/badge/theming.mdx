@@ -3,7 +3,6 @@ id: badge
 scope: theming
 ---
 
-
 The `Badge` component is a single part component. All of the styling is applied
 directly to the `span` element.
 
@@ -44,20 +43,20 @@ export const badgeTheme = defineStyleConfig({
 })
 ```
 
-After customizing the badge theme, we can import it in our theme file and add
-it in the `components` property:
+After customizing the badge theme, we can import it in our theme file and add it
+in the `components` property:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
-import { badgeTheme } from './components/badge.ts'
+import { badgeTheme } from './components/badge'
 
 export const theme = extendTheme({
   components: { Badge: badgeTheme },
 })
 ```
 
-> This is a crucial step to make sure that any changes that we make to the
-> badge theme are applied.
+> This is a crucial step to make sure that any changes that we make to the badge
+> theme are applied.
 
 ## Adding a custom size
 
@@ -181,4 +180,3 @@ import {
     'react-icons': '^4.4.0',
   }}
 />
-
