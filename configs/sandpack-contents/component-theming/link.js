@@ -7,23 +7,30 @@ export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
     <Box position="relative" h="100vh">
-      <SimpleGrid gap={12} p={12}>
+      <SimpleGrid gap={12} p={12} columns={2}>
         <Link textDecoration={"underline"} href="https://chakra-ui.com">
-          Themed Underline Link
+          themed underline link
         </Link>
         <Link href="https://chakra-ui.com" isExternal>
-          Themed External Link <ExternalLinkIcon mx="2px" />
+          themed external link <ExternalLinkIcon mx="2px" />
         </Link>
         <Text>
           Themed Link{" "}
           <Link href="https://chakra-ui.com">
-            With Inline Text
+            with inline text
           </Link>
         </Text>
+        <Link href="https://chakra-ui.com" variant="custom">
+          themed link with custom variant
+        </Link>
+        <Link href="https://chakra-ui.com" size="xl">
+          link size xl
+        </Link>
       </SimpleGrid>
 
       <IconButton
         rounded="full"
+        aria-label="change theme"
         size="xs"
         position="absolute"
         bottom={4}
@@ -58,47 +65,37 @@ root.render(
 const baseStyle = defineStyle({
   fontWeight: "normal", // change the font weight to normal
   fontFamily: "mono", // change the font family to monospaced
-  textColor:  "purple.500" // change the text color to purple
+  textColor:  "purple.500", // change the text color to purple
+  textTransform:'capitalize'
 })
 
 const sizes = {
-  md: defineStyle({
-    fontSize: "sm", // Change font size to sm (14px)
+  xl: defineStyle({
+    fontSize: "xl", // Change font size to sm (20px),
   }),
 }
+
 
 // Defining a custom variant
 const customVariant = defineStyle((props) => {
   const { colorScheme: c } = props
   return {
     fontFamily: "sans-serif",
-    bg: \`\${c}.500\`,
-    fontWeight: "semibold",
     color: 'white',
-    borderRadius: '3xl',
-    transition: 'transform 0.15s ease-out, background 0.15s ease-out',
+    transition: 'transform 0.15s ease-out, fontWeight 0.15s ease-out',
     _dark: {
-      bg: \`\${c}.200\`,
-      color: 'gray.800',
+      color: \`\${c}.500\`,
     },
-
+    
     _hover: {
       transform: "scale(1.05, 1.05)",
-      bg: \`\${c}.600\`,
-
+      fontWeight: "semibold",
+      textDecorationStyle: "wavy",
       _dark: {
-        bg: \`\${c}.300\`,
+        color: \`\${c}.500\`,
       },
     },
 
-    _active: {
-      bg: \`\${c}.700\`,
-      transform: "scale(1, 1)",
-
-      _dark: {
-        bg: \`\${c}.400\`,
-      }
-    },
   }
 })
 
