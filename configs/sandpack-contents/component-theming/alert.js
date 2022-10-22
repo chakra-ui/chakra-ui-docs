@@ -62,7 +62,6 @@ import {
   createMultiStyleConfigHelpers,
   defineStyle,
 } from "@chakra-ui/styled-system";
-import { extendTheme } from "@chakra-ui/react";
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys);
@@ -70,17 +69,23 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   // define the part you're going to style
   title: {
-    color: "teal.500", // change the color of the title text of the alert
+    color: "teal.300", // change the color of the title text of the alert
+    fontWeight: "bold",
+  },
+  description: {
+    fontWeight: "semibold",
   },
 });
 
 // Defining a custom variant called mono
 const mono = definePartsStyle((props) => {
-  const { colorScheme: c } = props;
+  const { status } = props;
+  console.log({ props });
   return {
     container: {
       border: "1px solid",
       borderColor: "gray.100",
+      bg: status === "error" ? "red.800" : "gray.100",
     },
     title: { fontFamily: "mono" },
     description: {
