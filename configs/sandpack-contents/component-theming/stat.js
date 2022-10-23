@@ -1,6 +1,6 @@
 module.exports = {
-  App: `import { useColorMode,IconButton, StatGroup, Box, SimpleGrid, Flex, Stat, StatArrow, StatHelpText, StatLabel, StatNumber } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaPhone } from "react-icons/fa";
+  App: `import { useColorMode,IconButton, StatGroup, Box, Stat, StatArrow, StatHelpText, StatLabel, StatNumber } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -15,7 +15,7 @@ export default function App() {
                 23.36%
               </StatHelpText>
             </Stat>
-          
+
             <Stat variant="danger">
               <StatLabel>Clicked</StatLabel>
               <StatNumber>45</StatNumber>
@@ -38,8 +38,7 @@ export default function App() {
     </Box>
   );
 }`,
-  Index: `import * as React from "react";
-import { createRoot } from "react-dom/client";
+  Index: `import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
@@ -59,51 +58,50 @@ root.render(
   </ChakraProvider>
 );`,
   StatTheme: `import { statAnatomy } from '@chakra-ui/anatomy'
-  import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
-  
-  const { definePartsStyle, defineMultiStyleConfig } =
-    createMultiStyleConfigHelpers(statAnatomy.keys)
-  
-    const danger = definePartsStyle({
-      container: {
-        borderRadius: "lg",
-        border: "2px solid",
-        borderColor: "red.100",
-        p: 1
-      },
-      helpText: {
-        fontWeight: "bold"
-      },
-      label: {
-        color: "red.500"
-      },
-      number: {
-        fontStyle: "italic",
-        color: "red.400"
-      }
-    })
-    
-    const great =  definePartsStyle({
-      container: {
-        borderRadius: "lg",
-        border: "2px solid",
-        borderColor: "yellow.500",
-        p: 1,
-      },
-      helpText: {
-        fontWeight: "bold"
-      },
-      label: {
-        color: "yellow.500"
-      },
-      number: {
-        fontStyle: "italic",
-        color: "yellow.500"
-      },
-    })
-    
-    export const statTheme = defineMultiStyleConfig({
-      variants: { danger , great},
-    })
-    `,
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+createMultiStyleConfigHelpers(statAnatomy.keys)
+
+const danger = definePartsStyle({
+  container: {
+    borderRadius: "lg",
+    border: "2px solid",
+    borderColor: "red.100",
+    p: 1
+  },
+  helpText: {
+    fontWeight: "bold"
+  },
+  label: {
+    color: "red.500"
+  },
+  number: {
+    fontStyle: "italic",
+    color: "red.400"
+  }
+})
+
+const great =  definePartsStyle({
+  container: {
+    borderRadius: "lg",
+    border: "2px solid",
+    borderColor: "yellow.500",
+    p: 1,
+  },
+  helpText: {
+    fontWeight: "bold"
+  },
+  label: {
+    color: "yellow.500"
+  },
+  number: {
+    fontStyle: "italic",
+    color: "yellow.500"
+  },
+})
+
+export const statTheme = defineMultiStyleConfig({
+  variants: { danger , great},
+})`,
 }
