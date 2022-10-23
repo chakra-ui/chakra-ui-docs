@@ -13,8 +13,8 @@ The `Textarea` component is a single part component. All of the styling is appli
 
 The properties that affect the theming of the `Textarea` component are:
 
-- variant
-- size
+- `variant`: The visual variant of the textarea. Defaults to `outline`.
+- `size`: The size of the textarea. Defaults to `md`.
 
 ## Theming utilities
 
@@ -47,7 +47,7 @@ it in the `components` property:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
-import { textareaTheme } from './components/textarea.ts'
+import { textareaTheme } from './components/textarea'
 
 export const theme = extendTheme({
   components: { Textarea: textareaTheme },
