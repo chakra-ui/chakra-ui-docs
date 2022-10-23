@@ -8,16 +8,24 @@ export default function App() {
     <Box position="relative" h="100vh">
       <SimpleGrid gap={12} p={12} columns={2}>
         <Code>
-          Themed solid code
+          const getCodeType = () => "default"
+          <br/>
+          getCodeType() // default
         </Code>
         <Code variant="custom">
-          Themed custom code
+          const getCodeType = () => "custom"
+          <br/>
+          getCodeType() // custom
         </Code>
         <Code variant="solid">
-          Themed solid code
+          const getCodeType = () => "solid"
+          <br/>
+          getCodeType() // solid
         </Code>
         <Code variant="outline">
-          Themed outline code
+          const getCodeType = () => "outline"
+          <br/>
+          getCodeType() // outline
         </Code>
       </SimpleGrid>
 
@@ -57,8 +65,10 @@ root.render(
 
 const baseStyle = defineStyle({
   borderRadius: 0, // remove border radius
+  padding: 2, // add padding
+  fontSize: "xs", // change font size to xs
   fontWeight: "semibold", // change the font weight to normal
-  fontFamily: "serif", // change the font family to monospaced
+  fontFamily: "mono", // change the font family to monospaced
 })
 
 

@@ -51,7 +51,7 @@ it in the `components` property:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
-import { codeTheme } from './components/code.ts'
+import { codeTheme } from './components/code'
 
 export const theme = extendTheme({
   components: { Code: codeTheme},
@@ -72,7 +72,7 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 const brandPrimary = defineStyle({
   background: 'orange.500',
   color: 'white',
-  fontFamily: 'serif',
+  fontFamily: 'mono',
   fontWeight: 'normal',
 
   // let's also provide dark mode alternatives
