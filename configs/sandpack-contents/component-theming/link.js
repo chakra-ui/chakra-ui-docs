@@ -45,7 +45,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import App from "./App";
-import { linkTheme } from "./theme/components/Link.ts";
+import { linkTheme } from "./theme/components/Link";
 
 const theme = extendTheme({
   components: {
@@ -86,7 +86,7 @@ const customVariant = defineStyle((props) => {
     _dark: {
       color: \`\${c}.500\`,
     },
-    
+
     _hover: {
       transform: "scale(1.05, 1.05)",
       fontWeight: "semibold",
