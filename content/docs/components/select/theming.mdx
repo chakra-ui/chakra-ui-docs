@@ -3,33 +3,182 @@ id: select
 scope: theming
 ---
 
-The Select component is a multipart component. Read more about how to style
-multipart components in the
-[style system docs](/docs/styled-system/component-style#styling-multipart-components).
+The `Select` component is a multipart component. The styling needs to be applied
+to each part specifically.
 
-This component has two parts: `field` and `icon`. You can find
-more information in the source for the styles
-[here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/input.ts).
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
 
-## Example
+## Anatomy
 
-The following theme would change the color of the `field` to `red.500`, and change the fontSize of `icon` to `2xl`.
+## Theming properties
+
+The properties that affect the theming of the `Select` component are:
+
+- `variant`: The visual variant of the button. Defaults to `outline`.
+- `size`: The size of the button. Defaults to `md`.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { selectAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(inputAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { selectAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(selectAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  field: {
+    background: "blue.100"
+  },
+  icon: {
+    color: "blue.400"
+  }
+})
+
+export const selectTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the select theme, we can import it in our theme file and add it
+in the `components` property:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
+import { selectTheme } from './components/select'
 
-const theme = extendTheme({
-  components: {
-    Select: {
-      baseStyle: {
-        field: {
-          color: 'red.500',
-        },
-        icon: {
-          fontSize: '2xl',
-        },
-      },
-    },
-  },
+export const theme = extendTheme({
+  components: { Select: selectTheme },
 })
 ```
+
+> This is a crucial step to make sure that any changes that we make to the select
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to create a select with a custom size. Here's how we can do
+that:
+
+```jsx live=false
+import { selectAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(selectAnatomy.keys)
+
+const xl = defineStyle({
+  fontSize: 'lg',
+  px: '4',
+  h: '12',
+})
+
+const sizes = {
+  xl: definePartsStyle({ field: xl, icon: xl }),
+}
+
+export const selectTheme = defineMultiStyleConfig({ sizes })
+
+// Now we can use the new `xl` size
+<Select size="xl" ... />
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to create a custom variant of the select component. 
+Here's how to do that:
+
+```jsx live=false
+import { selectAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(selectAnatomy.keys)
+
+const brandPrimary = definePartsStyle({
+ field: {
+    background: "purple.100",
+    border: "1px dashed",
+    borderColor: "purple.200",
+    borderRadius: "full"
+  },
+  icon: {
+    color: "purple.400"
+  }
+})
+
+export const selectTheme = defineMultiStyleConfig({
+  variants: { brandPrimary },
+})
+
+// Now we can use the new `brandPrimary` variant
+<Select variant="brandPrimary" ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every select in
+our application. Here's how we can do that:
+
+```jsx live=false
+import { selectAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  selectAnatomy.keys,
+)
+
+export const selectTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'brandPrimary',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use a select:
+<Select size="xl" variant="pill" ... />
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  SelectTheme,
+} from 'configs/sandpack-contents/component-theming/select'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Select.ts': SelectTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
