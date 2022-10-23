@@ -3,4 +3,187 @@ id: tag
 scope: theming
 ---
 
-TODO
+## Overview
+
+The `Tag` component is a multipart component. The styling needs to be applied to
+each part specifically.
+
+> To learn more about styling single part components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page
+
+## Anantomy
+
+- A: `container`
+- B: `label`
+- C: `closeButton`
+
+## Theming properties
+
+The properties that affect the theming of the `Tag` component are:
+
+- `variant`: The visual variant of the tag. Defaults to `subtle`.
+- `colorScheme`: The color scheme of the tag. Defaults to `gray`.
+- `size`: The size of the tag. Defaults to `md`.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```js
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(tagAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```js
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(tagAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+    bg: "orange.400",
+    color: "blackAlpha.700"
+  },
+})
+
+export const tagTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the tag theme, we can import it in our theme file and add it
+in the components property:
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+import { tagTheme } from './components/tag'
+
+export const theme = extendTheme({
+  components: { Tag: tagTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the tag
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large tag size. Here's how we can do
+that:
+
+```js
+import { tagAnatomy } from "@chakra-ui/anatomy"
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const ml = defineStyle({
+    px: "3",
+    py: "2",
+    fontSize: "25"
+});
+
+const sizes = {
+    ml: definePartsStyle({ container: ml, label: ml })
+}
+
+export const tagTheme = defineMultiStyleConfig({ sizes });
+
+// Now we can use the new `xl` size
+<Tag size="ml" />
+```
+
+Every time you're adding anything new to the theme, you'd need to run the cli
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom branded variant. Here's how we can do
+that:
+
+```js
+import { tagAnatomy } from "@chakra-ui/anatomy"
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(tagAnatomy.keys)
+
+const brandPrimary = definePartsStyle({
+  container: {
+    bg: "orange.400",
+    color: "blackAlpha.700"
+  }
+});
+
+const thick = definePartsStyle({
+  container: {
+    px: "4",
+    py: "2",
+    bg: "blue.400"
+  }
+});
+
+export const tagTheme = defineMultiStyleConfig({
+  variants: {
+    brand: brandPrimary,
+    thick: thick
+  }
+});
+
+// Now we can use the new `brandPrimary` variant
+<Tag variant="brand" />
+```
+
+## Changing the default properties
+
+```js
+import { tagAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  tagAnatomy.keys,
+)
+
+export const tagTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'ml',
+    variant: 'brand',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use an input:
+<Input size="ml" variant="brand" ... />
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  TagTheme,
+} from 'configs/sandpack-contents/component-theming/tag'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Tag.ts': TagTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
