@@ -3,7 +3,8 @@ id: stat
 scope: theming
 ---
 
-The Stat component is a multipart component. The styling needs to be applied to each part specifically.
+The Stat component is a multipart component. The styling needs to be applied to
+each part specifically.
 
 > To learn more about styling multipart components, visit the
 > [Component Style](/docs/styled-system/component-style#styling-multipart-components)
@@ -225,7 +226,6 @@ The Stat component is a multipart component. The styling needs to be applied to 
   </svg>
 </AspectRatio>
 
-
 ## Theming properties
 
 The properties that affect the theming of the `Stat` component are:
@@ -261,15 +261,14 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   // define the parts you're going to style
   label: {
-    fontWeight: "light",
-    color: "red"
+    fontWeight: 'light',
+    color: 'red',
   },
   helpText: {},
   container: {},
   icon: {},
   number: {},
 })
-
 
 export const statTheme = defineMultiStyleConfig({ baseStyle })
 ```
@@ -291,7 +290,8 @@ export const theme = extendTheme({
 
 ## Adding a custom size
 
-Let's assume we want to include new extra small stat size. Here's how we can do that:
+Let's assume we want to include new extra small stat size. Here's how we can do
+that:
 
 ```jsx live=false
 import { statAnatomy } from '@chakra-ui/anatomy'
