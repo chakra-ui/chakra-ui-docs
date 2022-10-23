@@ -69,7 +69,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   // define the part you're going to style
   title: {
-    color: "teal.300", // change the color of the title text of the alert
+    color: "red.400", // change the color of the title text of the alert
     fontWeight: "bold",
   },
   description: {
@@ -80,12 +80,14 @@ const baseStyle = definePartsStyle({
 // Defining a custom variant called mono
 const mono = definePartsStyle((props) => {
   const { status } = props;
-  console.log({ props });
+
   return {
     container: {
-      border: "1px solid",
-      borderColor: "gray.100",
-      bg: status === "error" ? "red.800" : "gray.100",
+      border: "2px solid",
+      borderColor: status === "error" ? "red.400" : "gray.100",
+      _light: {
+        bg: 'gray.200'
+      }
     },
     title: { fontFamily: "mono" },
     description: {
