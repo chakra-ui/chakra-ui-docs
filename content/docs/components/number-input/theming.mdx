@@ -2,3 +2,194 @@
 id: number-input
 scope: theming
 ---
+
+The `NumberInput` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Anatomy 
+
+## Theming properties
+
+The properties that affect the theming of the `Input` component are:
+
+- `variant`: The visual variant of the button. Defaults to `outline`.
+- `size`: The size of the button. Defaults to `md`.
+
+## Theming utilities
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+
+```jsx live=false
+import { inputAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(inputAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { numberInputAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(inputAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  field: {
+    fontWeight: "semibold",
+    color: "red.500"
+  },
+})
+
+export const numberInputTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the number input theme, we can import it in our theme file and add it
+in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { numberInputTheme } from './components/number-input'
+
+export const theme = extendTheme({
+  components: { NumberInput: numberInputTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the input
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large input size. Here's how we can do
+that:
+
+```jsx live=false
+import { numberInputAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
+
+const {
+  definePartsStyle,
+  defineMultiStyleConfig
+} = createMultiStyleConfigHelpers(numberInputAnatomy.keys);
+
+const xl = defineStyle({
+  fontSize: "lg",
+  h: "20",
+  px: "2"
+});
+
+const sizes = {
+  xl: definePartsStyle({ field: xl, stepper: xl, addon: xl })
+};
+
+export const numberInputTheme = defineMultiStyleConfig({ sizes });
+
+// Now we can use the new `xl` size
+<NumberInput size="xl" ... />
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom primary variant. Here's how we can do that:
+
+```jsx live=false
+import { numberInputAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
+
+const {
+  definePartsStyle,
+  defineMultiStyleConfig
+} = createMultiStyleConfigHelpers(numberInputAnatomy.keys);
+
+const primary = definePartsStyle({
+  field: {
+    border: "1px solid",
+    borderColor: "gray.200",
+    background: "gray.50",
+    fontWeight: "bold",
+
+    // Let's also provide dark mode alternatives
+    _dark: {
+      borderColor: "gray.600",
+      background: "gray.800"
+    }
+  },
+  stepper: {
+    color: "purple.500",
+    background: "gray.200"
+  }
+});
+
+export const numberInputTheme = defineMultiStyleConfig({
+  variants: { primary }
+});
+
+// Now we can use the new `pill` variant
+<NumberInput variant="primary" ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every number input in
+our app. Here's how we can do that:
+
+```jsx live=false
+import { numberInputAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  numberInputAnatomy.keys,
+)
+
+export const numberInputTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'primary',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use an input:
+<NumberInput size="xl" variant="primary" ... />
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  NumberInputTheme,
+} from 'configs/sandpack-contents/component-theming/number-input'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/NumberInput.ts': NumberInputTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{
+    'react-icons': '^4.4.0',
+  }}
+/>
