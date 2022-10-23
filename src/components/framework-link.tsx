@@ -4,6 +4,7 @@ import {
   BlitzSvg,
   CreateReactAppSvg,
   GatsbySvg,
+  MeteorSvg,
   NextjsSvg,
   RedwoodSvg,
   RemixSvg,
@@ -95,6 +96,14 @@ export const FrameworkLinks = () => {
         name='Vite'
       >
         <ViteSvg style={{ margin: 'auto' }} />
+      </FrameworkLink>
+
+      <FrameworkLink
+        href='/getting-started/meteor-guide'
+        accentColor='#FF6A3E'
+        name='Meteor'
+      >
+        <MeteorSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
     </SimpleGrid>
   )

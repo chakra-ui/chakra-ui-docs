@@ -53,6 +53,10 @@
             {
               "title": "Vite",
               "path": "/getting-started/vite-guide"
+            },
+            {
+              "title": "Meteor",
+              "path": "/getting-started/meteor-guide"
             }
           ]
         },
