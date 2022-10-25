@@ -23,6 +23,7 @@ The `useClipboard` hook returns an object with the following fields:
 | Name        | Type       | Default | Description                                                                                                                                                                       |
 | ----------- | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `value`     | `string`   |         | The copied value.                                                                                                                                                                 |
+| `setValue`  | `function` |         | State action to change the copied value.                                                                                                                                           |
 | `onCopy`    | `function` |         | Callback function to copy content.                                                                                                                                                |
 | `hasCopied` | `boolean`  | `false` | If `true`, the content has been copied within the last `timeout` milliseconds. That is, it is set to true right after `onCopy` is called, and `false` after `timeout` has passed. |
 
@@ -36,19 +37,27 @@ import { useClipboard } from '@chakra-ui/react'
 
 ```jsx
 function Example() {
-  const [value, setValue] = React.useState('Hello world')
-  const { hasCopied, onCopy } = useClipboard(value)
+  const placeholder = "text to be copied...";
+  const { onCopy, value, setValue, hasCopied } = useClipboard("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
 
   return (
     <>
       <Flex mb={2}>
-        <Input value={value} isReadOnly placeholder='Welcome' />
-        <Button onClick={onCopy} ml={2}>
-          {hasCopied ? 'Copied' : 'Copy'}
-        </Button>
+        <Input
+          placeholder={placeholder}
+          value={value}
+          onChange={handleInputChange}
+          size="lg"
+          mr={2}
+        />
+        <Button onClick={onCopy}>{hasCopied ? "Copied!" : "Copy"}</Button>
       </Flex>
-      <Editable placeholder='Paste here'>
-        <EditablePreview width='100%' />
+      <Editable placeholder="Paste here">
+        <EditablePreview width="100%" />
         <EditableInput />
       </Editable>
     </>
