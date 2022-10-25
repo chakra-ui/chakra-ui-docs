@@ -40,18 +40,15 @@ function Example() {
   const placeholder = "text to be copied...";
   const { onCopy, value, setValue, hasCopied } = useClipboard("");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
-
   return (
     <>
       <Flex mb={2}>
         <Input
           placeholder={placeholder}
           value={value}
-          onChange={handleInputChange}
-          size="lg"
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
           mr={2}
         />
         <Button onClick={onCopy}>{hasCopied ? "Copied!" : "Copy"}</Button>
