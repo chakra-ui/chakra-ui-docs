@@ -74,6 +74,9 @@ const brandPrimary = defineStyle({
   fontSize: "lg",
   _focus: {
     borderColor: "purple.500"
+  },
+  _dark: {
+    background: "purple.900",
   }
 });
   
