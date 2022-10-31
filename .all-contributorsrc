@@ -1422,6 +1422,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "jakegiganti",
+      "name": "Jake Giganti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7992623?v=4",
+      "profile": "https://github.com/jakegiganti",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
