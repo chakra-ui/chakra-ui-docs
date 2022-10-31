@@ -4,7 +4,7 @@ scope: theming
 ---
 
 The `IconButton` component is a single part component. All of the styling is applied
-directly to the `Button` component.
+directly to the `button` component.
 
 
 > To learn more about styling single part components, visit the
@@ -12,6 +12,9 @@ directly to the `Button` component.
 > page.
 
 ## Theming properties
+
+> The `IconButton` and `Button` components share the same theming configuration.
+> To create theming just for the `IconButton` component, you can create a **custom variant**.
 
 The properties that affect the theming of the `IconButton` component are:
 
@@ -66,8 +69,6 @@ export const theme = extendTheme({
 })
 ```
 
-> The `IconButton` and `Button` components share the same theming configuration.
-> To create theming just for the `IconButton` component, you can create a **custom variant**.
 
 ## Adding a custom size
 
