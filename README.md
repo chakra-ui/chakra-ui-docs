@@ -300,6 +300,7 @@ Thanks goes to these wonderful people
       <td align="center"><a href="https://pybash.xyz"><img src="https://avatars.githubusercontent.com/u/67195650?v=4?s=64" width="64px;" alt="PyBash"/><br /><sub><b>PyBash</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=pybash1" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/umrkhn"><img src="https://avatars.githubusercontent.com/u/75561750?v=4?s=64" width="64px;" alt="Umar Abid"/><br /><sub><b>Umar Abid</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=umrkhn" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/BigDog1400"><img src="https://avatars.githubusercontent.com/u/63280663?v=4?s=64" width="64px;" alt="Isaac"/><br /><sub><b>Isaac</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=BigDog1400" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/jakegiganti"><img src="https://avatars.githubusercontent.com/u/7992623?v=4?s=64" width="64px;" alt="Jake Giganti"/><br /><sub><b>Jake Giganti</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui-docs/commits?author=jakegiganti" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
