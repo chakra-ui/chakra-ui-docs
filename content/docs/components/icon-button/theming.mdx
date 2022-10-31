@@ -3,9 +3,8 @@ id: icon-button
 scope: theming
 ---
 
-The `IconButton` component is a single part component. All of the styling is applied
-directly to the `button` component.
-
+The `IconButton` component is a single part component. All of the styling is
+applied directly to the `button` element.
 
 > To learn more about styling single part components, visit the
 > [Component Style](/docs/styled-system/component-style#styling-single-part-components)
@@ -14,7 +13,8 @@ directly to the `button` component.
 ## Theming properties
 
 > The `IconButton` and `Button` components share the same theming configuration.
-> To create theming just for the `IconButton` component, you can create a **custom variant**.
+> To create theming just for the `IconButton` component, you can create a
+> **custom variant**.
 
 The properties that affect the theming of the `IconButton` component are:
 
@@ -27,7 +27,6 @@ The properties that affect the theming of the `IconButton` component are:
 - `defineStyle`: a function used to create style objects.
 - `defineStyleConfig`: a function used to define the style configuration for a
   single part component.
-
 
 ```jsx live=false
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
@@ -43,7 +42,6 @@ const outline = defineStyle({
   borderRadius: 0, // remove the border radius
   fontWeight: 'semibold', // change the font weight
 })
-
 
 const xl = defineStyle({
   fontSize: 'xl',
@@ -69,11 +67,10 @@ export const theme = extendTheme({
 })
 ```
 
-
 ## Adding a custom size
 
-Let's assume we want to include an extra large icon button size. Here's how we can do
-that:
+Let's assume we want to include an extra large icon button size. Here's how we
+can do that:
 
 ```jsx live=false
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
@@ -99,8 +96,8 @@ tool [here](/docs/styled-system/cli).
 
 ## Adding a custom variant
 
-Let's assume we want to create a custom `IconButton` variant. Here's how we can do
-that:
+Let's assume we want to create a custom `IconButton` variant. Here's how we can
+do that:
 
 ```jsx live=false
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
@@ -156,7 +153,6 @@ Then, we can use the custom color scale as the color scheme for the icon button:
 ```
 
 ## Changing the default properties
-
 
 Let's assume we want to change the default size, variant or color scheme of
 every button in our app. Here's how we can do that:
