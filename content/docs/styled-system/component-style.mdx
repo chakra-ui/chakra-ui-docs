@@ -478,3 +478,18 @@ function Usage() {
   )
 }
 ```
+
+## Responsive modifiers
+
+Just like any style prop, the `variant` and `size` properties can also be
+responsive. We can use the
+[responsive syntax](/docs/styled-system/responsive-styles) to achieve this.
+
+```jsx
+<Button
+  size={{ base: 'xs', md: 'lg' }}
+  variant={{ base: 'solid', md: 'ghost' }}
+>
+  Submit
+</Button>
+```
