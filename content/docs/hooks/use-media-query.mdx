@@ -15,6 +15,28 @@ query or multiple media queries individually match.
 import { useMediaQuery } from '@chakra-ui/react'
 ```
 
+## API Reference
+
+The `useMediaQuery` hook accepts a single media query or an array of media
+queries, and optionally an object that contains an `ssr` boolean and a
+`fallback` string.
+
+```jsx live=false
+// single media query with no options
+const [isLargerThan800] = useMediaQuery('(min-width: 800px)')
+
+// ssr-friendly media query with fallback
+const [isLargerThan800] = useMediaQuery('(min-width: 800px)', {
+  ssr: true,
+  fallback: false, // return false on the server, and re-evaluate on the client side
+})
+```
+
+If we're on the server, the `ssr` option will determine whether to return the
+`fallback` value or execute the query directly. The `fallback` property is
+what's going to be returned if `ssr` is set to `true` and we're in a server
+context.
+
 ## Return value
 
 The `useMediaQuery` hook returns an array of booleans, indicating whether the
