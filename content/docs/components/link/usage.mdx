@@ -67,3 +67,45 @@ Next.js `Link` component and pass the `passHref` prop. `passHref` Forces Next.js
   <Link>Home</Link>
 </NextLink>
 ```
+
+### Next.js 13
+
+As of Next.js 13, the `Link` component directly renders an `a` element,
+therefore its child can no longer be another `a` element. One way to use the new
+`Link` component with Chakra UI's `Link` component is to pass a `legacyBehavior`
+prop to the Next.js's link to opt out of the new behavior, and also the
+`passHref` prop to pass down the `href` to the Chakra UI link:
+
+```jsx live=false
+import NextLink from 'next/link'
+import { Link, Heading } from '@chakra-ui/react'
+...
+<NextLink href='...' legacyBehavior passHref>
+  <Link>
+    <Heading>...</Heading>
+  </Link>
+</NextLink>
+```
+
+Another way to style the new Next.js `Link` component is to create a custom
+component using the Chakra Factory function:
+
+```jsx live=false
+import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
+import { chakra } from '@chakra-ui/react'
+
+// wrap the NextLink with Chakra UI's factory function
+const MagicLink = chakra<typeof NextLink, NextLinkProps>(NextLink, {
+  // ensure that you're forwarding all of the required props for your case
+  shouldForwardProp: (prop) => ['href', 'target', 'children', ...].includes(prop),
+})
+
+// use the MagicLink just like you'd use the ordinary Chakra UI link
+<MagicLink
+  href='...'
+  color='...'
+  target='...'
+>
+  ...
+</MagicLink>
+```
