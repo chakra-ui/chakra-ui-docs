@@ -45,9 +45,8 @@ you need to do is pass the `as` prop. It'll replace the rendered `a` tag with
 Reach's `Link`.
 
 ```jsx live=false
-// 1. import { Link as ReachLink } from "@reach/router"
+import { Link as ReachLink } from "@reach/router"
 
-// 2. Then use it like this
 <Link as={ReachLink} to='/home'>
   Home
 </Link>
@@ -55,35 +54,39 @@ Reach's `Link`.
 
 ## Usage with Next.js
 
-To use the `Link` with Next.js, all you need to do is to wrap `Link` with
-Next.js `Link` component and pass the `passHref` prop. `passHref` Forces Next.js
-`Link` to send the `href` property to its child.
-
-```jsx live=false
-// 1. import NextLink from "next/link"
-
-// 2. Then use it like this
-<NextLink href='/home' passHref>
-  <Link>Home</Link>
-</NextLink>
-```
-
-### Next.js 13
-
 As of Next.js 13, the `Link` component directly renders an `a` element,
-therefore its child can no longer be another `a` element. One way to use the new
-`Link` component with Chakra UI's `Link` component is to pass a `legacyBehavior`
-prop to the Next.js's link to opt out of the new behavior, and also the
-`passHref` prop to pass down the `href` to the Chakra UI link:
+therefore its child can no longer be another `a` element. The recommended
+way is to use the `as` property on Chakra components used as a link. Here
+is an example using the `Link` component:
 
 ```jsx live=false
 import NextLink from 'next/link'
-import { Link, Heading } from '@chakra-ui/react'
-...
-<NextLink href='...' legacyBehavior passHref>
-  <Link>
-    <Heading>...</Heading>
-  </Link>
+import { Link } from '@chakra-ui/react'
+
+<Link as={NextLink} href='/home'>
+  Home
+</Link>
+```
+
+If you are using Next.js 13 and do not want to use the new behavior, you can 
+either use the `legacyBehavior` prop directly on the Next.js `Link` component
+or if you want to set this behavior globally you can use the following Next.js
+configuration:
+
+```js live=false
+{
+  experimental: { newNextLinkBehavior: false }
+}
+```
+
+If you are using a version of Next.js below the version 13 you can use the Chakra
+UI `Link` this way:
+
+```jsx live=false
+import NextLink from "next/link"
+
+<NextLink href='/home' passHref>
+  <Link>Home</Link>
 </NextLink>
 ```
 
