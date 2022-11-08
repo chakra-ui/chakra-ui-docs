@@ -126,6 +126,10 @@
               "path": "/docs/components/badge"
             },
             {
+              "title": "Card",
+              "path": "/docs/components/card"
+            },
+            {
               "title": "Code",
               "path": "/docs/components/code"
             },
