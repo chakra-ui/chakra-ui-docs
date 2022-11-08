@@ -2,3 +2,184 @@
 id: radio
 scope: theming
 ---
+
+The `Radio` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Anatomy
+
+- A: `label`
+- B: `container`
+- C: `control`
+
+## Theming properties
+
+The properties that affect the theming of the `Radio` component are:
+
+- `variant`: The visual variant of the radio. The color scheme defaults to
+  `blue`.
+- `size`: The size of the radio. Defaults to `md`.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { radioAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(radioAnatomy.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { radioAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(radioAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  control: {
+    borderRadius: '12px', // change the border radius
+    borderColor: 'teal.500', // change the border color
+  },
+})
+
+export const radioTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the radio theme, we can import it in our theme file and add it
+in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { radioTheme } from './components/radio.ts'
+
+export const theme = extendTheme({
+  components: { Radio: radioTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the radio
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large radio size. Here's how we can do
+that:
+
+```jsx live=false
+import { radioAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(radioAnatomy.keys)
+
+const xl = defineStyle({
+  w: '6',
+  h: '6'
+})
+
+const sizes = {
+  xl: definePartsStyle({ control: xl})
+}
+
+export const radioTheme = defineMultiStyleConfig({ sizes })
+
+// Now we can use the new `xl` size
+<Radio size="xl">This is a radio</Radio>
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom outline variant. Here's how we can do
+that:
+
+```jsx live=false
+import { radioAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(radioAnatomy.keys)
+
+const outline = definePartsStyle({
+  control: {
+    border: '1px solid',
+    borderColor: 'gray.300',
+
+    // Let's also provide dark mode alternatives
+    _dark: {
+      borderColor: 'gray.600',
+
+    },
+  }
+
+})
+
+export const radioTheme = defineMultiStyleConfig({
+  variants: { outline },
+})
+
+// Now we can use the new `outline` variant
+<Radio variant="outline" ... />
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of radio in our app.
+Here's how we can do that:
+
+```jsx live=false
+import { radioAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  radioAnatomy.keys,
+)
+
+export const radioTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'outline',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use a radio:
+<Radio size="xl" variant="outline">This is a radio</Radio>
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  RadioTheme,
+} from 'configs/sandpack-contents/component-theming/radio'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Radio.ts': RadioTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+/>
