@@ -51,16 +51,6 @@
       "location": "UAE"
     },
     {
-      "login": "koca",
-      "avatar_url": "https://avatars.githubusercontent.com/u/342666?v=4",
-      "url": "https://github.com/koca",
-      "blog": "http://mesut.dev",
-      "name": "Mesut Koca",
-      "bio": "Core @chakra-ui\r\nSenior Frontend Developer \r\n#JS #VUE",
-      "twitter_username": "imesutkoca",
-      "location": null
-    },
-    {
       "login": "nikolovlazar",
       "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
       "url": "https://github.com/nikolovlazar",
@@ -79,16 +69,6 @@
       "bio": "Full-Stack dev with a strong affinity for React, Chakra UI, Typescript and AWS.",
       "twitter_username": "noobinthisgame",
       "location": "Darmstadt, Germany"
-    },
-    {
-      "login": "Shyrro",
-      "avatar_url": "https://avatars.githubusercontent.com/u/10008963?v=4",
-      "url": "https://github.com/Shyrro",
-      "blog": "",
-      "name": "Sahmane Zakaria",
-      "bio": null,
-      "twitter_username": "TheDumbThinker",
-      "location": "France"
     },
     {
       "login": "TimKolberger",
