@@ -12,7 +12,7 @@ import {
   useDisclosure,
   useUpdateEffect,
 } from '@chakra-ui/react'
-import { useViewportScroll } from 'framer-motion'
+import { useScroll } from 'framer-motion'
 import NextLink from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa'
@@ -135,7 +135,7 @@ function Header(props: HTMLChakraProps<'header'>) {
   const [y, setY] = useState(0)
   const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
 
-  const { scrollY } = useViewportScroll()
+  const { scrollY } = useScroll()
   useEffect(() => {
     return scrollY.onChange(() => setY(scrollY.get()))
   }, [scrollY])
