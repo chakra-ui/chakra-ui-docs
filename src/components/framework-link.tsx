@@ -69,7 +69,7 @@ export const FrameworkLinks = () => {
       <FrameworkLink
         href='/getting-started/blitzjs-guide'
         accentColor='#6700EB'
-        name='BlitzJS'
+        name='Blitz.js'
       >
         <BlitzSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
