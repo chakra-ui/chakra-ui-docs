@@ -10,14 +10,14 @@ description:
 
 ## Import
 
-Chakra exports 4 components to help you create a Card
+Chakra UI exports 4 components to help you create a Card.
 
 ```js
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 ```
 
 - **Card:** The parent wrapper that provides context for its children.
-- **CardHeader:** The header that contains a title.
+- **CardHeader:** The wrapper that contains a card's header.
 - **CardBody:** The wrapper that houses the card's main content.
 - **CardFooter:** The footer that houses the card actions.
 
@@ -25,20 +25,13 @@ import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
 ### Basic Card
 
-Combine the `CardHeader`, `CardBody` and `CardFooter` inside the parent
-component, `Card` for a basic usage.
+Simply put in some content in the `CardBody` to get a basic card.
 
 ```jsx
 <Card>
-  <CardHeader>
-    <Heading size='md'> Customer dashboard</Heading>
-  </CardHeader>
   <CardBody>
     <Text>View a summary of all your customers over the last month.</Text>
   </CardBody>
-  <CardFooter>
-    <Button>View here</Button>
-  </CardFooter>
 </Card>
 ```
 
@@ -86,8 +79,7 @@ and you may want to add dividers between them.
 
 ### Card with Image
 
-Place the `Image` component within the `CardBody` to get a nice padding around
-it.
+Place the content within the `CardBody` to get a nice padding around.
 
 ```jsx
 <Card maxW='sm'>
@@ -125,8 +117,8 @@ it.
 
 ### Horizontal Card
 
-The Card component comes with a display, flex. This means you make the content
-in a horizontal direction by passing `direction="row`.
+Card comes with an inherent `display="flex"`. This means you make the content in
+a horizontal direction by passing `direction="row`.
 
 ```jsx
 <Card direction='row' overflow='hidden' variant='outline'>
@@ -155,8 +147,8 @@ in a horizontal direction by passing `direction="row`.
 
 ### Composition - Advanced Card
 
-You can compose Card with other components like Avatar, Icon Button and more for
-a more advanced composition.
+Compose Card with other components like `Avatar`, `Icon Button` and more for a
+more advanced layout.
 
 ```jsx
 <Card maxW='md'>
@@ -205,7 +197,8 @@ a more advanced composition.
 
 ### Multiple cards
 
-Layout multiple cards using the Simple Grid or your preferred layout method.
+Render multiple cards to display content by using the `SimpleGrid` or your
+preferred layout method.
 
 ```jsx
 <SimpleGrid columns={3} spacing={4}>
@@ -260,7 +253,7 @@ the Card.
     <Text>View a summary of all your customers over the last month.</Text>
   </CardBody>
   <CardFooter>
-    <Button>View here</Button>
+    <Button colorScheme='blue'>View here</Button>
   </CardFooter>
 </Card>
 ```
