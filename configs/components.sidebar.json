@@ -127,7 +127,8 @@
             },
             {
               "title": "Card",
-              "path": "/docs/components/card"
+              "path": "/docs/components/card",
+              "new": true
             },
             {
               "title": "Code",
@@ -208,8 +209,7 @@
             },
             {
               "title": "Highlight",
-              "path": "/docs/components/highlight",
-              "new": true
+              "path": "/docs/components/highlight"
             }
           ]
         },
