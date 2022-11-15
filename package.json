@@ -105,7 +105,7 @@
   "lint-staged": {
     "**/*.mdx": [
       "pnpm search-meta:gen",
-      "git add search-meta.json"
+      "git add *.json --ignore-errors"
     ]
   }
 }
