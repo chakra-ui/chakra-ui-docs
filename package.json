@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "lint": "next lint",
+    "prepare": "husky install",
     "postinstall": "pnpm-deduplicate",
     "gen:theme-typings": "chakra-cli tokens theme.ts",
     "avatars:gen": "tsx scripts/avatars.ts",
@@ -41,6 +42,8 @@
     "framer-motion": "^7.3.5",
     "github-slugger": "^1.4.0",
     "highlight-words-core": "^1.2.2",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "lodash.clonedeep": "^4.5.0",
     "lodash.get": "^4.4.2",
     "markdown-toc": "^1.2.0",
@@ -98,5 +101,8 @@
     "tsx": "^3.8.2",
     "unified": "^10.1.2",
     "unist-util-visit": "^4.1.1"
+  },
+  "lint-staged": {
+    "**/*.mdx": "pnpm search-meta:gen"
   }
 }
