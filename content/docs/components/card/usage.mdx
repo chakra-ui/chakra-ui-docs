@@ -121,21 +121,28 @@ The card component has `display: flex` by default. This means you make the
 content in a horizontal direction by passing `direction="row`.
 
 ```jsx
-<Card direction='row' overflow='hidden' variant='outline'>
+<Card
+  direction={{ base: 'column', sm: 'row' }}
+  overflow='hidden'
+  variant='outline'
+>
   <Image
     objectFit='cover'
-    maxW='200px'
+    maxW={{ base: '100%', sm: '200px' }}
     src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
     alt='Caffe Latte'
   />
+
   <Stack>
     <CardBody>
       <Heading size='md'>The perfect latte</Heading>
+
       <Text py='2'>
         Caffè latte is a coffee beverage of Italian origin made with espresso
         and steamed milk.
       </Text>
     </CardBody>
+
     <CardFooter>
       <Button variant='solid' colorScheme='blue'>
         Buy Latte
@@ -153,20 +160,22 @@ more for a more advanced layout.
 ```jsx
 <Card maxW='md'>
   <CardHeader>
-    <HStack spacing='4'>
-      <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
+    <Flex spacing='4'>
+      <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
+        <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
 
-      <Box flex='1'>
-        <Heading size='sm'>Segun Adebayo</Heading>
-        <Text>Creator, Chakra UI</Text>
-      </Box>
+        <Box>
+          <Heading size='sm'>Segun Adebayo</Heading>
+          <Text>Creator, Chakra UI</Text>
+        </Box>
+      </Flex>
       <IconButton
         variant='ghost'
         colorScheme='gray'
         aria-label='See menu'
         icon={<BsThreeDotsVertical />}
       />
-    </HStack>
+    </Flex>
   </CardHeader>
   <CardBody>
     <Text>
@@ -181,7 +190,15 @@ more for a more advanced layout.
     alt='Chakra UI'
   />
 
-  <CardFooter justify='space-between'>
+  <CardFooter
+    justify='space-between'
+    flexWrap='wrap'
+    sx={{
+      '& > button': {
+        minW: '136px',
+      },
+    }}
+  >
     <Button flex='1' variant='ghost' leftIcon={<BiLike />}>
       Like
     </Button>
@@ -201,7 +218,7 @@ Render multiple cards to display content by using the `SimpleGrid` or your
 preferred layout method.
 
 ```jsx
-<SimpleGrid columns={3} spacing={4}>
+<SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
   <Card>
     <CardHeader>
       <Heading size='md'> Customer dashboard</Heading>
