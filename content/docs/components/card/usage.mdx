@@ -25,7 +25,7 @@ import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
 ### Basic Card
 
-Simply put in some content in the `CardBody` to get a basic card.
+Put in some content in the `CardBody` to get a basic card.
 
 ```jsx
 <Card>
@@ -117,8 +117,8 @@ Place the content within the `CardBody` to get a nice padding around.
 
 ### Horizontal Card
 
-Card comes with an inherent `display="flex"`. This means you make the content in
-a horizontal direction by passing `direction="row`.
+The card component has `display: flex` by default. This means you make the
+content in a horizontal direction by passing `direction="row`.
 
 ```jsx
 <Card direction='row' overflow='hidden' variant='outline'>
@@ -145,10 +145,10 @@ a horizontal direction by passing `direction="row`.
 </Card>
 ```
 
-### Composition - Advanced Card
+### Advanced Composition
 
-Compose Card with other components like `Avatar`, `Icon Button` and more for a
-more advanced layout.
+You can compose `Card` with other components like `Avatar`, `Icon Button` and
+more for a more advanced layout.
 
 ```jsx
 <Card maxW='md'>
