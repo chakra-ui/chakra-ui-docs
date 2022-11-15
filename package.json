@@ -103,6 +103,9 @@
     "unist-util-visit": "^4.1.1"
   },
   "lint-staged": {
-    "**/*.mdx": "pnpm search-meta:gen"
+    "**/*.mdx": [
+      "pnpm search-meta:gen",
+      "git add search-meta.json"
+    ]
   }
 }
