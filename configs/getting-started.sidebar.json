@@ -19,6 +19,11 @@
           "path": "/getting-started/comparison"
         },
         {
+          "title": "Roadmap",
+          "path": "https://chakra-ui.canny.io",
+          "external": true
+        },
+        {
           "title": "Contributing",
           "path": "/getting-started/contributing"
         },

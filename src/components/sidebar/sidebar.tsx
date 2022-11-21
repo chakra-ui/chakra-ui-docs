@@ -43,6 +43,7 @@ export function SidebarContent({
   pathname,
   contentRef,
 }: SidebarContentProps) {
+
   return (
     <>
       {routes.map((lvl1, idx) => {
@@ -63,7 +64,7 @@ export function SidebarContent({
             {lvl1.routes.map((lvl2, index) => {
               if (!lvl2.routes) {
                 return (
-                  <SidebarLink ml='-3' mt='2' key={lvl2.path} href={lvl2.path}>
+                  <SidebarLink ml='-3' mt='2' key={lvl2.path} href={lvl2.path} isExternal={lvl2.external}>
                     {lvl2.title}
                   </SidebarLink>
                 )
