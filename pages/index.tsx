@@ -29,7 +29,6 @@ import { IoMdMoon } from 'react-icons/io'
 import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md'
 import users from 'chakra-users'
 import ChakraNextImage from 'components/chakra-next-image'
-import { BlackFridayBanner } from 'components/chakra-pro/black-friday-banner'
 import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
 import Container from 'components/container'
 import { DiscordStrip } from 'components/discord-strip'
@@ -49,6 +48,7 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -143,7 +143,7 @@ const HomePage = ({
         title={t('homepage.seo.title')}
         description={t('homepage.seo.description')}
       />
-      <BlackFridayBanner />
+      <AdBanner />
       <Header />
       <Box mb={20}>
         <Box as='section' pt='6rem' pb={{ base: '0', md: '5rem' }}>
