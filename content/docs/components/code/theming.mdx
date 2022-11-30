@@ -37,7 +37,7 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 const outline = defineStyle({
   border: '2px dashed', // change the appearance of the border
   borderRadius: 0, // remove the border radius
-  fontSize:'md', // change the font size
+  fontSize: 'md', // change the font size
   fontWeight: 'semibold', // change the font weight
 })
 
@@ -46,20 +46,20 @@ export const codeTheme = defineStyleConfig({
 })
 ```
 
-After customizing the code theme, we can import it in our theme file and add
-it in the `components` property:
+After customizing the code theme, we can import it in our theme file and add it
+in the `components` property:
 
 ```jsx live=false
 import { extendTheme } from '@chakra-ui/react'
 import { codeTheme } from './components/code'
 
 export const theme = extendTheme({
-  components: { Code: codeTheme},
+  components: { Code: codeTheme },
 })
 ```
 
-> This is a crucial step to make sure that any changes that we make to the
-> Code theme are applied.
+> This is a crucial step to make sure that any changes that we make to the Code
+> theme are applied.
 
 ## Adding a custom variant
 
@@ -156,5 +156,8 @@ import {
   }}
   dependencies={{
     'react-icons': '^4.4.0',
+  }}
+  previewOptions={{
+    minHeight: '400px',
   }}
 />
