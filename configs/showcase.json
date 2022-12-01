@@ -50,6 +50,11 @@
     "image": "showcases/Razorpay.jpg"
   },
   {
+    "name": "Codiga",
+    "url": "https://codiga.io",
+    "image": "showcases/Codiga.jpg"
+  },
+  {
     "name": "World Economic Forum",
     "url": "https://weforum.org/",
     "image": "showcases/weforum.jpg"
