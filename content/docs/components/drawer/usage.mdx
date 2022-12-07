@@ -34,14 +34,14 @@ function DrawerExample() {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+      <Button ref={btnRef.current} colorScheme='teal' onClick={onOpen}>
         Open
       </Button>
       <Drawer
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
-        finalFocusRef={btnRef}
+        finalFocusRef={btnRef.current}
       >
         <DrawerOverlay />
         <DrawerContent>
