@@ -2,5 +2,175 @@
 id: card
 scope: theming
 ---
+The Card component gets its style from the default Chakra UI theme. 
+However, in some scenarios, you might need to customize its theming to match your design requirements.
 
-> Work in Progress
+To customize the theme for `Card`, you would need to modify the base or default styles and modifier styles that alter its size or visual style. You would then need to apply specific styles to each part, size or variant of the Card. 
+
+## Anatomy
+The `Card` component is a multipart component and consists of the following parts:
+
+- A: `container`
+- B: `header`
+- C: `body`
+- D: `footer`
+
+
+## Theming properties
+
+The properties that affect the theming of the `Card` component are:
+
+- `variant`: The visual variant of the card. It defaults to `elevated`.
+- `size`: The size of the card. It defaults to `md`.
+
+## Theming utilities
+
+Theming utilities are functions that are required to create the style configs and style objects during theming.
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+
+## Customizing the default theme
+Let's say we want to customize the default card theme by changing the styles of the `container`, `header`, `body` and `footer`. Here's what that will look like:
+
+
+```jsx live=false
+import { cardAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(cardAnatomy.keys)
+
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+    backgroundColor: "#e7e7e7"
+  },
+  header: {
+    paddingBottom: "2px"
+  },
+  body: {
+    paddingTop: "2px"
+  },
+  footer: {
+    paddingTop: "2px"
+  }
+});
+
+
+const sizes = definePartsStyle({
+  md: {
+    container: {
+      borderRadius: "0px"
+    }
+  }
+});
+
+export const cardTheme = defineMultiStyleConfig({ baseStyle, sizes });
+```
+
+After customizing the card theme, we then import it into our theme file and add
+it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { cardTheme } from './components/Card'
+
+const theme = extendTheme({
+  components: {
+    Card: cardTheme,
+  },
+})
+
+export default theme
+```
+
+> This is a crucial step to make sure that any changes we make to the card theme
+> are applied.
+
+## Adding a custom size
+
+Card comes in `sm`, `md` and `lg` sizes but let's assume we want to include an extra large card size. Here's how we can do
+that:
+
+```jsx live=false
+import { cardAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(cardAnatomy.keys)
+
+// define custom styles for xl size
+const sizes = {
+  xl: definePartsStyle({
+    container: {
+      borderRadius: "36px",
+      padding: "40px"
+    }
+  })
+};
+
+// export sizes in the component theme
+export const cardTheme = defineMultiStyleConfig({ sizes });
+
+// now we can use the new `xl` size
+<Card size="xl" ... />
+```
+
+## Adding a custom variant
+
+You can add a custom variant to `Card` by specifying the name of your variant and giving specific styles to the necessary parts.
+
+```jsx live=false
+import { cardAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(cardAnatomy.keys)
+
+// define custom styles for funky variant
+  const variants = {
+  funky: definePartsStyle({
+    container: {
+      borderColor: "red",
+      borderWidth: "3px"
+    }
+  })
+};
+
+// export variants in the component theme
+export const cardTheme = defineMultiStyleConfig({ variants });
+
+// now we can use the new funky variant
+<Card variant="funky" ... />
+```
+
+## Changing the default properties
+
+To set the default size and variant of every card in our app, we define the defaultProps and set the default size and variant.
+
+```jsx live=false
+import { cardAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(cardAnatomy.keys)
+
+// define which sizes and variants are applied by default
+const defaultProps = {
+  // in this example, we will set the default size and variant
+  size: 'xl',
+  variant: "funky"
+}
+
+// export the default properties in the component theme
+export const cardTheme = defineMultiStyleConfig({ defaultProps })
+```
+> Every time you add anything new to the theme, you need to run the CLI command to get proper autocomplete in your IDE. You can learn more about the CLI tool here.
+
