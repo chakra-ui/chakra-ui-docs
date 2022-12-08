@@ -1,0 +1,161 @@
+---
+title: useSlider
+package: '@chakra-ui/slider'
+description: 'React hook to manage sliders.'
+---
+
+`useSlider` is a custom hook used to provide slider functionality, as well as
+state and focus management to custom slider components when using it.
+
+## Import
+
+```js
+import { useSlider } from '@chakra-ui/react'
+```
+
+## Return value
+
+The `useSlider` hook returns the following props
+
+| Name                 | Type                                    | Description                                                                                                      |
+| -------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `state`              | `SliderState`                           | An object that contains all the props that define the current state of the slider.                               |
+| `actions`            | `SliderActions`                         | An object that contains all the functions that can be called to modify the slider's value                        |
+| `getRootProps`       | `PropGetter`                            | A function that takes slider root props and handles changes for the slider.                                      |
+| `getTrackProps`      | `PropGetter`                            | A function that takes slider track props and handles changes for the slider's track.                             |
+| `getInnerTrackProps` | `PropGetter`                            | A function that takes slider inner track style props and handles changes in the slider's inner track style.      |
+| `getThumbProps`      | `PropGetter`                            | A function that takes slider thumb props and handles changes for the slider's thumb.                             |
+| `getMarkerProps`     | `RequiredPropGetter<{ value: number }>` | A function that takes the value of the marker and handles changes for the slider's marker positioning and style. |
+| `getInputProps`      | `PropGetter`                            | A function to get the props of the input field.                                                                  |
+
+## Usage
+
+```jsx
+function Example() {
+  const CustomComponent = (props) => {
+    const { stepByNumber, stepToNumber, ...sliderProps } = props
+    const {
+      state,
+      actions,
+      getInnerTrackProps,
+      getInputProps,
+      getMarkerProps,
+      getRootProps,
+      getThumbProps,
+      getTrackProps,
+    } = useSlider(sliderProps)
+
+    const firstMarker = getMarkerProps({ value: 25 })
+    const secondMarker = getMarkerProps({ value: 50 })
+    const thirdMarker = getMarkerProps({ value: 75 })
+
+    const { onKeyDown: onThumbKeyDown, ...thumbProps } = getThumbProps()
+
+    return (
+      <Box h={['160px', '120px']}>
+        <Flex flexDir='row' justifyContent='space-between'>
+          <Text>
+            Use
+            <Kbd>&#8592;</Kbd> or <Kbd>&#8594;</Kbd>
+            <Text>to step by {stepByNumber}</Text>
+          </Text>
+          <Button
+            size='sm'
+            colorScheme='teal'
+            onClick={() => actions.stepTo(stepToNumber)}
+          >
+            Step to {stepToNumber}
+          </Button>
+          <Button size='sm' colorScheme='red' onClick={() => actions.reset()}>
+            Reset to {props.defaultValue}
+          </Button>
+        </Flex>
+        <chakra.div
+          mt={2}
+          cursor='pointer'
+          w={{ base: '96%', lg: '98%' }}
+          ml={{ base: '2%', lg: '1%' }}
+          {...getRootProps()}
+        >
+          <input {...getInputProps()} hidden />
+          <Badge
+            colorScheme='red'
+            ml='-20px'
+            mt='25px'
+            fontSize='sm'
+            {...firstMarker}
+          >
+            25%
+          </Badge>
+          <Badge
+            colorScheme='red'
+            ml='-20px'
+            mt='25px'
+            fontSize='sm'
+            {...secondMarker}
+          >
+            50%
+          </Badge>
+          <Badge
+            colorScheme='red'
+            ml='-20px'
+            mt='25px'
+            fontSize='sm'
+            {...thirdMarker}
+          >
+            75%
+          </Badge>
+          <Box
+            h='7px'
+            bgColor='teal.100'
+            borderRadius='full'
+            {...getTrackProps()}
+          >
+            <Box
+              h='7px'
+              bgColor='teal.500'
+              borderRadius='full'
+              {...getInnerTrackProps()}
+            />
+          </Box>
+          <Box
+            top='1%'
+            boxSize={8}
+            bgColor='white'
+            borderRadius='full'
+            _focusVisible={{
+              outline: 'none',
+            }}
+            border='1px solid teal'
+            onKeyDown={(e) => {
+              if (e.code === 'ArrowRight') actions.stepUp(stepByNumber)
+              else if (e.code === 'ArrowLeft') actions.stepDown(stepByNumber)
+              else onThumbKeyDown(e)
+            }}
+            {...thumbProps}
+          >
+            <Flex w='100%' h='100%' alignItems='center' justifyContent='center'>
+              <Text color='teal'>{state.value}</Text>
+            </Flex>
+          </Box>
+        </chakra.div>
+      </Box>
+    )
+  }
+  return (
+    <CustomComponent
+      stepByNumber={10}
+      stepToNumber={75}
+      defaultValue={25}
+      min={0}
+      max={100}
+    />
+  )
+}
+```
+
+## Parameters
+
+The `useSlider` hook accepts an object with the following properties:
+
+<PropsTable of='useSlider' />
