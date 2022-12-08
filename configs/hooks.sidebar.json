@@ -80,6 +80,10 @@
             {
               "title": "useRadioGroup",
               "path": "/docs/hooks/use-radio-group"
+            },
+            {
+              "title": "useSlider",
+              "path": "/docs/hooks/use-slider"
             }
           ]
         }
