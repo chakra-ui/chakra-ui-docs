@@ -17,7 +17,8 @@
     "cache:clean": "rm -rf .next .contentlayer",
     "clean": "rm -rf pnpm-lock.yaml node_modules",
     "reinstall": "pnpm clean && pnpm i",
-    "deps": "pnpm up '@chakra-ui/*' --latest"
+    "deps": "pnpm up '@chakra-ui/*' --latest",
+    "content": "contentlayer build --clearCache"
   },
   "dependencies": {
     "@chakra-ui/cli": "2.2.0",
