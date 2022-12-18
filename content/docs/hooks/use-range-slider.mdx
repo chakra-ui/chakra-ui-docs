@@ -1,0 +1,230 @@
+---
+title: useRangeSlider
+package: '@chakra-ui/slider'
+description: 'React hook to manage range sliders.'
+---
+
+`useRangeSlider` is a custom hook used to provide range slider functionality, as
+well as state and focus management to custom range slider components when using
+it.
+
+## Import
+
+```js
+import { useRangeSlider } from '@chakra-ui/react'
+```
+
+## Return value
+
+The `useRangeSlider` hook returns the following props
+
+| Name                 | Type                                    | Description                                                                                                             |
+| -------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `state`              | `RangeSliderState`                      | An object that contains all props defining the current state of a range slider.                                         |
+| `actions`            | `RangeSliderActions`                    | An object that contains all the functions that can be called to modify the range slider's value                         |
+| `getRootProps`       | `PropGetter`                            | A function that takes range slider root props and handles changes for the range slider.                                 |
+| `getTrackProps`      | `PropGetter`                            | A function that takes range slider track props and handles changes for the range slider's track.                        |
+| `getInnerTrackProps` | `PropGetter`                            | A function that takes range slider inner track style props and handles changes in the range slider's inner track style. |
+| `getThumbProps`      | `RequiredPropGetter<{ index: number }`  | A function that takes the value of the slider thumb's index and handles changes for that range slider's thumb.          |
+| `getMarkerProps`     | `RequiredPropGetter<{ value: number }>` | A function that takes the value of the marker and handle changes for the slider's marker positioning and style.         |
+| `getInputProps`      | `RequiredPropGetter<{ index: number }>` | A function to get the props of the input field of one of the two possible inputs.                                       |
+| `getOutputProps`     | `PropGetter`                            | A function to get the props of the input field.                                                                         |
+
+## Usage
+
+```jsx
+function Example() {
+  const CustomComponent = (props) => {
+    const {
+      stepByNumber,
+      stepToNumber,
+      stepToIndex,
+      stepByIndex,
+      ...sliderProps
+    } = props
+
+    const {
+      state,
+      actions,
+      getInnerTrackProps,
+      getInputProps,
+      getMarkerProps,
+      getRootProps,
+      getThumbProps,
+      getTrackProps,
+    } = useRangeSlider(sliderProps)
+
+    const { onKeyDown: onThumbKeyDownFirstIndex, ...thumbPropsFirstIndex } =
+      getThumbProps({
+        index: 0,
+      })
+
+    const { onKeyDown: onThumbKeyDownSecondIndex, ...thumbPropsSecondIndex } =
+      getThumbProps({
+        index: 1,
+      })
+
+    const firstMarker = getMarkerProps({ value: 25 })
+    const secondMarker = getMarkerProps({ value: 50 })
+    const thirdMarker = getMarkerProps({ value: 75 })
+
+    const onKeyDownStepBy = (e, thumbIndex) => {
+      if (e.code === 'ArrowRight') actions.stepUp(thumbIndex, stepByNumber)
+      else if (e.code === 'ArrowLeft')
+        actions.stepDown(thumbIndex, stepByNumber)
+      else
+        thumbIndex === 0
+          ? onThumbKeyDownFirstIndex(e)
+          : onThumbKeyDownSecondIndex(e)
+    }
+
+    const ThumbIndexIcon = (index) => (
+      <Flex justifyContent='center' alignItems='center' mt='5px'>
+        in
+        <Box
+          ml='5%'
+          boxSize={8}
+          textAlign='center'
+          borderRadius='full'
+          bgColor={`${index === 0 ? 'cyan' : 'blue'}`}
+        >
+          <Flex w='100%' h='100%' alignItems='center' justifyContent='center'>
+            <Text color={`${index === 0 ? 'grey' : 'white'}`}>{index}</Text>
+          </Flex>
+        </Box>
+      </Flex>
+    )
+
+    return (
+      <Box h={['180px', '160px']}>
+        <Flex flexDir='row' justifyContent='space-between'>
+          <Box>
+            <Button
+              size='sm'
+              colorScheme='teal'
+              onClick={() => actions.setValueAtIndex(stepToIndex, stepToNumber)}
+            >
+              Step to {stepToNumber}
+            </Button>
+            {ThumbIndexIcon(stepToIndex)}
+          </Box>
+          <Box>
+            <Text>
+              Use
+              <Kbd>&#8592;</Kbd> or <Kbd>&#8594;</Kbd>
+              <Text>to step by {stepByNumber}</Text>
+            </Text>
+            {ThumbIndexIcon(stepByIndex)}
+          </Box>
+          <Button size='sm' colorScheme='red' onClick={() => actions.reset()}>
+            Reset
+            <Text display={['none', 'inline-block']} ml={[0, '2%']}>
+              to [{props.defaultValue[0]}, {props.defaultValue[1]}]
+            </Text>
+          </Button>
+        </Flex>
+        <chakra.div
+          mt={2}
+          cursor='pointer'
+          w={{ base: '96%', lg: '98%' }}
+          ml={{ base: '2%', lg: '1%' }}
+          {...getRootProps()}
+        >
+          <input {...getInputProps({ index: 0 })} hidden />
+          <input {...getInputProps({ index: 1 })} hidden />
+          <Badge
+            colorScheme='red'
+            ml='-18px'
+            mt='25px'
+            fontSize='sm'
+            {...firstMarker}
+          >
+            25%
+          </Badge>
+          <Badge
+            colorScheme='red'
+            ml='-18px'
+            mt='25px'
+            fontSize='sm'
+            {...secondMarker}
+          >
+            50%
+          </Badge>
+          <Badge
+            colorScheme='red'
+            ml='-18px'
+            mt='25px'
+            fontSize='sm'
+            {...thirdMarker}
+          >
+            75%
+          </Badge>
+          <Box
+            h='7px'
+            bgColor='teal.100'
+            borderRadius='full'
+            {...getTrackProps()}
+          >
+            <Box
+              h='7px'
+              bgColor='teal.500'
+              borderRadius='full'
+              {...getInnerTrackProps()}
+            />
+          </Box>
+          <Box
+            top='1%'
+            boxSize={8}
+            bgColor='cyan'
+            borderRadius='full'
+            _focusVisible={{
+              outline: 'none',
+            }}
+            onKeyDown={(e) => stepByIndex === 0 && onKeyDownStepBy(e, 0)}
+            {...thumbPropsFirstIndex}
+          >
+            <Flex w='100%' h='100%' alignItems='center' justifyContent='center'>
+              <Text color='gray'>{state.value[0]}</Text>
+            </Flex>
+          </Box>
+
+          <Box
+            top='1%'
+            boxSize={8}
+            bgColor='blue'
+            borderRadius='full'
+            _focusVisible={{
+              outline: 'none',
+            }}
+            onKeyDown={(e) => stepByIndex === 1 && onKeyDownStepBy(e, 1)}
+            {...thumbPropsSecondIndex}
+          >
+            <Flex w='100%' h='100%' alignItems='center' justifyContent='center'>
+              <Text color='white'>{state.value[1]}</Text>
+            </Flex>
+          </Box>
+        </chakra.div>
+      </Box>
+    )
+  }
+  return (
+    <CustomComponent
+      min={0}
+      max={100}
+      stepToNumber={85}
+      stepToIndex={1}
+      stepByNumber={10}
+      stepByIndex={0}
+      defaultValue={[25, 75]}
+      aria-label={['min', 'max']}
+      minStepsBetweenThumbs={5}
+    />
+  )
+}
+```
+
+## Parameters
+
+The `useRangeSlider` hook accepts an object with the following properties:
+
+<PropsTable of='useRangeSlider' />
