@@ -21,7 +21,7 @@ specifiers:
   '@types/node': ^18.0.0
   '@types/react': ^18.0.9
   '@types/react-dom': ^18.0.4
-  '@types/sharp': ^0.30.4
+  '@types/sharp': ^0.31.0
   '@typescript-eslint/eslint-plugin': ^5.30.0
   contentlayer: ^0.2.6
   date-fns: ^2.28.0
@@ -144,7 +144,7 @@ devDependencies:
   '@types/node': 18.11.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
-  '@types/sharp': 0.30.5
+  '@types/sharp': 0.31.0
   '@typescript-eslint/eslint-plugin': 5.34.0_4rv7y5c6xz3vfxwhbrcxxi73bq
   dotenv: 16.0.1
   eslint: 8.22.0
@@ -3444,8 +3444,8 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
 
-  /@types/sharp/0.30.5:
-    resolution: {integrity: sha512-EhO29617AIBqxoVtpd1qdBanWpspk/kD2B6qTFRJ31Q23Rdf+DNU1xlHSwtqvwq1vgOqBwq1i38SX+HGCymIQg==}
+  /@types/sharp/0.31.0:
+    resolution: {integrity: sha512-nwivOU101fYInCwdDcH/0/Ru6yIRXOpORx25ynEOc6/IakuCmjOAGpaO5VfUl4QkDtUC6hj+Z2eCQvgXOioknw==}
     dependencies:
       '@types/node': 18.11.9
     dev: true
