@@ -21,10 +21,10 @@
     "content": "contentlayer build --clearCache"
   },
   "dependencies": {
-    "@chakra-ui/cli": "2.2.0",
-    "@chakra-ui/icons": "2.0.13",
-    "@chakra-ui/props-docs": "2.0.26",
-    "@chakra-ui/react": "2.4.2",
+    "@chakra-ui/cli": "2.2.1",
+    "@chakra-ui/icons": "2.0.14",
+    "@chakra-ui/props-docs": "2.0.28",
+    "@chakra-ui/react": "2.4.4",
     "@chakra-ui/skip-nav": "2.0.12",
     "@chakra-ui/theme-tools": "2.0.14",
     "@chakra-ui/utils": "2.0.12",
