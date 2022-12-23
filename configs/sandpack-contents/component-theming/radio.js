@@ -4,7 +4,7 @@ module.exports = {
   Box,
   Radio,
   Heading,
-  Center,
+  VStack,
 } from '@chakra-ui/react';
 import theme from './theme';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
@@ -13,9 +13,12 @@ export default function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box position="relative" h="100vh" p={12}>
-        <Center>
-          <Radio>Choose me</Radio>
-        </Center>
+        <VStack spacing={4} alignItems="flex-start">
+          <Radio>Styled Radio</Radio>
+          <Radio size="xl">XL Radio</Radio>
+          <Radio variant="groove">Custom Variant Radio</Radio>
+          <Radio variant="groove" size="xl">Custom XL Variant Radio</Radio>
+        </VStack>
         <ColorModeSwitcher aria-label="toggle theme" position="absolute" bottom={4} left={4} />
       </Box>
     </ChakraProvider>
@@ -39,7 +42,7 @@ const theme = extendTheme({
 
 export default theme;`,
   Radio: `import { radioAnatomy } from '@chakra-ui/anatomy';
-import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(radioAnatomy.keys);
@@ -66,18 +69,33 @@ const sizes = {
 const variants = {
   groove: definePartsStyle({
     control: {
-      borderRadius: "0",
+      borderRadius: 0,
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "purple.500",
+      background: "purple.500",
+
       _checked: {
-        border: "2px solid purple",
-        background: "purple.200",
+        background: "purple.500",
+        borderColor: "purple.500",
+
         _hover: {
-          bg: "purple.600",
-          border: "2px solid purple"
+          bg: "purple.700",
+          borderColor: "purple.700"
         }
       },
-      _dark:{
+      _dark: {
         borderColor: "purple.200",
-        background: "purple.400",
+        background: "purple.200",
+
+        _hover: {
+          bg: "purple.400",
+          borderColor: "purple.400"
+        }
+      },
+      _hover: {
+        bg: "purple.700",
+        borderColor: "purple.700"
       }
     }
   })
@@ -88,11 +106,6 @@ export const radioTheme = defineMultiStyleConfig({
   baseStyle,
   sizes,
   variants,
-  defaultProps: {
-    // define which size and variant is applied by default
-    size: "xl",
-    variant: "groove"
-  },
 });`,
   ColorModeSwitcher: `import { useColorMode, useColorModeValue, IconButton, IconButtonProps } from '@chakra-ui/react';
 import { FaMoon, FaSun } from 'react-icons/fa';
