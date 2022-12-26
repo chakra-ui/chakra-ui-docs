@@ -122,7 +122,6 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 }
 
-
 // D.
 // You choose initial value.
 // App subscribes to system color mode changes.
@@ -147,12 +146,15 @@ The current hierarchy of how Chakra UI resolves the color mode:
   mode changes from the operating system. It is no longer used to determine the
   initial color mode. To achieve that, please use `initialColorMode: "system"`
 
+> **Tip:** 
+> In case you need to reset the color mode, you must delete the item in the specified storage (localStorage, cookie manager or custom), so on next page load the value is initialized like the first time user visited the page.
+
 #### Difference between `initialColorMode='system'` and `useSystemColorMode`
 
 `initialColorMode` value is used to determine the value on first visit, or after a storage reset.
 
 `useSystemColorMode` is a boolean that indicates if Chakra UI must subscribes (and updates) based on the operating system's color mode changes.
-If `useSystemColorMode=true` and operating system changes from `light` to `dark` due to daylight switch, the page automatically changes color mode, without user interaction.
+If `useSystemColorMode=true` and operating system changes from `light` to `dark`, due to a manual or automatic switch, the page automatically changes color mode, without user interaction.
 If `useSystemColorMode=false` color mode can only be changed via the `useColorMode` hook.
 
 ### Adding the `ColorModeScript`
