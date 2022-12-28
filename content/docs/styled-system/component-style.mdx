@@ -90,7 +90,7 @@ below.
 Here's a contrived implementation of the design:
 
 ```tsx live=false
-import { defineStyleConfig } from '@chakra-ui/theme'
+import { defineStyleConfig } from '@chakra-ui/react'
 
 const Button = defineStyleConfig({
   // The styles all button have in common
@@ -477,4 +477,19 @@ function Usage() {
     </Menu>
   )
 }
+```
+
+## Responsive modifiers
+
+Just like any style prop, the `variant` and `size` properties can also be
+responsive. We can use the
+[responsive syntax](/docs/styled-system/responsive-styles) to achieve this.
+
+```jsx
+<Button
+  size={{ base: 'xs', md: 'lg' }}
+  variant={{ base: 'solid', md: 'ghost' }}
+>
+  Submit
+</Button>
 ```

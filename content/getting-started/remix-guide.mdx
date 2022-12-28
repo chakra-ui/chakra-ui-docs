@@ -52,8 +52,10 @@ Next on the agenda is to create the emotion cache file. To do that, create a new
 // createEmotionCache.ts
 import createCache from '@emotion/cache'
 
+export const defaultCache = createEmotionCache()
+
 export default function createEmotionCache() {
-  return createCache({ key: 'css' })
+  return createCache({ key: 'cha' })
 }
 ```
 
@@ -68,14 +70,14 @@ import { CacheProvider } from '@emotion/react'
 import { RemixBrowser } from '@remix-run/react'
 
 import { ClientStyleContext } from './context'
-import createEmotionCache from './createEmotionCache'
+import createEmotionCache, { defaultCache } from './createEmotionCache'
 
 interface ClientCacheProviderProps {
   children: React.ReactNode;
 }
 
 function ClientCacheProvider({ children }: ClientCacheProviderProps) {
-  const [cache, setCache] = useState(createEmotionCache())
+  const [cache, setCache] = useState(defaultCache)
 
   function reset() {
     setCache(createEmotionCache())

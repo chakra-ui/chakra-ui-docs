@@ -7,6 +7,7 @@ export interface RouteItem {
   routes?: RouteItem[]
   summarize?: boolean
   new?: true
+  external?: true
 }
 
 export interface Routes {

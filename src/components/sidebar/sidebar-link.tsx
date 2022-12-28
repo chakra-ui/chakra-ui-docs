@@ -4,13 +4,14 @@ import { useRouter } from 'next/router'
 import { forwardRef, Ref, useEffect, useRef } from 'react'
 
 const StyledLink = forwardRef(function StyledLink(
-  props: PropsOf<typeof chakra.a> & { isActive?: boolean },
+  props: PropsOf<typeof chakra.a> & { isActive?: boolean, isExternal?: boolean },
   ref: Ref<any>,
 ) {
-  const { isActive, ...rest } = props
+  const { isActive, isExternal = false, ...rest } = props
 
   return (
     <chakra.a
+      target={isExternal ? '_blank' : undefined}
       aria-current={isActive ? 'page' : undefined}
       width='100%'
       px='3'
@@ -34,6 +35,7 @@ const StyledLink = forwardRef(function StyledLink(
 type SidebarLinkProps = PropsOf<typeof chakra.div> & {
   href?: string
   icon?: React.ReactElement
+  isExternal?: boolean
 }
 
 function checkHref(href: string, slug: string | string[]) {
@@ -43,7 +45,7 @@ function checkHref(href: string, slug: string | string[]) {
   return _slug.includes(pathSlug)
 }
 
-const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
+const SidebarLink = ({ href, children, isExternal = false, ...rest }: SidebarLinkProps) => {
   const router = useRouter()
   const isActive = checkHref(href, router.query.slug) || href === router.asPath
 
@@ -58,7 +60,7 @@ const SidebarLink = ({ href, children, ...rest }: SidebarLinkProps) => {
   return (
     <Flex align='center' userSelect='none' lineHeight='tall' {...rest}>
       <NextLink href={href} passHref>
-        <StyledLink isActive={isActive} ref={link}>
+        <StyledLink isActive={isActive} ref={link} isExternal={isExternal}>
           {children}
         </StyledLink>
       </NextLink>

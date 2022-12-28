@@ -126,6 +126,11 @@
               "path": "/docs/components/badge"
             },
             {
+              "title": "Card",
+              "path": "/docs/components/card",
+              "new": true
+            },
+            {
               "title": "Code",
               "path": "/docs/components/code"
             },
@@ -204,8 +209,7 @@
             },
             {
               "title": "Highlight",
-              "path": "/docs/components/highlight",
-              "new": true
+              "path": "/docs/components/highlight"
             }
           ]
         },
