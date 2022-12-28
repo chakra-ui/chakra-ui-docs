@@ -69,7 +69,6 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
               </SimpleGrid>
             </ListItem>
           ))}
-          )
         </List>
       </VStack>
     </MDXLayout>
