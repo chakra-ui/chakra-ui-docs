@@ -2,3 +2,151 @@
 id: popover
 scope: theming
 ---
+
+The `Popover` component is a multipart component. The styling needs to be
+applied to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+## Anatomy
+
+- A: `content`
+- B: `header`
+- C: `body`
+- D: `footer`
+- E: `popper`
+- F: `arrow`
+- G: `closeButton`
+
+## Theming properties
+
+The properties that affect the theming of the `Popover` component are:
+
+- `arrowPadding`: The arrow padding of the popover. Defaults to `8`
+- `gutter`: The distance or margin between the reference and popper. Defautls to
+  `8`
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  body: {
+    bg: 'gray.800', // change the background of the body to gray.800
+  },
+  content: {
+    padding: 3, // change the padding of the content
+  },
+})
+export const popoverTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the popover theme, we can import it in our theme file and add
+it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { popoverTheme } from './theme/components/popover.ts'
+export const theme = extendTheme({
+  components: { Popover: popoverTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the
+> popover theme are applied.
+## Adding a custom size
+
+Let's assume we want to include an extra large popover size. Here's how we can
+do that:
+
+```jsx live=false
+import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+const sizes = {
+  xl: definePartsStyle({
+    header: defineStyle({
+      padding: 14
+    }),
+    content: defineStyle({
+      fontSize: "2xl",
+      marginLeft: 6
+    })
+  }),
+}
+export const popoverTheme = defineMultiStyleConfig({ sizes })
+// Now we can use the new `xl` size
+<Popover size="xl">...</Popover>
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Adding a custom variant
+
+Let's assume we want to include a custom circular variant. Here's how we can do
+that:
+
+```jsx live=false
+import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+const custom = definePartsStyle({
+  content: defineStyle({
+    padding: 7
+    bg: "gray.700"
+  }),
+  footer: defineStyle({
+    fontSize: "xl"
+  })
+})
+export const popoverTheme = defineMultiStyleConfig({
+  variants: { custom },
+})
+// Now we can use the new `custom` variant
+<Popover variant="custom">...</Popover>
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every popover in
+our app. Here's how we can do that:
+
+```jsx live=false
+import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+const { defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+export const popoverTheme = defineMultiStyleConfig({
+  defaultProps: {
+    arrowPadding: 6,
+    gutter: 6,
+  },
+})
+// This saves you time, instead of manually setting the size and variant every time you use a popover:
+<Popover arrowPadding={6} gutter={6}>...</Popover>
+```
