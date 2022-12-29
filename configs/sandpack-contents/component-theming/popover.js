@@ -72,7 +72,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 import { extendTheme } from "@chakra-ui/react";
-import { popoverTheme } from "./theme/components/popover.ts";
+import { popoverTheme } from "./theme/components/Popover";
 export const theme = extendTheme({
   components: { Popover: popoverTheme }
 });
