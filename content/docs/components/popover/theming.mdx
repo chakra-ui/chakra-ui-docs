@@ -9,6 +9,7 @@ applied to each part specifically.
 > To learn more about styling multipart components, visit the
 > [Component Style](/docs/styled-system/component-style#styling-multipart-components)
 > page.
+
 ## Anatomy
 
 - A: `content`
@@ -75,6 +76,7 @@ export const theme = extendTheme({
 
 > This is a crucial step to make sure that any changes that we make to the
 > popover theme are applied.
+
 ## Adding a custom size
 
 Let's assume we want to include an extra large popover size. Here's how we can
@@ -107,8 +109,7 @@ tool [here](/docs/styled-system/cli).
 
 ## Adding a custom variant
 
-Let's assume we want to include a custom variant. Here's how we can do
-that:
+Let's assume we want to include a custom variant. Here's how we can do that:
 
 ```jsx live=false
 import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
@@ -150,3 +151,25 @@ export const popoverTheme = defineMultiStyleConfig({
 // This saves you time, instead of manually setting the size and variant every time you use a popover:
 <Popover arrowPadding={6} gutter={6}>...</Popover>
 ```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  PopoverTheme,
+} from 'configs/sandpack-contents/component-theming/popover'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Popover.ts': PopoverTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  previewOptions={{
+    minHeight: '500px',
+  }}
+/>
