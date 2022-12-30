@@ -520,11 +520,12 @@ applied to each part specifically.
 
 ## Theming properties
 
-The properties that affect the theming of the `Popover` component are:
+The `Popover` doesn't have any default properties that affect the theming,
+however it is possible to create the following properties:
 
-- `arrowPadding`: The arrow padding of the popover. Defaults to `8`
-- `gutter`: The distance or margin between the reference and popper. Defautls to
-  `8`
+- `size`
+- `variant`
+- `colorScheme`
 
 ## Theming utilities
 
@@ -630,24 +631,31 @@ export const popoverTheme = defineMultiStyleConfig({
 <Popover variant="custom">...</Popover>
 ```
 
-## Changing the default properties
+## Creating the default properties
 
-Let's assume we want to change the default size and variant of every popover in
-our app. Here's how we can do that:
+Let's assume we want to create the default property for the `Popover`. Here's
+how we can do that:
 
 ```jsx live=false
 import { popoverAnatomy as parts } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 const { defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys)
+
+//Let's assume we need each popover to have red content
+const defaultVariant = definePartsStyle({
+    content: {
+        bg: "red.200"
+    }
+})
+
 export const popoverTheme = defineMultiStyleConfig({
+  variant: {default: defaultVariant}
   defaultProps: {
-    arrowPadding: 6,
-    gutter: 6,
+    variant: default
   },
 })
-// This saves you time, instead of manually setting the size and variant every time you use a popover:
-<Popover arrowPadding={6} gutter={6}>...</Popover>
+//Now by default, each Popover will have a 'default' variant with red content.
 ```
 
 ## Showcase
