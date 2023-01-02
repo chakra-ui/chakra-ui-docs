@@ -2,3 +2,157 @@
 id: slider
 scope: theming
 ---
+
+The `Slider` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Anatomy
+
+- A: `container`
+- B: `track`
+- C: `thumb`
+- D: `filledTrack`
+- E: `mark`
+
+## Theming properties
+
+The properties that affect the theming of the `Slider` component are:
+
+- `size`: The size of the slider. Defaults to `md`.
+- `colorScheme`: The color scheme of the slider. Defaults to `blue`.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { sliderAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import { sliderAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  thumb: {
+    bg: 'orange.400', // change the background of the thumb to orange.400
+  },
+  filledTrack: {
+    bg: 'blue.600', // change the background of the filled track to blue.600
+  },
+})
+export const sliderTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the slider theme, we can import it in our theme file and add
+it in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { sliderTheme } from './theme/components/slider.ts'
+export const theme = extendTheme({
+  components: { Slider: sliderTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the
+> slider theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large slider size. Here's how we can do
+that:
+
+```jsx live=false
+import { sliderAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const sizes = {
+  xl: definePartsStyle({
+    container: defineStyle({
+      w: "50%",
+    }),
+    track: defineStyle({
+      h: 7,
+    }),
+    thumb: defineStyle({
+      boxSize: 7,
+    }),
+  }),
+};
+export const sliderTheme = defineMultiStyleConfig({ sizes })
+// Now we can use the new `xl` size
+<Slider size="xl">...</Slider>
+```
+
+Every time you're adding anything new to the theme, you'd need to run the CLI
+command to get proper autocomplete in your IDE. You can learn more about the CLI
+tool [here](/docs/styled-system/cli).
+
+## Creating a custom variant
+
+Let's assume we want to create a custom square variant. Here's how we can do
+that:
+
+```jsx live=false
+import { sliderAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const square = definePartsStyle({
+  thumb: defineStyle({
+    rounded: "none",
+  }),
+});
+
+export const sliderTheme = defineMultiStyleConfig({
+  variants: { square },
+})
+
+// Now we can use the new `square` variant
+<Slider variant="square">...</Slider>
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every slider in
+our app. Here's how we can do that:
+
+```jsx live=false
+import { sliderAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  sliderAnatomy.keys,
+)
+
+export const sliderTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'square',
+  },
+})
+
+// This saves you time, instead of manually setting the size and variant every time you use a slider:
+<Slider size="xl" variant="square">...</Slider>
+```
