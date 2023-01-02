@@ -156,3 +156,25 @@ export const sliderTheme = defineMultiStyleConfig({
 // This saves you time, instead of manually setting the size and variant every time you use a slider:
 <Slider size="xl" variant="square">...</Slider>
 ```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  SliderTheme,
+} from 'configs/sandpack-contents/component-theming/slider'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/Slider.ts': SliderTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  previewOptions={{
+    minHeight: '500px',
+  }}
+/>
