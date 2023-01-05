@@ -12,22 +12,27 @@ module.exports = {
   import { useState } from "react";
   
   export default function App() {
-    const [loading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const { toggleColorMode, colorMode } = useColorMode();
   
     return (
-      <Box pos="relative">
-        <Flex textAlign="center" gap={3} mt={3} direction="column">
+      <Box pos="relative" height="100vh">
+        <Flex textAlign="center" gap={3} p={3} direction="column">
           <Box>
             <Text>Default Skeleton</Text>
-            <Skeleton isLoaded={!loading} bg="orange" fadeDuration={1}>
+            <Skeleton isLoaded={!isLoading} bg="orange" fadeDuration={1}>
               <Text>Hidden Text</Text>
             </Skeleton>
           </Box>
   
           <Box>
             <Text>With xl size</Text>
-            <Skeleton isLoaded={!loading} bg="orange" fadeDuration={1} size="xl">
+            <Skeleton
+              isLoaded={!isLoading}
+              bg="orange"
+              fadeDuration={1.5}
+              size="xl"
+            >
               <Text>Hidden Text</Text>
             </Skeleton>
           </Box>
@@ -35,9 +40,9 @@ module.exports = {
           <Box>
             <Text>With red variant</Text>
             <Skeleton
-              isLoaded={!loading}
+              isLoaded={!isLoading}
               bg="orange"
-              fadeDuration={1}
+              fadeDuration={2}
               variant="red"
             >
               <Text>Hidden Text</Text>
@@ -45,22 +50,25 @@ module.exports = {
           </Box>
   
           <Box>
-            <Button colorScheme={"blue"} onClick={() => setLoading(!loading)}>
-              Toggle
+            <Button
+              colorScheme="gray"
+              variant="outline"
+              onClick={() => setIsLoading(!isLoading)}
+            >
+              Toggle loading state
             </Button>
-  
-            <IconButton
-              aria-label="toggle theme"
-              rounded="full"
-              size="xs"
-              position="absolute"
-              bottom={4}
-              left={4}
-              onClick={toggleColorMode}
-              icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
-            />
           </Box>
         </Flex>
+        <IconButton
+          aria-label="toggle theme"
+          rounded="full"
+          size="lg"
+          position="absolute"
+          bottom={4}
+          left={4}
+          onClick={toggleColorMode}
+          icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+        />
       </Box>
     );
   }`,
