@@ -118,5 +118,10 @@
     "name": "Bitwarden",
     "url": "https://bitwarden.com",
     "image": "showcases/Bitwarden.jpg"
+  },
+  {
+    "name": "Embedery",
+    "url": "https://embedery.com",
+    "image": "showcases/Embedery.jpg"
   }
 ]
