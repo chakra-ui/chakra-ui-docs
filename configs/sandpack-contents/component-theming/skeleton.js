@@ -16,8 +16,8 @@ module.exports = {
     const { toggleColorMode, colorMode } = useColorMode();
   
     return (
-      <Box pos="relative" height="100vh">
-        <Flex textAlign="center" gap={3} p={3} direction="column">
+        <Box pos="relative" height="100vh">
+        <Flex textAlign="center" gap={6} p={8} direction="column">
           <Box>
             <Text>Default Skeleton</Text>
             <Skeleton isLoaded={!isLoading} bg="orange" fadeDuration={1}>
