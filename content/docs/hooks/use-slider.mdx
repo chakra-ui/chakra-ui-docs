@@ -45,9 +45,11 @@ function Example() {
       getTrackProps,
     } = useSlider(sliderProps)
 
-    const firstMarker = getMarkerProps({ value: 25 })
-    const secondMarker = getMarkerProps({ value: 50 })
-    const thirdMarker = getMarkerProps({ value: 75 })
+    const markers = []
+
+    for (let i = 1; i <= 3; i++) {
+      markers.push(getMarkerProps({ value: i * 25 }))
+    }
 
     const { onKeyDown: onThumbKeyDown, ...thumbProps } = getThumbProps()
 
@@ -66,7 +68,7 @@ function Example() {
           >
             Step to {stepToNumber}
           </Button>
-          <Button size='sm' colorScheme='red' onClick={() => actions.reset()}>
+          <Button size='sm' colorScheme='teal' onClick={() => actions.reset()}>
             Reset to {props.defaultValue}
           </Button>
         </Flex>
@@ -78,42 +80,26 @@ function Example() {
           {...getRootProps()}
         >
           <input {...getInputProps()} hidden />
-          <Badge
-            colorScheme='red'
-            ml='-20px'
-            mt='25px'
-            fontSize='sm'
-            {...firstMarker}
-          >
-            25%
-          </Badge>
-          <Badge
-            colorScheme='red'
-            ml='-20px'
-            mt='25px'
-            fontSize='sm'
-            {...secondMarker}
-          >
-            50%
-          </Badge>
-          <Badge
-            colorScheme='red'
-            ml='-20px'
-            mt='25px'
-            fontSize='sm'
-            {...thirdMarker}
-          >
-            75%
-          </Badge>
+          {markers.map((markerProps, index) => (
+            <Badge
+              ml='-20px'
+              mt='25px'
+              fontSize='sm'
+              color='#542344'
+              {...markerProps}
+            >
+              {`${(index + 1) * 25}%`}
+            </Badge>
+          ))}
           <Box
             h='7px'
-            bgColor='teal.100'
+            bgColor='#EBF5EE'
             borderRadius='full'
             {...getTrackProps()}
           >
             <Box
               h='7px'
-              bgColor='teal.500'
+              bgColor='#542344'
               borderRadius='full'
               {...getInnerTrackProps()}
             />
@@ -126,7 +112,7 @@ function Example() {
             _focusVisible={{
               outline: 'none',
             }}
-            border='1px solid teal'
+            border='1px solid #542344'
             onKeyDown={(e) => {
               if (e.code === 'ArrowRight') actions.stepUp(stepByNumber)
               else if (e.code === 'ArrowLeft') actions.stepDown(stepByNumber)
