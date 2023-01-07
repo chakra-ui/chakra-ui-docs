@@ -31,6 +31,40 @@ function App() {
 }
 ```
 
+### ChakraBaseProvider
+
+As of `v2.4.2` there is now the addition of `ChakraBaseProvider`. This is a
+minimal version of `ChakraProvider` that only supplies theme tokens and not the
+default component theming.
+
+One of the biggest causes of the large initial JS payload is the size of the
+component themes. With this approach, you get to apply the theme for just the
+component you need by using `extendBaseTheme`.
+
+```jsx live=false
+import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
+// `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
+import chakraTheme from '@chakra-ui/theme'
+
+const { Button } = chakraTheme.components
+
+const theme = extendBaseTheme({
+  components: {
+    Button,
+  },
+})
+
+function App() {
+  return (
+    <ChakraBaseProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraBaseProvider>
+  )
+}
+```
+
+> 🚨 You must use `extendBaseTheme` for this to work
+
 ## Framework Guide
 
 Chakra UI works in your favorite framework. We've put together step-by-step
