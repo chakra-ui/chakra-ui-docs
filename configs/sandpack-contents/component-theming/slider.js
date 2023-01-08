@@ -4,22 +4,25 @@ module.exports = {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
+  SliderMark,
   Text,
   Box,
   Flex,
   useColorMode,
   IconButton,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
+  const [sliderValue, setSliderValue] = useState(50);
 
   return (
     <>
-      <Flex h={"100vh"} textAlign="center" gap={3} p={8} direction="column">
-        <Box>
-          <Text>Default</Text>
+      <Flex h={"100vh"} textAlign="center" gap={5} p={8} direction="column">
+        <Box display="flex" gap={3} flexDirection="column">
+          <Text fontSize="lg">Default variant</Text>
           <Slider aria-label="slider-ex-1">
             <SliderTrack>
               <SliderFilledTrack />
@@ -28,8 +31,8 @@ export default function App() {
           </Slider>
         </Box>
 
-        <Box>
-          <Text>With xl size</Text>
+        <Box display="flex" gap={3} flexDirection="column">
+          <Text fontSize="lg">Custom size</Text>
           <Slider aria-label="slider-ex-1" size="xl">
             <SliderTrack>
               <SliderFilledTrack />
@@ -38,8 +41,8 @@ export default function App() {
           </Slider>
         </Box>
 
-        <Box>
-          <Text>With square variant</Text>
+        <Box display="flex" gap={3} flexDirection="column">
+          <Text fontSize="lg">Square variant</Text>
           <Slider aria-label="slider-ex-1" variant="square">
             <SliderTrack>
               <SliderFilledTrack />
@@ -47,6 +50,19 @@ export default function App() {
             <SliderThumb />
           </Slider>
         </Box>
+
+        <Box display="flex" gap={3} flexDirection="column">
+        <Text fontSize="lg">Custom variant with markers</Text>
+        <Slider aria-label="slider-ex-1" variant="colorful" onChange={(val) => setSliderValue(val)}>
+          <SliderMark value={sliderValue}>
+            {sliderValue}%
+          </SliderMark>
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>
+      </Box>
 
         <IconButton
           aria-label="toggle theme"
@@ -119,9 +135,29 @@ const square = definePartsStyle({
   }),
 });
 
+const colorful = definePartsStyle((props) => ({
+  filledTrack: {
+    bg: 'blue.500',
+  },
+  track: {
+    bg: mode("blue.100", "blue.900")(props),
+  },
+  thumb: {
+    bg: 'blue.200',
+  },
+  mark: {
+    textAlign: 'center',
+    bg: 'blue.500',
+    color: 'white',
+    mt: '4',
+    ml: '-5',
+    w: '12',
+  }
+}));
+
 export const sliderTheme = defineMultiStyleConfig({
   baseStyle,
-  variants: { square },
+  variants: { square, colorful },
   sizes,
 });`,
 }
