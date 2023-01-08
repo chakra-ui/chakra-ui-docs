@@ -51,7 +51,7 @@ export default function App() {
         <IconButton
           aria-label="toggle theme"
           rounded="full"
-          size="lg"
+          size="xs"
           position="absolute"
           bottom={4}
           left={4}
