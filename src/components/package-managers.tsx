@@ -39,9 +39,12 @@ export const PackageManagers = () => {
     <Tabs my={4}>
       <TabList>
         {packageManagers.map(({ name, icon, color }) => (
-          <Tab key={name} gap={2} _selected={{
-            color,
-          }}>
+          <Tab key={name} gap={2}
+            color={color}
+            _selected={{
+              color,
+              borderBottom: `2px solid ${color}`,
+            }}>
             {icon}
             {name}
           </Tab>
