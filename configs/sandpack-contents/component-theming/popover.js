@@ -69,7 +69,6 @@ export default function App() {
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import "./styles.css";
 import { extendTheme } from "@chakra-ui/react";
 import { popoverTheme } from "./theme/components/Popover";
 export const theme = extendTheme({
