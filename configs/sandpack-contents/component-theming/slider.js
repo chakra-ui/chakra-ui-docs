@@ -95,9 +95,9 @@ const baseStyle = definePartsStyle((props) => ({
     bg: mode("blue.400", "blue.300")(props),
   },
   thumb: {
-    bg: mode("red.400", "red.200")(props),
+    bg: mode("white", "gray.200")(props),
     _hover: {
-      bg: mode("red.500", "red.300")(props),
+      bg: mode("gray.100", "gray.300")(props),
     },
   },
 }));
