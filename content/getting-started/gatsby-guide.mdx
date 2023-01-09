@@ -46,11 +46,19 @@ module.exports = {
          * if false, this plugin will not use <ColorModeProvider />
          */
         isUsingColorMode: true,
+        /**
+         * @property {boolean} [isBaseProvider=false]
+         * if true, will render `<ChakraBaseProvider>`
+         */
+        isBaseProvider: false,
       },
     },
   ],
 }
 ```
+
+> For info on the `isBaseProvider` option's usage, see
+> [Getting Started - ChakraBaseProvider](/getting-started#chakrabaseprovider)
 
 To use a custom theme, you can
 [shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
@@ -68,8 +76,8 @@ const theme = {
 export default extendTheme(theme)
 ```
 
-If you want to use the [default theme](/docs/styled-system/theme)
-there's no need to shadow the file.
+If you want to use the [default theme](/docs/styled-system/theme) there's no
+need to shadow the file.
 
 ## Migration Notes
 
