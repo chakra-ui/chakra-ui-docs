@@ -374,9 +374,9 @@ return (
       ))}
     </head>
     <body  
-      { ...(colorMode ? {
+      {...colorMode && {
         className: `chakra-ui-${colorMode}`
-      } : null )}
+      }}
     >
       <ChakraProvider
         colorModeManager={cookieStorageManagerSSR(cookies)}
