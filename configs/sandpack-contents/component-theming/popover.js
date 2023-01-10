@@ -10,24 +10,36 @@ module.exports = {
   PopoverCloseButton,
   Button,
   Flex,
-  Box
+  Box,
+  IconButton,
+  useColorMode,
 } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function App() {
+  const { toggleColorMode, colorMode } = useColorMode();
   return (
-    <>
-      <Flex direction="column" gap={3} align="center" p={4}>
+    <Box height="100vh">
+      <Flex
+        direction="column"
+        gap={3}
+        align="center"
+        p={8}
+        h="100vh"
+        alignItems={"center"}
+        justify="center"
+      >
         <Box>
           <Popover>
             <PopoverTrigger>
-              <Button colorScheme="blue">Default Popover</Button>
+              <Button variant="outline">Default Popover</Button>
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
               <PopoverCloseButton />
-              <PopoverHeader>This is header</PopoverHeader>
-              <PopoverBody>This is body</PopoverBody>
-              <PopoverFooter>This is footer</PopoverFooter>
+              <PopoverHeader>Header</PopoverHeader>
+              <PopoverBody>Body</PopoverBody>
+              <PopoverFooter>Footer</PopoverFooter>
             </PopoverContent>
           </Popover>
         </Box>
@@ -35,34 +47,44 @@ export default function App() {
         <Box>
           <Popover size={"xl"}>
             <PopoverTrigger>
-              <Button colorScheme="blue">With xl size</Button>
+              <Button variant="outline">With xl size</Button>
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
               <PopoverCloseButton />
-              <PopoverHeader>This is header</PopoverHeader>
-              <PopoverBody>This is body</PopoverBody>
-              <PopoverFooter>This is footer</PopoverFooter>
+              <PopoverHeader>Header</PopoverHeader>
+              <PopoverBody>Body</PopoverBody>
+              <PopoverFooter>Footer</PopoverFooter>
             </PopoverContent>
           </Popover>
         </Box>
 
         <Box>
-          <Popover variant={"custom"}>
+          <Popover variant="squared">
             <PopoverTrigger>
-              <Button colorScheme="blue">With custom variant</Button>
+              <Button variant="outline">With squared variant</Button>
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
               <PopoverCloseButton />
-              <PopoverHeader>This is header</PopoverHeader>
-              <PopoverBody>This is body</PopoverBody>
-              <PopoverFooter>This is footer</PopoverFooter>
+              <PopoverHeader>Header</PopoverHeader>
+              <PopoverBody>Body</PopoverBody>
+              <PopoverFooter>Footer</PopoverFooter>
             </PopoverContent>
           </Popover>
         </Box>
       </Flex>
-    </>
+      <IconButton
+        aria-label="toggle theme"
+        rounded="full"
+        size="xs"
+        position="absolute"
+        bottom={4}
+        left={4}
+        onClick={toggleColorMode}
+        icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+      />
+    </Box>
   );
 }`,
   Index: `import { ChakraProvider } from "@chakra-ui/react";
@@ -84,52 +106,66 @@ root.render(
   </React.StrictMode>
 );`,
   PopoverTheme: `import { popoverAnatomy as parts } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
-
-const {
-  definePartsStyle,
-  defineMultiStyleConfig
-} = createMultiStyleConfigHelpers(parts.keys);
-
-const baseStyle = definePartsStyle({
-  // define the part you're going to style
-  body: {
-    bg: "gray.200" // change the background of the body to gray.800
-  },
-  content: {
-    padding: 3 // change the padding of the content
-  }
-});
-
-const sizes = {
-  xl: definePartsStyle({
-    header: defineStyle({
-      padding: 14
-    }),
-    content: defineStyle({
+  import {
+    createMultiStyleConfigHelpers,
+    defineStyle,
+  } from "@chakra-ui/styled-system";
+  import { mode } from "@chakra-ui/theme-tools";
+  
+  const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(parts.keys);
+  
+  const baseStyle = definePartsStyle((props) => ({
+    content: {
+      p: 3,
+    },
+    header: {
       fontSize: "2xl",
-      marginLeft: 6
-    })
-  })
-};
-
-const variantCustom = definePartsStyle({
-  content: defineStyle({
-    padding: 7,
-    bg: "gray.300"
-  }),
-  footer: defineStyle({
-    fontSize: "xl"
-  })
-});
-
-const variants = {
-  custom: variantCustom
-};
-
-export const popoverTheme = defineMultiStyleConfig({
-  baseStyle,
-  variants,
-  sizes
-});`,
+    },
+    body: {
+      borderColor: mode("gray.600", "gray.200")(props),
+      borderWidth: "1px",
+    },
+    footer: {
+      fontSize: "xs",
+    },
+    popper: {
+      borderColor: mode("cyan.600", "cyan.200")(props),
+    },
+    arrow: {
+      p: 2,
+    },
+  
+    closeButton: {
+      color: mode("blue.600", "blue.200")(props),
+    },
+  }));
+  
+  const sizes = {
+    xl: definePartsStyle({
+      header: defineStyle({
+        padding: 9,
+      }),
+      content: defineStyle({
+        fontSize: "2xl",
+        marginLeft: 6,
+      }),
+    }),
+  };
+  
+  const squared = definePartsStyle({
+    content: defineStyle({
+      rounded: "none",
+    }),
+  });
+  
+  const variants = {
+    squared,
+  };
+  
+  export const popoverTheme = defineMultiStyleConfig({
+    baseStyle,
+    variants,
+    sizes,
+  });`,
 }
