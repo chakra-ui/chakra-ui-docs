@@ -355,12 +355,12 @@ let colorMode = useMemo(() => {
 return (
   <html
     lang="en"
-    {...(colorMode
-      ? {
+    {...colorMode
+      && {
           "data-theme": colorMode,
           "style": { colorScheme: colorMode },
         }
-      : null)}
+      }
   >
     <head>
       <Meta />
