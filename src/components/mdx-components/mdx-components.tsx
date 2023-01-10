@@ -23,6 +23,7 @@ import SandpackEmbed from 'components/sandpack-embed'
 import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
 import { JoinCommunityCards } from 'components/community-card'
+import { PackageManagers } from 'components/package-managers'
 import NextImage from 'next/image'
 
 const { Alert, AspectRatio, Box, chakra, Kbd, Link } = Chakra
@@ -116,4 +117,5 @@ export const MDXComponents = {
   ),
   FeaturesOverview,
   TutorialFileAction,
+  PackageManagers,
 }

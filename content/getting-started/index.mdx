@@ -11,17 +11,13 @@ tags: ['principles']
 To use Chakra UI in your project, run one of the following commands in your
 terminal:
 
-```bash
-npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
-
-```bash
-pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
+<PackageManagers
+  command={{
+    npm: 'install @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    yarn: 'add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    pnpm: 'add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+  }}
+/>
 
 After installing Chakra UI, you need to set up the `ChakraProvider` at the root
 of your application. This can be either in your `index.jsx`, `index.tsx` or
