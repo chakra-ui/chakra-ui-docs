@@ -1,62 +1,71 @@
-import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
-import { ImNpm } from "react-icons/im"
-import { FaYarn } from "react-icons/fa"
-import { SiPnpm } from "react-icons/si"
+import {
+  Box,
+  Icon,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from '@chakra-ui/react'
+import { ImNpm } from 'react-icons/im'
+import { FaYarn } from 'react-icons/fa'
+import { SiPnpm } from 'react-icons/si'
 
-import CodeBlock from "./mdx-components/codeblock/codeblock"
+import CodeBlock from './mdx-components/codeblock/codeblock'
+
+type PackageManagerName = 'npm' | 'yarn' | 'pnpm'
 
 type PackageManager = {
-  name: string
   icon: JSX.Element
   color: string
-  command: string
+  name: PackageManagerName
 }
 
 const packageManagers: PackageManager[] = [
   {
-    name: "npm",
-    icon: <Icon as={ImNpm} />,
-    color: '#CC3534',
-    command: "npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion",
+    name: 'npm',
+    icon: <Icon as={ImNpm} color='red.500' />,
+    color: 'red.500',
   },
   {
-    name: "yarn",
-    icon: <Icon as={FaYarn} fontSize="lg" />,
-    color: '#428CBA',
-    command: "yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion",
+    name: 'yarn',
+    icon: <Icon as={FaYarn} fontSize='lg' color='blue.500' />,
+    color: 'blue.500',
   },
   {
-    name: "pnpm",
-    icon: <Icon as={SiPnpm} />,
-    color: '#F2AF1F',
-    command: "pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion",
+    name: 'pnpm',
+    icon: <Icon as={SiPnpm} color='orange.500' />,
+    color: 'orange.500',
   },
 ]
 
-
-export const PackageManagers = () => {
+export function PackageManagers(props: {
+  command: Record<PackageManagerName, string>
+}) {
+  const { command } = props
   return (
-    <Tabs my={4}>
+    <Tabs mt='6' mb='10'>
       <TabList>
         {packageManagers.map(({ name, icon, color }) => (
-          <Tab key={name} gap={2}
-            color={color}
+          <Tab
+            key={name}
+            gap='2'
             _selected={{
               color,
-              borderBottom: `2px solid ${color}`,
-            }}>
+              borderBottomWidth: '2px',
+              borderBottomColor: color,
+            }}
+          >
             {icon}
             {name}
           </Tab>
         ))}
       </TabList>
       <TabPanels>
-        {packageManagers.map(({ command }) => (
-          <TabPanel key={command} p={0} mt={-4}>
+        {packageManagers.map(({ name }) => (
+          <TabPanel key={name} p='0' mt='-4'>
             <CodeBlock>
-              <Box className="language-bash">
-                {command}
-              </Box>
+              <Box className='language-bash'>{`${name} ${command[name]}`}</Box>
             </CodeBlock>
           </TabPanel>
         ))}
