@@ -46144,6 +46144,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming properties",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Using a custom color scheme",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#using-a-custom-color-scheme",
+    "hierarchy": { "lvl2": "Using a custom color scheme", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/close-button/theming",
+    "type": "lvl2",
+    "url": "/docs/components/close-button/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Close Button",
     "id": "//docs/components/close-button/usage",
     "type": "lvl1",
@@ -50038,6 +50094,62 @@
     "type": "lvl1",
     "url": "/docs/components/slider/theming",
     "hierarchy": {}
+  },
+  {
+    "content": "Anatomy",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#anatomy",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Creating a custom variant",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#creating-a-custom-variant",
+    "hierarchy": { "lvl2": "Creating a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/slider/theming",
+    "type": "lvl2",
+    "url": "/docs/components/slider/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
   },
   {
     "content": "Slider",
