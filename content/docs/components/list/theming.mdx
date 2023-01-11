@@ -3,4 +3,202 @@ id: list
 scope: theming
 ---
 
-TODO
+The `List` component is a multipart component. The styling needs to be applied
+to each part specifically.
+
+> To learn more about styling multipart components, visit the
+> [Component Style](/docs/styled-system/component-style#styling-multipart-components)
+> page.
+
+## Anatomy
+
+- A: `container`
+- B: `item`
+- C: `icon`
+
+SVG with AspectRatio
+
+## Theming properties
+
+The properties that affect the theming of the `List` component are:
+
+- `size`: The size of the list.
+- `variant`: The visual variant of the list
+- `colorScheme`: The color scheme of the list.
+
+## Theming utilities
+
+- `createMultiStyleConfigHelpers`: a function that returns a set of utilities
+  for creating style configs for a multipart component (`definePartsStyle` and
+  `defineMultiStyleConfig`).
+- `definePartsStyle`: a function used to create multipart style objects.
+- `defineMultiStyleConfig`: a function used to define the style configuration
+  for a multipart component.
+
+```jsx live=false
+import { listAnatomy as parts } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+```
+
+## Customizing the default theme
+
+```jsx live=false
+import {
+  defineStyle,
+  createMultiStyleConfigHelpers,
+} from '@chakra-ui/styled-system'
+import { listAnatomy as parts } from '@chakra-ui/anatomy'
+import { mode } from '@chakra-ui/theme-tools'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const baseStyle = definePartsStyle((props) => ({
+  // define the part you're going to style
+  container: {
+    listStylePos: 'inside', // change listStylePos to inside
+    boxShadow: 'md', // change boxShadow to md
+  },
+  item: {
+    p: 2, // set padding to 2
+    '&::marker': {
+      // change color for marker
+      color: mode('green.500', 'green.200')(props),
+    },
+  },
+  icon: {
+    //change color for icon
+    color: mode('blue.500', 'blue.200'),
+  },
+}))
+
+export const listTheme = defineMultiStyleConfig({ baseStyle })
+```
+
+After customizing the list theme, we can import it in our theme file and add it
+in the `components` property:
+
+```jsx live=false
+import { extendTheme } from '@chakra-ui/react'
+import { listTheme } from './theme/components/list.ts'
+export const theme = extendTheme({
+  components: { List: listTheme },
+})
+```
+
+> This is a crucial step to make sure that any changes that we make to the list
+> theme are applied.
+
+## Adding a custom size
+
+Let's assume we want to include an extra large list size. Here's how we can do
+that:
+
+```jsx live=false
+import {
+  defineStyle,
+  createMultiStyleConfigHelpers,
+} from '@chakra-ui/styled-system'
+import { listAnatomy as parts } from '@chakra-ui/anatomy'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const sizes = {
+  xl: definePartsStyle({
+    container: defineStyle({
+      fontSize: 'xl',
+      p: 6,
+    }),
+    icon: defineStyle({
+      boxSize: 6,
+      mr: 5,
+    }),
+  }),
+}
+export const listTheme = defineMultiStyleConfig({ sizes })
+// Now we can use the new `xl` size
+<List size="xl">...</List>
+```
+
+## Creating a custom variant
+
+```javascript
+import {
+  defineStyle,
+  createMultiStyleConfigHelpers,
+} from '@chakra-ui/styled-system'
+import { listAnatomy as parts } from '@chakra-ui/anatomy'
+import { mode } from '@chakra-ui/theme-tools'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys)
+
+const variants = {
+  custom: definePartsStyle((props) => ({
+    container: {
+      bg: mode('white', 'gray.700')(props),
+    },
+    item: {
+      borderBottom: '1px solid',
+      '&::marker': {
+        color: mode('cyan.500', 'cyan.200')(props),
+      },
+    },
+  })),
+}
+
+export const listTheme = defineMultiStyleConfig({ variants })
+// Now we can use the new `custom` variant
+<List varint="custom">...</List>
+```
+
+## Changing the default properties
+
+Let's assume we want to change the default size and variant of every list in our
+app. Here's how we can do that:
+
+```jsx live=false
+import {
+  defineStyle,
+  createMultiStyleConfigHelpers,
+} from '@chakra-ui/styled-system'
+import { listAnatomy as parts } from '@chakra-ui/anatomy'
+
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(parts.keys)
+
+export const listTheme = defineMultiStyleConfig({
+  defaultProps: {
+    size: 'xl',
+    variant: 'custom',
+  },
+})
+// This saves you time, instead of manually setting the size and variant every time you use a list:
+<List size="xl" variant="custom"></List>
+```
+
+## Showcase
+
+import {
+  App,
+  Index,
+  ListTheme,
+} from 'configs/sandpack-contents/component-theming/list'
+
+<SandpackEmbed
+  files={{
+    '/theme/components/List.ts': ListTheme,
+    '/App.tsx': App,
+    '/index.tsx': {
+      code: Index,
+      hidden: true,
+    },
+  }}
+  dependencies={{ 'react-icons': '^4.4.0' }}
+  previewOptions={{
+    minHeight: '500px',
+  }}
+/>
