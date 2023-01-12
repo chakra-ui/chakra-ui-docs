@@ -19,33 +19,33 @@ export default function App() {
     <Box pos="relative" height="100vh">
       <Flex textAlign="center" gap={6} p={8} direction="column">
         <Box>
-          <Text>Default Skeleton</Text>
-          <Skeleton isLoaded={!isLoading} bg="orange" fadeDuration={1}>
-            <Text>Hidden Text</Text>
+          <Skeleton p={0.5} borderRadius="md" bg="teal.500" isLoaded={!isLoading}  fadeDuration={1}>
+            <Text color="teal.100" fontWeight="500">Default Skeleton</Text>
           </Skeleton>
         </Box>
 
         <Box>
-          <Text>With xl size</Text>
           <Skeleton
             isLoaded={!isLoading}
-            bg="orange"
+            bg='green.500'
             fadeDuration={1.5}
             size="xl"
+            borderRadius="sm"
+            p={2}
           >
-            <Text>Hidden Text</Text>
+            <Text color="green.100" fontWeight="500">Custom size</Text>
           </Skeleton>
         </Box>
 
         <Box>
-          <Text>With red variant</Text>
           <Skeleton
             isLoaded={!isLoading}
-            bg="orange"
             fadeDuration={2}
             variant="red"
+            background='red.500'
+            borderRadius="xl"
           >
-            <Text>Hidden Text</Text>
+            <Text color="red.100" fontWeight={500}>Custom red variant</Text>
           </Skeleton>
         </Box>
 
