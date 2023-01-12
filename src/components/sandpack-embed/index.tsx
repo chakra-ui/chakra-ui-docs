@@ -15,7 +15,7 @@ type Props = BoxProps & {
   devDependencies?: Record<string, string>
   layoutOptions?: SandpackLayoutProps
   editorOptions?: CodeEditorProps
-  previewOptions?: PreviewProps
+  previewOptions?: PreviewProps & BoxProps
   files: {
     [x: string]: string
   }
