@@ -292,9 +292,11 @@ export default function App() {
 
 - Add colorModeManager
 
-Remix is server-side rendered, so there will be color mode `flashing`, because chakra stores color mode in `localstorage` by default.
+Remix is server-side rendered, so there will be color mode `flashing`, because
+chakra stores color mode in `localstorage` by default.
 
- We will store color mode value in `cookie` to tell our app to render it in user color mode.
+We will store color mode value in `cookie` to tell our app to render it in user
+color mode.
 
 Here's how to fix it:
 
@@ -302,12 +304,12 @@ Here's how to fix it:
 
 ```tsx live=false
 // Typescript
-// This will return cookies 
+// This will return cookies
 export const loader: LoaderFunction = async ({ request }) => {
-// first time users will not have any cookies and you may not return
-// undefined here, hence ?? is necessary
-  return request.headers.get("cookie") ?? ''
-};
+  // first time users will not have any cookies and you may not return
+  // undefined here, hence ?? is necessary
+  return request.headers.get('cookie') ?? ''
+}
 ```
 
 2. Give `ChakraProvider` cookies from loader
@@ -343,6 +345,27 @@ TypeScript version of `4.1.0` is required.
 If you're starting a new project and would like to cut down on configuration
 time, you can use some of these community boilerplates. 👇
 
-- https://github.com/remix-run/examples/tree/main/chakra-ui
 - https://github.com/aacevski/chakra-remix-boilerplate
 - https://github.com/NoQuarterTeam/boilerplate-remix
+
+Remix also has an official Chakra UI template which you can find
+[here](https://github.com/remix-run/examples/tree/main/chakra-ui).
+
+import {
+  App,
+  Index,
+  ButtonTheme,
+} from 'configs/sandpack-contents/component-theming/button'
+
+<iframe
+  src='https://codesandbox.io/embed/github/remix-run/examples/tree/main/chakra-ui?fontsize=14&theme=dark'
+  style={{
+    width: '100%',
+    height: '500px',
+    border: '0',
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
+></iframe>
