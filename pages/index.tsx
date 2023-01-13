@@ -320,6 +320,9 @@ const HomePage = ({
                   '/App.tsx': App,
                   '/index.tsx': Index,
                 }}
+                previewOptions={{
+                  zIndex: 0,
+                }}
                 isHorizontal
               />
             </Box>
