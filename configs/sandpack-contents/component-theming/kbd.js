@@ -76,7 +76,11 @@ const solidVariant = defineStyle((props) => {
   const { colorScheme: c } = props
   return {
     color: 'white',
-
+    background: \`\${c}.500\`,
+    borderColor: \`\${c}.900\`,
+    _dark: {
+        background: \`\${c}.300\`,
+      },
   }
 })
 
@@ -84,7 +88,12 @@ const outlineVariant = defineStyle((props) => {
   const { colorScheme: c } = props
   return {
     color: 'white',
-
+    border: "2px dashed",
+    background: \`\${c}.500\`,
+    borderColor: \`\${c}.900\`,
+    _dark: {
+      background: \`\${c}.300\`,
+    },
   }
 })
 
@@ -93,9 +102,9 @@ const customVariant = defineStyle((props) => {
     return {
       color: 'white',
       borderRadius: 'xl',
-      __kbd_bg: \`\${c}.500\`,
+      background: \`\${c}.500\`,
       _dark: {
-        __kbd_bg: \`\${c}.300\`,
+        background: \`\${c}.300\`,
       },
     }
 })
