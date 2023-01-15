@@ -2,10 +2,10 @@ import { Button, Heading, Text, VStack } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import * as React from 'react'
 import { FaHome } from 'react-icons/fa'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
 import Header from 'components/header'
 import SEO from 'components/seo'
 import { t } from 'utils/i18n'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
 
 const NotFoundPage = () => {
   return (

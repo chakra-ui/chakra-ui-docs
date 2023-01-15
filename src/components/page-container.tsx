@@ -2,7 +2,6 @@ import { Badge, Box, Flex, chakra } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import { AdBanner } from './chakra-pro/ad-banner'
 import EditPageLink from 'components/edit-page-button'
 import Footer from 'components/footer'
 import Header from 'components/header'
@@ -11,6 +10,7 @@ import TableOfContent from 'components/table-of-content'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { t } from 'utils/i18n'
 import { FrontmatterHeading } from 'src/types/frontmatter'
+import { AdBanner } from './chakra-pro/ad-banner'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -39,7 +39,8 @@ interface PageContainerProps {
   hideToc?: boolean
   maxWidth?: string
   children: React.ReactNode
-  sidebar?: React.ReactElement
+  leftSidebar?: React.ReactElement
+  rightSidebar?: React.ReactElement
   pagination?: React.ReactElement
 }
 
@@ -47,7 +48,8 @@ function PageContainer(props: PageContainerProps) {
   const {
     frontmatter,
     children,
-    sidebar,
+    leftSidebar,
+    rightSidebar,
     pagination,
     hideToc,
     maxWidth = '48rem',
@@ -69,7 +71,7 @@ function PageContainer(props: PageContainerProps) {
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
         <Box display={{ md: 'flex' }}>
-          {sidebar || null}
+          {leftSidebar || null}
           <Box flex='1' minW='0'>
             <SkipNavContent />
             <Box id='content' px={5} mx='auto' minH='76vh'>
@@ -105,6 +107,7 @@ function PageContainer(props: PageContainerProps) {
                     headings={headings}
                   />
                 )}
+                {rightSidebar}
               </Flex>
             </Box>
           </Box>

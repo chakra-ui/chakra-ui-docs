@@ -12,7 +12,7 @@ import {
   useDisclosure,
   useUpdateEffect,
 } from '@chakra-ui/react'
-import { useViewportScroll } from 'framer-motion'
+import { useScroll } from 'framer-motion'
 import NextLink from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { FaMoon, FaSun, FaYoutube } from 'react-icons/fa'
@@ -79,7 +79,11 @@ function HeaderContent() {
                 _hover={{ color: 'gray.600' }}
               />
             </Link>
-            <Link aria-label='Go to Chakra UI Discord page' href='/discord'>
+            <Link
+              isExternal
+              aria-label='Go to Chakra UI Discord page'
+              href='/discord'
+            >
               <Icon
                 as={DiscordIcon}
                 display='block'
@@ -135,7 +139,7 @@ function Header(props: HTMLChakraProps<'header'>) {
   const [y, setY] = useState(0)
   const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
 
-  const { scrollY } = useViewportScroll()
+  const { scrollY } = useScroll()
   useEffect(() => {
     return scrollY.onChange(() => setY(scrollY.get()))
   }, [scrollY])

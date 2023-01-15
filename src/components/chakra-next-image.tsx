@@ -2,7 +2,7 @@ import { chakra, Flex, type FlexProps } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import type { ImageLoaderProps, ImageProps } from 'next/image'
 
-const ChakraNextUnwrappedImage = chakra(NextImage, {
+export const ChakraNextUnwrappedImage = chakra(NextImage, {
   shouldForwardProp: (prop) =>
     [
       'width',
@@ -12,7 +12,8 @@ const ChakraNextUnwrappedImage = chakra(NextImage, {
       'quality',
       'placeholder',
       'blurDataURL',
-      'loader ',
+      'loader',
+      'layout',
     ].includes(prop),
 })
 const toBase64 = (str: string) =>
@@ -32,7 +33,7 @@ const myLoader = (resolverProps: ImageLoaderProps): string => {
 }
 
 const ChakraNextImage = (props: ImageProps & FlexProps) => {
-  const { src, width, height, alt, quality, ...rest } = props
+  const { src, width, height, alt, quality, layout, ...rest } = props
 
   return (
     <Flex
@@ -49,6 +50,7 @@ const ChakraNextImage = (props: ImageProps & FlexProps) => {
         width={width}
         quality={quality}
         height={height}
+        layout={layout}
         placeholder='blur'
         objectFit='contain'
         blurDataURL={`data:image/svg+xml;base64,${toBase64(

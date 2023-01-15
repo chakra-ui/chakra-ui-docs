@@ -54,20 +54,9 @@ jobs:
           git add .all-former-membersrc
           git diff --staged --quiet || git commit -m "chore(.all-former-membersrc): $GITHUB_SHA"
 
-      - name: Generate showcase.json
-        run: pnpm showcase-data:gen
-
-      - name: Commit showcase.json
-        run: |
-          git add public/showcases
-          git diff --staged --quiet || git commit -m "chore(showcase-preview-images): $GITHUB_SHA"
-
-          git add configs/showcase.json
-          git diff --staged --quiet || git commit -m "chore(showcase.json)): $GITHUB_SHA"
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           delete-branch: true
-          title: update sponsors, members, showcase and avatars
+          title: update sponsors, members, and avatars
           branch: chore/daily-updates

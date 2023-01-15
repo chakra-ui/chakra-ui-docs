@@ -1,15 +1,14 @@
 module.exports = {
-  App: `import { Container, chakra } from '@chakra-ui/react';
+  App: `import { Container, chakra, shouldForwardProp } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
-  
+
 const ChakraBox = chakra(motion.div, {
   /**
-   * Allow motion props and the children prop to be forwarded.
-   * All other chakra props not matching the motion props will still be forwarded.
+   * Allow motion props and non-Chakra props to be forwarded.
    */
-  shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
+  shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
-  
+
 export default function App() {
   return (
     <Container h="100vh" display="flex" alignItems="center" justifyContent="center">

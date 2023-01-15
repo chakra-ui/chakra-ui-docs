@@ -165,7 +165,7 @@ Stretch the tab list to fit the container by passing `isFitted` prop.
 
 ### Styling the tab states via props
 
-In event you need to create custom styles for the tabs. Simply set the variant
+In the event that you need to create custom styles for the tabs, simply set the variant
 to `unstyled`, and use the `_selected`, `_hover`, `_active` style props.
 
 ```jsx
@@ -197,7 +197,7 @@ function Example() {
     ['red.50', 'teal.50', 'blue.50'],
     ['red.900', 'teal.900', 'blue.900'],
   )
-  const [tabIndex, setTabIndex] = React.useState(0)
+  const [tabIndex, setTabIndex] = useState(0)
   const bg = colors[tabIndex]
   return (
     <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
@@ -228,14 +228,14 @@ and set it to the index of that tab.
       <Image
         boxSize='200px'
         fit='cover'
-        src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
+        src='https://www.freepnglogos.com/uploads/naruto-png/image-kunai-naruto-fictional-battle-omniverse-23.png'
       />
     </TabPanel>
     <TabPanel>
       <Image
         boxSize='200px'
         fit='cover'
-        src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
+        src='https://images5.alphacoders.com/810/thumbbig-810547.webp'
       />
     </TabPanel>
   </TabPanels>
@@ -337,7 +337,7 @@ onChange as well, or else the tabs will not be interactive.
 
 ```jsx
 function ControlledExample() {
-  const [tabIndex, setTabIndex] = React.useState(0)
+  const [tabIndex, setTabIndex] = useState(0)
 
   const handleSliderChange = (event) => {
     setTabIndex(parseInt(event.target.value, 10))
@@ -491,4 +491,3 @@ function Example() {
 |           | `role="tablist"`   | Indicates that it is a tablist                                             |
 | TabPanel  | `role="tabpanel"`  | Indicates that it is a tabpanel                                            |
 |           | `aria-labelledby`  | Set to the `id` of the `Tab` that labels the `TabPanel`                    |
-

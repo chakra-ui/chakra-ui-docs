@@ -51,22 +51,12 @@
       "location": "UAE"
     },
     {
-      "login": "koca",
-      "avatar_url": "https://avatars.githubusercontent.com/u/342666?v=4",
-      "url": "https://github.com/koca",
-      "blog": "http://mesut.dev",
-      "name": "Mesut Koca",
-      "bio": "Core @chakra-ui\r\nSenior Frontend Developer \r\n#JS #VUE",
-      "twitter_username": "imesutkoca",
-      "location": null
-    },
-    {
       "login": "nikolovlazar",
       "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
       "url": "https://github.com/nikolovlazar",
       "blog": "https://nikolovlazar.com",
       "name": "Lazar Nikolov",
-      "bio": "Developer, designer, course creator. Works @codechem. Core & DevRel at @chakra-ui. Instructor @eggheadio. Streaming on twitch.tv/nikolovlazar. OSS Advocate 🥑",
+      "bio": "Developer Advocate @getsentry.\r\nCore @chakra-ui.\r\nInstructor @eggheadio.\r\nSWE, content creator, OSS Advocate.",
       "twitter_username": "NikolovLazar",
       "location": "Skopje, North Macedonia"
     },
@@ -81,16 +71,6 @@
       "location": "Darmstadt, Germany"
     },
     {
-      "login": "peoray",
-      "avatar_url": "https://avatars.githubusercontent.com/u/23735423?v=4",
-      "url": "https://github.com/peoray",
-      "blog": "https://peoray.dev",
-      "name": "Emmanuel Raymond",
-      "bio": "Full-stack software engineer. I love OSS",
-      "twitter_username": "peoray_",
-      "location": "Remote"
-    },
-    {
       "login": "TimKolberger",
       "avatar_url": "https://avatars.githubusercontent.com/u/16899513?v=4",
       "url": "https://github.com/TimKolberger",
@@ -98,7 +78,7 @@
       "name": "Tim Kolberger",
       "bio": "DevOps Engineer at DB Systel | maintainer @chakra-ui |\r\n[React, nodeJS, GraphQL, ...❤️]",
       "twitter_username": "TimKolberger",
-      "location": "Darmstadt, Germany"
+      "location": "Wiesbaden, Germany"
     }
   ]
 }

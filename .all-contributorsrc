@@ -1359,6 +1359,78 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "lejara",
+      "name": "Leption",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16671822?v=4",
+      "profile": "https://github.com/lejara",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "hwarnke21",
+      "name": "Heather Warnke",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42837789?v=4",
+      "profile": "https://www.heatherwarnke.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "HariVP03",
+      "name": "Hari Vishnu Parashar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54934631?v=4",
+      "profile": "https://github.com/HariVP03",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "kelvinwelter",
+      "name": "Kelvin Welter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37090245?v=4",
+      "profile": "http://kelvinwelter.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "pybash1",
+      "name": "PyBash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67195650?v=4",
+      "profile": "https://pybash.xyz",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "umrkhn",
+      "name": "Umar Abid",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75561750?v=4",
+      "profile": "https://github.com/umrkhn",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "BigDog1400",
+      "name": "Isaac",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63280663?v=4",
+      "profile": "https://github.com/BigDog1400",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "jakegiganti",
+      "name": "Jake Giganti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7992623?v=4",
+      "profile": "https://github.com/jakegiganti",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

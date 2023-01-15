@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Nextjs
+title: Getting Started with Next.js
 description: A guide for installing Chakra UI with Nextjs projects
 tags: ['nextjs']
 author: estheragbaje
@@ -22,6 +22,16 @@ category: frameworks
     />
   </AspectRatio>
 </Box>
+
+## Next.js 13
+
+Next.js 13 introduces a new `app/` directory / folder structure. By default it
+uses Server Components. To use Chakra UI in those components, you need to
+convert them into client-side component by adding a `'use client';` at the top
+of your file. **Chakra UI only works in client-side components**.
+
+> If you're not using the new `app/` directory, there's no need to add the
+> `'use client';` directive.
 
 ### Installation
 
@@ -93,7 +103,7 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp;
+export default MyApp
 ```
 
 > To further customize components or build your own design system, the
@@ -114,23 +124,21 @@ for local storage syncing to work correctly.
 // pages/_document.js
 
 import { ColorModeScript } from '@chakra-ui/react'
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document'
 import theme from './theme'
 
-export default class Document extends NextDocument {
-  render() {
-    return (
-      <Html lang='en'>
-        <Head />
-        <body>
-          {/* 👇 Here's the script */}
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
+export default function Document() {
+  return (
+    <Html lang='en'>
+      <Head />
+      <body>
+        {/* 👇 Here's the script */}
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  )
 }
 ```
 

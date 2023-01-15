@@ -19,6 +19,11 @@
           "path": "/getting-started/comparison"
         },
         {
+          "title": "Roadmap",
+          "path": "https://chakra-ui.canny.io",
+          "external": true
+        },
+        {
           "title": "Contributing",
           "path": "/getting-started/contributing"
         },
@@ -31,7 +36,7 @@
               "path": "/getting-started/cra-guide"
             },
             {
-              "title": "Next JS",
+              "title": "Next.js",
               "path": "/getting-started/nextjs-guide"
             },
             {
@@ -39,7 +44,7 @@
               "path": "/getting-started/gatsby-guide"
             },
             {
-              "title": "Blitz JS",
+              "title": "Blitz.js",
               "path": "/getting-started/blitzjs-guide"
             },
             {
@@ -53,6 +58,10 @@
             {
               "title": "Vite",
               "path": "/getting-started/vite-guide"
+            },
+            {
+              "title": "Meteor",
+              "path": "/getting-started/meteor-guide"
             }
           ]
         },

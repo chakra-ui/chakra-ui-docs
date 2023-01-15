@@ -46,7 +46,7 @@ function Resources() {
 
   return (
     <PageContainer
-      sidebar={<Sidebar routes={routes} />}
+      leftSidebar={<Sidebar routes={routes} />}
       frontmatter={{
         title: t('resources.title'),
         description: t('resources.description'),

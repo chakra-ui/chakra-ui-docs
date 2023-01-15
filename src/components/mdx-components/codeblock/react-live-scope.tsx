@@ -21,6 +21,8 @@ import Lorem from 'react-lorem-component'
 import * as Loaders from 'react-spinners'
 import * as ReactTable from 'react-table'
 import CircleIcon from '../../docs/icon'
+import { BiLike, BiChat, BiShare } from 'react-icons/bi'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 const reactIcons = {
   MdSettings,
@@ -35,6 +37,10 @@ const reactIcons = {
   AiOutlineUser,
   FaFacebook,
   FaTwitter,
+  BsThreeDotsVertical,
+  BiLike,
+  BiShare,
+  BiChat,
 }
 
 const StarIcon = (props) => (

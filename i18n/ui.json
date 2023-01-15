@@ -40,7 +40,7 @@
     },
     "built-with-chakra-section": {
       "title": "Built with Chakra UI ⚡️",
-      "description": "A collection of websites and projects built with Chakra UI",
+      "description": "Your project can look as good as these! Check them out, get inspired!",
       "see-showcase": "See showcase"
     },
     "growing-section": {
@@ -204,7 +204,8 @@
       "sponsor": "Sponsor"
     },
     "table-of-content": {
-      "on-this-page": "On this page"
+      "on-this-page": "On this page",
+      "versions": "Versions"
     },
     "vercel-callout": {
       "deployed-by": "Deployed by"
@@ -216,7 +217,6 @@
       "description": "A collection of beautiful websites that are built in Chakra UI"
     },
     "title": "Showcase",
-    "message": "A collection of beautiful websites that are built in Chakra UI",
-    "submit-project-button-title": "Submit your project"
+    "message": "A collection of beautiful websites that are built in Chakra UI"
   }
 }

@@ -29,7 +29,6 @@ import { IoMdMoon } from 'react-icons/io'
 import { MdAccessibility, MdGrain, MdPalette } from 'react-icons/md'
 import users from 'chakra-users'
 import ChakraNextImage from 'components/chakra-next-image'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
 import { ChakraProAd } from 'components/chakra-pro/home-page-ad'
 import Container from 'components/container'
 import { DiscordStrip } from 'components/discord-strip'
@@ -37,7 +36,7 @@ import { Footer } from 'components/footer'
 import Header from 'components/header'
 import SandpackEmbed from 'components/sandpack-embed'
 import SEO from 'components/seo'
-import ShowcaseSection from 'components/showcase-section'
+import ShowcaseSection from 'components/showcase/showcase-section'
 import TweetCard from 'components/tweet-card'
 import { App, Index } from 'configs/sandpack-contents/homepage/files'
 import tweets from 'configs/tweets.json'
@@ -49,6 +48,7 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
+import { AdBanner } from 'components/chakra-pro/ad-banner'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -319,6 +319,9 @@ const HomePage = ({
                 files={{
                   '/App.tsx': App,
                   '/index.tsx': Index,
+                }}
+                previewOptions={{
+                  zIndex: 0,
                 }}
                 isHorizontal
               />
