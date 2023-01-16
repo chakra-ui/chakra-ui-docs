@@ -1,7 +1,6 @@
 module.exports = {
   App: 
-  `
-    import {
+  `import {
         Badge,
         Box,
         Button,
@@ -10,11 +9,15 @@ module.exports = {
         useSlider,
         Text
     } from "@chakra-ui/react";
-
-    import Instructions from "./Instructions";
+    
     import Actions from "./Actions";
+    import Instructions from "./Instructions";
+    type Props = {
+        stepByNumber: number;
+        stepToNumber: number;
+    };
 
-    export default function App() {
+    export default function App({stepByNumber, stepToNumber}: Props) {
         const {
             state,
             actions,
@@ -24,7 +27,7 @@ module.exports = {
             getRootProps,
             getThumbProps,
             getTrackProps
-        } = useSlider({ min: 0, max: 100, defaultValue: 0, stepByNumber: 10, stepToNumber: 50 });
+        } = useSlider({ min: 0, max: 100, stepByNumber, stepToNumber });
 
         const { onKeyDown: onThumbKeyDown, ...thumbProps } = getThumbProps();
         
@@ -37,8 +40,8 @@ module.exports = {
         return (
             <Box px={8} pt='15%'>
                 <Flex flexDir="row" justifyContent="space-between">
-                    <Instructions stepByNumber={10} />
-                    <Actions actions={actions} stepToNumber={50} />
+                    <Instructions stepByNumber={stepByNumber} />
+                    <Actions actions={actions} stepToNumber={stepToNumber} />
                 </Flex>
                 <chakra.div
                     mt={2}
@@ -80,8 +83,8 @@ module.exports = {
                             outline: "none"
                         }}
                         onKeyDown={(e) => {
-                            if (e.code === "ArrowRight") actions.stepUp(10);
-                            else if (e.code === "ArrowLeft") actions.stepDown(10);
+                            if (e.code === "ArrowRight") actions.stepUp(stepByNumber);
+                            else if (e.code === "ArrowLeft") actions.stepDown(stepByNumber);
                             else onThumbKeyDown(e);
                         }}
                         {...thumbProps}
@@ -109,7 +112,7 @@ module.exports = {
     root.render(
         <React.StrictMode>
             <ChakraProvider>
-                <App />
+                <App stepByNumber={10} stepToNumber={50}/>
             </ChakraProvider>
         </React.StrictMode>
     );
@@ -128,42 +131,41 @@ module.exports = {
                 <Text>
                     Use {' '}
                     <Kbd>&#8592;</Kbd> or <Kbd>&#8594;</Kbd>
-                    {' '}
                     <Text>to step by {stepByNumber}</Text>
                 </Text>
             );
     };
+    export default Instructions;
    `,
 
   Actions: 
-  `
-        import { Button } from "@chakra-ui/react";
-        type Props = {
-            actions: {
-                stepUp(step?: number): void;
-                stepDown(step?: number): void;
-                reset(): void;
-                stepTo(value: number): void;
-            };
-            stepToNumber: number;
+  ` import { Button } from "@chakra-ui/react";
+    type Props = {
+        actions: {
+            stepUp(step?: number): void;
+            stepDown(step?: number): void;
+            reset(): void;
+            stepTo(value: number): void;
         };
-        
-        const Actions = ({ actions, stepToNumber }: Props) => {
-            return (
-                <>
-                <Button
-                    size="sm"
-                    colorScheme="teal"
-                    onClick={() => actions.stepTo(stepToNumber)}
-                >
-                    Step to {stepToNumber}
-                </Button>
-                <Button size="sm" colorScheme="teal" onClick={() => actions.reset()}>
-                    Reset to 0
-                </Button>
-                </>
-            );
-        };
-        export default Actions;
+        stepToNumber: number;
+    };
+    
+    const Actions = ({ actions, stepToNumber }: Props) => {
+        return (
+            <>
+            <Button
+                size="sm"
+                colorScheme="teal"
+                onClick={() => actions.stepTo(stepToNumber)}
+            >
+                Step to {stepToNumber}
+            </Button>
+            <Button size="sm" colorScheme="teal" onClick={() => actions.reset()}>
+                Reset to 0
+            </Button>
+            </>
+        );
+    };
+    export default Actions;
   `,
 }
