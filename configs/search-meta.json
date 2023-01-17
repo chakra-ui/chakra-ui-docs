@@ -54325,6 +54325,31 @@
     "hierarchy": { "lvl1": "Default Theme", "lvl2": "Config", "lvl3": null }
   },
   {
+    "content": "Figma Plugin",
+    "id": "//figma/plugin",
+    "type": "lvl1",
+    "url": "/figma/plugin",
+    "hierarchy": { "lvl1": "Figma Plugin" }
+  },
+  {
+    "content": "How it works",
+    "id": "//figma/plugin",
+    "type": "lvl2",
+    "url": "/figma/plugin#how-it-works",
+    "hierarchy": {
+      "lvl1": "Figma Plugin",
+      "lvl2": "How it works",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Figma UI Kit",
+    "id": "//figma/ui-kit",
+    "type": "lvl1",
+    "url": "/figma/ui-kit",
+    "hierarchy": { "lvl1": "Figma UI Kit" }
+  },
+  {
     "content": "Blitz.js",
     "id": "//getting-started/blitzjs-guide",
     "type": "lvl1",
