@@ -44443,6 +44443,68 @@
     }
   },
   {
+    "content": "Version 2.4.9",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl1",
+    "url": "/changelog/v2.4.9",
+    "hierarchy": { "lvl1": "Version 2.4.9" }
+  },
+  {
+    "content": "All components",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#all-components",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "All components",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Provider `2.1.0`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#provider-210",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": "Provider `2.1.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Focus Lock `2.0.16`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#focus-lock-2016",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": "Focus Lock `2.0.16`"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
