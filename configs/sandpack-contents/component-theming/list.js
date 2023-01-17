@@ -14,7 +14,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { MdCheckCircle, MdSettings } from "react-icons/md";
+import { MdCheckCircle, MdSettings, MdOutlineSell } from "react-icons/md";
 
 export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -27,8 +27,8 @@ export default function App() {
         wrap="wrap"
         textAlign="start"
         justify="center"
-        gap={10}
-        p={8}
+        gap={3}
+        p={2}
       >
         <Box flexBasis="100%">
           <Text textAlign={"center"} fontSize={"2xl"}>
@@ -36,47 +36,41 @@ export default function App() {
           </Text>
         </Box>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"} p={3}>
+          <Text textAlign={"center"} fontSize={"xl"}>
             Ordered List
           </Text>
           <OrderedList>
-            <ListItem>Lorem ipsum dolor sit amet</ListItem>
-            <ListItem>Consectetur adipiscing elit</ListItem>
-            <ListItem>Integer molestie lorem at massa</ListItem>
-            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+            <ListItem>Lorem ipsum dolor sit</ListItem>
+            <ListItem>Consectetur adipiscing</ListItem>
+            <ListItem>Integer molestie lorem</ListItem>
           </OrderedList>
         </Box>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"} p={3}>
+          <Text textAlign={"center"} fontSize={"xl"}>
             Unordered List
           </Text>
           <UnorderedList>
-            <ListItem>Lorem ipsum dolor sit amet</ListItem>
-            <ListItem>Consectetur adipiscing elit</ListItem>
-            <ListItem>Integer molestie lorem at massa</ListItem>
-            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+            <ListItem>Lorem ipsum dolor sit</ListItem>
+            <ListItem>Consectetur adipiscing</ListItem>
+            <ListItem>Integer molestie lorem</ListItem>
           </UnorderedList>
         </Box>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"} p={3}>
-            Unstyled List with icon
+          <Text textAlign={"center"} fontSize={"xl"}>
+            With Icons
           </Text>
           <List>
             <ListItem>
               <ListIcon as={MdCheckCircle} />
-              Lorem ipsum dolor sit amet
+              Lorem ipsum dolor sit
             </ListItem>
             <ListItem>
               <ListIcon as={MdCheckCircle} />
-              Consectetur adipiscing elit
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} />
-              Integer molestie lorem at massa
+              Consectetur adipiscing
             </ListItem>
             <ListItem>
               <ListIcon as={MdSettings} />
-              Facilisis in pretium nisl aliquet
+              Integer molestie lorem
             </ListItem>
           </List>
         </Box>
@@ -88,19 +82,15 @@ export default function App() {
           <List size="xl">
             <ListItem>
               <ListIcon as={MdCheckCircle} />
-              Lorem ipsum dolor sit amet
+              Lorem ipsum dolor sit
             </ListItem>
             <ListItem>
               <ListIcon as={MdCheckCircle} />
-              Consectetur adipiscing elit
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} />
-              Integer molestie lorem at massa
+              Consectetur adipiscing
             </ListItem>
             <ListItem>
               <ListIcon as={MdSettings} />
-              Facilisis in pretium nisl aliquet
+              Integer molestie lorem
             </ListItem>
           </List>
         </Box>
@@ -109,12 +99,20 @@ export default function App() {
           <Text textAlign={"center"} fontSize={"xl"} p={3}>
             Themed XL Custom List
           </Text>
-          <UnorderedList size="xl" variant="custom">
-            <ListItem>Lorem ipsum dolor sit amet</ListItem>
-            <ListItem>Consectetur adipiscing elit</ListItem>
-            <ListItem>Integer molestie lorem at massa</ListItem>
-            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-          </UnorderedList>
+          <List size="xl" variant="custom" spacing={3}>
+            <Flex align={"center"}>
+              <ListIcon as={MdOutlineSell} />
+              <ListItem>Lorem ipsum dolor sit</ListItem>
+            </Flex>
+            <Flex align={"center"}>
+              <ListIcon as={MdOutlineSell} />
+              <ListItem>Consectetur adipiscing</ListItem>
+            </Flex>
+            <Flex align={"center"}>
+              <ListIcon as={MdOutlineSell} />
+              <ListItem>Integer molestie lorem</ListItem>
+            </Flex>
+          </List>
         </Box>
       </Flex>
       <Box>
@@ -167,14 +165,14 @@ const baseStyle = definePartsStyle((props) => ({
   },
 
   item: {
-    p: 2,
+    p: 1,
     "&::marker": {
       color: mode("green.500", "green.200")(props),
     },
   },
 
   icon: {
-    color: mode("blue.500", "blue.200"),
+    color: mode("blue.500", "blue.200")(props),
   },
 }));
 
@@ -193,14 +191,14 @@ const sizes = {
 
 const variants = {
   custom: definePartsStyle((props) => ({
-    container: {
-      bg: mode("white", "gray.700")(props),
-    },
     item: {
-      borderBottom: "1px solid",
-      "&::marker": {
-        color: mode("cyan.500", "cyan.200")(props),
-      },
+      bg: mode("orange.100", "orange.400")(props),
+      borderRadius: "30px",
+      w: "full",
+      p: 2,
+    },
+    icon: {
+      color: mode("orange.200", "orange.400")(props),
     },
   })),
 };
