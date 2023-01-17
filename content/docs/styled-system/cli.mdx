@@ -49,20 +49,24 @@ Don't forget to replace `path/to/theme.ts` with your theme file location.
 
 To generate typings for your theme, run the `theme` script:
 
-```bash
-npm run theme
-# or
-yarn theme
-```
+<PackageManagers
+  command={{
+    npm: 'npm run theme',
+    yarn: 'yarn theme',
+    pnpm: 'pnpm theme',
+  }}
+/>
 
 If you'd like to continuously generate theme typings as you're editing your
 theme, run the `theme:watch` script:
 
-```bash
-npm run theme:watch
-# or
-yarn theme:watch
-```
+<PackageManagers
+  command={{
+    npm: 'npm run theme:watch',
+    yarn: 'yarn theme:watch',
+    pnpm: 'pnpm theme:watch',
+  }}
+/>
 
 A successful execution should output something like this:
 

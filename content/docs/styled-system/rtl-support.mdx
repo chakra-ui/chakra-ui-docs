@@ -27,13 +27,13 @@ Here's how to set it up.
 
 1. Install the stylis plugin and emotion's cache
 
-```bash
-npm i stylis stylis-plugin-rtl @emotion/cache
-
-# or
-
-yarn add stylis stylis-plugin-rtl @emotion/cache
-```
+<PackageManagers
+  command={{
+    npm: 'npm i stylis stylis-plugin-rtl @emotion/cache',
+    yarn: 'yarn add stylis stylis-plugin-rtl @emotion/cache',
+    pnpm: 'pnpm add stylis stylis-plugin-rtl @emotion/cache',
+  }}
+/>
 
 2. Create the RTL provider using `CacheProvider` from emotion
 

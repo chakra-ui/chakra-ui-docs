@@ -31,13 +31,7 @@ const PropsTable = ({
     [of, omit, only],
   )
 
-  if (!propList.length) {
-    // this error breaks the build to notify you when there would be an empty table
-    throw new Error(
-      `No props left to render for component ${of}.
-Remove the use of <PropsTable of="${of}" /> for this component in the docs.`,
-    )
-  }
+  if (!propList.length) return null
 
   return (
     <Stack overflowX='auto' spacing='16' my='10'>

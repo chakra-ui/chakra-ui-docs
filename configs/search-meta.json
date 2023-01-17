@@ -54657,14 +54657,25 @@
     }
   },
   {
-    "content": "Usage",
+    "content": "JavaScript Template",
     "id": "//getting-started/cra-guide",
     "type": "lvl3",
-    "url": "/getting-started/cra-guide#usage",
+    "url": "/getting-started/cra-guide#javascript-template",
     "hierarchy": {
       "lvl1": "Create React App",
       "lvl2": "Automatic Installation",
-      "lvl3": "Usage"
+      "lvl3": "JavaScript Template"
+    }
+  },
+  {
+    "content": "TypeScript Template",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl3",
+    "url": "/getting-started/cra-guide#typescript-template",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "JavaScript Template",
+      "lvl3": "TypeScript Template"
     }
   },
   {
@@ -54674,7 +54685,7 @@
     "url": "/getting-started/cra-guide#whats-included",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "Usage",
+      "lvl2": "TypeScript Template",
       "lvl3": "What's included"
     }
   },
@@ -55306,11 +55317,29 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#customizing-theme",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+  },
+  {
+    "content": "Add colorModeManager",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#add-colormodemanager",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Customizing Theme", "lvl3": null }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/remix-guide",
     "type": "lvl4",
     "url": "/getting-started/remix-guide#notes-on-typescript-🚨",
-    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+    "hierarchy": {
+      "lvl1": "Remix",
+      "lvl2": "Add colorModeManager",
+      "lvl3": null
+    }
   },
   {
     "content": "4. Community boilerplates",
