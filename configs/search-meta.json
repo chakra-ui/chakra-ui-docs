@@ -54767,13 +54767,35 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#customizing-theme",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "3. Optional Setup",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Using Chakra Icons",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#using-chakra-icons",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "Customizing Theme",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/cra-guide",
     "type": "lvl4",
     "url": "/getting-started/cra-guide#notes-on-typescript-🚨",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "3. Optional Setup",
+      "lvl2": "Using Chakra Icons",
       "lvl3": null
     }
   },
