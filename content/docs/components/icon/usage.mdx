@@ -15,11 +15,13 @@ project.
 These icons are published into a separate package that is not part of
 `@chakra-ui/react` by default.
 
-```bash
-npm i @chakra-ui/icons
-# or
-yarn add @chakra-ui/icons
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/icons',
+    yarn: 'yarn add @chakra-ui/icons',
+    pnpm: 'pnpm add @chakra-ui/icons',
+  }}
+/>
 
 ## Usage
 
@@ -190,4 +192,3 @@ When `children` is not provided, the `Icon` component renders a fallback icon.
 ```jsx
 <Icon />
 ```
-

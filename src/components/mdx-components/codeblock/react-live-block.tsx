@@ -56,7 +56,7 @@ function ReactLiveBlock({ editable, rawCode, ...rest }) {
       <LiveCodePreview zIndex='1' />
       <Box position='relative' zIndex='0'>
         {editable && (
-          <CodeContainer>
+          <CodeContainer padding='5'>
             <LiveEditor onChange={onChange} style={liveEditorStyle} />
           </CodeContainer>
         )}

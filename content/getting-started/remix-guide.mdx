@@ -11,13 +11,13 @@ category: frameworks
 Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
 
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+    yarn: 'yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+    pnpm: 'pnpm add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+  }}
+/>
 
 ### 2. Provider Setup
 
@@ -258,7 +258,7 @@ export default function App() {
 
 ### 3. Optional Setup
 
-- Customizing Theme
+#### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -290,11 +290,13 @@ export default function App() {
 }
 ```
 
-- Add colorModeManager
+#### Add colorModeManager
 
-Remix is server-side rendered, so there will be color mode `flashing`, because chakra stores color mode in `localstorage` by default.
+Remix is server-side rendered, so there will be color mode `flashing`, because
+chakra stores color mode in `localstorage` by default.
 
- We will store color mode value in `cookie` to tell our app to render it in user color mode.
+We will store color mode value in `cookie` to tell our app to render it in user
+color mode.
 
 Here's how to fix it:
 
@@ -302,12 +304,12 @@ Here's how to fix it:
 
 ```tsx live=false
 // Typescript
-// This will return cookies 
+// This will return cookies
 export const loader: LoaderFunction = async ({ request }) => {
-// first time users will not have any cookies and you may not return
-// undefined here, hence ?? is necessary
-  return request.headers.get("cookie") ?? ''
-};
+  // first time users will not have any cookies and you may not return
+  // undefined here, hence ?? is necessary
+  return request.headers.get('cookie') ?? ''
+}
 ```
 
 2. Give `ChakraProvider` cookies from loader

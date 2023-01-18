@@ -9,7 +9,6 @@ import toc from 'markdown-toc'
 import path from 'path'
 import prettier from 'prettier'
 import shell from 'shelljs'
-import { v4 as uuid } from 'uuid'
 
 interface ResultType {
   content: string
@@ -52,7 +51,7 @@ async function getMDXMeta(file: string) {
 
   result.push({
     content: frontMatter.title,
-    id: uuid(),
+    id: slug,
     type: 'lvl1',
     url: removePrefix(slug, '/'),
     hierarchy: {
@@ -63,7 +62,7 @@ async function getMDXMeta(file: string) {
   json.forEach((item, index) => {
     result.push({
       content: item.content,
-      id: uuid(),
+      id: slug,
       type: `lvl${item.lvl}` as any,
       url: removePrefix(slug, '/') + `#${item.slug}`,
       hierarchy: {
