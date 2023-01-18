@@ -150,11 +150,11 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-import-resolver-typescript: 3.5.0_2iahngt3u2tkbdlu6s4gkur3pu
   eslint-plugin-import: 2.26.0_ubfcswsixendr4ku2l5ulu6bmy
-  eslint-plugin-prettier: 4.2.1_wc6gesg72dpfw5d6hhumtqiqsi
+  eslint-plugin-prettier: 4.2.1_okhhbe2jdwxme7ohzi4ywzhixa
   mkdirp: 1.0.4
   node-fetch: 3.2.10
   pnpm-deduplicate: 0.3.1
-  prettier: 2.8.1
+  prettier: 2.8.3
   react-multi-ref: 1.0.0
   semver: 7.3.8
   sharp: 0.30.7
@@ -453,7 +453,7 @@ packages:
       commander: 9.5.0
       lodash.throttle: 4.1.1
       ora: 5.4.1
-      prettier: 2.8.1
+      prettier: 2.8.3
       regenerator-runtime: 0.13.11
       ts-node: 10.9.1_jr7bst4vzqryxksywwmvxlsmhq
       tsconfig-paths: 4.1.2
@@ -3091,7 +3091,7 @@ packages:
       detect-indent: 6.1.0
       fast-deep-equal: 3.1.3
       is-windows: 1.0.2
-      json5: 2.2.2
+      json5: 2.2.3
       parse-json: 5.2.0
       read-yaml-file: 2.1.0
       sort-keys: 4.2.0
@@ -3115,7 +3115,7 @@ packages:
     engines: {node: '>=14.6'}
     dependencies:
       '@pnpm/types': 8.5.0
-      json5: 2.2.2
+      json5: 2.2.3
       write-file-atomic: 3.0.3
       write-yaml-file: 4.2.0
     dev: true
@@ -4414,11 +4414,11 @@ packages:
   /commander/9.4.1:
     resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==}
     engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
-    dev: false
 
   /comment-json/4.2.3:
     resolution: {integrity: sha512-SsxdiOf064DWoZLH799Ata6u7iV658A11PlWtZATDlXPpKGJnbJZ5Z24ybixAi+LUUqJ/GKowAejtC5GFUG7Tw==}
@@ -5619,7 +5619,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_wc6gesg72dpfw5d6hhumtqiqsi:
+  /eslint-plugin-prettier/4.2.1_okhhbe2jdwxme7ohzi4ywzhixa:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5632,7 +5632,7 @@ packages:
     dependencies:
       eslint: 8.22.0
       eslint-config-prettier: 8.5.0_eslint@8.22.0
-      prettier: 2.8.1
+      prettier: 2.8.3
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -7005,17 +7005,10 @@ packages:
       minimist: 1.2.7
     dev: true
 
-  /json5/2.2.2:
-    resolution: {integrity: sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dev: true
-
   /json5/2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: false
 
   /jsonfile/6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
@@ -8578,7 +8571,7 @@ packages:
       '@pnpm/manifest-utils': 3.1.2_@pnpm+logger@4.0.0
       '@pnpm/read-project-manifest': 3.0.9
       '@pnpm/types': 8.5.0
-      commander: 9.4.1
+      commander: 9.5.0
       dependency-path: 9.2.4
       path-exists: 5.0.0
       semver: 7.3.8
@@ -8638,16 +8631,10 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.1:
-    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-
   /prettier/2.8.3:
     resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: false
 
   /prism-react-renderer/1.3.5_react@18.2.0:
     resolution: {integrity: sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==}
