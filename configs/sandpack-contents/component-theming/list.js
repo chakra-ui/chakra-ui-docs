@@ -161,6 +161,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle((props) => ({
   container: {
     listStylePos: "inside",
+    margin: "0px !important",
     boxShadow: "md",
   },
 
