@@ -13,66 +13,98 @@ module.exports = {
   Box,
   IconButton,
   useColorMode,
+  Text,
+  Icon,
+  Center,
 } from "@chakra-ui/react";
+import { WarningIcon } from "@chakra-ui/icons";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { FiCheck, FiX } from "react-icons/fi";
+
+const PopoverExample = ({ name, colorMode, ...rest }) => (
+  <Box>
+    <Popover {...rest}>
+      <PopoverTrigger>
+        <Button variant="outline">{name}</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverHeader>
+          <Center>
+            <Text as="b">Confirm Reservation</Text>
+          </Center>
+        </PopoverHeader>
+        <PopoverBody>
+          <Flex
+            direction="column"
+            justify="center"
+            align="center"
+            gap={1}
+            p={2}
+          >
+            <Box>
+              <Flex gap={5}>
+                <Box>
+                  <WarningIcon
+                    boxSize={5}
+                    color={colorMode === "light" ? "red.500" : "red.600"}
+                  />
+                </Box>
+                <Box>
+                  <Flex direction="column" gap={3}>
+                    <Text as="b">Warning</Text>
+                    <Text fontSize="sm">
+                      Please confirm a reservation at <b>Dorsia</b>. Otherwise,
+                      it will be canceled in <b>10 minutes</b>.
+                    </Text>
+                  </Flex>
+                </Box>
+              </Flex>
+            </Box>
+          </Flex>
+        </PopoverBody>
+        <PopoverFooter>
+          <Center gap={6}>
+            <Button colorScheme={"red"} rightIcon={<Icon as={FiX} />}>
+              Cancel
+            </Button>
+            <Button colorScheme={"blue"} rightIcon={<Icon as={FiCheck} />}>
+              Confirm
+            </Button>
+          </Center>
+        </PopoverFooter>
+      </PopoverContent>
+    </Popover>
+  </Box>
+);
 
 export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
-    <Box height="100vh">
+    <Box pos="relative">
       <Flex
         direction="column"
         gap={3}
         align="center"
-        p={8}
+        p={8} 
         h="100vh"
         alignItems={"center"}
         justify="center"
       >
-        <Box>
-          <Popover>
-            <PopoverTrigger>
-              <Button variant="outline">Default Popover</Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverHeader>Header</PopoverHeader>
-              <PopoverBody>Body</PopoverBody>
-              <PopoverFooter>Footer</PopoverFooter>
-            </PopoverContent>
-          </Popover>
-        </Box>
+        <PopoverExample name={"Themed Popover"} colorMode={colorMode} />
 
-        <Box>
-          <Popover size={"xl"}>
-            <PopoverTrigger>
-              <Button variant="outline">With xl size</Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverHeader>Header</PopoverHeader>
-              <PopoverBody>Body</PopoverBody>
-              <PopoverFooter>Footer</PopoverFooter>
-            </PopoverContent>
-          </Popover>
-        </Box>
-
-        <Box>
-          <Popover variant="squared">
-            <PopoverTrigger>
-              <Button variant="outline">With squared variant</Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverHeader>Header</PopoverHeader>
-              <PopoverBody>Body</PopoverBody>
-              <PopoverFooter>Footer</PopoverFooter>
-            </PopoverContent>
-          </Popover>
-        </Box>
+        <PopoverExample
+          name={"Themed XL Popover"}
+          size="xl"
+          colorMode={colorMode}
+        />
+        <PopoverExample
+          name={"Themed XL Red Popover"}
+          size="xl"
+          variant="red"
+          colorMode={colorMode}
+        />
       </Flex>
       <IconButton
         aria-label="toggle theme"
@@ -106,66 +138,64 @@ root.render(
   </React.StrictMode>
 );`,
   PopoverTheme: `import { popoverAnatomy as parts } from "@chakra-ui/anatomy";
-  import {
-    createMultiStyleConfigHelpers,
-    defineStyle,
-  } from "@chakra-ui/styled-system";
-  import { mode } from "@chakra-ui/theme-tools";
-  
-  const { definePartsStyle, defineMultiStyleConfig } =
-    createMultiStyleConfigHelpers(parts.keys);
-  
-  const baseStyle = definePartsStyle((props) => ({
-    content: {
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from "@chakra-ui/styled-system";
+import { mode } from "@chakra-ui/theme-tools";
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(parts.keys);
+
+const baseStyle = definePartsStyle((props) => ({
+  content: {
+    boxShadow: "lg",
+  },
+  header: {
+    borderBottomWidth: 0,
+  },
+
+  footer: {
+    borderTopWidth: 0,
+  },
+
+  body: {
+    m: 7,
+    borderRadius: "5px",
+    borderLeftWidth: 4,
+    borderColor: mode("gray.300", "gray.500")(props),
+    bg: mode("gray.100", "gray.600")(props),
+  },
+}));
+
+const sizes = {
+  xl: definePartsStyle({
+    header: defineStyle({
+      fontSize: "xl",
       p: 3,
-    },
-    header: {
-      fontSize: "2xl",
-    },
-    body: {
-      borderColor: mode("gray.600", "gray.200")(props),
-      borderWidth: "1px",
-    },
-    footer: {
-      fontSize: "xs",
-    },
-    popper: {
-      borderColor: mode("cyan.600", "cyan.200")(props),
-    },
-    arrow: {
-      p: 2,
-    },
-  
-    closeButton: {
-      color: mode("blue.600", "blue.200")(props),
-    },
-  }));
-  
-  const sizes = {
-    xl: definePartsStyle({
-      header: defineStyle({
-        padding: 9,
-      }),
-      content: defineStyle({
-        fontSize: "2xl",
-        marginLeft: 6,
-      }),
     }),
-  };
-  
-  const squared = definePartsStyle({
-    content: defineStyle({
-      rounded: "none",
+    body: defineStyle({
+      fontSize: "xl",
+      m: 4,
     }),
-  });
-  
-  const variants = {
-    squared,
-  };
-  
-  export const popoverTheme = defineMultiStyleConfig({
-    baseStyle,
-    variants,
-    sizes,
-  });`,
+  }),
+};
+
+const red = definePartsStyle((props) => ({
+  body: defineStyle({
+    borderColor: mode("red.300", "red.600")(props),
+    bg: mode("red.100", "red.200")(props),
+    textColor: mode("red.500", "red.600")(props),
+  }),
+}));
+
+const variants = {
+  red,
+};
+
+export const popoverTheme = defineMultiStyleConfig({
+  baseStyle,
+  variants,
+  sizes,
+});`,
 }
