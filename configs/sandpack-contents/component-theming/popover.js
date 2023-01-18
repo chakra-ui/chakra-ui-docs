@@ -87,8 +87,7 @@ export default function App() {
         direction="column"
         gap={3}
         align="center"
-        p={8} 
-        h="100vh"
+        p={8}
         alignItems={"center"}
         justify="center"
       >
@@ -106,16 +105,18 @@ export default function App() {
           colorMode={colorMode}
         />
       </Flex>
-      <IconButton
-        aria-label="toggle theme"
-        rounded="full"
-        size="xs"
-        position="absolute"
-        bottom={4}
-        left={4}
-        onClick={toggleColorMode}
-        icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
-      />
+      <Box>
+        <IconButton
+          aria-label="toggle theme"
+          rounded="full"
+          size="xs"
+          position="fixed"
+          bottom={4}
+          left={4}
+          onClick={toggleColorMode}
+          icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+        />
+      </Box>
     </Box>
   );
 }`,
