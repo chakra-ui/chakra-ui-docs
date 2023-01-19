@@ -47989,6 +47989,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Using a custom color scheme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#using-a-custom-color-scheme",
+    "hierarchy": { "lvl2": "Using a custom color scheme", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Keyboard Key",
     "id": "//docs/components/kbd/usage",
     "type": "lvl1",
