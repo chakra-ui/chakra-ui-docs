@@ -36,7 +36,7 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
   const params = toArray(slug)
   const _slug = params.join('/')
   const doc = allDocs.find(
-    (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/theming`),
+    (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`),
   ) as Doc | undefined
 
   if (!doc) return
@@ -49,7 +49,6 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
       ...doc.frontMatter,
       ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
       ...(getThemingDoc(doc.id)?.frontMatter ?? {}),
-      slug: doc.frontMatter.slug.replace('/theming', ''),
     }
   }
 
@@ -58,7 +57,6 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
       ...doc.frontMatter,
       ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
       ...(getPropsDoc(doc.id)?.frontMatter ?? {}),
-      slug: doc.frontMatter.slug.replace('/theming', ''),
     }
   }
 
