@@ -24,20 +24,41 @@ const getUsageDoc = (id: string) => {
   return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'usage')
 }
 
+const getThemingDoc = (id: string) => {
+  return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'theming')
+}
+
+const getPropsDoc = (id: string) => {
+  return allDocs.find((_doc) => _doc.id === id && _doc.scope === 'props')
+}
+
 export const getDocDoc = (slug: MixedArray): Doc | undefined => {
   const params = toArray(slug)
   const _slug = params.join('/')
   const doc = allDocs.find(
-    (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/usage`),
+    (doc) => doc.slug.endsWith(_slug) || doc.slug.endsWith(`${_slug}/theming`),
   ) as Doc | undefined
 
   if (!doc) return
 
-  // the presence of scope, means its a component documentation
-  if (doc.scope && doc.scope !== 'usage') {
+  const isThemingTab = doc.scope === 'theming'
+  const isPropsTab = doc.scope === 'props'
+
+  if (isThemingTab) {
     doc.frontMatter = {
       ...doc.frontMatter,
       ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
+      ...(getThemingDoc(doc.id)?.frontMatter ?? {}),
+      slug: doc.frontMatter.slug.replace('/theming', ''),
+    }
+  }
+
+  if(isPropsTab) {
+    doc.frontMatter = {
+      ...doc.frontMatter,
+      ...(getUsageDoc(doc.id)?.frontMatter ?? {}),
+      ...(getPropsDoc(doc.id)?.frontMatter ?? {}),
+      slug: doc.frontMatter.slug.replace('/theming', ''),
     }
   }
 
