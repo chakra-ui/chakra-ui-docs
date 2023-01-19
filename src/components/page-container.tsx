@@ -59,17 +59,7 @@ function PageContainer(props: PageContainerProps) {
 
   if (!frontmatter) return <></>
 
-   const {
-    slug,
-    title,
-    description,
-    editUrl,
-    version,
-    headings = [],
-  } = frontmatter
-  const isNotUsageTab = /(props|theming)$/.test(slug)
-
-  console.log(headings)
+  const { title, description, editUrl, version, headings = [] } = frontmatter
 
   return (
     <>
