@@ -131,16 +131,16 @@ type Props = {
 const Actions = ({ actions, stepToNumber }: Props) => {
     return (
         <>
-        <Button
-            size="sm"
-            colorScheme="teal"
-            onClick={() => actions.stepTo(stepToNumber)}
-        >
-            Step to {stepToNumber}
-        </Button>
-        <Button size="sm" colorScheme="teal" onClick={() => actions.reset()}>
-            Reset to 0
-        </Button>
+            <Button
+                size="sm"
+                colorScheme="teal"
+                onClick={() => actions.stepTo(stepToNumber)}
+            >
+                Step to {stepToNumber}
+            </Button>
+            <Button size="sm" colorScheme="teal" onClick={() => actions.reset()}>
+                Reset to 0
+            </Button>
         </>
     );
 };
