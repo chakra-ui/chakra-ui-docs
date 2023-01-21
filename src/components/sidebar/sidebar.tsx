@@ -17,7 +17,7 @@ import {
   FaFileAlt,
   FaGlobe,
   FaPalette,
-  // FaReadme,
+  FaTools,
 } from 'react-icons/fa'
 import { FiFigma } from 'react-icons/fi'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
@@ -178,6 +178,13 @@ export const mainNavLinks = [
     icon: <BsFillGridFill />,
     href: '/docs/components',
     label: 'Components',
+  },
+  {
+    icon: <FaTools />,
+    href: '/docs/hooks/use-boolean',
+    label: 'Hooks',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/docs/hooks') && asPath.startsWith('/docs/hooks'),
   },
   {
     icon: <FiFigma />,
