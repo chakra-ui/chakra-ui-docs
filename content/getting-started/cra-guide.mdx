@@ -8,39 +8,34 @@ category: frameworks
 
 ## Automatic Installation
 
-**Create React App** allows users to create a project using a template, which
+Create React App allows users to create a project using a template, which
 determines the files and dependencies included with the generated project.
 
-We provide two official `create-react-app` templates for Chakra UI: one for
-JavaScript and the other for TypeScript.
+### JavaScript Template
 
-### Usage
+To generate the starter template for a JavaScript project, run the command
+below:
 
-In order to generate a `create-react-app` project from a template, you pass the
-`--template` flag to the `create-react-app` command.
+<PackageManagers
+  command={{
+    npm: 'npx create-react-app my-app --template @chakra-ui',
+    yarn: 'yarn create react-app my-app --template @chakra-ui',
+    pnpm: 'pnpm create react-app my-app --template @chakra-ui',
+  }}
+/>
 
-```bash
-# using npm
-npx create-react-app my-app --template [template-name]
+### TypeScript Template
 
-# using yarn
-yarn create react-app my-app --template [template-name]
-```
+To generate the starter template for a TypeScript project, run the command
+below:
 
-The template name for the JavaScript project is `@chakra-ui`. The template name
-for the TypeScript project is `@chakra-ui/typescript`.
-
-```bash
-# JavaScript using npm
-npx create-react-app my-app --template @chakra-ui
-# JavaScript using yarn
-yarn create react-app my-app --template @chakra-ui
-
-# TypeScript using npm
-npx create-react-app my-app --template @chakra-ui/typescript
-# TypeScript using yarn
-yarn create react-app my-app --template @chakra-ui/typescript
-```
+<PackageManagers
+  command={{
+    npm: 'npx create-react-app my-app --template @chakra-ui/typescript',
+    yarn: 'yarn create react-app my-app --template @chakra-ui/typescript',
+    pnpm: 'pnpm create react-app my-app --template @chakra-ui/typescript',
+  }}
+/>
 
 ### What's included
 
@@ -68,13 +63,13 @@ functionality.
 Inside your CRA project directory, install Chakra UI by running either of the
 following:
 
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    yarn: 'yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    pnpm: 'pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+  }}
+/>
 
 ### 2. Provider Setup
 
@@ -113,7 +108,7 @@ function App() {
 
 ### 3. Optional Setup
 
-- Customizing Theme
+#### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -150,7 +145,7 @@ function App() {
 > `theme-tools` package includes useful utilities. Install
 > `@chakra-ui/theme-tools`.
 
-- Using Chakra Icons
+#### Using Chakra Icons
 
 Chakra provides a set of commonly used interface icons you can use in your
 project.

@@ -50,7 +50,7 @@ export default function App() {
                     validate={(value) => {
                       let error;
 
-                      if (value.length < 5) {
+                      if (value.length < 6) {
                         error = "Password must contain at least 6 characters";
                       }
 

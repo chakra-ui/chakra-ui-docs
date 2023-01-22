@@ -6,6 +6,7 @@ import gettingStartedSidebar from 'configs/getting-started.sidebar.json'
 import hooksSidebar from 'configs/hooks.sidebar.json'
 import styledSystemSidebar from 'configs/styled-system.sidebar.json'
 import tutorialSidebar from 'configs/tutorial.sidebar.json'
+import figmaSidebar from 'configs/figma.sidebar.json'
 import communitySidebar from 'configs/community.sidebar.json'
 import { ReactNode } from 'react'
 import { findRouteByPath, removeFromLast } from 'utils/find-route-by-path'
@@ -25,6 +26,7 @@ export function getRoutes(slug: string): RouteItem[] {
     '/docs/components': componentsSidebar,
     '/tutorial': tutorialSidebar,
     '/community': communitySidebar,
+    '/figma': figmaSidebar,
   }
 
   const [, sidebar] =

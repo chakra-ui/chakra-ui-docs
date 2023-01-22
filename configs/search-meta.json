@@ -44286,6 +44286,225 @@
     }
   },
   {
+    "content": "Version 2.4.7",
+    "id": "//changelog/v2.4.7",
+    "type": "lvl1",
+    "url": "/changelog/v2.4.7",
+    "hierarchy": { "lvl1": "Version 2.4.7" }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.4.7",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.7#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.7",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Icon `3.0.15`",
+    "id": "//changelog/v2.4.7",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.7#icon-3015",
+    "hierarchy": {
+      "lvl1": "Version 2.4.7",
+      "lvl2": "Patch Changes",
+      "lvl3": "Icon `3.0.15`"
+    }
+  },
+  {
+    "content": "System `2.3.8`",
+    "id": "//changelog/v2.4.7",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.7#system-238",
+    "hierarchy": {
+      "lvl1": "Version 2.4.7",
+      "lvl2": "Icon `3.0.15`",
+      "lvl3": "System `2.3.8`"
+    }
+  },
+  {
+    "content": "Version 2.4.8",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl1",
+    "url": "/changelog/v2.4.8",
+    "hierarchy": { "lvl1": "Version 2.4.8" }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.8#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "System `2.4.0`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#system-240",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Minor Changes",
+      "lvl3": "System `2.4.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.8#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "All components",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#all-components",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Patch Changes",
+      "lvl3": "All components"
+    }
+  },
+  {
+    "content": "Modal `2.2.8`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#modal-228",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "All components",
+      "lvl3": "Modal `2.2.8`"
+    }
+  },
+  {
+    "content": "Icons `2.0.17`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#icons-2017",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Modal `2.2.8`",
+      "lvl3": "Icons `2.0.17`"
+    }
+  },
+  {
+    "content": "Theme `2.2.5`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#theme-225",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Icons `2.0.17`",
+      "lvl3": "Theme `2.2.5`"
+    }
+  },
+  {
+    "content": "Styled System `2.5.2`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.8#styled-system-252",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Theme `2.2.5`",
+      "lvl3": "Styled System `2.5.2`"
+    }
+  },
+  {
+    "content": "Hooks `2.1.5`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.8#hooks-215",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Hooks `2.1.5`",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Toast `5.0.0`",
+    "id": "//changelog/v2.4.8",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.8#toast-500",
+    "hierarchy": {
+      "lvl1": "Version 2.4.8",
+      "lvl2": "Toast `5.0.0`",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Version 2.4.9",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl1",
+    "url": "/changelog/v2.4.9",
+    "hierarchy": { "lvl1": "Version 2.4.9" }
+  },
+  {
+    "content": "All components",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#all-components",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "All components",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Provider `2.1.0`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#provider-210",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": "Provider `2.1.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Focus Lock `2.0.16`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#focus-lock-2016",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": "Focus Lock `2.0.16`"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
@@ -47770,6 +47989,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Using a custom color scheme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#using-a-custom-color-scheme",
+    "hierarchy": { "lvl2": "Using a custom color scheme", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Keyboard Key",
     "id": "//docs/components/kbd/usage",
     "type": "lvl1",
@@ -49985,6 +50260,48 @@
     "type": "lvl1",
     "url": "/docs/components/skeleton/theming",
     "hierarchy": {}
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/skeleton/theming",
+    "type": "lvl2",
+    "url": "/docs/components/skeleton/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
   },
   {
     "content": "Skeleton",
@@ -54120,6 +54437,31 @@
     "hierarchy": { "lvl1": "Default Theme", "lvl2": "Config", "lvl3": null }
   },
   {
+    "content": "Figma Plugin",
+    "id": "//figma/plugin",
+    "type": "lvl1",
+    "url": "/figma/plugin",
+    "hierarchy": { "lvl1": "Figma Plugin" }
+  },
+  {
+    "content": "How it works",
+    "id": "//figma/plugin",
+    "type": "lvl2",
+    "url": "/figma/plugin#how-it-works",
+    "hierarchy": {
+      "lvl1": "Figma Plugin",
+      "lvl2": "How it works",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Figma UI Kit",
+    "id": "//figma/ui-kit",
+    "type": "lvl1",
+    "url": "/figma/ui-kit",
+    "hierarchy": { "lvl1": "Figma UI Kit" }
+  },
+  {
     "content": "Blitz.js",
     "id": "//getting-started/blitzjs-guide",
     "type": "lvl1",
@@ -54452,14 +54794,25 @@
     }
   },
   {
-    "content": "Usage",
+    "content": "JavaScript Template",
     "id": "//getting-started/cra-guide",
     "type": "lvl3",
-    "url": "/getting-started/cra-guide#usage",
+    "url": "/getting-started/cra-guide#javascript-template",
     "hierarchy": {
       "lvl1": "Create React App",
       "lvl2": "Automatic Installation",
-      "lvl3": "Usage"
+      "lvl3": "JavaScript Template"
+    }
+  },
+  {
+    "content": "TypeScript Template",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl3",
+    "url": "/getting-started/cra-guide#typescript-template",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "JavaScript Template",
+      "lvl3": "TypeScript Template"
     }
   },
   {
@@ -54469,7 +54822,7 @@
     "url": "/getting-started/cra-guide#whats-included",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "Usage",
+      "lvl2": "TypeScript Template",
       "lvl3": "What's included"
     }
   },
@@ -54551,13 +54904,35 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#customizing-theme",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "3. Optional Setup",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Using Chakra Icons",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#using-chakra-icons",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "Customizing Theme",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/cra-guide",
     "type": "lvl4",
     "url": "/getting-started/cra-guide#notes-on-typescript-🚨",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "3. Optional Setup",
+      "lvl2": "Using Chakra Icons",
       "lvl3": null
     }
   },
@@ -55101,11 +55476,29 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#customizing-theme",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+  },
+  {
+    "content": "Add colorModeManager",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#add-colormodemanager",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Customizing Theme", "lvl3": null }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/remix-guide",
     "type": "lvl4",
     "url": "/getting-started/remix-guide#notes-on-typescript-🚨",
-    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+    "hierarchy": {
+      "lvl1": "Remix",
+      "lvl2": "Add colorModeManager",
+      "lvl3": null
+    }
   },
   {
     "content": "4. Community boilerplates",

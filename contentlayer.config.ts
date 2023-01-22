@@ -187,9 +187,29 @@ const Changelog = defineDocumentType(() => ({
   },
 }))
 
+const Figma = defineDocumentType(() => ({
+  name: 'Figma',
+  filePathPattern: 'figma/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+  },
+  computedFields: {
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        title: doc.title,
+        description: doc.description,
+        slug: `/figma/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}))
+
 const contentLayerConfig = makeSource({
   contentDirPath: 'content',
-  documentTypes: [Doc, Guides, Recipe, Changelog, Blogs, Tutorial],
+  documentTypes: [Doc, Guides, Recipe, Changelog, Blogs, Tutorial, Figma],
   mdx: {
     rehypePlugins: [rehypeMdxCodeMeta],
     remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
