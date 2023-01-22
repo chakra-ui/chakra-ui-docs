@@ -1,17 +1,17 @@
 module.exports = {
   App: `
 import {
-  Text,
   Box,
-  Flex,
+  IconButton,
   List,
-  ListItem,
   ListIcon,
+  ListItem,
   OrderedList,
   UnorderedList,
-  Divider,
-  IconButton,
   useColorMode,
+  Text,
+  SimpleGrid,
+  Checkbox,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { MdCheckCircle, MdSettings, MdOutlineSell } from "react-icons/md";
@@ -20,46 +20,24 @@ export default function App() {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <Box pos="relative">
-      <Flex
-        maxHeight={"inherit"}
-        boxSizing="border-box"
-        wrap="wrap"
-        textAlign="start"
-        justify="center"
-        gap={3}
-        p={2}
-      >
-        <Box flexBasis="100%">
-          <Text textAlign={"center"} fontSize={"2xl"}>
-            Themed List
-          </Text>
-        </Box>
+    <Box position="relative" h="100vh">
+      <SimpleGrid gap={12} p={12} columns={3}>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"}>
-            Ordered List
-          </Text>
-          <OrderedList>
+          <OrderedList p={2}>
             <ListItem>Lorem ipsum dolor sit</ListItem>
             <ListItem>Consectetur adipiscing</ListItem>
             <ListItem>Integer molestie lorem</ListItem>
           </OrderedList>
         </Box>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"}>
-            Unordered List
-          </Text>
-          <UnorderedList>
+          <UnorderedList p={2}>
             <ListItem>Lorem ipsum dolor sit</ListItem>
             <ListItem>Consectetur adipiscing</ListItem>
             <ListItem>Integer molestie lorem</ListItem>
           </UnorderedList>
         </Box>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"}>
-            With Icons
-          </Text>
-          <List>
+          <List p={2}>
             <ListItem>
               <ListIcon as={MdCheckCircle} />
               Lorem ipsum dolor sit
@@ -74,47 +52,48 @@ export default function App() {
             </ListItem>
           </List>
         </Box>
-        <Divider />
-        <Box>
-          <Text textAlign={"center"} fontSize={"xl"} p={3}>
-            Themed XL List
-          </Text>
-          <List size="xl">
-            <ListItem>
-              <ListIcon as={MdCheckCircle} />
-              Lorem ipsum dolor sit
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} />
-              Consectetur adipiscing
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdSettings} />
-              Integer molestie lorem
-            </ListItem>
-          </List>
-        </Box>
+      </SimpleGrid>
 
+      <SimpleGrid gap={12} px={12} columns={2}>
         <Box>
-          <Text textAlign={"center"} fontSize={"xl"} p={3}>
-            Themed XL Custom List
-          </Text>
-          <List size="xl" variant="custom" spacing={3}>
-            <Flex align={"center"}>
-              <ListIcon as={MdOutlineSell} />
-              <ListItem>Lorem ipsum dolor sit</ListItem>
-            </Flex>
-            <Flex align={"center"}>
-              <ListIcon as={MdOutlineSell} />
-              <ListItem>Consectetur adipiscing</ListItem>
-            </Flex>
-            <Flex align={"center"}>
-              <ListIcon as={MdOutlineSell} />
-              <ListItem>Integer molestie lorem</ListItem>
-            </Flex>
+          <List size="xl" variant="custom" spacing={5}>
+            <ListItem>
+              <Checkbox>Lorem ipsum dolor sit</Checkbox>
+              <Text color="gray.400" fontSize="xs">
+                Due Date: 01/01/2023
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Checkbox>Lorem ipsum dolor sit</Checkbox>
+              <Text color="gray.400" fontSize="xs">
+                Due Date: 01/01/2023
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Checkbox>Lorem ipsum dolor sit</Checkbox>
+              <Text color="gray.400" fontSize="xs">
+                Due Date: 01/01/2023
+              </Text>
+            </ListItem>
           </List>
         </Box>
-      </Flex>
+        <Box>
+          <List size="xl" variant="orange" spacing={3}>
+            <ListItem>
+              <ListIcon as={MdOutlineSell} />
+              Lorem ipsum dolor sit
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdOutlineSell} />
+              Lorem ipsum dolor sit
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdOutlineSell} />
+              Lorem ipsum dolor sit
+            </ListItem>
+          </List>
+        </Box>
+      </SimpleGrid>
       <Box>
         <IconButton
           aria-label="toggle theme"
@@ -154,7 +133,6 @@ root.render(
 } from "@chakra-ui/styled-system";
 import { listAnatomy as parts } from "@chakra-ui/anatomy";
 import { mode } from "@chakra-ui/theme-tools";
-
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys);
 
@@ -164,14 +142,12 @@ const baseStyle = definePartsStyle((props) => ({
     margin: "0px !important",
     boxShadow: "md",
   },
-
   item: {
     p: 1,
     "&::marker": {
       color: mode("green.500", "green.200")(props),
     },
   },
-
   icon: {
     color: mode("blue.500", "blue.200")(props),
   },
@@ -190,23 +166,49 @@ const sizes = {
   }),
 };
 
-const variants = {
-  custom: definePartsStyle((props) => ({
-    item: {
-      bg: mode("orange.100", "orange.400")(props),
-      borderRadius: "30px",
-      w: "full",
-      p: 2,
-    },
-    icon: {
-      color: mode("orange.200", "orange.400")(props),
-    },
-  })),
-};
+const orange = definePartsStyle((props) => ({
+  container: {
+    shadow: "none",
+    border: "3px",
+    borderStyle: "dashed",
+    borderColor: "gray.300",
+  },
+  item: {
+    display: "flex",
+    alignItems: "center",
+    bg: mode("orange.100", "orange.400")(props),
+    borderRadius: "full",
+    w: "full",
+    px: 5,
+    shadow: "sm",
+  },
+  icon: {
+    color: mode("orange.300", "orange.100")(props),
+  },
+}));
+
+const custom = definePartsStyle((props) => ({
+  container: {
+    shadow: "none",
+    display: "flex",
+    flexDirection: "column",
+    justify: "center",
+    align: "center",
+  },
+  item: {
+    background: mode("gray.50", "blackAlpha.100")(props),
+    padding: 5,
+    shadow: "xs",
+    borderRadius: "lg",
+  },
+}));
 
 export const listTheme = defineMultiStyleConfig({
-  variants,
+  variants: {
+    orange,
+    custom,
+  },
   sizes,
   baseStyle,
-});`,
+})`,
 }
