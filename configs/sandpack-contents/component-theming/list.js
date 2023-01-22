@@ -1,6 +1,5 @@
 module.exports = {
-  App: `
-import {
+  App: `import {
   Box,
   IconButton,
   List,
