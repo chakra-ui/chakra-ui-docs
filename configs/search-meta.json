@@ -48569,6 +48569,17 @@
     }
   },
   {
+    "content": "MenuItem as a link",
+    "id": "//docs/components/menu/usage",
+    "type": "lvl3",
+    "url": "/docs/components/menu/usage#menuitem-as-a-link",
+    "hierarchy": {
+      "lvl1": "Menu",
+      "lvl2": "MenuGroup",
+      "lvl3": "MenuItem as a link"
+    }
+  },
+  {
     "content": "Menu option groups",
     "id": "//docs/components/menu/usage",
     "type": "lvl2",
