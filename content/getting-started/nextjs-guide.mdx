@@ -172,6 +172,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+export {theme}
 ```
 
 > To further customize components or build your own design system, the
@@ -193,7 +194,7 @@ for local storage syncing to work correctly.
 
 import { ColorModeScript } from '@chakra-ui/react'
 import { Html, Head, Main, NextScript } from 'next/document'
-import theme from './theme'
+import theme from './_app'
 
 export default function Document() {
   return (
