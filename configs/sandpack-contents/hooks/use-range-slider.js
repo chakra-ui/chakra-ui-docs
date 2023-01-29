@@ -38,9 +38,9 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
 
     const markers = []
 
-    for (let i = 1; i <= 3; i++) {
-        markers.push(getMarkerProps({ value: i * 25 }))
-    }
+    const markers = Array.from({ length: 3 }, (_, i) => i + 1).map((i) =>
+    getMarkerProps({ value: i * 25 })
+  );
 
     const onKeyDownStepBy = (e, thumbIndex) => {
         if (e.code === 'ArrowRight') actions.stepUp(thumbIndex, stepByNumber)
