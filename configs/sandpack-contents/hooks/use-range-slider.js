@@ -1,5 +1,5 @@
 module.exports = {
-  App: `import { Badge, Box, Button, chakra, Flex, useRangeSlider, Text } from "@chakra-ui/react";
+  App: `import { Badge, Box, chakra, Flex, useRangeSlider } from "@chakra-ui/react";
 import Actions from "./Actions";
 import Instructions from "./Instructions";
 import Thumb from './Thumb';
@@ -36,11 +36,9 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
             index: 1,
         })
 
-    const markers = []
-
     const markers = Array.from({ length: 3 }, (_, i) => i + 1).map((i) =>
-    getMarkerProps({ value: i * 25 })
-  );
+        getMarkerProps({ value: i * 25 })
+    );
 
     const onKeyDownStepBy = (e, thumbIndex) => {
         if (e.code === 'ArrowRight') actions.stepUp(thumbIndex, stepByNumber)
@@ -99,14 +97,14 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
                     thumbIndex={0} 
                     thumbProps={thumbPropsFirstIndex} 
                     onKeyDownStepBy={onKeyDownStepBy}
-                    bgColor='#319762'
+                    bgColor='teal.500'
                 />
                 <Thumb 
                     value={state.value[1]} 
                     thumbIndex={1} 
                     thumbProps={thumbPropsSecondIndex} 
                     onKeyDownStepBy={onKeyDownStepBy}
-                    bgColor='#25468c'
+                    bgColor='teal.500'
                 />
             </chakra.div>
         </Box>
@@ -168,8 +166,7 @@ const Actions = ({ actions, min, max, stepToIndex, stepToNumber }: Props) => {
             <Box>
                 <Button
                     size='sm'
-                    color="white"
-                    bgColor="#25468C"
+                    colorScheme='teal'
                     onClick={() => actions.setValueAtIndex(stepToIndex, stepToNumber)}
                 >
                     Move right thumb to {stepToNumber}%
