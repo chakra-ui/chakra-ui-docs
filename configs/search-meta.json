@@ -52989,6 +52989,41 @@
     }
   },
   {
+    "content": "useSlider",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl1",
+    "url": "/docs/hooks/use-slider",
+    "hierarchy": { "lvl1": "useSlider" }
+  },
+  {
+    "content": "Import",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#import",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Return value",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#return-value",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Return value", "lvl3": null }
+  },
+  {
+    "content": "Usage",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#usage",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Parameters",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#parameters",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Parameters", "lvl3": null }
+  },
+  {
     "content": "useTheme",
     "id": "//docs/hooks/use-theme",
     "type": "lvl1",
