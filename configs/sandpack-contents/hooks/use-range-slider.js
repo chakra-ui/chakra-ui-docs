@@ -72,7 +72,7 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
                             ml='-18px'
                             mt='25px'
                             fontSize='sm'
-                            color='#542344'
+                            color='black'
                             {...markerProps}
                         >
                             {value}
