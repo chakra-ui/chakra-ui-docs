@@ -99,14 +99,14 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
                     thumbIndex={0} 
                     thumbProps={thumbPropsFirstIndex} 
                     onKeyDownStepBy={onKeyDownStepBy}
-                    bgColor='#805BD5'
+                    bgColor='#319762'
                 />
                 <Thumb 
                     value={state.value[1]} 
                     thumbIndex={1} 
                     thumbProps={thumbPropsSecondIndex} 
                     onKeyDownStepBy={onKeyDownStepBy}
-                    bgColor='blue'
+                    bgColor='#25468c'
                 />
             </chakra.div>
         </Box>
@@ -168,12 +168,12 @@ const Actions = ({ actions, min, max, stepToIndex, stepToNumber }: Props) => {
             <Box>
                 <Button
                     size='sm'
-                    colorScheme='teal'
+                    color="white"
+                    bgColor="#25468C"
                     onClick={() => actions.setValueAtIndex(stepToIndex, stepToNumber)}
                 >
-                    Step to {stepToNumber}
+                    Move right thumb to {stepToNumber}%
                 </Button>
-                <ThumbIndexIcon bgColor='blue'/>
             </Box>
             <Button size='sm' colorScheme='teal' onClick={() => actions.reset()}>
                 Reset
