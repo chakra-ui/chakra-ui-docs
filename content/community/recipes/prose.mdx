@@ -9,11 +9,6 @@ author: nikolovlazar
 
 [Chakra UI Prose](https://github.com/nikolovlazar/chakra-ui-prose) is a
 "second-party" package that adds ready-made styles to a remote HTML content.
-It's "second-party" because it's created by one of Chakra UI's maintainers, but
-it's not part of the core Chakra UI package just yet. The reason for that is to
-avoid bloating the core library while we figure out how much people actually
-need it. If there's a demand for it, it will be part of the core Chakra UI
-package.
 
 > If you need this package to be part of the core library, don't forget to let
 > us know in
@@ -25,13 +20,13 @@ children content.
 Integrating the `Prose` component is fairly easy. To get started, you need to
 install the package:
 
-```bash
-yarn add @nikolovlazar/chakra-ui-prose
-
-# or
-
-npm i @nikolovlazar/chakra-ui-prose
-```
+<PackageManagers
+  command={{
+    npm: 'npm install @nikolovlazar/chakra-ui-prose',
+    yarn: 'yarn add @nikolovlazar/chakra-ui-prose',
+    pnpm: 'pnpm add @nikolovlazar/chakra-ui-prose',
+  }}
+/>
 
 Then, you need to use the `withProse` theme extension to add the Prose component
 styling into your own theme:

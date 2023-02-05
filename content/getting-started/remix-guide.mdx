@@ -11,13 +11,13 @@ category: frameworks
 Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
 
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+    yarn: 'yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+    pnpm: 'pnpm add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11',
+  }}
+/>
 
 ### 2. Provider Setup
 
@@ -258,7 +258,7 @@ export default function App() {
 
 ### 3. Optional Setup
 
-- Customizing Theme
+#### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -290,7 +290,7 @@ export default function App() {
 }
 ```
 
-- Add colorModeManager
+#### Add colorModeManager
 
 Remix is server-side rendered, so there will be color mode `flashing`, because
 chakra stores color mode in `localstorage` by default.

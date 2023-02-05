@@ -47989,6 +47989,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Using a custom color scheme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#using-a-custom-color-scheme",
+    "hierarchy": { "lvl2": "Using a custom color scheme", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Keyboard Key",
     "id": "//docs/components/kbd/usage",
     "type": "lvl1",
@@ -48510,6 +48566,17 @@
       "lvl1": "Menu",
       "lvl2": "Rendering menu in a portal",
       "lvl3": "MenuGroup"
+    }
+  },
+  {
+    "content": "MenuItem as a link",
+    "id": "//docs/components/menu/usage",
+    "type": "lvl3",
+    "url": "/docs/components/menu/usage#menuitem-as-a-link",
+    "hierarchy": {
+      "lvl1": "Menu",
+      "lvl2": "MenuGroup",
+      "lvl3": "MenuItem as a link"
     }
   },
   {
@@ -52879,6 +52946,84 @@
     "hierarchy": { "lvl1": "useRadio", "lvl2": "Parameters", "lvl3": null }
   },
   {
+    "content": "useRangeSlider",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl1",
+    "url": "/docs/hooks/use-range-slider",
+    "hierarchy": { "lvl1": "useRangeSlider" }
+  },
+  {
+    "content": "Import",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#import",
+    "hierarchy": { "lvl1": "useRangeSlider", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Return value",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#return-value",
+    "hierarchy": {
+      "lvl1": "useRangeSlider",
+      "lvl2": "Return value",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Usage",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#usage",
+    "hierarchy": { "lvl1": "useRangeSlider", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Parameters",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#parameters",
+    "hierarchy": {
+      "lvl1": "useRangeSlider",
+      "lvl2": "Parameters",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "useSlider",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl1",
+    "url": "/docs/hooks/use-slider",
+    "hierarchy": { "lvl1": "useSlider" }
+  },
+  {
+    "content": "Import",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#import",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Return value",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#return-value",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Return value", "lvl3": null }
+  },
+  {
+    "content": "Usage",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#usage",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Parameters",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#parameters",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Parameters", "lvl3": null }
+  },
+  {
     "content": "useTheme",
     "id": "//docs/hooks/use-theme",
     "type": "lvl1",
@@ -54325,6 +54470,31 @@
     "hierarchy": { "lvl1": "Default Theme", "lvl2": "Config", "lvl3": null }
   },
   {
+    "content": "Figma Plugin",
+    "id": "//figma/plugin",
+    "type": "lvl1",
+    "url": "/figma/plugin",
+    "hierarchy": { "lvl1": "Figma Plugin" }
+  },
+  {
+    "content": "How it works",
+    "id": "//figma/plugin",
+    "type": "lvl2",
+    "url": "/figma/plugin#how-it-works",
+    "hierarchy": {
+      "lvl1": "Figma Plugin",
+      "lvl2": "How it works",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Figma UI Kit",
+    "id": "//figma/ui-kit",
+    "type": "lvl1",
+    "url": "/figma/ui-kit",
+    "hierarchy": { "lvl1": "Figma UI Kit" }
+  },
+  {
     "content": "Blitz.js",
     "id": "//getting-started/blitzjs-guide",
     "type": "lvl1",
@@ -54657,14 +54827,25 @@
     }
   },
   {
-    "content": "Usage",
+    "content": "JavaScript Template",
     "id": "//getting-started/cra-guide",
     "type": "lvl3",
-    "url": "/getting-started/cra-guide#usage",
+    "url": "/getting-started/cra-guide#javascript-template",
     "hierarchy": {
       "lvl1": "Create React App",
       "lvl2": "Automatic Installation",
-      "lvl3": "Usage"
+      "lvl3": "JavaScript Template"
+    }
+  },
+  {
+    "content": "TypeScript Template",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl3",
+    "url": "/getting-started/cra-guide#typescript-template",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "JavaScript Template",
+      "lvl3": "TypeScript Template"
     }
   },
   {
@@ -54674,7 +54855,7 @@
     "url": "/getting-started/cra-guide#whats-included",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "Usage",
+      "lvl2": "TypeScript Template",
       "lvl3": "What's included"
     }
   },
@@ -54756,13 +54937,35 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#customizing-theme",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "3. Optional Setup",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Using Chakra Icons",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#using-chakra-icons",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "Customizing Theme",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/cra-guide",
     "type": "lvl4",
     "url": "/getting-started/cra-guide#notes-on-typescript-🚨",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "3. Optional Setup",
+      "lvl2": "Using Chakra Icons",
       "lvl3": null
     }
   },
@@ -55306,11 +55509,29 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#customizing-theme",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+  },
+  {
+    "content": "Add colorModeManager",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#add-colormodemanager",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Customizing Theme", "lvl3": null }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/remix-guide",
     "type": "lvl4",
     "url": "/getting-started/remix-guide#notes-on-typescript-🚨",
-    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+    "hierarchy": {
+      "lvl1": "Remix",
+      "lvl2": "Add colorModeManager",
+      "lvl3": null
+    }
   },
   {
     "content": "Template",

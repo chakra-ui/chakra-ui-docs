@@ -252,6 +252,20 @@ To group related `MenuItem`s, use the `MenuGroup` component and pass it a
 </Menu>
 ```
 
+### MenuItem as a link
+
+To render a `MenuItem` as a link, use the attributes `as` and `href`.
+
+```jsx
+<Menu>
+  <MenuButton>Open menu</MenuButton>
+  <MenuList>
+    <MenuItem as='a' href='#'>Link 1</MenuItem>
+    <MenuItem as='a' href='#'>Link 2</MenuItem>
+  </MenuList>
+</Menu>
+```
+
 ## Menu option groups
 
 You can compose a menu for table headers to help with sorting and filtering

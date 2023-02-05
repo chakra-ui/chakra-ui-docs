@@ -1,45 +1,51 @@
 import * as Chakra from '@chakra-ui/react'
-import * as React from 'react'
-import PropsTable from '../props-table'
-import CarbonAd from './carbon-ad'
-import CodeBlock from './codeblock/codeblock'
-import ComponentLinks from './component-links'
-import { FeaturesCourses } from './course-banner'
-import IconsList from './icons-list'
 import {
   ColorPalette,
   ColorPalettes,
   ColorWrapper,
 } from 'components/color-palette'
+import { JoinCommunityCards } from 'components/community-card'
 import { FeaturesOverview } from 'components/features-overview'
 import { FrameworkLinks } from 'components/framework-link'
 import { Anchor } from 'components/mdx-components/anchor'
 import { InlineCode } from 'components/mdx-components/inline-code'
 import { LinkedHeading } from 'components/mdx-components/linked-heading'
 import { Pre } from 'components/mdx-components/pre'
-import { TData, THead, Table } from 'components/mdx-components/table'
-import { VideoPlayer } from 'components/mdx-components/video-player'
+import { Table, TData, THead } from 'components/mdx-components/table'
+import { PackageManagers } from 'components/package-managers'
 import SandpackEmbed from 'components/sandpack-embed'
 import { TutorialCodeBlock } from 'components/tutorial/tutorial-code-block'
 import { TutorialFileAction } from 'components/tutorial/tutorial-file-action'
-import { JoinCommunityCards } from 'components/community-card'
-import { PackageManagers } from 'components/package-managers'
 import NextImage from 'next/image'
+import { FiFigma } from 'react-icons/fi'
+import PropsTable from '../props-table'
+import CarbonAd from './carbon-ad'
+import CodeBlock from './codeblock/codeblock'
+import ComponentLinks from './component-links'
+import { FeaturesCourses } from './course-banner'
+import IconsList from './icons-list'
+import { VideoPlayer } from './video-player'
 
 const { Alert, AspectRatio, Box, chakra, Kbd, Link } = Chakra
 
 export const MDXComponents = {
   ...Chakra,
-  Image: (props) => (
-    <Box my='5'>
+  FiFigma,
+  Image: ({ ratio, border, src, ...props }: any) => (
+    <AspectRatio
+      my='5'
+      position='relative'
+      borderWidth={border ? '1px' : undefined}
+      ratio={ratio}
+    >
       <NextImage
-        layout='responsive'
-        width={700}
-        height={400}
+        src={src}
+        alt=''
+        layout='fill'
         objectFit='contain'
         {...props}
       />
-    </Box>
+    </AspectRatio>
   ),
   LinkedImage: ({ href, ...props }) => (
     <Link display='block' my='10' href={href} isExternal>
