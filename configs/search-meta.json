@@ -55534,15 +55534,11 @@
     }
   },
   {
-    "content": "4. Community boilerplates",
+    "content": "Template",
     "id": "//getting-started/remix-guide",
-    "type": "lvl3",
-    "url": "/getting-started/remix-guide#4-community-boilerplates",
-    "hierarchy": {
-      "lvl1": "Remix",
-      "lvl2": "Notes on TypeScript 🚨",
-      "lvl3": "4. Community boilerplates"
-    }
+    "type": "lvl2",
+    "url": "/getting-started/remix-guide#template",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Template", "lvl3": null }
   },
   {
     "content": "Vite",
