@@ -138,9 +138,14 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
       name,
       ...value,
       type: cleanType(value.type),
+      defaultValue: cleanDefaultValue(value.defaultValue),
     }))
 }
 
 function cleanType(value: any) {
   return typeof value === 'string' ? value.replace(';', '') : value
+}
+
+function cleanDefaultValue(value: any) {
+  return typeof value === 'boolean' ? value.toString() : value;
 }
