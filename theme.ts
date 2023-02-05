@@ -85,7 +85,6 @@ const customTheme = extendTheme({
     },
     h3: {
       mt: '3rem',
-      // mb: "0.5rem",
       lineHeight: 1.25,
       fontWeight: 'semibold',
       fontSize: '1.25rem',

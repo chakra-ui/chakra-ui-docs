@@ -108,8 +108,7 @@ export default theme
 export { theme }
 ```
 
-See
-[this guide](/docs/styled-system/customize-theme#scaling-out-your-project)
+See [this guide](/docs/styled-system/customize-theme#scaling-out-your-project)
 for more recommendations on how to structure your theme package.
 
 > Note ⚠️: If you're using TypeScript, you'll want to include some documentation
@@ -133,15 +132,13 @@ If you want to learn how to scale your custom theme you can
 
 ### Install
 
-```bash
-yarn add --dev @chakra-ui/cli
-```
-
-or
-
-```bash
-npm install -D @chakra-ui/cli
-```
+<PackageManagers
+  command={{
+    npm: 'npm i -D @chakra-ui/cli',
+    yarn: 'yarn add --dev @chakra-ui/cli',
+    pnpm: 'pnpm add -D @chakra-ui/cli',
+  }}
+/>
 
 ### Usage
 

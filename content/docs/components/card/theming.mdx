@@ -162,13 +162,13 @@ const baseStyle = definePartsStyle({
   },
 })
 
-const sizes = definePartsStyle({
-  md: {
+const sizes = {
+  md: definePartsStyle({
     container: {
       borderRadius: '0px',
     },
-  },
-})
+  }),
+}
 
 export const cardTheme = defineMultiStyleConfig({ baseStyle, sizes })
 ```

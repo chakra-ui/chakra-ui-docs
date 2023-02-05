@@ -15,13 +15,13 @@ projects, however the API usage seen in the rest of the docs is the same!
 Gatsby plugins make external APIs plug-and-play into your website. Installing
 can be done with the following command:
 
-```bash
-npm i @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
-
-```bash
-yarn add @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    yarn: 'yarn add @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    pnpm: 'pnpm add @chakra-ui/gatsby-plugin @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+  }}
+/>
 
 ## Usage
 
@@ -46,11 +46,19 @@ module.exports = {
          * if false, this plugin will not use <ColorModeProvider />
          */
         isUsingColorMode: true,
+        /**
+         * @property {boolean} [isBaseProvider=false]
+         * if true, will render `<ChakraBaseProvider>`
+         */
+        isBaseProvider: false,
       },
     },
   ],
 }
 ```
+
+> For info on the `isBaseProvider` option's usage, see
+> [Getting Started - ChakraBaseProvider](/getting-started#chakrabaseprovider)
 
 To use a custom theme, you can
 [shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
@@ -68,8 +76,8 @@ const theme = {
 export default extendTheme(theme)
 ```
 
-If you want to use the [default theme](/docs/styled-system/theme)
-there's no need to shadow the file.
+If you want to use the [default theme](/docs/styled-system/theme) there's no
+need to shadow the file.
 
 ## Migration Notes
 

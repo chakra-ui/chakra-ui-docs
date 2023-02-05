@@ -14,9 +14,13 @@ RedwoodJS provides a convenient setup script via its
 [CLI tool](https://redwoodjs.com/docs/cli-commands#setup-ui) to enable Chakra UI
 in your project with a single command. In your project folder, simply enter:
 
-```bash
-yarn redwood setup ui chakra-ui
-```
+<PackageManagers
+  command={{
+    npm: 'npx redwood setup ui chakra-ui',
+    yarn: 'yarn redwood setup ui chakra-ui',
+    pnpm: 'pnpm redwood setup ui chakra-ui',
+  }}
+/>
 
 This will make the necessary modifications to your `App.tsx` (or `App.js`,
 respectively) which are basically the same as outlined in manual installation
@@ -30,13 +34,13 @@ customizations and Storybook integration) below.
 1. Inside your `Redwoodjs` project , cd into `web`, then, install Chakra UI by
    running either of the following:
 
-   ```bash
-   npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-   ```
-
-   ```bash
-   yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-   ```
+   <PackageManagers
+     command={{
+       npm: 'npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+       yarn: 'yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+       pnpm: 'pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+     }}
+   />
 
 2. After installing Chakra UI, you need to set up the `ChakraProvider` at the
    root of your application. Go to `App.js` and add the `ChakraProvider` like
@@ -75,8 +79,8 @@ TypeScript version of `4.1.0` is required.
 ### Customize Theme
 
 If you intend to
-[customize the default theme](/docs/styled-system/customize-theme), you
-will need to pass your extended theme object as a prop to `ChakraProvider` as
+[customize the default theme](/docs/styled-system/customize-theme), you will
+need to pass your extended theme object as a prop to `ChakraProvider` as
 follows:
 
 ```jsx live=false
@@ -120,10 +124,11 @@ below.
 > install commands and file locations differ.
 
 1. Install the official Storybook Addon for Chakra UI:
+
    ```bash
-   yarn workspace web add -D @chakra-ui/storybook-addon
-   yarn workspace web add @chakra-ui/icons
+   yarn add -D @chakra-ui/storybook-addon
    ```
+
 2. Add the addon to your configuration in `web/config/storybook.config.js`:
 
    ```jsx live=false
