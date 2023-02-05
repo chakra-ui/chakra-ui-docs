@@ -48294,6 +48294,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Anatomy",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#anatomy",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Creating a custom variant",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#creating-a-custom-variant",
+    "hierarchy": { "lvl2": "Creating a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "List",
     "id": "//docs/components/list/usage",
     "type": "lvl1",
