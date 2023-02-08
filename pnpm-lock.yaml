@@ -15,7 +15,6 @@ specifiers:
   '@emotion/react': ^11.10.0
   '@emotion/styled': ^11.9.3
   '@octokit/rest': ^19.0.5
-  '@types/github-slugger': ^1.3.0
   '@types/lodash.clonedeep': ^4.4.7
   '@types/lodash.get': ^4.4.7
   '@types/node': ^18.0.0
@@ -36,7 +35,7 @@ specifiers:
   focus-visible: 5.2.0
   formik: ^2.2.9
   framer-motion: ^7.3.5
-  github-slugger: ^1.4.0
+  github-slugger: 1.4.0
   highlight-words-core: ^1.2.2
   husky: ^8.0.2
   lint-staged: ^13.0.3
@@ -136,7 +135,6 @@ dependencies:
   typescript: 4.7.4
 
 devDependencies:
-  '@types/github-slugger': 1.3.0
   '@types/lodash.clonedeep': 4.5.7
   '@types/lodash.get': 4.4.7
   '@types/node': 18.11.18
@@ -3369,10 +3367,6 @@ packages:
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: false
-
-  /@types/github-slugger/1.3.0:
-    resolution: {integrity: sha512-J/rMZa7RqiH/rT29TEVZO4nBoDP9XJOjnbbIofg7GQKs4JIduEO3WLpte+6WeUz/TcrXKlY+bM7FYrp8yFB+3g==}
-    dev: true
 
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
