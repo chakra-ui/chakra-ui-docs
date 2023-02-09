@@ -24,6 +24,10 @@
           "external": true
         },
         {
+          "title": "Changelog",
+          "path": "/changelog"
+        },
+        {
           "title": "Contributing",
           "path": "/getting-started/contributing"
         },
