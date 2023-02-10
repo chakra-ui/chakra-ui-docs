@@ -11,10 +11,10 @@ import {
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, ReactElement, ReactNode, useRef } from 'react'
+import { AiFillPlayCircle } from 'react-icons/ai'
 import { BsFillGridFill } from 'react-icons/bs'
 import {
   FaCompass,
-  FaFileAlt,
   FaGlobe,
   FaPalette,
   FaTools,
@@ -126,16 +126,17 @@ type MainNavLinkProps = {
   children: ReactNode
   label?: string
   isActive?: boolean
+  isExternal?: boolean
 }
 
-const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
+const MainNavLink = ({ href, icon, children, isActive, isExternal }: MainNavLinkProps) => {
   const router = useRouter()
-
   const active = router.asPath.startsWith(href) || !!isActive
 
   return (
     <NextLink href={href} passHref>
       <HStack
+        target={isExternal ? '_blank' : undefined}
         as='a'
         spacing='3'
         fontSize='sm'
@@ -156,7 +157,7 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
         </Center>
         <span>{children}</span>
       </HStack>
-    </NextLink>
+    </NextLink >
   )
 }
 
@@ -190,7 +191,6 @@ export const mainNavLinks = [
     icon: <FiFigma />,
     href: '/figma/ui-kit',
     label: 'Figma',
-    new: true,
     match: (asPath: string, href: string) =>
       href.startsWith('/figma') && asPath.startsWith('/figma'),
   },
@@ -202,10 +202,12 @@ export const mainNavLinks = [
       href.startsWith('/community') && asPath.startsWith('/community'),
   },
   {
-    icon: <FaFileAlt />,
-    href: '/changelog',
-    label: 'Changelog',
-  },
+    icon: <AiFillPlayCircle />,
+    href: 'https://play.chakra-ui.com',
+    label: 'Playground',
+    new: true,
+    external: true,
+  }
   // {
   //   icon: <FaReadme />,
   //   href: '/blog',
@@ -215,6 +217,7 @@ export const mainNavLinks = [
 
 export const MainNavLinkGroup = (props: ListProps) => {
   const router = useRouter()
+
   return (
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
@@ -224,6 +227,7 @@ export const MainNavLinkGroup = (props: ListProps) => {
             href={item.href}
             label={item.label}
             isActive={item.match?.(router.asPath, item.href)}
+            isExternal={item.external}
           >
             {item.label} {item.new && <NewBadge />}
           </MainNavLink>
