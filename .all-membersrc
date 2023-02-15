@@ -58,7 +58,7 @@
       "name": "Lazar Nikolov",
       "bio": "Developer Advocate @getsentry.\r\nInstructor @eggheadio.\r\nSWE, content creator, OSS Advocate.",
       "twitter_username": "NikolovLazar",
-      "location": "Skopje, North Macedonia"
+      "location": "Toronto, Canada"
     },
     {
       "login": "noobinthisgame",
@@ -69,6 +69,16 @@
       "bio": "Full-Stack dev with a strong affinity for React, Chakra UI, Typescript and AWS.",
       "twitter_username": "noobinthisgame",
       "location": "Darmstadt, Germany"
+    },
+    {
+      "login": "Shyrro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10008963?v=4",
+      "url": "https://github.com/Shyrro",
+      "blog": "",
+      "name": "Zakaria Sahmane",
+      "bio": null,
+      "twitter_username": "TheDumbThinker",
+      "location": "France"
     },
     {
       "login": "TimKolberger",
