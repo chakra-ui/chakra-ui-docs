@@ -87,7 +87,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       components: items.map(({ title, slug, id }) => ({
         id,
         title,
-        url: slug,
+        url: slug.slice(3, slug.length),
       })),
     }
     return acc.concat(category)
