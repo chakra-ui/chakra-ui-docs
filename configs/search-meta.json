@@ -55809,24 +55809,13 @@
     "hierarchy": { "lvl1": "Getting Started with Next.js" }
   },
   {
-    "content": "Next.js 13",
-    "id": "//getting-started/nextjs-guide",
-    "type": "lvl2",
-    "url": "/getting-started/nextjs-guide#nextjs-13",
-    "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Next.js 13",
-      "lvl3": null
-    }
-  },
-  {
     "content": "Installation",
     "id": "//getting-started/nextjs-guide",
     "type": "lvl3",
     "url": "/getting-started/nextjs-guide#installation",
     "hierarchy": {
       "lvl1": "Getting Started with Next.js",
-      "lvl2": "Next.js 13",
+      "lvl2": null,
       "lvl3": "Installation"
     }
   },
@@ -55842,13 +55831,35 @@
     }
   },
   {
+    "content": "App Directory Setup",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#app-directory-setup",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "Provider Setup",
+      "lvl3": "App Directory Setup"
+    }
+  },
+  {
+    "content": "Chakra UI with Next.js Link",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "App Directory Setup",
+      "lvl3": "Chakra UI with Next.js Link"
+    }
+  },
+  {
     "content": "Customizing theme",
     "id": "//getting-started/nextjs-guide",
     "type": "lvl3",
     "url": "/getting-started/nextjs-guide#customizing-theme",
     "hierarchy": {
       "lvl1": "Getting Started with Next.js",
-      "lvl2": "Provider Setup",
+      "lvl2": "Chakra UI with Next.js Link",
       "lvl3": "Customizing theme"
     }
   },
