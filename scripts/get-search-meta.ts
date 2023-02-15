@@ -89,7 +89,7 @@ async function getSearchMeta() {
    *
    * This can be overall page sections (i.e. "/docs", "/tutorial", etc.) or specific files. (i.e. "/guides/first-steps")
    */
-  const excludedSlugs = ['/tutorial', '/changelog/v1', '/de']
+  const excludedSlugs = ['/tutorial', '/changelog/v1']
 
   for (const file of files) {
     let result: any[] = []

@@ -1,5 +1,46 @@
 [
   {
+    "id": "//de/docs/components/box/props",
+    "type": "lvl1",
+    "url": "/docs/components/box/props",
+    "hierarchy": {}
+  },
+  {
+    "content": "Box",
+    "id": "//de/docs/components/box/usage",
+    "type": "lvl1",
+    "url": "/docs/components/box/usage",
+    "hierarchy": { "lvl1": "Box" }
+  },
+  {
+    "content": "Import",
+    "id": "//de/docs/components/box/usage",
+    "type": "lvl2",
+    "url": "/docs/components/box/usage#import",
+    "hierarchy": { "lvl1": "Box", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Usage",
+    "id": "//de/docs/components/box/usage",
+    "type": "lvl2",
+    "url": "/docs/components/box/usage#usage",
+    "hierarchy": { "lvl1": "Box", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Airbnb example",
+    "id": "//de/docs/components/box/usage",
+    "type": "lvl3",
+    "url": "/docs/components/box/usage#airbnb-example",
+    "hierarchy": { "lvl1": "Box", "lvl2": "Usage", "lvl3": "Airbnb example" }
+  },
+  {
+    "content": "as prop",
+    "id": "//de/docs/components/box/usage",
+    "type": "lvl3",
+    "url": "/docs/components/box/usage#as-prop",
+    "hierarchy": { "lvl1": "Box", "lvl2": "Airbnb example", "lvl3": "as prop" }
+  },
+  {
     "content": "Chakra UI Hackathon 22’ Recap",
     "id": "//en/blog/chakra-ui-hackathon-22-recap",
     "type": "lvl1",

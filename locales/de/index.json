@@ -1,14 +1,14 @@
 {
   "title": {
-    "main": "Erstelle barrierefreie Webseiten",
-    "highlighted": "und sei dabei schnell"
+    "main": "Erstelle barrierefreie React-Apps",
+    "highlighted": "mit Geschwindigkeit"
   },
-  "message": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
-  "get-started": "Get Started",
-  "supported-and-backed-by": "Supported and Backed by",
-  "your-company": "Your company",
-  "less-code-more-speed": "Less code. More speed",
-  "less-code-description": "Spend less time writing UI code and more time building a great experience for your customers.",
+  "message": "Chakra UI ist eine einfache, modulare und barrierefreie Komponentenbibliothek, die dir die Bausteine gibt, die du benötigst, um deine React-Anwendungen zu erstellen.",
+  "get-started": "Loslegen",
+  "supported-and-backed-by": "Unterstützt durch",
+  "your-company": "Deine Firma",
+  "less-code-more-speed": "Weniger Code. Mehr Geschwindigkeit",
+  "less-code-description": "Verbringe weniger Zeit damit, UI-Code zu schreiben, und mehr Zeit damit, ein großartiges Erlebnis für deine Kunden zu schaffen.",
   "feature-section": {
     "title": "An experience you'd expect from a design system",
     "description": "Opinionated and designed for daily use.",
@@ -68,7 +68,7 @@
     "invite-us-to-speak": "Invite us to speak"
   },
   "seo": {
-    "title": "Chakra UI - A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+    "title": "Chakra UI ist eine einfache, modulare und barrierefreie Komponentenbibliothek, die dir die Bausteine gibt, die du benötigst, um deine React-Anwendungen zu erstellen.",
     "description": "Simple, Modular and Accessible UI Components for your React Applications. Built with Styled System"
   }
 }
