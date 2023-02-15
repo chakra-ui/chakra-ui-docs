@@ -53,7 +53,7 @@ async function getMDXMeta(file: string) {
     content: frontMatter.title,
     id: slug,
     type: 'lvl1',
-    url: removePrefix(slug, '/').slice(3, slug.length),
+    url: removePrefix(slug, '/').slice(3),
     hierarchy: {
       lvl1: frontMatter.title,
     },
@@ -64,7 +64,7 @@ async function getMDXMeta(file: string) {
       content: item.content,
       id: slug,
       type: `lvl${item.lvl}` as any,
-      url: removePrefix(slug, '/').slice(3, slug.length) + `#${item.slug}`,
+      url: removePrefix(slug, '/').slice(3) + `#${item.slug}`,
       hierarchy: {
         lvl1: frontMatter.title,
         lvl2: item.lvl === 2 ? item.content : json[index - 1]?.content ?? null,

@@ -189,13 +189,14 @@ const Changelog = defineDocumentType(() => ({
 
 const Figma = defineDocumentType(() => ({
   name: 'Figma',
-  filePathPattern: 'figma/*.mdx',
+  filePathPattern: '**/figma/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
   },
   computedFields: {
+    ...computedFields,
     frontMatter: {
       type: 'json',
       resolve: (doc) => ({

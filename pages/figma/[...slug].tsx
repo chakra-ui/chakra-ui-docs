@@ -18,10 +18,11 @@ export default function Page({
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const figmas = locales.flatMap((locale) =>
     allFigmas
-      .map((t) =>
-        t._id.replace('figma/', '').replace('.mdx', '').replace('index', ''),
-      )
-      .map((id) => ({ params: { slug: [id.replace('figma/', '')] }, locale })),
+      .filter((figma) => figma.slug.includes('/figma'))
+      .map((figma) => ({
+        params: { slug: figma.slug.split('/').slice(3) },
+        locale,
+      })),
   )
 
   return { paths: figmas, fallback: false }
@@ -31,8 +32,19 @@ export const getStaticProps = async (ctx) => {
   const params = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]
-  const figma = allFigmas.find((figma) => figma._id.includes(params.join('/')))
+  let figma = allFigmas.find(
+    (figma) =>
+      figma.slug.startsWith(`/${ctx.locale}/figma`) &&
+      figma.slug.endsWith(`${params.join('/')}`),
+  )
 
-  console.log(figma)
+  if (!figma) {
+    figma = allFigmas.find(
+      (figma) =>
+        figma.slug.startsWith(`/${ctx.defaultLocale}/figma`) &&
+        figma.slug.endsWith(`${params.join('/')}`),
+    )
+  }
+
   return { props: { figma } }
 }
