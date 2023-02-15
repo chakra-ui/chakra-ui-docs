@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react'
 import { useScrollSpy } from 'hooks/use-scrollspy'
 import type { FrontmatterHeading } from 'src/types/frontmatter'
-import { t } from 'utils/i18n'
 import { FigmaPluginAd } from './figma-plugin-ad'
 import TocNav from './toc-nav'
 import useTranslation from 'next-translate/useTranslation'
