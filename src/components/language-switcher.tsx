@@ -11,13 +11,13 @@ export const setNextLocaleCookie = (locale) => {
   document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`
 }
 
-export const LanguageSwitcher = (props: SelectProps) => {
+export const LanguageSwitcher = ({ display, ...rest }: SelectProps) => {
   const router = useRouter()
 
   const { pathname, query, asPath, locale } = router
 
   return (
-    <HStack>
+    <HStack display={display}>
       <Icon as={RiEarthFill} />
       <Select
         marginEnd='0rem'
@@ -32,7 +32,7 @@ export const LanguageSwitcher = (props: SelectProps) => {
             locale: e.target.value,
           })
         }}
-        {...props}
+        {...rest}
       >
         {languages.map(({ label, value }) => (
           <option key={value} value={value}>
