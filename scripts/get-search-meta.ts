@@ -53,7 +53,7 @@ async function getMDXMeta(file: string) {
     content: frontMatter.title,
     id: slug,
     type: 'lvl1',
-    url: removePrefix(slug, '/'),
+    url: removePrefix(slug, '/').slice(3, slug.length),
     hierarchy: {
       lvl1: frontMatter.title,
     },
@@ -64,7 +64,7 @@ async function getMDXMeta(file: string) {
       content: item.content,
       id: slug,
       type: `lvl${item.lvl}` as any,
-      url: removePrefix(slug, '/') + `#${item.slug}`,
+      url: removePrefix(slug, '/').slice(3, slug.length) + `#${item.slug}`,
       hierarchy: {
         lvl1: frontMatter.title,
         lvl2: item.lvl === 2 ? item.content : json[index - 1]?.content ?? null,
@@ -89,7 +89,7 @@ async function getSearchMeta() {
    *
    * This can be overall page sections (i.e. "/docs", "/tutorial", etc.) or specific files. (i.e. "/guides/first-steps")
    */
-  const excludedSlugs = ['/tutorial']
+  const excludedSlugs = ['/tutorial', '/changelog/v1', '/de']
 
   for (const file of files) {
     let result: any[] = []

@@ -292,6 +292,8 @@ function OmniSearch() {
                     const selected = index === active
                     const isLvl1 = item.type === 'lvl1'
 
+                    console.log(item.url)
+
                     return (
                       <Link key={item.url} href={item.url} passHref>
                         <a>
