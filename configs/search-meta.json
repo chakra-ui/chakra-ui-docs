@@ -44963,6 +44963,167 @@
     }
   },
   {
+    "content": "Version 2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl1",
+    "url": "/changelog/v2.5.1",
+    "hierarchy": { "lvl1": "Version 2.5.1" }
+  },
+  {
+    "content": "@chakra-ui/provider@2.1.2",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uiprovider212",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/provider@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/provider@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uireact251",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/react@2.5.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/react@2.5.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@6.0.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitoast601",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/toast@6.0.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/toast@6.0.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/styled-system@2.6.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uistyled-system261",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/styled-system@2.6.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/styled-system@2.6.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uisystem251",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/system@2.5.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/system@2.5.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.11",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitheme-utils2011",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.11",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.11",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.35",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitest-utils2035",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.35",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.35",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
