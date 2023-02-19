@@ -11,7 +11,7 @@ export default function Page({
   const Component = useMDXComponent(blog.body.code)
   return (
     <BlogLayout frontmatter={blog.frontMatter}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </BlogLayout>
   )
 }

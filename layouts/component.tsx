@@ -10,7 +10,7 @@ import { themes } from 'utils/available-themes'
 
 function MDXContent({ doc }: { doc: Doc | undefined }) {
   const Component = useMDXComponent(doc?.body?.code ?? '')
-  return <Component components={MDXComponents} />
+  return <Component components={MDXComponents as any} />
 }
 
 export default function ComponentDocsLayout({

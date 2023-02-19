@@ -16,7 +16,7 @@ export default function Page({
   const Component = useMDXComponent(doc?.body?.code)
   return (
     <ComponentDocsLayout frontmatter={doc?.frontMatter} tabsData={tabsData}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </ComponentDocsLayout>
   )
 }
