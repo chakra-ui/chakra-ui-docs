@@ -34,7 +34,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   focus-visible: 5.2.0
   formik: ^2.2.9
-  framer-motion: ^7.3.5
+  framer-motion: ^7.3.6
   github-slugger: 1.4.0
   highlight-words-core: ^1.2.2
   husky: ^8.0.2
@@ -46,7 +46,7 @@ specifiers:
   mdx-bundler: ^9.0.1
   mkdirp: ^1.0.4
   next: ^12.2.0
-  next-contentlayer: ^0.2.6
+  next-contentlayer: ^0.2.7
   next-seo: ^5.4.0
   node-fetch: ^3.2.10
   octokit: ^2.0.4
