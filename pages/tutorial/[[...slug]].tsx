@@ -11,7 +11,7 @@ export default function Page({
   const Component = useMDXComponent(tutorial.body.code)
   return (
     <TutorialLayout frontmatter={tutorial.frontMatter}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </TutorialLayout>
   )
 }

@@ -25,7 +25,7 @@ export default function Page({
 
   return (
     <ChangelogLayout hideToc frontmatter={doc.frontMatter}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </ChangelogLayout>
   )
 }

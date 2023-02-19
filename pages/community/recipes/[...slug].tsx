@@ -11,7 +11,7 @@ export default function Page({
   const Component = useMDXComponent(doc.body.code)
   return (
     <MDXLayout frontmatter={doc.frontMatter}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </MDXLayout>
   )
 }
