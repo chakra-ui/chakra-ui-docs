@@ -6,44 +6,19 @@ author: estheragbaje
 category: frameworks
 ---
 
-<Box mt={3}>
-  <AspectRatio ratio={16 / 8.84}>
-    <VideoPlayer
-      width='100%'
-      height='100%'
-      url='https://www.youtube.com/watch?v=wI2vqXsjsIo'
-      config={{
-        youtube: {
-          playerVars: {
-            controls: true,
-          },
-        },
-      }}
-    />
-  </AspectRatio>
-</Box>
-
-## Next.js 13
-
-Next.js 13 introduces a new `app/` directory / folder structure. By default it
-uses Server Components. To use Chakra UI in those components, you need to
-convert them into client-side component by adding a `'use client';` at the top
-of your file. **Chakra UI only works in client-side components**.
-
-> If you're not using the new `app/` directory, there's no need to add the
-> `'use client';` directive.
+<VideoPlayer url='https://www.youtube.com/watch?v=wI2vqXsjsIo' />
 
 ### Installation
 
 In your Next.js project, install Chakra UI by running either of the following:
 
-```bash
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
-
-```bash
-yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
-```
+<PackageManagers
+  command={{
+    npm: 'npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    yarn: 'yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+    pnpm: 'pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion',
+  }}
+/>
 
 ### Provider Setup
 
@@ -66,6 +41,80 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+```
+
+### App Directory Setup
+
+Next.js 13 introduces a new `app/` directory / folder structure. By default it
+uses Server Components. However, **Chakra UI only works in client-side
+components**.
+
+To use Chakra UI in server components, you need to convert them into client-side
+component by adding a `'use client';` at the top of your file.
+
+We've also provided a `@chakra-ui/next-js` package that gives you a smoother
+experience when using Chakra UI in the app directory.
+
+This package provides the **CacheProvider** which composes the Emotion.js' cache
+provider with the `useServerInsertedHTML` hook from next/navigation. This is
+necessary to ensure that computed styles are included in the initial server
+payload (during streaming).
+
+```jsx live=false
+// app/layout.tsx
+'use client'
+
+import { CacheProvider } from '@chakra-ui/next-js'
+import { ChakraProvider } from '@chakra-ui/react'
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode,
+}) {
+  return (
+    <html lang='en'>
+      <head />
+      <body>
+        <CacheProvider>
+          <ChakraProvider>{children}</ChakraProvider>
+        </CacheProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+> Note: Make sure to include the `<head>` tag in your layout component otherwise
+> it will not work.
+
+> The `'use client'` directive is still required to be added to the top of the
+> page-related file.
+
+If you're not using the new `app/` directory, there's no need to add
+the`'use client';` directive add the top of your file.
+
+### Chakra UI with Next.js Link
+
+If you're using Next.js 13, we've provided a `@chakra-ui/next-js` package that
+gives you a smoother experience when using Chakra UI Link component with
+`next/link`.
+
+This package provides the **Link** which combines the functionality of the
+Next.js Link and Chakra UI Link components.
+
+```jsx live=false
+// app/page.tsx
+'use client'
+import { Link } from '@chakra-ui/next-js'
+
+export default function Page() {
+  return (
+    <Link href='/about' color='blue.400' _hover={{ color: 'blue.500' }}>
+      About
+    </Link>
+  )
+}
 ```
 
 ### Customizing theme

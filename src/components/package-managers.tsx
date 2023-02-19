@@ -40,35 +40,41 @@ const packageManagers: PackageManager[] = [
 ]
 
 export function PackageManagers(props: {
-  command: Record<PackageManagerName, string>
+  command: Partial<Record<PackageManagerName, string>>
 }) {
   const { command } = props
   return (
     <Tabs mt='6' mb='10'>
       <TabList>
-        {packageManagers.map(({ name, icon, color }) => (
-          <Tab
-            key={name}
-            gap='2'
-            _selected={{
-              color,
-              borderBottomWidth: '2px',
-              borderBottomColor: color,
-            }}
-          >
-            {icon}
-            {name}
-          </Tab>
-        ))}
+        {packageManagers.map(({ name, icon, color }) => {
+          if (!command[name]) return null
+          return (
+            <Tab
+              key={name}
+              gap='2'
+              _selected={{
+                color,
+                borderBottomWidth: '2px',
+                borderBottomColor: color,
+              }}
+            >
+              {icon}
+              {name}
+            </Tab>
+          )
+        })}
       </TabList>
       <TabPanels>
-        {packageManagers.map(({ name }) => (
-          <TabPanel key={name} p='0' mt='-4'>
-            <CodeBlock>
-              <Box className='language-bash'>{`${name} ${command[name]}`}</Box>
-            </CodeBlock>
-          </TabPanel>
-        ))}
+        {packageManagers.map(({ name }) => {
+          if (!command[name]) return null
+          return (
+            <TabPanel key={name} p='0' mt='-4'>
+              <CodeBlock>
+                <Box className='language-bash'>{command[name]}</Box>
+              </CodeBlock>
+            </TabPanel>
+          )
+        })}
       </TabPanels>
     </Tabs>
   )

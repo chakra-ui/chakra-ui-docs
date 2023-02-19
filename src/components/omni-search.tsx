@@ -293,7 +293,7 @@ function OmniSearch() {
                     const isLvl1 = item.type === 'lvl1'
 
                     return (
-                      <Link key={item.id} href={item.url} passHref>
+                      <Link key={item.url} href={item.url} passHref>
                         <a>
                           <Box
                             id={`search-item-${index}`}
@@ -310,7 +310,7 @@ function OmniSearch() {
                             }}
                             ref={menuNodes.ref(index)}
                             role='option'
-                            key={item.id}
+                            key={item.url}
                             sx={{
                               display: 'flex',
                               alignItems: 'center',

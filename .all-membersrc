@@ -28,7 +28,7 @@
       "name": "Jonathan Bakebwa",
       "bio": "Building @chakra-ui/vue  |\r\nCo-founder, Software Engineer, rct.ai",
       "twitter_username": "codebender828",
-      "location": "Beijing Institute of Technology, Beijing, CN"
+      "location": "Paris, France"
     },
     {
       "login": "cschroeter",
@@ -56,9 +56,9 @@
       "url": "https://github.com/nikolovlazar",
       "blog": "https://nikolovlazar.com",
       "name": "Lazar Nikolov",
-      "bio": "Developer Advocate @getsentry.\r\nCore @chakra-ui.\r\nInstructor @eggheadio.\r\nSWE, content creator, OSS Advocate.",
+      "bio": "Developer Advocate @getsentry.\r\nInstructor @eggheadio.\r\nSWE, content creator, OSS Advocate.",
       "twitter_username": "NikolovLazar",
-      "location": "Skopje, North Macedonia"
+      "location": "Toronto, Canada"
     },
     {
       "login": "noobinthisgame",
@@ -69,6 +69,16 @@
       "bio": "Full-Stack dev with a strong affinity for React, Chakra UI, Typescript and AWS.",
       "twitter_username": "noobinthisgame",
       "location": "Darmstadt, Germany"
+    },
+    {
+      "login": "Shyrro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10008963?v=4",
+      "url": "https://github.com/Shyrro",
+      "blog": "",
+      "name": "Zakaria Sahmane",
+      "bio": null,
+      "twitter_username": "TheDumbThinker",
+      "location": "France"
     },
     {
       "login": "TimKolberger",

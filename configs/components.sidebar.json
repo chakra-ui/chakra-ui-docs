@@ -127,8 +127,7 @@
             },
             {
               "title": "Card",
-              "path": "/docs/components/card",
-              "new": true
+              "path": "/docs/components/card"
             },
             {
               "title": "Code",

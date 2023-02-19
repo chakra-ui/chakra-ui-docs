@@ -11,15 +11,15 @@ import {
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, ReactElement, ReactNode, useRef } from 'react'
+import { AiFillPlayCircle } from 'react-icons/ai'
+import { BsFillGridFill } from 'react-icons/bs'
 import {
-  FaFileAlt,
+  FaCompass,
+  FaGlobe,
   FaPalette,
   FaTools,
-  FaGlobe,
-  FaCompass,
-  FaReadme,
 } from 'react-icons/fa'
-import { BsFillGridFill } from 'react-icons/bs'
+import { FiFigma } from 'react-icons/fi'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { RouteItem, Routes } from 'utils/get-route-context'
 import SidebarCategory from './sidebar-category'
@@ -38,12 +38,25 @@ export type SidebarContentProps = Routes & {
   contentRef?: any
 }
 
+function NewBadge() {
+  return (
+    <Badge
+      ml='2'
+      lineHeight='tall'
+      fontSize='10px'
+      variant='solid'
+      colorScheme='purple'
+    >
+      New
+    </Badge>
+  )
+}
+
 export function SidebarContent({
   routes,
   pathname,
   contentRef,
 }: SidebarContentProps) {
-
   return (
     <>
       {routes.map((lvl1, idx) => {
@@ -64,7 +77,13 @@ export function SidebarContent({
             {lvl1.routes.map((lvl2, index) => {
               if (!lvl2.routes) {
                 return (
-                  <SidebarLink ml='-3' mt='2' key={lvl2.path} href={lvl2.path} isExternal={lvl2.external}>
+                  <SidebarLink
+                    ml='-3'
+                    mt='2'
+                    key={lvl2.path}
+                    href={lvl2.path}
+                    isExternal={lvl2.external}
+                  >
                     {lvl2.title}
                   </SidebarLink>
                 )
@@ -88,17 +107,7 @@ export function SidebarContent({
                   {sortedRoutes.map((lvl3) => (
                     <SidebarLink key={lvl3.path} href={lvl3.path}>
                       <span>{convertBackticksToInlineCode(lvl3.title)}</span>
-                      {lvl3.new && (
-                        <Badge
-                          ml='2'
-                          lineHeight='tall'
-                          fontSize='10px'
-                          variant='solid'
-                          colorScheme='purple'
-                        >
-                          New
-                        </Badge>
-                      )}
+                      {lvl3.new && <NewBadge />}
                     </SidebarLink>
                   ))}
                 </SidebarCategory>
@@ -117,16 +126,17 @@ type MainNavLinkProps = {
   children: ReactNode
   label?: string
   isActive?: boolean
+  isExternal?: boolean
 }
 
-const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
+const MainNavLink = ({ href, icon, children, isActive, isExternal }: MainNavLinkProps) => {
   const router = useRouter()
-
   const active = router.asPath.startsWith(href) || !!isActive
 
   return (
     <NextLink href={href} passHref>
       <HStack
+        target={isExternal ? '_blank' : undefined}
         as='a'
         spacing='3'
         fontSize='sm'
@@ -147,7 +157,7 @@ const MainNavLink = ({ href, icon, children, isActive }: MainNavLinkProps) => {
         </Center>
         <span>{children}</span>
       </HStack>
-    </NextLink>
+    </NextLink >
   )
 }
 
@@ -178,6 +188,13 @@ export const mainNavLinks = [
       href.startsWith('/docs/hooks') && asPath.startsWith('/docs/hooks'),
   },
   {
+    icon: <FiFigma />,
+    href: '/figma/ui-kit',
+    label: 'Figma',
+    match: (asPath: string, href: string) =>
+      href.startsWith('/figma') && asPath.startsWith('/figma'),
+  },
+  {
     icon: <FaGlobe />,
     href: '/community/team',
     label: 'Community',
@@ -185,19 +202,22 @@ export const mainNavLinks = [
       href.startsWith('/community') && asPath.startsWith('/community'),
   },
   {
-    icon: <FaFileAlt />,
-    href: '/changelog',
-    label: 'Changelog',
-  },
-  {
-    icon: <FaReadme />,
-    href: '/blog',
-    label: 'Blog',
-  },
+    icon: <AiFillPlayCircle />,
+    href: 'https://play.chakra-ui.com',
+    label: 'Playground',
+    new: true,
+    external: true,
+  }
+  // {
+  //   icon: <FaReadme />,
+  //   href: '/blog',
+  //   label: 'Blog',
+  // },
 ]
 
 export const MainNavLinkGroup = (props: ListProps) => {
   const router = useRouter()
+
   return (
     <List spacing='4' styleType='none' {...props}>
       {mainNavLinks.map((item) => (
@@ -207,8 +227,9 @@ export const MainNavLinkGroup = (props: ListProps) => {
             href={item.href}
             label={item.label}
             isActive={item.match?.(router.asPath, item.href)}
+            isExternal={item.external}
           >
-            {item.label}
+            {item.label} {item.new && <NewBadge />}
           </MainNavLink>
         </ListItem>
       ))}

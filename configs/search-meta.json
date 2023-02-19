@@ -44443,6 +44443,687 @@
     }
   },
   {
+    "content": "Version 2.4.9",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl1",
+    "url": "/changelog/v2.4.9",
+    "hierarchy": { "lvl1": "Version 2.4.9" }
+  },
+  {
+    "content": "All components",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#all-components",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "All components",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Provider `2.1.0`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#provider-210",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Minor Changes",
+      "lvl3": "Provider `2.1.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl2",
+    "url": "/changelog/v2.4.9#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Focus Lock `2.0.16`",
+    "id": "//changelog/v2.4.9",
+    "type": "lvl3",
+    "url": "/changelog/v2.4.9#focus-lock-2016",
+    "hierarchy": {
+      "lvl1": "Version 2.4.9",
+      "lvl2": "Patch Changes",
+      "lvl3": "Focus Lock `2.0.16`"
+    }
+  },
+  {
+    "content": "Version 2.5.0",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl1",
+    "url": "/changelog/v2.5.0",
+    "hierarchy": { "lvl1": "Version 2.5.0" }
+  },
+  {
+    "content": "@chakra-ui/react@2.5.0",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uireact250",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/react@2.5.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/react@2.5.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/styled-system@2.6.0",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uistyled-system260",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/styled-system@2.6.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#minor-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/styled-system@2.6.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.5.0",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uisystem250",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/system@2.5.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#minor-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/system@2.5.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/accordion@2.1.9",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uiaccordion219",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/accordion@2.1.9",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/accordion@2.1.9",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/avatar@2.2.5",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uiavatar225",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/avatar@2.2.5",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/avatar@2.2.5",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/input@2.0.20",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uiinput2020",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/input@2.0.20",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/input@2.0.20",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/layout@2.1.16",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uilayout2116",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/layout@2.1.16",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/layout@2.1.16",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/media-query@3.2.12",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uimedia-query3212",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/media-query@3.2.12",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-7",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/media-query@3.2.12",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/menu@2.1.9",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uimenu219",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/menu@2.1.9",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-8",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/menu@2.1.9",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/provider@2.1.1",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uiprovider211",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/provider@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-9",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/provider@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/skeleton@2.0.24",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uiskeleton2024",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/skeleton@2.0.24",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-10",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/skeleton@2.0.24",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/slider@2.0.21",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uislider2021",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/slider@2.0.21",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-11",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/slider@2.0.21",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@6.0.0",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uitoast600",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/toast@6.0.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-12",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/toast@6.0.0",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react-use-size@2.0.9",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uireact-use-size209",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/react-use-size@2.0.9",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-13",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/react-use-size@2.0.9",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/next-js@2.0.1",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uinext-js201",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/next-js@2.0.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-14",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/next-js@2.0.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/hooks@2.1.6",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uihooks216",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/hooks@2.1.6",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-15",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/hooks@2.1.6",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/breakpoint-utils@2.0.8",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uibreakpoint-utils208",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/breakpoint-utils@2.0.8",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-16",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/breakpoint-utils@2.0.8",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.10",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uitheme-utils2010",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/theme-utils@2.0.10",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-17",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/theme-utils@2.0.10",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.34",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.0#chakra-uitest-utils2034",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/test-utils@2.0.34",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.0#patch-changes-18",
+    "hierarchy": {
+      "lvl1": "Version 2.5.0",
+      "lvl2": "@chakra-ui/test-utils@2.0.34",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "Version 2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl1",
+    "url": "/changelog/v2.5.1",
+    "hierarchy": { "lvl1": "Version 2.5.1" }
+  },
+  {
+    "content": "@chakra-ui/provider@2.1.2",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uiprovider212",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/provider@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/provider@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uireact251",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/react@2.5.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/react@2.5.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@6.0.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitoast601",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/toast@6.0.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/toast@6.0.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/styled-system@2.6.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uistyled-system261",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/styled-system@2.6.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/styled-system@2.6.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.5.1",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uisystem251",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/system@2.5.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/system@2.5.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.11",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitheme-utils2011",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.11",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.11",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.35",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.1#chakra-uitest-utils2035",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.35",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.1#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.5.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.35",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
@@ -47927,6 +48608,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Using a custom color scheme",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#using-a-custom-color-scheme",
+    "hierarchy": { "lvl2": "Using a custom color scheme", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/kbd/theming",
+    "type": "lvl2",
+    "url": "/docs/components/kbd/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Keyboard Key",
     "id": "//docs/components/kbd/usage",
     "type": "lvl1",
@@ -48174,6 +48911,62 @@
     "type": "lvl1",
     "url": "/docs/components/list/theming",
     "hierarchy": {}
+  },
+  {
+    "content": "Anatomy",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#anatomy",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Creating a custom variant",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#creating-a-custom-variant",
+    "hierarchy": { "lvl2": "Creating a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#changing-the-default-properties",
+    "hierarchy": { "lvl2": "Changing the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/list/theming",
+    "type": "lvl2",
+    "url": "/docs/components/list/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
   },
   {
     "content": "List",
@@ -48448,6 +49241,17 @@
       "lvl1": "Menu",
       "lvl2": "Rendering menu in a portal",
       "lvl3": "MenuGroup"
+    }
+  },
+  {
+    "content": "MenuItem as a link",
+    "id": "//docs/components/menu/usage",
+    "type": "lvl3",
+    "url": "/docs/components/menu/usage#menuitem-as-a-link",
+    "hierarchy": {
+      "lvl1": "Menu",
+      "lvl2": "MenuGroup",
+      "lvl3": "MenuItem as a link"
     }
   },
   {
@@ -52817,6 +53621,84 @@
     "hierarchy": { "lvl1": "useRadio", "lvl2": "Parameters", "lvl3": null }
   },
   {
+    "content": "useRangeSlider",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl1",
+    "url": "/docs/hooks/use-range-slider",
+    "hierarchy": { "lvl1": "useRangeSlider" }
+  },
+  {
+    "content": "Import",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#import",
+    "hierarchy": { "lvl1": "useRangeSlider", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Return value",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#return-value",
+    "hierarchy": {
+      "lvl1": "useRangeSlider",
+      "lvl2": "Return value",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Usage",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#usage",
+    "hierarchy": { "lvl1": "useRangeSlider", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Parameters",
+    "id": "//docs/hooks/use-range-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-range-slider#parameters",
+    "hierarchy": {
+      "lvl1": "useRangeSlider",
+      "lvl2": "Parameters",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "useSlider",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl1",
+    "url": "/docs/hooks/use-slider",
+    "hierarchy": { "lvl1": "useSlider" }
+  },
+  {
+    "content": "Import",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#import",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Import", "lvl3": null }
+  },
+  {
+    "content": "Return value",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#return-value",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Return value", "lvl3": null }
+  },
+  {
+    "content": "Usage",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#usage",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Parameters",
+    "id": "//docs/hooks/use-slider",
+    "type": "lvl2",
+    "url": "/docs/hooks/use-slider#parameters",
+    "hierarchy": { "lvl1": "useSlider", "lvl2": "Parameters", "lvl3": null }
+  },
+  {
     "content": "useTheme",
     "id": "//docs/hooks/use-theme",
     "type": "lvl1",
@@ -54263,6 +55145,31 @@
     "hierarchy": { "lvl1": "Default Theme", "lvl2": "Config", "lvl3": null }
   },
   {
+    "content": "Figma Plugin",
+    "id": "//figma/plugin",
+    "type": "lvl1",
+    "url": "/figma/plugin",
+    "hierarchy": { "lvl1": "Figma Plugin" }
+  },
+  {
+    "content": "How it works",
+    "id": "//figma/plugin",
+    "type": "lvl2",
+    "url": "/figma/plugin#how-it-works",
+    "hierarchy": {
+      "lvl1": "Figma Plugin",
+      "lvl2": "How it works",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Figma UI Kit",
+    "id": "//figma/ui-kit",
+    "type": "lvl1",
+    "url": "/figma/ui-kit",
+    "hierarchy": { "lvl1": "Figma UI Kit" }
+  },
+  {
     "content": "Blitz.js",
     "id": "//getting-started/blitzjs-guide",
     "type": "lvl1",
@@ -54595,14 +55502,25 @@
     }
   },
   {
-    "content": "Usage",
+    "content": "JavaScript Template",
     "id": "//getting-started/cra-guide",
     "type": "lvl3",
-    "url": "/getting-started/cra-guide#usage",
+    "url": "/getting-started/cra-guide#javascript-template",
     "hierarchy": {
       "lvl1": "Create React App",
       "lvl2": "Automatic Installation",
-      "lvl3": "Usage"
+      "lvl3": "JavaScript Template"
+    }
+  },
+  {
+    "content": "TypeScript Template",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl3",
+    "url": "/getting-started/cra-guide#typescript-template",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "JavaScript Template",
+      "lvl3": "TypeScript Template"
     }
   },
   {
@@ -54612,7 +55530,7 @@
     "url": "/getting-started/cra-guide#whats-included",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "Usage",
+      "lvl2": "TypeScript Template",
       "lvl3": "What's included"
     }
   },
@@ -54694,13 +55612,35 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#customizing-theme",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "3. Optional Setup",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Using Chakra Icons",
+    "id": "//getting-started/cra-guide",
+    "type": "lvl4",
+    "url": "/getting-started/cra-guide#using-chakra-icons",
+    "hierarchy": {
+      "lvl1": "Create React App",
+      "lvl2": "Customizing Theme",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/cra-guide",
     "type": "lvl4",
     "url": "/getting-started/cra-guide#notes-on-typescript-🚨",
     "hierarchy": {
       "lvl1": "Create React App",
-      "lvl2": "3. Optional Setup",
+      "lvl2": "Using Chakra Icons",
       "lvl3": null
     }
   },
@@ -55030,24 +55970,13 @@
     "hierarchy": { "lvl1": "Getting Started with Next.js" }
   },
   {
-    "content": "Next.js 13",
-    "id": "//getting-started/nextjs-guide",
-    "type": "lvl2",
-    "url": "/getting-started/nextjs-guide#nextjs-13",
-    "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Next.js 13",
-      "lvl3": null
-    }
-  },
-  {
     "content": "Installation",
     "id": "//getting-started/nextjs-guide",
     "type": "lvl3",
     "url": "/getting-started/nextjs-guide#installation",
     "hierarchy": {
       "lvl1": "Getting Started with Next.js",
-      "lvl2": "Next.js 13",
+      "lvl2": null,
       "lvl3": "Installation"
     }
   },
@@ -55063,13 +55992,35 @@
     }
   },
   {
+    "content": "App Directory Setup",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#app-directory-setup",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "Provider Setup",
+      "lvl3": "App Directory Setup"
+    }
+  },
+  {
+    "content": "Chakra UI with Next.js Link",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "App Directory Setup",
+      "lvl3": "Chakra UI with Next.js Link"
+    }
+  },
+  {
     "content": "Customizing theme",
     "id": "//getting-started/nextjs-guide",
     "type": "lvl3",
     "url": "/getting-started/nextjs-guide#customizing-theme",
     "hierarchy": {
       "lvl1": "Getting Started with Next.js",
-      "lvl2": "Provider Setup",
+      "lvl2": "Chakra UI with Next.js Link",
       "lvl3": "Customizing theme"
     }
   },
@@ -55244,22 +56195,36 @@
     }
   },
   {
+    "content": "Customizing Theme",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#customizing-theme",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
+  },
+  {
+    "content": "Add colorModeManager",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl4",
+    "url": "/getting-started/remix-guide#add-colormodemanager",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Customizing Theme", "lvl3": null }
+  },
+  {
     "content": "Notes on TypeScript 🚨",
     "id": "//getting-started/remix-guide",
     "type": "lvl4",
     "url": "/getting-started/remix-guide#notes-on-typescript-🚨",
-    "hierarchy": { "lvl1": "Remix", "lvl2": "3. Optional Setup", "lvl3": null }
-  },
-  {
-    "content": "4. Community boilerplates",
-    "id": "//getting-started/remix-guide",
-    "type": "lvl3",
-    "url": "/getting-started/remix-guide#4-community-boilerplates",
     "hierarchy": {
       "lvl1": "Remix",
-      "lvl2": "Notes on TypeScript 🚨",
-      "lvl3": "4. Community boilerplates"
+      "lvl2": "Add colorModeManager",
+      "lvl3": null
     }
+  },
+  {
+    "content": "Template",
+    "id": "//getting-started/remix-guide",
+    "type": "lvl2",
+    "url": "/getting-started/remix-guide#template",
+    "hierarchy": { "lvl1": "Remix", "lvl2": "Template", "lvl3": null }
   },
   {
     "content": "Vite",
