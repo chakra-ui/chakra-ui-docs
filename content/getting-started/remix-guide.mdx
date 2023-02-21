@@ -319,7 +319,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 // In your App function
 
 function getColorMode (cookies: string) {
-  const match = cookie.match(new RegExp(`(^| )${CHAKRA_COOKIE_COLOR_KEY}=([^;]+)`));
+  const match = cookies.match(new RegExp(`(^| )${CHAKRA_COOKIE_COLOR_KEY}=([^;]+)`));
   return match == null ? void 0 : match[2];
 }
 
