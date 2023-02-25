@@ -46638,6 +46638,17 @@
     }
   },
   {
+    "content": "AbsoluteCenter",
+    "id": "//docs/components/center/usage",
+    "type": "lvl3",
+    "url": "/docs/components/center/usage#absolutecenter",
+    "hierarchy": {
+      "lvl1": "Center",
+      "lvl2": "Square and Circle",
+      "lvl3": "AbsoluteCenter"
+    }
+  },
+  {
     "id": "//docs/components/checkbox/props",
     "type": "lvl1",
     "url": "/docs/components/checkbox/props",
