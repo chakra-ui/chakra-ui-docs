@@ -71,7 +71,7 @@
     "remark-emoji": "^3.0.2",
     "remark-gfm": "^3.0.1",
     "remark-slug": "^7.0.1",
-    "scroll-into-view-if-needed": "^2.2.29",
+    "scroll-into-view-if-needed": "^3.0.6",
     "shelljs": "^0.8.5",
     "typescript": "^4.7.4"
   },
