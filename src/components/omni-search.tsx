@@ -155,7 +155,7 @@ function OmniSearch() {
       if (query.length < 2) return []
       return matchSorter(searchData, query, {
         keys: ['hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3', 'content'],
-      }).slice(0, 20)
+      }).slice(0, 20) // There is probably a filter needed to filter for current locale
     },
     [query],
   )
