@@ -3,13 +3,15 @@ id: modal
 scope: theming
 ---
 
+## Theming
+
 The `Modal` component is a multipart component.
 
 > To learn more about styling multipart components, visit the
 > [Component Style](/docs/styled-system/component-style#styling-multipart-components)
 > page.
 
-## Anatomy
+### Anatomy
 
 - A: `header`
 - B: `overlay`
@@ -704,14 +706,14 @@ The `Modal` component is a multipart component.
 You can find more information in the source
 [here](https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/theme/src/components/modal.ts).
 
-## Theming properties
+### Theming properties
 
 The properties that affect the theming of the `Modal` component are:
 
 - `variant`: The visual variant of the `Modal`. Defaults to baseStyle.
 - `size`: The size of the `Modal`. Defaults to md.
 
-## Theming utilities
+### Theming utilities
 
 - `createMultiStyleConfigHelpers`: a function that returns a set of utilities
   for creating style configs for a multipart component (definePartsStyle and
@@ -720,7 +722,7 @@ The properties that affect the theming of the `Modal` component are:
 - `defineMultiStyleConfig`: a function used to define the style configuration
   for a multipart component.
 
-## Customizing the default theme
+### Customizing the default theme
 
 ```jsx live=false
 import { modalAnatomy as parts } from '@chakra-ui/anatomy'
@@ -760,7 +762,7 @@ export const theme = extendTheme({
 > This is a crucial step to make sure that any changes that we make to the
 > `Modal` theme are applied.
 
-# Adding a custom size
+### Adding a custom size
 
 Let's assume we want to change the font size of both header and dialog.
 
@@ -801,7 +803,7 @@ Every time you're adding anything new to the theme, you'd need to run the CLI
 command to get proper autocomplete in your IDE. You can learn more about the CLI
 tool [here](/docs/styled-system/cli).
 
-## Adding a custom variant
+### Adding a custom variant
 
 Let's assume we want to include a custom variant. Here's how we can do that:
 
@@ -833,7 +835,7 @@ export const modalTheme = defineMultiStyleConfig({
 <Modal variant='purple' ... />
 ```
 
-## Changing the default properties
+### Changing the default properties
 
 Let's assume we want to change the default size and variant of every `Modal` in
 our app.
@@ -855,7 +857,7 @@ export const modalTheme = defineMultiStyleConfig({
 <Modal size="xl" variant="purple" ... />
 ```
 
-## Showcase
+### Showcase
 
 import {
   App,
