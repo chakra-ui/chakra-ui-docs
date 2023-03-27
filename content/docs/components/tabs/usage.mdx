@@ -56,7 +56,7 @@ you can have `TabList` at the top, at the bottom, or both.
 ### Tab variants and color
 
 Tabs come in 6 different variants to style the tabs: `line`,`enclosed`,
-`enclosed-colored`, `soft-rounded`, `solid-rounded`
+`enclosed-colored`, `soft-rounded`, `solid-rounded`, and `unstyled`
 
 ```jsx
 <Tabs variant='enclosed'>
@@ -165,8 +165,35 @@ Stretch the tab list to fit the container by passing `isFitted` prop.
 
 ### Styling the tab states via props
 
-In the event that you need to create custom styles for the tabs, simply set the variant
-to `unstyled`, and use the `_selected`, `_hover`, `_active` style props.
+To customize the active tab indicator, set the `variant` to `unstyled` and set styles on `TabIndicator`.
+```jsx
+  <Tabs position="relative" variant="unstyled">
+    <TabList>
+      <Tab>One</Tab>
+      <Tab>Two</Tab>
+      <Tab>Three</Tab>
+    </TabList>
+    <TabIndicator
+      mt="-1.5px"
+      height="2px"
+      bg="blue.500"
+      borderRadius="1px"
+    />
+    <TabPanels>
+      <TabPanel>
+        <p>one!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>two!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>three!</p>
+      </TabPanel>
+    </TabPanels>
+  </Tabs>
+```
+
+In the event that you need to create custom styles for individual tabs, use the `_selected`, `_hover`, `_active` style props.
 
 ```jsx
 <Tabs variant='unstyled'>
