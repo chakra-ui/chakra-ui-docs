@@ -44863,6 +44863,90 @@
     }
   },
   {
+    "content": "Version 2.5.4",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl1",
+    "url": "/changelog/v2.5.4",
+    "hierarchy": { "lvl1": "Version 2.5.4" }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.4#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Styled System `2.7.0`",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.4#styled-system-270",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Minor Changes",
+      "lvl3": "Styled System `2.7.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl2",
+    "url": "/changelog/v2.5.4#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Tag `3.0.0`",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.4#tag-300",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Patch Changes",
+      "lvl3": "Tag `3.0.0`"
+    }
+  },
+  {
+    "content": "Toast `6.1.0`",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.4#toast-610",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Tag `3.0.0`",
+      "lvl3": "Toast `6.1.0`"
+    }
+  },
+  {
+    "content": "Checkbox `2.2.13`, Radio `2.0.22`",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.4#checkbox-2213-radio-2022",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Toast `6.1.0`",
+      "lvl3": "Checkbox `2.2.13`, Radio `2.0.22`"
+    }
+  },
+  {
+    "content": "Next.js `2.1.1`",
+    "id": "//changelog/v2.5.4",
+    "type": "lvl3",
+    "url": "/changelog/v2.5.4#nextjs-211",
+    "hierarchy": {
+      "lvl1": "Version 2.5.4",
+      "lvl2": "Checkbox `2.2.13`, Radio `2.0.22`",
+      "lvl3": "Next.js `2.1.1`"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
