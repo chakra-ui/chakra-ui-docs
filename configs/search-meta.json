@@ -52379,13 +52379,24 @@
     }
   },
   {
-    "content": "Preventing Duplicate Toast",
+    "content": "Preventing duplicate toast",
     "id": "//docs/components/toast/usage",
     "type": "lvl2",
     "url": "/docs/components/toast/usage#preventing-duplicate-toast",
     "hierarchy": {
       "lvl1": "Toast",
-      "lvl2": "Preventing Duplicate Toast",
+      "lvl2": "Preventing duplicate toast",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Configuring toast globally",
+    "id": "//docs/components/toast/usage",
+    "type": "lvl2",
+    "url": "/docs/components/toast/usage#configuring-toast-globally",
+    "hierarchy": {
+      "lvl1": "Toast",
+      "lvl2": "Configuring toast globally",
       "lvl3": null
     }
   },

@@ -287,7 +287,7 @@ function PositionExample() {
 }
 ```
 
-## Preventing Duplicate Toast
+## Preventing duplicate toast
 
 In some cases you might need to prevent duplicate of specific toasts. To achieve
 you need to pass an `id` and use the `toast.isActive` method to determine when
@@ -313,6 +313,30 @@ function PreventDuplicateExample() {
   )
 }
 ```
+
+## Configuring toast globally
+
+You can configure the toast globally by passing the `toastOptions` prop to the
+`ChakraProvider` component.
+
+The `toastOptions` prop accepts the same options as the `useToast` hook.
+
+```jsx live=false
+<ChakraProvider toastOptions={{ defaultOptions: { position: 'bottom' } }}>
+  <App />
+</ChakraProvider>
+```
+
+Besides the `defaultOptions`, you can also pass the following options:
+
+- `motionVariants`: The framer motion variants for the toast container. This
+  controls the animations for the toasts.
+
+- `component`: The custom component to use for the toast
+
+- `portalProps`: The props to pass to the toast's portal component
+
+- `toastSpacing`: The spacing between toasts. The default is `0.5rem`
 
 ## Standalone Toasts
 
