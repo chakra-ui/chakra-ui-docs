@@ -54660,15 +54660,22 @@
     }
   },
   {
+    "content": "Display",
+    "id": "//docs/styled-system/style-props",
+    "type": "lvl3",
+    "url": "/docs/styled-system/style-props#display",
+    "hierarchy": {
+      "lvl1": "Style Props",
+      "lvl2": "Layout, width and height",
+      "lvl3": "Display"
+    }
+  },
+  {
     "content": "Flexbox",
     "id": "//docs/styled-system/style-props",
     "type": "lvl3",
     "url": "/docs/styled-system/style-props#flexbox",
-    "hierarchy": {
-      "lvl1": "Style Props",
-      "lvl2": "Layout, width and height",
-      "lvl3": "Flexbox"
-    }
+    "hierarchy": { "lvl1": "Style Props", "lvl2": "Display", "lvl3": "Flexbox" }
   },
   {
     "content": "Grid Layout",
