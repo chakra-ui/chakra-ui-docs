@@ -90,7 +90,7 @@
     "eslint-import-resolver-typescript": "^3.1.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "mkdirp": "^1.0.4",
+    "mkdirp": "^2.1.6",
     "node-fetch": "^3.2.10",
     "pnpm-deduplicate": "^0.3.1",
     "prettier": "^2.7.1",
