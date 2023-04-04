@@ -50375,6 +50375,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Anatomy",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#anatomy",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#customizing-the-default-theme",
+    "hierarchy": { "lvl2": "Customizing the default theme", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#adding-a-custom-size",
+    "hierarchy": { "lvl2": "Adding a custom size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#adding-a-custom-variant",
+    "hierarchy": { "lvl2": "Adding a custom variant", "lvl3": null }
+  },
+  {
+    "content": "Creating the default properties",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#creating-the-default-properties",
+    "hierarchy": { "lvl2": "Creating the default properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/popover/theming",
+    "type": "lvl2",
+    "url": "/docs/components/popover/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Popover",
     "id": "//docs/components/popover/usage",
     "type": "lvl1",
