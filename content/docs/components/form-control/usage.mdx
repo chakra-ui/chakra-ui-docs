@@ -44,7 +44,9 @@ import {
 
 ```jsx
 <FormControl as='fieldset'>
-  <FormLabel as='legend'>Favorite Naruto Character</FormLabel>
+  <FormLabel as='legend' htmlFor={null}>
+    Favorite Naruto Character
+  </FormLabel>
   <RadioGroup defaultValue='Itachi'>
     <HStack spacing='24px'>
       <Radio value='Sasuke'>Sasuke</Radio>
@@ -130,8 +132,8 @@ indicate that a field is optional you can add `optionalIndicator` to the
 
 ### Usage with Form Libraries
 
-Form Libraries like [Formik](https://jaredpalmer.com/formik/) make it so easy
-to manage form state and validation.
+Form Libraries like [Formik](https://jaredpalmer.com/formik/) make it so easy to
+manage form state and validation.
 
 ```jsx
 // The below import defines which components come from formik

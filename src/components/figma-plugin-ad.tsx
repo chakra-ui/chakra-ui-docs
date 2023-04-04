@@ -10,6 +10,7 @@ export function FigmaPluginAd({ medium }: { medium: string }) {
         rounded='lg'
         padding='4'
         position='relative'
+        _dark={{ bg: 'teal.800' }}
       >
         <AspectRatio ratio={2} rounded='xl' overflow='hidden'>
           <Image src='/figma/ad.png' objectFit='contain' layout='fill' alt='' />

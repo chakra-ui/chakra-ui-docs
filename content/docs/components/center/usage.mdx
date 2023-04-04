@@ -15,6 +15,7 @@ import { Center, Square, Circle } from '@chakra-ui/react'
 - **Center:** centers its child given `width` and `height`
 - **Square:** centers its child given `size` (width and height)
 - **Circle:** a `Square` with round `border-radius`
+- **AbsoluteCenter:** centers relative to its parent by given `axis`
 
 ## Usage
 
@@ -58,4 +59,18 @@ automatically centers its children given the `size`.
     <PhoneIcon />
   </Square>
 </HStack>
+```
+
+### AbsoluteCenter
+
+Used to horizontally and vertically center an element relative to its parent
+dimensions. Uses the `position: absolute` strategy. Takes `axis` prop which is
+could be "both" (by default), "horizontal" or "vertical".
+
+```jsx
+<Box position='relative' h='100px'>
+  <AbsoluteCenter bg='tomato' p='4' color='white' axis='both'>
+    <PhoneIcon />
+  </AbsoluteCenter>
+</Box>
 ```

@@ -10,7 +10,7 @@ export default function Page({
   const Component = useMDXComponent(figma.body.code)
   return (
     <MDXLayout frontmatter={figma.frontMatter}>
-      <Component components={MDXComponents} />
+      <Component components={MDXComponents as any} />
     </MDXLayout>
   )
 }

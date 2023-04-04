@@ -2,9 +2,10 @@
 id: link-overlay
 category: navigation
 title: Link Overlay
-package: "@chakra-ui/layout"
-description: "Link overlay is a semantic component used to wrap elements (cards, blog post,
-articles, etc.) in a link."
+package: '@chakra-ui/layout'
+description:
+  'Link overlay is a semantic component used to wrap elements (cards, blog post,
+  articles, etc.) in a link.'
 ---
 
 ## Import
@@ -87,9 +88,7 @@ function Example() {
   return (
     <LinkBox as='article'>
       <h2>
-        <NextLink href='#' passHref>
-          <LinkOverlay>Some blog post</LinkOverlay>
-        </NextLink>
+        <LinkOverlay as={NextLink} href="#">Some blog post</LinkOverlay>
       </h2>
       <p>
         As a side note, using quotation marks around an attribute value is

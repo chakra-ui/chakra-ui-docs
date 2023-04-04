@@ -168,12 +168,38 @@ import { Box } from "@chakra-ui/react"
 | `maxW`, `maxWidth`  | `max-width`       | `sizes`   |
 | `minH`, `minHeight` | `min-height`      | `sizes`   |
 | `maxH`, `maxHeight` | `max-height`      | `sizes`   |
-| `display`           | `display`         | none      |
 | `boxSize`           | `width`, `height` | `sizes`   |
 | `verticalAlign`     | `vertical-align`  | none      |
 | `overflow`          | `overflow`        | none      |
-| `overflowX`         | `overflow-x`       | none      |
-| `overflowY`         | `overflow-y`       | none      |
+| `overflowX`         | `overflow-x`      | none      |
+| `overflowY`         | `overflow-y`      | none      |
+
+### Display
+
+```jsx live=false
+import { Box } from '@chakra-ui/react'
+
+// hide the element on all viewports
+<Box display='none' />
+
+// hide the element by default, and show from 'md' up
+<Box display={{ base: "none", md: "block" }} />
+
+// shorthand
+<Box hideBelow='md' />
+
+// hide the element from 'md' up
+<Box display={{ base: "block", md: "none" }} />
+
+// shorthand
+<Box hideFrom='md' />
+```
+
+| Prop        | CSS Property              | Theme Key     |
+| ----------- | ------------------------- | ------------- |
+| `display`   | `display`                 | none          |
+| `hideFrom`  | `display` (at breakpoint) | `breakpoints` |
+| `hideBelow` | `display` (at breakpoint) | `breakpoints` |
 
 ### Flexbox
 

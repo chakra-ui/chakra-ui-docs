@@ -59,12 +59,14 @@ Use the `otp` prop on `PinInput` to set `autocomplete="one-time-code"` for all
 children `PinInputField` components.
 
 ```jsx
-<PinInput otp>
-  <PinInputField />
-  <PinInputField />
-  <PinInputField />
-  <PinInputField />
-</PinInput>
+<HStack>
+  <PinInput otp>
+    <PinInputField />
+    <PinInputField />
+    <PinInputField />
+    <PinInputField />
+  </PinInput>
+</HStack>
 ```
 
 ### Masking the pin input's value

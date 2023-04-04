@@ -3,6 +3,8 @@ id: accordion
 scope: theming
 ---
 
+## Theming
+
 The `Accordion` component is a multipart component. The styling needs to be
 applied to each part specifically.
 
@@ -10,7 +12,7 @@ applied to each part specifically.
 > [Component Style](/docs/styled-system/component-style#styling-multipart-components)
 > page.
 
-## Anatomy
+### Anatomy
 
 - A: `root`
 - B: `container`
@@ -1041,7 +1043,7 @@ applied to each part specifically.
   </svg>
 </AspectRatio>
 
-## Theming utilities
+### Theming utilities
 
 - `createMultiStyleConfigHelpers`: a function that returns a set of utilities
   for creating style configs for a multipart component (`definePartsStyle` and
@@ -1058,7 +1060,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(accordionAnatomy.keys)
 ```
 
-## Customizing the default theme
+### Customizing the default theme
 
 ```jsx live=false
 import { accordionAnatomy } from '@chakra-ui/anatomy'
@@ -1092,7 +1094,7 @@ export const theme = extendTheme({
 > This is a crucial step to make sure that any changes that we make to the
 > accordion theme are applied.
 
-## Adding a custom size
+### Adding a custom size
 
 Let's assume we want to include an extra large accordion icon size. Here's how
 we can do that:
@@ -1124,7 +1126,7 @@ Every time you're adding anything new to the theme, you'd need to run the CLI
 command to get proper autocomplete in your IDE. You can learn more about the CLI
 tool [here](/docs/styled-system/cli).
 
-## Adding a custom variant
+### Adding a custom variant
 
 Let's assume we want to include a custom pill variant. Here's how we can do
 that:
@@ -1172,7 +1174,7 @@ export const accordionTheme = defineMultiStyleConfig({
 <Accordion variant="custom"> ... </Accordion>
 ```
 
-## Changing the default properties
+### Changing the default properties
 
 Let's assume we want to change the default size and variant of every accordion
 in our app. Here's how we can do that:
@@ -1197,7 +1199,7 @@ export const accordionTheme = defineMultiStyleConfig({
 <Accordion size="xl" variant="custom"> ... </Accordion>
 ```
 
-## Showcase
+### Showcase
 
 import {
   App,
