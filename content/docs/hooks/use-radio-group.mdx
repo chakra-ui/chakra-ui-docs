@@ -37,14 +37,14 @@ The `useRadioGroup` hook returns following props
 function Example() {
   function CustomRadio(props) {
     const { image, ...radioProps } = props
-    const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
+    const { state, getInputProps, getRadioProps, htmlProps, getLabelProps } =
       useRadio(radioProps)
 
     return (
       <chakra.label {...htmlProps} cursor='pointer'>
         <input {...getInputProps({})} hidden />
         <Box
-          {...getCheckboxProps()}
+          {...getRadioProps()}
           bg={state.isChecked ? 'green.200' : 'transparent'}
           w={12}
           p={1}
