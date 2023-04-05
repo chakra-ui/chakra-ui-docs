@@ -29,7 +29,7 @@ const ImageRadio = React.forwardRef((props: Props, ref) => {
     checked: isChecked,
   });
 
-  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
+  const { state, getInputProps, getRadioProps, htmlProps, getLabelProps } =
     useRadio({
       isChecked: isChecked,
       ...field,
@@ -39,7 +39,7 @@ const ImageRadio = React.forwardRef((props: Props, ref) => {
     <chakra.label {...htmlProps} cursor="pointer">
       <input {...getInputProps({}, ref)} hidden />
       <Box
-        {...getCheckboxProps()}
+        {...getRadioProps()}
         bg={state.isChecked ? "green.200" : "transparent"}
         w={12}
         p={1}
