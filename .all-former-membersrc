@@ -17,11 +17,11 @@
   },
   {
     "name": "Lazar Nikolov",
-    "githubName": "nikolovlaar",
+    "githubName": "nikolovlazar",
     "components": [
       "DevRel",
       "Docs",
-      "Education",
+      "Education"
     ]
   }
 ]
