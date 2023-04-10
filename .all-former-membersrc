@@ -14,5 +14,14 @@
       "Community",
       "Triage"
     ]
+  },
+  {
+    "name": "Lazar Nikolov",
+    "githubName": "nikolovlaar",
+    "components": [
+      "DevRel",
+      "Docs",
+      "Education",
+    ]
   }
 ]
