@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default MyApp;
 ```
 
 ### App Directory Setup
@@ -60,33 +60,52 @@ provider with the `useServerInsertedHTML` hook from next/navigation. This is
 necessary to ensure that computed styles are included in the initial server
 payload (during streaming).
 
+To use Chakra UI in app directory, you can wrap `ChakraProvider` and `CacheProvider` in your own client Component.
+
 ```jsx live=false
-// app/layout.tsx
+// app/providers.tsx
 'use client'
 
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode,
-}) {
+export function Providers({ 
+    children 
+  }: { 
+  children: React.ReactNode 
+  }) {
   return (
-    <html lang='en'>
-      <head />
-      <body>
-        <CacheProvider>
-          <ChakraProvider>{children}</ChakraProvider>
-        </CacheProvider>
-      </body>
-    </html>
+    <CacheProvider>
+      <ChakraProvider>
+        {children}
+      </ChakraProvider>
+    </CacheProvider>
   )
 }
 ```
 
-> Note: Make sure to include the `<head>` tag in your layout component otherwise
-> it will not work.
+Now, you can import and render `<Providers />` directly within your root. With the providers rendered at the root, all the components and hooks from Chakra UI will work as expected within your own Client Components.
+
+```jsx live=false
+// app/layout.tsx
+import { Providers } from "./providers";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
+}
+```
 
 > The `'use client'` directive is still required to be added to the top of the
 > page-related file.
