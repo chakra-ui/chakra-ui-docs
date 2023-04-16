@@ -160,7 +160,7 @@ const colors = {
   },
 }
 
-const theme = extendTheme({ colors })
+export const theme = extendTheme({ colors })
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 function MyApp({ Component, pageProps }) {
@@ -193,7 +193,7 @@ for local storage syncing to work correctly.
 
 import { ColorModeScript } from '@chakra-ui/react'
 import { Html, Head, Main, NextScript } from 'next/document'
-import theme from './theme'
+import { theme } from './_app'
 
 export default function Document() {
   return (
