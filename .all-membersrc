@@ -69,16 +69,6 @@
       "bio": null,
       "twitter_username": "TheDumbThinker",
       "location": "France"
-    },
-    {
-      "login": "TimKolberger",
-      "avatar_url": "https://avatars.githubusercontent.com/u/16899513?v=4",
-      "url": "https://github.com/TimKolberger",
-      "blog": "https://kolberger.eu",
-      "name": "Tim Kolberger",
-      "bio": "DevOps Engineer at DB Systel |\r\n[React, nodeJS, GraphQL, ...❤️]",
-      "twitter_username": "TimKolberger",
-      "location": "Wiesbaden, Germany"
     }
   ]
 }
