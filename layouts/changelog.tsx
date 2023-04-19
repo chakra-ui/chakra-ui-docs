@@ -47,7 +47,7 @@ export function getVersions(): RouteItem[] {
       .map(({ version }) => version),
   ).map((version) => ({
     title: `v${version}`,
-    path: `/changelog/${version}`,
+    path: `/changelog/v${version}`,
   }))
 }
 
@@ -63,7 +63,6 @@ export default function MDXLayout(props: MDXLayoutProps) {
 
   const routes = getRoutes(frontmatter.slug)
   const versions = getVersions()
-
   return (
     <PageContainer
       hideToc={true}
