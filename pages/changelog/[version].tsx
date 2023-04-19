@@ -19,7 +19,7 @@ export default function Page({
 
   useEffect(() => {
     if (router.query.version === 'latest') {
-      router.replace(`/changelog/${doc.version}`)
+      router.replace(`/changelog/v${doc.version}`)
     }
   }, [router, doc])
 
