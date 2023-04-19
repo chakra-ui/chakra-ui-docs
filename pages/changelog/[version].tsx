@@ -19,7 +19,7 @@ export default function Page({
 
   useEffect(() => {
     if (router.query.version === 'latest') {
-      router.replace(`/changelog/${doc.version}`)
+      router.replace(`/changelog/v${doc.version}`)
     }
   }, [router, doc])
 
@@ -31,15 +31,16 @@ export default function Page({
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
+  const paths = [
+    ...allChangelogs.map((doc) => ({
+      params: { version: `v${doc.version}` },
+    })),
+    {
+      params: { version: 'latest' },
+    },
+  ]
   return {
-    paths: [
-      ...allChangelogs.map((doc) => ({
-        params: { version: doc.version },
-      })),
-      {
-        params: { version: 'latest' },
-      },
-    ],
+    paths,
     fallback: false,
   }
 }
@@ -48,14 +49,14 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   let versionParam = ctx.params.version
 
   if (versionParam === 'latest') {
-    versionParam = semverMaxSatisfying(
+    versionParam = `v${semverMaxSatisfying(
       allChangelogs.map(({ version }) => version),
       '*',
-    )
+    )}`
   }
-
-  const doc = allChangelogs.find(({ version }) => version === versionParam)
-
+  const doc = allChangelogs.find(
+    ({ version }) => `v${version}` === versionParam,
+  )
   return {
     props: { doc },
   }
