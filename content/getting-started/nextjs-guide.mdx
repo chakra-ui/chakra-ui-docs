@@ -113,29 +113,6 @@ export default function RootLayout({
 If you're not using the new `app/` directory, there's no need to add
 the`'use client';` directive add the top of your file.
 
-### Chakra UI with Next.js Link
-
-If you're using Next.js 13, we've provided a `@chakra-ui/next-js` package that
-gives you a smoother experience when using Chakra UI Link component with
-`next/link`.
-
-This package provides the **Link** which combines the functionality of the
-Next.js Link and Chakra UI Link components.
-
-```jsx live=false
-// app/page.tsx
-'use client'
-import { Link } from '@chakra-ui/next-js'
-
-export default function Page() {
-  return (
-    <Link href='/about' color='blue.400' _hover={{ color: 'blue.500' }}>
-      About
-    </Link>
-  )
-}
-```
-
 ### Customizing theme
 
 If you intend to customise the default theme object to match your design
@@ -223,3 +200,67 @@ TypeScript version of `4.1.0` is required.
 | theme            | `Theme`          | `@chakra-ui/theme`    | optional custom theme                               |
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
+
+### Chakra UI with Next.js Link
+
+If you're using Next.js 13, we've provided a `@chakra-ui/next-js` package that
+gives you a smoother experience when using Chakra UI Link component with
+`next/link`.
+
+This package provides the **Link** which combines the functionality of the
+Next.js Link and Chakra UI Link components.
+
+```jsx live=false
+// app/page.tsx
+'use client'
+import { Link } from '@chakra-ui/next-js'
+
+export default function Page() {
+  return (
+    <Link href='/about' color='blue.400' _hover={{ color: 'blue.500' }}>
+      About
+    </Link>
+  )
+}
+```
+
+### Chakra UI with next/font 
+
+With Next.js 13, you can optimize your fonts (including custom fonts) and remove external network requests for improved privacy and performance.
+
+To use the new `next/font` with Chakra UI globally;
+
+```jsx live=false
+/* pages/_app.tsx */
+import { Rubik } from 'next/font/google';
+
+const rubik = Rubik({ subsets: ['latin'] });
+
+const App = ({ Component, pageProps }: AppProps) => {
+  <>
+    <style jsx global>
+      {`
+        :root {
+          --font-rubik: ${rubik.style.fontFamily};
+        }
+      `}
+    </style>
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  </>
+};
+```
+Now you can use the optimized font with your custom theme file across the app.
+
+```jsx live=false
+/* theme.ts */
+export const theme = extendTheme({
+  ...
+    fonts: {
+      heading: 'var(--font-rubik)',
+      body: 'var(--font-rubik)',
+    }
+  ...
+});
+```
