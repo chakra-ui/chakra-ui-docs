@@ -288,6 +288,11 @@
             {
               "title": "SkipNav",
               "path": "/docs/components/skip-nav"
+            },
+            {
+              "new": true,
+              "title": "Stepper",
+              "path": "/docs/components/stepper"
             }
           ]
         },
