@@ -1,7 +1,7 @@
 import { SimpleGrid, Stack, Text } from '@chakra-ui/react'
 
 import { t } from 'utils/i18n'
-import showcaseData from 'configs/showcase.json'
+import showcaseJson from 'configs/showcase.json'
 import MDXLayout from 'layouts/mdx'
 import { ShowcaseItem } from 'components/showcase/showcase-item'
 
@@ -23,7 +23,7 @@ const Showcase = () => {
       </Stack>
 
       <SimpleGrid columns={{ base: 1, xl: 2 }} gap={8} mt={10}>
-        {showcaseData.map(({ name, image, url }) => (
+        {showcaseJson.data.map(({ name, image, url }) => (
           <ShowcaseItem key={url} name={name} image={image} url={url} />
         ))}
       </SimpleGrid>

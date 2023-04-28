@@ -9,11 +9,11 @@ import {
 import NextLink from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 
-import showcaseData from 'configs/showcase.json'
+import showcaseJson from 'configs/showcase.json'
 import { t } from 'utils/i18n'
 import { ShowcaseItem } from './showcase-item'
 
-const websites = showcaseData.slice(0, 8)
+const websites = showcaseJson.data.slice(0, 8)
 
 const ShowcaseSection = () => {
   return (
