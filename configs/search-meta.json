@@ -55082,6 +55082,17 @@
     }
   },
   {
+    "content": "Nested Tokens (2.6.x)",
+    "id": "//docs/styled-system/semantic-tokens",
+    "type": "lvl2",
+    "url": "/docs/styled-system/semantic-tokens#nested-tokens-26x",
+    "hierarchy": {
+      "lvl1": "Semantic Tokens",
+      "lvl2": "Nested Tokens (2.6.x)",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Theme Example",
     "id": "//docs/styled-system/semantic-tokens",
     "type": "lvl2",
