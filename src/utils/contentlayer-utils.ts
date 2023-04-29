@@ -81,21 +81,21 @@ export function getComponentTabsData(slug: MixedArray) {
 
   const data = [
     {
-      id: 'usage',
+      id: 'usage-wrapper',
       match: _slug.endsWith('/usage') || params.length === 2,
       href: { query: { slug: usageSlug.slice(1) } },
       label: 'Usage',
       doc: getDocDoc(getSlug('usage')),
     },
     {
-      id: 'props',
+      id: 'props-wrapper',
       match: _slug.endsWith('/props'),
       href: { query: { slug: propsSlug.slice(1) } },
       label: 'Props',
       doc: getDocDoc(getSlug('props')),
     },
     {
-      id: 'theming',
+      id: 'theming-wrapper',
       match: _slug.endsWith('/theming'),
       label: 'Theming',
       href: { query: { slug: themingSlug.slice(1) } },
