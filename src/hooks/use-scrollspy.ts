@@ -6,7 +6,7 @@ export function useScrollSpy(
 ) {
   const [activeId, setActiveId] = React.useState<string>()
   const observer = React.useRef<IntersectionObserver | null>(null)
-  const headerRef = React.useRef({});
+  const headerRef = React.useRef<{[key:string] : IntersectionObserverEntry}>({});
 
   React.useEffect(() => {  
     const elements = selectors.map((selector) => document.querySelector(`h2${selector}, h3${selector}`))
@@ -18,7 +18,7 @@ export function useScrollSpy(
         headerRef.current[entry.target.id] = entry;
       }
 
-      const topElement = Object.values(headerRef.current).find((entry: IntersectionObserverEntry) => entry.isIntersecting) as IntersectionObserverEntry;
+      const topElement = Object.values(headerRef.current).find((entry) => entry.isIntersecting);
 
       if (topElement) {
         setActiveId(topElement.target.id);
