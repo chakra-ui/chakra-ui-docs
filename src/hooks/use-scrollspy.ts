@@ -30,7 +30,10 @@ export function useScrollSpy(
       if (el) observer.current?.observe(el)
     });
 
-    return () => observer.current?.disconnect()
+    return () => { 
+      observer.current?.disconnect()
+      headerRef.current = {};
+    }
   }, [selectors, options])
 
   return activeId
