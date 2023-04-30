@@ -92,7 +92,7 @@ function PageContainer(props: PageContainerProps) {
                       </Badge>
                     )}
                     {children}
-                    <Box mt='40px'>
+                    <Box mt='40vh'>
                       <Box>{editUrl && <EditPageLink href={editUrl} />}</Box>
                       {pagination || null}
                     </Box>
