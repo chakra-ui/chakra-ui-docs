@@ -117,8 +117,42 @@ export default PropsTable
 
 type MakePropsTableOptions = PropsTableProps
 
+// TODO: Remove this when we update props-docs
+const customTable: Record<string, any> = {
+  Stepper: {
+    index: {
+      type: 'number',
+      required: true,
+      description: 'The active step index',
+    },
+    orientation: {
+      type: "'horizontal' | 'vertical'",
+      defaultValue: "'horizontal'",
+      description: 'The orientation of the stepper',
+    },
+    children: {
+      type: 'ReactElement[]',
+      description: ' The children of the stepper. Must be `Step` components',
+    },
+  },
+  StepStatus: {
+    complete: {
+      type: 'React.ReactNode | ((props: StepContext) => React.ReactNode)',
+      description: 'The element to show when the step is complete',
+    },
+    incomplete: {
+      type: 'React.ReactNode | ((props: StepContext) => React.ReactNode)',
+      description: 'The element to show when the step is incomplete',
+    },
+    active: {
+      type: 'React.ReactNode | ((props: StepContext) => React.ReactNode)',
+      description: 'The element to show when the step is current',
+    },
+  },
+}
+
 function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
-  const props = getPropDoc(of)
+  const props = customTable[of] ?? getPropDoc(of)
 
   if (!props) return []
 
@@ -134,7 +168,7 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
 
       return true
     })
-    .map(([name, value]) => ({
+    .map(([name, value]: any[]) => ({
       name,
       ...value,
       type: cleanType(value.type),
@@ -147,5 +181,5 @@ function cleanType(value: any) {
 }
 
 function cleanDefaultValue(value: any) {
-  return typeof value === 'boolean' ? value.toString() : value;
+  return typeof value === 'boolean' ? value.toString() : value
 }

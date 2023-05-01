@@ -67,12 +67,7 @@ export default function ComponentDocsLayout({
       </Box>
 
       {tabsData.map((item, index) => (
-        <Box
-          key={index}
-          id={item.id}
-          hidden={!tabsData[index].match}
-          pt={index === 2 ? 12 : 0}
-        >
+        <Box key={index} id={item.id} hidden={!tabsData[index].match}>
           {index === 0 ? children : <MDXContent doc={item.doc} />}
         </Box>
       ))}
