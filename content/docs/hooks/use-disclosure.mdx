@@ -109,4 +109,10 @@ function Basic() {
 The `useDisclosure` hook accepts an optional object with the following
 properties:
 
-<PropsTable of='useDisclosure' />
+| Parameter                 | Type       | Description                                                                                                        |
+| ------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| `isOpen (Optional)`       | `boolean`  | If `true`, the controlled component is responsible for changing the visible state via `onClose` and `onOpen` props.|
+| `defaultIsOpen (Optional)`| `boolean`  | If `true`, it initially sets the controlled component to its visible state.                                        |
+| `onClose (Optional)`      | `function` | Function to set a falsy value for the `isOpen` parameter.                                                          |
+| `onOpen (Optional)`       | `function` | Function to set a truthy value for the `isOpen` parameter.                                                         |
+| `id (Optional)`           | `string`   | String that allows you to associate the disclosure state with a specific component or element on your page.        |
