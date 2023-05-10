@@ -97,10 +97,9 @@ focused the input.
 ```jsx
 <Stack spacing={4}>
   <InputGroup>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<PhoneIcon color='gray.300' />}
-    />
+    <InputLeftElement pointerEvents='none'>
+      <PhoneIcon color='gray.300' />
+    <InputLeftElement/>
     <Input type='tel' placeholder='Phone number' />
   </InputGroup>
 
@@ -112,7 +111,9 @@ focused the input.
       children='$'
     />
     <Input placeholder='Enter amount' />
-    <InputRightElement children={<CheckIcon color='green.500' />} />
+    <InputRightElement>
+      <CheckIcon color='green.500' />
+    </InputRightElement>
   </InputGroup>
 </Stack>
 ```
