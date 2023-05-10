@@ -45231,6 +45231,101 @@
     }
   },
   {
+    "content": "Version 2.6.1",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl1",
+    "url": "/changelog/v2.6.1",
+    "hierarchy": { "lvl1": "Version 2.6.1" }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.6.1#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Minor Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Stepper `2.2.0`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.6.1#stepper-220",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Minor Changes",
+      "lvl3": "Stepper `2.2.0`"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.6.1#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Patch Changes",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Avatar `2.2.10`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.6.1#avatar-2210",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Patch Changes",
+      "lvl3": "Avatar `2.2.10`"
+    }
+  },
+  {
+    "content": "Popover `2.1.11`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.6.1#popover-2111",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Avatar `2.2.10`",
+      "lvl3": "Popover `2.1.11`"
+    }
+  },
+  {
+    "content": "Slider `2.0.24`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.6.1#slider-2024",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Slider `2.0.24`",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Theme `3.1.1`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.6.1#theme-311",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "Theme `3.1.1`",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "CLI `2.4.1`",
+    "id": "//changelog/v2.6.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.6.1#cli-241",
+    "hierarchy": {
+      "lvl1": "Version 2.6.1",
+      "lvl2": "CLI `2.4.1`",
+      "lvl3": null
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
