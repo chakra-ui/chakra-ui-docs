@@ -1,18 +1,20 @@
 import {
   GridItem,
+  Input,
   Heading,
   List,
   ListItem,
+  Flex,
   SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react'
 import type { GetStaticProps } from 'next'
-
 import { ComponentOverviewItem } from 'components/component-overview-item'
 import MDXLayout from 'layouts/mdx'
 import { getGroupedComponents } from 'utils/contentlayer-utils'
 import type { FrontmatterHeading } from 'src/types/frontmatter'
+import { useState } from 'react'
 
 type Component = {
   title: string
@@ -32,6 +34,8 @@ type Props = {
 }
 
 export const ComponentsOverview = ({ categories, headings }: Props) => {
+  const { filteredCategories, filterComponentsByTitle } =
+    useComponentFilter(categories)
   return (
     <MDXLayout
       frontmatter={{
@@ -45,8 +49,14 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
           Chakra UI provides prebuild components to help you build your projects
           faster. Here is an overview of the component categories:
         </Text>
+        <Input
+          w='full'
+          size='md'
+          placeholder='Search overview'
+          onChange={(e) => filterComponentsByTitle(e.target.value)}
+        />
         <List w='full' spacing={12}>
-          {categories.map(({ title, components, id }) => (
+          {filteredCategories.map(({ title, components, id }) => (
             <ListItem
               key={title}
               display='flex'
@@ -109,6 +119,29 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       categories,
       headings,
     },
+  }
+}
+
+const useComponentFilter = (categories: Category[]) => {
+  const [filteredCategories, setFilteredCategories] =
+    useState<Category[]>(categories)
+
+  const filterComponentsByTitle = (searchText: string) => {
+    const filtered: Category[] = []
+    categories.forEach((category) => {
+      const matchingComponents = category.components.filter((component) =>
+        component.title.toLowerCase().includes(searchText.toLowerCase()),
+      )
+      if (matchingComponents.length > 0) {
+        const filteredCategory = { ...category, components: matchingComponents }
+        filtered.push(filteredCategory)
+      }
+    })
+    setFilteredCategories(filtered)
+  }
+  return {
+    filteredCategories,
+    filterComponentsByTitle,
   }
 }
 
