@@ -56507,24 +56507,13 @@
     }
   },
   {
-    "content": "Chakra UI with Next.js Link",
-    "id": "//getting-started/nextjs-guide",
-    "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
-    "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "App Directory Setup",
-      "lvl3": "Chakra UI with Next.js Link"
-    }
-  },
-  {
     "content": "Customizing theme",
     "id": "//getting-started/nextjs-guide",
     "type": "lvl3",
     "url": "/getting-started/nextjs-guide#customizing-theme",
     "hierarchy": {
       "lvl1": "Getting Started with Next.js",
-      "lvl2": "Chakra UI with Next.js Link",
+      "lvl2": "App Directory Setup",
       "lvl3": "Customizing theme"
     }
   },
@@ -56559,6 +56548,28 @@
       "lvl1": "Getting Started with Next.js",
       "lvl2": "Notes on TypeScript 🚨",
       "lvl3": "ChakraProvider Props"
+    }
+  },
+  {
+    "content": "Chakra UI with Next.js Link",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "ChakraProvider Props",
+      "lvl3": "Chakra UI with Next.js Link"
+    }
+  },
+  {
+    "content": "Chakra UI with next/font",
+    "id": "//getting-started/nextjs-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextfont",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js",
+      "lvl2": "Chakra UI with Next.js Link",
+      "lvl3": "Chakra UI with next/font"
     }
   },
   {
