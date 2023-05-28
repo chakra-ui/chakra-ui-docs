@@ -47622,14 +47622,25 @@
     "hierarchy": { "lvl1": "Divider", "lvl2": "Usage", "lvl3": null }
   },
   {
-    "content": "Divider Orientation",
+    "content": "Changing the orientation",
     "id": "//docs/components/divider/usage",
     "type": "lvl3",
-    "url": "/docs/components/divider/usage#divider-orientation",
+    "url": "/docs/components/divider/usage#changing-the-orientation",
     "hierarchy": {
       "lvl1": "Divider",
       "lvl2": "Usage",
-      "lvl3": "Divider Orientation"
+      "lvl3": "Changing the orientation"
+    }
+  },
+  {
+    "content": "Adding content within a Divider",
+    "id": "//docs/components/divider/usage",
+    "type": "lvl3",
+    "url": "/docs/components/divider/usage#adding-content-within-a-divider",
+    "hierarchy": {
+      "lvl1": "Divider",
+      "lvl2": "Changing the orientation",
+      "lvl3": "Adding content within a Divider"
     }
   },
   {
