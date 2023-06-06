@@ -23,6 +23,22 @@ can be done with the following command:
   }}
 />
 
+### Gatsby Starter
+
+Alternatively, you can run a Gatsby Starter to have everything you need already
+set up
+
+```bash
+gatsby new {your-project-name} https://github.com/chakra-ui/gatsby-starter-chakra-ui-ts
+```
+
+This includes
+
+- TypeScript
+- Chakra UI and needed dependencies
+- Chakra Gatsby Plugin
+- Basic Gatsby Boilerplate and Config
+
 ## Usage
 
 After installation, you'll need to add `@chakra-ui/gatsby-plugin` to the
@@ -42,23 +58,16 @@ module.exports = {
          */
         resetCSS: true,
         /**
-         * @property {boolean} [isUsingColorMode=true]
-         * if false, this plugin will not use <ColorModeProvider />
+         * @property {number} [portalZIndex=undefined]
+         * The z-index to apply to all portal nodes. This is useful
+         * if your app uses a lot z-index to position elements.
          */
-        isUsingColorMode: true,
-        /**
-         * @property {boolean} [isBaseProvider=false]
-         * if true, will render `<ChakraBaseProvider>`
-         */
-        isBaseProvider: false,
+        portalZIndex: undefined,
       },
     },
   ],
 }
 ```
-
-> For info on the `isBaseProvider` option's usage, see
-> [Getting Started - ChakraBaseProvider](/getting-started#chakrabaseprovider)
 
 To use a custom theme, you can
 [shadow](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
