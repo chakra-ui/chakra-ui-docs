@@ -45326,6 +45326,563 @@
     }
   },
   {
+    "content": "Version 2.7.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl1",
+    "url": "/changelog/v2.7.0",
+    "hierarchy": { "lvl1": "Version 2.7.0" }
+  },
+  {
+    "content": "@chakra-ui/accordion@2.2.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uiaccordion220",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/accordion@2.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/accordion@2.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/layout@2.2.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uilayout220",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/layout@2.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#minor-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/layout@2.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/provider@2.3.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uiprovider230",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/provider@2.3.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#minor-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/provider@2.3.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.7.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uireact270",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react@2.7.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#minor-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react@2.7.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/dom-utils@2.1.0",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uidom-utils210",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/dom-utils@2.1.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#minor-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/dom-utils@2.1.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/avatar@2.2.11",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uiavatar2211",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/avatar@2.2.11",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/avatar@2.2.11",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/css-reset@2.1.2",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uicss-reset212",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/css-reset@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/css-reset@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/focus-lock@2.0.17",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uifocus-lock2017",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/focus-lock@2.0.17",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/focus-lock@2.0.17",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/menu@2.1.15",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uimenu2115",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/menu@2.1.15",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-7",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/menu@2.1.15",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/modal@2.2.12",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uimodal2212",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/modal@2.2.12",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-8",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/modal@2.2.12",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/popover@2.1.12",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uipopover2112",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/popover@2.1.12",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-9",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/popover@2.1.12",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/slider@2.0.25",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uislider2025",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/slider@2.0.25",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-10",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/slider@2.0.25",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme@3.1.2",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitheme312",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme@3.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-11",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme@3.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-tools@2.0.18",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitheme-tools2018",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme-tools@2.0.18",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-12",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme-tools@2.0.18",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@6.1.4",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitoast614",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/toast@6.1.4",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-13",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/toast@6.1.4",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/tooltip@2.2.9",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitooltip229",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/tooltip@2.2.9",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-14",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/tooltip@2.2.9",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/styled-system@2.9.1",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uistyled-system291",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/styled-system@2.9.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-15",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/styled-system@2.9.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.5.8",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uisystem258",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/system@2.5.8",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-16",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/system@2.5.8",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react-use-animation-state@2.0.9",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uireact-use-animation-state209",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react-use-animation-state@2.0.9",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-17",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react-use-animation-state@2.0.9",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react-use-focus-effect@2.0.11",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uireact-use-focus-effect2011",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react-use-focus-effect@2.0.11",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-18",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/react-use-focus-effect@2.0.11",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/next-js@2.1.4",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uinext-js214",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/next-js@2.1.4",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-19",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/next-js@2.1.4",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.18",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitheme-utils2018",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme-utils@2.0.18",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-20",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/theme-utils@2.0.18",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.42",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.0#chakra-uitest-utils2042",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/test-utils@2.0.42",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.0",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.0#patch-changes-21",
+    "hierarchy": {
+      "lvl1": "Version 2.7.0",
+      "lvl2": "@chakra-ui/test-utils@2.0.42",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
