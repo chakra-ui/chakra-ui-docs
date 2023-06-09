@@ -56731,6 +56731,17 @@
     "hierarchy": { "lvl1": "Gatsby", "lvl2": "Installation", "lvl3": null }
   },
   {
+    "content": "Gatsby Starter",
+    "id": "//getting-started/gatsby-guide",
+    "type": "lvl3",
+    "url": "/getting-started/gatsby-guide#gatsby-starter",
+    "hierarchy": {
+      "lvl1": "Gatsby",
+      "lvl2": "Installation",
+      "lvl3": "Gatsby Starter"
+    }
+  },
+  {
     "content": "Usage",
     "id": "//getting-started/gatsby-guide",
     "type": "lvl2",
