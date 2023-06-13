@@ -57889,6 +57889,17 @@
     "hierarchy": { "lvl1": "useClipboard", "lvl2": "Usage", "lvl3": null }
   },
   {
+    "content": "Imperative",
+    "id": "//docs/hooks/use-clipboard",
+    "type": "lvl3",
+    "url": "/docs/hooks/use-clipboard#imperative",
+    "hierarchy": {
+      "lvl1": "useClipboard",
+      "lvl2": "Usage",
+      "lvl3": "Imperative"
+    }
+  },
+  {
     "content": "useConst",
     "id": "//docs/hooks/use-const",
     "type": "lvl1",
