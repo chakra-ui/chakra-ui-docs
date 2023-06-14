@@ -46,7 +46,7 @@ export const ComponentsOverview = ({ categories, headings }: Props) => {
     >
       <VStack w='full' mt={5} alignItems='stretch' spacing={12}>
         <Text lineHeight='tall'>
-          Chakra UI provides prebuild components to help you build your projects
+          Chakra UI provides prebuilt components to help you build your projects
           faster. Here is an overview of the component categories:
         </Text>
         <Input
