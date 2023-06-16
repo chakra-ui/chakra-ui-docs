@@ -48,7 +48,7 @@ import { getDiscordMembers } from 'utils/get-discord-members'
 import { getGithubStars } from 'utils/get-github-stars'
 import { getNpmDownloads } from 'utils/get-npm-downloads'
 import { t } from 'utils/i18n'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
+// import { AdBanner } from 'components/chakra-pro/ad-banner'
 
 const openCollectiveLink = 'https://opencollective.com/chakra-ui'
 
@@ -143,7 +143,7 @@ const HomePage = ({
         title={t('homepage.seo.title')}
         description={t('homepage.seo.description')}
       />
-      <AdBanner />
+      {/* <AdBanner /> */}
       <Header />
       <Box mb={20}>
         <Box as='section' pt='6rem' pb={{ base: '0', md: '5rem' }}>
@@ -642,7 +642,7 @@ const HomePage = ({
           </Container>
         </Box>
 
-        <ChakraProAd />
+        {/* <ChakraProAd /> */}
 
         <Box
           bgImage='url(/audio-bar.svg)'

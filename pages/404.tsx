@@ -5,7 +5,7 @@ import { FaHome } from 'react-icons/fa'
 import Header from 'components/header'
 import SEO from 'components/seo'
 import { t } from 'utils/i18n'
-import { AdBanner } from 'components/chakra-pro/ad-banner'
+// import { AdBanner } from 'components/chakra-pro/ad-banner'
 
 const NotFoundPage = () => {
   return (
@@ -14,7 +14,7 @@ const NotFoundPage = () => {
         title={t('notfound.title')}
         description={t('notfound.description')}
       />
-      <AdBanner />
+      {/* <AdBanner /> */}
       <Header />
       <VStack
         justify='center'

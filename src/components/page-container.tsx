@@ -10,7 +10,7 @@ import TableOfContent from 'components/table-of-content'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { t } from 'utils/i18n'
 import { FrontmatterHeading } from 'src/types/frontmatter'
-import { AdBanner } from './chakra-pro/ad-banner'
+// import { AdBanner } from './chakra-pro/ad-banner'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -67,7 +67,7 @@ function PageContainer(props: PageContainerProps) {
       <SkipNavLink zIndex={20}>
         {t('component.page-container.skip-to-content')}
       </SkipNavLink>
-      <AdBanner />
+      {/* <AdBanner /> */}
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
         <Box display={{ md: 'flex' }}>
