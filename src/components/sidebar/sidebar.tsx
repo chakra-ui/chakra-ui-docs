@@ -205,7 +205,7 @@ export const mainNavLinks = [
     icon: <AiFillPlayCircle />,
     href: 'https://play.chakra-ui.com',
     label: 'Playground',
-    new: true,
+    new: false,
     external: true,
   }
   // {
