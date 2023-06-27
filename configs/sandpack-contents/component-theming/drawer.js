@@ -1,12 +1,12 @@
 module.exports = {
   App: `import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
     useDisclosure,
     Button,
     Box,
@@ -22,30 +22,30 @@ module.exports = {
   
     return (
         <Box position="relative" h="100vh" p={12}>
-        <Button onClick={onOpen}>Open Modal</Button>
+        <Button onClick={onOpen}>Open Drawer</Button>
   
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
+        <Drawer isOpen={isOpen} onClose={onClose}>
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader>Drawer Title</DrawerHeader>
+            <DrawerCloseButton />
+            <DrawerBody>
               Lorem ipsum dolor sit amet. Et corporis quisquam eum adipisci
               impedit quo eius nisi est aspernatur vel veniam velit qui numquam
               totam. Vel debitis sint ut culpa cupiditate a dolores voluptates ut
               vero voluptatem non rerum aliquid qui sapiente possimus. Eum natus
               voluptates hic galisum architecto et nobis incidunt ut odio ipsum
               qui repudiandae voluptatem.
-            </ModalBody>
+            </DrawerBody>
   
-            <ModalFooter>
+            <DrawerFooter>
               <Button colorScheme="blue" mr={3} onClick={onClose}>
                 Close
               </Button>
               <Button variant="ghost">Secondary Action</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
         <IconButton
           aria-label="change theme"
           rounded="full"
@@ -64,11 +64,11 @@ module.exports = {
   import { ChakraProvider, extendTheme } from "@chakra-ui/react";
   
   import App from "./App";
-  import { modalTheme } from "./theme/components/modal";
+  import { drawerTheme } from "./theme/components/drawer";
   
   const theme = extendTheme({
     components: {
-      Modal: modalTheme
+      Drawer: drawerTheme
     },
   });
   
@@ -79,7 +79,7 @@ module.exports = {
       <App />
     </ChakraProvider>
   );`,
-  ModalTheme: `import { modalAnatomy as parts } from "@chakra-ui/anatomy";
+  DrawerTheme: `import { drawerAnatomy as parts } from "@chakra-ui/anatomy";
   import {
     createMultiStyleConfigHelpers,
     defineStyle,
@@ -118,7 +118,7 @@ module.exports = {
     xl: definePartsStyle({ header: sm, dialog: xl }),
   };
   
-  export const modalTheme = defineMultiStyleConfig({
+  export const drawerTheme = defineMultiStyleConfig({
     baseStyle,
     sizes,
     defaultProps: {
