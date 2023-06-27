@@ -48241,6 +48241,84 @@
     "hierarchy": {}
   },
   {
+    "content": "Theming",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl2",
+    "url": "/docs/components/drawer/theming#theming",
+    "hierarchy": { "lvl2": "Theming", "lvl3": null }
+  },
+  {
+    "content": "Anatomy",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#anatomy",
+    "hierarchy": { "lvl2": "Theming", "lvl3": "Anatomy" }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#theming-properties",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": "Theming properties" }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": "Theming utilities" }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#customizing-the-default-theme",
+    "hierarchy": {
+      "lvl2": "Theming utilities",
+      "lvl3": "Customizing the default theme"
+    }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#adding-a-custom-size",
+    "hierarchy": {
+      "lvl2": "Customizing the default theme",
+      "lvl3": "Adding a custom size"
+    }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#adding-a-custom-variant",
+    "hierarchy": {
+      "lvl2": "Adding a custom size",
+      "lvl3": "Adding a custom variant"
+    }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#changing-the-default-properties",
+    "hierarchy": {
+      "lvl2": "Adding a custom variant",
+      "lvl3": "Changing the default properties"
+    }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#showcase",
+    "hierarchy": {
+      "lvl2": "Changing the default properties",
+      "lvl3": "Showcase"
+    }
+  },
+  {
     "content": "Drawer",
     "id": "//docs/components/drawer/usage",
     "type": "lvl1",
