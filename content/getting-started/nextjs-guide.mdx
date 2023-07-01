@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default MyApp;
 ```
 
 ### App Directory Setup
@@ -60,8 +60,7 @@ provider with the `useServerInsertedHTML` hook from next/navigation. This is
 necessary to ensure that computed styles are included in the initial server
 payload (during streaming).
 
-To use Chakra UI in app directory, you can wrap `ChakraProvider` and
-`CacheProvider` in your own client Component.
+To use Chakra UI in app directory, you can wrap `ChakraProvider` and `CacheProvider` in your own client Component.
 
 ```jsx live=false
 // app/providers.tsx
@@ -70,33 +69,39 @@ To use Chakra UI in app directory, you can wrap `ChakraProvider` and
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({ 
+    children 
+  }: { 
+  children: React.ReactNode 
+  }) {
   return (
     <CacheProvider>
-      <ChakraProvider>{children}</ChakraProvider>
+      <ChakraProvider>
+        {children}
+      </ChakraProvider>
     </CacheProvider>
   )
 }
 ```
 
-Now, you can import and render `<Providers />` directly within your root. With
-the providers rendered at the root, all the components and hooks from Chakra UI
-will work as expected within your own Client Components.
+Now, you can import and render `<Providers />` directly within your root. With the providers rendered at the root, all the components and hooks from Chakra UI will work as expected within your own Client Components.
 
 ```jsx live=false
 // app/layout.tsx
-import { Providers } from './providers'
+import { Providers } from "./providers";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode,
+  children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <Providers>{children}</Providers>
+    <html lang="en">
+        <Providers>
+          {children}
+        </Providers>
     </html>
-  )
+  );
 }
 ```
 
@@ -217,21 +222,20 @@ export default function Page() {
 }
 ```
 
-### Chakra UI with next/font
+### Chakra UI with next/font 
 
-With Next.js 13, you can optimize your fonts (including custom fonts) and remove
-external network requests for improved privacy and performance.
+With Next.js 13, you can optimize your fonts (including custom fonts) and remove external network requests for improved privacy and performance.
 
 To use the new `next/font` with Chakra UI globally;
 
 ```jsx live=false
 /* pages/_app.tsx */
-import { Rubik } from 'next/font/google'
+import { Rubik } from 'next/font/google';
 
-const rubik = Rubik({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin'] });
 
 const App = ({ Component, pageProps }: AppProps) => {
-  ;<>
+  <>
     <style jsx global>
       {`
         :root {
@@ -243,9 +247,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Component {...pageProps} />
     </ChakraProvider>
   </>
-}
+};
 ```
-
 Now you can use the optimized font with your custom theme file across the app.
 
 ```jsx live=false
