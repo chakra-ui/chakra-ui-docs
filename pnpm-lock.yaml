@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -15,8 +15,8 @@ dependencies:
     specifier: 2.2.1
     version: 2.2.1
   '@chakra-ui/react':
-    specifier: 2.7.0
-    version: 2.7.0(@emotion/react@11.10.0)(@emotion/styled@11.10.0)(@types/react@18.0.17)(framer-motion@9.0.2)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 2.7.1
+    version: 2.7.1(@emotion/react@11.10.0)(@emotion/styled@11.10.0)(@types/react@18.0.17)(framer-motion@9.0.2)(react-dom@18.2.0)(react@18.2.0)
   '@chakra-ui/skip-nav':
     specifier: 2.0.15
     version: 2.0.15(@chakra-ui/system@2.5.8)(react@18.2.0)
@@ -2358,8 +2358,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/react@2.7.0(@emotion/react@11.10.0)(@emotion/styled@11.10.0)(@types/react@18.0.17)(framer-motion@9.0.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-+FcUFQMsPfhWuM9Iu7uqufwwhmHN2IX6FWsBixYGOalO86dpgETsILMZP9PuWfgj7GpWiy2Dum6HXekh0Tk2Mg==}
+  /@chakra-ui/react@2.7.1(@emotion/react@11.10.0)(@emotion/styled@11.10.0)(@types/react@18.0.17)(framer-motion@9.0.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-uIYIAg+gnUoRbgdCfSEVvQnrEz0oWWXATGGSQpxmuJovNVyZKnX/Xug7NkWQfBUJPYRSG+VB69ZmsAFpyLSMtA==}
     peerDependencies:
       '@emotion/react': ^11.0.0
       '@emotion/styled': ^11.0.0
@@ -2401,6 +2401,7 @@ packages:
       '@chakra-ui/react-env': 3.0.0(react@18.2.0)
       '@chakra-ui/select': 2.0.19(@chakra-ui/system@2.5.8)(react@18.2.0)
       '@chakra-ui/skeleton': 2.0.24(@chakra-ui/system@2.5.8)(react@18.2.0)
+      '@chakra-ui/skip-nav': 2.0.15(@chakra-ui/system@2.5.8)(react@18.2.0)
       '@chakra-ui/slider': 2.0.25(@chakra-ui/system@2.5.8)(react@18.2.0)
       '@chakra-ui/spinner': 2.0.13(@chakra-ui/system@2.5.8)(react@18.2.0)
       '@chakra-ui/stat': 2.0.18(@chakra-ui/system@2.5.8)(react@18.2.0)
