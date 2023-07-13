@@ -45883,6 +45883,57 @@
     }
   },
   {
+    "content": "Version 2.7.1",
+    "id": "//changelog/v2.7.1",
+    "type": "lvl1",
+    "url": "/changelog/v2.7.1",
+    "hierarchy": { "lvl1": "Version 2.7.1" }
+  },
+  {
+    "content": "@chakra-ui/storybook-addon@5.0.0",
+    "id": "//changelog/v2.7.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.1#chakra-uistorybook-addon500",
+    "hierarchy": {
+      "lvl1": "Version 2.7.1",
+      "lvl2": "@chakra-ui/storybook-addon@5.0.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Major Changes",
+    "id": "//changelog/v2.7.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.1#major-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.7.1",
+      "lvl2": "@chakra-ui/storybook-addon@5.0.0",
+      "lvl3": "Major Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.7.1",
+    "id": "//changelog/v2.7.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.7.1#chakra-uireact271",
+    "hierarchy": {
+      "lvl1": "Version 2.7.1",
+      "lvl2": "@chakra-ui/react@2.7.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.7.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.7.1#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.7.1",
+      "lvl2": "@chakra-ui/react@2.7.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
