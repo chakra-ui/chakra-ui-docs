@@ -1,20 +1,19 @@
 import {
   GridItem,
-  Input,
   Heading,
+  Input,
   List,
   ListItem,
-  Flex,
   SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react'
-import type { GetStaticProps } from 'next'
 import { ComponentOverviewItem } from 'components/component-overview-item'
 import MDXLayout from 'layouts/mdx'
-import { getGroupedComponents } from 'utils/contentlayer-utils'
-import type { FrontmatterHeading } from 'src/types/frontmatter'
+import type { GetStaticProps } from 'next'
 import { useState } from 'react'
+import type { FrontmatterHeading } from 'src/types/frontmatter'
+import { getGroupedComponents } from 'utils/contentlayer-utils'
 
 type Component = {
   title: string
