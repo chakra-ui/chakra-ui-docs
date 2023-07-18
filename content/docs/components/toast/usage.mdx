@@ -341,7 +341,8 @@ Besides the `defaultOptions`, you can also pass the following options:
 ## Standalone Toasts
 
 Use `createStandaloneToast` to create toasts from outside of your React
-Components.
+Components. Both `ChakraProvider` and `ToastContainer` will render a `ToastProvider`,
+so only include `<ToastContainer />` to create toasts outside `ChakraProvider `.
 
 > 🚨 If you're using a custom theme, you **must** pass it in the arguments to
 > `createStandaloneToast`. If you don't, the default theme will be applied,
