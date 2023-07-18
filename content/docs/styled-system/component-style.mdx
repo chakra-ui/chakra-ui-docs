@@ -433,7 +433,7 @@ import {
   useMultiStyleConfig,
 } from '@chakra-ui/react'
 
-const [ useStyles, StylesProvider ] = createStylesContext('Menu');
+const [ StylesProvider, useStyles ] = createStylesContext('Menu');
 
 function Menu(props) {
   const { size, variant, children, ...rest } = props
