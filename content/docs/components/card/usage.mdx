@@ -13,10 +13,6 @@ description:
 
 Chakra UI exports 4 components to help you create a Card.
 
-```js
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
-```
-
 - **Card:** The parent wrapper that provides context for its children.
 - **CardHeader:** The wrapper that contains a card's header.
 - **CardBody:** The wrapper that houses the card's main content.
@@ -25,7 +21,9 @@ import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 ## Usage
 
 ### Basic Card
-
+```js
+import { Card, CardBody,Text } from '@chakra-ui/react'
+```
 Put in some content in the `CardBody` to get a basic card.
 
 ```jsx
@@ -37,7 +35,9 @@ Put in some content in the `CardBody` to get a basic card.
 ```
 
 ### Card with Divider
-
+```js
+import { Card, CardHeader, Heading, CardBody, Stack, StackDivider, Box, Text } from '@chakra-ui/react'
+```
 There are instances when you have multiple content to display in the `CardBody`
 and you may want to add dividers between them.
 
@@ -79,7 +79,9 @@ and you may want to add dividers between them.
 ```
 
 ### Card with Image
-
+```js
+import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
+```
 Place the content within the `CardBody` to get a nice padding around.
 
 ```jsx
@@ -117,9 +119,12 @@ Place the content within the `CardBody` to get a nice padding around.
 ```
 
 ### Horizontal Card
-
+```js
+import { Card, Image, Stack, CardBody, Heading, Text, CardFooter, Button  } from '@chakra-ui/react'
+```
 The card component has `display: flex` by default. This means you make the
 content in a horizontal direction by passing `direction="row"`.
+
 
 ```jsx
 <Card
@@ -154,7 +159,9 @@ content in a horizontal direction by passing `direction="row"`.
 ```
 
 ### Advanced Composition
-
+```js
+import { Card, CardHeader, Flex, Avatar, Box, Heading, Text, IconButton, BsThreeDotsVertical, CardBody, Image, CardFooter, Button, BiLike, BiChat, BiShare  } from '@chakra-ui/react'
+```
 You can compose `Card` with other components like `Avatar`, `Icon Button` and
 more for a more advanced layout.
 
@@ -214,7 +221,9 @@ more for a more advanced layout.
 ```
 
 ### Multiple cards
-
+```js
+import { SimpleGrid, Card, CardHeader, Heading, CardBody, Text, CardFooter, Button } from '@chakra-ui/react'
+```
 Render multiple cards to display content by using the `SimpleGrid` or your
 preferred layout method.
 
@@ -257,7 +266,9 @@ preferred layout method.
 ```
 
 ### Centering content in a card
-
+```js
+import { Card, CardHeader, Heading, CardBody, Text, CardFooter, Button } from '@chakra-ui/react'
+```
 Card comes with an inherent `display="flex"` on it, so if you'd like to center
 the content of your card, you can do this easily by passing `align="center"` to
 the Card.
@@ -277,7 +288,9 @@ the Card.
 ```
 
 ## Variants
-
+```js
+import { Card, CardHeader, Heading, CardBody, Text, Stack } from '@chakra-ui/react'
+```
 Chakra UI provides 4 card variants - `elevated`, `outline`, `filled`, and
 `unstyled`. Use the `variant` prop to change the style of your card. If the
 `variant` prop is not passed, the default variant, `elevated` is used.
@@ -298,7 +311,9 @@ Chakra UI provides 4 card variants - `elevated`, `outline`, `filled`, and
 ```
 
 ## Sizes
-
+```js
+import { Card, CardHeader, Heading, CardBody, Text, Stack } from '@chakra-ui/react'
+```
 Chakra UI provides 3 Card sizes. Use the `size` prop to change the size and set
 the value to `sm`, `md`, or `lg`.
 
