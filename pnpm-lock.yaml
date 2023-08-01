@@ -138,8 +138,8 @@ dependencies:
     specifier: ^2.5.5
     version: 2.5.5(@types/react@18.0.17)(react@18.2.0)
   react-responsive-masonry:
-    specifier: ^2.1.4
-    version: 2.1.5
+    specifier: ^2.1.7
+    version: 2.1.7
   react-spinners:
     specifier: ^0.13.4
     version: 0.13.4(react-dom@18.2.0)(react@18.2.0)
@@ -10820,8 +10820,8 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.0.17)(react@18.2.0)
     dev: false
 
-  /react-responsive-masonry@2.1.5:
-    resolution: {integrity: sha512-qXoE8Whrgw2smNRKAcX2z+kZDH7uiii1uyJ92cMOpe59CGdMbj7qbT9I9540GKxFLVUYr9zlU4n4lCfsfy+09A==}
+  /react-responsive-masonry@2.1.7:
+    resolution: {integrity: sha512-/jOqnTVNtO8zRJMTl6ZXBex7EFYEIFBLVlkIFjiCT7omfm0CgNF2z4ST8RIr0v2ut15NWAQs7Q3kJJPhMoe3Ew==}
     dev: false
 
   /react-simple-code-editor@0.11.3(react-dom@18.2.0)(react@18.2.0):
