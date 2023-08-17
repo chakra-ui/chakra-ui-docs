@@ -55,7 +55,7 @@ function TweetCard(props: TweetCardProps) {
         <p>
           {name}{' '}
           <Box as='span' opacity={0.7}>
-            {handle} · {date}
+            {handle}
           </Box>
         </p>
         <Box

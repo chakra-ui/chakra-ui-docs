@@ -25,6 +25,12 @@ const users: User[] = [
     type: 'company',
   },
   {
+    name: 'Xata',
+    image: '/logos/xata.svg',
+    url: 'https://xata.io/',
+    type: 'company',
+  },
+  {
     name: 'Shogun',
     image: '/logos/shogun-logo.svg',
     url: 'https://getshogun.com/',

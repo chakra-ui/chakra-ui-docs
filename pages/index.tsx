@@ -262,7 +262,7 @@ const HomePage = ({
                         src={user.image}
                         alt={user.name}
                         width={120}
-                        height={24}
+                        height={32}
                         p='5'
                         loading='lazy'
                       />
