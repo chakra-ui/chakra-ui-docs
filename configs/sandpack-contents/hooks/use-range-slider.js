@@ -24,7 +24,7 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
         getRootProps,
         getThumbProps,
         getTrackProps,
-    } = useRangeSlider(min, max, defaultValue, rest)
+    } = useRangeSlider({min, max, defaultValue, rest})
 
     const { onKeyDown: onThumbKeyDownFirstIndex, ...thumbPropsFirstIndex } =
         getThumbProps({
