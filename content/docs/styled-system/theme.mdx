@@ -1,7 +1,7 @@
 ---
 title: Default Theme
 description: The default chakra theme tokens
-category: 'theming'
+category: "theming"
 ---
 
 The theme object is where you define your application's color palette, type
@@ -12,8 +12,8 @@ Theming with Chakra UI is based on the
 
 <br></br>
 <ComponentLinks
-  github={{ package: 'theme' }}
-  npm={{ package: '@chakra-ui/theme' }}
+  github={{ package: "theme" }}
+  npm={{ package: "@chakra-ui/theme" }}
 />
 
 ## Colors
@@ -32,17 +32,17 @@ available to generate these palettes.
 // theme.js
 export default {
   colors: {
-    transparent: 'transparent',
-    black: '#000',
-    white: '#fff',
+    transparent: "transparent",
+    black: "#000",
+    white: "#fff",
     gray: {
-      50: '#f7fafc',
+      50: "#f7fafc",
       // ...
-      900: '#171923',
+      900: "#171923",
     },
     // ...
   },
-}
+};
 ```
 
 Chakra provides a sensible
@@ -52,8 +52,8 @@ inspired by Tailwind CSS, but you can customize it to fit your design.
 ### Black & White
 
 <ColorWrapper>
-  <ColorPalette color='black' name='Black' />
-  <ColorPalette color='white' name='White' />
+  <ColorPalette color="black" name="Black" />
+  <ColorPalette color="white" name="White" />
   <div />
 </ColorWrapper>
 
@@ -62,68 +62,68 @@ inspired by Tailwind CSS, but you can customize it to fit your design.
 > Note: Toggle the site's color mode to see the change in the whiteAlpha colors.
 
 <ColorWrapper>
-  <ColorPalettes color='blackAlpha' />
-  <ColorPalettes color='whiteAlpha' />
+  <ColorPalettes color="blackAlpha" />
+  <ColorPalettes color="whiteAlpha" />
 </ColorWrapper>
 
 ### Gray
 
 <ColorWrapper>
-  <ColorPalettes color='gray' />
+  <ColorPalettes color="gray" />
 </ColorWrapper>
 
 ### Red
 
 <ColorWrapper>
-  <ColorPalettes color='red' />
+  <ColorPalettes color="red" />
 </ColorWrapper>
 
 ### Orange
 
 <ColorWrapper>
-  <ColorPalettes color='orange' />
+  <ColorPalettes color="orange" />
 </ColorWrapper>
 
 ### Yellow
 
 <ColorWrapper>
-  <ColorPalettes color='yellow' />
+  <ColorPalettes color="yellow" />
 </ColorWrapper>
 
 ### Green
 
 <ColorWrapper>
-  <ColorPalettes color='green' />
+  <ColorPalettes color="green" />
 </ColorWrapper>
 
 ### Teal
 
 <ColorWrapper>
-  <ColorPalettes color='teal' />
+  <ColorPalettes color="teal" />
 </ColorWrapper>
 
 ### Blue
 
 <ColorWrapper>
-  <ColorPalettes color='blue' />
+  <ColorPalettes color="blue" />
 </ColorWrapper>
 
 ### Cyan
 
 <ColorWrapper>
-  <ColorPalettes color='cyan' />
+  <ColorPalettes color="cyan" />
 </ColorWrapper>
 
 ### Purple
 
 <ColorWrapper>
-  <ColorPalettes color='purple' />
+  <ColorPalettes color="purple" />
 </ColorWrapper>
 
 ### Pink
 
 <ColorWrapper>
-  <ColorPalettes color='pink' />
+  <ColorPalettes color="pink" />
 </ColorWrapper>
 
 ## Typography
@@ -203,7 +203,7 @@ const theme = extendTheme({
 
 ## Breakpoints
 
-Chakra UI comes with a predefined set of commonly used breakpoints.
+Chakra UI comes with a [predefined set of commonly used breakpoints](https://github.com/chakra-ui/chakra-ui/blob/f5b1a3569fd0c654897d2397b3d0bd4677783fa7/packages/utilities/breakpoint-utils/src/responsive.ts#L3C17-L3C17).
 
 > Learn more about
 > [Responsive Styles and Customizing Breakpoints](/docs/styled-system/responsive-styles).
@@ -212,6 +212,7 @@ Chakra UI comes with a predefined set of commonly used breakpoints.
 import { extendTheme } from '@chakra-ui/react'
 
 const breakpoints = {
+  base: '0em',
   sm: '30em',
   md: '48em',
   lg: '62em',
@@ -229,47 +230,47 @@ your project. By default these spacing value can be referenced by the `padding`,
 `margin`, and `top`, `left`, `right`, `bottom` styles.
 
 ```js
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from "@chakra-ui/react";
 
 const spacing = {
   space: {
-    px: '1px',
-    0.5: '0.125rem',
-    1: '0.25rem',
-    1.5: '0.375rem',
-    2: '0.5rem',
-    2.5: '0.625rem',
-    3: '0.75rem',
-    3.5: '0.875rem',
-    4: '1rem',
-    5: '1.25rem',
-    6: '1.5rem',
-    7: '1.75rem',
-    8: '2rem',
-    9: '2.25rem',
-    10: '2.5rem',
-    12: '3rem',
-    14: '3.5rem',
-    16: '4rem',
-    20: '5rem',
-    24: '6rem',
-    28: '7rem',
-    32: '8rem',
-    36: '9rem',
-    40: '10rem',
-    44: '11rem',
-    48: '12rem',
-    52: '13rem',
-    56: '14rem',
-    60: '15rem',
-    64: '16rem',
-    72: '18rem',
-    80: '20rem',
-    96: '24rem',
+    px: "1px",
+    0.5: "0.125rem",
+    1: "0.25rem",
+    1.5: "0.375rem",
+    2: "0.5rem",
+    2.5: "0.625rem",
+    3: "0.75rem",
+    3.5: "0.875rem",
+    4: "1rem",
+    5: "1.25rem",
+    6: "1.5rem",
+    7: "1.75rem",
+    8: "2rem",
+    9: "2.25rem",
+    10: "2.5rem",
+    12: "3rem",
+    14: "3.5rem",
+    16: "4rem",
+    20: "5rem",
+    24: "6rem",
+    28: "7rem",
+    32: "8rem",
+    36: "9rem",
+    40: "10rem",
+    44: "11rem",
+    48: "12rem",
+    52: "13rem",
+    56: "14rem",
+    60: "15rem",
+    64: "16rem",
+    72: "18rem",
+    80: "20rem",
+    96: "24rem",
   },
-}
+};
 
-const theme = extendTheme({ ...spacing })
+const theme = extendTheme({ ...spacing });
 ```
 
 By default, Chakra includes a comprehensive numeric spacing scale inspired by
@@ -415,21 +416,21 @@ const theme = extendTheme({ zIndices, ...})
 The theme's config is to provide global settings that are used by different
 parts of the Chakra UI system.
 
-| Property                  | Description                                                                                                 | Default  |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| `cssVarPrefix` **(v1.4)** | The prefix to use for the generated CSS custom properties                                                   | `chakra` |
-| `initialColorMode`        | The initial color mode your application should start with. <br reset/> Can be `light`, `dark` or `system`   | `light`  |
-| `useSystemColorMode`      | If `true`, the chakra system will update color mode <br reset/> based on your system preferences            | `false`  |
+| Property                  | Description                                                                                               | Default  |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| `cssVarPrefix` **(v1.4)** | The prefix to use for the generated CSS custom properties                                                 | `chakra` |
+| `initialColorMode`        | The initial color mode your application should start with. <br reset/> Can be `light`, `dark` or `system` | `light`  |
+| `useSystemColorMode`      | If `true`, the chakra system will update color mode <br reset/> based on your system preferences          | `false`  |
 
 You can leverage the `extendTheme` function to override a specific theme config
 property.
 
 ```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   config: {
-    cssVarPrefix: 'ck',
+    cssVarPrefix: "ck",
   },
-})
+});
 ```
