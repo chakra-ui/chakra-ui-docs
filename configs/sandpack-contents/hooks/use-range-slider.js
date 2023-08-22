@@ -1,5 +1,5 @@
 module.exports = {
-  App: `import { Badge, Box, chakra, Flex, useRangeSlider } from "@chakra-ui/react";
+    App: `import { Badge, Box, chakra, Flex, useRangeSlider } from "@chakra-ui/react";
 import Actions from "./Actions";
 import Instructions from "./Instructions";
 import Thumb from './Thumb';
@@ -25,6 +25,7 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
         getThumbProps,
         getTrackProps,
     } = useRangeSlider({min, max, defaultValue, rest})
+
 
     const { onKeyDown: onThumbKeyDownFirstIndex, ...thumbPropsFirstIndex } =
         getThumbProps({
@@ -110,7 +111,7 @@ export default function App({ min, max, stepToNumber, stepToIndex, stepByNumber,
         </Box>
     );
 };`,
-  Index: `import { ChakraProvider } from "@chakra-ui/react";
+    Index: `import { ChakraProvider } from "@chakra-ui/react";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
@@ -120,11 +121,11 @@ const root = createRoot(rootElement);
 root.render(
     <React.StrictMode>
         <ChakraProvider>
-            <App min={25} max={75} stepToNumber={85} stepToIndex={1} stepByNumber={10} defaultValue={[25, 75]} aria-label={['min', 'max']} />
+            <App min={25} max={75} stepToNumber={55} stepToIndex={1} stepByNumber={10} defaultValue={[25, 75]} aria-label={['min', 'max']} />
         </ChakraProvider>
     </React.StrictMode>
 );`,
-  Instructions: `import { Box, Text, Kbd } from "@chakra-ui/react";
+    Instructions: `import { Box, Text, Kbd } from "@chakra-ui/react";
 
 type Props = {
     stepByNumber: number;
@@ -142,7 +143,7 @@ const Instructions = ({ stepByNumber }: Props) => {
     );
 };
 export default Instructions;`,
-  Actions: `import { Button, Box, Text } from "@chakra-ui/react";
+    Actions: `import { Button, Box, Text } from "@chakra-ui/react";
 import ThumbIndexIcon from "./ThumbIndexIcon";
 import * as React from "react";
 
@@ -182,7 +183,7 @@ const Actions = ({ actions, min, max, stepToIndex, stepToNumber }: Props) => {
     );
 };
 export default Actions;`,
-  ThumbIndexIcon: `import { Flex, Box } from "@chakra-ui/react";
+    ThumbIndexIcon: `import { Flex, Box } from "@chakra-ui/react";
 
 type Props = {
     bgColor: string;
@@ -203,7 +204,7 @@ const ThumbIndexIcon = ({ bgColor }: Props) => {
     );
 };
 export default ThumbIndexIcon;`,
-  Thumb: `import { Flex, Box, Text } from "@chakra-ui/react";
+    Thumb: `import { Flex, Box, Text } from "@chakra-ui/react";
 import * as React from 'react';
 
 type Props = {
