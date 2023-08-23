@@ -44,7 +44,7 @@ module.exports = {
           index: 1,
         })
     
-      const markers = Array.from({ length: 3 }, (_, i) => i + 1).((i) =>
+      const markers = Array.from({ length: 3 }, (_, i) => i + 1).map((i) =>
         getMarkerProps({ value: i * 25 }),
       )
     
