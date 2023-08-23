@@ -45,7 +45,7 @@ module.exports = {
           index: 1,
         })
     
-      const markers = Array.from({ length: 3 }, (_, i) => i + 1).map((i) =>
+      const markers = Array.from({ length: 3 }, (_, i) => i + 1).((i) =>
         getMarkerProps({ value: i * 25 }),
       )
     
@@ -98,6 +98,7 @@ module.exports = {
               const value = String((index + 1) * 25) + '%'
               return (
                 <Badge
+                  key={index}
                   ml='-18px'
                   mt='25px'
                   fontSize='sm'
@@ -172,7 +173,7 @@ type Props = {
 const Instructions = ({ stepByNumber }: Props) => {
     return (
         <Box>
-            <Text>
+            <Text as='div'>
                 Use {' '}
                 <Kbd>&#8592;</Kbd> or <Kbd>&#8594;</Kbd>
                 <Text>to step by {stepByNumber}</Text>
