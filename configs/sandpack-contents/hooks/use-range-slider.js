@@ -2,8 +2,7 @@ module.exports = {
     App: `import { Badge, Box, chakra, Flex, useRangeSlider } from '@chakra-ui/react'
     import Actions from './Actions'
     import Instructions from './Instructions'
-    import Thumb, { onKeyDownStepByType } from './Thumb'
-    import { DOMElement } from 'react'
+    import Thumb from './Thumb'
     
     type Props = {
       min: number
@@ -55,10 +54,10 @@ module.exports = {
       ) => {
         if (e.code === 'ArrowRight') actions.stepUp(thumbIndex, stepByNumber)
         else if (e.code === 'ArrowLeft') actions.stepDown(thumbIndex, stepByNumber)
-        else
-          thumbIndex === 0
-            ? onThumbKeyDownFirstIndex?.(e)
-            : onThumbKeyDownSecondIndex?.(e)
+        else if (thumbIndex === 0 && typeof onThumbKeyDownFirstIndex === 'function')
+          onThumbKeyDownFirstIndex(e)
+        else if (thumbIndex === 1 && typeof onThumbKeyDownSecondIndex === 'function')
+          onThumbKeyDownSecondIndex(e)
       }
     
       return (
@@ -245,11 +244,6 @@ const ThumbIndexIcon = ({ bgColor }: Props) => {
 export default ThumbIndexIcon;`,
     Thumb: `import { Flex, Box, Text } from '@chakra-ui/react'
     import * as React from 'react'
-    
-    export interface onKeyDownStepByType {
-      e: React.KeyboardEvent<HTMLDivElement>
-      thumbIndex: number
-    }
     
     type Props = {
       value: number
