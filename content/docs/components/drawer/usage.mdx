@@ -30,7 +30,7 @@ import {
 ```jsx
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const btnRef = React.useRef(null)
 
   return (
     <>
@@ -115,7 +115,7 @@ when the drawer opens. Pass the `initialFocusRef` prop.
 ```jsx
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const firstField = React.useRef()
+  const firstField = React.useRef(null)
 
   return (
     <>
