@@ -56274,6 +56274,17 @@
     }
   },
   {
+    "content": "Changing transitions manually using motion props",
+    "id": "//docs/components/transitions/usage",
+    "type": "lvl4",
+    "url": "/docs/components/transitions/usage#changing-transitions-manually-using-motion-props",
+    "hierarchy": {
+      "lvl1": "Transitions",
+      "lvl2": "Changing the startingHeight",
+      "lvl3": null
+    }
+  },
+  {
     "id": "//docs/components/visually-hidden/props",
     "type": "lvl1",
     "url": "/docs/components/visually-hidden/props",
