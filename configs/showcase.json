@@ -6,6 +6,11 @@
       "image": "showcases/Chakra-UI-Pro.jpg"
     },
     {
+      "name": "Udacity",
+      "url": "https://www.udacity.com/",
+      "image": "showcases/udacity.jpg"
+    },
+    {
       "name": "Ethereum",
       "url": "https://ethereum.org/",
       "image": "showcases/ethereum.jpg"
