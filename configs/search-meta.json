@@ -48273,6 +48273,761 @@
     }
   },
   {
+    "content": "Version 2.8.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl1",
+    "url": "/changelog/v2.8.1",
+    "hierarchy": { "lvl1": "Version 2.8.1" }
+  },
+  {
+    "content": "@chakra-ui/tabs@3.0.0",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitabs300",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/tabs@3.0.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Major Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#major-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/tabs@3.0.0",
+      "lvl3": "Major Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "Major Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/css-reset@2.3.0",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uicss-reset230",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/css-reset@2.3.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/css-reset@2.3.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/icon@3.2.0",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiicon320",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/icon@3.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#minor-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/icon@3.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme@3.3.0",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitheme330",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme@3.3.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#minor-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme@3.3.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/visually-hidden@2.2.0",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uivisually-hidden220",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/visually-hidden@2.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#minor-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/visually-hidden@2.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/accordion@2.3.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiaccordion231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/accordion@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/accordion@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/alert@2.2.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uialert221",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/alert@2.2.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/alert@2.2.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/anatomy@2.2.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uianatomy221",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/anatomy@2.2.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/anatomy@2.2.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/checkbox@2.3.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uicheckbox231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/checkbox@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/checkbox@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/close-button@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiclose-button211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/close-button@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/close-button@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/form-control@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiform-control211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/form-control@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-7",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/form-control@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/icons@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiicons211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/icons@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-8",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/icons@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/input@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiinput211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/input@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-9",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/input@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/layout@2.3.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uilayout231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/layout@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-10",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/layout@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/menu@2.2.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uimenu221",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/menu@2.2.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-11",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/menu@2.2.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/modal@2.3.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uimodal231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/modal@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-12",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/modal@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/number-input@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uinumber-input211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/number-input@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-13",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/number-input@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/popover@2.2.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uipopover221",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/popover@2.2.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-14",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/popover@2.2.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/provider@2.4.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiprovider241",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/provider@2.4.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-15",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/provider@2.4.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/radio@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiradio211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/radio@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-16",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/radio@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.8.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uireact281",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/react@2.8.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-17",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/react@2.8.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/select@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiselect211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/select@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-18",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/select@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/stat@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uistat211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/stat@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-19",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/stat@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/stepper@2.3.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uistepper231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/stepper@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-20",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/stepper@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/switch@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uiswitch211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/switch@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-21",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/switch@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/tag@3.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitag311",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/tag@3.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-22",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/tag@3.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/textarea@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitextarea211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/textarea@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-23",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/textarea@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-tools@2.1.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitheme-tools211",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme-tools@2.1.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-24",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme-tools@2.1.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@7.0.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitoast701",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/toast@7.0.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-25",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/toast@7.0.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.6.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uisystem261",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/system@2.6.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-26",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/system@2.6.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/hooks@2.2.1",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uihooks221",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/hooks@2.2.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-27",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/hooks@2.2.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.20",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitheme-utils2020",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.20",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-28",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/theme-utils@2.0.20",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.44",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.1#chakra-uitest-utils2044",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.44",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.1",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.1#patch-changes-29",
+    "hierarchy": {
+      "lvl1": "Version 2.8.1",
+      "lvl2": "@chakra-ui/test-utils@2.0.44",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
@@ -55188,6 +55943,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Table Anatomy",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#table-anatomy",
+    "hierarchy": { "lvl2": "Table Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default Table theme",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#customizing-the-default-table-theme",
+    "hierarchy": { "lvl2": "Customizing the default Table theme", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom table size",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#adding-a-custom-table-size",
+    "hierarchy": { "lvl2": "Adding a custom table size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom table variant",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#adding-a-custom-table-variant",
+    "hierarchy": { "lvl2": "Adding a custom table variant", "lvl3": null }
+  },
+  {
+    "content": "Changing default table properties",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#changing-default-table-properties",
+    "hierarchy": { "lvl2": "Changing default table properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Table",
     "id": "//docs/components/table/usage",
     "type": "lvl1",
@@ -55886,6 +56697,28 @@
     "type": "lvl2",
     "url": "/docs/components/toast/usage#usage",
     "hierarchy": { "lvl1": "Toast", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Promise Based Toast",
+    "id": "//docs/components/toast/usage",
+    "type": "lvl2",
+    "url": "/docs/components/toast/usage#promise-based-toast",
+    "hierarchy": {
+      "lvl1": "Toast",
+      "lvl2": "Promise Based Toast",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Example",
+    "id": "//docs/components/toast/usage",
+    "type": "lvl3",
+    "url": "/docs/components/toast/usage#example",
+    "hierarchy": {
+      "lvl1": "Toast",
+      "lvl2": "Promise Based Toast",
+      "lvl3": "Example"
+    }
   },
   {
     "content": "Custom component",
