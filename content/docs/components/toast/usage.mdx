@@ -47,6 +47,41 @@ function ToastExample() {
 > Make sure to call `useToast` at least one component level below the
 > `<ChakraProvider>` because it needs access to the current theme.
 
+## Promise-Based Toast
+
+Display a toast asynchronously based on a `Promise` for `loading`, `success`,
+and `error` states:
+
+- `loading` will be shown until the promise is either resolved or rejected.
+- `success` will be shown when/if the promise is resolved.
+- `error` will be shown when/if the promise is rejected.
+
+```jsx
+function PromiseBasedToastExample() {
+  const toast = useToast()
+  return (
+    <Button
+      onClick={() => {
+        // Create an example promise that resolves in 5s
+        const examplePromise = new Promise((resolve, reject) => {
+          setTimeout(() => resolve(200), 5000)
+        })
+
+        // Will display the loading toast until the promise is either resolved
+        // or rejected.
+        toast.promise(examplePromise, {
+          success: { title: 'Promise resolved', description: 'Looks great' },
+          error: { title: 'Promise rejected', description: 'Something wrong' },
+          loading: { title: 'Promise pending', description: 'Please wait' },
+        })
+      }}
+    >
+      Show Toast
+    </Button>
+  )
+}
+```
+
 ## Custom component
 
 Display a custom component instead of the default Toast UI.
