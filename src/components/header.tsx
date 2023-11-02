@@ -63,6 +63,7 @@ function HeaderContent() {
             width='auto'
             flexShrink={0}
             display={{ base: 'none', md: 'flex' }}
+            marginRight='var(--chakra-space-5)'
           />
           <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
             <Link
