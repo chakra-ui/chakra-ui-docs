@@ -50,9 +50,11 @@ component themes. With this approach, you get to apply the theme for just the
 component you need by using `extendBaseTheme`.
 
 ```jsx live=false
-import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
-// `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
-import chakraTheme from '@chakra-ui/theme'
+import {
+  ChakraBaseProvider,
+  extendBaseTheme,
+  theme as chakraTheme,
+} from '@chakra-ui/react'
 
 const { Button } = chakraTheme.components
 
@@ -64,7 +66,7 @@ const theme = extendBaseTheme({
 
 function App() {
   return (
-    <ChakraBaseProvider theme={theme}>
+    <ChakraBaseProvider theme={_theme}>
       <Component {...pageProps} />
     </ChakraBaseProvider>
   )
