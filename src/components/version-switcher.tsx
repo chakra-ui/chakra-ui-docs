@@ -21,7 +21,7 @@ function VersionSwitcher(props: SelectProps) {
   return (
     <Select
       marginEnd='0rem'
-      variant='unstyled'
+      variant='outline'
       fontWeight='semibold'
       color='gray.600'
       _dark={{ color: 'whiteAlpha.600' }}

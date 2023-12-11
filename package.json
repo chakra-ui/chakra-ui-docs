@@ -3,7 +3,7 @@
   "version": "2.1.6",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "pnpm search-meta:gen && next build",
     "lint": "next lint",
     "prepare": "husky install",
     "gen:theme-typings": "chakra-cli tokens theme.ts",
@@ -103,9 +103,6 @@
     "unist-util-visit": "^4.1.1"
   },
   "lint-staged": {
-    "**/*": [
-      "pnpm search-meta:gen",
-      "git add *.json --ignore-errors"
-    ]
+    "**/*": []
   }
 }
