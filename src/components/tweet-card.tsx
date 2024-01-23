@@ -16,7 +16,7 @@ const ChakraNextUnwrappedImage = chakra(NextImage, {
 })
 
 function TweetCard(props: TweetCardProps) {
-  const { name, handle, date, content, url } = props
+  const { name, handle, content, url } = props
   const image = `/avatars/${handle}.jpg`
   return (
     <Box

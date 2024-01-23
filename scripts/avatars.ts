@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs'
+import { writeFile } from 'node:fs/promises'
 import mkdirp from 'mkdirp'
 import fetch from 'node-fetch'
 import path from 'path'
@@ -100,7 +100,7 @@ async function buildSponsors() {
   )
 
   const data = { individuals: individualSponsors, companies: companySponsors }
-  await fs.writeFile('.all-sponsorsrc', JSON.stringify(data, null, 2))
+  await writeFile('.all-sponsorsrc', JSON.stringify(data, null, 2))
 }
 
 async function buildTweets() {

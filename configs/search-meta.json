@@ -60726,109 +60726,116 @@
     }
   },
   {
-    "content": "Getting Started with Next.js",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Getting Started with Next.js (App)",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl1",
-    "url": "/getting-started/nextjs-guide",
-    "hierarchy": { "lvl1": "Getting Started with Next.js" }
+    "url": "/getting-started/nextjs-app-guide",
+    "hierarchy": { "lvl1": "Getting Started with Next.js (App)" }
   },
   {
     "content": "Installation",
-    "id": "//getting-started/nextjs-guide",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#installation",
+    "url": "/getting-started/nextjs-app-guide#installation",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
+      "lvl1": "Getting Started with Next.js (App)",
       "lvl2": null,
       "lvl3": "Installation"
     }
   },
   {
-    "content": "Provider Setup",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Provider",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#provider-setup",
+    "url": "/getting-started/nextjs-app-guide#setup-provider",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
+      "lvl1": "Getting Started with Next.js (App)",
       "lvl2": "Installation",
-      "lvl3": "Provider Setup"
+      "lvl3": "Setup Provider"
     }
   },
   {
-    "content": "App Directory Setup",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Layout",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#app-directory-setup",
+    "url": "/getting-started/nextjs-app-guide#setup-layout",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Provider Setup",
-      "lvl3": "App Directory Setup"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Setup Provider",
+      "lvl3": "Setup Layout"
     }
   },
   {
-    "content": "Customizing theme",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Styling Next.js Link",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#customizing-theme",
+    "url": "/getting-started/nextjs-app-guide#styling-nextjs-link",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "App Directory Setup",
-      "lvl3": "Customizing theme"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Setup Layout",
+      "lvl3": "Styling Next.js Link"
     }
   },
   {
-    "content": "Color Mode Script",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Using custom font",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#color-mode-script",
+    "url": "/getting-started/nextjs-app-guide#using-custom-font",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Customizing theme",
-      "lvl3": "Color Mode Script"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Styling Next.js Link",
+      "lvl3": "Using custom font"
     }
   },
   {
-    "content": "Notes on TypeScript 🚨",
-    "id": "//getting-started/nextjs-guide",
-    "type": "lvl4",
-    "url": "/getting-started/nextjs-guide#notes-on-typescript-🚨",
-    "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Color Mode Script",
-      "lvl3": null
-    }
+    "content": "Getting Started with Next.js (Pages)",
+    "id": "//getting-started/nextjs-pages-guide",
+    "type": "lvl1",
+    "url": "/getting-started/nextjs-pages-guide",
+    "hierarchy": { "lvl1": "Getting Started with Next.js (Pages)" }
   },
   {
-    "content": "ChakraProvider Props",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Installation",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakraprovider-props",
+    "url": "/getting-started/nextjs-pages-guide#installation",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Notes on TypeScript 🚨",
-      "lvl3": "ChakraProvider Props"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": null,
+      "lvl3": "Installation"
     }
   },
   {
-    "content": "Chakra UI with Next.js Link",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Provider",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
+    "url": "/getting-started/nextjs-pages-guide#setup-provider",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "ChakraProvider Props",
-      "lvl3": "Chakra UI with Next.js Link"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Installation",
+      "lvl3": "Setup Provider"
     }
   },
   {
-    "content": "Chakra UI with next/font",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Styling Next.js Link",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextfont",
+    "url": "/getting-started/nextjs-pages-guide#styling-nextjs-link",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Chakra UI with Next.js Link",
-      "lvl3": "Chakra UI with next/font"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Setup Provider",
+      "lvl3": "Styling Next.js Link"
+    }
+  },
+  {
+    "content": "Using custom font",
+    "id": "//getting-started/nextjs-pages-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-pages-guide#using-custom-font",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Styling Next.js Link",
+      "lvl3": "Using custom font"
     }
   },
   {
