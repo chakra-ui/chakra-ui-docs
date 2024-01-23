@@ -1,3 +1,11 @@
+# ⚠️ Attention
+
+This repository has been moved to
+[Chakra UI Repository](https://github.com/chakra-ui/chakra-ui/tree/main/website)
+Please refer to the new repository for the latest changes.
+
+---
+
 <p align="center">
   <a href="https://github.com/chakra-ui/chakra-ui">
     <img src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/media/logo-colored@2x.png?raw=true" alt="Chakra logo" width="300" />
