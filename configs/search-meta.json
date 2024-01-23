@@ -56523,6 +56523,62 @@
     "hierarchy": {}
   },
   {
+    "content": "Table Anatomy",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#table-anatomy",
+    "hierarchy": { "lvl2": "Table Anatomy", "lvl3": null }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming utilities", "lvl3": null }
+  },
+  {
+    "content": "Customizing the default Table theme",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#customizing-the-default-table-theme",
+    "hierarchy": { "lvl2": "Customizing the default Table theme", "lvl3": null }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#theming-properties",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom table size",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#adding-a-custom-table-size",
+    "hierarchy": { "lvl2": "Adding a custom table size", "lvl3": null }
+  },
+  {
+    "content": "Adding a custom table variant",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#adding-a-custom-table-variant",
+    "hierarchy": { "lvl2": "Adding a custom table variant", "lvl3": null }
+  },
+  {
+    "content": "Changing default table properties",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#changing-default-table-properties",
+    "hierarchy": { "lvl2": "Changing default table properties", "lvl3": null }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/table/theming",
+    "type": "lvl2",
+    "url": "/docs/components/table/theming#showcase",
+    "hierarchy": { "lvl2": "Showcase", "lvl3": null }
+  },
+  {
     "content": "Table",
     "id": "//docs/components/table/usage",
     "type": "lvl1",
