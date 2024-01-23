@@ -47,13 +47,15 @@ minimal version of `ChakraProvider` that only supplies theme tokens and not the
 default component theming.
 
 One of the biggest causes of the large initial JS payload is the size of the
-component themes. With this approach, you get to apply the theme for just the
-component you need by using `extendBaseTheme`.
+component themes. With the following approach, you get to apply the default
+themes for just the components you need by using `extendBaseTheme`.
 
 ```jsx live=false
-import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
-// `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
-import chakraTheme from '@chakra-ui/theme'
+import {
+  ChakraBaseProvider,
+  extendBaseTheme,
+  theme as chakraTheme,
+} from '@chakra-ui/react'
 
 const { Button } = chakraTheme.components
 
