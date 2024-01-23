@@ -45,11 +45,12 @@ you need to do is pass the `as` prop. It'll replace the rendered `a` tag with
 Reach's `Link`.
 
 ```jsx live=false
-import { Link as ReachLink } from "@reach/router"
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink, LinkProps } from '@chakra-ui/react'
 
-<Link as={ReachLink} to='/home'>
+<ChakraLink as={ReactRouterLink} to='/home'>
   Home
-</Link>
+</ChakraLink>
 ```
 
 ## Usage with Next.js

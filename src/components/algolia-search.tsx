@@ -137,7 +137,7 @@ function AlgoliaSearch() {
         <link
           rel='preconnect'
           href='https://BH4D9OD16A-dsn.algolia.net'
-          crossOrigin='true'
+          crossOrigin='anonymous'
         />
       </Head>
       <SearchStyle />

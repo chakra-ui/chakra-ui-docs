@@ -1,16 +1,16 @@
 import { Badge, Box, Flex, chakra } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import { useRouter } from 'next/router'
-import * as React from 'react'
 import EditPageLink from 'components/edit-page-button'
 import Footer from 'components/footer'
 import Header from 'components/header'
 import SEO from 'components/seo'
 import TableOfContent from 'components/table-of-content'
+import { useRouter } from 'next/router'
+import * as React from 'react'
+import { FrontmatterHeading } from 'src/types/frontmatter'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { t } from 'utils/i18n'
-import { FrontmatterHeading } from 'src/types/frontmatter'
-// import { AdBanner } from './chakra-pro/ad-banner'
+import { AdBanner } from './chakra-pro/ad-banner'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -67,7 +67,7 @@ function PageContainer(props: PageContainerProps) {
       <SkipNavLink zIndex={20}>
         {t('component.page-container.skip-to-content')}
       </SkipNavLink>
-      {/* <AdBanner /> */}
+      <AdBanner />
       <Header />
       <Box as='main' className='main-content' w='full' maxW='8xl' mx='auto'>
         <Box display={{ md: 'flex' }}>

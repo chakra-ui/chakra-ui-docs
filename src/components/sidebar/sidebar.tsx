@@ -13,12 +13,7 @@ import { useRouter } from 'next/router'
 import { Fragment, ReactElement, ReactNode, useRef } from 'react'
 import { AiFillPlayCircle } from 'react-icons/ai'
 import { BsFillGridFill } from 'react-icons/bs'
-import {
-  FaCompass,
-  FaGlobe,
-  FaPalette,
-  FaTools,
-} from 'react-icons/fa'
+import { FaCompass, FaGlobe, FaPalette, FaTools } from 'react-icons/fa'
 import { FiFigma } from 'react-icons/fi'
 import { convertBackticksToInlineCode } from 'utils/convert-backticks-to-inline-code'
 import { RouteItem, Routes } from 'utils/get-route-context'
@@ -129,7 +124,13 @@ type MainNavLinkProps = {
   isExternal?: boolean
 }
 
-const MainNavLink = ({ href, icon, children, isActive, isExternal }: MainNavLinkProps) => {
+const MainNavLink = ({
+  href,
+  icon,
+  children,
+  isActive,
+  isExternal,
+}: MainNavLinkProps) => {
   const router = useRouter()
   const active = router.asPath.startsWith(href) || !!isActive
 
@@ -157,7 +158,7 @@ const MainNavLink = ({ href, icon, children, isActive, isExternal }: MainNavLink
         </Center>
         <span>{children}</span>
       </HStack>
-    </NextLink >
+    </NextLink>
   )
 }
 
@@ -207,7 +208,7 @@ export const mainNavLinks = [
     label: 'Playground',
     new: false,
     external: true,
-  }
+  },
   // {
   //   icon: <FaReadme />,
   //   href: '/blog',

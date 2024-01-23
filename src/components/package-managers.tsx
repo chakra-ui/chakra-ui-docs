@@ -10,10 +10,11 @@ import {
 import { ImNpm } from 'react-icons/im'
 import { FaYarn } from 'react-icons/fa'
 import { SiPnpm } from 'react-icons/si'
+import { BunIcon } from './icons/bun'
 
 import CodeBlock from './mdx-components/codeblock/codeblock'
 
-type PackageManagerName = 'npm' | 'yarn' | 'pnpm'
+type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun'
 
 type PackageManager = {
   icon: JSX.Element
@@ -36,6 +37,11 @@ const packageManagers: PackageManager[] = [
     name: 'pnpm',
     icon: <Icon as={SiPnpm} color='orange.500' />,
     color: 'orange.500',
+  },
+  {
+    name: 'bun',
+    icon: <Icon as={BunIcon} />,
+    color: '#cdbfa7',
   },
 ]
 

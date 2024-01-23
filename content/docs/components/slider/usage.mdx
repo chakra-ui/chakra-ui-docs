@@ -98,7 +98,6 @@ accomplished using the `step` prop.
 ```jsx
 <Slider defaultValue={60} min={0} max={300} step={30}>
   <SliderTrack bg='red.100'>
-    <Box position='relative' right={10} />
     <SliderFilledTrack bg='tomato' />
   </SliderTrack>
   <SliderThumb boxSize={6} />
@@ -120,7 +119,7 @@ function SliderMarkExample() {
   }
 
   return (
-    <Box pt={6} pb={2}>
+    <Box p={4} pt={6}>
       <Slider aria-label='slider-ex-6' onChange={(val) => setSliderValue(val)}>
         <SliderMark value={25} {...labelStyles}>
           25%
