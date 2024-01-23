@@ -21,7 +21,7 @@ function TableOfContent(props: TableOfContentProps) {
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),
     {
-      rootMargin: '0% 0% -24% 0%',
+      rootMargin: '-10% 0% -24% 0%',
     },
   )
   const linkColor = useColorModeValue('gray.600', 'gray.400')
