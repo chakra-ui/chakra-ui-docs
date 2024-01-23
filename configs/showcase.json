@@ -6,6 +6,11 @@
       "image": "showcases/Chakra-UI-Pro.jpg"
     },
     {
+      "name": "Udacity",
+      "url": "https://www.udacity.com/",
+      "image": "showcases/udacity.jpg"
+    },
+    {
       "name": "Ethereum",
       "url": "https://ethereum.org/",
       "image": "showcases/ethereum.jpg"
@@ -19,6 +24,11 @@
       "name": "Planet.com",
       "url": "https://planet.com/",
       "image": "showcases/planet.jpg"
+    },
+    {
+      "name": "Solidity",
+      "url": "https://soliditylang.org/",
+      "image": "showcases/solidity.png"
     },
     {
       "name": "yubo",
@@ -36,11 +46,6 @@
       "image": "showcases/Snappify.jpg"
     },
     {
-      "name": "Supa Palette Website",
-      "url": "https://supa-palette.com",
-      "image": "showcases/Supa-Palette-Website.jpg"
-    },
-    {
       "name": "thirdweb",
       "url": "https://thirdweb.com/",
       "image": "showcases/thirdweb.jpg"
@@ -49,6 +54,11 @@
       "name": "Razorpay",
       "url": "https://razorpay.com",
       "image": "showcases/Razorpay.jpg"
+    },
+    {
+      "name": "Supa Palette Website",
+      "url": "https://supa-palette.com",
+      "image": "showcases/Supa-Palette-Website.jpg"
     },
     {
       "name": "Codiga",

@@ -431,15 +431,15 @@ used.
 import {
   createStylesContext,
   useMultiStyleConfig,
-  useStyles,
 } from '@chakra-ui/react'
+
+const [ StylesProvider, useStyles ] = createStylesContext('Menu');
 
 function Menu(props) {
   const { size, variant, children, ...rest } = props
 
   // 2. Consume the `useMultiStyleConfig` hook
   const styles = useMultiStyleConfig('Menu', { size, variant })
-  const [ StylesProvider ] = createStylesContext('Menu');
 
   return (
     <Flex __css={styles.menu} {...rest}>

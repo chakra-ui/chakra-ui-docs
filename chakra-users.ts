@@ -25,6 +25,12 @@ const users: User[] = [
     type: 'company',
   },
   {
+    name: 'Xata',
+    image: '/logos/xata.svg',
+    url: 'https://xata.io/',
+    type: 'company',
+  },
+  {
     name: 'Shogun',
     image: '/logos/shogun-logo.svg',
     url: 'https://getshogun.com/',
@@ -37,9 +43,9 @@ const users: User[] = [
     type: 'company',
   },
   {
-    name: 'Usability Hub',
-    image: '/logos/usability-hub.png',
-    url: 'https://usabilityhub.com/',
+    name: 'Lyssna',
+    image: '/logos/lyssna.png',
+    url: 'https://www.lyssna.com/',
     type: 'company',
   },
   {

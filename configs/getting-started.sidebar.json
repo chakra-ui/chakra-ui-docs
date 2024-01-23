@@ -36,12 +36,16 @@
           "open": true,
           "routes": [
             {
-              "title": "Create React App",
-              "path": "/getting-started/cra-guide"
+              "title": "Vite",
+              "path": "/getting-started/vite-guide"
             },
             {
-              "title": "Next.js",
-              "path": "/getting-started/nextjs-guide"
+              "title": "Next.js (App)",
+              "path": "/getting-started/nextjs-app-guide"
+            },
+            {
+              "title": "Next.js (Pages)",
+              "path": "/getting-started/nextjs-pages-guide"
             },
             {
               "title": "Gatsby",
@@ -60,12 +64,12 @@
               "path": "/getting-started/remix-guide"
             },
             {
-              "title": "Vite",
-              "path": "/getting-started/vite-guide"
-            },
-            {
               "title": "Meteor",
               "path": "/getting-started/meteor-guide"
+            },
+            {
+              "title": "Create React App",
+              "path": "/getting-started/cra-guide"
             }
           ]
         },

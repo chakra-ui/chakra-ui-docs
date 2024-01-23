@@ -2,7 +2,6 @@ import { Box, Link as ChakraLink, SimpleGrid, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import {
   BlitzSvg,
-  CreateReactAppSvg,
   GatsbySvg,
   MeteorSvg,
   NextjsSvg,
@@ -43,17 +42,17 @@ export const FrameworkLinks = () => {
   return (
     <SimpleGrid mt='12' minChildWidth='160px' spacing='40px' fontSize='6xl'>
       <FrameworkLink
-        href='/getting-started/cra-guide'
-        accentColor='#0AC09D'
-        name='Create React App'
+        href='/getting-started/nextjs-app-guide'
+        accentColor='black'
+        name='Next.js (App)'
       >
-        <CreateReactAppSvg style={{ margin: 'auto' }} />
+        <NextjsSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
       <FrameworkLink
-        href='/getting-started/nextjs-guide'
+        href='/getting-started/nextjs-pages-guide'
         accentColor='black'
-        name='Next.js'
+        name='Next.js (Pages)'
       >
         <NextjsSvg style={{ margin: 'auto' }} />
       </FrameworkLink>

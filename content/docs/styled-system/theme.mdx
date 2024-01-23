@@ -46,7 +46,7 @@ export default {
 ```
 
 Chakra provides a sensible
-[default theme](https://github.com/chakra-ui/chakra-ui/tree/main/packages/components/theme)
+[default theme](https://github.com/chakra-ui/chakra-ui/tree/main/packages/theme/src/components)
 inspired by Tailwind CSS, but you can customize it to fit your design.
 
 ### Black & White
@@ -203,7 +203,8 @@ const theme = extendTheme({
 
 ## Breakpoints
 
-Chakra UI comes with a predefined set of commonly used breakpoints.
+Chakra UI comes with a
+[predefined set of commonly used breakpoints](https://github.com/chakra-ui/chakra-ui/blob/f5b1a3569fd0c654897d2397b3d0bd4677783fa7/packages/utilities/breakpoint-utils/src/responsive.ts#L3C17-L3C17).
 
 > Learn more about
 > [Responsive Styles and Customizing Breakpoints](/docs/styled-system/responsive-styles).
@@ -212,6 +213,7 @@ Chakra UI comes with a predefined set of commonly used breakpoints.
 import { extendTheme } from '@chakra-ui/react'
 
 const breakpoints = {
+  base: '0em',
   sm: '30em',
   md: '48em',
   lg: '62em',
@@ -391,21 +393,19 @@ stacking order of components.
 import { extendTheme } from '@chakra-ui/react'
 
 const zIndices = {
-  zIndices: {
-    hide: -1,
-    auto: 'auto',
-    base: 0,
-    docked: 10,
-    dropdown: 1000,
-    sticky: 1100,
-    banner: 1200,
-    overlay: 1300,
-    modal: 1400,
-    popover: 1500,
-    skipLink: 1600,
-    toast: 1700,
-    tooltip: 1800,
-  },
+  hide: -1,
+  auto: 'auto',
+  base: 0,
+  docked: 10,
+  dropdown: 1000,
+  sticky: 1100,
+  banner: 1200,
+  overlay: 1300,
+  modal: 1400,
+  popover: 1500,
+  skipLink: 1600,
+  toast: 1700,
+  tooltip: 1800,
 }
 const theme = extendTheme({ zIndices, ...})
 ```
@@ -415,11 +415,11 @@ const theme = extendTheme({ zIndices, ...})
 The theme's config is to provide global settings that are used by different
 parts of the Chakra UI system.
 
-| Property                  | Description                                                                                                 | Default  |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| `cssVarPrefix` **(v1.4)** | The prefix to use for the generated CSS custom properties                                                   | `chakra` |
-| `initialColorMode`        | The initial color mode your application should start with. <br reset/> Can be `light`, `dark` or `system`   | `light`  |
-| `useSystemColorMode`      | If `true`, the chakra system will update color mode <br reset/> based on your system preferences            | `false`  |
+| Property                  | Description                                                                                               | Default  |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| `cssVarPrefix` **(v1.4)** | The prefix to use for the generated CSS custom properties                                                 | `chakra` |
+| `initialColorMode`        | The initial color mode your application should start with. <br reset/> Can be `light`, `dark` or `system` | `light`  |
+| `useSystemColorMode`      | If `true`, the chakra system will update color mode <br reset/> based on your system preferences          | `false`  |
 
 You can leverage the `extendTheme` function to override a specific theme config
 property.

@@ -182,3 +182,29 @@ function Example() {
   )
 }
 ```
+
+#### Changing transitions manually using motion props
+
+```jsx
+function CollapseEx() {
+  const { isOpen, onToggle } = useDisclosure()
+
+  return (
+    <>
+      <Button onClick={onToggle}>Click Me</Button>
+      <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.5}}}>
+        <Box
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
+        >
+          <Lorem count={1} />
+        </Box>
+      </Collapse>
+    </>
+  )
+}
+```

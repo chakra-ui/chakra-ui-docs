@@ -4,7 +4,7 @@ category: navigation
 title: Link Overlay
 package: '@chakra-ui/layout'
 description:
-  'Link overlay is a semantic component used to wrap elements (cards, blog post,
+  'Link overlay is a semantic component used to wrap elements (cards, blog posts,
   articles, etc.) in a link.'
 ---
 
@@ -23,7 +23,7 @@ elements or links (tags, timestamps, buttons).
 
 > [According to the specification](https://www.w3.org/TR/html5/text-level-semantics.html#the-a-element),
 > an `<a>` element’s content model specifically states that an `<a>` cannot
-> contain any interactive descendants (button, anchors, input, etc).
+> contain any interactive descendants (button, anchors, input, etc.).
 
 The `LinkOverlay` component aims to solve this by overlaying one link on top of
 the component or card, and then elevating the remaining links on top of it.
@@ -69,7 +69,7 @@ keyboard navigation between links.
     Catch up on what’s been cookin’ at Smashing and explore some of the most
     popular community resources.
   </Text>
-  <Box as='a' color='teal.400' href='#' fontWeight='bold'>
+  <Box as='a' color='teal.400' href='#inner-link' fontWeight='bold'>
     Some inner link
   </Box>
 </LinkBox>
@@ -94,7 +94,7 @@ function Example() {
         As a side note, using quotation marks around an attribute value is
         required only if this value is not a valid identifier.
       </p>
-      <a href='#'>Some inner link</a>
+      <a href='#inner-link'>Some inner link</a>
     </LinkBox>
   )
 }
@@ -102,6 +102,6 @@ function Example() {
 
 ## Caveat
 
-One of the side-effects for this technique is that the content can't be
-"selectable" (i.e with a pointing device), however this seems to be pretty
+One of the side-effects of this technique is that the content can't be
+"selectable" (i.e. with a pointing device), however, this seems to be pretty
 trivial compared to the benefits!

@@ -63,6 +63,7 @@ function HeaderContent() {
             width='auto'
             flexShrink={0}
             display={{ base: 'none', md: 'flex' }}
+            marginRight='var(--chakra-space-5)'
           />
           <HStack spacing='5' display={{ base: 'none', md: 'flex' }}>
             <Link
@@ -151,7 +152,7 @@ function Header(props: HTMLChakraProps<'header'>) {
       transition='box-shadow 0.2s, background-color 0.2s'
       pos='sticky'
       top='0'
-      zIndex='3'
+      zIndex='11'
       bg='white'
       _dark={{ bg: 'gray.800' }}
       left='0'
