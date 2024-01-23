@@ -49028,6 +49028,508 @@
     }
   },
   {
+    "content": "Version 2.8.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl1",
+    "url": "/changelog/v2.8.2",
+    "hierarchy": { "lvl1": "Version 2.8.2" }
+  },
+  {
+    "content": "@chakra-ui/form-control@2.2.0",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiform-control220",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/form-control@2.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#minor-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/form-control@2.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "Minor Changes",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/next-js@2.2.0",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uinext-js220",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/next-js@2.2.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#minor-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/next-js@2.2.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/storybook-addon@5.1.0",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uistorybook-addon510",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/storybook-addon@5.1.0",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Minor Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#minor-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/storybook-addon@5.1.0",
+      "lvl3": "Minor Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/alert@2.2.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uialert222",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/alert@2.2.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-1",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/alert@2.2.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/anatomy@2.2.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uianatomy222",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/anatomy@2.2.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-2",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/anatomy@2.2.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/checkbox@2.3.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uicheckbox232",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/checkbox@2.3.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-3",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/checkbox@2.3.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/input@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiinput212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/input@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-4",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/input@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/number-input@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uinumber-input212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/number-input@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-5",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/number-input@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/provider@2.4.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiprovider242",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/provider@2.4.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-6",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/provider@2.4.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/radio@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiradio212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/radio@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-7",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/radio@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/react@2.8.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uireact282",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/react@2.8.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-8",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/react@2.8.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/select@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiselect212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/select@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-9",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/select@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/switch@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uiswitch212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/switch@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-10",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/switch@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/textarea@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitextarea212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/textarea@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-11",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/textarea@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme@3.3.1",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitheme331",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme@3.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-12",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme@3.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-tools@2.1.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitheme-tools212",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme-tools@2.1.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-13",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme-tools@2.1.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/toast@7.0.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitoast702",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/toast@7.0.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-14",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/toast@7.0.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/tooltip@2.3.1",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitooltip231",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/tooltip@2.3.1",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-15",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/tooltip@2.3.1",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/styled-system@2.9.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uistyled-system292",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/styled-system@2.9.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-16",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/styled-system@2.9.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/system@2.6.2",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uisystem262",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/system@2.6.2",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-17",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/system@2.6.2",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/theme-utils@2.0.21",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitheme-utils2021",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme-utils@2.0.21",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-18",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/theme-utils@2.0.21",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
+    "content": "@chakra-ui/test-utils@2.0.45",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl2",
+    "url": "/changelog/v2.8.2#chakra-uitest-utils2045",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/test-utils@2.0.45",
+      "lvl3": null
+    }
+  },
+  {
+    "content": "Patch Changes",
+    "id": "//changelog/v2.8.2",
+    "type": "lvl3",
+    "url": "/changelog/v2.8.2#patch-changes-19",
+    "hierarchy": {
+      "lvl1": "Version 2.8.2",
+      "lvl2": "@chakra-ui/test-utils@2.0.45",
+      "lvl3": "Patch Changes"
+    }
+  },
+  {
     "content": "Advanced Formik integration",
     "id": "//community/recipes/advanced-formik-integration",
     "type": "lvl1",
@@ -51384,6 +51886,84 @@
     "type": "lvl1",
     "url": "/docs/components/drawer/theming",
     "hierarchy": {}
+  },
+  {
+    "content": "Theming",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl2",
+    "url": "/docs/components/drawer/theming#theming",
+    "hierarchy": { "lvl2": "Theming", "lvl3": null }
+  },
+  {
+    "content": "Anatomy",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#anatomy",
+    "hierarchy": { "lvl2": "Theming", "lvl3": "Anatomy" }
+  },
+  {
+    "content": "Theming properties",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#theming-properties",
+    "hierarchy": { "lvl2": "Anatomy", "lvl3": "Theming properties" }
+  },
+  {
+    "content": "Theming utilities",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#theming-utilities",
+    "hierarchy": { "lvl2": "Theming properties", "lvl3": "Theming utilities" }
+  },
+  {
+    "content": "Customizing the default theme",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#customizing-the-default-theme",
+    "hierarchy": {
+      "lvl2": "Theming utilities",
+      "lvl3": "Customizing the default theme"
+    }
+  },
+  {
+    "content": "Adding a custom size",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#adding-a-custom-size",
+    "hierarchy": {
+      "lvl2": "Customizing the default theme",
+      "lvl3": "Adding a custom size"
+    }
+  },
+  {
+    "content": "Adding a custom variant",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#adding-a-custom-variant",
+    "hierarchy": {
+      "lvl2": "Adding a custom size",
+      "lvl3": "Adding a custom variant"
+    }
+  },
+  {
+    "content": "Changing the default properties",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#changing-the-default-properties",
+    "hierarchy": {
+      "lvl2": "Adding a custom variant",
+      "lvl3": "Changing the default properties"
+    }
+  },
+  {
+    "content": "Showcase",
+    "id": "//docs/components/drawer/theming",
+    "type": "lvl3",
+    "url": "/docs/components/drawer/theming#showcase",
+    "hierarchy": {
+      "lvl2": "Changing the default properties",
+      "lvl3": "Showcase"
+    }
   },
   {
     "content": "Drawer",
@@ -56699,25 +57279,14 @@
     "hierarchy": { "lvl1": "Toast", "lvl2": "Usage", "lvl3": null }
   },
   {
-    "content": "Promise Based Toast",
+    "content": "Promise-Based Toast",
     "id": "//docs/components/toast/usage",
     "type": "lvl2",
     "url": "/docs/components/toast/usage#promise-based-toast",
     "hierarchy": {
       "lvl1": "Toast",
-      "lvl2": "Promise Based Toast",
+      "lvl2": "Promise-Based Toast",
       "lvl3": null
-    }
-  },
-  {
-    "content": "Example",
-    "id": "//docs/components/toast/usage",
-    "type": "lvl3",
-    "url": "/docs/components/toast/usage#example",
-    "hierarchy": {
-      "lvl1": "Toast",
-      "lvl2": "Promise Based Toast",
-      "lvl3": "Example"
     }
   },
   {
@@ -57452,6 +58021,17 @@
     "type": "lvl2",
     "url": "/docs/hooks/use-clipboard#usage",
     "hierarchy": { "lvl1": "useClipboard", "lvl2": "Usage", "lvl3": null }
+  },
+  {
+    "content": "Imperative",
+    "id": "//docs/hooks/use-clipboard",
+    "type": "lvl3",
+    "url": "/docs/hooks/use-clipboard#imperative",
+    "hierarchy": {
+      "lvl1": "useClipboard",
+      "lvl2": "Usage",
+      "lvl3": "Imperative"
+    }
   },
   {
     "content": "useConst",
@@ -60291,109 +60871,116 @@
     }
   },
   {
-    "content": "Getting Started with Next.js",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Getting Started with Next.js (App)",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl1",
-    "url": "/getting-started/nextjs-guide",
-    "hierarchy": { "lvl1": "Getting Started with Next.js" }
+    "url": "/getting-started/nextjs-app-guide",
+    "hierarchy": { "lvl1": "Getting Started with Next.js (App)" }
   },
   {
     "content": "Installation",
-    "id": "//getting-started/nextjs-guide",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#installation",
+    "url": "/getting-started/nextjs-app-guide#installation",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
+      "lvl1": "Getting Started with Next.js (App)",
       "lvl2": null,
       "lvl3": "Installation"
     }
   },
   {
-    "content": "Provider Setup",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Provider",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#provider-setup",
+    "url": "/getting-started/nextjs-app-guide#setup-provider",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
+      "lvl1": "Getting Started with Next.js (App)",
       "lvl2": "Installation",
-      "lvl3": "Provider Setup"
+      "lvl3": "Setup Provider"
     }
   },
   {
-    "content": "App Directory Setup",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Layout",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#app-directory-setup",
+    "url": "/getting-started/nextjs-app-guide#setup-layout",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Provider Setup",
-      "lvl3": "App Directory Setup"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Setup Provider",
+      "lvl3": "Setup Layout"
     }
   },
   {
-    "content": "Customizing theme",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Styling Next.js Link",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#customizing-theme",
+    "url": "/getting-started/nextjs-app-guide#styling-nextjs-link",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "App Directory Setup",
-      "lvl3": "Customizing theme"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Setup Layout",
+      "lvl3": "Styling Next.js Link"
     }
   },
   {
-    "content": "Color Mode Script",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Using custom font",
+    "id": "//getting-started/nextjs-app-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#color-mode-script",
+    "url": "/getting-started/nextjs-app-guide#using-custom-font",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Customizing theme",
-      "lvl3": "Color Mode Script"
+      "lvl1": "Getting Started with Next.js (App)",
+      "lvl2": "Styling Next.js Link",
+      "lvl3": "Using custom font"
     }
   },
   {
-    "content": "Notes on TypeScript 🚨",
-    "id": "//getting-started/nextjs-guide",
-    "type": "lvl4",
-    "url": "/getting-started/nextjs-guide#notes-on-typescript-🚨",
-    "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Color Mode Script",
-      "lvl3": null
-    }
+    "content": "Getting Started with Next.js (Pages)",
+    "id": "//getting-started/nextjs-pages-guide",
+    "type": "lvl1",
+    "url": "/getting-started/nextjs-pages-guide",
+    "hierarchy": { "lvl1": "Getting Started with Next.js (Pages)" }
   },
   {
-    "content": "ChakraProvider Props",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Installation",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakraprovider-props",
+    "url": "/getting-started/nextjs-pages-guide#installation",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Notes on TypeScript 🚨",
-      "lvl3": "ChakraProvider Props"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": null,
+      "lvl3": "Installation"
     }
   },
   {
-    "content": "Chakra UI with Next.js Link",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Setup Provider",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextjs-link",
+    "url": "/getting-started/nextjs-pages-guide#setup-provider",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "ChakraProvider Props",
-      "lvl3": "Chakra UI with Next.js Link"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Installation",
+      "lvl3": "Setup Provider"
     }
   },
   {
-    "content": "Chakra UI with next/font",
-    "id": "//getting-started/nextjs-guide",
+    "content": "Styling Next.js Link",
+    "id": "//getting-started/nextjs-pages-guide",
     "type": "lvl3",
-    "url": "/getting-started/nextjs-guide#chakra-ui-with-nextfont",
+    "url": "/getting-started/nextjs-pages-guide#styling-nextjs-link",
     "hierarchy": {
-      "lvl1": "Getting Started with Next.js",
-      "lvl2": "Chakra UI with Next.js Link",
-      "lvl3": "Chakra UI with next/font"
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Setup Provider",
+      "lvl3": "Styling Next.js Link"
+    }
+  },
+  {
+    "content": "Using custom font",
+    "id": "//getting-started/nextjs-pages-guide",
+    "type": "lvl3",
+    "url": "/getting-started/nextjs-pages-guide#using-custom-font",
+    "hierarchy": {
+      "lvl1": "Getting Started with Next.js (Pages)",
+      "lvl2": "Styling Next.js Link",
+      "lvl3": "Using custom font"
     }
   },
   {

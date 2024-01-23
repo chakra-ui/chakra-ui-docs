@@ -43,9 +43,9 @@ const users: User[] = [
     type: 'company',
   },
   {
-    name: 'Usability Hub',
-    image: '/logos/usability-hub.png',
-    url: 'https://usabilityhub.com/',
+    name: 'Lyssna',
+    image: '/logos/lyssna.png',
+    url: 'https://www.lyssna.com/',
     type: 'company',
   },
   {
